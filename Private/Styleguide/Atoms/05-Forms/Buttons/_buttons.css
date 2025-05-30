@@ -7,188 +7,131 @@
   .btn-white,
   .btn-dark {
     /* Base button structure */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    @apply inline-flex items-center justify-center gap-2;
 
     /* Figma exact typography */
-    font-family: var(--font-family-display);
-    font-weight: var(--font-weight-button-sm);
-    font-size: var(--font-size-button-sm);
-    line-height: var(--line-height-button-sm);
-    letter-spacing: var(--letter-spacing-button-sm);
-    text-transform: uppercase;
-    text-decoration: none;
+    @apply font-[var(--font-family-display)] font-[var(--font-weight-button-sm)] text-[var(--font-size-button-sm)] leading-[var(--line-height-button-sm)] tracking-[var(--letter-spacing-button-sm)] uppercase no-underline;
 
     /* Figma exact dimensions (Node 1870:21501) */
-    height: 28px;
-    padding: 0 24px;
-    border-radius: var(--radius-netinera-sm);
-    border: 2px solid transparent;
-
+    @apply h-7 px-6 rounded-[var(--radius-netinera-sm)] border-2 border-transparent; /* height: 28px, padding: 0 24px */
+    
     /* Transitions */
-    transition: all 0.2s ease;
-    cursor: pointer;
+    @apply transition-all duration-200 ease-in-out cursor-pointer; /* Assuming 'ease' means 'ease-in-out' */
 
     /* Focus states */
-    outline: none;
-    position: relative;
+    @apply outline-none relative;
   }
 
   /* === PRIMARY BUTTON === */
   .btn-primary {
-    background-color: var(--color-netinera-secondary);
-    color: white;
-    border-color: var(--color-netinera-secondary);
+    @apply bg-[var(--color-netinera-secondary)] text-white border-[var(--color-netinera-secondary)];
   }
 
   .btn-primary:hover {
-    background-color: #c4042a;
-    border-color: #c4042a;
-    transform: translateY(-1px);
+    @apply hover:bg-[#c4042a] hover:border-[#c4042a] hover:-translate-y-px;
   }
 
   .btn-primary:active {
-    background-color: #a10323;
-    border-color: #a10323;
-    transform: translateY(0);
+    @apply active:bg-[#a10323] active:border-[#a10323] active:translate-y-0;
   }
 
   /* === OUTLINE BUTTON === */
   .btn-outline {
-    background-color: transparent;
-    color: var(--color-netinera-dark);
-    border-color: var(--color-netinera-dark);
-
-    /* Compensate for 2px border in padding */
-    padding: 0 22px;
+    @apply bg-transparent text-[var(--color-netinera-dark)] border-[var(--color-netinera-dark)] px-[22px];
+    /* padding: 0 22px; to compensate for 2px border, base px-6 (24px) -> 22px */
   }
 
   .btn-outline:hover {
-    background-color: var(--color-netinera-dark);
-    color: white;
-    transform: translateY(-1px);
+    @apply hover:bg-[var(--color-netinera-dark)] hover:text-white hover:-translate-y-px;
   }
 
   .btn-outline:active {
-    background-color: #0f1419;
-    border-color: #0f1419;
-    transform: translateY(0);
+    @apply active:bg-[#0f1419] active:border-[#0f1419] active:translate-y-0;
   }
 
   /* === SECONDARY BUTTON === */
   .btn-secondary {
-    background-color: var(--color-netinera-primary);
-    color: white;
-    border-color: var(--color-netinera-primary);
+    @apply bg-[var(--color-netinera-primary)] text-white border-[var(--color-netinera-primary)];
   }
 
   .btn-secondary:hover {
-    background-color: #005a52;
-    border-color: #005a52;
-    transform: translateY(-1px);
+    @apply hover:bg-[#005a52] hover:border-[#005a52] hover:-translate-y-px;
   }
 
   .btn-secondary:active {
-    background-color: #004a44;
-    border-color: #004a44;
-    transform: translateY(0);
+    @apply active:bg-[#004a44] active:border-[#004a44] active:translate-y-0;
   }
 
   /* === GHOST BUTTON === */
   .btn-ghost {
-    background-color: transparent;
-    color: var(--color-netinera-dark);
-    border-color: transparent;
+    @apply bg-transparent text-[var(--color-netinera-dark)] border-transparent;
   }
 
   .btn-ghost:hover {
-    background-color: var(--color-netinera-light);
-    transform: translateY(-1px);
+    @apply hover:bg-[var(--color-netinera-light)] hover:-translate-y-px;
   }
 
   .btn-ghost:active {
-    background-color: #e7e5e4;
-    transform: translateY(0);
+    @apply active:bg-stone-200 active:translate-y-0; /* #e7e5e4 is stone-200 */
   }
 
   /* === WHITE BUTTON === */
   .btn-white {
-    background-color: white;
-    color: var(--color-netinera-dark);
-    border-color: white;
+    @apply bg-white text-[var(--color-netinera-dark)] border-white;
   }
 
   .btn-white:hover {
-    background-color: #f8f8f8;
-    border-color: #f8f8f8;
-    transform: translateY(-1px);
+    @apply hover:bg-[#f8f8f8] hover:border-[#f8f8f8] hover:-translate-y-px;
   }
 
   .btn-white:active {
-    background-color: #e8e8e8;
-    border-color: #e8e8e8;
-    transform: translateY(0);
+    @apply active:bg-[#e8e8e8] active:border-[#e8e8e8] active:translate-y-0;
   }
 
   /* === DARK BUTTON === */
   .btn-dark {
-    background-color: var(--color-netinera-dark);
-    color: white;
-    border-color: var(--color-netinera-dark);
+    @apply bg-[var(--color-netinera-dark)] text-white border-[var(--color-netinera-dark)];
   }
 
   .btn-dark:hover {
-    background-color: #0f1419;
-    border-color: #0f1419;
-    transform: translateY(-1px);
+    @apply hover:bg-[#0f1419] hover:border-[#0f1419] hover:-translate-y-px;
   }
 
   .btn-dark:active {
-    background-color: #000;
-    border-color: #000;
-    transform: translateY(0);
+    @apply active:bg-black active:border-black active:translate-y-0;
   }
 
   /* === BUTTON SIZES === */
   .btn-size-sm {
-    height: 24px;
-    padding: 0 16px;
-    font-size: 12px;
+    @apply h-6 px-4 text-xs;
   }
 
   .btn-size-sm.btn-outline {
-    padding: 0 14px;
+    @apply px-[14px]; /* Original: 0 14px */
   }
 
   .btn-size-md {
-    height: 32px;
-    padding: 0 24px;
+    @apply h-8 px-6; /* Original: 0 24px */
   }
 
   .btn-size-md.btn-outline {
-    padding: 0 22px;
+    @apply px-[22px]; /* Original: 0 22px */
   }
 
   .btn-size-lg {
-    height: 40px;
-    padding: 0 32px;
-    font-size: 16px;
+    @apply h-10 px-8 text-base; /* Original: 0 32px, font-size 16px */
   }
 
   .btn-size-lg.btn-outline {
-    padding: 0 30px;
+    @apply px-[30px]; /* Original: 0 30px */
   }
 
   .btn-size-xl {
-    height: 48px;
-    padding: 0 40px;
-    font-size: 18px;
+    @apply h-12 px-10 text-lg; /* Original: 0 40px, font-size 18px */
   }
 
   .btn-size-xl.btn-outline {
-    padding: 0 38px;
+    @apply px-[38px]; /* Original: 0 38px */
   }
 
   /* === BUTTON STATES === */
@@ -198,9 +141,7 @@
   .btn-ghost:disabled,
   .btn-white:disabled,
   .btn-dark:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
   }
 
   /* === FOCUS STATES - must come before disabled:hover === */
@@ -210,8 +151,7 @@
   .btn-ghost:focus-visible,
   .btn-white:focus-visible,
   .btn-dark:focus-visible {
-    outline: 2px solid var(--color-netinera-primary);
-    outline-offset: 2px;
+    @apply focus-visible:outline-2 focus-visible:outline-[var(--color-netinera-primary)] focus-visible:outline-offset-2;
   }
 
   .btn-primary:disabled:hover,
@@ -220,25 +160,19 @@
   .btn-ghost:disabled:hover,
   .btn-white:disabled:hover,
   .btn-dark:disabled:hover {
-    transform: none;
+    @apply disabled:hover:transform-none; /* Ensures transform is none even if base hover had one */
   }
 
   /* === LOADING STATE === */
   .btn-loading {
-    position: relative;
-    color: transparent;
+    @apply relative text-transparent;
   }
 
   .btn-loading::after {
     content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border: 2px solid transparent;
-    border-top: 2px solid currentcolor;
-    border-radius: 50%;
+    @apply absolute w-4 h-4 border-2 border-transparent border-t-white rounded-full; /* Assuming spinner color is white */
     animation: btn-spin 1s linear infinite;
-    color: white;
+    /* currentcolor for border-top can be tricky if button text is transparent. Explicitly set. */
   }
 
   @keyframes btn-spin {
@@ -248,149 +182,116 @@
 
   /* === ICON BUTTONS === */
   .btn-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    @apply inline-flex items-center justify-center;
   }
 
-  .btn-icon svg {
+  .btn-icon svg { /* These are direct style attributes, not Tailwind classes */
     width: 16px;
     height: 16px;
     stroke-width: 1.25;
   }
 
   .btn-icon-only {
-    width: 28px;
-    padding: 0;
+    @apply w-7 p-0; /* 28px */
   }
 
   .btn-icon-only.btn-size-sm {
-    width: 24px;
-    height: 24px;
+    @apply w-6 h-6; /* 24px */
   }
 
   .btn-icon-only.btn-size-lg {
-    width: 40px;
-    height: 40px;
+    @apply w-10 h-10; /* 40px */
   }
 
   .btn-icon-only.btn-size-xl {
-    width: 48px;
-    height: 48px;
+    @apply w-12 h-12; /* 48px */
   }
 
   /* === FULL WIDTH BUTTON === */
   .btn-full {
-    width: 100%;
+    @apply w-full;
   }
 
   /* === TEXT LINK STYLES === */
   .text-link {
-    /* Base link structure */
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-
-    /* Typography */
-    font-family: var(--font-family-sans);
-    font-weight: var(--font-weight-normal);
-    font-size: var(--font-size-body-base);
-    line-height: var(--line-height-body-base);
-    text-decoration: underline;
-    text-underline-offset: 4px;
-
-    /* Colors */
-    color: var(--color-netinera-primary);
-
-    /* Transitions */
-    transition: all 0.2s ease;
-    cursor: pointer;
+    @apply inline-flex items-center gap-1 font-[var(--font-family-sans)] font-[var(--font-weight-normal)] text-[var(--font-size-body-base)] leading-[var(--line-height-body-base)] underline underline-offset-4 text-[var(--color-netinera-primary)] transition-all duration-200 ease-in-out cursor-pointer;
   }
 
   .text-link:hover {
-    color: #005a52;
-    text-decoration-thickness: 2px;
+    @apply text-[#005a52] decoration-2; /* #005a52 is darker primary */
   }
 
   .text-link:active {
-    color: #004a44;
+    @apply text-[#004a44]; /* Even darker primary */
   }
 
   .text-link:focus-visible {
-    outline: 2px solid var(--color-netinera-primary);
-    outline-offset: 2px;
-    border-radius: 4px;
+    @apply outline-2 outline-[var(--color-netinera-primary)] outline-offset-2 rounded-sm;
   }
 
   /* === TEXT LINK VARIANTS === */
   .text-link-secondary {
-    color: var(--color-netinera-secondary);
+    @apply text-[var(--color-netinera-secondary)];
   }
 
   .text-link-secondary:hover {
-    color: #c4042a;
+    @apply text-[#c4042a]; /* Darker secondary */
   }
 
   .text-link-secondary:active {
-    color: #a10323;
+    @apply text-[#a10323]; /* Even darker secondary */
   }
 
   .text-link-light {
-    color: white;
+    @apply text-white;
   }
 
   .text-link-light:hover {
-    color: #f0f0f0;
+    @apply text-gray-200; /* Lighter white/gray */
   }
 
   .text-link-muted {
-    color: var(--color-netinera-gray-medium);
+    @apply text-[var(--color-netinera-gray-medium)];
   }
 
   .text-link-muted:hover {
-    color: var(--color-netinera-dark);
+    @apply text-[var(--color-netinera-dark)];
   }
 
   /* === TEXT LINK SIZES === */
   .text-link-sm {
-    font-size: var(--font-size-body-sm);
-    line-height: var(--line-height-body-sm);
+    @apply text-[var(--font-size-body-sm)] leading-[var(--line-height-body-sm)];
   }
 
   .text-link-lg {
-    font-size: var(--font-size-body-lg);
-    line-height: var(--line-height-body-lg);
+    @apply text-[var(--font-size-body-lg)] leading-[var(--line-height-body-lg)];
   }
 
   /* === TEXT LINK ICONS === */
   .text-link-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    @apply inline-flex items-center justify-center;
   }
 
-  .text-link-icon svg {
+  .text-link-icon svg { /* Direct style attributes */
     width: 16px;
     height: 16px;
     stroke-width: 1.25;
   }
 
-  .text-link-sm .text-link-icon svg {
+  .text-link-sm .text-link-icon svg { /* Direct style attributes */
     width: 14px;
     height: 14px;
   }
 
-  .text-link-lg .text-link-icon svg {
+  .text-link-lg .text-link-icon svg { /* Direct style attributes */
     width: 18px;
     height: 18px;
   }
 
   /* === EXTERNAL LINK INDICATOR === */
   .text-link-external::after {
-    content: '↗';
-    font-size: 0.8em;
-    margin-left: 4px;
-    vertical-align: super;
+    content: '↗'; /* Keep custom content */
+    @apply text-[0.8em] ml-1 align-super;
   }
 
   /* === ACCESSIBILITY & RESPONSIVE === */
@@ -402,24 +303,23 @@
     .btn-white,
     .btn-dark,
     .text-link {
-      transition: none;
+      @apply motion-reduce:transition-none;
     }
 
     .btn-loading::after {
-      animation: none;
+      @apply motion-reduce:animate-none;
     }
   }
 
-  @media (width <= 767px) {
+  @media (width <= 767px) { /* Max width for netinera-mobile or sm */
     .btn-group-mobile-stack {
-      flex-direction: column;
-      gap: 8px;
+      @apply flex-col gap-2;
     }
 
     .btn-group-mobile-stack .btn-primary,
     .btn-group-mobile-stack .btn-outline,
     .btn-group-mobile-stack .btn-secondary {
-      width: 100%;
+      @apply w-full;
     }
   }
 }

@@ -9,7 +9,7 @@ textarea,
 .form-input,
 .form-select,
 .form-textarea {
-  @apply block w-full px-1.5 h-[3rem];
+  @apply block w-full px-[6px] h-[3rem]; /* px-1.5 -> px-[6px] */
   @apply text-black border rounded-sm border-neutral-100;
   @apply transition-all duration-500;
 
@@ -36,7 +36,7 @@ textarea,
 /* === Textarea */
 textarea,
 .form-textarea {
-  @apply h-40 p-1.75;
+  @apply h-40 p-[7px]; /* p-1.75 -> p-[7px] */
 }
 
 /* === Select */

@@ -6,63 +6,45 @@ header .ce-headline-center {
 
 
 .main-header {
-  @apply py-3 mb-5 lg:mb-10;
+  @apply py-3 mb-5 lg:mb-10; /* Using lg: for 1024px+ as per typical Tailwind, adjust if netinera-desktop is strictly required here by project setup */
   @apply border-b border-neutral-50;
 }
 
+/* Default state for header-main-navigation, applies from netinera-desktop upwards due to media query */
 .header-main-navigation {
-    /* Desktop scroll states - only apply on lg and above */
-    @media (width >= 1024px) {
-      &.scrolled {
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        z-index: 50;
-        width: min(1280px, calc(100vw - 40px));
-        height: 80px;
-        transform: translateX(-50%);
+  /* Styles for non-scrolled, default desktop state */
+  @apply netinera-desktop:absolute netinera-desktop:w-full netinera-desktop:top-0 netinera-desktop:left-0 netinera-desktop:z-[6];
+  @apply netinera-desktop:rounded-2xl netinera-desktop:sm:rounded-xl; /* sm:rounded-xl within netinera-desktop seems odd, usually it's larger breakpoint modifying smaller. Assuming it means sm variant of rounding for main-menu at desktop. */
+}
 
-        /* Add subtle background change on scroll */
-        .main-menu {
-          @apply rounded-2xl sm:rounded-xl;
-        }
-      }
+/* Scroll states for header-main-navigation - only apply on netinera-desktop and above */
+@media (width >= 1024px) { /* Corresponds to netinera-desktop */
+  .header-main-navigation.scrolled {
+    @apply fixed top-[10px] left-1/2 z-50 h-[80px] -translate-x-1/2;
+    width: min(1280px, calc(100vw - 40px)); /* Custom width remains */
 
-      &.hidden-up {
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        z-index: 50;
-        width: min(1340px, calc(100vw - 40px));
-        height: 80px;
-        transform: translateX(-50%) translateY(-120%);
+    /* Add subtle background change on scroll */
+    .main-menu {
+      @apply rounded-2xl sm:rounded-xl; /* This sm: here still refers to Tailwind's sm breakpoint, not a size variant of the menu */
+    }
+  }
 
-        .main-menu {
-          @apply rounded-2xl sm:rounded-xl;
-        }
+  .header-main-navigation.hidden-up {
+    @apply fixed top-[10px] left-1/2 z-50 h-[80px] -translate-x-1/2 -translate-y-[120%];
+    width: min(1340px, calc(100vw - 40px)); /* Custom width remains */
 
-      }
+    .main-menu {
+      @apply rounded-2xl sm:rounded-xl;
+    }
   }
 }
 
-@media (width >= 1024px) {
-.header-main-navigation {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 6;
-
-    @apply rounded-2xl sm:rounded-xl;
-  }
-
-  .main-page,
-  .hero-topic-wrapper,
-  .hero-primary,
-  .hero-simple {
-    position: relative;
-    padding-top: 105px;
-  }
+/* Padding adjustment for fixed header, applies from netinera-desktop upwards */
+.main-page,
+.hero-topic-wrapper,
+.hero-primary,
+.hero-simple {
+  @apply netinera-desktop:relative netinera-desktop:pt-[105px];
 }
 
 
