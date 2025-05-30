@@ -1,0 +1,46 @@
+/* === Page Basics */
+
+body {
+  @apply antialiased text-black; /* TODO: Global Font here */
+  @apply overflow-x-hidden;
+}
+
+
+/* ==========================
+ * === ENHANCED FOCUS STYLES
+ * ========================== */
+
+/* Enhanced focus styles for better accessibility with smooth scrolling */
+[tabindex]:focus {
+  outline: 2px solid var(--color-primary-400);
+  outline-offset: 2px;
+  scroll-margin-top: 5rem;
+}
+
+/* Focus styles for skip links - base selector first */
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--color-primary-600);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.375rem; /* 6px - equivalent to borderRadius.md */
+  transform: translateY(-100vh);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--color-primary-600);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.375rem; /* 6px - equivalent to borderRadius.md */
+  transform: translateY(0);
+}

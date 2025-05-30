@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Image Slider Component -->
+<div class="mx-auto container">
+    <div class="relative ce-slider ce-slider-image ce-slide-storybook">
+        <!-- Swiper Container -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 01: Nature Scene -->
+                <div class="swiper-slide">
+                    <img
+                        src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3"
+                        srcset="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=328&h=185&fit=crop 328w,
+                                https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=768&h=434&fit=crop 768w"
+                        sizes="(max-width: 768px) 328px, 768px"
+                        alt="Example image: Nature scene with dramatic sky"
+                        class="rounded-3xl md:rounded-5xl w-full md:w-[768px] h-[185px] md:h-[434px] object-cover"
+                        loading="eager"
+                        fetchpriority="high"
+                    />
+                    <div class="mx-auto mt-5 w-full md:w-[568px] font-caption-sm-regular-all-bp text-caption-sm-regular-all-bp text-gray-800 text-center leading-caption-sm-regular-all-bp">
+                        Caption Text
+                    </div>
+                </div>
+
+                <!-- Slide 02: Urban Architecture -->
+                <div class="swiper-slide">
+                    <img
+                        src="https://images.unsplash.com/photo-1531968455001-5c5272a41129"
+                        srcset="https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=328&h=185&fit=crop 328w,
+                                https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=768&h=434&fit=crop 768w"
+                        sizes="(max-width: 768px) 328px, 768px"
+                        alt="Example image: Modern urban architecture"
+                        class="rounded-3xl md:rounded-5xl w-full md:w-[768px] h-[185px] md:h-[434px] object-cover"
+                        loading="lazy"
+                    />
+                    <div class="mx-auto mt-5 w-full md:w-[568px] font-caption-sm-regular-all-bp text-caption-sm-regular-all-bp text-gray-800 text-center leading-caption-sm-regular-all-bp">
+                        Modern Urban Architecture
+                    </div>
+                </div>
+
+                <!-- Slide 03: Electric Mobility -->
+                <div class="swiper-slide">
+                    <img
+                        src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6"
+                        srcset="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=328&h=185&fit=crop 328w,
+                                https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=768&h=434&fit=crop 768w"
+                        sizes="(max-width: 768px) 328px, 768px"
+                        alt="Example image: Electric mobility"
+                        class="rounded-3xl md:rounded-5xl w-full md:w-[768px] h-[185px] md:h-[434px] object-cover"
+                        loading="lazy"
+                    />
+                    <div class="mx-auto mt-5 w-full md:w-[568px] font-caption-sm-regular-all-bp text-caption-sm-regular-all-bp text-gray-800 text-center leading-caption-sm-regular-all-bp">
+                        Electric Mobility
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="hidden top-1/2 z-10 absolute inset-x-0 md:flex justify-between items-center px-4 md:px-6 -translate-y-1/2 pointer-events-none">
+                <div class="flex justify-start items-center w-12 h-12 pointer-events-auto">
+                    <button
+                        class="flex justify-center items-center bg-gray-200 hover:bg-gray-300 rounded-xl w-10 h-10 cursor-pointer swiper-button-prev"
+                        type="button"
+                        aria-label="Previous slide"
+                    >
+                        <span class="relative overflow-visible icon shrink-0" aria-hidden="true">
+                            <i class="icon-chevron-left text-gray-800"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="flex justify-end items-center w-12 h-12 pointer-events-auto">
+                    <button
+                        class="flex justify-center items-center bg-gray-200 hover:bg-gray-300 focus:bg-white/90 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 w-10 h-10 transition-all duration-300 cursor-pointer swiper-button-next"
+                        type="button"
+                        aria-label="Next slide"
+                    >
+                        <span class="relative overflow-visible icon shrink-0" aria-hidden="true">
+                            <i class="icon-chevron-right text-gray-800"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pagination Indicators -->
+            <div
+                class="absolute flex flex-row justify-center items-start gap-1.5 mx-auto mt-5 swiper-pagination"
+                role="group"
+                aria-label="Slider navigation"
+            >
+            </div>
+        </div>
+
+        <!-- Accessibility Skip Link -->
+        <a href="#content-after-slider" class="sr-only focus:not-sr-only focus:z-50 focus:absolute focus:bg-white focus:p-2 focus:text-primary">
+            Skip image gallery
+        </a>
+    </div>
+    <div id="content-after-slider" tabindex="-1"></div>
+</div>

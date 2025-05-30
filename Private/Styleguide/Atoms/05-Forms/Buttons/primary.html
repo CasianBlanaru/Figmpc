@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primary Button - Netinera Styleguide</title>
+    <link rel="stylesheet" href="../../../../CSS/output.css">
+</head>
+<body class="bg-stone-100 p-8 font-sans">
+    
+    <div class="mx-auto max-w-4xl">
+        <!-- Component Header -->
+        <header class="mb-8">
+            <h1 class="mb-2 text-netinera-dark headline-h2">Primary Button</h1>
+            <p class="text-netinera-gray-medium body-base">
+                Primary action button - Figma Node: 1870-21501
+            </p>
+        </header>
+
+        <!-- Primary Button Examples -->
+        <section class="bg-white mb-8 p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">Standard Primary Button</h2>
+            
+            <div class="space-y-6">
+                <!-- Default -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Default</h3>
+                    <button class="btn-primary">
+                        <span class="btn-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </span>
+                        PRIMARY BUTTON
+                    </button>
+                </div>
+
+                <!-- States -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">States</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="btn-primary">Normal</button>
+                        <button class="btn-primary btn-loading">Loading</button>
+                        <button class="btn-primary" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <!-- Sizes -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Sizes</h3>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <button class="btn-size-sm btn-primary">Small</button>
+                        <button class="btn-primary">Medium</button>
+                        <button class="btn-size-lg btn-primary">Large</button>
+                        <button class="btn-size-xl btn-primary">Extra Large</button>
+                    </div>
+                </div>
+
+                <!-- With Icons -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">With Icons</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="btn-primary">
+                            <span class="btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 5v14M5 12h14"/>
+                                </svg>
+                            </span>
+                            ADD ITEM
+                        </button>
+                        
+                        <button class="btn-primary btn-icon-only">
+                            <span class="btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 5v14M5 12h14"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Full Width -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Full Width</h3>
+                    <button class="btn-primary btn-full">FULL WIDTH BUTTON</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Example -->
+        <section class="bg-white p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">HTML Code</h2>
+            <pre class="bg-gray-100 p-4 rounded overflow-x-auto text-sm"><code>&lt;!-- Basic Primary Button --&gt;
+&lt;button class="btn-primary"&gt;
+    PRIMARY BUTTON
+&lt;/button&gt;
+
+&lt;!-- Primary Button with Icon --&gt;
+&lt;button class="btn-primary"&gt;
+    &lt;span class="btn-icon"&gt;
+        &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;
+            &lt;path d="M9 12l2 2 4-4"/&gt;
+        &lt;/svg&gt;
+    &lt;/span&gt;
+    PRIMARY BUTTON
+&lt;/button&gt;
+
+&lt;!-- Different Sizes --&gt;
+&lt;button class="btn-size-sm btn-primary"&gt;Small&lt;/button&gt;
+&lt;button class="btn-primary"&gt;Medium (Default)&lt;/button&gt;
+&lt;button class="btn-size-lg btn-primary"&gt;Large&lt;/button&gt;
+&lt;button class="btn-size-xl btn-primary"&gt;Extra Large&lt;/button&gt;
+
+&lt;!-- States --&gt;
+&lt;button class="btn-primary btn-loading"&gt;Loading&lt;/button&gt;
+&lt;button class="btn-primary" disabled&gt;Disabled&lt;/button&gt;</code></pre>
+        </section>
+    </div>
+
+    <!-- JavaScript for demo interactions -->
+    <script>
+        // Example button interactions
+        document.querySelectorAll('.btn-primary:not([disabled]):not(.btn-loading)').forEach(button => {
+            button.addEventListener('click', function() {
+                console.log('Primary button clicked:', this.textContent);
+            });
+        });
+    </script>
+</body>
+</html> 

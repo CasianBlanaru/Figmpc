@@ -1,0 +1,806 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Section Route Map specific styles */
+        .section-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .map-animate {
+            animation: mapSlideIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes mapSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* Section Route Map Layout (Figma Node 1777-34827) */
+        .section-route-map {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: stretch;
+            gap: 64px; /* layout_DCYB8B */
+            padding: 0px 56px 80px;
+            width: 100%;
+        }
+        
+        /* Body Text SM XL Styles */
+        .body-text-sm-xl {
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch;
+            align-items: stretch;
+            width: 568px; /* layout_URLKOA */
+        }
+        
+        .body-text-content {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.6666666666666667em; /* style_LC7O1G */
+            text-align: left;
+            color: #1E2939; /* fill_AA6EZO */
+            width: 100%; /* layout_U3B7LA */
+        }
+        
+        /* Layout Group Styles */
+        .map-layout-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: stretch;
+            gap: 40px; /* layout_5LPGXF */
+            width: 100%;
+        }
+        
+        /* Section Header SM Center Styles */
+        .section-header-sm-center {
+            display: flex;
+            flex-direction: column;
+            width: 568px; /* layout_P333SN */
+        }
+        
+        .map-section-title {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 1.3333333333333333em; /* style_B69V4E */
+            text-align: center;
+            color: #1E2939; /* fill_AA6EZO */
+            width: 100%; /* layout_U3B7LA */
+        }
+        
+        /* Map Container Styles */
+        .map-container {
+            background: #F5F5F4; /* fill_HQFFEH */
+            border-radius: 64px;
+            align-self: stretch;
+            width: 100%; /* layout_OAZIE4 */
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Interactive Map Styles */
+        .route-map {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #F5F5F4 0%, #E7E5E4 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Map Points */
+        .map-point {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #DD052B;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(221, 5, 43, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .map-point:hover {
+            transform: scale(1.3);
+            box-shadow: 0 4px 12px rgba(221, 5, 43, 0.5);
+        }
+        
+        .map-point.active {
+            transform: scale(1.2);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(221, 5, 43, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(221, 5, 43, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(221, 5, 43, 0); }
+        }
+    
+        
+        /* Map Labels */
+        .map-label {
+            position: absolute;
+            background: rgba(30, 41, 57, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+            pointer-events: none;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 20;
+        }
+        
+        .map-label.visible {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-10px);
+        }
+        
+        .map-label::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid transparent;
+            border-top-color: rgba(30, 41, 57, 0.9);
+        }
+        
+        /* Map Center Text */
+        .map-center-text {
+            text-align: center;
+            color: #1E2939;
+            opacity: 0.6;
+        }
+        
+        .map-center-title {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 600;
+            font-size: 32px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        
+        .map-center-subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1279px) {
+            .section-route-map {
+                padding: 0px 32px 64px;
+                gap: 56px;
+            }
+            
+            .body-text-sm-xl,
+            .section-header-sm-center {
+                width: 100%;
+                max-width: 568px;
+            }
+            
+            .map-container {
+                border-radius: 48px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .section-route-map {
+                padding: 0px 16px 48px;
+                gap: 40px;
+            }
+            
+            .body-text-content {
+                font-size: 16px;
+                line-height: 1.6em;
+            }
+            
+            .map-section-title {
+                font-size: 20px;
+                line-height: 1.4em;
+            }
+            
+            .map-container {
+                border-radius: 32px;
+                min-height: 300px;
+            }
+            
+            .route-map {
+                height: 300px;
+            }
+            
+            .map-center-title {
+                font-size: 24px;
+            }
+            
+            .map-center-subtitle {
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 479px) {
+            .section-route-map {
+                padding: 0px 16px 32px;
+                gap: 32px;
+            }
+            
+            .body-text-content {
+                font-size: 15px;
+            }
+            
+            .map-section-title {
+                font-size: 18px;
+            }
+            
+            .map-container {
+                border-radius: 24px;
+                min-height: 250px;
+            }
+            
+            .route-map {
+                height: 250px;
+            }
+            
+            .map-center-title {
+                font-size: 20px;
+            }
+            
+            .map-center-subtitle {
+                font-size: 12px;
+            }
+            
+            .map-point {
+                width: 12px;
+                height: 12px;
+                border: 2px solid white;
+            }
+            
+            .map-label {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    
+        
+        @keyframes lineFlow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        
+        /* Loading states */
+        .map-loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Component Library</div>
+            <h1 class="headline-h1 spacing-headline-body-h1">
+                Section Route Map
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Pixelgenaue responsive Section-Route-Map-Komponente basierend auf Figma Node 1777-34827. Interaktive Streckennetz-Karte mit Body Text und Section Header.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Complete Section Implementation -->
+            <section class="section-fade-in">
+                <div class="overline-sm spacing-overline-h2">Figma Node 1777-34827</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Section Route Map
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Komplette Section mit Body Text, "Unser Streckennetz" Header und interaktiver Karten-Container. Exakte Umsetzung der Figma-Spezifikationen mit 568px Content-Breite.
+                </p>
+                
+                <div class="overflow-hidden">
+                    <!-- Section Implementation -->
+                    <div class="section-route-map">
+                        
+                        <!-- Body Text SM XL -->
+                        <div class="body-text-sm-xl">
+                            <div class="body-text-content">
+                                In acht Bundesländern sind unsere Konzerngesellschaften mit ihren Streckennetzen vertreten. An 13 Standorten unterhalten wir Werkstätten für die Instandhaltung. Und in Niedersachsen sowie im Münsterland sind wir mit eigenen Busgesellschaften präsent.
+                            </div>
+                        </div>
+                        
+                        <!-- Layout Group -->
+                        <div class="map-layout-group map-animate">
+                            
+                            <!-- Section Header SM Center -->
+                            <div class="section-header-sm-center">
+                                <h3 class="map-section-title">Unser Streckennetz</h3>
+                            </div>
+                            
+                            <!-- Map Container -->
+                            <div class="map-container">
+                                <div class="route-map" id="routeMap">
+                                    
+                                    <!-- Map Center Text -->
+                                    <div class="map-center-text">
+                                        <div class="map-center-title">NETINERA</div>
+                                        <div class="map-center-subtitle">Streckennetz Deutschland</div>
+                                    </div>
+                                    
+                                    <!-- Route Points (positioned dynamically) -->
+                                    <div class="map-point" data-city="Hamburg" style="top: 20%; left: 45%;"></div>
+                                    <div class="map-point" data-city="Berlin" style="top: 25%; left: 65%;"></div>
+                                    <div class="map-point" data-city="Hannover" style="top: 35%; left: 40%;"></div>
+                                    <div class="map-point" data-city="Dresden" style="top: 45%; left: 70%;"></div>
+                                    <div class="map-point" data-city="Köln" style="top: 55%; left: 20%;"></div>
+                                    <div class="map-point" data-city="Frankfurt" style="top: 60%; left: 35%;"></div>
+                                    <div class="map-point" data-city="Nürnberg" style="top: 70%; left: 50%;"></div>
+                                    <div class="map-point" data-city="München" style="top: 80%; left: 55%;"></div>
+                                    
+                    
+                                    <!-- Map Labels (hidden by default) -->
+                                    <div class="map-label" data-label="Hamburg" style="top: 15%; left: 45%;">Hamburg<br><small>metronom</small></div>
+                                    <div class="map-label" data-label="Berlin" style="top: 20%; left: 65%;">Berlin<br><small>ODEG</small></div>
+                                    <div class="map-label" data-label="Hannover" style="top: 30%; left: 40%;">Hannover<br><small>metronom</small></div>
+                                    <div class="map-label" data-label="Dresden" style="top: 40%; left: 70%;">Dresden<br><small>ODEG</small></div>
+                                    <div class="map-label" data-label="Köln" style="top: 50%; left: 20%;">Köln<br><small>National Express</small></div>
+                                    <div class="map-label" data-label="Frankfurt" style="top: 55%; left: 35%;">Frankfurt<br><small>VIAS</small></div>
+                                    <div class="map-label" data-label="Nürnberg" style="top: 65%; left: 50%;">Nürnberg<br><small>agilis</small></div>
+                                    <div class="map-label" data-label="München" style="top: 75%; left: 55%;">München<br><small>BRB</small></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Code Example -->
+                    <div class="p-netinera-element-lg">
+                        <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="section-route-map"&gt;
+  &lt;!-- Body Text SM XL --&gt;
+  &lt;div class="body-text-sm-xl"&gt;
+    &lt;div class="body-text-content"&gt;
+      In acht Bundesländern sind unsere Konzerngesellschaften mit ihren 
+      Streckennetzen vertreten. An 13 Standorten unterhalten wir Werkstätten 
+      für die Instandhaltung. Und in Niedersachsen sowie im Münsterland sind 
+      wir mit eigenen Busgesellschaften präsent.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Layout Group --&gt;
+  &lt;div class="map-layout-group"&gt;
+    &lt;!-- Section Header SM Center --&gt;
+    &lt;div class="section-header-sm-center"&gt;
+      &lt;h3 class="map-section-title"&gt;Unser Streckennetz&lt;/h3&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Map Container --&gt;
+    &lt;div class="map-container"&gt;
+      &lt;div class="route-map"&gt;
+        &lt;div class="map-center-text"&gt;
+          &lt;div class="map-center-title"&gt;NETINERA&lt;/div&gt;
+          &lt;div class="map-center-subtitle"&gt;Streckennetz Deutschland&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- Interactive Route Points --&gt;
+        &lt;div class="map-point" data-city="Hamburg"&gt;&lt;/div&gt;
+        &lt;div class="map-point" data-city="Berlin"&gt;&lt;/div&gt;
+        &lt;!-- More route points... --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Implementation</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Code Implementation & Spezifikationen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- CSS Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">CSS Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Figma Node 1777-34827 Spezifikationen */
+
+/* Section Route Map Layout (layout_DCYB8B) */
+.section-route-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 64px;
+  padding: 0px 56px 80px;
+  width: 100%;
+}
+
+/* Body Text SM XL (layout_URLKOA) */
+.body-text-sm-xl {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 568px;
+}
+
+/* Body Text Content (style_LC7O1G) */
+.body-text-content {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6666666666666667em;
+  text-align: left;
+  color: #1E2939; /* fill_AA6EZO */
+  width: 100%; /* layout_U3B7LA */
+}
+
+/* Map Layout Group (layout_5LPGXF) */
+.map-layout-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Section Header SM Center (layout_P333SN) */
+.section-header-sm-center {
+  display: flex;
+  flex-direction: column;
+  width: 568px;
+}</code></pre>
+                    </div>
+                    
+                    <!-- Map Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Map Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Map Components */
+
+/* Map Section Title (style_B69V4E) */
+.map-section-title {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.3333333333333333em;
+  text-align: center;
+  color: #1E2939; /* fill_AA6EZO */
+  width: 100%; /* layout_U3B7LA */
+}
+
+/* Map Container (layout_OAZIE4) */
+.map-container {
+  background: #F5F5F4; /* fill_HQFFEH */
+  border-radius: 64px;
+  align-self: stretch;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Interactive Route Map */
+.route-map {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, #F5F5F4 0%, #E7E5E4 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Map Points */
+.map-point {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #DD052B;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(221, 5, 43, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+}</code></pre>
+                    </div>
+                    
+                    <!-- Interactive Features */
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Interactive Features</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Interactive Map Features */
+
+/* Map Labels */
+.map-label {
+  position: absolute;
+  background: rgba(30, 41, 57, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+/* Hover Effects */
+.map-point:hover {
+  transform: scale(1.3);
+  box-shadow: 0 4px 12px rgba(221, 5, 43, 0.5);
+}
+
+.map-point.active {
+  transform: scale(1.2);
+  animation: pulse 2s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(221, 5, 43, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(221, 5, 43, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(221, 5, 43, 0); }
+}
+
+@keyframes lineFlow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Section Route Map
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue Section-Route-Map-Komponente basierend auf Figma Node 1777-34827. Interaktive Streckennetz-Karte mit Body Text und Section Header. Vollständig responsive mit exakten Figma-Spezifikationen.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Layout: 64px Gap, 0×56px×80px Padding, 568px Content</span>
+                <span>|</span>
+                <span>Map: 64px Border Radius, 400px Height, Interactive Points</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Section Route Map with Interactive Features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get map elements
+            const routeMap = document.getElementById('routeMap');
+            const mapPoints = document.querySelectorAll('.map-point');
+            const mapLabels = document.querySelectorAll('.map-label');
+            
+            // Map point interactions
+            mapPoints.forEach((point, index) => {
+                const city = point.getAttribute('data-city');
+                const label = document.querySelector(`[data-label="${city}"]`);
+                
+                // Hover events
+                point.addEventListener('mouseenter', () => {
+                    point.classList.add('active');
+                    if (label) {
+                        label.classList.add('visible');
+                    }
+                });
+                
+                point.addEventListener('mouseleave', () => {
+                    point.classList.remove('active');
+                    if (label) {
+                        label.classList.remove('visible');
+                    }
+                
+                });
+                
+                // Click events
+                point.addEventListener('click', () => {
+                    console.log(`Navigate to ${city} route details`);
+                    
+                    // Add click animation
+                    point.style.animation = 'none';
+                    setTimeout(() => {
+                        point.style.animation = 'pulse 2s infinite';
+                    }, 100);
+                    
+                    // Simulate route data loading
+                    if (label) {
+                        const originalText = label.innerHTML;
+                        label.innerHTML = `${city}<br><small>Lädt...</small>`;
+                        
+                        setTimeout(() => {
+                            label.innerHTML = originalText;
+                        }, 2000);
+                    }
+                });
+            });
+        
+            
+            // Auto-activate points in sequence
+            function autoActivatePoints() {
+                mapPoints.forEach((point, index) => {
+                    setTimeout(() => {
+                        point.classList.add('active');
+                        
+                        setTimeout(() => {
+                            point.classList.remove('active');
+                        }, 1000);
+                    }, index * 500);
+                });
+            }
+            
+            // Start auto-activation after initial load
+            setTimeout(autoActivatePoints, 2000);
+            
+            // Repeat auto-activation every 10 seconds
+            setInterval(autoActivatePoints, 10000);
+            
+            // Touch support for mobile
+            mapPoints.forEach(point => {
+                let touchTimer;
+                
+                point.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    
+                    touchTimer = setTimeout(() => {
+                        point.dispatchEvent(new Event('mouseenter'));
+                    }, 100);
+                });
+                
+                point.addEventListener('touchend', (e) => {
+                    e.preventDefault();
+                    clearTimeout(touchTimer);
+                    
+                    point.dispatchEvent(new Event('click'));
+                    
+                    setTimeout(() => {
+                        point.dispatchEvent(new Event('mouseleave'));
+                    }, 2000);
+                });
+            });
+            
+            // Intersection Observer for map animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('map-animate');
+                        
+                        // Animate points with delay
+                        setTimeout(() => {
+                            mapPoints.forEach((point, index) => {
+                                setTimeout(() => {
+                                    point.style.animation = 'pulse 0.5s ease-out';
+                                    setTimeout(() => {
+                                        point.style.animation = '';
+                                    }, 500);
+                                }, index * 200);
+                            });
+                        }, 800);
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            observer.observe(routeMap);
+            
+            // Responsive indicator updates
+            function updateResponsiveIndicator() {
+                const indicator = document.querySelector('.responsive-indicator');
+                if (!indicator) return;
+                
+                const spans = indicator.querySelectorAll('span');
+                spans.forEach(span => span.style.display = 'none');
+                
+                if (window.innerWidth < 640) {
+                    spans[0].style.display = 'block';
+                } else if (window.innerWidth < 768) {
+                    spans[1].style.display = 'block';
+                } else if (window.innerWidth < 1024) {
+                    spans[2].style.display = 'block';
+                } else if (window.innerWidth < 1280) {
+                    spans[3].style.display = 'block';
+                } else {
+                    spans[4].style.display = 'block';
+                }
+            }
+            
+            window.addEventListener('resize', updateResponsiveIndicator);
+            updateResponsiveIndicator();
+        });
+    </script>
+</section>

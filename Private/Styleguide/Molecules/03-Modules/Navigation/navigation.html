@@ -1,0 +1,538 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Demo Container Styles */
+        .demo-nav-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(30, 41, 57, 0.1);
+        }
+        
+        .demo-nav-mobile-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(30, 41, 57, 0.1);
+        }
+    </style>
+</head>
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h1">Navigation Module</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                Navigation Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content text-netinera-white body-lg">
+                Responsive Navigation Component basierend auf Figma Node 1801-8462. Desktop (XL) 20px×56px Padding, Mobile (SM) 20px×16px Padding. Mit Netinera Logo und Mobile Menu Toggle.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Responsive Navigation -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Responsive Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Navigation - Automatische Desktop/Mobile Anpassung
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Responsive Navigation Example -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Automatische Layout-Anpassung</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Desktop: Horizontal Layout mit Logo links, Menu rechts → Mobile: Toggle Menu
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="demo-nav-container">
+                            <nav class="navigation-responsive">
+                                <div class="navigation-responsive-logo">
+                                    <div class="netinera-logo">
+                                        <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- Simplified Netinera Logo -->
+                                            <rect x="0" y="10" width="40" height="20" fill="#00685E"/>
+                                            <rect x="45" y="10" width="40" height="20" fill="#00685E"/>
+                                            <rect x="90" y="10" width="20" height="20" fill="#DD052B"/>
+                                            <text x="120" y="25" font-family="Titillium Web" font-weight="700" font-size="18" fill="#00685E">NETINERA</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="navigation-responsive-menu">
+                                    <a href="#" class="navigation-responsive-link active">Startseite</a>
+                                    <a href="#" class="navigation-responsive-link">Unternehmen</a>
+                                    <a href="#" class="navigation-responsive-link">Leistungen</a>
+                                    <a href="#" class="navigation-responsive-link">Karriere</a>
+                                    <a href="#" class="navigation-responsive-link">Presse</a>
+                                    <a href="#" class="navigation-responsive-link">Kontakt</a>
+                                    <a href="#" class="navigation-responsive-cta">Fahrplan</a>
+                                </div>
+                                
+                                <!-- Mobile Menu Toggle -->
+                                <button class="navigation-responsive-toggle" onclick="toggleMobileMenu('responsive-menu')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                                
+                                <!-- Mobile Menu -->
+                                <div class="navigation-responsive-mobile-menu" id="responsive-menu">
+                                    <a href="#" class="navigation-responsive-link active">Startseite</a>
+                                    <a href="#" class="navigation-responsive-link">Unternehmen</a>
+                                    <a href="#" class="navigation-responsive-link">Leistungen</a>
+                                    <a href="#" class="navigation-responsive-link">Karriere</a>
+                                    <a href="#" class="navigation-responsive-link">Presse</a>
+                                    <a href="#" class="navigation-responsive-link">Kontakt</a>
+                                    <a href="#" class="navigation-responsive-cta">Fahrplan</a>
+                                </div>
+                            </nav>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;!-- Responsive Navigation --&gt;
+&lt;nav class="navigation-responsive"&gt;
+  &lt;div class="navigation-responsive-logo"&gt;
+    &lt;div class="netinera-logo"&gt;
+      &lt;svg&gt;...&lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="navigation-responsive-menu"&gt;
+    &lt;a href="#" class="navigation-responsive-link active"&gt;Startseite&lt;/a&gt;
+    &lt;a href="#" class="navigation-responsive-link"&gt;Unternehmen&lt;/a&gt;
+    &lt;a href="#" class="navigation-responsive-cta"&gt;Fahrplan&lt;/a&gt;
+  &lt;/div&gt;
+  
+  &lt;button class="navigation-responsive-toggle"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+  
+  &lt;div class="navigation-responsive-mobile-menu"&gt;
+    &lt;!-- Mobile Menu Items --&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Desktop: Horizontal layout, 20px×56px padding --&gt;
+&lt;!-- Mobile: Toggle menu, 20px×16px padding --&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fixed Size Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Fixed Size Variants</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Navigation - Desktop XL & Mobile SM
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Desktop XL Navigation -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Desktop XL (1024px+)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Full Width • 20px×56px Padding • 200px Logo • 32px Menu Gap
+                        </h4>
+                        
+                        <div class="demo-nav-container">
+                            <nav class="navigation-xl">
+                                <div class="navigation-xl-logo">
+                                    <div class="netinera-logo">
+                                        <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0" y="10" width="40" height="20" fill="#00685E"/>
+                                            <rect x="45" y="10" width="40" height="20" fill="#00685E"/>
+                                            <rect x="90" y="10" width="20" height="20" fill="#DD052B"/>
+                                            <text x="120" y="25" font-family="Titillium Web" font-weight="700" font-size="18" fill="#00685E">NETINERA</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="navigation-xl-menu">
+                                    <a href="#" class="navigation-xl-link active">Startseite</a>
+                                    <a href="#" class="navigation-xl-link">Unternehmen</a>
+                                    <a href="#" class="navigation-xl-link">Leistungen</a>
+                                    <a href="#" class="navigation-xl-link">Karriere</a>
+                                    <a href="#" class="navigation-xl-link">Presse</a>
+                                    <a href="#" class="navigation-xl-link">Kontakt</a>
+                                    <a href="#" class="navigation-xl-cta">Fahrplan</a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Mobile SM Navigation -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Mobile SM (328px)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            328px Width • 20px×16px Padding • 150px Logo • Toggle Menu
+                        </h4>
+                        
+                        <div class="demo-nav-mobile-container">
+                            <nav class="navigation-sm">
+                                <div class="navigation-sm-logo">
+                                    <div class="netinera-logo">
+                                        <svg viewBox="0 0 150 32" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0" y="8" width="32" height="16" fill="#00685E"/>
+                                            <rect x="36" y="8" width="32" height="16" fill="#00685E"/>
+                                            <rect x="72" y="8" width="16" height="16" fill="#DD052B"/>
+                                            <text x="96" y="20" font-family="Titillium Web" font-weight="700" font-size="14" fill="#00685E">NETINERA</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <button class="navigation-sm-toggle" onclick="toggleMobileMenu('sm-menu')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                                
+                                <div class="navigation-sm-mobile-menu" id="sm-menu">
+                                    <a href="#" class="navigation-sm-link active">Startseite</a>
+                                    <a href="#" class="navigation-sm-link">Unternehmen</a>
+                                    <a href="#" class="navigation-sm-link">Leistungen</a>
+                                    <a href="#" class="navigation-sm-link">Karriere</a>
+                                    <a href="#" class="navigation-sm-link">Presse</a>
+                                    <a href="#" class="navigation-sm-link">Kontakt</a>
+                                    <a href="#" class="navigation-sm-cta">Fahrplan</a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Color Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Color Variants</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Navigation - Light, Dark & Primary Backgrounds
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Color Variants Grid -->
+                    <div class="space-y-netinera-element-md">
+                        
+                        <!-- Light Variant (Default) -->
+                        <div class="demo-nav-container">
+                            <nav class="navigation-responsive navigation-variant-light">
+                                <div class="navigation-responsive-logo">
+                                    <div class="netinera-logo">
+                                        <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0" y="10" width="40" height="20" fill="#00685E"/>
+                                            <rect x="45" y="10" width="40" height="20" fill="#00685E"/>
+                                            <rect x="90" y="10" width="20" height="20" fill="#DD052B"/>
+                                            <text x="120" y="25" font-family="Titillium Web" font-weight="700" font-size="18" fill="#00685E">NETINERA</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="navigation-responsive-menu">
+                                    <a href="#" class="navigation-responsive-link active">Light Background</a>
+                                    <a href="#" class="navigation-responsive-link">Menu Item</a>
+                                    <a href="#" class="navigation-responsive-cta">CTA</a>
+                                </div>
+                                <button class="navigation-responsive-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                            </nav>
+                        </div>
+                        
+                        <!-- Dark Variant -->
+                        <div class="demo-nav-container">
+                            <nav class="navigation-responsive navigation-variant-dark">
+                                <div class="navigation-responsive-logo">
+                                    <div class="netinera-logo">
+                                        <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0" y="10" width="40" height="20" fill="#FFFFFF"/>
+                                            <rect x="45" y="10" width="40" height="20" fill="#FFFFFF"/>
+                                            <rect x="90" y="10" width="20" height="20" fill="#DD052B"/>
+                                            <text x="120" y="25" font-family="Titillium Web" font-weight="700" font-size="18" fill="#FFFFFF">NETINERA</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="navigation-responsive-menu">
+                                    <a href="#" class="navigation-responsive-link active">Dark Background</a>
+                                    <a href="#" class="navigation-responsive-link">Menu Item</a>
+                                    <a href="#" class="navigation-responsive-cta">CTA</a>
+                                </div>
+                                <button class="navigation-responsive-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                            </nav>
+                        </div>
+                        
+                        <!-- Primary Variant -->
+                        <div class="demo-nav-container">
+                            <nav class="navigation-responsive navigation-variant-primary">
+                                <div class="navigation-responsive-logo">
+                                    <div class="netinera-logo">
+                                        <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0" y="10" width="40" height="20" fill="#FFFFFF"/>
+                                            <rect x="45" y="10" width="40" height="20" fill="#FFFFFF"/>
+                                            <rect x="90" y="10" width="20" height="20" fill="#DD052B"/>
+                                            <text x="120" y="25" font-family="Titillium Web" font-weight="700" font-size="18" fill="#FFFFFF">NETINERA</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="navigation-responsive-menu">
+                                    <a href="#" class="navigation-responsive-link active">Primary Background</a>
+                                    <a href="#" class="navigation-responsive-link">Menu Item</a>
+                                    <a href="#" class="navigation-responsive-cta">CTA</a>
+                                </div>
+                                <button class="navigation-responsive-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Specifications -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS Spezifikationen</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Navigation Component System
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Tailwind Utility Classes</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Vollständig in src/input.css integriert
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Verfügbare Klassen</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Responsive Navigation */
+.navigation-responsive
+.navigation-responsive-logo
+.navigation-responsive-menu
+.navigation-responsive-link
+.navigation-responsive-cta
+.navigation-responsive-toggle
+.navigation-responsive-mobile-menu
+
+/* Fixed Size Variants */
+.navigation-xl / .navigation-sm
+.navigation-xl-logo / .navigation-sm-logo
+.navigation-xl-menu / .navigation-sm-menu
+.navigation-xl-link / .navigation-sm-link
+.navigation-xl-cta / .navigation-sm-cta
+.navigation-sm-toggle
+.navigation-sm-mobile-menu
+
+/* Logo Components */
+.netinera-logo
+
+/* Color Variants */
+.navigation-variant-light
+.navigation-variant-dark
+.navigation-variant-primary</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Responsive Verhalten</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile (< 992px) */
+.navigation-responsive {
+  padding: 20px 16px;
+  position: relative;
+}
+
+.navigation-responsive-menu {
+  display: none; /* Hidden on mobile */
+}
+
+.navigation-responsive-toggle {
+  display: flex; /* Shown on mobile */
+}
+
+.navigation-responsive-mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+/* Desktop (≥ 992px) */
+.navigation-responsive {
+  padding: 20px 56px;
+}
+
+.navigation-responsive-menu {
+  display: flex; /* Shown on desktop */
+  margin-left: auto;
+  gap: 32px;
+}
+
+.navigation-responsive-toggle {
+  display: none; /* Hidden on desktop */
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Typography & Links</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Navigation Links */
+.navigation-responsive-link {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #1E2939;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navigation-responsive-link:hover {
+  background: #F5F5F4;
+  color: #00685E;
+}
+
+.navigation-responsive-link.active {
+  background: #00685E;
+  color: #FFFFFF;
+}
+
+/* CTA Button */
+.navigation-responsive-cta {
+  background: #DD052B;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 5.71%;
+  padding: 12px 24px;
+  border-radius: 8px;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Navigation Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Responsive Navigation Component mit automatischer Desktop/Mobile Anpassung. Desktop: 20px×56px Padding, 200px Logo, 32px Gap. Mobile: 20px×16px Padding, 150px Logo, Toggle Menu. Mit Netinera Logo und Color Variants.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle Functionality
+        function toggleMobileMenu(menuId) {
+            const menu = document.getElementById(menuId);
+            if (menu) {
+                menu.classList.toggle('active');
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menus = document.querySelectorAll('.navigation-responsive-mobile-menu, .navigation-sm-mobile-menu');
+            const toggles = document.querySelectorAll('.navigation-responsive-toggle, .navigation-sm-toggle');
+            
+            menus.forEach(menu => {
+                const isClickInside = menu.contains(event.target);
+                const isToggleClick = Array.from(toggles).some(toggle => toggle.contains(event.target));
+                
+                if (!isClickInside && !isToggleClick) {
+                    menu.classList.remove('active');
+                }
+            });
+        });
+
+        // Responsive indicator updates
+        function updateResponsiveIndicator() {
+            const indicator = document.querySelector('.responsive-indicator');
+            if (!indicator) return;
+            
+            const spans = indicator.querySelectorAll('span');
+            spans.forEach(span => span.style.display = 'none');
+            
+            if (window.innerWidth < 640) {
+                spans[0].style.display = 'block';
+            } else if (window.innerWidth < 768) {
+                spans[1].style.display = 'block';
+            } else if (window.innerWidth < 1024) {
+                spans[2].style.display = 'block';
+            } else if (window.innerWidth < 1280) {
+                spans[3].style.display = 'block';
+            } else {
+                spans[4].style.display = 'block';
+            }
+        }
+
+        window.addEventListener('resize', updateResponsiveIndicator);
+        window.addEventListener('load', updateResponsiveIndicator);
+        updateResponsiveIndicator();
+
+        console.log('Navigation Component Showcase loaded!');
+        console.log('Components: Responsive Navigation, Desktop XL, Mobile SM, Color Variants');
+    </script>
+
+</section>

@@ -1,0 +1,174 @@
+/* === Base */
+a,
+.link {
+  @apply text-black hover:text-black focus:text-black;
+  @apply hover:text-primary-700 focus:text-primary-700;
+  @apply transition-colors duration-500;
+
+  p & {
+    @apply underline underline-offset-4 hover:no-underline focus:no-underline;
+  }
+}
+
+/* === Variants */
+
+/* Quicklink */
+.link-quicklink {
+  @apply flex gap-1 flex-nowrap;
+  @apply text-left text-black hover:text-black focus:text-black;
+
+  > * {
+    @apply leading-1;
+  }
+
+  .icon {
+    @apply flex-shrink-0;
+
+    &::before {
+      @apply leading-1;
+    }
+  }
+
+  p {
+    @apply flex flex-col mb-0 gap-0.25 items-start;
+
+    span {
+      @apply relative pr-3;
+
+      &::after {
+        @apply absolute top-0 bottom-0 right-0;
+        @apply flex items-center;
+        @apply content-[var(--icon-arrow-right)];
+        @apply text-lg text-primary-700;
+        @apply transition-transform duration-500;
+
+        font-family: icomoon, sans-serif;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    p span::after {
+      @apply translate-x-1;
+    }
+  }
+}
+
+/* Link with Arrow */
+.link-arrow {
+  @apply inline-flex items-center gap-1 flex-nowrap;
+
+  &::after {
+    @apply content-[var(--icon-arrow-right)];
+    @apply text-lg text-primary-700 leading-1;
+    @apply transition-transform duration-500;
+
+    font-family: icomoon, sans-serif;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      @apply translate-x-1;
+    }
+  }
+}
+
+/* Link with Icon */
+.link-icon {
+  @apply inline-flex items-center gap-1;
+}
+
+/* Link Scroll Down */
+.link-scroll-down {
+  @apply absolute left-0 right-0;
+  @apply mx-auto -mt-12 lg:-mt-32;
+  @apply flex flex-col items-center;
+  @apply text-base text-white;
+  @apply focus:outline-none;
+
+  i {
+    &::before {
+      @apply text-white;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    @apply text-slate-200;
+  }
+}
+
+/* Link Anchor (Link for translated pages) */
+.link-anchor {
+  @apply -mb-5 lg:-mb-10;
+}
+
+@layer components {
+  .netinera-link {
+    color: #00685E; /* Netinera primary color */
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  
+  .netinera-link:hover,
+  .netinera-link:focus {
+    color: #DD052B; /* Netinera secondary color */
+  }
+  
+  .netinera-link-external {
+    position: relative;
+  }
+  
+  .netinera-link-external::after {
+    content: '↗';
+    margin-left: 4px;
+    font-size: 0.8em;
+  }
+  
+  .netinera-link-button {
+    @apply inline-block px-4 py-2 rounded;
+
+    background-color: #00685E; /* Netinera primary color */
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .netinera-link-button:hover {
+    background-color: #DD052B; /* Netinera secondary color */
+    transform: translateY(-1px);
+  }
+  
+  .netinera-link-secondary {
+    @apply text-lg;
+
+    color: #00685E; /* Netinera primary color */
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .netinera-link-secondary:hover {
+    color: #DD052B; /* Netinera secondary color */
+    text-decoration: underline;
+  }
+  
+  .netinera-link-small {
+    @apply text-sm;
+
+    color: #6A7282; /* Netinera gray medium */
+  }
+  
+  .netinera-link-underlined {
+    @apply text-lg leading-tight;
+
+    color: #00685E; /* Netinera primary color */
+    text-decoration: underline;
+  }
+  
+  .netinera-link-underlined:hover {
+    color: #DD052B; /* Netinera secondary color */
+  }
+
+}

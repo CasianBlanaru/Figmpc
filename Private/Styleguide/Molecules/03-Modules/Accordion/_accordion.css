@@ -1,0 +1,109 @@
+/* === ACCORDION */
+
+/* stylelint-disable no-descending-specificity */
+details {
+  &:focus-within {
+    summary {
+      @apply border-gray-800;
+    }
+  }
+
+  + details {
+    @apply mt-1 lg:mt-2;
+  }
+
+  summary {
+    @apply relative flex flex-row items-center justify-between p-2.5 list-none flex-nowrap lg:py-3 gap-5;
+    @apply border border-gray-50;
+
+    h3 {
+      @apply mb-0;
+      @apply text-lg font-extrabold normal-case;
+    }
+
+    &::after {
+      @apply block;
+      @apply text-right;
+
+      content: "+";
+    }
+
+    &:focus {
+      @apply outline-none;
+    }
+  }
+
+  .details-content {
+    @apply px-2.5 pb-2.5 lg:pb-3 lg:px-3;
+    @apply border border-t-0 border-gray-50;
+
+    *:last-child {
+      @apply pb-0 mb-0;
+    }
+  }
+
+  &[open] {
+    &:focus-within {
+      summary,
+      .details-content {
+        @apply border-gray-800;
+      }
+    }
+
+    summary {
+      @apply border-b-0;
+
+      &::after {
+        content: "-";
+      }
+    }
+  }
+}
+/* stylelint-enable no-descending-specificity */
+
+.accordion {
+  @apply w-full;
+}
+
+.accordion-item {
+  @apply border-gray-800;
+}
+
+.accordion-item:first-child {
+  @apply rounded-t-lg;
+}
+
+.accordion-item:last-child {
+  @apply rounded-b-lg;
+  @apply border border-gray-50;
+}
+
+.accordion-item:not(:last-child) {
+  @apply mb-4;
+}
+
+.accordion-header {
+  @apply flex items-center justify-between w-full p-4 text-left;
+  @apply text-lg font-semibold;
+
+  font-family: TitilliumWeb-SemiBold, sans-serif;
+
+  @apply transition-all duration-200;
+}
+
+.accordion-content {
+  @apply p-4;
+  @apply border border-t-0 border-gray-50;
+}
+
+.accordion-icon {
+  @apply w-6 h-6;
+  @apply transition-transform duration-200;
+}
+
+.accordion-item[open] .accordion-icon {
+  @apply rotate-180;
+  @apply border-gray-800;
+}
+
+/* === Variants === */

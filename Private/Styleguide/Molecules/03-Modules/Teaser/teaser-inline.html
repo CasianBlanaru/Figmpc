@@ -1,0 +1,576 @@
+
+    
+    <style>
+        /* Demo Background Images */
+        .figma-teaser-inline-image {
+            background-image: url('./src/assets/teaser-inline-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .demo-landscape-1 {
+            background-image: url('./src/assets/teaser-inline-image.jpg');        
+        }
+        
+        .demo-landscape-2 {
+            background-image: url('./src/assets/teaser-inline-image.jpg');        
+        }
+        
+        .demo-landscape-3 {
+            background-image: url('./src/assets/teaser-inline-image.jpg');        
+        }
+        
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+    </style>
+
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h1">Pixelgenaue Komponente</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                Teaser Inline System
+            </h1>
+            <p class="mx-auto max-w-netinera-content text-netinera-white body-lg">
+                Responsive Teaser-Inline-Komponente mit automatischer Anpassung zwischen Mobile (SM: 328px vertikal) und Desktop (XL: 768px horizontal) Layout. Pixelgenaue Umsetzung basierend auf Figma-Spezifikationen.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Single Teaser Inline -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Figma Node 1849:13490</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Teaser Inline - Pixelgenau Responsive
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Teaser Inline Example 1 -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Mobile → Desktop Transformation</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: 328×185px (vertikal) → Desktop: 268×268px (horizontal)
+                        </h4>
+                        
+                        <!-- Teaser Inline Implementation -->
+                        <div class="flex justify-center">
+                            <div class="teaser-inline-responsive">
+                                <div class="figma-teaser-inline-image teaser-inline-responsive-image"></div>
+                                <div class="teaser-inline-responsive-content">
+                                    <div class="teaser-inline-responsive-text-group">
+                                        <div class="teaser-inline-responsive-main-text">
+                                            <div class="teaser-inline-responsive-overline">Innovation</div>
+                                            <h3 class="teaser-inline-responsive-headline">Digitale Mobilitätslösungen</h3>
+                                        </div>
+                                        <p class="teaser-inline-responsive-subtitle">
+                                            Intelligente Verkehrssysteme für die Zukunft der Mobilität. Pixelgenaue Responsive Design-Umsetzung mit Tailwind CSS 4.
+                                        </p>
+                                    </div>
+                                    <div class="teaser-inline-responsive-actions">
+                                        <a href="#" class="teaser-inline-responsive-link">
+                                            <div class="teaser-inline-responsive-link-icon">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 8H15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M9 2L15 8L9 14" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            Mehr erfahren
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">Responsive HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-inline-responsive"&gt;
+  &lt;div class="figma-teaser-inline-image teaser-inline-responsive-image"&gt;&lt;/div&gt;
+  &lt;div class="teaser-inline-responsive-content"&gt;
+    &lt;div class="teaser-inline-responsive-text-group"&gt;
+      &lt;div class="teaser-inline-responsive-main-text"&gt;
+        &lt;div class="teaser-inline-responsive-overline"&gt;Innovation&lt;/div&gt;
+        &lt;h3 class="teaser-inline-responsive-headline"&gt;Digitale Mobilitätslösungen&lt;/h3&gt;
+      &lt;/div&gt;
+      &lt;p class="teaser-inline-responsive-subtitle"&gt;Intelligente Verkehrssysteme...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="teaser-inline-responsive-actions"&gt;
+      &lt;a href="#" class="teaser-inline-responsive-link"&gt;
+        &lt;div class="teaser-inline-responsive-link-icon"&gt;
+          &lt;svg&gt;...&lt;/svg&gt;
+        &lt;/div&gt;
+        Mehr erfahren
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Teaser Inline Example 2 -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Service Variante</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Gleiche Responsive-Klassen, verschiedene Inhalte
+                        </h4>
+                        
+                        <div class="flex justify-center">
+                            <div class="teaser-inline-responsive">
+                                <div class="teaser-inline-responsive-image demo-landscape-1"></div>
+                                <div class="teaser-inline-responsive-content">
+                                    <div class="teaser-inline-responsive-text-group">
+                                        <div class="teaser-inline-responsive-main-text">
+                                            <div class="teaser-inline-responsive-overline">Service</div>
+                                            <h3 class="teaser-inline-responsive-headline">Kundenservice Excellence</h3>
+                                        </div>
+                                        <p class="teaser-inline-responsive-subtitle">
+                                            Erstklassiger Support und Beratung für alle Mobilitätsbedürfnisse unserer Kunden.
+                                        </p>
+                                    </div>
+                                    <div class="teaser-inline-responsive-actions">
+                                        <a href="#" class="teaser-inline-responsive-link">
+                                            <div class="teaser-inline-responsive-link-icon">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 2V14" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M13 7L8 2L3 7" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            Service anzeigen
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teaser Inline Grid Layout -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Grid Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Teaser Inline Grid System
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Responsive Grid Implementation</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: 1 Spalte → Tablet: 2 Spalten → Desktop: Adaptive
+                        </h4>
+                        
+                        <!-- Teaser Inline Grid -->
+                        <div class="teaser-inline-grid-responsive">
+                            <div class="teaser-inline-responsive">
+                                <div class="figma-teaser-inline-image teaser-inline-responsive-image"></div>
+                                <div class="teaser-inline-responsive-content">
+                                    <div class="teaser-inline-responsive-text-group">
+                                        <div class="teaser-inline-responsive-main-text">
+                                            <div class="teaser-inline-responsive-overline">Technologie</div>
+                                            <h5 class="teaser-inline-responsive-headline">KI-gestützte Verkehrsoptimierung</h5>
+                                        </div>
+                                        <p class="teaser-inline-responsive-subtitle">
+                                            Moderne Algorithmen für effiziente Verkehrsflüsse.
+                                        </p>
+                                    </div>
+                                    <div class="teaser-inline-responsive-actions">
+                                        <a href="#" class="teaser-inline-responsive-link">
+                                            <div class="teaser-inline-responsive-link-icon">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 11V13C2 13.5523 2.44772 14 3 14H13C13.5523 14 14 13.5523 14 13V11" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 2V10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M5 7L8 10L11 7" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            Download
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="teaser-inline-responsive">
+                                <div class="teaser-inline-responsive-image demo-landscape-2"></div>
+                                <div class="teaser-inline-responsive-content">
+                                    <div class="teaser-inline-responsive-text-group">
+                                        <div class="teaser-inline-responsive-main-text">
+                                            <div class="teaser-inline-responsive-overline">Nachhaltigkeit</div>
+                                            <h5 class="teaser-inline-responsive-headline">Grüne Mobilitätslösungen</h5>
+                                        </div>
+                                        <p class="teaser-inline-responsive-subtitle">
+                                            Umweltfreundliche Verkehrskonzepte für die Zukunft.
+                                        </p>
+                                    </div>
+                                    <div class="teaser-inline-responsive-actions">
+                                        <a href="#" class="teaser-inline-responsive-link">
+                                            <div class="teaser-inline-responsive-link-icon">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 8H15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M9 2L15 8L9 14" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            Entdecken
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="teaser-inline-responsive">
+                                <div class="teaser-inline-responsive-image demo-landscape-3"></div>
+                                <div class="teaser-inline-responsive-content">
+                                    <div class="teaser-inline-responsive-text-group">
+                                        <div class="teaser-inline-responsive-main-text">
+                                            <div class="teaser-inline-responsive-overline">Innovation</div>
+                                            <h5 class="teaser-inline-responsive-headline">Autonome Fahrzeugflotte</h5>
+                                        </div>
+                                        <p class="teaser-inline-responsive-subtitle">
+                                            Die Zukunft des selbstfahrenden ÖPNV.
+                                        </p>
+                                    </div>
+                                    <div class="teaser-inline-responsive-actions">
+                                        <a href="#" class="teaser-inline-responsive-link">
+                                            <div class="teaser-inline-responsive-link-icon">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 8H15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M9 2L15 8L9 14" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            Erfahren Sie mehr
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Grid Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">Grid Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-inline-grid-responsive"&gt;
+  &lt;div class="teaser-inline-responsive"&gt;
+    &lt;!-- Teaser Content --&gt;
+  &lt;/div&gt;
+  &lt;div class="teaser-inline-responsive"&gt;
+    &lt;!-- Teaser Content --&gt;
+  &lt;/div&gt;
+  &lt;!-- Weitere Teaser... --&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Color Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Varianten</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Teaser Inline Varianten
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Farbvarianten</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Standard, Primary, Secondary & White Varianten
+                        </h4>
+                        
+                        <div class="space-y-netinera-element-md">
+                            <!-- Standard Variant -->
+                            <div class="flex justify-center">
+                                <div class="teaser-inline-responsive">
+                                    <div class="teaser-inline-responsive-image demo-landscape-1"></div>
+                                    <div class="teaser-inline-responsive-content">
+                                        <div class="teaser-inline-responsive-text-group">
+                                            <div class="teaser-inline-responsive-main-text">
+                                                <div class="teaser-inline-responsive-overline">Standard</div>
+                                                <h5 class="teaser-inline-responsive-headline">Standard Variante</h5>
+                                            </div>
+                                            <p class="teaser-inline-responsive-subtitle">
+                                                Standard Teaser mit Stone-100 Hintergrund.
+                                            </p>
+                                        </div>
+                                        <div class="teaser-inline-responsive-actions">
+                                            <a href="#" class="teaser-inline-responsive-link">
+                                                <div class="teaser-inline-responsive-link-icon">
+                                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 8H15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M9 2L15 8L9 14" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </div>
+                                                Standard
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- White Variant -->
+                            <div class="flex justify-center">
+                                <div class="teaser-inline-responsive teaser-inline-variant-white">
+                                    <div class="teaser-inline-responsive-image demo-landscape-2"></div>
+                                    <div class="teaser-inline-responsive-content">
+                                        <div class="teaser-inline-responsive-text-group">
+                                            <div class="teaser-inline-responsive-main-text">
+                                                <div class="teaser-inline-responsive-overline">White</div>
+                                                <h5 class="teaser-inline-responsive-headline">White Variante</h5>
+                                            </div>
+                                            <p class="teaser-inline-responsive-subtitle">
+                                                Weiße Teaser-Variante für besseren Kontrast.
+                                            </p>
+                                        </div>
+                                        <div class="teaser-inline-responsive-actions">
+                                            <a href="#" class="teaser-inline-responsive-link">
+                                                <div class="teaser-inline-responsive-link-icon">
+                                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 8H15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M9 2L15 8L9 14" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </div>
+                                                White
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Primary Variant -->
+                            <div class="flex justify-center">
+                                <div class="teaser-inline-responsive teaser-inline-variant-primary">
+                                    <div class="teaser-inline-responsive-image demo-landscape-3"></div>
+                                    <div class="teaser-inline-responsive-content">
+                                        <div class="teaser-inline-responsive-text-group">
+                                            <div class="teaser-inline-responsive-main-text">
+                                                <div class="teaser-inline-responsive-overline">Primary</div>
+                                                <h5 class="teaser-inline-responsive-headline">Primary Variante</h5>
+                                            </div>
+                                            <p class="teaser-inline-responsive-subtitle">
+                                                Primary Teaser mit Netinera-Primary Hintergrund.
+                                            </p>
+                                        </div>
+                                        <div class="teaser-inline-responsive-actions">
+                                            <a href="#" class="teaser-inline-responsive-link">
+                                                <div class="teaser-inline-responsive-link-icon">
+                                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 8H15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M9 2L15 8L9 14" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </div>
+                                                Primary
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Secondary Variant -->
+                            <div class="flex justify-center">
+                                <div class="teaser-inline-responsive teaser-inline-variant-secondary">
+                                    <div class="teaser-inline-responsive-image demo-landscape-1"></div>
+                                    <div class="teaser-inline-responsive-content">
+                                        <div class="teaser-inline-responsive-text-group">
+                                            <div class="teaser-inline-responsive-main-text">
+                                                <div class="teaser-inline-responsive-overline">Secondary</div>
+                                                <h5 class="teaser-inline-responsive-headline">Secondary Variante</h5>
+                                            </div>
+                                            <p class="teaser-inline-responsive-subtitle">
+                                                Secondary Teaser mit Netinera-Secondary Hintergrund.
+                                            </p>
+                                        </div>
+                                        <div class="teaser-inline-responsive-actions">
+                                            <a href="#" class="teaser-inline-responsive-link">
+                                                <div class="teaser-inline-responsive-link-icon">
+                                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 8H15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M9 2L15 8L9 14" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </div>
+                                                Secondary
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Variants Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">Variant Classes</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;!-- Standard (kein zusätzliches CSS erforderlich) --&gt;
+&lt;div class="teaser-inline-responsive"&gt;...&lt;/div&gt;
+
+&lt;!-- White Variant --&gt;
+&lt;div class="teaser-inline-responsive teaser-inline-variant-white"&gt;...&lt;/div&gt;
+
+&lt;!-- Primary Variant --&gt;
+&lt;div class="teaser-inline-responsive teaser-inline-variant-primary"&gt;...&lt;/div&gt;
+
+&lt;!-- Secondary Variant --&gt;
+&lt;div class="teaser-inline-responsive teaser-inline-variant-secondary"&gt;...&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Documentation -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS System</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Responsive Class System
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Mobile-First Approach</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Pixelgenaue Figma-Umsetzung mit Responsive Breakpoints
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Mobile First (bis 1023px)</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile: 328px vertikal - Figma SM */
+.teaser-inline-responsive {
+  flex-direction: column;
+  max-width: 328px;
+  border-radius: 36px 0px 36px 0px;
+}
+
+.teaser-inline-responsive-image {
+  width: 100%;
+  height: 185px;
+  border-radius: 36px 0px 0px 0px;
+}
+
+.teaser-inline-responsive-content {
+  gap: 20px;
+  padding: 24px;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Desktop Breakpoint (1024px+)</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Desktop: 768px horizontal - Figma XL */
+@media (min-width: 1024px) {
+  .teaser-inline-responsive {
+    flex-direction: row;
+    max-width: 768px;
+    border-radius: 64px 0px 64px 0px;
+  }
+  
+  .teaser-inline-responsive-image {
+    width: 268px;
+    height: 268px;
+    border-radius: 64px 0px 0px 0px;
+  }
+  
+  .teaser-inline-responsive-content {
+    gap: 24px;
+    padding: 32px;
+  }
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Typography (Figma-Spezifikationen)</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile Typography */
+.teaser-inline-responsive-overline {
+  font: 600 12px/1.17 "Titillium Web";
+  letter-spacing: 13.33%;
+}
+
+.teaser-inline-responsive-headline {
+  font: 400 20px/1.4 "Titillium Web";
+}
+
+/* Desktop Typography */
+@media (min-width: 1024px) {
+  .teaser-inline-responsive-headline {
+    font-size: 24px;
+    line-height: 1.33;
+  }
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Grid & Variants</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Responsive Grid */
+.teaser-inline-grid-responsive {
+  display: grid;
+  gap: var(--spacing-element-lg);
+  grid-template-columns: 1fr; /* Mobile */
+}
+
+@media (min-width: 768px) {
+  .teaser-inline-grid-responsive {
+    grid-template-columns: repeat(2, 1fr); /* Tablet */
+  }
+}
+
+@media (min-width: 1200px) {
+  .teaser-inline-grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Teaser Inline Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue responsive Teaser-Inline-Komponente mit automatischer Anpassung zwischen Mobile (SM: 328×185px vertikal) und Desktop (XL: 768×268px horizontal) Layout. Basiert auf Figma Node 1849:13490 mit exakten Spezifikationen.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Figma Node: 1849:13490</span>
+                <span>|</span>
+                <span>Mobile: 328×185px</span>
+                <span>|</span>
+                <span>Desktop: 768×268px</span>
+            </div>
+        </div>
+    </footer>
+</section>

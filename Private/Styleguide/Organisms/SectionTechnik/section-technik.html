@@ -1,0 +1,860 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Section Technik specific styles */
+        .section-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Section Technik Layout (Figma Node 1780-34895) */
+        .section-technik {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: stretch;
+            gap: 64px; /* layout_M1WW57 */
+            padding: 0px 56px 80px;
+            width: 100%;
+        }
+        
+        /* Body Text SM/XL (layout_Q8TY73) */
+        .body-text-sm-xl {
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch;
+            align-items: stretch;
+            width: 568px;
+        }
+        
+        .body-text-content {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.6666666666666667em; /* style_UFIVT5 */
+            text-align: left;
+            color: #1E2939; /* fill_4GUMB0 */
+            width: 100%; /* layout_NMN1J6 */
+        }
+        
+        /* Image Slider XL (layout_W0875H) */
+        .image-slider-xl {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            width: 1064px;
+        }
+        
+        /* Layout Group (layout_S8YD9B) */
+        .image-slider-layout-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            width: fit-content;
+        }
+        
+        /* Image Navigation Row (layout_06ZUBC) */
+        .image-slider-navigation-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            width: fit-content;
+        }
+        
+        /* Button Icon (layout_H0U0SE) */
+        .image-slider-nav-button {
+            background: #DD052B; /* fill_FQK01M */
+            border-radius: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .image-slider-nav-button:hover {
+            background: #B91C1C;
+            transform: scale(1.05);
+        }
+        
+        .image-slider-nav-button:active {
+            transform: scale(0.95);
+        }
+        
+        .image-slider-nav-icon {
+            width: 20px;
+            height: 20px;
+            color: #FFFFFF; /* stroke_0M7ZSL */
+            stroke-width: 1.25px;
+        }
+        
+        /* Slider Image (layout_BQGL1J) */
+        .image-slider-image {
+            background-size: cover;
+            background-position: center;
+            border-radius: 36px;
+            width: 768px; /* layout_BQGL1J */
+            height: 434px;
+            transition: all 0.3s ease;
+        }
+        
+        .image-slider-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 32px rgba(30, 41, 57, 0.15);
+        }
+        
+        /* Caption Text (layout_Y51UQ4) */
+        .image-slider-caption-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-self: stretch;
+            width: 100%;
+        }
+        
+        .image-slider-caption {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.4285714285714286em; /* style_5SANPP */
+            text-align: center;
+            color: #1E2939; /* fill_4GUMB0 */
+            width: fit-content; /* layout_OESK80 */
+        }
+        
+        /* Carousel Pagination (layout_B9S812) */
+        .carousel-pagination {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-self: stretch;
+            gap: 6px;
+            width: 100%;
+        }
+        
+        .carousel-pagination-item {
+            background: #E5E7EB; /* fill_BG1392 */
+            border-radius: 9999px;
+            width: 8px;
+            height: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-pagination-item.active {
+            background: #DD052B; /* fill_FQK01M */
+        }
+        
+        .carousel-pagination-item:hover {
+            background: #D1D5DB;
+        }
+        
+        .carousel-pagination-item.active:hover {
+            background: #B91C1C;
+        }
+        
+        /* Text Group (layout_7MRCCI) */
+        .text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 568px;
+        }
+        
+        /* Headline H3 XL */
+        .headline-h3-xl {
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch;
+            align-items: stretch;
+            width: 568px;
+        }
+        
+        .headline-h3-content {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 1.2em; /* style_9JGJD1 */
+            text-transform: uppercase;
+            text-align: left;
+            color: #1E2939; /* fill_4GUMB0 */
+            width: 100%; /* layout_NMN1J6 */
+        }
+        
+        /* Demo Images */
+        .demo-image-1 {
+            background-image: url('https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=434&q=80');
+        }
+        
+        .demo-image-2 {
+            background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=434&q=80');
+        }
+        
+        .demo-image-3 {
+            background-image: url('https://images.unsplash.com/photo-1517094503204-8e5a3e12b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=434&q=80');
+        }
+        
+        .demo-image-4 {
+            background-image: url('https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=434&q=80');
+        }
+        
+        .demo-image-5 {
+            background-image: url('https://images.unsplash.com/photo-1589578667272-e8bc5b7b9e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=434&q=80');
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1279px) {
+            .section-technik {
+                padding: 0px 32px 64px;
+                gap: 56px;
+            }
+            
+            .image-slider-xl {
+                width: 100%;
+                max-width: 1064px;
+            }
+            
+            .image-slider-image {
+                width: 100%;
+                max-width: 768px;
+                height: auto;
+                aspect-ratio: 768/434;
+            }
+            
+            .body-text-sm-xl,
+            .text-group,
+            .headline-h3-xl {
+                width: 100%;
+                max-width: 568px;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .section-technik {
+                padding: 0px 24px 48px;
+                gap: 48px;
+            }
+            
+            .image-slider-navigation-row {
+                gap: 16px;
+            }
+            
+            .image-slider-image {
+                border-radius: 24px;
+            }
+            
+            .image-slider-nav-button {
+                width: 36px;
+                height: 36px;
+                border-radius: 8px;
+            }
+            
+            .image-slider-nav-icon {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .section-technik {
+                padding: 0px 16px 40px;
+                gap: 40px;
+            }
+            
+            .body-text-content {
+                font-size: 16px;
+                line-height: 1.75em;
+            }
+            
+            .headline-h3-content {
+                font-size: 24px;
+                line-height: 1.3em;
+            }
+            
+            .image-slider-image {
+                border-radius: 20px;
+            }
+            
+            .image-slider-nav-button {
+                width: 32px;
+                height: 32px;
+                border-radius: 6px;
+            }
+            
+            .image-slider-nav-icon {
+                width: 16px;
+                height: 16px;
+            }
+            
+            .image-slider-caption {
+                font-size: 12px;
+                line-height: 1.5em;
+            }
+            
+            .carousel-pagination-item {
+                width: 6px;
+                height: 6px;
+            }
+        }
+        
+        @media (max-width: 479px) {
+            .section-technik {
+                padding: 0px 16px 32px;
+                gap: 32px;
+            }
+            
+            .body-text-content {
+                font-size: 14px;
+            }
+            
+            .headline-h3-content {
+                font-size: 20px;
+            }
+            
+            .image-slider-image {
+                border-radius: 16px;
+            }
+            
+            .image-slider-navigation-row {
+                gap: 12px;
+            }
+            
+            .text-group {
+                gap: 16px;
+            }
+        }
+    </style>
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Section Library</div>
+            <h1 class="headline-h1 spacing-headline-body-h1">
+                Section Technik
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Pixelgenaue responsive Section-Technik basierend auf Figma Node 1780-34895. Kombination aus Body Text, Image Slider mit Navigation und Text Group mit Headline H3.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Complete Section Implementation -->
+            <section class="section-fade-in">
+                <div class="overline-sm spacing-overline-h2">Figma Node 1780-34895</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Section Technik
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Vollständige Section mit drei Hauptelementen: Body Text (568px), Image Slider (1064px) mit Navigation und Pagination, Text Group (568px) mit Headline H3 und Body Text.
+                </p>
+                
+                <div class="overflow-hidden">
+                    <!-- Section Technik -->
+                    <div class="section-technik">
+                        
+                        <!-- Body Text SM/XL -->
+                        <div class="body-text-sm-xl">
+                            <div class="body-text-content">
+                                Täglich werden mit unseren Zügen tonnenschwere Lasten bewegt. Stählerne Räder rollen Millionen von Kilometern über die Schienen. Und bei jedem Halt müssen sich Türen automatisch öffnen und schließen. Das geht nicht ohne Verschleiß. Damit aus Verschleiß nicht Verspätung wird und ein festgelaufenes Lager den Berufverkehr lahm legt, müssen unsere Züge regelmäßig geprüft, gewartet und, wo notwendig, instandgesetzt werden. Dabei verlassen wir uns am liebsten auf uns selbst.
+                            </div>
+                        </div>
+                        
+                        <!-- Image Slider XL -->
+                        <div class="image-slider-xl" id="technik-slider">
+                            <div class="image-slider-layout-group">
+                                <div class="image-slider-navigation-row">
+                                    <!-- Previous Button -->
+                                    <button class="image-slider-nav-button" onclick="previousSlide('technik-slider')">
+                                        <svg class="image-slider-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M15 18l-6-6 6-6" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                    
+                                    <!-- Slider Image -->
+                                    <div class="image-slider-image demo-image-1" id="technik-main-image"></div>
+                                    
+                                    <!-- Next Button -->
+                                    <button class="image-slider-nav-button" onclick="nextSlide('technik-slider')">
+                                        <svg class="image-slider-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M9 18l6-6-6-6" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                <!-- Caption Text -->
+                                <div class="image-slider-caption-container">
+                                    <div class="image-slider-caption" id="technik-caption">
+                                        Hochmoderne Servicezentren: Präzise Wartung und Instandhaltung unserer Züge
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Carousel Pagination -->
+                            <div class="carousel-pagination">
+                                <div class="carousel-pagination-item active" onclick="goToSlide('technik-slider', 0)"></div>
+                                <div class="carousel-pagination-item" onclick="goToSlide('technik-slider', 1)"></div>
+                                <div class="carousel-pagination-item" onclick="goToSlide('technik-slider', 2)"></div>
+                                <div class="carousel-pagination-item" onclick="goToSlide('technik-slider', 3)"></div>
+                                <div class="carousel-pagination-item" onclick="goToSlide('technik-slider', 4)"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Text Group -->
+                        <div class="text-group">
+                            <!-- Headline H3 XL -->
+                            <div class="headline-h3-xl">
+                                <div class="headline-h3-content">
+                                    13 hochmoderne Servicezentren
+                                </div>
+                            </div>
+                            
+                            <!-- Body Text SM/XL -->
+                            <div class="body-text-sm-xl">
+                                <div class="body-text-content">
+                                    13 hochmoderne Servicezentren, verteilt auf unsere Streckennetze, werden von NETINERA betrieben. Hier können alle notwendigen Wartungs- und Instandhaltungsarbeiten an unseren Zügen ausgeführt werden – an Lokomotiven, Triebwagen und Reisezugwagen. Das verlangt Sachverstand, viel Erfahrung und die richtige Technik. Von allem haben wir reichlich. Das finden übrigens auch externe Unternehmen. Für Betreiber, Hersteller und Leasingunternehmen sind die Werkstätten des NETINERA-Konzerns seit Jahren ein zuverlässiger Partner.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Code Example -->
+                    <div class="p-netinera-element-lg">
+                        <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="section-technik"&gt;
+  &lt;!-- Body Text SM/XL --&gt;
+  &lt;div class="body-text-sm-xl"&gt;
+    &lt;div class="body-text-content"&gt;
+      Täglich werden mit unseren Zügen tonnenschwere Lasten bewegt...
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Image Slider XL --&gt;
+  &lt;div class="image-slider-xl"&gt;
+    &lt;div class="image-slider-layout-group"&gt;
+      &lt;div class="image-slider-navigation-row"&gt;
+        &lt;button class="image-slider-nav-button"&gt;...&lt;/button&gt;
+        &lt;div class="image-slider-image"&gt;&lt;/div&gt;
+        &lt;button class="image-slider-nav-button"&gt;...&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="image-slider-caption-container"&gt;
+        &lt;div class="image-slider-caption"&gt;Caption Text&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-pagination"&gt;
+      &lt;div class="carousel-pagination-item active"&gt;&lt;/div&gt;
+      &lt;!-- More dots... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Text Group --&gt;
+  &lt;div class="text-group"&gt;
+    &lt;div class="headline-h3-xl"&gt;
+      &lt;div class="headline-h3-content"&gt;13 hochmoderne Servicezentren&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="body-text-sm-xl"&gt;
+      &lt;div class="body-text-content"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Implementation</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Code Implementation & Spezifikationen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- CSS Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">CSS Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Figma Node 1780-34895 Spezifikationen */
+
+/* Section Layout (layout_M1WW57) */
+.section-technik {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 64px;
+  padding: 0px 56px 80px;
+  width: 100%;
+}
+
+/* Body Text SM/XL (layout_Q8TY73) */
+.body-text-sm-xl {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 568px;
+}
+
+.body-text-content {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6666666666666667em; /* style_UFIVT5 */
+  text-align: left;
+  color: #1E2939; /* fill_4GUMB0 */
+  width: 100%;
+}
+
+/* Image Slider XL (layout_W0875H) */
+.image-slider-xl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 1064px;
+}</code></pre>
+                    </div>
+                    
+                    <!-- Image Slider Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Image Slider Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Navigation Button (layout_H0U0SE) */
+.image-slider-nav-button {
+  background: #DD052B; /* fill_FQK01M */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Slider Image (layout_BQGL1J) */
+.image-slider-image {
+  background-size: cover;
+  background-position: center;
+  border-radius: 36px;
+  width: 768px;
+  height: 434px;
+}
+
+/* Caption Text (style_5SANPP) */
+.image-slider-caption {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4285714285714286em;
+  text-align: center;
+  color: #1E2939;
+}
+
+/* Carousel Pagination (layout_B9S812) */
+.carousel-pagination-item {
+  background: #E5E7EB; /* fill_BG1392 */
+  border-radius: 9999px;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+
+.carousel-pagination-item.active {
+  background: #DD052B; /* fill_FQK01M */
+}</code></pre>
+                    </div>
+                    
+                    <!-- Text Group Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Text Group Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Text Group (layout_7MRCCI) */
+.text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 568px;
+}
+
+/* Headline H3 (style_9JGJD1) */
+.headline-h3-content {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-align: left;
+  color: #1E2939;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1279px) {
+  .section-technik {
+    padding: 0px 32px 64px;
+    gap: 56px;
+  }
+  
+  .image-slider-xl {
+    width: 100%;
+    max-width: 1064px;
+  }
+  
+  .image-slider-image {
+    width: 100%;
+    max-width: 768px;
+    height: auto;
+    aspect-ratio: 768/434;
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Section Technik
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue Section-Technik basierend auf Figma Node 1780-34895. Kombination aus Body Text, Image Slider mit Navigation und Text Group. Komplett responsive mit exakten Figma-Spezifikationen.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Section: 64px Gap, Body Text: 568px, Image Slider: 1064px</span>
+                <span>|</span>
+                <span>Text Group: 568px, Navigation: 40×40px, Image: 768×434px</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Section Technik with Interactive Features
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Slider data for technik section
+            const technikSliderData = {
+                images: [
+                    'https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=434&q=80',
+                    'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=434&q=80',
+                    'https://images.unsplash.com/photo-1517094503204-8e5a3e12b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=434&q=80',
+                    'https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=434&q=80',
+                    'https://images.unsplash.com/photo-1589578667272-e8bc5b7b9e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=434&q=80'
+                ],
+                captions: [
+                    'Hochmoderne Servicezentren: Präzise Wartung und Instandhaltung unserer Züge',
+                    'Innovative Bahntechnik: Modernste Ausrüstung für zuverlässigen Bahnbetrieb',
+                    'Qualitätskontrolle: Sicherstellung höchster Standards im Schienenverkehr',
+                    'Expertenwissen: Erfahrene Techniker für professionelle Wartungsarbeiten',
+                    'Zukunftstechnologie: Nachhaltige Lösungen für den modernen Bahnverkehr'
+                ],
+                currentSlide: 0
+            };
+            
+            // Update slide content
+            function updateSlide() {
+                const image = document.getElementById('technik-main-image');
+                const caption = document.getElementById('technik-caption');
+                const dots = document.querySelectorAll('.carousel-pagination-item');
+                
+                if (image && caption) {
+                    image.style.backgroundImage = `url('${technikSliderData.images[technikSliderData.currentSlide]}')`;
+                    caption.textContent = technikSliderData.captions[technikSliderData.currentSlide];
+                    
+                    // Update pagination dots
+                    dots.forEach((dot, index) => {
+                        if (index === technikSliderData.currentSlide) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                }
+            }
+            
+            // Navigation functions
+            window.previousSlide = function(sliderId) {
+                if (sliderId === 'technik-slider') {
+                    technikSliderData.currentSlide = (technikSliderData.currentSlide - 1 + technikSliderData.images.length) % technikSliderData.images.length;
+                    updateSlide();
+                }
+            };
+            
+            window.nextSlide = function(sliderId) {
+                if (sliderId === 'technik-slider') {
+                    technikSliderData.currentSlide = (technikSliderData.currentSlide + 1) % technikSliderData.images.length;
+                    updateSlide();
+                }
+            };
+            
+            window.goToSlide = function(sliderId, slideIndex) {
+                if (sliderId === 'technik-slider') {
+                    technikSliderData.currentSlide = slideIndex;
+                    updateSlide();
+                }
+            };
+            
+            // Initialize slider
+            updateSlide();
+            
+            // Button interactions
+            const navButtons = document.querySelectorAll('.image-slider-nav-button');
+            
+            navButtons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    button.style.transform = 'scale(1.05)';
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'scale(1)';
+                });
+                
+                button.addEventListener('mousedown', () => {
+                    button.style.transform = 'scale(0.95)';
+                });
+                
+                button.addEventListener('mouseup', () => {
+                    button.style.transform = 'scale(1.05)';
+                });
+            });
+            
+            // Image hover effects
+            const sliderImage = document.getElementById('technik-main-image');
+            if (sliderImage) {
+                sliderImage.addEventListener('mouseenter', () => {
+                    sliderImage.style.transform = 'scale(1.02)';
+                });
+                
+                sliderImage.addEventListener('mouseleave', () => {
+                    sliderImage.style.transform = 'scale(1)';
+                });
+            }
+            
+            // Pagination dot interactions
+            const paginationDots = document.querySelectorAll('.carousel-pagination-item');
+            
+            paginationDots.forEach(dot => {
+                dot.addEventListener('mouseenter', () => {
+                    if (!dot.classList.contains('active')) {
+                        dot.style.background = '#D1D5DB';
+                    }
+                });
+                
+                dot.addEventListener('mouseleave', () => {
+                    if (!dot.classList.contains('active')) {
+                        dot.style.background = '#E5E7EB';
+                    }
+                });
+            });
+            
+            // Auto-play functionality (optional)
+            let autoplayInterval;
+            
+            function startAutoplay() {
+                autoplayInterval = setInterval(() => {
+                    nextSlide('technik-slider');
+                }, 5000);
+            }
+            
+            function stopAutoplay() {
+                if (autoplayInterval) {
+                    clearInterval(autoplayInterval);
+                }
+            }
+            
+            // Start autoplay
+            startAutoplay();
+            
+            // Pause autoplay on hover
+            const sliderContainer = document.getElementById('technik-slider');
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', stopAutoplay);
+                sliderContainer.addEventListener('mouseleave', startAutoplay);
+            }
+            
+            // Responsive indicator updates
+            function updateResponsiveIndicator() {
+                const indicator = document.querySelector('.responsive-indicator');
+                if (!indicator) return;
+                
+                const spans = indicator.querySelectorAll('span');
+                spans.forEach(span => span.style.display = 'none');
+                
+                if (window.innerWidth < 640) {
+                    spans[0].style.display = 'block';
+                } else if (window.innerWidth < 768) {
+                    spans[1].style.display = 'block';
+                } else if (window.innerWidth < 1024) {
+                    spans[2].style.display = 'block';
+                } else if (window.innerWidth < 1280) {
+                    spans[3].style.display = 'block';
+                } else {
+                    spans[4].style.display = 'block';
+                }
+            }
+            
+            window.addEventListener('resize', updateResponsiveIndicator);
+            updateResponsiveIndicator();
+            
+            console.log('Section Technik loaded successfully!');
+            console.log('Figma Node 1780-34895 implemented with existing components');
+        });
+    </script>
+</section>

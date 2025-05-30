@@ -1,0 +1,21 @@
+/*
+ * FONTS
+ *
+ * For Google Fonts you can use:
+ * > https://gwfh.mranftl.com/fontsc
+ *
+ */
+
+/* === FONT: ICOMOON === */
+@import '../../../Public/Fonts/Icomoon/style.css'; /* stylelint-disable-line import-notation */
+
+/* === FONT: ROBOTO === */
+@import '../../../Public/Fonts/roboto/roboto.css'; /* stylelint-disable-line import-notation */
+
+/* === FONT: TITILLIUM === */
+@import '../../../Public/Fonts/titillium/titillium.css'; /* stylelint-disable-line import-notation */
+
+
+[class^="icon-"], [class*=" icon-"] {
+  line-height: 0;
+}

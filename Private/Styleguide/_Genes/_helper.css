@@ -1,0 +1,31 @@
+/* === HELPER */
+
+/* === Icon Helper Class */
+
+.icon-left {
+  @apply mr-1;
+}
+
+.icon-right {
+  @apply ml-1
+}
+
+/* === A11Y Helper Classes */
+
+.sr-only {
+  @apply absolute overflow-hidden;
+  @apply w-0 h-0;
+
+  font-size: 0;
+  line-height: 0;
+  text-indent: -999px;
+}
+
+/* === STRETCHED LINK */
+
+.stretched-link::after {
+  @apply absolute top-0 right-0 left-0 bottom-0 z-[1] bg-transparent;
+
+  pointer-events: auto;
+  content: "";
+}

@@ -1,0 +1,597 @@
+<!-- Navigation Container -->
+<nav class="justify-between bg-white w-full h-24 md:h-26 main-menu" aria-label="Hauptnavigation" id="main-navigation">
+    <div class="flex justify-between mx-auto h-full container">
+        <!-- Inner Flex Container with rounded background -->
+        <div class="flex justify-between items-center bg-white shadow-sm mx-6 px-6 border border-gray-200 rounded-full w-full">
+            <!-- Logo Area -->
+            <a href="/" class="block w-[126px] md:w-[146px] md:h-12" aria-label="Zur Startseite">
+                <img
+                    src="./logo.svg"
+                    alt="NETINERA - FERROVIE DELLO STATO ITALIANE GROUP"
+                    class="w-full h-full object-contain"
+                    loading="eager"
+                >
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden lg:flex items-center desktop-nav">
+                <!-- Menu Items -->
+                <ul class="flex items-center gap-8 m-0 mr-8 p-0 list-none" role="menubar">
+                    <li class="group relative" role="none">
+                        <a href="#" class="relative flex items-center hover:bg-gray-50 px-4 py-2 rounded-full font-semibold text-left uppercase tracking-menu transition-all duration-200" role="menuitem" aria-expanded="false">
+                            Leistungen
+                            <i class="ml-2 text-lg group-hover:rotate-180 transition-transform icon-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div id="submenu-desktop-1" class="hidden group-hover:block top-full left-0 z-50 absolute bg-white shadow-lg border border-gray-100 rounded-2xl min-w-[200px]" role="menu">
+                            <ul class="py-2" role="none">
+                                <li class="hover:bg-gray-50 px-4 py-3 first:rounded-t-2xl last:rounded-b-2xl" role="none">
+                                    <a href="#" class="block font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu" role="menuitem">
+                                        Über uns
+                                    </a>
+                                </li>
+                                <li class="hover:bg-gray-50 px-4 py-3 first:rounded-t-2xl last:rounded-b-2xl" role="none">
+                                    <a href="#" class="block font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu" role="menuitem">
+                                        Geschichte
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="group relative" role="none">
+                        <a href="#" class="relative flex items-center hover:bg-gray-50 px-4 py-2 rounded-full font-semibold text-left uppercase tracking-menu transition-all duration-200" role="menuitem" aria-expanded="false">
+                            Unternehmen
+                            <i class="ml-2 text-lg group-hover:rotate-180 transition-transform icon-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div id="submenu-desktop-2" class="hidden group-hover:block top-full left-0 z-50 absolute bg-white shadow-lg border border-gray-100 rounded-2xl min-w-[200px]" role="menu">
+                            <ul class="py-2" role="none">
+                                <li class="hover:bg-gray-50 px-4 py-3 first:rounded-t-2xl last:rounded-b-2xl" role="none">
+                                    <a href="#" class="block font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu" role="menuitem">
+                                        Stellenangebote
+                                    </a>
+                                </li>
+                                <li class="hover:bg-gray-50 px-4 py-3 first:rounded-t-2xl last:rounded-b-2xl" role="none">
+                                    <a href="#" class="block font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu" role="menuitem">
+                                        Ausbildung
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="group relative" role="none">
+                        <a href="#" class="relative flex items-center hover:bg-gray-50 px-4 py-2 rounded-full font-semibold text-left uppercase tracking-menu transition-all duration-200" role="menuitem" aria-expanded="false">
+                            Verantwortung
+                            <i class="ml-2 text-lg group-hover:rotate-180 transition-transform icon-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div id="submenu-desktop-3" class="hidden group-hover:block top-full left-0 z-50 absolute bg-white shadow-lg border border-gray-100 rounded-2xl min-w-[200px]" role="menu">
+                            <ul class="py-2" role="none">
+                                <li class="hover:bg-gray-50 px-4 py-3 first:rounded-t-2xl last:rounded-b-2xl" role="none">
+                                    <a href="#" class="block font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu" role="menuitem">
+                                        Nachhaltigkeit
+                                    </a>
+                                </li>
+                                <li class="hover:bg-gray-50 px-4 py-3 first:rounded-t-2xl last:rounded-b-2xl" role="none">
+                                    <a href="#" class="block font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu" role="menuitem">
+                                        Soziales Engagement
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="group relative" role="none">
+                        <a href="#" class="relative flex items-center hover:bg-gray-50 px-4 py-2 rounded-full font-semibold text-left uppercase tracking-menu transition-all duration-200" role="menuitem">
+                            Karriere
+                        </a>
+                    </li>
+                    <li class="group relative" role="none">
+                        <a href="#" class="relative flex items-center hover:bg-gray-50 px-4 py-2 rounded-full font-semibold text-left uppercase tracking-menu transition-all duration-200" role="menuitem">
+                            Presse
+                            <i class="ml-2 text-lg group-hover:rotate-180 transition-transform icon-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div id="submenu-desktop-4" class="hidden group-hover:block top-full left-0 z-50 absolute bg-white shadow-lg border border-gray-100 rounded-2xl min-w-[200px]" role="menu">
+                            <ul class="py-2" role="none">
+                                <li class="hover:bg-gray-50 px-4 py-3 first:rounded-t-2xl last:rounded-b-2xl" role="none">
+                                    <a href="#" class="block font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu" role="menuitem">
+                                        Pressemitteilungen
+                                    </a>
+                                </li>
+                                <li class="hover:bg-gray-50 px-4 py-3 first:rounded-t-2xl last:rounded-b-2xl" role="none">
+                                    <a href="#" class="block font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu" role="menuitem">
+                                        Mediathek
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="group relative" role="none">
+                        <a href="#" class="relative flex items-center hover:bg-gray-50 px-4 py-2 rounded-full font-semibold text-left uppercase tracking-menu transition-all duration-200" role="menuitem">
+                            Kontakt
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Search and Theme Toggle -->
+                <div class="flex items-center gap-3">
+                    <!-- Search Icon -->
+                    <button
+                        type="button"
+                        class="flex justify-center items-center hover:bg-gray-50 rounded-full w-10 h-10 text-neutral-900 hover:text-primary-600 transition-colors cursor-pointer"
+                        aria-label="Suche öffnen"
+                        aria-controls="search-modal"
+                        aria-expanded="false"
+                        data-search-toggle
+                    >
+                        <span class="flex justify-center items-center">
+                            <i class="text-xl icon-search search-icon"></i>
+                            <i class="hidden text-xl icon-close close-icon"></i>
+                        </span>
+                    </button>
+
+                    <!-- Theme Toggle Button -->
+                    <button
+                        type="button"
+                        class="flex justify-center items-center hover:bg-gray-50 rounded-full w-10 h-10 text-neutral-900 hover:text-primary-600 transition-colors cursor-pointer"
+                        aria-label="Theme wechseln"
+                        data-theme-toggle
+                    >
+                        <i class="text-xl icon-sun" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Controls -->
+            <div class="lg:hidden flex justify-center items-center gap-3">
+                <!-- Mobile Search Icon -->
+                <button
+                    type="button"
+                    class="flex justify-center items-center hover:bg-gray-50 rounded-full w-10 h-10 text-neutral-900 transition-colors cursor-pointer"
+                    aria-label="Suche öffnen"
+                    aria-controls="search-modal"
+                    aria-expanded="false"
+                    data-search-toggle
+                >
+                    <span class="flex justify-center items-center">
+                        <i class="text-xl icon-search search-icon"></i>
+                        <i class="hidden text-xl icon-close close-icon"></i>
+                    </span>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button
+                    type="button"
+                    class="flex justify-center items-center hover:bg-gray-50 rounded-full w-10 h-10 text-neutral-900 transition-colors cursor-pointer"
+                    aria-label="Menü öffnen"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
+                    data-menu-toggle
+                >
+                    <span class="flex justify-center items-center">
+                        <i class="text-xl icon-menu menu-icon"></i>
+                        <i class="hidden text-xl icon-close close-icon"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Backdrop for mobile menu and search -->
+<div id="menu-backdrop" class="hidden z-40 fixed inset-0 bg-neutral-900/80" aria-hidden="true"></div>
+
+<!-- Mobile Menu Canvas -->
+<div id="mobile-menu" class="lg:hidden right-0 z-50 fixed inset-y-0 bg-white rounded-l-3xl w-[90%] sm:w-[75%] md:max-w-md translate-x-full duration-300 ease-in-out transform" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="pt-6 pr-4 pb-6 pl-4 h-full overflow-y-auto">
+        <!-- Mobile Menu Header -->
+        <div class="flex justify-between items-center mb-8 px-6 border-gray-200 border-b w-full h-20">
+            <!-- Mobile Logo -->
+            <a href="/" class="w-[126px] md:w-[146px] md:h-12" aria-label="Zur Startseite">
+                <img
+                    src="./logo.svg"
+                    alt="NETINERA - FERROVIE DELLO STATO ITALIANE GROUP"
+                    class="w-full h-full object-contain"
+                >
+            </a>
+            <!-- Close Button -->
+            <button
+                type="button"
+                class="flex justify-center items-center hover:bg-gray-50 rounded-full w-10 h-10 text-neutral-900 transition-colors cursor-pointer"
+                aria-label="Menü schließen"
+                data-menu-close
+            >
+                <i class="text-xl icon-close" aria-hidden="true"></i>
+            </button>
+        </div>
+        <nav class="px-6">
+            <ul class="flex flex-col gap-2 m-0 p-0 list-none">
+                <li class="py-1">
+                    <div class="flex justify-between items-center w-full">
+                        <a href="#" class="block flex-1 hover:bg-gray-50 px-4 py-3 rounded-full font-semibold uppercase tracking-menu transition-colors">
+                            Leistungen
+                        </a>
+                        <button
+                            type="button"
+                            class="flex justify-center items-center hover:bg-gray-50 ml-2 rounded-full w-10 h-10 transition-colors submenu-toggle"
+                            aria-expanded="false"
+                            aria-controls="submenu-1"
+                        >
+                            <i class="icon-chevron-right text-lg transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <div
+                        id="submenu-1"
+                        class="hidden lg:hidden top-24 md:top-26 right-0 z-50 fixed bg-white rounded-l-3xl w-[100%] sm:w-[100%] md:max-w-md h-[calc(100vh-6rem)] md:h-[calc(100vh-6.5rem)] translate-x-[100%] duration-300 ease-in-out transform submenu"
+                        inert=""
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Untermenü Leistungen"
+                    >
+                        <div class="h-full overflow-y-auto">
+                            <div class="px-6 py-4 border-gray-200 border-b">
+                                <button
+                                    type="button"
+                                    class="flex items-center hover:bg-gray-50 px-4 py-2 rounded-full text-neutral-900 hover:text-primary-600 transition-colors submenu-back"
+                                    aria-label="Zurück zum Hauptmenü"
+                                >
+                                    <i class="icon-chevron-left mr-2 text-lg" aria-hidden="true"></i>
+                                    <span class="font-semibold">
+                                        Zurück zu Leistungen
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="px-6 py-6">
+                                <ul class="gap-2 grid grid-cols-1" role="menu">
+                                    <li role="none">
+                                        <a href="#" class="block hover:bg-gray-50 p-4 rounded-2xl font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu transition-colors" role="menuitem">
+                                            Über uns
+                                        </a>
+                                    </li>
+                                    <li role="none">
+                                        <a href="#" class="block hover:bg-gray-50 p-4 rounded-2xl font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu transition-colors" role="menuitem">
+                                            Geschichte
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="py-1">
+                    <div class="flex justify-between items-center w-full">
+                        <a href="#" class="block flex-1 hover:bg-gray-50 px-4 py-3 rounded-full font-semibold uppercase tracking-menu transition-colors">
+                            Unternehmen
+                        </a>
+                        <button
+                            type="button"
+                            class="flex justify-center items-center hover:bg-gray-50 ml-2 rounded-full w-10 h-10 transition-colors submenu-toggle"
+                            aria-expanded="false"
+                            aria-controls="submenu-2"
+                        >
+                            <i class="icon-chevron-right text-lg transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <div
+                        id="submenu-2"
+                        class="hidden lg:hidden top-24 md:top-26 right-0 z-50 fixed bg-white rounded-l-3xl w-[100%] sm:w-[100%] md:max-w-md h-[calc(100vh-6rem)] md:h-[calc(100vh-6.5rem)] translate-x-[100%] duration-300 ease-in-out transform submenu"
+                        inert=""
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Untermenü Unternehmen"
+                    >
+                        <div class="h-full overflow-y-auto">
+                            <div class="px-6 py-4 border-gray-200 border-b">
+                                <button
+                                    type="button"
+                                    class="flex items-center hover:bg-gray-50 px-4 py-2 rounded-full text-neutral-900 hover:text-primary-600 transition-colors submenu-back"
+                                    aria-label="Zurück zum Hauptmenü"
+                                >
+                                    <i class="icon-chevron-left mr-2 text-lg" aria-hidden="true"></i>
+                                    <span class="font-semibold">
+                                        Zurück zu Unternehmen
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="px-6 py-6">
+                                <ul class="gap-2 grid grid-cols-1" role="menu">
+                                    <li role="none">
+                                        <a href="#" class="block hover:bg-gray-50 p-4 rounded-2xl font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu transition-colors" role="menuitem">
+                                            Stellenangebote
+                                        </a>
+                                    </li>
+                                    <li role="none">
+                                        <a href="#" class="block hover:bg-gray-50 p-4 rounded-2xl font-medium text-neutral-900 hover:text-primary-600 no-underline tracking-menu transition-colors" role="menuitem">
+                                            Ausbildung
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="block hover:bg-gray-50 px-4 py-3 rounded-full font-semibold uppercase tracking-menu transition-colors">
+                        Verantwortung
+                    </a>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="block hover:bg-gray-50 px-4 py-3 rounded-full font-semibold uppercase tracking-menu transition-colors">
+                        Karriere
+                    </a>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="block hover:bg-gray-50 px-4 py-3 rounded-full font-semibold uppercase tracking-menu transition-colors">
+                        Presse
+                    </a>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="block hover:bg-gray-50 px-4 py-3 rounded-full font-semibold uppercase tracking-menu transition-colors">
+                        Kontakt
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!-- Search Modal -->
+<div
+    id="search-modal"
+    class="hidden z-50 fixed inset-0 bg-neutral-900/80 opacity-0 transition-all duration-400 pointer-events-none"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Suchfeld"
+>
+    <div class="flex justify-center items-center px-4 min-h-screen">
+        <div class="bg-white shadow-2xl p-8 rounded-3xl w-full max-w-2xl scale-95 transition-transform duration-300 transform">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="font-bold text-neutral-900 text-2xl">Suche</h2>
+                <button
+                    type="button"
+                    class="flex justify-center items-center hover:bg-gray-50 rounded-full w-10 h-10 text-neutral-900 hover:text-primary-600 transition-colors"
+                    aria-label="Suche schließen"
+                    data-search-close
+                >
+                    <i class="text-xl icon-close" aria-hidden="true"></i>
+                </button>
+            </div>
+            <form action="/suche" method="get" class="relative">
+                <label for="search-input-modal" class="sr-only">Suchbegriff eingeben</label>
+                <div class="relative">
+                    <input
+                        type="search"
+                        name="tx_kesearch_pi1[sword]"
+                        id="search-input-modal"
+                        class="px-6 py-4 border border-gray-300 focus:border-transparent rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-600 w-full text-lg transition-all"
+                        placeholder="Wonach suchen Sie?"
+                        aria-label="Suchbegriff"
+                    >
+                    <button
+                        type="submit"
+                        class="top-1/2 right-4 absolute flex justify-center items-center hover:bg-gray-50 rounded-full w-10 h-10 text-neutral-900 hover:text-primary-600 transition-colors -translate-y-1/2"
+                        aria-label="Suche starten"
+                    >
+                        <i class="text-xl icon-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div
+  style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; align-self: stretch; flex-grow: 0; flex-shrink: 0; background: #fff;"
+>
+  <div
+    style="display: flex; justify-content: flex-start; align-items: center; align-self: stretch; flex-grow: 0; flex-shrink: 0; padding-left: 56px; padding-right: 56px; padding-top: 20px; padding-bottom: 20px; background: #fff;"
+  >
+    <div
+      style="display: flex; justify-content: flex-start; align-items: flex-start; flex-grow: 1; position: relative; gap: 10px;"
+    >
+      <svg
+        width="146"
+        height="48"
+        viewBox="0 0 146 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="flex-grow: 0; flex-shrink: 0; width: 146px; height: 48px; position: relative;"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <g clip-path="url(#clip0_4654_4696)">
+          <path
+            d="M1.93791 45.5003V47.8126H0.738281V42.2981H3.93057V43.343H1.93791V44.4216H3.93057V45.5003H1.93791Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M5.58402 43.3666V44.4587H7.46915V45.5272H5.58402V46.707H7.50612V47.8092H4.39111V42.2947H7.51284V43.3632H5.58066L5.58402 43.3666Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M10.8292 47.8126L9.37415 45.4834V47.8126H8.21484V42.2981H9.75722C10.4662 42.2981 11.2223 42.352 11.6424 43.0093C11.8137 43.2823 11.8977 43.6093 11.8977 43.9295C11.8977 44.4385 11.7028 44.9677 11.266 45.2508C11.0879 45.3688 10.8695 45.4228 10.6578 45.4699L12.2472 47.8126H10.8292ZM9.78411 43.2587H9.38087V44.7115H9.80763C10.1336 44.7115 10.4394 44.6812 10.6242 44.3677C10.6947 44.2497 10.725 44.1115 10.725 43.9767C10.725 43.4138 10.2646 43.2587 9.78411 43.2587Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M15.1373 47.8126L13.6823 45.4834V47.8126H12.5229V42.2981H14.0653C14.7744 42.2981 15.5304 42.352 15.9505 43.0093C16.1218 43.2823 16.2058 43.6093 16.2058 43.9295C16.2058 44.4385 16.0109 44.9677 15.5741 45.2508C15.396 45.3688 15.1776 45.4228 14.9659 45.4699L16.5553 47.8126H15.1373ZM14.0922 43.2587H13.689V44.7115H14.1157C14.4417 44.7115 14.7475 44.6812 14.9323 44.3677C15.0029 44.2497 15.0331 44.1115 15.0331 43.9767C15.0331 43.4138 14.5727 43.2587 14.0922 43.2587Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M19.6367 47.9542C17.8927 47.9542 16.6763 46.7812 16.6763 45.1126C16.6763 43.4441 17.8994 42.1599 19.5796 42.1599C21.2597 42.1599 22.5299 43.4003 22.5299 45.0654C22.5299 46.7306 21.337 47.9542 19.6333 47.9542H19.6367ZM19.6199 43.3059C18.6454 43.3059 17.8927 44.0879 17.8927 45.0789C17.8927 46.0699 18.6488 46.8283 19.6535 46.8283C20.5877 46.8283 21.3034 46.0699 21.3034 45.0789C21.3034 44.0879 20.5877 43.3059 19.6233 43.3059H19.6199Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M25.7828 47.8126H24.6302L22.5737 42.2981H23.8809L25.2586 46.2351L26.6363 42.2981H27.9301L25.7795 47.8126H25.7828Z"
+            fill="#00685E"
+          ></path>
+          <path d="M28.2964 47.8126V42.2981H29.496V47.8126H28.2964Z" fill="#00685E"></path>
+          <path
+            d="M31.7373 43.3666V44.4587H33.6225V45.5272H31.7373V46.707H33.6594V47.8092H30.5444V42.2947H33.6662V43.3632H31.734L31.7373 43.3666Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M40.0775 47.2901C39.4323 47.7823 38.7132 47.8126 37.937 47.8126H36.6533V42.2981H37.7656C38.9249 42.2981 40.017 42.3925 40.6622 43.5014C40.9343 43.97 41.0654 44.4452 41.0654 44.9947C41.0654 45.8239 40.7529 46.7744 40.0775 47.2901ZM39.308 43.5891C38.9484 43.2992 38.4578 43.2621 38.0142 43.2621H37.8496V46.8486H38.1755C39.3214 46.8486 39.896 46.1374 39.896 45.0284C39.896 44.4958 39.7314 43.9363 39.3046 43.5924L39.308 43.5891Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M42.9502 43.3666V44.4587H44.8354V45.5272H42.9502V46.707H44.8723V47.8092H41.7573V42.2947H44.8791V43.3632H42.9469L42.9502 43.3666Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M45.5918 47.8126V42.2981H46.7914V46.7272H48.6665V47.8126H45.5918Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M49.251 47.8126V42.2981H50.4506V46.7272H52.3257V47.8126H49.251Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M55.5044 47.9542C53.7604 47.9542 52.5439 46.7812 52.5439 45.1126C52.5439 43.4441 53.7671 42.1599 55.4473 42.1599C57.1274 42.1599 58.3976 43.4003 58.3976 45.0654C58.3976 46.7306 57.2047 47.9542 55.501 47.9542H55.5044ZM55.4876 43.3059C54.5131 43.3059 53.7604 44.0879 53.7604 45.0789C53.7604 46.0699 54.5164 46.8283 55.5212 46.8283C56.4553 46.8283 57.1711 46.0699 57.1711 45.0789C57.1711 44.0879 56.4553 43.3059 55.4909 43.3059H55.4876Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M62.5142 47.9373C61.8052 47.9373 61.2541 47.634 60.7534 47.1486L61.533 46.289C61.8119 46.6093 62.1177 46.9126 62.568 46.9126C62.941 46.9126 63.2602 46.6463 63.2602 46.2553C63.2602 46.0598 63.1829 45.9115 63.0418 45.7868C62.9007 45.6621 62.7158 45.5744 62.5445 45.4969C61.7985 45.1362 61.0558 44.6846 61.0558 43.7475C61.0558 42.7565 61.8892 42.1464 62.8234 42.1464C63.5257 42.1464 63.9356 42.4026 64.4027 42.888L63.6399 43.7475C63.4282 43.4677 63.1964 43.225 62.8234 43.225C62.5445 43.225 62.3025 43.4205 62.3025 43.7104C62.3025 44.57 64.5136 44.4048 64.5136 46.1239C64.5136 47.28 63.603 47.9373 62.5109 47.9373H62.5142Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M67.1381 43.3599V47.8126H65.9486V43.3767H64.7725V42.2981H68.3142V43.3599H67.1381Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M72.37 47.8126L71.9432 46.6969H69.6616L69.2584 47.8126H67.9814L70.1388 42.2981H71.409L73.6671 47.8126H72.3734H72.37ZM70.7739 43.4778L70.0346 45.6587H71.5467L70.7772 43.4778H70.7739Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M75.6562 43.3599V47.8126H74.4666V43.3767H73.2905V42.2981H76.8323V43.3599H75.6562Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M79.8701 47.9542C78.1261 47.9542 76.9097 46.7812 76.9097 45.1126C76.9097 43.4441 78.1328 42.1599 79.813 42.1599C81.4931 42.1599 82.7633 43.4003 82.7633 45.0654C82.7633 46.7306 81.5704 47.9542 79.8667 47.9542H79.8701ZM79.8533 43.3059C78.8788 43.3059 78.1261 44.0879 78.1261 45.0789C78.1261 46.0699 78.8822 46.8283 79.8869 46.8283C80.8211 46.8283 81.5368 46.0699 81.5368 45.0789C81.5368 44.0879 80.8211 43.3059 79.8567 43.3059H79.8533Z"
+            fill="#00685E"
+          ></path>
+          <path d="M85.5088 47.8126V42.2981H86.7084V47.8126H85.5088Z" fill="#00685E"></path>
+          <path
+            d="M89.558 43.3599V47.8126H88.3685V43.3767H87.1924V42.2981H90.7341V43.3599H89.558Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M94.7899 47.8126L94.3632 46.6969H92.0815L91.6783 47.8126H90.4014L92.5587 42.2981H93.8289L96.087 47.8126H94.7933H94.7899ZM93.1938 43.4778L92.4545 45.6587H93.9667L93.1971 43.4778H93.1938Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M96.48 47.8126V42.2981H97.6796V46.7272H99.5547V47.8126H96.48Z"
+            fill="#00685E"
+          ></path>
+          <path d="M100.123 47.8126V42.2981H101.322V47.8126H100.123Z" fill="#00685E"></path>
+          <path
+            d="M106.094 47.8126L105.667 46.6969H103.386L102.982 47.8126H101.706L103.863 42.2981H105.133L107.391 47.8126H106.097H106.094ZM104.498 43.4778L103.759 45.6587H105.271L104.501 43.4778H104.498Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M111.467 47.8126L108.89 44.1115L108.92 47.8126H107.791V42.2981H108.873L111.434 45.9284L111.41 42.2981H112.532V47.8126H111.467Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M114.575 43.3666V44.4587H116.46V45.5272H114.575V46.707H116.497V47.8092H113.382V42.2947H116.504V43.3632H114.572L114.575 43.3666Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M124.583 46.5014C124.139 47.3913 123.205 47.9306 122.113 47.9306C120.47 47.9306 119.324 46.7508 119.324 45.0486C119.324 43.3464 120.476 42.1498 122.15 42.1498C122.852 42.1498 123.514 42.3689 123.981 42.7498C124.223 42.9453 124.324 43.0632 124.566 43.4071L123.591 43.9767C123.39 43.7104 123.279 43.616 123.03 43.4778C122.765 43.3295 122.486 43.2587 122.18 43.2587C121.192 43.2587 120.5 44.0003 120.5 45.0621C120.5 46.1239 121.202 46.8587 122.173 46.8587C122.664 46.8587 123.138 46.6463 123.38 46.3126C123.497 46.1475 123.534 46.0463 123.591 45.7902H122.15V44.7655H124.905V44.8194C124.905 45.5374 124.811 46.0362 124.579 46.498L124.583 46.5014Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M128.188 47.8126L126.733 45.4834V47.8126H125.574V42.2981H127.116C127.825 42.2981 128.581 42.352 129.001 43.0093C129.173 43.2823 129.257 43.6093 129.257 43.9295C129.257 44.4385 129.062 44.9677 128.625 45.2508C128.447 45.3688 128.228 45.4228 128.017 45.4699L129.606 47.8126H128.188ZM127.146 43.2587H126.743V44.7115H127.17C127.496 44.7115 127.802 44.6812 127.986 44.3677C128.057 44.2497 128.087 44.1115 128.087 43.9767C128.087 43.4138 127.627 43.2587 127.146 43.2587Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M132.687 47.9542C130.943 47.9542 129.727 46.7812 129.727 45.1126C129.727 43.4441 130.95 42.1599 132.63 42.1599C134.311 42.1599 135.581 43.4003 135.581 45.0654C135.581 46.7306 134.388 47.9542 132.684 47.9542H132.687ZM132.671 43.3059C131.696 43.3059 130.943 44.0879 130.943 45.0789C130.943 46.0699 131.7 46.8283 132.704 46.8283C133.638 46.8283 134.354 46.0699 134.354 45.0789C134.354 44.0879 133.638 43.3059 132.674 43.3059H132.671Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M140.342 47.1081C139.922 47.7182 139.22 47.9609 138.504 47.9609C137.654 47.9609 136.767 47.5868 136.448 46.7508C136.323 46.4306 136.3 46.0868 136.3 45.743V42.2981H137.469V45.7025C137.469 45.9992 137.476 46.2486 137.664 46.498C137.866 46.7711 138.225 46.8823 138.551 46.8823C139.284 46.8823 139.563 46.4205 139.563 45.743V42.2981H140.732V45.3688C140.732 45.9688 140.702 46.5958 140.342 47.1115V47.1081Z"
+            fill="#00685E"
+          ></path>
+          <path
+            d="M144.805 45.2812C144.422 45.6553 143.877 45.7194 143.357 45.7194H142.789V47.8126H141.599V42.2981H143.202C143.31 42.2981 143.427 42.2981 143.538 42.3048C144.129 42.3352 144.644 42.4835 145.01 42.9857C145.228 43.2823 145.312 43.6565 145.312 44.0172C145.312 44.4924 145.148 44.9475 144.805 45.2812ZM143.669 43.3295C143.545 43.2992 143.42 43.2992 143.296 43.2992H142.799V44.7048H143.32C143.78 44.7048 144.146 44.516 144.146 44.0104C144.146 43.6969 143.992 43.4104 143.672 43.3295H143.669Z"
+            fill="#00685E"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M22.046 16.3568L10.0901 17.5467L2.44873 33.2577C8.6989 33.2577 11.8778 32.6476 15.5338 27.423C17.0761 25.1882 19.8114 20.7388 22.046 16.3535"
+            fill="#00685E"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M53.7906 1.93681L54.6408 0.187393H29.8282C21.4712 0.187393 17.2069 3.02219 14.6128 8.2738C13.2597 11.0131 12.5854 12.3827 12.5899 12.3827H23.7831C27.765 4.73452 32.6139 2.0986 44.4758 1.93681H53.7872H53.7906Z"
+            fill="#00685E"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M37.1069 25.2455C36.119 30.7937 31.7539 35.1757 26.2094 36.1835C26.2094 36.1835 22.8928 36.7667 20.7153 36.7667C18.5378 36.7667 0.738281 36.7667 0.738281 36.7667L1.58844 35.0173C1.58844 35.0173 8.44011 34.9566 9.34067 34.9566C11.6593 35.0072 15.7723 34.6937 15.7723 34.6937C20.5137 34.1914 24.2403 31.0937 25.4265 26.5904L26.7605 22.0467C27.4863 18.2782 30.7962 15.4299 34.7681 15.4299L47.628 14.6142L47.0131 15.8479L43.0513 16.0939C40.1043 16.3332 37.742 18.6388 37.4127 21.5579L37.1035 25.2421L37.1069 25.2455Z"
+            fill="#DD052B"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M52.9342 3.68285C37.9102 3.68285 35.4841 6.20754 32.0801 12.3827H48.7069L52.9678 3.62218L52.9308 3.68285H52.9342Z"
+            fill="#00685E"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M132.469 28.2926C132.469 25.6601 130.359 25.6904 129.246 25.6904H123.49C123.541 25.805 123.561 25.9365 123.561 26.0713C123.561 26.2196 123.53 26.3578 123.473 26.4792L118.477 36.7835H121.356L123.581 32.1926H126.592L127.506 36.7835H130.597C130.412 36.6689 130.167 36.3858 130.076 35.9779L129.236 32.1623C130.194 32.0274 132.469 30.6488 132.469 28.2926ZM127.123 30.4398H124.431L125.886 27.4533H128.756C129.431 27.4533 129.703 27.9488 129.703 28.2926C129.703 29.4488 128.658 30.4398 127.123 30.4398Z"
+            fill="#00685E"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M144.415 25.6904H141.441C141.441 25.9635 141.344 26.2736 141.075 26.587L132.311 36.7835H134.835L136.911 34.2589H142.281L142.331 36.7835H144.973L144.412 25.6871L144.415 25.6904ZM138.397 32.4555L142.153 27.9016L142.244 32.4555H138.397Z"
+            fill="#00685E"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M117.106 34.6667L116.077 36.7869H105.334L110.341 26.4758C110.395 26.3545 110.429 26.2163 110.429 26.0713C110.429 25.9365 110.402 25.805 110.355 25.6938H119.932L118.873 27.8747C118.756 27.6219 118.53 27.45 118.272 27.45H112.754L111.467 30.096H117.052L115.993 32.2769C115.876 32.0241 115.651 31.8488 115.392 31.8488H110.62L109.071 35.0341H116.01C116.289 35.0341 116.887 34.8824 117.106 34.6701"
+            fill="#00685E"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M96.5507 27.2039L96.9069 26.4691C96.9674 26.3477 96.9977 26.2129 96.9977 26.0646C96.9977 25.9264 96.9708 25.8017 96.9204 25.6871H99.7867L102.475 33.3993L105.835 26.4691C105.892 26.3477 105.926 26.2129 105.926 26.0646C105.926 25.9264 105.899 25.8017 105.849 25.6871H108.214L102.831 36.7835H100.768L97.9083 28.5286L93.9095 36.7835H91.9102L96.5575 27.2039H96.5507Z"
+            fill="#00685E"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M91.4565 25.6904C91.5036 25.805 91.5304 25.9331 91.5304 26.0713C91.5304 26.2196 91.5002 26.3578 91.4431 26.4792L86.4463 36.7869H89.3261L94.7093 25.6904H91.4531H91.4565Z"
+            fill="#00685E"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M78.0691 25.6904H89.2153L88.1568 27.8814C88.0392 27.6252 87.814 27.4567 87.5553 27.4567H84.6083L80.0719 36.7869H77.1921L81.7251 27.4567H78.059C77.7197 27.4567 77.3097 27.6522 77.0039 27.8848L78.0691 25.6938V25.6904Z"
+            fill="#00685E"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M72.8977 34.6667L71.8694 36.7869H61.1299L66.1367 26.4758C66.1905 26.3545 66.2207 26.2163 66.2207 26.0713C66.2207 25.9365 66.1939 25.805 66.1468 25.6938H75.7237L74.6652 27.8747C74.5476 27.6219 74.3224 27.45 74.0637 27.45H68.5461L67.2624 30.096H72.8439L71.7854 32.2769C71.6678 32.0241 71.4427 31.8488 71.1839 31.8488H66.4123L64.8632 35.0341H71.8022C72.0811 35.0341 72.6793 34.8824 72.901 34.6701"
+            fill="#00685E"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M52.302 27.2039L52.6582 26.4691C52.7153 26.3477 52.749 26.2129 52.749 26.0646C52.749 25.9264 52.7221 25.8017 52.6683 25.6871H55.5346L58.2195 33.3993L61.5798 26.4691C61.6403 26.3477 61.6706 26.2129 61.6706 26.0646C61.6706 25.9264 61.6403 25.8017 61.5899 25.6871H63.9556L58.5724 36.7835H56.5091L53.6495 28.5286L49.6507 36.7835H47.6514L52.2987 27.2039H52.302Z"
+            fill="#00685E"
+          ></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_4654_4696">
+            <rect width="146" height="48" fill="white"></rect>
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</div>

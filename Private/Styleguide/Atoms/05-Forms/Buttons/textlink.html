@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Link - Netinera Styleguide</title>
+    <link rel="stylesheet" href="../../../../CSS/output.css">
+</head>
+<body class="bg-stone-100 p-8 font-sans">
+    
+    <div class="mx-auto max-w-4xl">
+        <!-- Component Header -->
+        <header class="mb-8">
+            <h1 class="mb-2 text-netinera-dark headline-h2">Text Link</h1>
+            <p class="text-netinera-gray-medium body-base">
+                Interactive text link component - Figma Node: 1870-21593
+            </p>
+        </header>
+
+        <!-- Text Link Examples -->
+        <section class="bg-white mb-8 p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">Standard Text Links</h2>
+            
+            <div class="space-y-6">
+                <!-- Default -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Default</h3>
+                    <a href="#" class="text-link">
+                        <span class="text-link-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                            </svg>
+                        </span>
+                        Primary Text Link
+                    </a>
+                </div>
+
+                <!-- Color Variants -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Color Variants</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <a href="#" class="text-link">Primary Link (Default)</a>
+                        </div>
+                        <div>
+                            <a href="#" class="text-link text-link-secondary">Secondary Link</a>
+                        </div>
+                        <div>
+                            <a href="#" class="text-link text-link-muted">Muted Link</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sizes -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Sizes</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <a href="#" class="text-link text-link-sm">Small Text Link</a>
+                        </div>
+                        <div>
+                            <a href="#" class="text-link">Medium Text Link (Default)</a>
+                        </div>
+                        <div>
+                            <a href="#" class="text-link text-link-lg">Large Text Link</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- With Icons -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">With Icons</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <a href="#" class="text-link">
+                                <span class="text-link-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 18l6-6-6-6"/>
+                                    </svg>
+                                </span>
+                                Link with Arrow
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="text-link">
+                                <span class="text-link-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h6"/>
+                                        <path d="M21 3l-9 9"/>
+                                        <path d="M15 3h6v6"/>
+                                    </svg>
+                                </span>
+                                External Link
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="text-link">
+                                <span class="text-link-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                                        <polyline points="7,10 12,15 17,10"/>
+                                        <line x1="12" y1="15" x2="12" y2="3"/>
+                                    </svg>
+                                </span>
+                                Download Link
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- External Link Indicator -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Special Link Types</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <a href="#" class="text-link text-link-external">External Link with Auto-Indicator</a>
+                        </div>
+                        <div>
+                            <a href="mailto:info@netinera.de" class="text-link">
+                                <span class="text-link-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </span>
+                                Email Link
+                            </a>
+                        </div>
+                        <div>
+                            <a href="tel:+4912345678" class="text-link">
+                                <span class="text-link-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                                    </svg>
+                                </span>
+                                Phone Link
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dark Background Examples -->
+        <section class="bg-netinera-dark mb-8 p-8 rounded-lg">
+            <h2 class="mb-6 text-white headline-h4">Text Links on Dark Background</h2>
+            
+            <div class="space-y-4">
+                <div>
+                    <a href="#" class="text-link text-link-light">
+                        <span class="text-link-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                        </span>
+                        Light Text Link
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- In Context Examples -->
+        <section class="bg-white mb-8 p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">Text Links in Context</h2>
+            
+            <div class="space-y-6">
+                <!-- In Paragraph -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">In Paragraph</h3>
+                    <p class="text-netinera-dark body-base">
+                        Dies ist ein Beispieltext mit einem eingebetteten 
+                        <a href="#" class="text-link">Text Link</a> 
+                        im Fließtext. Links können natürlich auch am Ende eines Satzes stehen und dann zu 
+                        <a href="#" class="text-link text-link-external">externen Seiten</a> verweisen.
+                    </p>
+                </div>
+
+                <!-- List with Links -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">In Liste</h3>
+                    <ul class="space-y-2">
+                        <li class="text-netinera-dark body-base">
+                            <a href="#" class="text-link">
+                                <span class="text-link-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 18l6-6-6-6"/>
+                                    </svg>
+                                </span>
+                                Erste Navigation
+                            </a>
+                        </li>
+                        <li class="text-netinera-dark body-base">
+                            <a href="#" class="text-link">
+                                <span class="text-link-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 18l6-6-6-6"/>
+                                    </svg>
+                                </span>
+                                Zweite Navigation
+                            </a>
+                        </li>
+                        <li class="text-netinera-dark body-base">
+                            <a href="#" class="text-link">
+                                <span class="text-link-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 18l6-6-6-6"/>
+                                    </svg>
+                                </span>
+                                Dritte Navigation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Example -->
+        <section class="bg-white p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">HTML Code</h2>
+            <pre class="bg-gray-100 p-4 rounded overflow-x-auto text-sm"><code>&lt;!-- Basic Text Link --&gt;
+&lt;a href="#" class="text-link"&gt;
+    Basic Text Link
+&lt;/a&gt;
+
+&lt;!-- Text Link with Icon --&gt;
+&lt;a href="#" class="text-link"&gt;
+    &lt;span class="text-link-icon"&gt;
+        &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;
+            &lt;path d="M9 18l6-6-6-6"/&gt;
+        &lt;/svg&gt;
+    &lt;/span&gt;
+    Link with Icon
+&lt;/a&gt;
+
+&lt;!-- Color Variants --&gt;
+&lt;a href="#" class="text-link"&gt;Primary Link&lt;/a&gt;
+&lt;a href="#" class="text-link text-link-secondary"&gt;Secondary Link&lt;/a&gt;
+&lt;a href="#" class="text-link text-link-light"&gt;Light Link&lt;/a&gt;
+&lt;a href="#" class="text-link text-link-muted"&gt;Muted Link&lt;/a&gt;
+
+&lt;!-- Size Variants --&gt;
+&lt;a href="#" class="text-link text-link-sm"&gt;Small Link&lt;/a&gt;
+&lt;a href="#" class="text-link"&gt;Medium Link&lt;/a&gt;
+&lt;a href="#" class="text-link text-link-lg"&gt;Large Link&lt;/a&gt;
+
+&lt;!-- External Link --&gt;
+&lt;a href="#" class="text-link text-link-external"&gt;External Link&lt;/a&gt;</code></pre>
+        </section>
+    </div>
+
+    <!-- JavaScript for demo interactions -->
+    <script>
+        // Example link interactions
+        document.querySelectorAll('.text-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Text link clicked:', this.textContent.trim());
+            });
+        });
+    </script>
+</body>
+</html> 

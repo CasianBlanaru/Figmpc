@@ -1,0 +1,536 @@
+
+    
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+    </style>
+
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h1">Contact Components</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                Contact Card Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Responsive Contact Card Layout basierend auf Figma Nodes 1774:34603 (Desktop XL) und 1763:30076 (Mobile SM). Mit 4:3 Portrait Image, Gradient Overlay und Kontaktinformationen.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Responsive Contact Card -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Responsive Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Contact Card - Automatische Mobile/Desktop Anpassung
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Responsive Contact Card Example -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Automatische Layout-Anpassung</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: 100% Width × 36px Border Radius → Desktop: 368px × 64px Border Radius
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center">
+                            <div class="contact-card-responsive">
+                                <div class="contact-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="contact-card-responsive-image-overlay">
+                                        <div class="contact-card-responsive-person">
+                                            <div class="contact-card-responsive-person-name">Max Mustermann</div>
+                                            <div class="contact-card-responsive-person-job">Geschäftsführer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-card-responsive-content">
+                                    <div class="contact-card-responsive-contact-group">
+                                        <a href="tel:+491234567890" class="contact-card-responsive-contact-item contact-card-contact-link">+49 123 456 78 90</a>
+                                        <a href="mailto:max.mustermann@netinera.de" class="contact-card-responsive-contact-item contact-card-contact-link">max.mustermann@netinera.de</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;!-- Responsive Contact Card --&gt;
+&lt;div class="contact-card-responsive"&gt;
+  &lt;div class="contact-card-responsive-image" 
+       style="background-image: url('...');"&gt;
+    &lt;div class="contact-card-responsive-image-overlay"&gt;
+      &lt;div class="contact-card-responsive-person"&gt;
+        &lt;div class="contact-card-responsive-person-name"&gt;Max Mustermann&lt;/div&gt;
+        &lt;div class="contact-card-responsive-person-job"&gt;Geschäftsführer&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="contact-card-responsive-content"&gt;
+    &lt;div class="contact-card-responsive-contact-group"&gt;
+      &lt;a href="tel:+491234567890" class="contact-card-responsive-contact-item"&gt;+49 123 456 78 90&lt;/a&gt;
+      &lt;a href="mailto:..." class="contact-card-responsive-contact-item"&gt;email@netinera.de&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Mobile: 100% width, 246px image height, 36px radius --&gt;
+&lt;!-- Desktop: 368px width, 276px image height, 64px radius --&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Contact Card Grid -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Contact Card Grid Layout</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: 1 Spalte → Tablet: 2 Spalten → Desktop: 3 Spalten
+                        </h4>
+                        
+                        <div class="contact-card-grid-responsive">
+                            <!-- Contact Card 1 -->
+                            <div class="contact-card-responsive">
+                                <div class="contact-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="contact-card-responsive-image-overlay">
+                                        <div class="contact-card-responsive-person">
+                                            <div class="contact-card-responsive-person-name">Dr. Anna Weber</div>
+                                            <div class="contact-card-responsive-person-job">Technische Leitung</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-card-responsive-content">
+                                    <div class="contact-card-responsive-contact-group">
+                                        <a href="tel:+491234567891" class="contact-card-responsive-contact-item contact-card-contact-link">+49 123 456 78 91</a>
+                                        <a href="mailto:anna.weber@netinera.de" class="contact-card-responsive-contact-item contact-card-contact-link">anna.weber@netinera.de</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Contact Card 2 -->
+                            <div class="contact-card-responsive">
+                                <div class="contact-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="contact-card-responsive-image-overlay">
+                                        <div class="contact-card-responsive-person">
+                                            <div class="contact-card-responsive-person-name">Michael Schmidt</div>
+                                            <div class="contact-card-responsive-person-job">Kundenbetreuung</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-card-responsive-content">
+                                    <div class="contact-card-responsive-contact-group">
+                                        <a href="tel:+491234567892" class="contact-card-responsive-contact-item contact-card-contact-link">+49 123 456 78 92</a>
+                                        <a href="mailto:michael.schmidt@netinera.de" class="contact-card-responsive-contact-item contact-card-contact-link">michael.schmidt@netinera.de</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Contact Card 3 -->
+                            <div class="contact-card-responsive">
+                                <div class="contact-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="contact-card-responsive-image-overlay">
+                                        <div class="contact-card-responsive-person">
+                                            <div class="contact-card-responsive-person-name">Sarah Johnson</div>
+                                            <div class="contact-card-responsive-person-job">Marketing Director</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-card-responsive-content">
+                                    <div class="contact-card-responsive-contact-group">
+                                        <a href="tel:+491234567893" class="contact-card-responsive-contact-item contact-card-contact-link">+49 123 456 78 93</a>
+                                        <a href="mailto:sarah.johnson@netinera.de" class="contact-card-responsive-contact-item contact-card-contact-link">sarah.johnson@netinera.de</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fixed Size Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Figma Pixel-Perfect Specifications</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Contact Card - Exakte Figma-Maße
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Desktop XL Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Desktop XL (Node 1774:34603)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            368px Width • 64px Border Radius • 276px Image Height • 20px Overlay Padding
+                        </h4>
+                        
+                        <div class="flex justify-center">
+                            <div class="contact-card-xl">
+                                <div class="contact-card-xl-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="contact-card-xl-image-overlay">
+                                        <div class="contact-card-xl-person">
+                                            <div class="contact-card-xl-person-name">Dr. Thomas Müller</div>
+                                            <div class="contact-card-xl-person-job">CEO & Geschäftsführer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-card-xl-content">
+                                    <div class="contact-card-xl-contact-group">
+                                        <a href="tel:+491234567890" class="contact-card-xl-contact-item contact-card-contact-link">+49 123 456 78 90</a>
+                                        <a href="mailto:thomas.mueller@netinera.de" class="contact-card-xl-contact-item contact-card-contact-link">thomas.mueller@netinera.de</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-netinera-element-sm mt-netinera-element-sm">
+                            <div class="gap-4 grid grid-cols-2 text-sm">
+                                <div><strong>Width:</strong> 368px (fixed)</div>
+                                <div><strong>Border Radius:</strong> 64px 0px 64px 0px</div>
+                                <div><strong>Image Height:</strong> 276px (4:3 Portrait)</div>
+                                <div><strong>Overlay Padding:</strong> 20px</div>
+                                <div><strong>Name:</strong> 22px, line-height 1.45 (style_BAGP0G)</div>
+                                <div><strong>Job:</strong> 16px, line-height 1.625 (style_K8LER5)</div>
+                                <div><strong>Content Padding:</strong> 32px</div>
+                                <div><strong>Contact:</strong> 16px, line-height 1.5 (style_6AUZ2N)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile SM Specifications -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Mobile SM (Node 1763:30076)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            100% Width • 36px Border Radius • 246px Image Height • 16px Overlay Padding
+                        </h4>
+                        
+                        <div class="flex justify-center">
+                            <div class="contact-card-sm">
+                                <div class="contact-card-sm-image" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="contact-card-sm-image-overlay">
+                                        <div class="contact-card-sm-person">
+                                            <div class="contact-card-sm-person-name">Lisa Schneider</div>
+                                            <div class="contact-card-sm-person-job">Projektleiterin</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-card-sm-content">
+                                    <div class="contact-card-sm-contact-group">
+                                        <a href="tel:+491234567894" class="contact-card-sm-contact-item contact-card-contact-link">+49 123 456 78 94</a>
+                                        <a href="mailto:lisa.schneider@netinera.de" class="contact-card-sm-contact-item contact-card-contact-link">lisa.schneider@netinera.de</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-netinera-element-sm mt-netinera-element-sm">
+                            <div class="gap-4 grid grid-cols-2 text-sm">
+                                <div><strong>Width:</strong> 100% (responsive)</div>
+                                <div><strong>Border Radius:</strong> 36px 0px 36px 0px</div>
+                                <div><strong>Image Height:</strong> 246px (4:3 Portrait)</div>
+                                <div><strong>Overlay Padding:</strong> 16px</div>
+                                <div><strong>Name:</strong> 18px, line-height 1.44 (style_CGTKCC)</div>
+                                <div><strong>Job:</strong> 14px, line-height 1.43 (style_D3K27M)</div>
+                                <div><strong>Content Padding:</strong> 24px</div>
+                                <div><strong>Contact:</strong> 16px, line-height 1.75 (style_8VEF4A)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Color & Pattern Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Variants & Patterns</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Contact Card - Color Variants & Border Patterns
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Color Variants -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Color Variants</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            White (Default), Dark (White Text Contact)
+                        </h4>
+                        
+                        <div class="contact-card-grid-responsive">
+                            <!-- White Variant -->
+                            <div class="contact-card-responsive contact-card-variant-white">
+                                <div class="contact-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="contact-card-responsive-image-overlay">
+                                        <div class="contact-card-responsive-person">
+                                            <div class="contact-card-responsive-person-name">Emma Braun</div>
+                                            <div class="contact-card-responsive-person-job">HR Manager</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-card-responsive-content">
+                                    <div class="contact-card-responsive-contact-group">
+                                        <a href="tel:+491234567895" class="contact-card-responsive-contact-item contact-card-contact-link">+49 123 456 78 95</a>
+                                        <a href="mailto:emma.braun@netinera.de" class="contact-card-responsive-contact-item contact-card-contact-link">emma.braun@netinera.de</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Dark Variant -->
+                            <div class="contact-card-responsive contact-card-variant-dark">
+                                <div class="contact-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="contact-card-responsive-image-overlay">
+                                        <div class="contact-card-responsive-person">
+                                            <div class="contact-card-responsive-person-name">Alexander Wolf</div>
+                                            <div class="contact-card-responsive-person-job">IT Director</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-card-responsive-content">
+                                    <div class="contact-card-responsive-contact-group">
+                                        <a href="tel:+491234567896" class="contact-card-responsive-contact-item contact-card-contact-link">+49 123 456 78 96</a>
+                                        <a href="mailto:alexander.wolf@netinera.de" class="contact-card-responsive-contact-item contact-card-contact-link">alexander.wolf@netinera.de</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pattern Variants -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Border Pattern Variants</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Primary (64px 0px 64px 0px) vs Secondary (0px 64px 0px 64px)
+                        </h4>
+                        
+                        <div class="contact-card-grid-responsive">
+                            <!-- Secondary Pattern -->
+                            <div class="contact-card-responsive contact-card-pattern-secondary">
+                                <div class="contact-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="contact-card-responsive-image-overlay">
+                                        <div class="contact-card-responsive-person">
+                                            <div class="contact-card-responsive-person-name">Petra Klein</div>
+                                            <div class="contact-card-responsive-person-job">Finance Director</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-card-responsive-content">
+                                    <div class="contact-card-responsive-contact-group">
+                                        <a href="tel:+491234567897" class="contact-card-responsive-contact-item contact-card-contact-link">+49 123 456 78 97</a>
+                                        <a href="mailto:petra.klein@netinera.de" class="contact-card-responsive-contact-item contact-card-contact-link">petra.klein@netinera.de</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Simple Pattern -->
+                            <div class="contact-card-responsive contact-card-pattern-simple">
+                                <div class="contact-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="contact-card-responsive-image-overlay">
+                                        <div class="contact-card-responsive-person">
+                                            <div class="contact-card-responsive-person-name">Robert Fischer</div>
+                                            <div class="contact-card-responsive-person-job">Operations Manager</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-card-responsive-content">
+                                    <div class="contact-card-responsive-contact-group">
+                                        <a href="tel:+491234567898" class="contact-card-responsive-contact-item contact-card-contact-link">+49 123 456 78 98</a>
+                                        <a href="mailto:robert.fischer@netinera.de" class="contact-card-responsive-contact-item contact-card-contact-link">robert.fischer@netinera.de</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Specifications -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS Spezifikationen</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Contact Card Component System
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Tailwind Utility Classes</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Vollständig in src/input.css integriert
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Responsive Classes</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Contact Card Responsive System */
+.contact-card-responsive
+.contact-card-responsive-image
+.contact-card-responsive-image-overlay
+.contact-card-responsive-person
+.contact-card-responsive-person-name
+.contact-card-responsive-person-job
+.contact-card-responsive-content
+.contact-card-responsive-contact-group
+.contact-card-responsive-contact-item
+
+/* Fixed Size Variants */
+.contact-card-xl (368px Desktop)
+.contact-card-sm (100% Mobile)
+
+/* Grid Layout */
+.contact-card-grid-responsive</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Responsive Breakpoints</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile (< 1024px) - Figma Node 1763:30076 */
+.contact-card-responsive {
+  width: 100%;
+  border-radius: 36px 0px 36px 0px;
+}
+
+.contact-card-responsive-image {
+  height: 246px;
+  border-radius: 36px 0px 36px 0px;
+}
+
+.contact-card-responsive-image-overlay {
+  padding: 16px; /* SM overlay padding */
+}
+
+.contact-card-responsive-content {
+  gap: 10px;
+  padding: 24px; /* SM content padding */
+}
+
+/* Desktop (≥ 1024px) - Figma Node 1774:34603 */
+.contact-card-responsive {
+  width: 368px;
+  border-radius: 64px 0px 64px 0px;
+}
+
+.contact-card-responsive-image {
+  height: 276px;
+  border-radius: 64px 0px 64px 0px;
+}
+
+.contact-card-responsive-image-overlay {
+  padding: 20px; /* XL overlay padding */
+}
+
+.contact-card-responsive-content {
+  gap: 12px;
+  padding: 32px; /* XL content padding */
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Typography Spezifikationen</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile Typography - Figma Styles */
+.contact-card-responsive-person-name {
+  font-size: 18px;              /* style_CGTKCC */
+  line-height: 1.4444444444444444;
+}
+
+.contact-card-responsive-person-job {
+  font-size: 14px;              /* style_D3K27M */
+  line-height: 1.4285714285714286;
+}
+
+.contact-card-responsive-contact-item {
+  font-size: 16px;              /* style_8VEF4A */
+  line-height: 1.75;
+}
+
+/* Desktop Typography - Figma Styles */
+@media (min-width: 1024px) {
+  .contact-card-responsive-person-name {
+    font-size: 22px;            /* style_BAGP0G */
+    line-height: 1.4545454545454546;
+  }
+  
+  .contact-card-responsive-person-job {
+    font-size: 16px;            /* style_K8LER5 */
+    line-height: 1.625;
+  }
+  
+  .contact-card-responsive-contact-item {
+    font-size: 16px;            /* style_6AUZ2N */
+    line-height: 1.5;
+  }
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Gradient Overlay System</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Exact Figma Gradient Implementation */
+.contact-card-responsive-image-overlay {
+  background: linear-gradient(
+    180deg, 
+    rgba(166, 160, 155, 0) 0%,    /* Transparent top */
+    rgba(121, 113, 107, 1) 100%   /* Solid bottom */
+  );
+  backdrop-filter: blur(30px);    /* Figma effect_FY8PH5 */
+  -webkit-backdrop-filter: blur(30px);
+}
+
+/* Interactive Hover Enhancement */
+.contact-card-responsive-image-overlay:hover {
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Contact Card Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Responsive Contact Card Layout mit 4:3 Portrait Image und Gradient Overlay. Automatische Anpassung zwischen Mobile (100% width, 246px image, 36px Border Radius) und Desktop (368px width, 276px image, 64px Border Radius). Mit Person Info und Kontaktdaten.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Desktop XL: Node 1774:34603 (368px, 276px Image, 64px Radius)</span>
+                <span>|</span>
+                <span>Mobile SM: Node 1763:30076 (100% width, 246px Image, 36px Radius)</span>
+            </div>
+        </div>
+    </footer>
+</section>

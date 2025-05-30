@@ -1,0 +1,676 @@
+
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h1">Component Library</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                News List Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content text-netinera-white body-lg">
+                Pixelgenaue responsive News-List-Komponente basierend auf Figma Node 1831-9165. Press Release Items mit Date/Category Layout, Divider und "Zur Übersicht" Button. Vollständig responsive und accessibility-optimiert.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- News List Implementation -->
+            <section class="news-section-fade-in">
+                <div class="overline-sm spacing-overline-h2">Figma Node 1831-9165</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    News List Layout Group
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Press Release Liste mit Section Header, News Items und Button. Exakte Umsetzung der Figma-Spezifikationen mit 40px Gap zur Header, 36px Gap zum Button.
+                </p>
+                
+                <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                    <div class="overline-xs spacing-overline-h6">Complete News List</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        news-layout-group (Pressemitteilungen)
+                    </h4>
+                    
+                    <!-- News List Component Implementation -->
+                    <div class="news-layout-group">
+                        <!-- Section Header -->
+                        <div class="news-section-header">
+                            <h3 class="news-section-title">Pressemitteilungen</h3>
+                        </div>
+                        
+                        <!-- Content Group -->
+                        <div class="news-content-group">
+                            <!-- News Items Group -->
+                            <div class="news-items-group">
+                                
+                                <!-- Press Release Item 1 -->
+                                <div class="press-release-xl news-item-interactive news-item-animate" style="animation-delay: 0.1s;">
+                                    <div class="press-release-text-group">
+                                        <div class="press-release-date">24.5.2025</div>
+                                        <div class="press-release-line"></div>
+                                        <div class="press-release-category">metronom</div>
+                                    </div>
+                                    <div class="press-release-headline">metronom erhält Zuschlag für Verkehrsvertrag ENNO II</div>
+                                </div>
+                                
+                                <!-- Divider -->
+                                <div class="news-divider"></div>
+                                
+                                <!-- Press Release Item 2 -->
+                                <div class="press-release-xl news-item-interactive news-item-animate" style="animation-delay: 0.2s;">
+                                    <div class="press-release-text-group">
+                                        <div class="press-release-date">23.5.2025</div>
+                                        <div class="press-release-line"></div>
+                                        <div class="press-release-category">Netinera Deutschland</div>
+                                    </div>
+                                    <div class="press-release-headline">NETINERA-Tochter ODEG erhält Zuschlag für Verkehrsvertrag in Westmecklenburg bis 2040</div>
+                                </div>
+                                
+                                <!-- Divider -->
+                                <div class="news-divider"></div>
+                                
+                                <!-- Press Release Item 3 -->
+                                <div class="press-release-xl news-item-interactive news-item-animate" style="animation-delay: 0.3s;">
+                                    <div class="press-release-text-group">
+                                        <div class="press-release-date">21.5.2025</div>
+                                        <div class="press-release-line"></div>
+                                        <div class="press-release-category">Netinera Deutschland</div>
+                                    </div>
+                                    <div class="press-release-headline">NETINERA-Tochter ODEG erhält Zuschlag für Verkehrsvertrag in Westmecklenburg bis 2040</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Buttons Group -->
+                            <div class="news-buttons-group">
+                                <a href="#" class="news-primary-button">
+                                    <svg class="news-button-icon arrow-icon-svg" viewBox="0 0 24 24">
+                                        <path d="M5 12h14"></path>
+                                        <path d="M12 5l7 7-7 7"></path>
+                                    </svg>
+                                    <span class="news-button-text">Zur übersicht</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Code Example -->
+                    <div class="mt-netinera-element-lg">
+                        <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="news-layout-group"&gt;
+  &lt;!-- Section Header --&gt;
+  &lt;div class="news-section-header"&gt;
+    &lt;h3 class="news-section-title"&gt;Pressemitteilungen&lt;/h3&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Content Group --&gt;
+  &lt;div class="news-content-group"&gt;
+    &lt;!-- News Items Group --&gt;
+    &lt;div class="news-items-group"&gt;
+      &lt;!-- Press Release Item --&gt;
+      &lt;div class="press-release-xl news-item-interactive"&gt;
+        &lt;div class="press-release-text-group"&gt;
+          &lt;div class="press-release-date"&gt;24.5.2025&lt;/div&gt;
+          &lt;div class="press-release-line"&gt;&lt;/div&gt;
+          &lt;div class="press-release-category"&gt;metronom&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="press-release-headline"&gt;
+          metronom erhält Zuschlag für Verkehrsvertrag ENNO II
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;!-- Divider --&gt;
+      &lt;div class="news-divider"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Button --&gt;
+    &lt;div class="news-buttons-group"&gt;
+      &lt;a href="#" class="news-primary-button"&gt;
+        &lt;svg class="news-button-icon arrow-icon-svg" viewBox="0 0 24 24"&gt;
+          &lt;path d="M5 12h14"&gt;&lt;/path&gt;
+          &lt;path d="M12 5l7 7-7 7"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;span class="news-button-text"&gt;Zur übersicht&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News List Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Component Variants</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    News List Varianten
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Verschiedene Einsatzszenarien der News-List-Komponente mit unterschiedlichen Inhalten und Kategorien.
+                </p>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Tech News Variant -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="overline-xs spacing-overline-h6">Tech News</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Technologie & Innovation
+                        </h4>
+                        
+                        <div class="news-layout-group">
+                            <!-- Section Header -->
+                            <div class="news-section-header">
+                                <h3 class="news-section-title">Technologie & Innovation</h3>
+                            </div>
+                            
+                            <!-- Content Group -->
+                            <div class="news-content-group">
+                                <!-- News Items Group -->
+                                <div class="news-items-group">
+                                    
+                                    <!-- Tech News Item 1 -->
+                                    <div class="press-release-xl news-item-interactive news-item-animate" style="animation-delay: 0.1s;">
+                                        <div class="press-release-text-group">
+                                            <div class="press-release-date">15.5.2025</div>
+                                            <div class="press-release-line"></div>
+                                            <div class="press-release-category">Digital Innovation</div>
+                                        </div>
+                                        <div class="press-release-headline">KI-gesteuerte Fahrgastinformation startet in Hamburg</div>
+                                    </div>
+                                    
+                                    <!-- Divider -->
+                                    <div class="news-divider"></div>
+                                    
+                                    <!-- Tech News Item 2 -->
+                                    <div class="press-release-xl news-item-interactive news-item-animate" style="animation-delay: 0.2s;">
+                                        <div class="press-release-text-group">
+                                            <div class="press-release-date">12.5.2025</div>
+                                            <div class="press-release-line"></div>
+                                            <div class="press-release-category">Nachhaltigkeit</div>
+                                        </div>
+                                        <div class="press-release-headline">Erste batteriebetriebene Züge gehen in den Testbetrieb</div>
+                                    </div>
+                                    
+                                    <!-- Divider -->
+                                    <div class="news-divider"></div>
+                                    
+                                    <!-- Tech News Item 3 -->
+                                    <div class="press-release-xl news-item-interactive news-item-animate" style="animation-delay: 0.3s;">
+                                        <div class="press-release-text-group">
+                                            <div class="press-release-date">08.5.2025</div>
+                                            <div class="press-release-line"></div>
+                                            <div class="press-release-category">IoT & Connectivity</div>
+                                        </div>
+                                        <div class="press-release-headline">Vollvernetzte Fahrzeugflotte: 5G-Technologie für besseren Service</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Buttons Group -->
+                                <div class="news-buttons-group">
+                                    <a href="#" class="news-primary-button">
+                                        <svg class="news-button-icon arrow-icon-svg" viewBox="0 0 24 24">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5l7 7-7 7"></path>
+                                        </svg>
+                                        <span class="news-button-text">Alle Tech-News</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sustainability News Variant -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Sustainability News</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Nachhaltigkeit & Umwelt
+                        </h4>
+                        
+                        <div class="news-layout-group">
+                            <!-- Section Header -->
+                            <div class="news-section-header">
+                                <h3 class="news-section-title">Nachhaltigkeit & Umwelt</h3>
+                            </div>
+                            
+                            <!-- Content Group -->
+                            <div class="news-content-group">
+                                <!-- News Items Group -->
+                                <div class="news-items-group">
+                                    
+                                    <!-- Sustainability News Item 1 -->
+                                    <div class="press-release-xl news-item-interactive news-item-animate" style="animation-delay: 0.1s;">
+                                        <div class="press-release-text-group">
+                                            <div class="press-release-date">20.5.2025</div>
+                                            <div class="press-release-line"></div>
+                                            <div class="press-release-category">Klimaschutz</div>
+                                        </div>
+                                        <div class="press-release-headline">CO2-neutral bis 2030: Netinera präsentiert Klimastrategie</div>
+                                    </div>
+                                    
+                                    <!-- Divider -->
+                                    <div class="news-divider"></div>
+                                    
+                                    <!-- Sustainability News Item 2 -->
+                                    <div class="press-release-xl news-item-interactive news-item-animate" style="animation-delay: 0.2s;">
+                                        <div class="press-release-text-group">
+                                            <div class="press-release-date">18.5.2025</div>
+                                            <div class="press-release-line"></div>
+                                            <div class="press-release-category">Energiewende</div>
+                                        </div>
+                                        <div class="press-release-headline">100% Ökostrom für alle Betriebsstätten ab 2025</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Buttons Group -->
+                                <div class="news-buttons-group">
+                                    <a href="#" class="news-primary-button">
+                                        <svg class="news-button-icon arrow-icon-svg" viewBox="0 0 24 24">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5l7 7-7 7"></path>
+                                        </svg>
+                                        <span class="news-button-text">Nachhaltigkeit</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Implementation</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Code Implementation & Spezifikationen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- CSS Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">CSS Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Figma Node 1831-9165 Spezifikationen */
+
+/* News Layout Group (layout_ODUX81) */
+.news-layout-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Section Header */
+.news-section-title {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.2em; /* style_R66ROL */
+  text-transform: uppercase;
+  text-align: center;
+  color: #1E2939; /* fill_9XYCBA */
+}
+
+/* Content Group (layout_WD5OFX) */
+.news-content-group {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 36px;
+  width: 100%;
+}
+
+/* News Items Group (layout_KG6O93) */
+.news-items-group {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 24px;
+}
+
+/* Press Release Item (layout_F0E3HS) */
+.press-release-xl {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 12px;
+}</code></pre>
+                    </div>
+                    
+                    <!-- Typography Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Typography Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Typography Specifications */
+
+/* Date & Category (style_3N1OUV) */
+.press-release-date,
+.press-release-category {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7142857142857142em;
+  color: #1E2939; /* fill_9XYCBA */
+}
+
+/* Headline (style_0TDD3H) */
+.press-release-headline {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.4545454545454546em;
+  color: #1E2939; /* fill_9XYCBA */
+}
+
+/* Button Text (style_09I3ND) */
+.news-button-text {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4285714285714286em;
+  letter-spacing: 5.714285799435207%;
+  text-transform: uppercase;
+  color: #FFFFFF; /* fill_Y6KS6S */
+}
+
+/* Section Title (style_R66ROL) */
+.news-section-title {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1E2939;
+}</code></pre>
+                    </div>
+                    
+                    <!-- Layout Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Layout Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Layout Specifications */
+
+/* Text Group (layout_0OKG5P) */
+.press-release-text-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  gap: 10px;
+}
+
+/* Line Divider (stroke_PZ3SWP) */
+.press-release-line {
+  width: 1px;
+  height: 20px;
+  background: #1E2939;
+}
+
+/* News Divider (stroke_9JK7JP) */
+.news-divider {
+  width: 100%;
+  height: 1px;
+  background: #E7E5E4;
+}
+
+/* Primary Button (layout_GJT4G3) */
+.news-primary-button {
+  background: #DD052B; /* fill_8DLKB0 */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 24px;
+  height: 52px;
+  width: fit-content;
+  align-self: center;
+}
+
+/* Buttons Group (layout_NKJ00V) */
+.news-buttons-group {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 10px;
+}</code></pre>
+                    </div>
+                    
+                    <!-- JavaScript Implementation -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">JavaScript Implementation</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>// Enhanced News List with Dynamic Loading
+class NewsListComponent {
+  constructor(container) {
+    this.container = container;
+    this.newsItems = [];
+    this.init();
+  }
+  
+  init() {
+    // Intersection Observer for animations
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('news-item-animate');
+          this.observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    // Observe all news items
+    this.observeNewsItems();
+  }
+  
+  observeNewsItems() {
+    const newsItems = this.container.querySelectorAll('.news-item-interactive');
+    newsItems.forEach(item => {
+      this.observer.observe(item);
+    });
+  }
+  
+  // Add new news item dynamically
+  addNewsItem(date, category, headline) {
+    const newsItemsGroup = this.container.querySelector('.news-items-group');
+    
+    // Create divider if not first item
+    if (newsItemsGroup.children.length > 0) {
+      const divider = document.createElement('div');
+      divider.className = 'news-divider';
+      newsItemsGroup.appendChild(divider);
+    }
+    
+    // Create news item
+    const newsItem = document.createElement('div');
+    newsItem.className = 'press-release-xl news-item-interactive';
+    newsItem.innerHTML = `
+      &lt;div class="press-release-text-group"&gt;
+        &lt;div class="press-release-date"&gt;${date}&lt;/div&gt;
+        &lt;div class="press-release-line"&gt;&lt;/div&gt;
+        &lt;div class="press-release-category"&gt;${category}&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="press-release-headline"&gt;${headline}&lt;/div&gt;
+    `;
+    
+    newsItemsGroup.appendChild(newsItem);
+    this.observer.observe(newsItem);
+  }
+  
+  // Load more news items
+  loadMore() {
+    // Simulate API call
+    return new Promise(resolve => {
+      setTimeout(() => {
+        const moreNews = [
+          { date: '10.5.2025', category: 'Innovation', headline: 'Neue digitale Services für Fahrgäste' },
+          { date: '08.5.2025', category: 'Expansion', headline: 'Netinera erweitert Streckennetz in Norddeutschland' }
+        ];
+        
+        moreNews.forEach(news => {
+          this.addNewsItem(news.date, news.category, news.headline);
+        });
+        
+        resolve(moreNews);
+      }, 1000);
+    });
+  }
+}
+
+// Initialize component
+document.addEventListener('DOMContentLoaded', () => {
+  const newsContainers = document.querySelectorAll('.news-layout-group');
+  newsContainers.forEach(container => {
+    new NewsListComponent(container);
+  });
+});</code></pre>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                News List Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue News-List-Komponente basierend auf Figma Node 1831-9165. Press Release Items mit Date/Category Layout, Divider und "Zur Übersicht" Button. Vollständig responsive mit adaptiven Breakpoints.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Layout: Column, 40px Gap, 36px Content Gap, 24px Items Gap</span>
+                <span>|</span>
+                <span>Button: 52px Height, #DD052B, 12px Border Radius</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced News List Component with Animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsItems = document.querySelectorAll('.news-item-interactive');
+            
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('news-item-animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            // Observe all news items
+            newsItems.forEach(item => {
+                observer.observe(item);
+            });
+            
+            // Enhanced button interactions
+            const newsButtons = document.querySelectorAll('.news-primary-button');
+            newsButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Add loading state
+                    const originalContent = button.innerHTML;
+                    button.innerHTML = `
+                        <svg class="animate-spin news-button-icon" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="62.83">
+                                <animate attributeName="stroke-dasharray" dur="1.5s" values="0 62.83;31.42 31.42;62.83 0" repeatCount="indefinite"/>
+                            </circle>
+                        </svg>
+                        <span class="news-button-text">Lädt...</span>
+                    `;
+                    
+                    // Simulate navigation delay
+                    setTimeout(() => {
+                        button.innerHTML = originalContent;
+                        console.log('Navigation to news overview');
+                        // window.location.href = '/news';
+                    }, 2000);
+                });
+                
+                // Add hover ripple effect
+                button.addEventListener('mouseenter', (e) => {
+                    const ripple = document.createElement('div');
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: rgba(255,255,255,0.1);
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        pointer-events: none;
+                        left: 50%;
+                        top: 50%;
+                        width: 100px;
+                        height: 100px;
+                        margin-left: -50px;
+                        margin-top: -50px;
+                    `;
+                    
+                    button.style.position = 'relative';
+                    button.style.overflow = 'hidden';
+                    button.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        if (ripple.parentNode) {
+                            ripple.parentNode.removeChild(ripple);
+                        }
+                    }, 600);
+                });
+            });
+            
+            // Add CSS for ripple animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Responsive indicator updates
+            function updateResponsiveIndicator() {
+                const indicator = document.querySelector('.responsive-indicator');
+                if (!indicator) return;
+                
+                const spans = indicator.querySelectorAll('span');
+                spans.forEach(span => span.style.display = 'none');
+                
+                if (window.innerWidth < 640) {
+                    spans[0].style.display = 'block';
+                } else if (window.innerWidth < 768) {
+                    spans[1].style.display = 'block';
+                } else if (window.innerWidth < 1024) {
+                    spans[2].style.display = 'block';
+                } else if (window.innerWidth < 1280) {
+                    spans[3].style.display = 'block';
+                } else {
+                    spans[4].style.display = 'block';
+                }
+            }
+            
+            window.addEventListener('resize', updateResponsiveIndicator);
+            updateResponsiveIndicator();
+        });
+    </script>
+
+</section>

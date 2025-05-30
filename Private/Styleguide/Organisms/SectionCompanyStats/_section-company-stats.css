@@ -1,0 +1,614 @@
+@layer components {
+  /* ==========================
+   * === SECTION COMPANY STATS CONTAINER
+   * ========================== */
+
+  .netinera-section-company-stats {
+    position: relative;
+    background: white;
+    border-radius: 96px 0;
+    box-shadow: 0 4px 16px rgb(30 41 57 / 8%);
+    overflow: hidden;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .netinera-section-company-stats:hover {
+    box-shadow: 0 8px 32px rgb(30 41 57 / 12%);
+  }
+
+  /* Section Company Stats Content Wrapper */
+  .netinera-section-company-stats-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+    padding: 80px 56px;
+  }
+
+  /* ==========================
+   * === COMPANY STATS SECTION HEADER
+   * ========================== */
+
+  /* Company Stats Section Header */
+  .netinera-company-stats-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  /* Company Stats Header Title */
+  .netinera-company-stats-header-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 24px; /* Desktop first */
+    line-height: 1.333em;
+    color: #1E2939;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  /* Company Stats Header Subtitle */
+  .netinera-company-stats-header-subtitle {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 18px; /* Desktop first */
+    line-height: 1.556em;
+    color: #4B5563;
+    margin: 0;
+    max-width: 600px;
+  }
+
+  /* ==========================
+   * === COMPANY STATS GRID LAYOUT
+   * ========================== */
+
+  /* Company Stats Grid Container */
+  .netinera-company-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
+    gap: 24px; /* Figma specification */
+    width: 100%;
+  }
+
+  /* ==========================
+   * === COMPANY STATS CARDS
+   * ========================== */
+
+  /* Company Stats Card Base */
+  .netinera-company-stats-card {
+    position: relative;
+    background: #F8FAFC; /* Light background */
+    border-radius: 24px 0; /* Netinera signature pattern */
+    padding: 32px 24px; /* Figma specification */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    min-height: 200px;
+    border: 1px solid rgb(30 41 57 / 8%);
+  }
+
+  .netinera-company-stats-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgb(30 41 57 / 15%), 0 4px 10px -2px rgb(30 41 57 / 5%);
+    background: white;
+    border-color: rgb(221 5 43 / 20%);
+  }
+
+  /* Company Stats Card Layout Group */
+  .netinera-company-stats-layout-group {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Figma specification */
+  }
+
+  /* Company Stats Icon Container */
+  .netinera-company-stats-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #DD052B; /* Netinera primary */
+    border-radius: 12px 0; /* Scaled signature pattern */
+    padding: 12px;
+    min-width: 48px;
+    min-height: 48px;
+    flex-shrink: 0;
+  }
+
+  .netinera-company-stats-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+  }
+
+  /* Company Stats Text Group */
+  .netinera-company-stats-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+
+  /* ==========================
+   * === COMPANY STATS TYPOGRAPHY
+   * ========================== */
+
+  /* Company Stats Number */
+  .netinera-company-stats-number {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 36px; /* Desktop first */
+    line-height: 1.111em;
+    color: #1E2939;
+    margin: 0;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  /* Company Stats Label */
+  .netinera-company-stats-label {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.333em;
+    color: #4B5563;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+
+  /* Company Stats Subline */
+  .netinera-company-stats-subline {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.429em;
+    color: #6B7280;
+    margin: 0;
+  }
+
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+
+  /* Tablet breakpoint (≥ 768px, < 1024px) */
+  @media (width >= 768px) and (width <= 1023px) {
+    .netinera-section-company-stats-wrapper {
+      padding: 60px 40px;
+      gap: 48px;
+    }
+
+    .netinera-company-stats-header-title {
+      font-size: 22px;
+      line-height: 1.273em;
+    }
+
+    .netinera-company-stats-header-subtitle {
+      font-size: 16px;
+      line-height: 1.5em;
+    }
+
+    .netinera-company-stats-grid {
+      grid-template-columns: repeat(2, 1fr); /* Tablet: 2 columns */
+      gap: 20px;
+    }
+
+    .netinera-company-stats-card {
+      padding: 28px 20px;
+      min-height: 180px;
+    }
+
+    .netinera-company-stats-layout-group {
+      gap: 14px;
+    }
+
+    .netinera-company-stats-icon {
+      min-width: 44px;
+      min-height: 44px;
+      padding: 10px;
+    }
+
+    .netinera-company-stats-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .netinera-company-stats-number {
+      font-size: 32px;
+      line-height: 1.125em;
+    }
+
+    .netinera-company-stats-label {
+      font-size: 16px;
+      line-height: 1.375em;
+    }
+
+    .netinera-company-stats-subline {
+      font-size: 13px;
+      line-height: 1.385em;
+    }
+  }
+
+  /* Mobile breakpoint (< 768px) */
+  @media (width <= 767px) {
+    .netinera-section-company-stats {
+      border-radius: 36px 0;
+    }
+
+    .netinera-section-company-stats-wrapper {
+      padding: 40px 24px;
+      gap: 32px;
+    }
+
+    .netinera-company-stats-header-title {
+      font-size: 20px;
+      line-height: 1.4em;
+    }
+
+    .netinera-company-stats-header-subtitle {
+      font-size: 16px;
+      line-height: 1.5em;
+    }
+
+    .netinera-company-stats-grid {
+      grid-template-columns: 1fr; /* Mobile: 1 column */
+      gap: 16px;
+    }
+
+    .netinera-company-stats-card {
+      padding: 24px 20px;
+      min-height: 160px;
+      border-radius: 20px 0;
+    }
+
+    .netinera-company-stats-layout-group {
+      gap: 12px;
+    }
+
+    .netinera-company-stats-icon {
+      min-width: 40px;
+      min-height: 40px;
+      padding: 8px;
+      border-radius: 10px 0;
+    }
+
+    .netinera-company-stats-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .netinera-company-stats-number {
+      font-size: 28px;
+      line-height: 1.143em;
+    }
+
+    .netinera-company-stats-label {
+      font-size: 16px;
+      line-height: 1.375em;
+    }
+
+    .netinera-company-stats-subline {
+      font-size: 13px;
+      line-height: 1.385em;
+    }
+  }
+
+  /* Small mobile optimization */
+  @media (width <= 479px) {
+    .netinera-section-company-stats {
+      border-radius: 24px 0;
+    }
+
+    .netinera-section-company-stats-wrapper {
+      padding: 32px 20px;
+      gap: 24px;
+    }
+
+    .netinera-company-stats-header-title {
+      font-size: 18px;
+      line-height: 1.333em;
+    }
+
+    .netinera-company-stats-header-subtitle {
+      font-size: 14px;
+      line-height: 1.429em;
+    }
+
+    .netinera-company-stats-card {
+      padding: 20px 16px;
+      min-height: 140px;
+      border-radius: 16px 0;
+    }
+
+    .netinera-company-stats-layout-group {
+      gap: 10px;
+    }
+
+    .netinera-company-stats-icon {
+      min-width: 36px;
+      min-height: 36px;
+      padding: 6px;
+      border-radius: 8px 0;
+    }
+
+    .netinera-company-stats-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .netinera-company-stats-number {
+      font-size: 24px;
+      line-height: 1.167em;
+    }
+
+    .netinera-company-stats-label {
+      font-size: 14px;
+      line-height: 1.429em;
+    }
+
+    .netinera-company-stats-subline {
+      font-size: 12px;
+      line-height: 1.417em;
+    }
+  }
+
+  /* ==========================
+   * === ANIMATION VARIANTS
+   * ========================== */
+
+  /* Fade In Animation */
+  .netinera-company-stats-fade-in {
+    animation: netinera-company-stats-fade-in-up 0.6s ease-out;
+  }
+
+  @keyframes netinera-company-stats-fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Count Up Animation for Numbers */
+  .netinera-company-stats-count-up {
+    animation: netinera-company-stats-count-up 2s ease-out forwards;
+  }
+
+  @keyframes netinera-company-stats-count-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Number Pulse Animation */
+  .netinera-company-stats-number-pulse {
+    animation: netinera-company-stats-number-pulse 0.3s ease-in-out;
+  }
+
+  @keyframes netinera-company-stats-number-pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  /* Staggered Animation Support */
+  .netinera-company-stats-card:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .netinera-company-stats-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .netinera-company-stats-card:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  .netinera-company-stats-card:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  .netinera-company-stats-card:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  .netinera-company-stats-card:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+
+  /* Interactive Enhanced Hover */
+  .netinera-company-stats-interactive {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .netinera-company-stats-interactive:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgb(30 41 57 / 15%), 0 4px 10px -2px rgb(30 41 57 / 5%);
+  }
+
+  .netinera-company-stats-interactive:active {
+    transform: translateY(-2px);
+    transition: transform 0.1s ease;
+  }
+
+  /* ==========================
+   * === ICON VARIANTS
+   * ========================== */
+
+ .netinera-company-stats-icon .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+
+  /* Focus States */
+  .netinera-section-company-stats:focus {
+    outline: 3px solid #DD052B;
+    outline-offset: 3px;
+  }
+
+  .netinera-company-stats-card:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+    border-radius: inherit;
+  }
+
+  /* Keyboard Navigation */
+  .netinera-company-stats-card[tabindex]:focus {
+    background: rgb(221 5 43 / 5%);
+    transform: translateY(-2px);
+  }
+
+  /* Screen Reader Support */
+  .netinera-section-company-stats[role="region"] {
+    /* Ensures proper accessibility labeling */
+  }
+
+  .netinera-company-stats-card[role="button"] {
+    /* Ensures proper accessibility labeling for interactive cards */
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .netinera-section-company-stats {
+      border: 2px solid #1E2939;
+    }
+
+    .netinera-company-stats-card {
+      border: 2px solid #DD052B;
+      background: white;
+    }
+
+    .netinera-company-stats-header-title,
+    .netinera-company-stats-number {
+      font-weight: 700;
+    }
+
+    .netinera-company-stats-icon {
+      border: 2px solid white;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .netinera-section-company-stats,
+    .netinera-company-stats-card,
+    .netinera-company-stats-interactive {
+      transition: none;
+      animation: none;
+    }
+
+    .netinera-company-stats-fade-in,
+    .netinera-company-stats-count-up,
+    .netinera-company-stats-number-pulse {
+      animation: none;
+    }
+
+    .netinera-company-stats-card:hover,
+    .netinera-company-stats-interactive:hover,
+    .netinera-company-stats-interactive:active {
+      transform: none;
+    }
+  }
+
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+
+  @media print {
+    .netinera-section-company-stats {
+      background: white !important;
+      border: 1px solid #ddd !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      break-inside: avoid;
+      margin-bottom: 30px;
+    }
+
+    .netinera-section-company-stats-wrapper {
+      padding: 20px !important;
+      gap: 20px !important;
+    }
+
+    .netinera-company-stats-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 15px !important;
+    }
+
+    .netinera-company-stats-card {
+      border: 1px solid #ddd !important;
+      border-radius: 0 !important;
+      padding: 15px !important;
+      min-height: auto !important;
+      transform: none !important;
+      box-shadow: none !important;
+      background: white !important;
+    }
+
+    .netinera-company-stats-layout-group {
+      gap: 10px !important;
+    }
+
+    .netinera-company-stats-icon {
+      background: #DD052B !important;
+      border-radius: 0 !important;
+      min-width: 32px !important;
+      min-height: 32px !important;
+      padding: 6px !important;
+    }
+
+    .netinera-company-stats-header-title {
+      color: black !important;
+      font-size: 18px !important;
+      line-height: 1.3 !important;
+    }
+
+    .netinera-company-stats-header-subtitle {
+      color: #666 !important;
+      font-size: 14px !important;
+      line-height: 1.4 !important;
+    }
+
+    .netinera-company-stats-number {
+      color: black !important;
+      font-size: 24px !important;
+      line-height: 1.2 !important;
+    }
+
+    .netinera-company-stats-label {
+      color: #666 !important;
+      font-size: 14px !important;
+      line-height: 1.3 !important;
+    }
+
+    .netinera-company-stats-subline {
+      color: #999 !important;
+      font-size: 11px !important;
+      line-height: 1.3 !important;
+    }
+  }
+
+}

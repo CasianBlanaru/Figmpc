@@ -1,0 +1,155 @@
+/* == TABLE */
+
+/* RTE */
+figure.table {
+  @apply w-full;
+}
+
+table {
+  @apply w-full text-left;
+
+  caption {
+    @apply font-semibold text-left text-primary-700;
+  }
+
+  tr {
+    @apply border-b border-neutral-400;
+  }
+
+  th {
+    @apply font-semibold;
+  }
+
+  td,
+  th {
+    @apply py-2 px-1.25;
+
+    &:first-child {
+      @apply pl-0;
+    }
+
+    &:last-child {
+      @apply pr-0;
+    }
+
+    p {
+      @apply m-0;
+    }
+  }
+
+  /* stylelint-disable no-descending-specificity */
+  thead {
+    th {
+      @apply text-primary-700;
+      @apply align-top;
+
+      img {
+        @apply relative;
+        @apply inline-block text-center max-w-[180px];
+        @apply m-1;
+      }
+
+      p {
+        @apply p-1 h-full;
+        @apply border border-neutral-400;
+        @apply text-primary-700;
+
+        &:first-child {
+          @apply text-center;
+          @apply relative;
+          @apply border-b-0;
+
+          &::before {
+            @apply content-[''];
+            @apply absolute left-0 top-0;
+            @apply w-full h-full;
+            @apply bg-neutral-200;
+            @apply border border-neutral-400 border-[0.5rem];
+          }
+        }
+
+        & + p {
+          @apply -mt-[1px] pt-1 pb-2;
+          @apply border-t-0;
+          @apply bg-white;
+        }
+      }
+    }
+  }
+
+  tfoot {
+    @apply opacity-65;
+  }
+
+  /* Alignments */
+  &[align='right'] {
+    tr {
+      td,
+      th {
+        @apply text-right;
+      }
+    }
+  }
+
+  &[align='center'] {
+    tr {
+      td,
+      th {
+        @apply text-center;
+      }
+    }
+  }
+}
+
+@layer components {
+  .netinera-table-header th {
+    @apply font-semibold text-left;
+    @apply text-primary-700;
+    @apply font-family-titillium-web;
+    @apply p-3;
+    @apply border-b-2;
+    @apply border-neutral-400;
+  }
+
+  .netinera-table-row {
+    @apply border-b border-stone-300;
+
+    transition: background-color 0.2s ease;
+  }
+
+  .netinera-table-row:hover {
+    @apply bg-stone-100;
+  }
+
+  .netinera-table-row:nth-child(even) {
+    @apply bg-stone-50;
+  }
+
+  .netinera-table-cell {
+    @apply px-3 py-4;
+    @apply font-family-roboto;
+  }
+
+  .netinera-table-number {
+    @apply text-right font-mono;
+  }
+
+  .netinera-table-action {
+    @apply text-primary-700;
+    @apply underline cursor-pointer;
+  }
+
+  .netinera-table-action:hover {
+    @apply text-secondary-700;
+  }
+
+  .netinera-table-status-active {
+    color: #00685e; /* Netinera primary color instead of text-primary-700 */
+
+    @apply font-semibold;
+  }
+
+  .netinera-table-status-inactive {
+    @apply text-gray-600;
+  }
+}

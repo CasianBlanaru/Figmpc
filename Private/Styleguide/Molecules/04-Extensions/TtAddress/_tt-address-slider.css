@@ -1,0 +1,66 @@
+/* === TT-Address Slider Component === */
+
+.tt-address-slider article,
+.tt-address article a {
+  @apply no-underline;
+}
+
+.tt-address-slider .swiper-wrapper {
+  @apply !flex !justify-center;
+}
+
+.tt-address-slider .swiper-slide,
+.tt-address .swiper-slide {
+  @apply h-auto;
+}
+
+/* Desktop Grid Layout */
+.desktop-grid-item {
+  @apply w-full;
+
+  transition: all 0.3s ease;
+  display: inline-block !important;
+}
+
+/* Styling for desktop mode (disabled swiper) */
+.swiper-initialized.swiper-disabled {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.swiper-initialized.swiper-disabled .swiper-wrapper {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+/* === TT-Address Card Overrides === */
+
+.tt-address-card-figure img,
+.tt-address-card-image {
+  @apply rounded-tl-[64px] rounded-br-[64px];
+}
+
+/* Responsive Breakpoints */
+@media (width >= 640px) {
+  .tt-address-card-figure img,
+  .tt-address-card-image {
+    @apply rounded-tl-[36px] rounded-br-[36px];
+  }
+
+  .swiper-initialized.swiper-disabled .desktop-grid-item {
+    width: calc(33.333% - 16px) !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Tablet Breakpoint */
+@media (width >= 768px) and (width < 1024px) {
+  .swiper-initialized.swiper-disabled .desktop-grid-item {
+    width: calc(50% - 12px) !important;
+  }
+}

@@ -1,0 +1,53 @@
+/* === TYPO3: Text and Media */
+
+/* Gallery Styling */
+.frame-type-image {
+  .ce-gallery {
+    .ce-row {
+      @apply flex flex-col gap-4 lg:flex-row;
+    }
+
+    img {
+      @apply w-full h-auto object-cover max-h-[500px];
+    }
+  }
+}
+
+/* Text and Media / Image Position */
+.frame-type-textmedia {
+  @apply gap-10;
+
+  .ce-textpic {
+    @apply flex flex-col items-center gap-10;
+
+    > .ce-gallery {
+      @apply lg:basis-1/2 lg:w-1/2 lg:max-w-none lg:flex-shrink-0;
+
+      img {
+        @apply w-full h-auto object-cover max-h-[500px];
+      }
+    }
+
+    &.ce-above {
+      .ce-gallery {
+        @apply mb-6;
+      }
+    }
+
+    &.ce-below {
+      .ce-gallery {
+        @apply mt-6;
+      }
+    }
+
+    &.ce-intext {
+      @apply lg:flex-row lg:gap-20;
+    }
+
+    &.ce-right {
+      .ce-gallery {
+        @apply order-last;
+      }
+    }
+  }
+}

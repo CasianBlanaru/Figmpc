@@ -1,0 +1,13 @@
+/* === MEDIA */
+
+/* == Iframe */
+
+.iframe-container {
+  @apply relative w-full overflow-hidden;
+  @apply pt-[56.25%];
+
+  .iframe {
+    @apply absolute top-0 bottom-0 left-0 right-0;
+    @apply w-full h-full;
+  }
+}

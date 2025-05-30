@@ -1,0 +1,712 @@
+
+@layer components {
+  /* ==========================
+   * === COMPANY STATS RESPONSIVE
+   * ========================== */
+  
+  /* Responsive Company Stats Container */
+  .company-stats-responsive {
+    background: #DD052B; /* Netinera Primary Red */
+    border-radius: 24px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 368px; /* Desktop constraint */
+    padding: 32px 24px;
+    gap: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgb(221 5 43 / 15%);
+  }
+  
+  .company-stats-responsive:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -5px rgb(221 5 43 / 20%), 0 6px 12px -2px rgb(221 5 43 / 10%);
+  }
+  
+  /* Responsive Layout Group */
+  .company-stats-responsive-layout-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: stretch;
+    gap: 16px;
+  }
+  
+  /* Responsive Icon Container */
+  .company-stats-responsive-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background: rgb(255 255 255 / 15%);
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  
+  .company-stats-responsive-icon svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+    stroke: white;
+    stroke-width: 1.25px;
+    fill: none;
+  }
+  
+  /* Responsive Text Group */
+  .company-stats-responsive-text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    gap: 2px;
+  }
+  
+  /* Responsive Number */
+  .company-stats-responsive-number {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 60px; /* Desktop first */
+    line-height: 1.067em;
+    letter-spacing: 1.00%;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+  }
+  
+  /* Responsive Label */
+  .company-stats-responsive-label {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.444em;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  /* Responsive Subline */
+  .company-stats-responsive-subline {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.625em;
+    text-align: center;
+    color: white;
+    width: 100%;
+    opacity: 0.85;
+  }
+  
+  /* ==========================
+   * === COMPANY STATS XL (Desktop)
+   * ========================== */
+  
+  /* Desktop XL Company Stats Container */
+  .company-stats-xl {
+    background: #DD052B; /* Netinera Primary Red */
+    border-radius: 24px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 368px; /* Fixed desktop width */
+    padding: 32px 24px;
+    gap: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgb(221 5 43 / 15%);
+  }
+  
+  .company-stats-xl:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -5px rgb(221 5 43 / 20%), 0 6px 12px -2px rgb(221 5 43 / 10%);
+  }
+  
+  /* Desktop XL Layout Group */
+  .company-stats-xl-layout-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: stretch;
+    gap: 16px;
+  }
+  
+  /* Desktop XL Icon Container */
+  .company-stats-xl-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background: rgb(255 255 255 / 15%);
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  
+  .company-stats-xl-icon svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+    stroke: white;
+    stroke-width: 1.25px;
+    fill: none;
+  }
+  
+  /* Desktop XL Text Group */
+  .company-stats-xl-text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    gap: 2px;
+  }
+  
+  /* Desktop XL Number */
+  .company-stats-xl-number {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 1.067em;
+    letter-spacing: 1.00%;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+  }
+  
+  /* Desktop XL Label */
+  .company-stats-xl-label {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.444em;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  /* Desktop XL Subline */
+  .company-stats-xl-subline {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.625em;
+    text-align: center;
+    color: white;
+    width: 100%;
+    opacity: 0.85;
+  }
+  
+  /* ==========================
+   * === COMPANY STATS SM (Mobile)
+   * ========================== */
+  
+  /* Mobile SM Company Stats Container */
+  .company-stats-sm {
+    background: #DD052B; /* Netinera Primary Red */
+    border-radius: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 328px; /* Fixed mobile width */
+    padding: 24px 20px;
+    gap: 12px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgb(221 5 43 / 12%);
+  }
+  
+  .company-stats-sm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgb(221 5 43 / 15%), 0 4px 8px -2px rgb(221 5 43 / 8%);
+  }
+  
+  /* Mobile SM Layout Group */
+  .company-stats-sm-layout-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: stretch;
+    gap: 12px;
+  }
+  
+  /* Mobile SM Icon Container */
+  .company-stats-sm-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgb(255 255 255 / 15%);
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  
+  .company-stats-sm-icon svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+    stroke: white;
+    stroke-width: 1.25px;
+    fill: none;
+  }
+  
+  /* Mobile SM Text Group */
+  .company-stats-sm-text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    gap: 1px;
+  }
+  
+  /* Mobile SM Number */
+  .company-stats-sm-number {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.2em;
+    letter-spacing: 1.50%;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+  }
+  
+  /* Mobile SM Label */
+  .company-stats-sm-label {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  /* Mobile SM Subline */
+  .company-stats-sm-subline {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.429em;
+    text-align: center;
+    color: white;
+    width: 100%;
+    opacity: 0.85;
+  }
+  
+  /* ==========================
+   * === COMPANY STATS GRIDS
+   * ========================== */
+  
+  /* Company Stats Container */
+  .company-stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Figma Grid Layout (2616:12855) */
+  .company-stats-figma-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+    justify-items: center;
+  }
+  
+  /* Auto Grid Layout */
+  .company-stats-grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    width: 100%;
+    justify-items: center;
+  }
+  
+  /* Responsive Grid */
+  .company-stats-grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 368px));
+    gap: 24px;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+  }
+  
+  /* ==========================
+   * === COLOR VARIANTS
+   * ========================== */
+  
+  /* Primary Variant (Default) */
+  .company-stats-variant-primary {
+    background: #DD052B; /* Netinera Primary Red */
+  }
+  
+  /* Secondary Variant */
+  .company-stats-variant-secondary {
+    background: #00BFA7; /* Netinera Secondary Teal */
+  }
+  
+  .company-stats-variant-secondary:hover {
+    box-shadow: 0 15px 30px -5px rgb(0 191 167 / 20%), 0 6px 12px -2px rgb(0 191 167 / 10%);
+  }
+  
+  /* Dark Variant */
+  .company-stats-variant-dark {
+    background: #1E2939; /* Netinera Dark */
+  }
+  
+  .company-stats-variant-dark:hover {
+    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 20%), 0 6px 12px -2px rgb(30 41 57 / 10%);
+  }
+  
+  /* White Variant */
+  .company-stats-variant-white {
+    background: #FFF;
+    color: #1E2939;
+  }
+  
+  .company-stats-variant-white .company-stats-responsive-number,
+  .company-stats-variant-white .company-stats-xl-number,
+  .company-stats-variant-white .company-stats-sm-number,
+  .company-stats-variant-white .company-stats-responsive-label,
+  .company-stats-variant-white .company-stats-xl-label,
+  .company-stats-variant-white .company-stats-sm-label,
+  .company-stats-variant-white .company-stats-responsive-subline,
+  .company-stats-variant-white .company-stats-xl-subline,
+  .company-stats-variant-white .company-stats-sm-subline {
+    color: #1E2939;
+  }
+  
+  .company-stats-variant-white .company-stats-responsive-icon,
+  .company-stats-variant-white .company-stats-xl-icon,
+  .company-stats-variant-white .company-stats-sm-icon {
+    background: rgb(30 41 57 / 10%);
+  }
+  
+  .company-stats-variant-white .company-stats-responsive-icon svg,
+  .company-stats-variant-white .company-stats-xl-icon svg,
+  .company-stats-variant-white .company-stats-sm-icon svg {
+    color: #1E2939;
+    stroke: #1E2939;
+  }
+  
+  /* ==========================
+   * === COUNTER ANIMATIONS
+   * ========================== */
+  
+  /* Counter Animation */
+  .company-stats-counter {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .company-stats-counter.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Stats Animation on Scroll */
+  .stats-card-animate {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .stats-card-animate.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  
+  /* Interactive Enhancement */
+  .stats-card-interactive {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .stats-card-interactive:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+  
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+  
+  /* Tablet Design */
+  @media (width <= 1023px) {
+    .company-stats-figma-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .company-stats-responsive {
+      max-width: 320px;
+      padding: 28px 20px;
+    }
+    
+    .company-stats-responsive-number {
+      font-size: 48px;
+      line-height: 1.1;
+    }
+    
+    .company-stats-responsive-label {
+      font-size: 16px;
+    }
+    
+    .company-stats-responsive-subline {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+  
+  /* Mobile Design */
+  @media (width <= 767px) {
+    .company-stats-figma-grid,
+    .company-stats-grid-auto,
+    .company-stats-grid-responsive {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .company-stats-responsive,
+    .company-stats-xl {
+      width: 100%;
+      max-width: 100%;
+      padding: 24px 20px;
+      border-radius: 20px 0;
+    }
+    
+    .company-stats-responsive-layout-group,
+    .company-stats-xl-layout-group {
+      gap: 12px;
+    }
+    
+    .company-stats-responsive-icon,
+    .company-stats-xl-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+    }
+    
+    .company-stats-responsive-icon svg,
+    .company-stats-xl-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .company-stats-responsive-number,
+    .company-stats-xl-number {
+      font-size: 40px;
+      line-height: 1.2;
+    }
+    
+    .company-stats-responsive-label,
+    .company-stats-xl-label {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    
+    .company-stats-responsive-subline,
+    .company-stats-xl-subline {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+  
+  /* Small Mobile */
+  @media (width <= 479px) {
+    .company-stats-responsive,
+    .company-stats-xl,
+    .company-stats-sm {
+      padding: 20px 16px;
+      border-radius: 16px 0;
+    }
+    
+    .company-stats-responsive-layout-group,
+    .company-stats-xl-layout-group,
+    .company-stats-sm-layout-group {
+      gap: 10px;
+    }
+    
+    .company-stats-responsive-icon,
+    .company-stats-xl-icon,
+    .company-stats-sm-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+    
+    .company-stats-responsive-icon svg,
+    .company-stats-xl-icon svg,
+    .company-stats-sm-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    .company-stats-responsive-number,
+    .company-stats-xl-number,
+    .company-stats-sm-number {
+      font-size: 32px;
+      line-height: 1.25;
+    }
+    
+    .company-stats-responsive-label,
+    .company-stats-xl-label,
+    .company-stats-sm-label {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    
+    .company-stats-responsive-subline,
+    .company-stats-xl-subline,
+    .company-stats-sm-subline {
+      font-size: 12px;
+      line-height: 1.3;
+    }
+  }
+  
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+  
+  /* Focus States */
+  .company-stats-responsive:focus-within,
+  .company-stats-xl:focus-within,
+  .company-stats-sm:focus-within {
+    outline: 2px solid #FFF;
+    outline-offset: 2px;
+  }
+  
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .company-stats-responsive,
+    .company-stats-xl,
+    .company-stats-sm {
+      border: 2px solid #FFF;
+    }
+    
+    .company-stats-responsive-number,
+    .company-stats-xl-number,
+    .company-stats-sm-number,
+    .company-stats-responsive-label,
+    .company-stats-xl-label,
+    .company-stats-sm-label {
+      font-weight: 600;
+    }
+  }
+  
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .company-stats-responsive,
+    .company-stats-xl,
+    .company-stats-sm,
+    .company-stats-counter,
+    .stats-card-animate,
+    .stats-card-interactive {
+      transition: none;
+      transform: none !important;
+      animation: none;
+      opacity: 1;
+    }
+  }
+  
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+  
+  @media print {
+    .company-stats-responsive,
+    .company-stats-xl,
+    .company-stats-sm {
+      background: white !important;
+      color: black !important;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      break-inside: avoid;
+      margin-bottom: 20px;
+      box-shadow: none !important;
+    }
+    
+    .company-stats-responsive-number,
+    .company-stats-xl-number,
+    .company-stats-sm-number,
+    .company-stats-responsive-label,
+    .company-stats-xl-label,
+    .company-stats-sm-label,
+    .company-stats-responsive-subline,
+    .company-stats-xl-subline,
+    .company-stats-sm-subline {
+      color: black !important;
+    }
+    
+    .company-stats-responsive-icon,
+    .company-stats-xl-icon,
+    .company-stats-sm-icon {
+      background: #f0f0f0 !important;
+    }
+    
+    .company-stats-responsive-icon svg,
+    .company-stats-xl-icon svg,
+    .company-stats-sm-icon svg {
+      color: black !important;
+      stroke: black !important;
+    }
+    
+    .company-stats-figma-grid,
+    .company-stats-grid-auto,
+    .company-stats-grid-responsive {
+      display: block;
+    }
+    
+    .company-stats-figma-grid > *,
+    .company-stats-grid-auto > *,
+    .company-stats-grid-responsive > * {
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* ==========================
+   * === LOADING STATES
+   * ========================== */
+  
+  .company-stats-loading {
+    background: linear-gradient(90deg, #DD052B 25%, #FF2B50 50%, #DD052B 75%);
+    background-size: 200% 100%;
+    animation: company-stats-loading 1.5s infinite;
+  }
+  
+  @keyframes company-stats-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  .company-stats-loading .company-stats-responsive-number,
+  .company-stats-loading .company-stats-xl-number,
+  .company-stats-loading .company-stats-sm-number,
+  .company-stats-loading .company-stats-responsive-label,
+  .company-stats-loading .company-stats-xl-label,
+  .company-stats-loading .company-stats-sm-label {
+    background: linear-gradient(90deg, rgb(255 255 255 / 30%) 25%, rgb(255 255 255 / 50%) 50%, rgb(255 255 255 / 30%) 75%);
+    background-size: 200% 100%;
+    animation: company-stats-loading 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+  }
+  
+} 

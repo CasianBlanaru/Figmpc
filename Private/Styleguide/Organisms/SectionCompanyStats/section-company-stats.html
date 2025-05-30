@@ -1,0 +1,632 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Company Stats specific enhancements */
+        .stats-section-fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stats-card-animate {
+            animation: statsCountUp 2s ease-out forwards;
+        }
+        
+        @keyframes statsCountUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .stats-card-interactive {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .stats-card-interactive:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 10px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Custom icon styles for stats */
+        .stats-icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-netinera-primary);
+            border-radius: 12px 0px 12px 0px;
+            padding: 8px 24px;
+            min-height: 48px;
+        }
+        
+        /* Number counter animation */
+        .stats-number {
+            display: inline-block;
+            overflow: hidden;
+        }
+        
+        .stats-animate-number {
+            animation: numberPulse 0.3s ease-in-out;
+        }
+        
+        @keyframes numberPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Section Component</div>
+            <h1 class="headline-h1 spacing-headline-body-h1">
+                Section Company Stats
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Pixelgenaue Company Statistics Sektion basierend auf Figma Node 1827-5972. Kombiniert Section Header (LG Left) mit Company Stats Components. Netinera in Zahlen - responsive und interaktiv.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Section Company Stats - Complete Implementation -->
+            <section class="stats-section-fade-in">
+                <div class="overline-sm spacing-overline-h2">Figma Node 1827-5972</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Section Company Stats - Netinera in Zahlen
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Vollständige Company Statistics Sektion mit Section Header und 6 Company Stats Components. Exakte Umsetzung der Figma-Spezifikationen mit Animation und Interaktion.
+                </p>
+                
+                <!-- Company Stats Section Implementation -->
+                <div class="relative bg-white shadow-netinera-section rounded-netinera-container-large overflow-hidden">
+                    <!-- Main content with exact padding from Figma: 80px 56px -->
+                    <div class="flex flex-col items-center gap-14 px-14 py-20">
+                        
+                        <!-- Section Header - Using section-header-lg-left -->
+                        <div class="section-header-lg-left">
+                            <h3 class="section-header-lg-left-title text-gray-800">NETINERA IN ZAHLEN</h3>
+                            <p class="section-header-lg-left-subtitle text-gray-800">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                            </p>
+                        </div>
+                        
+                        <!-- Content section with gap 44px -->
+                        <div class="flex flex-col gap-11 w-full">
+                            
+                            <!-- Company Stats Grid - Using company-stats-grid-responsive -->
+                            <div class="company-stats-grid-responsive">
+                                
+                                <!-- Company Stat 1: Züge -->
+                                <div class="company-stats-xl company-stats-variant-primary stats-card-interactive stats-card-animate" style="animation-delay: 0.1s;">
+                                    <div class="company-stats-xl-layout-group">
+                                        <div class="company-stats-xl-icon">
+                                            <div class="stats-icon-container">
+                                                <div class="company-stats-icon-train"></div>
+                                            </div>
+                                        </div>
+                                        <div class="company-stats-xl-text-group">
+                                            <div class="company-stats-xl-number stats-number" data-target="439">439</div>
+                                            <div class="company-stats-xl-label">Züge</div>
+                                        </div>
+                                    </div>
+                                    <div class="company-stats-xl-subline">
+                                        Täglich verbinden Fernzüge Städte und Regionen effizient und nachhaltig.
+                                    </div>
+                                </div>
+                                
+                                <!-- Company Stat 2: Werkstätten -->
+                                <div class="company-stats-xl company-stats-variant-primary stats-card-interactive stats-card-animate" style="animation-delay: 0.2s;">
+                                    <div class="company-stats-xl-layout-group">
+                                        <div class="company-stats-xl-icon">
+                                            <div class="stats-icon-container">
+                                                <div class="company-stats-icon-tools"></div>
+                                            </div>
+                                        </div>
+                                        <div class="company-stats-xl-text-group">
+                                            <div class="company-stats-xl-number stats-number" data-target="99">99</div>
+                                            <div class="company-stats-xl-label">Werkstätten</div>
+                                        </div>
+                                    </div>
+                                    <div class="company-stats-xl-subline">
+                                        Ein echtes Netzwerk, das für effizienten Service und zuverlässige Wartung sorgt.
+                                    </div>
+                                </div>
+                                
+                                <!-- Company Stat 3: Umsatz -->
+                                <div class="company-stats-xl company-stats-variant-primary stats-card-interactive stats-card-animate" style="animation-delay: 0.3s;">
+                                    <div class="company-stats-xl-layout-group">
+                                        <div class="company-stats-xl-icon">
+                                            <div class="stats-icon-container">
+                                                <div class="company-stats-icon-euro"></div>
+                                            </div>
+                                        </div>
+                                        <div class="company-stats-xl-text-group">
+                                            <div class="company-stats-xl-number stats-number" data-target="1.2">1,2</div>
+                                            <div class="company-stats-xl-label">Mrd. €</div>
+                                        </div>
+                                    </div>
+                                    <div class="company-stats-xl-subline">
+                                        Ein Beweis für unsere starke Marktposition und unser Wachstum.
+                                    </div>
+                                </div>
+                                
+                                <!-- Company Stat 4: Busse -->
+                                <div class="company-stats-xl company-stats-variant-primary stats-card-interactive stats-card-animate" style="animation-delay: 0.4s;">
+                                    <div class="company-stats-xl-layout-group">
+                                        <div class="company-stats-xl-icon">
+                                            <div class="stats-icon-container">
+                                                <div class="company-stats-icon-bus"></div>
+                                            </div>
+                                        </div>
+                                        <div class="company-stats-xl-text-group">
+                                            <div class="company-stats-xl-number stats-number" data-target="1408">1408</div>
+                                            <div class="company-stats-xl-label">Busse</div>
+                                        </div>
+                                    </div>
+                                    <div class="company-stats-xl-subline">
+                                        Unsere moderne Busflotte bringt täglich Menschen komfortabel ans Ziel.
+                                    </div>
+                                </div>
+                                
+                                <!-- Company Stat 5: Zug-km -->
+                                <div class="company-stats-xl company-stats-variant-primary stats-card-interactive stats-card-animate" style="animation-delay: 0.5s;">
+                                    <div class="company-stats-xl-layout-group">
+                                        <div class="company-stats-xl-icon">
+                                            <div class="stats-icon-container">
+                                                <div class="company-stats-icon-track"></div>
+                                            </div>
+                                        </div>
+                                        <div class="company-stats-xl-text-group">
+                                            <div class="company-stats-xl-number stats-number" data-target="62.7">62,7</div>
+                                            <div class="company-stats-xl-label">Mio. Zug-km</div>
+                                        </div>
+                                    </div>
+                                    <div class="company-stats-xl-subline">
+                                        Jährlich legen unsere Züge 62,7 Millionen Kilometer zurück.
+                                    </div>
+                                </div>
+                                
+                                <!-- Company Stat 6: Mitarbeitende -->
+                                <div class="company-stats-xl company-stats-variant-primary stats-card-interactive stats-card-animate" style="animation-delay: 0.6s;">
+                                    <div class="company-stats-xl-layout-group">
+                                        <div class="company-stats-xl-icon">
+                                            <div class="stats-icon-container">
+                                                <div class="company-stats-icon-users"></div>
+                                            </div>
+                                        </div>
+                                        <div class="company-stats-xl-text-group">
+                                            <div class="company-stats-xl-number stats-number" data-target="6500">6500</div>
+                                            <div class="company-stats-xl-label">Mitarbeitende</div>
+                                        </div>
+                                    </div>
+                                    <div class="company-stats-xl-subline">
+                                        6500 engagierte Profis sorgen mit Kompetenz und Leidenschaft für stetiges Wachstum.
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Controls -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Interactive Features</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Animation & Interaktivität
+                </h2>
+                
+                <div class="bg-netinera-secondary p-netinera-element-lg rounded-netinera-card-primary">
+                    <div class="text-white overline-xs spacing-overline-h6">Interactive Controls</div>
+                    <h4 class="mb-netinera-element-sm text-white headline-h4 spacing-headline-body-h4">
+                        Teste die Animations-Features
+                    </h4>
+                    <div class="flex flex-wrap gap-4">
+                        <button id="animateStats" class="button-responsive button-white">
+                            🎬 Zahlen animieren
+                        </button>
+                        <button id="resetStats" class="hover:bg-white border-white button-outline text-white hover:text-gray-800 button-responsive">
+                            🔄 Zurücksetzen
+                        </button>
+                        <button id="pulseStats" class="hover:bg-white border-white button-outline text-white hover:text-gray-800 button-responsive">
+                            💓 Pulse-Effekt
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Implementation</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Code Implementation & Spezifikationen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- HTML Code Example -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;!-- Section Company Stats - Figma Node 1827-5972 --&gt;
+&lt;div class="relative bg-white rounded-netinera-container-large overflow-hidden"&gt;
+  &lt;!-- Main content with exact padding from Figma: 80px 56px --&gt;
+  &lt;div class="flex flex-col items-center gap-14 px-14 py-20"&gt;
+    
+    &lt;!-- Section Header - Using section-header-lg-left --&gt;
+    &lt;div class="section-header-lg-left"&gt;
+      &lt;h3 class="section-header-lg-left-title text-gray-800"&gt;NETINERA IN ZAHLEN&lt;/h3&gt;
+      &lt;p class="section-header-lg-left-subtitle text-gray-800"&gt;
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit...
+      &lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Company Stats Grid --&gt;
+    &lt;div class="company-stats-grid-responsive"&gt;
+      &lt;div class="company-stats-xl company-stats-variant-primary"&gt;
+        &lt;div class="company-stats-xl-layout-group"&gt;
+          &lt;div class="company-stats-xl-icon"&gt;
+            &lt;div class="company-stats-icon-train"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="company-stats-xl-text-group"&gt;
+            &lt;div class="company-stats-xl-number"&gt;439&lt;/div&gt;
+            &lt;div class="company-stats-xl-label"&gt;Züge&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="company-stats-xl-subline"&gt;
+          Täglich verbinden Fernzüge Städte und Regionen effizient und nachhaltig.
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- More stats cards... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                    
+                    <!-- CSS Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">CSS Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Figma Node 1827-5972 Spezifikationen */
+
+/* Layout Specifications */
+.section-company-stats {
+  background: white; /* fill_OTLBRC */
+  border-radius: 96px 0px 96px 0px; /* Figma border radius */
+  padding: 80px 56px; /* layout_O8VRBV padding */
+  gap: 56px; /* Section gap */
+}
+
+/* Content Layout */
+.section-company-stats-content {
+  display: flex;
+  flex-direction: column;
+  gap: 44px; /* layout_VMKQ68 */
+}
+
+/* Stats Grid Layout */
+.company-stats-grid-responsive {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px; /* layout_S1DKBC */
+  align-self: stretch;
+}
+
+/* Individual Stat Card */
+.company-stats-xl {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0px 24px 24px 0px; /* layout_SGCB60 */
+  width: 368px; /* Fixed width from Figma */
+  border: 0px 1px 1px 0px solid #E7E5E4; /* stroke_D8JQWM */
+  border-radius: 0px 0px 48px 0px;
+}
+
+/* Responsive Behavior */
+@media (max-width: 1023px) {
+  .section-company-stats {
+    padding: 40px 28px; /* Mobile padding */
+    border-radius: 48px 0px 48px 0px; /* Mobile border */
+  }
+  
+  .company-stats-grid-responsive {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .company-stats-xl {
+    width: 100%;
+  }
+}</code></pre>
+                    </div>
+                    
+                    <!-- Component Integration -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Komponenten-Integration</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Verwendet bestehende Komponenten - Kein doppelter Code */
+
+/* Section Header Integration */
+.section-header-lg-left              /* ✅ Bereits implementiert */
+.section-header-lg-left-title        /* ✅ Bereits implementiert */
+.section-header-lg-left-subtitle     /* ✅ Bereits implementiert */
+
+/* Company Stats Integration */
+.company-stats-xl                    /* ✅ Bereits implementiert */
+.company-stats-xl-layout-group       /* ✅ Bereits implementiert */
+.company-stats-xl-icon               /* ✅ Bereits implementiert */
+.company-stats-xl-text-group         /* ✅ Bereits implementiert */
+.company-stats-xl-number             /* ✅ Bereits implementiert */
+.company-stats-xl-label              /* ✅ Bereits implementiert */
+.company-stats-xl-subline            /* ✅ Bereits implementiert */
+.company-stats-grid-responsive       /* ✅ Bereits implementiert */
+.company-stats-variant-primary       /* ✅ Bereits implementiert */
+
+/* Icon Integration */
+.company-stats-icon-train            /* ✅ Bereits implementiert */
+.company-stats-icon-bus              /* ✅ Bereits implementiert */
+.company-stats-icon-tools            /* ✅ Bereits implementiert */
+.company-stats-icon-euro             /* ✅ Bereits implementiert */
+.company-stats-icon-users            /* ✅ Bereits implementiert */
+.company-stats-icon-track            /* ✅ Bereits implementiert */</code></pre>
+                    </div>
+                    
+                    <!-- Figma Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Exakte Figma Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Figma Node 1827-5972 - Exakte Spezifikationen */
+
+/* Section Layout (layout_O8VRBV) */
+mode: column
+alignItems: center
+alignSelf: stretch
+gap: 56px
+padding: 80px 56px
+background: #FFFFFF (fill_OTLBRC)
+border-radius: 96px 0px 96px 0px
+
+/* Content Layout (layout_VMKQ68) */
+mode: column
+alignSelf: stretch
+gap: 44px
+
+/* Stats Grid Layout (layout_S1DKBC) */
+mode: row
+alignSelf: stretch
+wrap: true
+gap: 32px
+
+/* Individual Stat Card (layout_SGCB60) */
+mode: column
+gap: 16px
+padding: 0px 24px 24px 0px
+width: 368px
+border: 0px 1px 1px 0px solid #E7E5E4
+border-radius: 0px 0px 48px 0px
+
+/* Icon Container (layout_YLVE46) */
+background: #00685E (fill_OJ9P66)
+border-radius: 12px 0px 12px 0px
+padding: 8px 24px</code></pre>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Section Company Stats Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue Company Statistics Sektion basierend auf Figma Node 1827-5972. Kombiniert Section Header LG Left mit 6 Company Stats Components. Vollständig responsive mit Animation und Interaktion.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Desktop: 96px Border, 80×56px Padding, 3×2 Grid</span>
+                <span>|</span>
+                <span>Mobile: 48px Border, 40×28px Padding, Stack Layout</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Company Stats Section with Animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const statsNumbers = document.querySelectorAll('.stats-number');
+            const animateBtn = document.getElementById('animateStats');
+            const resetBtn = document.getElementById('resetStats');
+            const pulseBtn = document.getElementById('pulseStats');
+            
+            // Counter animation function
+            function animateCounter(element, target, duration = 2000) {
+                const start = 0;
+                const increment = target / (duration / 16);
+                let current = start;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        element.textContent = formatNumber(target);
+                        clearInterval(timer);
+                        element.classList.add('stats-animate-number');
+                        setTimeout(() => element.classList.remove('stats-animate-number'), 300);
+                    } else {
+                        element.textContent = formatNumber(Math.floor(current));
+                    }
+                }, 16);
+            }
+            
+            // Format numbers properly
+            function formatNumber(num) {
+                if (num === 1.2) return '1,2';
+                if (num === 62.7) return '62,7';
+                return num.toLocaleString('de-DE');
+            }
+            
+            // Parse target values
+            function parseTarget(targetStr) {
+                if (targetStr === '1.2') return 1.2;
+                if (targetStr === '62.7') return 62.7;
+                return parseInt(targetStr);
+            }
+            
+            // Animate all stats
+            function animateAllStats() {
+                statsNumbers.forEach((el, index) => {
+                    const target = parseTarget(el.dataset.target);
+                    setTimeout(() => {
+                        animateCounter(el, target);
+                    }, index * 200);
+                });
+            }
+            
+            // Reset all stats
+            function resetAllStats() {
+                statsNumbers.forEach(el => {
+                    el.textContent = '0';
+                    el.classList.remove('stats-animate-number');
+                });
+            }
+            
+            // Pulse effect
+            function pulseAllStats() {
+                statsNumbers.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('stats-animate-number');
+                        setTimeout(() => el.classList.remove('stats-animate-number'), 300);
+                    }, index * 100);
+                });
+            }
+            
+            // Event listeners
+            if (animateBtn) {
+                animateBtn.addEventListener('click', animateAllStats);
+            }
+            
+            if (resetBtn) {
+                resetBtn.addEventListener('click', resetAllStats);
+            }
+            
+            if (pulseBtn) {
+                pulseBtn.addEventListener('click', pulseAllStats);
+            }
+            
+            // Intersection Observer for auto-animation on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statsSection = entry.target;
+                        const numbers = statsSection.querySelectorAll('.stats-number');
+                        
+                        numbers.forEach((el, index) => {
+                            if (el.textContent === '0' || el.textContent === el.dataset.target) {
+                                const target = parseTarget(el.dataset.target);
+                                setTimeout(() => {
+                                    animateCounter(el, target);
+                                }, index * 200);
+                            }
+                        });
+                        
+                        observer.unobserve(statsSection);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            // Observe the stats section for auto-animation
+            const statsSection = document.querySelector('.company-stats-grid-responsive');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+            
+            // Card interaction effects
+            const statsCards = document.querySelectorAll('.stats-card-interactive');
+            statsCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    const number = card.querySelector('.stats-number');
+                    if (number) {
+                        number.classList.add('stats-animate-number');
+                        setTimeout(() => number.classList.remove('stats-animate-number'), 300);
+                    }
+                });
+            });
+            
+            // Responsive indicator updates
+            function updateResponsiveIndicator() {
+                const indicator = document.querySelector('.responsive-indicator');
+                if (!indicator) return;
+                
+                const spans = indicator.querySelectorAll('span');
+                spans.forEach(span => span.style.display = 'none');
+                
+                if (window.innerWidth < 640) {
+                    spans[0].style.display = 'block';
+                } else if (window.innerWidth < 768) {
+                    spans[1].style.display = 'block';
+                } else if (window.innerWidth < 1024) {
+                    spans[2].style.display = 'block';
+                } else if (window.innerWidth < 1280) {
+                    spans[3].style.display = 'block';
+                } else {
+                    spans[4].style.display = 'block';
+                }
+            }
+            
+            window.addEventListener('resize', updateResponsiveIndicator);
+            updateResponsiveIndicator();
+        });
+    </script>
+</section>

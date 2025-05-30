@@ -1,0 +1,32 @@
+/* === BREADCRUMB */
+
+.breadcrumb {
+  @apply flex flex-row items-center gap-0.25 lg:gap-1 flex-nowrap;
+  @apply overflow-x-scroll list-none whitespace-nowrap;
+  @apply text-xs font-medium;
+
+  /* Scrollbar Adjustments */
+  scrollbar-color: rgb(0 0 0 / 50%) transparent;
+
+  &::-webkit-scrollbar {
+    width: .438rem; /* Mostly for vertical scrollbars */
+    height: .438rem; /* Mostly for horizontal scrollbars */
+  }
+
+  &::-webkit-scrollbar-thumb { /* Foreground */
+    background: rgb(0 0 0 / 50%) ;
+    border-radius: 1rem;
+  }
+
+  &::-webkit-scrollbar-track { /* Background */
+    background: transparent;
+  }
+
+  a {
+    @apply no-underline;
+  }
+}
+
+.breadcrumb-wrapper {
+  @apply relative overflow-hidden;
+}

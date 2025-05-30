@@ -1,0 +1,28 @@
+/* === COLORS */
+
+.c-badge {
+  @apply flex flex-col mb-1 overflow-hidden w-52;
+  @apply rounded shadow;
+}
+
+.c-badge-color {
+  @apply w-full h-20;
+}
+
+.c-badge-text {
+  @apply p-1 text-xs text-center bg-white;
+}
+
+.c-badge-icon {
+  @apply aspect-square;
+
+  .c-badge-color {
+    @apply flex items-center justify-center grow;
+    @apply h-auto py-3;
+    @apply text-center;
+  }
+
+  .c-badge-text {
+    @apply border-t border-neutral-200;
+  }
+}

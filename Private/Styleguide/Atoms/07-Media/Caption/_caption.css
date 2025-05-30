@@ -1,0 +1,15 @@
+/* === CAPTION */
+
+figcaption,
+caption,
+.caption,
+.img-caption {
+  @apply block mb-0 mt-1.5;
+  @apply text-sm font-normal;
+
+  .copyright {
+    @apply block mt-0.5;
+    @apply text-neutral-500;
+  }
+}
+

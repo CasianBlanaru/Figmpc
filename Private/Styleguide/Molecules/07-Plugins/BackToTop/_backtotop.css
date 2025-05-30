@@ -1,0 +1,31 @@
+/* === BACK TO TOP */
+
+.btn-back-to-top {
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @apply fixed z-999 right-3 bottom-3;
+  @apply hidden w-4 h-4;
+  @apply mx-auto my-0;
+  @apply opacity-0;
+  @apply bg-secondary-700;
+
+  .icon {
+    @apply flex items-center justify-center;
+    @apply w-full h-full;
+    @apply text-base text-white;
+  }
+
+  &.show {
+    @apply block opacity-100;
+
+    animation: fade-in ease 500ms;
+  }
+}

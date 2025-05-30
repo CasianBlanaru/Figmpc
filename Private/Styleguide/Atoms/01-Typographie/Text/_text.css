@@ -1,0 +1,472 @@
+/* ==========================
+ * === TEXT STYLES - Netinera Design System
+ * ========================== */
+
+/* ==========================
+ * === BODY TEXT STYLES
+ * ========================== */
+
+/* Paragraph Base Styles */
+p {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75em; /* 28px / 16px = 1.75 */
+  text-align: left;
+  color: #1E2939; /* Netinera Primary Text */
+  margin: 0 0 20px; /* Bottom margin for paragraph spacing */
+}
+
+/* Body Text Large */
+.text-lg,
+.body-lg {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6667em; /* 30px / 18px = 1.6667 */
+  text-align: left;
+  color: #1E2939;
+  margin-bottom: 24px; /* Larger spacing for large text */
+}
+
+/* Body Text Base (Default) */
+.text-base,
+.body-base {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75em; /* 28px / 16px = 1.75 */
+  text-align: left;
+  color: #1E2939;
+  margin-bottom: 20px;
+}
+
+/* Body Text Small */
+.text-sm,
+.body-sm {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
+  text-align: left;
+  color: #1E2939;
+  margin-bottom: 16px;
+}
+
+/* Body Text Extra Small */
+.text-xs,
+.body-xs {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em; /* 18px / 12px = 1.5 */
+  text-align: left;
+  color: #1E2939;
+  margin-bottom: 12px;
+}
+
+/* ==========================
+ * === DESKTOP BODY TEXT VARIATIONS
+ * ========================== */
+
+/* Desktop Body Text XL */
+.body-xl-desktop {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6em; /* 32px / 20px = 1.6 */
+  text-align: left;
+  color: #1E2939;
+  margin-bottom: 28px;
+}
+
+/* Desktop Body Text Large */
+@media (width >= 1024px) {
+  .body-lg {
+    font-size: 18px;
+    line-height: 1.6667em; /* 30px / 18px = 1.6667 */
+    margin-bottom: 24px;
+  }
+}
+
+/* Desktop Body Text Base */
+@media (width >= 1024px) {
+  .body-base,
+  p {
+    font-size: 16px;
+    line-height: 1.5em; /* 24px / 16px = 1.5 - Desktop line-height */
+    margin-bottom: 20px;
+  }
+}
+
+/* ==========================
+ * === FONT WEIGHT VARIATIONS
+ * ========================== */
+
+/* Strong/Bold Text */
+b,
+strong,
+.text-bold,
+.font-bold {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  color: inherit;
+}
+
+/* Medium Weight Text */
+.text-medium,
+.font-medium {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  color: inherit;
+}
+
+/* Light Weight Text */
+.text-light,
+.font-light {
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  color: inherit;
+}
+
+/* ==========================
+ * === SUBTITLE STYLES
+ * ========================== */
+
+/* Subtitle Large */
+.subtitle-lg {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6667em; /* 30px / 18px = 1.6667 */
+  text-align: left;
+  color: #1E2939;
+  margin-bottom: 18px;
+}
+
+/* Subtitle Base */
+.subtitle-base {
+  font-family: Roboto, sans-serif;
+  font-weight: 500; /* Medium weight for subtitles */
+  font-size: 16px;
+  line-height: 1.625em; /* 26px / 16px = 1.625 */
+  text-align: left;
+  color: #1E2939;
+  margin-bottom: 16px;
+}
+
+/* Subtitle Small */
+.subtitle-sm {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
+  text-align: left;
+  color: #1E2939;
+  margin-bottom: 14px;
+}
+
+/* ==========================
+ * === CAPTION STYLES
+ * ========================== */
+
+/* Caption Text */
+.caption,
+.meta-caption {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
+  text-align: left;
+  color: #6A7282; /* Softer gray for captions */
+  margin-bottom: 12px;
+}
+
+/* Caption Bold */
+.caption-bold,
+.meta-caption-medium {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
+  text-align: left;
+  color: #6A7282;
+  margin-bottom: 12px;
+}
+
+/* Caption Small */
+.caption-sm {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em; /* 18px / 12px = 1.5 */
+  text-align: left;
+  color: #6A7282;
+  margin-bottom: 10px;
+}
+
+/* Image Caption (specific for image components) */
+.image-caption {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
+  text-align: center; /* Center-aligned for image captions */
+  color: #1E2939;
+  margin-bottom: 0;
+  width: fit-content;
+}
+
+/* ==========================
+ * === BUTTON TEXT STYLES
+ * ========================== */
+
+/* Button Text */
+.button-text,
+.btn-text {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
+  letter-spacing: 5.71%; /* Button text letter-spacing */
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFF; /* Default white for buttons */
+  margin-bottom: 0; /* No margin for button text */
+}
+
+/* Button Text Dark */
+.button-text-dark {
+  color: #1E2939;
+}
+
+/* Button Text Primary */
+.button-text-primary {
+  color: #DD052B; /* Netinera Primary */
+}
+
+/* ==========================
+ * === TEXT ALIGNMENT UTILITIES
+ * ========================== */
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+/* ==========================
+ * === TEXT COLOR VARIANTS
+ * ========================== */
+
+/* Primary Text Colors */
+.text-primary { color: #1E2939; } /* Main text color */
+.text-secondary { color: #6A7282; } /* Secondary gray */
+.text-muted { color: #99A1AF; } /* Muted gray */
+
+/* Brand Colors */
+.text-brand-primary { color: #DD052B; } /* Netinera Primary Red */
+.text-brand-secondary { color: #00BFA7; } /* Netinera Secondary Teal */
+
+/* State Colors */
+.text-white { color: #FFF; }
+.text-black { color: #000; }
+.text-gray-light { color: #D1D5DC; }
+.text-gray-dark { color: #364153; }
+
+/* ==========================
+ * === LEGACY COMPATIBILITY
+ * ========================== */
+
+/* Legacy class mappings for backward compatibility */
+.txt-large {
+  @apply text-lg;
+}
+
+small,
+.txt-small {
+  @apply text-sm;
+}
+
+/* ==========================
+ * === RESPONSIVE DESIGN
+ * ========================== */
+
+/* Mobile optimizations */
+@media (width <= 767px) {
+  p,
+  .body-base {
+    font-size: 16px;
+    line-height: 1.75em; /* Keep mobile line-height for readability */
+    margin-bottom: 18px;
+  }
+  
+  .body-lg {
+    font-size: 16px;
+    line-height: 1.75em;
+    margin-bottom: 20px;
+  }
+  
+  .body-xl-desktop {
+    font-size: 18px;
+    line-height: 1.6667em;
+    margin-bottom: 22px;
+  }
+}
+
+/* XS Mobile breakpoint */
+@media (width <= 479px) {
+  p,
+  .body-base {
+    font-size: 14px;
+    line-height: 1.5714em; /* 22px / 14px = 1.5714 */
+    margin-bottom: 16px;
+  }
+  
+  .body-lg {
+    font-size: 16px;
+    line-height: 1.625em; /* 26px / 16px = 1.625 */
+    margin-bottom: 18px;
+  }
+  
+  .subtitle-lg {
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+  
+  .subtitle-base {
+    font-size: 14px;
+    line-height: 1.4286em;
+  }
+}
+
+/* ==========================
+ * === SPACING UTILITIES
+ * ========================== */
+
+/* Text Spacing Variants */
+.text-spacing-tight p { margin-bottom: 12px; }
+.text-spacing-normal p { margin-bottom: 20px; }
+.text-spacing-loose p { margin-bottom: 28px; }
+
+/* No margin utility */
+.text-no-margin,
+.m-0 {
+  margin: 0 !important;
+}
+
+/* Margin bottom utilities */
+.mb-tight { margin-bottom: 12px; }
+.mb-normal { margin-bottom: 20px; }
+.mb-loose { margin-bottom: 28px; }
+
+/* ==========================
+ * === ACCESSIBILITY & SPECIAL STATES
+ * ========================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  p, .body-base, .body-lg, .body-sm, .body-xs,
+  .subtitle-lg, .subtitle-base, .subtitle-sm {
+    color: #000;
+    font-weight: 600;
+  }
+  
+  .caption, .meta-caption, .caption-bold, .meta-caption-medium {
+    color: #000;
+    font-weight: 700;
+  }
+  
+  .text-secondary, .text-muted {
+    color: #000;
+  }
+}
+
+/* Print styles */
+@media print {
+  p, .body-base, .body-lg, .body-sm, .body-xs,
+  .subtitle-lg, .subtitle-base, .subtitle-sm,
+  .caption, .meta-caption, .caption-bold, .meta-caption-medium {
+    color: #000;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .button-text, .btn-text {
+    color: #000;
+  }
+}
+
+/* Focus states for interactive text elements */
+.text-interactive:focus {
+  outline: 2px solid #DD052B;
+  outline-offset: 2px;
+}
+
+/* ==========================
+ * === TEXT CONTENT STYLING
+ * ========================== */
+
+/* Link styling within text */
+p a,
+.body-base a,
+.body-lg a,
+.body-sm a {
+  color: #DD052B;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+p a:hover,
+.body-base a:hover,
+.body-lg a:hover,
+.body-sm a:hover {
+  color: #B91C1C;
+  text-decoration: none;
+}
+
+/* Quote styling */
+blockquote {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6667em;
+  font-style: italic;
+  color: #364153;
+  border-left: 4px solid #DD052B;
+  padding-left: 24px;
+  margin: 24px 0;
+}
+
+/* Code styling */
+code {
+  font-family: Monaco, Consolas, monospace;
+  font-size: 0.875em;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ==========================
+ * === TEXT LAYOUT HELPERS
+ * ========================== */
+
+/* Text container max-widths for optimal readability */
+.text-container {
+  max-width: 65ch; /* Optimal reading width */
+  margin: 0 auto;
+}
+
+.text-container-wide {
+  max-width: 80ch;
+  margin: 0 auto;
+}
+
+.text-container-narrow {
+  max-width: 45ch;
+  margin: 0 auto;
+}
+
+/* Line height utilities */
+.leading-tight { line-height: 1.25; }
+.leading-normal { line-height: 1.5; }
+.leading-relaxed { line-height: 1.75; }
+.leading-loose { line-height: 2; }

@@ -1,0 +1,689 @@
+@layer components {
+  /* ==========================
+   * === NAVIGATION RESPONSIVE
+   * ========================== */
+
+  /* Responsive Navigation Container */
+  .navigation-responsive {
+    background: #FFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    align-self: stretch;
+    padding: 20px 16px; /* Mobile first */
+    width: 100%;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  /* Responsive Navigation Logo */
+  .navigation-responsive-logo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  /* Responsive Navigation Menu */
+  .navigation-responsive-menu {
+    display: none; /* Hidden on mobile by default */
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    margin-left: auto;
+  }
+
+  /* Responsive Navigation Link */
+  .navigation-responsive-link {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #1E2939;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .navigation-responsive-link:hover {
+    background: #F5F5F4;
+    color: #00685E;
+  }
+
+  .navigation-responsive-link.active {
+    background: #00685E;
+    color: #FFF;
+  }
+
+  /* Responsive Navigation CTA */
+  .navigation-responsive-cta {
+    background: #DD052B;
+    color: #FFF;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.429;
+    letter-spacing: 0.0571em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .navigation-responsive-cta:hover {
+    background: #B91C1C;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgb(221 5 43 / 30%);
+  }
+
+  .navigation-responsive-cta:active {
+    transform: translateY(0);
+  }
+
+  /* Responsive Navigation Toggle */
+  .navigation-responsive-toggle {
+    display: flex; /* Shown on mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .navigation-responsive-toggle:hover {
+    background: #F5F5F4;
+  }
+
+  .navigation-responsive-toggle svg {
+    width: 24px;
+    height: 24px;
+    color: #1E2939;
+    stroke: #1E2939;
+  }
+
+  /* Responsive Navigation Mobile Menu */
+  .navigation-responsive-mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    padding: 24px 16px;
+    box-shadow: 0 4px 12px rgb(30 41 57 / 15%);
+    border-top: 1px solid #E5E7EB;
+    z-index: 1000;
+  }
+
+  .navigation-responsive-mobile-menu.active {
+    display: flex;
+  }
+
+  /* ==========================
+   * === NAVIGATION XL (Desktop)
+   * ========================== */
+
+  /* Desktop XL Navigation Container */
+  .navigation-xl {
+    background: #FFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    align-self: stretch;
+    padding: 20px 56px; /* Desktop padding */
+    width: 100%;
+  }
+
+  /* Desktop XL Navigation Logo */
+  .navigation-xl-logo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  /* Desktop XL Navigation Menu */
+  .navigation-xl-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    margin-left: auto;
+  }
+
+  /* Desktop XL Navigation Link */
+  .navigation-xl-link {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #1E2939;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .navigation-xl-link:hover {
+    background: #F5F5F4;
+    color: #00685E;
+  }
+
+  .navigation-xl-link.active {
+    background: #00685E;
+    color: #FFF;
+  }
+
+  /* Desktop XL Navigation CTA */
+  .navigation-xl-cta {
+    background: #DD052B;
+    color: #FFF;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.429;
+    letter-spacing: 0.0571em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .navigation-xl-cta:hover {
+    background: #B91C1C;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgb(221 5 43 / 30%);
+  }
+
+  /* ==========================
+   * === NAVIGATION SM (Mobile)
+   * ========================== */
+
+  /* Mobile SM Navigation Container */
+  .navigation-sm {
+    background: #FFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    padding: 20px 16px; /* Mobile padding */
+    width: 100%;
+    max-width: 328px;
+    position: relative;
+  }
+
+  /* Mobile SM Navigation Logo */
+  .navigation-sm-logo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  /* Mobile SM Navigation Toggle */
+  .navigation-sm-toggle {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .navigation-sm-toggle:hover {
+    background: #F5F5F4;
+  }
+
+  .navigation-sm-toggle svg {
+    width: 24px;
+    height: 24px;
+    color: #1E2939;
+    stroke: #1E2939;
+  }
+
+  /* Mobile SM Navigation Mobile Menu */
+  .navigation-sm-mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    padding: 24px 16px;
+    box-shadow: 0 4px 12px rgb(30 41 57 / 15%);
+    border-top: 1px solid #E5E7EB;
+    z-index: 1000;
+  }
+
+  .navigation-sm-mobile-menu.active {
+    display: flex;
+  }
+
+  /* Mobile SM Navigation Link */
+  .navigation-sm-link {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #1E2939;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .navigation-sm-link:hover {
+    background: #F5F5F4;
+    color: #00685E;
+  }
+
+  .navigation-sm-link.active {
+    background: #00685E;
+    color: #FFF;
+  }
+
+  /* Mobile SM Navigation CTA */
+  .navigation-sm-cta {
+    background: #DD052B;
+    color: #FFF;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.429;
+    letter-spacing: 0.0571em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+  }
+
+  .navigation-sm-cta:hover {
+    background: #B91C1C;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgb(221 5 43 / 30%);
+  }
+
+  /* ==========================
+   * === LOGO COMPONENTS
+   * ========================== */
+
+  /* Netinera Logo */
+  .netinera-logo {
+    width: 200px; /* Desktop default */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .netinera-logo svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Logo Color Variants */
+  .netinera-logo .logo-primary {
+    fill: #00685E;
+  }
+
+  .netinera-logo .logo-accent {
+    fill: #DD052B;
+  }
+
+  .netinera-logo .logo-white {
+    fill: #FFF;
+  }
+
+  /* ==========================
+   * === COLOR VARIANTS
+   * ========================== */
+
+  /* Focus States - must come before all hover selectors */
+  .navigation-responsive-link:focus,
+  .navigation-xl-link:focus,
+  .navigation-sm-link:focus,
+  .navigation-responsive-cta:focus,
+  .navigation-xl-cta:focus,
+  .navigation-sm-cta:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+  }
+
+  .navigation-responsive-toggle:focus,
+  .navigation-sm-toggle:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+  }
+
+  /* Light Variant (Default) */
+  .navigation-variant-light {
+    background: #FFF;
+  }
+
+  .navigation-variant-light .navigation-responsive-link,
+  .navigation-variant-light .navigation-xl-link,
+  .navigation-variant-light .navigation-sm-link {
+    color: #1E2939;
+  }
+
+  .navigation-variant-light .navigation-responsive-toggle svg,
+  .navigation-variant-light .navigation-sm-toggle svg {
+    color: #1E2939;
+    stroke: #1E2939;
+  }
+
+  /* Dark Variant */
+  .navigation-variant-dark {
+    background: #1E2939;
+  }
+
+  .navigation-variant-dark .navigation-responsive-link,
+  .navigation-variant-dark .navigation-xl-link,
+  .navigation-variant-dark .navigation-sm-link {
+    color: #FFF;
+  }
+
+  .navigation-variant-dark .navigation-responsive-link.active,
+  .navigation-variant-dark .navigation-xl-link.active,
+  .navigation-variant-dark .navigation-sm-link.active {
+    background: #00685E;
+    color: #FFF;
+  }
+
+  .navigation-variant-dark .navigation-responsive-toggle svg,
+  .navigation-variant-dark .navigation-sm-toggle svg {
+    color: #FFF;
+    stroke: #FFF;
+  }
+
+  .navigation-variant-dark .navigation-responsive-toggle:hover,
+  .navigation-variant-dark .navigation-sm-toggle:hover {
+    background: rgb(255 255 255 / 10%);
+  }
+
+  .navigation-variant-dark .navigation-responsive-mobile-menu,
+  .navigation-variant-dark .navigation-sm-mobile-menu {
+    background: #1E2939;
+    border-top-color: rgb(255 255 255 / 20%);
+  }
+
+  /* Primary Variant */
+  .navigation-variant-primary {
+    background: #00685E;
+  }
+
+  .navigation-variant-primary .navigation-responsive-link,
+  .navigation-variant-primary .navigation-xl-link,
+  .navigation-variant-primary .navigation-sm-link {
+    color: #FFF;
+  }
+
+  .navigation-variant-primary .navigation-responsive-link:hover,
+  .navigation-variant-primary .navigation-xl-link:hover,
+  .navigation-variant-primary .navigation-sm-link:hover {
+    background: rgb(255 255 255 / 15%);
+    color: #FFF;
+  }
+
+  .navigation-variant-primary .navigation-responsive-link.active,
+  .navigation-variant-primary .navigation-xl-link.active,
+  .navigation-variant-primary .navigation-sm-link.active {
+    background: #DD052B;
+    color: #FFF;
+  }
+
+  .navigation-variant-primary .navigation-responsive-toggle svg,
+  .navigation-variant-primary .navigation-sm-toggle svg {
+    color: #FFF;
+    stroke: #FFF;
+  }
+
+  .navigation-variant-primary .navigation-responsive-toggle:hover,
+  .navigation-variant-primary .navigation-sm-toggle:hover {
+    background: rgb(255 255 255 / 15%);
+  }
+
+  .navigation-variant-primary .navigation-responsive-mobile-menu,
+  .navigation-variant-primary .navigation-sm-mobile-menu {
+    background: #00685E;
+    border-top-color: rgb(255 255 255 / 20%);
+  }
+
+  /* Dark variant hover - must come after primary variant and focus states */
+  .navigation-variant-dark .navigation-responsive-link:hover,
+  .navigation-variant-dark .navigation-xl-link:hover,
+  .navigation-variant-dark .navigation-sm-link:hover {
+    background: rgb(255 255 255 / 10%);
+    color: #FFF;
+  }
+
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+
+  /* Desktop breakpoint (≥ 992px) */
+  @media (width >= 992px) {
+    .navigation-responsive {
+      padding: 20px 56px; /* Desktop padding */
+    }
+
+    .navigation-responsive-menu {
+      display: flex; /* Shown on desktop */
+    }
+
+    .navigation-responsive-toggle {
+      display: none; /* Hidden on desktop */
+    }
+
+    .navigation-responsive-mobile-menu {
+      display: none !important; /* Force hidden on desktop */
+    }
+
+    .netinera-logo {
+      width: 200px;
+      height: 40px;
+    }
+  }
+
+  /* Tablet adaptation */
+  @media (width <= 991px) and (width >= 768px) {
+    .navigation-responsive {
+      padding: 16px 20px;
+    }
+
+    .netinera-logo {
+      width: 160px;
+      height: 32px;
+    }
+
+    .navigation-responsive-cta,
+    .navigation-sm-cta {
+      padding: 10px 20px;
+      font-size: 12px;
+    }
+  }
+
+  /* Mobile optimization */
+  @media (width <= 767px) {
+    .navigation-responsive,
+    .navigation-xl {
+      padding: 16px 20px;
+    }
+
+    .netinera-logo {
+      width: 140px;
+      height: 28px;
+    }
+
+    .navigation-responsive-cta,
+    .navigation-xl-cta,
+    .navigation-sm-cta {
+      padding: 10px 20px;
+      font-size: 12px;
+    }
+  }
+
+  /* Small mobile optimization */
+  @media (width <= 479px) {
+    .navigation-responsive,
+    .navigation-xl,
+    .navigation-sm {
+      padding: 12px 16px;
+    }
+
+    .netinera-logo {
+      width: 120px;
+      height: 24px;
+    }
+
+    .navigation-responsive-toggle,
+    .navigation-sm-toggle {
+      width: 36px;
+      height: 36px;
+    }
+
+    .navigation-responsive-toggle svg,
+    .navigation-sm-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .navigation-responsive-cta,
+    .navigation-xl-cta,
+    .navigation-sm-cta {
+      padding: 8px 16px;
+      font-size: 11px;
+    }
+  }
+
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .navigation-responsive,
+    .navigation-xl,
+    .navigation-sm {
+      border: 1px solid #1E2939;
+    }
+
+    .navigation-responsive-link,
+    .navigation-xl-link,
+    .navigation-sm-link {
+      font-weight: 500;
+    }
+
+    .navigation-responsive-cta,
+    .navigation-xl-cta,
+    .navigation-sm-cta {
+      border: 2px solid #1E2939;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .navigation-responsive-link,
+    .navigation-xl-link,
+    .navigation-sm-link,
+    .navigation-responsive-cta,
+    .navigation-xl-cta,
+    .navigation-sm-cta,
+    .navigation-responsive-toggle,
+    .navigation-sm-toggle {
+      transition: none;
+      transform: none !important;
+    }
+  }
+
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+
+  @media print {
+    .navigation-responsive,
+    .navigation-xl,
+    .navigation-sm {
+      background: white !important;
+      border-bottom: 1px solid #ddd;
+      box-shadow: none !important;
+      padding: 10px 0 !important;
+    }
+
+    .navigation-responsive-menu,
+    .navigation-xl-menu {
+      display: flex !important;
+      gap: 16px !important;
+    }
+
+    .navigation-responsive-toggle,
+    .navigation-sm-toggle {
+      display: none !important;
+    }
+
+    .navigation-responsive-mobile-menu,
+    .navigation-sm-mobile-menu {
+      display: none !important;
+    }
+
+    .navigation-responsive-link,
+    .navigation-xl-link,
+    .navigation-sm-link {
+      color: black !important;
+      padding: 4px 8px !important;
+    }
+
+    .navigation-responsive-cta,
+    .navigation-xl-cta,
+    .navigation-sm-cta {
+      background: black !important;
+      color: white !important;
+      box-shadow: none !important;
+    }
+
+    .netinera-logo {
+      width: 120px !important;
+      height: 24px !important;
+    }
+  }
+
+}

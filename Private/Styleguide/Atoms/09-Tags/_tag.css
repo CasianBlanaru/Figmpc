@@ -1,0 +1,33 @@
+/* === TAGS */
+
+.tag-list {
+  @apply flex flex-row flex-wrap gap-0.5;
+}
+
+.tag-item {
+  @apply inline-flex items-center gap-0.5 px-1.5 h-[1.5rem];
+  @apply border rounded-lg border-neutral-900;
+  @apply text-xs font-medium no-underline;
+}
+
+.tag-success,
+.tag-warning,
+.tag-error {
+  &::before {
+    @apply w-1 h-1 rounded-full;
+
+    content: "";
+  }
+}
+
+.tag-success::before {
+  @apply bg-teal-600;
+}
+
+.tag-warning::before {
+  @apply bg-yellow-600;
+}
+
+.tag-error::before {
+  @apply bg-red-600;
+}

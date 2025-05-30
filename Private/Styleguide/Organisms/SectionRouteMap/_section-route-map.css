@@ -1,0 +1,715 @@
+
+@layer components {
+  /* ==========================
+   * === SECTION ROUTE MAP MAIN CONTAINER
+   * ========================== */
+  
+  /* Main Section Container */
+  .section-route-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    gap: 64px; 
+    padding: 0 56px 80px; 
+    width: 100%;
+    position: relative;
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* ==========================
+   * === BODY TEXT AREA
+   * ========================== */
+  
+  /* Body Text SM XL Container */
+  .section-route-map-body-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    width: 568px; 
+    max-width: 100%;
+  }
+  
+  /* Body Text Content */
+  .section-route-map-body-content {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.667em; 
+    text-align: left;
+    color: #1E2939; 
+    width: 100%; 
+    margin: 0;
+  }
+  
+  /* ==========================
+   * === MAP LAYOUT GROUP
+   * ========================== */
+  
+  /* Layout Group Container */
+  .section-route-map-layout-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    gap: 40px; 
+    width: 100%;
+  }
+  
+  /* ==========================
+   * === SECTION HEADER
+   * ========================== */
+  
+  /* Section Header SM Center Container */
+  .section-route-map-header {
+    display: flex;
+    flex-direction: column;
+    width: 568px; 
+    max-width: 100%;
+    align-items: center;
+  }
+  
+  /* Section Title */
+  .section-route-map-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.333em; 
+    text-align: center;
+    color: #1E2939; 
+    width: 100%; 
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  /* ==========================
+   * === MAP CONTAINER
+   * ========================== */
+  
+  /* Map Container */
+  .section-route-map-container {
+    background: #F5F5F4; 
+    border-radius: 64px;
+    align-self: stretch;
+      width: 100%; 
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Interactive Route Map */
+  .section-route-map-interactive {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, #F5F5F4 0%, #E7E5E4 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ==========================
+   * === MAP INTERACTIVE ELEMENTS
+   * ========================== */
+  
+  /* Route Points */
+  .section-route-map-point {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #DD052B; 
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgb(221 5 43 / 30%);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+  }
+  
+  .section-route-map-point:hover {
+    transform: scale(1.3);
+    box-shadow: 0 4px 12px rgb(221 5 43 / 50%);
+  }
+  
+  .section-route-map-point.active {
+    transform: scale(1.2);
+    animation: route-point-pulse 2s infinite;
+  }
+  
+  /* Pulse Animation for Active Points */
+  @keyframes route-point-pulse {
+    0% { box-shadow: 0 0 0 0 rgb(221 5 43 / 40%); }
+    70% { box-shadow: 0 0 0 15px rgb(221 5 43 / 0%); }
+    100% { box-shadow: 0 0 0 0 rgb(221 5 43 / 0%); }
+  }
+  
+  /* City Labels */
+  .section-route-map-label {
+    position: absolute;
+    background: rgb(30 41 57 / 90%); 
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 20;
+  }
+  
+  .section-route-map-label.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  
+  .section-route-map-label::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: rgb(30 41 57 / 90%);
+  }
+  
+  /* Map Center Content */
+  .section-route-map-center {
+    text-align: center;
+    color: #1E2939;
+    opacity: 0.6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 5;
+  }
+  
+  .section-route-map-center-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    color: rgb(30 41 57 / 30%);
+  }
+  
+  .section-route-map-center-subtitle {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    opacity: 0.8;
+    color: rgb(30 41 57 / 40%);
+  }
+  
+  /* ==========================
+   * === ROUTE LINES (OPTIONAL)
+   * ========================== */
+  
+  /* Route Connections */
+  .section-route-map-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #DD052B 25%, #DD052B 75%, transparent 100%);
+    opacity: 0.6;
+    z-index: 1;
+    animation: route-line-flow 3s ease-in-out infinite;
+  }
+  
+  @keyframes route-line-flow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+  }
+  
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+  
+  /* Large Desktop (1280px+) */
+  @media (width >= 1280px) {
+    .section-route-map {
+      padding: 0 56px 80px;
+      gap: 64px;
+    }
+    
+    .section-route-map-body-text,
+    .section-route-map-header {
+      width: 568px;
+    }
+    
+    .section-route-map-body-content {
+      font-size: 18px;
+      line-height: 1.667em;
+    }
+    
+    .section-route-map-title {
+      font-size: 24px;
+      line-height: 1.333em;
+    }
+    
+    .section-route-map-container {
+      border-radius: 64px;
+      min-height: 400px;
+    }
+    
+    .section-route-map-interactive {
+      height: 400px;
+    }
+    
+    .section-route-map-point {
+      width: 16px;
+      height: 16px;
+      border: 3px solid white;
+    }
+    
+    .section-route-map-center-title {
+      font-size: 32px;
+    }
+    
+    .section-route-map-center-subtitle {
+      font-size: 16px;
+    }
+  }
+  
+  /* Desktop (1024px to 1279px) */
+  @media (width <= 1279px) and (width >= 1024px) {
+    .section-route-map {
+      padding: 0 32px 64px;
+      gap: 56px;
+    }
+    
+    .section-route-map-body-text,
+    .section-route-map-header {
+      width: 100%;
+      max-width: 568px;
+    }
+    
+    .section-route-map-container {
+      border-radius: 48px;
+      min-height: 380px;
+    }
+    
+    .section-route-map-interactive {
+      height: 380px;
+    }
+    
+    .section-route-map-center-title {
+      font-size: 28px;
+    }
+  }
+  
+  /* Tablet (768px to 1023px) */
+  @media (width <= 1023px) and (width >= 768px) {
+    .section-route-map {
+      padding: 0 24px 56px;
+      gap: 48px;
+    }
+    
+    .section-route-map-body-content {
+      font-size: 16px;
+      line-height: 1.6em;
+    }
+    
+    .section-route-map-title {
+      font-size: 22px;
+      line-height: 1.4em;
+    }
+    
+    .section-route-map-container {
+      border-radius: 40px;
+      min-height: 350px;
+    }
+    
+    .section-route-map-interactive {
+      height: 350px;
+    }
+    
+    .section-route-map-layout-group {
+      gap: 32px;
+    }
+    
+    .section-route-map-center-title {
+      font-size: 26px;
+    }
+    
+    .section-route-map-center-subtitle {
+      font-size: 15px;
+    }
+  }
+  
+  /* Mobile (up to 767px) */
+  @media (width <= 767px) {
+    .section-route-map {
+      padding: 0 16px 48px;
+      gap: 40px;
+    }
+    
+    .section-route-map-body-content {
+      font-size: 16px;
+      line-height: 1.6em;
+    }
+    
+    .section-route-map-title {
+      font-size: 20px;
+      line-height: 1.4em;
+    }
+    
+    .section-route-map-container {
+      border-radius: 32px;
+      min-height: 300px;
+    }
+    
+    .section-route-map-interactive {
+      height: 300px;
+    }
+    
+    .section-route-map-layout-group {
+      gap: 28px;
+    }
+    
+    .section-route-map-center-title {
+      font-size: 24px;
+    }
+    
+    .section-route-map-center-subtitle {
+      font-size: 14px;
+    }
+    
+    .section-route-map-point {
+      width: 14px;
+      height: 14px;
+      border: 2px solid white;
+    }
+    
+    .section-route-map-label {
+      font-size: 11px;
+      padding: 5px 10px;
+    }
+  }
+  
+  /* Small Mobile (up to 479px) */
+  @media (width <= 479px) {
+    .section-route-map {
+      padding: 0 16px 32px;
+      gap: 32px;
+    }
+    
+    .section-route-map-body-content {
+      font-size: 15px;
+      line-height: 1.55em;
+    }
+    
+    .section-route-map-title {
+      font-size: 18px;
+      line-height: 1.4em;
+    }
+    
+    .section-route-map-container {
+      border-radius: 24px;
+      min-height: 250px;
+    }
+    
+    .section-route-map-interactive {
+      height: 250px;
+    }
+    
+    .section-route-map-layout-group {
+      gap: 24px;
+    }
+    
+    .section-route-map-center-title {
+      font-size: 20px;
+    }
+    
+    .section-route-map-center-subtitle {
+      font-size: 12px;
+    }
+    
+    .section-route-map-point {
+      width: 12px;
+      height: 12px;
+      border: 2px solid white;
+    }
+    
+    .section-route-map-label {
+      font-size: 10px;
+      padding: 4px 8px;
+    }
+  }
+  
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+  
+  /* Focus States */
+  .section-route-map-point:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+  }
+  
+  /* Keyboard Navigation */
+  .section-route-map-point[tabindex] {
+    cursor: pointer;
+  }
+  
+  .section-route-map-point:focus-visible {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgb(221 5 43 / 20%);
+  }
+  
+  /* Screen Reader Support */
+  .section-route-map-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .section-route-map-container {
+      border: 2px solid currentcolor;
+    }
+    
+    .section-route-map-body-content,
+    .section-route-map-title {
+      font-weight: 600;
+      text-shadow: 0 0 1px currentcolor;
+    }
+    
+    .section-route-map-point {
+      border: 3px solid black;
+      box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+    }
+    
+    .section-route-map-label {
+      background: black !important;
+      border: 1px solid white;
+    }
+  }
+  
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .section-route-map,
+    .section-route-map-point,
+    .section-route-map-label {
+      transition: none;
+      animation: none;
+    }
+    
+    .section-route-map-point:hover {
+      transform: scale(1.1);
+    }
+    
+    .section-route-map-point.active {
+      animation: none;
+      transform: scale(1.1);
+    }
+    
+    .section-route-map-line {
+      animation: none;
+      opacity: 0.6;
+    }
+  }
+  
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+  
+  @media print {
+    .section-route-map {
+      border: 1px solid #ddd;
+      break-inside: avoid;
+      margin-bottom: 20px;
+      box-shadow: none !important;
+      background: white !important;
+      padding: 20px !important;
+      gap: 20px !important;
+    }
+    
+    .section-route-map-body-content {
+      color: black !important;
+      font-size: 14px !important;
+      line-height: 1.4 !important;
+    }
+    
+    .section-route-map-title {
+      color: black !important;
+      font-size: 16px !important;
+      line-height: 1.3 !important;
+    }
+    
+    .section-route-map-container {
+      background: #f0f0f0 !important;
+      border: 1px solid #ddd !important;
+      border-radius: 8px !important;
+      min-height: 200px !important;
+    }
+    
+    .section-route-map-interactive {
+      height: 200px !important;
+    }
+    
+    .section-route-map-point {
+      background: black !important;
+      border: 2px solid white !important;
+      width: 8px !important;
+      height: 8px !important;
+    }
+    
+    .section-route-map-label {
+      background: black !important;
+      color: white !important;
+      font-size: 8px !important;
+      padding: 2px 4px !important;
+      position: relative !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    
+    .section-route-map-center-title {
+      color: #666 !important;
+      font-size: 14px !important;
+    }
+    
+    .section-route-map-center-subtitle {
+      color: #888 !important;
+      font-size: 10px !important;
+    }
+  }
+  
+  /* ==========================
+   * === LOADING STATES
+   * ========================== */
+  
+  .section-route-map-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: route-map-loading 1.5s infinite;
+  }
+  
+  @keyframes route-map-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  .section-route-map-loading .section-route-map-body-content,
+  .section-route-map-loading .section-route-map-title {
+    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: route-map-loading 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+    height: 1.2em;
+    display: block;
+  }
+  
+  .section-route-map-loading .section-route-map-container {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%) !important;
+    background-size: 200% 100%;
+    animation: route-map-loading 1.5s infinite;
+  }
+  
+  /* ==========================
+   * === CUSTOM MAP POSITIONS (GERMANY)
+   * ========================== */
+  
+  /* Sample city positions for German railway network */
+  .section-route-map-point[data-city="Berlin"] {
+    top: 25%;
+    left: 75%;
+  }
+  
+  .section-route-map-point[data-city="Hamburg"] {
+    top: 15%;
+    left: 55%;
+  }
+  
+  .section-route-map-point[data-city="München"] {
+    top: 75%;
+    left: 60%;
+  }
+  
+  .section-route-map-point[data-city="Köln"] {
+    top: 45%;
+    left: 25%;
+  }
+  
+  .section-route-map-point[data-city="Frankfurt"] {
+    top: 55%;
+    left: 45%;
+  }
+  
+  .section-route-map-point[data-city="Stuttgart"] {
+    top: 65%;
+    left: 45%;
+  }
+  
+  .section-route-map-point[data-city="Hannover"] {
+    top: 35%;
+    left: 55%;
+  }
+  
+  .section-route-map-point[data-city="Dresden"] {
+    top: 40%;
+    left: 80%;
+  }
+  
+  /* Corresponding labels */
+  .section-route-map-label[data-label="Berlin"] {
+    top: 20%;
+    left: 75%;
+  }
+  
+  .section-route-map-label[data-label="Hamburg"] {
+    top: 10%;
+    left: 55%;
+  }
+  
+  .section-route-map-label[data-label="München"] {
+    top: 70%;
+    left: 60%;
+  }
+  
+  .section-route-map-label[data-label="Köln"] {
+    top: 40%;
+    left: 25%;
+  }
+  
+  .section-route-map-label[data-label="Frankfurt"] {
+    top: 50%;
+    left: 45%;
+  }
+  
+  .section-route-map-label[data-label="Stuttgart"] {
+    top: 60%;
+    left: 45%;
+  }
+  
+  .section-route-map-label[data-label="Hannover"] {
+    top: 30%;
+    left: 55%;
+  }
+  
+  .section-route-map-label[data-label="Dresden"] {
+    top: 35%;
+    left: 80%;
+  }
+  
+} 

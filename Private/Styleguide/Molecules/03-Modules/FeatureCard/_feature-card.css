@@ -1,0 +1,610 @@
+@layer components {
+  /* ==========================
+   * === FEATURE CARD RESPONSIVE
+   * ========================== */
+
+  /* Responsive Feature Card Container */
+  .feature-card-responsive {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 328px; /* Mobile first */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
+    border-radius: 36px 0 0; /* Mobile first */
+  }
+
+  .feature-card-responsive:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 10%), 0 6px 12px -2px rgb(30 41 57 / 5%);
+  }
+
+  /* Responsive Feature Card Image */
+  .feature-card-responsive-image {
+    width: 100%;
+    height: 200px; /* Mobile first */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 36px 0 0; /* Mobile first */
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Responsive Feature Card Overlay */
+  .feature-card-responsive-overlay {
+    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%);
+    position: absolute;
+    inset: 0;
+    padding: 20px; /* Mobile first */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  /* Responsive Feature Card Icon */
+  .feature-card-responsive-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background: rgb(255 255 255 / 15%);
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .feature-card-responsive-icon svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+    stroke: white;
+    stroke-width: 2px;
+    fill: none;
+  }
+
+  /* Responsive Feature Card Content */
+  .feature-card-responsive-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+
+  /* Responsive Feature Card Overline */
+  .feature-card-responsive-overline {
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: white;
+    opacity: 0.9;
+  }
+
+  /* Responsive Feature Card Headline */
+  .feature-card-responsive-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+  }
+
+  /* ==========================
+   * === FEATURE CARD XL (Desktop)
+   * ========================== */
+
+  /* Desktop XL Feature Card Container */
+  .feature-card-xl {
+    display: flex;
+    flex-direction: column;
+    width: 368px; /* Fixed desktop width */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
+    border-radius: 64px 0 0; /* Desktop border radius */
+  }
+
+  .feature-card-xl:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 10%), 0 6px 12px -2px rgb(30 41 57 / 5%);
+  }
+
+  /* Desktop XL Feature Card Image */
+  .feature-card-xl-image {
+    width: 100%;
+    height: 240px; /* Desktop image height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 64px 0 0; /* Desktop border radius */
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Desktop XL Feature Card Overlay */
+  .feature-card-xl-overlay {
+    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%);
+    position: absolute;
+    inset: 0;
+    padding: 24px; /* Desktop padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  /* Desktop XL Feature Card Icon */
+  .feature-card-xl-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    background: rgb(255 255 255 / 15%);
+    border-radius: 14px;
+    flex-shrink: 0;
+  }
+
+  .feature-card-xl-icon svg {
+    width: 26px;
+    height: 26px;
+    color: white;
+    stroke: white;
+    stroke-width: 2px;
+    fill: none;
+  }
+
+  /* Desktop XL Feature Card Content */
+  .feature-card-xl-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+
+  /* Desktop XL Feature Card Overline */
+  .feature-card-xl-overline {
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.29;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: white;
+    opacity: 0.9;
+  }
+
+  /* Desktop XL Feature Card Headline */
+  .feature-card-xl-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.17;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+  }
+
+  /* ==========================
+   * === FEATURE CARD SM (Mobile)
+   * ========================== */
+
+  /* Mobile SM Feature Card Container */
+  .feature-card-sm {
+    display: flex;
+    flex-direction: column;
+    width: 328px; /* Fixed mobile width */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgb(30 41 57 / 6%);
+    border-radius: 36px 0 0; /* Mobile border radius */
+  }
+
+  .feature-card-sm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgb(30 41 57 / 8%), 0 4px 8px -2px rgb(30 41 57 / 4%);
+  }
+
+  /* Mobile SM Feature Card Image */
+  .feature-card-sm-image {
+    width: 100%;
+    height: 200px; /* Mobile image height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 36px 0 0; /* Mobile border radius */
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Mobile SM Feature Card Overlay */
+  .feature-card-sm-overlay {
+    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%);
+    position: absolute;
+    inset: 0;
+    padding: 20px; /* Mobile padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  /* Mobile SM Feature Card Icon */
+  .feature-card-sm-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: rgb(255 255 255 / 15%);
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .feature-card-sm-icon svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+    stroke: white;
+    stroke-width: 2px;
+    fill: none;
+  }
+
+  /* Mobile SM Feature Card Content */
+  .feature-card-sm-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+
+  /* Mobile SM Feature Card Overline */
+  .feature-card-sm-overline {
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: white;
+    opacity: 0.9;
+  }
+
+  /* Mobile SM Feature Card Headline */
+  .feature-card-sm-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.22;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+  }
+
+  /* ==========================
+   * === FEATURE CARD GRIDS
+   * ========================== */
+
+  /* Feature Card Grid Responsive */
+  .feature-card-grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 368px));
+    gap: 24px;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  /* Feature Card Grid Fixed */
+  .feature-card-grid-fixed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+    justify-items: center;
+  }
+
+  /* Feature Card Grid Auto */
+  .feature-card-grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    justify-items: center;
+  }
+
+  /* ==========================
+   * === COLOR VARIANTS
+   * ========================== */
+
+  /* Primary Variant (Default Teal) */
+  .feature-card-variant-primary .feature-card-responsive-overlay,
+  .feature-card-variant-primary .feature-card-xl-overlay,
+  .feature-card-variant-primary .feature-card-sm-overlay {
+    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%);
+  }
+
+  /* Secondary Variant (Red) */
+  .feature-card-variant-secondary .feature-card-responsive-overlay,
+  .feature-card-variant-secondary .feature-card-xl-overlay,
+  .feature-card-variant-secondary .feature-card-sm-overlay {
+    background: linear-gradient(180deg, rgb(221 5 43 / 0%) 0%, rgb(185 28 28 / 100%) 100%);
+  }
+
+  /* Dark Variant */
+  .feature-card-variant-dark .feature-card-responsive-overlay,
+  .feature-card-variant-dark .feature-card-xl-overlay,
+  .feature-card-variant-dark .feature-card-sm-overlay {
+    background: linear-gradient(180deg, rgb(30 41 57 / 0%) 0%, rgb(17 24 39 / 100%) 100%);
+  }
+
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+
+  /* Desktop breakpoint */
+  @media (width >= 1024px) {
+    .feature-card-responsive {
+      max-width: 368px;
+      border-radius: 64px 0;
+    }
+
+    .feature-card-responsive-image {
+      height: 240px; /* Desktop image height */
+      border-radius: 64px 0 0;
+    }
+
+    .feature-card-responsive-overlay {
+      padding: 24px;
+      gap: 16px;
+    }
+
+    .feature-card-responsive-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+    }
+
+    .feature-card-responsive-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .feature-card-responsive-content {
+      gap: 6px;
+    }
+
+    .feature-card-responsive-overline {
+      font-size: 14px;
+      line-height: 1.29;
+    }
+
+    .feature-card-responsive-headline {
+      font-size: 24px;
+      line-height: 1.17;
+    }
+  }
+
+  /* Tablet adaptation */
+  @media (1023px >= width >= 768px) {
+    .feature-card-grid-responsive,
+    .feature-card-grid-fixed {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card-xl {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 48px 0;
+    }
+
+    .feature-card-xl-image {
+      height: 220px;
+      border-radius: 48px 0 0;
+    }
+  }
+
+  /* Mobile optimization */
+  @media (width <= 767px) {
+    .feature-card-grid-responsive,
+    .feature-card-grid-fixed,
+    .feature-card-grid-auto {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .feature-card-responsive,
+    .feature-card-xl {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 32px 0;
+    }
+
+    .feature-card-responsive-image,
+    .feature-card-xl-image {
+      height: 180px;
+      border-radius: 32px 0 0;
+    }
+
+    .feature-card-responsive-overlay,
+    .feature-card-xl-overlay {
+      padding: 16px;
+      gap: 10px;
+    }
+
+    .feature-card-responsive-icon,
+    .feature-card-xl-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+    }
+
+    .feature-card-responsive-icon svg,
+    .feature-card-xl-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .feature-card-responsive-overline,
+    .feature-card-xl-overline {
+      font-size: 10px;
+      line-height: 1.2;
+    }
+
+    .feature-card-responsive-headline,
+    .feature-card-xl-headline {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
+
+  /* Small mobile optimization */
+  @media (width <= 479px) {
+    .feature-card-responsive,
+    .feature-card-xl,
+    .feature-card-sm {
+      border-radius: 24px 0;
+    }
+
+    .feature-card-responsive-image,
+    .feature-card-xl-image,
+    .feature-card-sm-image {
+      height: 160px;
+      border-radius: 24px 0 0;
+    }
+
+    .feature-card-responsive-overlay,
+    .feature-card-xl-overlay,
+    .feature-card-sm-overlay {
+      padding: 12px;
+      gap: 8px;
+      background: rgb(0 0 0 / 90%) !important;
+    }
+
+    .feature-card-responsive-icon,
+    .feature-card-xl-icon,
+    .feature-card-sm-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+    }
+
+    .feature-card-responsive-icon svg,
+    .feature-card-xl-icon svg,
+    .feature-card-sm-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .feature-card-responsive-headline,
+    .feature-card-xl-headline,
+    .feature-card-sm-headline {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+  }
+
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+
+  /* Focus States */
+  .feature-card-responsive:focus-within,
+  .feature-card-xl:focus-within,
+  .feature-card-sm:focus-within {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .feature-card-responsive,
+    .feature-card-xl,
+    .feature-card-sm {
+      border: 2px solid #1E2939;
+    }
+
+    .feature-card-responsive-headline,
+    .feature-card-xl-headline,
+    .feature-card-sm-headline {
+      font-weight: 600;
+    }
+
+    .feature-card-responsive-overlay,
+    .feature-card-xl-overlay,
+    .feature-card-sm-overlay {
+      background: rgb(0 0 0 / 90%) !important;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .feature-card-responsive,
+    .feature-card-xl,
+    .feature-card-sm {
+      transition: none;
+      transform: none !important;
+    }
+  }
+
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+
+  @media print {
+    .feature-card-responsive,
+    .feature-card-xl,
+    .feature-card-sm {
+      background: white !important;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      break-inside: avoid;
+      margin-bottom: 20px;
+      box-shadow: none !important;
+    }
+
+    .feature-card-responsive-image,
+    .feature-card-xl-image,
+    .feature-card-sm-image {
+      height: 150px !important;
+      border-radius: 0;
+      border: 1px solid #ddd;
+    }
+
+    .feature-card-responsive-overlay,
+    .feature-card-xl-overlay,
+    .feature-card-sm-overlay {
+      background: rgb(0 0 0 / 70%) !important;
+    }
+
+    .feature-card-responsive-overline,
+    .feature-card-xl-overline,
+    .feature-card-sm-overline,
+    .feature-card-responsive-headline,
+    .feature-card-xl-headline,
+    .feature-card-sm-headline {
+      color: white !important;
+    }
+
+    .feature-card-grid-responsive,
+    .feature-card-grid-fixed,
+    .feature-card-grid-auto {
+      display: block;
+    }
+
+    .feature-card-grid-responsive > *,
+    .feature-card-grid-fixed > *,
+    .feature-card-grid-auto > * {
+      margin-bottom: 20px;
+    }
+  }
+
+}

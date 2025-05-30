@@ -1,0 +1,802 @@
+@layer components {
+  /* ==========================
+   * === CONTACT CARD RESPONSIVE
+   * ========================== */
+
+  /* Responsive Contact Card Container */
+  .contact-card-responsive {
+    background: #FFF;
+    border-radius: 36px 0; /* Mobile first */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 368px; /* Desktop constraint */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
+  }
+
+  .contact-card-responsive:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 10%), 0 6px 12px -2px rgb(30 41 57 / 5%);
+  }
+
+  /* Responsive Image Container (4:3 Aspect Ratio) */
+  .contact-card-responsive-image {
+    width: 100%;
+    height: 246px; /* Mobile first - Figma Node 1763-30076 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 36px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Responsive Image Overlay */
+  .contact-card-responsive-image-overlay {
+    background: linear-gradient(180deg, rgb(30 41 57 / 0%) 0%, rgb(30 41 57 / 80%) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  /* Responsive Person Information */
+  .contact-card-responsive-person {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  /* Responsive Person Name */
+  .contact-card-responsive-person-name {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px; /* Mobile first */
+    line-height: 1.444em;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+  }
+
+  /* Responsive Person Job */
+  .contact-card-responsive-person-job {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.429em;
+    color: white;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  /* Responsive Content Container */
+  .contact-card-responsive-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Mobile first */
+    flex: 1;
+  }
+
+  /* Responsive Contact Group */
+  .contact-card-responsive-contact-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* Responsive Contact Items */
+  .contact-card-responsive-contact-item {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.625em;
+    text-align: center;
+    color: #1E2939;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .contact-card-responsive-contact-item:hover {
+    color: #DD052B;
+    text-decoration: underline;
+  }
+
+  .contact-card-responsive-contact-item:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* ==========================
+   * === CONTACT CARD XL (Desktop)
+   * ========================== */
+
+  /* Desktop XL Contact Card Container */
+  .contact-card-xl {
+    background: #FFF;
+    border-radius: 64px 0; /* Desktop border radius */
+    display: flex;
+    flex-direction: column;
+    width: 368px; /* Fixed desktop width - Figma Node 1774-34603 */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
+  }
+
+  .contact-card-xl:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 10%), 0 6px 12px -2px rgb(30 41 57 / 5%);
+  }
+
+  /* Desktop XL Image Container */
+  .contact-card-xl-image {
+    width: 100%;
+    height: 276px; /* Desktop image height - Figma Node 1774-34603 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 64px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Desktop XL Image Overlay */
+  .contact-card-xl-image-overlay {
+    background: linear-gradient(180deg, rgb(30 41 57 / 0%) 0%, rgb(30 41 57 / 80%) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  /* Desktop XL Person Information */
+  .contact-card-xl-person {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* Desktop XL Person Name */
+  .contact-card-xl-person-name {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.455em;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+  }
+
+  /* Desktop XL Person Job */
+  .contact-card-xl-person-job {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.625em;
+    color: white;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  /* Desktop XL Content Container */
+  .contact-card-xl-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    flex: 1;
+  }
+
+  /* Desktop XL Contact Group */
+  .contact-card-xl-contact-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  /* Desktop XL Contact Items */
+  .contact-card-xl-contact-item {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.625em;
+    text-align: center;
+    color: #1E2939;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .contact-card-xl-contact-item:hover {
+    color: #DD052B;
+    text-decoration: underline;
+  }
+
+  .contact-card-xl-contact-item:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* ==========================
+   * === CONTACT CARD SM (Mobile)
+   * ========================== */
+
+  /* Mobile SM Contact Card Container */
+  .contact-card-sm {
+    background: #FFF;
+    border-radius: 36px 0; /* Mobile border radius */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 328px; /* Mobile constraint */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgb(30 41 57 / 6%);
+  }
+
+  .contact-card-sm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgb(30 41 57 / 8%), 0 4px 8px -2px rgb(30 41 57 / 4%);
+  }
+
+  /* Mobile SM Image Container */
+  .contact-card-sm-image {
+    width: 100%;
+    height: 246px; /* Mobile image height - Figma Node 1763-30076 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 36px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Mobile SM Image Overlay */
+  .contact-card-sm-image-overlay {
+    background: linear-gradient(180deg, rgb(30 41 57 / 0%) 0%, rgb(30 41 57 / 80%) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  /* Mobile SM Person Information */
+  .contact-card-sm-person {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  /* Mobile SM Person Name */
+  .contact-card-sm-person-name {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.444em;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+  }
+
+  /* Mobile SM Person Job */
+  .contact-card-sm-person-job {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.429em;
+    color: white;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  /* Mobile SM Content Container */
+  .contact-card-sm-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    flex: 1;
+  }
+
+  /* Mobile SM Contact Group */
+  .contact-card-sm-contact-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  /* Mobile SM Contact Items */
+  .contact-card-sm-contact-item {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.429em;
+    text-align: center;
+    color: #1E2939;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .contact-card-sm-contact-item:hover {
+    color: #DD052B;
+    text-decoration: underline;
+  }
+
+  .contact-card-sm-contact-item:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* ==========================
+   * === CONTACT CARD GRIDS
+   * ========================== */
+
+  /* Contact Card Grid Responsive */
+  .contact-card-grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 368px));
+    gap: 24px;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  /* Contact Card Grid Fixed */
+  .contact-card-grid-fixed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+    justify-items: center;
+  }
+
+  /* Contact Card Grid Auto */
+  .contact-card-grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    justify-items: center;
+  }
+
+  /* ==========================
+   * === COLOR VARIANTS
+   * ========================== */
+
+  /* White Variant */
+  .contact-card-variant-white {
+    background: #FFF;
+  }
+
+  /* Dark Variant */
+  .contact-card-variant-dark {
+    background: #1E2939;
+  }
+
+  .contact-card-variant-dark .contact-card-responsive-content,
+  .contact-card-variant-dark .contact-card-xl-content,
+  .contact-card-variant-dark .contact-card-sm-content {
+    background: #1E2939;
+  }
+
+  .contact-card-variant-dark .contact-card-responsive-contact-item,
+  .contact-card-variant-dark .contact-card-xl-contact-item,
+  .contact-card-variant-dark .contact-card-sm-contact-item {
+    color: white;
+  }
+
+  .contact-card-variant-dark .contact-card-responsive-contact-item:hover,
+  .contact-card-variant-dark .contact-card-xl-contact-item:hover,
+  .contact-card-variant-dark .contact-card-sm-contact-item:hover {
+    color: #DD052B;
+  }
+
+  /* Primary Variant - must come before dark hover selectors */
+  .contact-card-variant-primary {
+    background: #DD052B;
+  }
+
+  .contact-card-variant-primary .contact-card-responsive-content,
+  .contact-card-variant-primary .contact-card-xl-content,
+  .contact-card-variant-primary .contact-card-sm-content {
+    background: #DD052B;
+  }
+
+  .contact-card-variant-primary .contact-card-responsive-contact-item,
+  .contact-card-variant-primary .contact-card-xl-contact-item,
+  .contact-card-variant-primary .contact-card-sm-contact-item {
+    color: white;
+  }
+
+  .contact-card-variant-primary .contact-card-responsive-contact-item:hover,
+  .contact-card-variant-primary .contact-card-xl-contact-item:hover,
+  .contact-card-variant-primary .contact-card-sm-contact-item:hover {
+    color: #FFE2E7;
+  }
+
+  /* Dark variant hover - must come after primary variant */
+  .contact-card-variant-dark .contact-card-responsive-contact-item:hover,
+  .contact-card-variant-dark .contact-card-xl-contact-item:hover,
+  .contact-card-variant-dark .contact-card-sm-contact-item:hover {
+    color: #DD052B;
+  }
+
+  /* ==========================
+   * === CONTACT LINK ENHANCEMENT
+   * ========================== */
+
+  /* Enhanced Contact Link Styling */
+  .contact-card-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .contact-card-contact-link:hover {
+    background: rgb(221 5 43 / 10%);
+    transform: translateY(-1px);
+  }
+
+  .contact-card-contact-link:active {
+    transform: translateY(0);
+  }
+
+  /* Phone Link Icon */
+  .contact-card-contact-link[href^="tel:"]::before {
+    content: "📞";
+    font-size: 14px;
+  }
+
+  /* Email Link Icon */
+  .contact-card-contact-link[href^="mailto:"]::before {
+    content: "✉️";
+    font-size: 14px;
+  }
+
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+
+  /* Desktop breakpoint */
+  @media (width >= 1024px) {
+    .contact-card-responsive {
+      border-radius: 64px 0;
+      width: 368px;
+    }
+
+    .contact-card-responsive-image {
+      height: 276px; /* Desktop image height */
+      border-radius: 64px 0 0;
+    }
+
+    .contact-card-responsive-image-overlay {
+      padding: 24px;
+    }
+
+    .contact-card-responsive-person-name {
+      font-size: 22px;
+      line-height: 1.455em;
+    }
+
+    .contact-card-responsive-person-job {
+      font-size: 16px;
+      line-height: 1.625em;
+    }
+
+    .contact-card-responsive-content {
+      padding: 24px;
+    }
+
+    .contact-card-responsive-contact-group {
+      gap: 12px;
+    }
+  }
+
+  /* Tablet adaptation */
+  @media (width <= 1023px) and (width >= 768px) {
+    .contact-card-grid-responsive,
+    .contact-card-grid-fixed {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card-xl {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 48px 0;
+    }
+
+    .contact-card-xl-image {
+      height: 256px;
+      border-radius: 48px 0 0;
+    }
+  }
+
+  /* Mobile optimization */
+  @media (width <= 767px) {
+    .contact-card-grid-responsive,
+    .contact-card-grid-fixed,
+    .contact-card-grid-auto {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .contact-card-responsive,
+    .contact-card-xl {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 32px 0;
+    }
+
+    .contact-card-responsive-image,
+    .contact-card-xl-image {
+      height: 220px;
+      border-radius: 32px 0 0;
+    }
+
+    .contact-card-responsive-image-overlay,
+    .contact-card-xl-image-overlay {
+      padding: 16px;
+    }
+
+    .contact-card-responsive-person-name,
+    .contact-card-xl-person-name {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .contact-card-responsive-person-job,
+    .contact-card-xl-person-job {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .contact-card-responsive-content,
+    .contact-card-xl-content {
+      padding: 16px;
+    }
+
+    .contact-card-responsive-contact-group,
+    .contact-card-xl-contact-group {
+      gap: 8px;
+    }
+
+    .contact-card-responsive-contact-item,
+    .contact-card-xl-contact-item {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+
+  /* Small mobile optimization */
+  @media (width <= 479px) {
+    .contact-card-responsive,
+    .contact-card-xl,
+    .contact-card-sm {
+      border-radius: 24px 0;
+    }
+
+    .contact-card-responsive-image,
+    .contact-card-xl-image,
+    .contact-card-sm-image {
+      height: 200px;
+      border-radius: 24px 0 0;
+    }
+
+    .contact-card-responsive-image-overlay,
+    .contact-card-xl-image-overlay,
+    .contact-card-sm-image-overlay {
+      padding: 12px;
+    }
+
+    .contact-card-responsive-person-name,
+    .contact-card-xl-person-name,
+    .contact-card-sm-person-name {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .contact-card-responsive-person-job,
+    .contact-card-xl-person-job,
+    .contact-card-sm-person-job {
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .contact-card-responsive-content,
+    .contact-card-xl-content,
+    .contact-card-sm-content {
+      padding: 12px;
+    }
+
+    .contact-card-responsive-contact-item,
+    .contact-card-xl-contact-item,
+    .contact-card-sm-contact-item {
+      font-size: 12px;
+      line-height: 1.3;
+    }
+  }
+
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+
+  /* Focus States */
+  .contact-card-responsive:focus-within,
+  .contact-card-xl:focus-within,
+  .contact-card-sm:focus-within {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .contact-card-responsive,
+    .contact-card-xl,
+    .contact-card-sm {
+      border: 2px solid #1E2939;
+    }
+
+    .contact-card-responsive-person-name,
+    .contact-card-xl-person-name,
+    .contact-card-sm-person-name {
+      font-weight: 600;
+    }
+
+    .contact-card-responsive-contact-item,
+    .contact-card-xl-contact-item,
+    .contact-card-sm-contact-item {
+      text-decoration: underline;
+    }
+
+    .contact-card-responsive-image-overlay,
+    .contact-card-xl-image-overlay,
+    .contact-card-sm-image-overlay {
+      background: rgb(0 0 0 / 90%) !important;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .contact-card-responsive,
+    .contact-card-xl,
+    .contact-card-sm,
+    .contact-card-contact-link {
+      transition: none;
+      transform: none !important;
+    }
+  }
+
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+
+  @media print {
+    .contact-card-responsive,
+    .contact-card-xl,
+    .contact-card-sm {
+      background: white !important;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      break-inside: avoid;
+      margin-bottom: 20px;
+      box-shadow: none !important;
+    }
+
+    .contact-card-responsive-image,
+    .contact-card-xl-image,
+    .contact-card-sm-image {
+      height: 150px !important;
+      border-radius: 0;
+      border: 1px solid #ddd;
+    }
+
+    .contact-card-responsive-image-overlay,
+    .contact-card-xl-image-overlay,
+    .contact-card-sm-image-overlay {
+      background: rgb(0 0 0 / 70%) !important;
+    }
+
+    .contact-card-responsive-person-name,
+    .contact-card-xl-person-name,
+    .contact-card-sm-person-name,
+    .contact-card-responsive-person-job,
+    .contact-card-xl-person-job,
+    .contact-card-sm-person-job {
+      color: white !important;
+    }
+
+    .contact-card-responsive-contact-item,
+    .contact-card-xl-contact-item,
+    .contact-card-sm-contact-item {
+      color: black !important;
+      text-decoration: underline !important;
+    }
+
+    .contact-card-grid-responsive,
+    .contact-card-grid-fixed,
+    .contact-card-grid-auto {
+      display: block;
+    }
+
+    .contact-card-grid-responsive > *,
+    .contact-card-grid-fixed > *,
+    .contact-card-grid-auto > * {
+      margin-bottom: 20px;
+    }
+  }
+
+  /* ==========================
+   * === LOADING STATES
+   * ========================== */
+
+  .contact-card-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: contact-card-loading 1.5s infinite;
+  }
+
+  @keyframes contact-card-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .contact-card-loading .contact-card-responsive-person-name,
+  .contact-card-loading .contact-card-xl-person-name,
+  .contact-card-loading .contact-card-sm-person-name,
+  .contact-card-loading .contact-card-responsive-person-job,
+  .contact-card-loading .contact-card-xl-person-job,
+  .contact-card-loading .contact-card-sm-person-job {
+    background: linear-gradient(90deg, rgb(255 255 255 / 30%) 25%, rgb(255 255 255 / 50%) 50%, rgb(255 255 255 / 30%) 75%);
+    background-size: 200% 100%;
+    animation: contact-card-loading 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+  }
+
+}
+
+/* === CONTACT CARD VARIANTS === */
+
+/* Primary Variant Styles */
+.contact-card-variant-primary .contact-card-responsive-contact-item,
+.contact-card-variant-primary .contact-card-xl-contact-item,
+.contact-card-variant-primary .contact-card-sm-contact-item {
+  /* Primary variant specific styles */
+}
+
+/* Dark Variant Hover States - moved before primary variant to fix specificity */
+.contact-card-variant-dark .contact-card-responsive-contact-item:hover,
+.contact-card-variant-dark .contact-card-xl-contact-item:hover,
+.contact-card-variant-dark .contact-card-sm-contact-item:hover {
+  /* Dark variant hover styles */
+}

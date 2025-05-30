@@ -1,0 +1,45 @@
+/* === Slider Component === */
+
+.ce-slider {
+  @apply relative w-full overflow-hidden;
+}
+
+.ce-slider-image {
+  @apply mb-5;
+}
+
+.ce-slider .swiper {
+  @apply relative w-full;
+}
+
+.ce-slider .swiper-slide {
+  @apply flex flex-col items-center;
+}
+
+.ce-slider .swiper-button-prev,
+.ce-slider .swiper-button-next {
+  @apply absolute top-1/2 -translate-y-1/2 z-10;
+}
+
+.ce-slider .swiper-button-prev {
+  @apply left-6;
+}
+
+.ce-slider .swiper-button-next {
+  @apply right-6;
+}
+
+.ce-slider .swiper-pagination {
+  @apply relative flex gap-1 items-center justify-center mt-8;
+}
+
+.swiper-pagination-bullet {
+  @apply cursor-pointer transition-all duration-300 ease-in-out;
+  @apply w-2.5 h-2.5 rounded-full;
+  @apply bg-gray-200;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-secondary-700;
+  @apply w-5 h-2.5;
+}

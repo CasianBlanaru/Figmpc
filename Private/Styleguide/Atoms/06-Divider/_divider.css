@@ -1,0 +1,15 @@
+/* === DIVIDER */
+
+hr,
+.ce-div,
+hr *,
+.ce-div * {
+  @apply box-border;
+}
+
+hr,
+.ce-div {
+  @apply w-full mx-0 my-1 lg:my-2;
+  @apply border-0 bg-stone-300;
+  @apply -mt-[1px] relative h-[1px];
+}

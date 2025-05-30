@@ -1,0 +1,215 @@
+
+
+@layer components {
+  /* ==========================
+   * === HERO LANDINGPAGE
+   * ========================== */
+
+  /* Hero Landingpage - Exact Figma Implementation */
+  .hero-landingpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    align-self: stretch;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    border-radius: 96px 0;
+    overflow: hidden;
+    position: relative;
+    background-image: url('./src/assets/hero-landingpage-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-landingpage-content {
+    /* Exact Figma gradient fill_CHBWHC */
+    background: linear-gradient(180deg,
+      rgb(0 104 94 / 0%) 0%,
+      rgb(0 61 57 / 100%) 100%
+    );
+    backdrop-filter: blur(30px); /* effect_5T332D */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+    padding: 44px 16px; /* Mobile padding from layout_APGHYJ */
+    gap: 12px; /* Mobile gap from layout_APGHYJ */
+  }
+
+  .hero-landingpage-layout-group {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 32px; /* exact Figma gap from layout_NY0J69 */
+    width: 100%;
+  }
+
+  .hero-landingpage-headline {
+    /* Mobile Typography - Exact Figma style_6SDE6D */
+    font-family: var(--font-family-display);
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 1.091;
+    letter-spacing: 1.21%;
+    text-transform: uppercase;
+    text-align: left;
+    color: white; /* fill_BZXOX3 */
+    width: 100%;
+  }
+
+  .hero-landingpage-button {
+    /* Exact Figma button styling */
+    background: var(--color-netinera-secondary); /* fill_JGU2QG */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 24px;
+    border-radius: 12px;
+    height: 52px; /* exact Figma height */
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .hero-landingpage-button:hover {
+    background: #c4042a;
+    transform: translateY(-2px);
+  }
+
+  /* Focus States - must come before variant hover selectors */
+  .hero-landingpage-button:focus {
+    outline: 2px solid #FFF;
+    outline-offset: 2px;
+  }
+
+  .hero-landingpage-button-text {
+    /* Exact Figma button text style_Q3HQJJ */
+    font-family: var(--font-family-display);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.429;
+    letter-spacing: 5.71%;
+    text-transform: uppercase;
+    text-align: left;
+    color: white; /* fill_BZXOX3 */
+  }
+
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+
+  /* Desktop Responsive Breakpoint */
+  @media (width >= 1024px) {
+    .hero-landingpage-content {
+      /* Desktop padding from layout_3J383Y */
+      padding: 80px 56px;
+      gap: 36px; /* Desktop gap from layout_3J383Y */
+    }
+
+    .hero-landingpage-layout-group {
+      gap: 36px; /* Desktop gap from layout_9GTRBG */
+      width: fit-content; /* Desktop sizing from layout_9GTRBG */
+      align-self: flex-start;
+    }
+
+    .hero-landingpage-headline {
+      /* Desktop Typography - Exact Figma style_SPTQOL */
+      font-size: 60px;
+      line-height: 1.067;
+      letter-spacing: 0.67%;
+      width: fit-content; /* Desktop sizing from layout_8HM6LN */
+    }
+  }
+
+  /* ==========================
+   * === COLOR VARIANTS
+   * ========================== */
+
+  /* Primary Variant */
+  .hero-landingpage-variant-primary .hero-landingpage-content {
+    background: linear-gradient(180deg,
+      rgb(0 104 94 / 0%) 0%,
+      rgb(0 104 94 / 100%) 100%
+    );
+  }
+
+  /* Dark Variant */
+  .hero-landingpage-variant-dark .hero-landingpage-content {
+    background: linear-gradient(180deg,
+      rgb(30 41 57 / 0%) 0%,
+      rgb(30 41 57 / 100%) 100%
+    );
+  }
+
+  /* Secondary Button Variant */
+  .hero-landingpage-variant-secondary .hero-landingpage-button {
+    background: var(--color-netinera-primary);
+  }
+
+  .hero-landingpage-variant-secondary .hero-landingpage-button:hover {
+    background: #005a52;
+  }
+
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .hero-landingpage-content {
+      background: rgb(0 0 0 / 90%) !important;
+    }
+
+    .hero-landingpage-button {
+      border: 2px solid #FFF;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-landingpage-button {
+      transition: none;
+      transform: none !important;
+    }
+  }
+
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+
+  @media print {
+    .hero-landingpage {
+      height: 50vh !important;
+      border-radius: 0;
+      background: white !important;
+      border: 1px solid #ddd;
+      break-inside: avoid;
+    }
+
+    .hero-landingpage-content {
+      background: rgb(0 0 0 / 10%) !important;
+      backdrop-filter: none !important;
+    }
+
+    .hero-landingpage-headline {
+      color: black !important;
+    }
+
+    .hero-landingpage-button {
+      background: black !important;
+      box-shadow: none !important;
+    }
+
+    .hero-landingpage-button-text {
+      color: white !important;
+    }
+  }
+
+}

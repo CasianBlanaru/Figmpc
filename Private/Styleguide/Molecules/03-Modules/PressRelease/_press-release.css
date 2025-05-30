@@ -1,0 +1,805 @@
+@layer components {
+  /* ==========================
+   * === PRESS RELEASE LIST RESPONSIVE
+   * ========================== */
+
+  /* Responsive Press Release List Container */
+  .press-release-list-responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px; /* Mobile first gap */
+    width: 100%;
+    padding: 24px; /* Mobile first padding */
+    background: white;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .press-release-list-responsive:hover {
+    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
+  }
+
+  /* ==========================
+   * === PRESS RELEASE RESPONSIVE
+   * ========================== */
+
+  /* Individual Press Release Item */
+  .press-release-responsive {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 12px; /* Figma layout spacing */
+    width: 100%;
+    padding: 16px 0; /* Mobile first padding */
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .press-release-responsive:hover {
+    transform: translateX(4px);
+    background: rgb(221 5 43 / 2%);
+    border-radius: 8px;
+    padding: 16px;
+    margin: -16px 0;
+  }
+
+  /* Press Release Meta Information Container */
+  .press-release-responsive-meta {
+    display: flex;
+    flex-direction: column; /* Mobile first: column layout */
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 4px; /* Mobile gap */
+    width: 100%;
+  }
+
+  /* Press Release Date */
+  .press-release-responsive-date {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.714em; /* Figma line height */
+    color: #1E2939;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  /* Press Release Date with separator on mobile */
+  .press-release-responsive-date::after {
+    content: " • ";
+    color: #1E2939;
+    margin-left: 4px;
+  }
+
+  /* Press Release Category */
+  .press-release-responsive-category {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 1.714em; /* Figma line height */
+    color: #1E2939;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Press Release Separator Line */
+  .press-release-responsive-separator {
+    width: 1px;
+    height: 20px;
+    background: #1E2939;
+    flex-shrink: 0;
+    display: none; /* Hidden on mobile */
+  }
+
+  /* Press Release Headline */
+  .press-release-responsive-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px; /* Mobile first */
+    line-height: 1.4em; /* Mobile line height */
+    color: #1E2939;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Press Release Link */
+  .press-release-responsive-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    width: 100%;
+  }
+
+  .press-release-responsive-link:hover {
+    color: #DD052B;
+  }
+
+  /* ==========================
+   * === PRESS RELEASE XL (Desktop)
+   * ========================== */
+
+  /* Desktop XL Press Release List Container */
+  .press-release-list-xl {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px; /* Desktop gap */
+    width: 100%;
+    padding: 40px; /* Desktop padding */
+    background: white;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Desktop XL Individual Press Release Item */
+  .press-release-xl {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 12px; /* Figma layout spacing */
+    width: 100%;
+    padding: 20px 0; /* Desktop padding */
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .press-release-xl:hover {
+    transform: translateX(8px);
+    background: rgb(221 5 43 / 2%);
+    border-radius: 8px;
+    padding: 20px;
+    margin: -20px 0;
+  }
+
+  /* Desktop XL Press Release Meta */
+  .press-release-xl-meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: stretch;
+    gap: 10px; /* Figma gap spacing */
+    width: 100%;
+  }
+
+  /* Desktop XL Press Release Date */
+  .press-release-xl-date {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.714em; /* Figma line height */
+    color: #1E2939;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  /* Desktop XL Press Release Category */
+  .press-release-xl-category {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 1.714em; /* Figma line height */
+    color: #1E2939;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Desktop XL Press Release Separator */
+  .press-release-xl-separator {
+    width: 1px;
+    height: 20px;
+    background: #1E2939;
+    flex-shrink: 0;
+  }
+
+  /* Desktop XL Press Release Headline */
+  .press-release-xl-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 22px; /* Desktop size */
+    line-height: 1.455em; /* Figma line height */
+    color: #1E2939;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Desktop XL Press Release Link */
+  .press-release-xl-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    width: 100%;
+  }
+
+  .press-release-xl-link:hover {
+    color: #DD052B;
+  }
+
+  /* ==========================
+   * === PRESS RELEASE SM (Mobile)
+   * ========================== */
+
+  /* Mobile SM Press Release List Container */
+  .press-release-list-sm {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px; /* Small mobile gap */
+    width: 100%;
+    max-width: 400px;
+    padding: 20px; /* Small mobile padding */
+    background: white;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Mobile SM Individual Press Release Item */
+  .press-release-sm {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 12px; /* Figma layout spacing */
+    width: 100%;
+    padding: 16px 0; /* Mobile padding */
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .press-release-sm:hover {
+    transform: translateX(4px);
+    background: rgb(221 5 43 / 2%);
+    border-radius: 8px;
+    padding: 16px;
+    margin: -16px 0;
+  }
+
+  /* Mobile SM Press Release Meta */
+  .press-release-sm-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 4px; /* Small mobile gap */
+    width: 100%;
+  }
+
+  /* Mobile SM Press Release Date */
+  .press-release-sm-date {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.714em; /* Figma line height */
+    color: #1E2939;
+    margin: 0;
+  }
+
+  .press-release-sm-date::after {
+    content: " • ";
+    color: #1E2939;
+    margin-left: 4px;
+  }
+
+  /* Mobile SM Press Release Category */
+  .press-release-sm-category {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 1.714em; /* Figma line height */
+    color: #1E2939;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Mobile SM Press Release Headline */
+  .press-release-sm-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px; /* Mobile size */
+    line-height: 1.4em; /* Mobile line height */
+    color: #1E2939;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Mobile SM Press Release Link */
+  .press-release-sm-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    width: 100%;
+  }
+
+  .press-release-sm-link:hover {
+    color: #DD052B;
+  }
+
+  /* ==========================
+   * === INTERACTIVE ELEMENTS
+   * ========================== */
+
+  /* Press Release Interactive Enhancement */
+  .press-release-interactive {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .press-release-interactive::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgb(221 5 43 / 5%), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .press-release-interactive:hover::before {
+    left: 100%;
+  }
+
+  /* Press Release Divider */
+  .press-release-divider {
+    width: 100%;
+    height: 1px;
+    background: #E7E5E4; /* Figma stroke color */
+    border: none;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  /* ==========================
+   * === BADGE VARIANTS
+   * ========================== */
+
+  /* Badge Styled Press Releases */
+  .press-release-badges .press-release-responsive-meta {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Badge Date */
+  .press-release-badge-date {
+    background: #F3F4F6;
+    color: #1E2939;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5em;
+    padding: 4px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .press-release-badge-date::after {
+    content: none; /* Remove separator for badges */
+  }
+
+  /* Badge Category */
+  .press-release-badge-category {
+    background: #DD052B;
+    color: white;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+
+  /* Tablet breakpoint (≥ 768px) */
+  @media (width >= 768px) {
+    .press-release-responsive-meta {
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .press-release-responsive-date::after {
+      content: none; /* Remove mobile separator */
+    }
+
+    .press-release-responsive-separator {
+      display: block; /* Show separator on tablet+ */
+    }
+
+    .press-release-responsive-headline {
+      font-size: 20px;
+      line-height: 1.4em;
+    }
+
+    .press-release-list-responsive {
+      padding: 32px;
+      gap: 28px;
+    }
+
+    .press-release-responsive {
+      padding: 18px 0;
+    }
+
+    .press-release-responsive:hover {
+      padding: 18px;
+      margin: -18px 0;
+      transform: translateX(6px);
+    }
+  }
+
+  /* Desktop breakpoint (≥ 1024px) */
+  @media (width >= 1024px) {
+    .press-release-responsive-headline {
+      font-size: 22px;
+      line-height: 1.455em;
+    }
+
+    .press-release-list-responsive {
+      padding: 40px;
+      gap: 32px;
+    }
+
+    .press-release-responsive {
+      padding: 20px 0;
+    }
+
+    .press-release-responsive:hover {
+      padding: 20px;
+      margin: -20px 0;
+      transform: translateX(8px);
+    }
+  }
+
+  /* Large desktop optimization */
+  @media (width >= 1280px) {
+    .press-release-list-responsive,
+    .press-release-list-xl {
+      padding: 48px;
+      gap: 36px;
+    }
+
+    .press-release-responsive,
+    .press-release-xl {
+      padding: 24px 0;
+    }
+
+    .press-release-responsive:hover,
+    .press-release-xl:hover {
+      padding: 24px;
+      margin: -24px 0;
+      transform: translateX(12px);
+    }
+  }
+
+  /* Mobile optimization */
+  @media (width <= 767px) {
+    .press-release-sm-meta {
+      gap: 4px;
+    }
+
+    .press-release-list-responsive,
+    .press-release-list-xl,
+    .press-release-list-sm {
+      padding: 24px;
+      gap: 20px;
+    }
+
+    .press-release-responsive,
+    .press-release-xl,
+    .press-release-sm {
+      padding: 16px 0;
+    }
+
+    .press-release-responsive:hover,
+    .press-release-xl:hover,
+    .press-release-sm:hover {
+      padding: 16px;
+      margin: -16px 0;
+      transform: translateX(4px);
+    }
+  }
+
+  /* Small mobile optimization */
+  @media (width <= 479px) {
+    .press-release-list-responsive,
+    .press-release-list-xl,
+    .press-release-list-sm {
+      padding: 20px;
+      gap: 16px;
+    }
+
+    .press-release-responsive,
+    .press-release-xl,
+    .press-release-sm {
+      padding: 12px 0;
+    }
+
+    .press-release-responsive-headline,
+    .press-release-xl-headline,
+    .press-release-sm-headline {
+      font-size: 16px;
+      line-height: 1.4em;
+    }
+
+    .press-release-responsive-date,
+    .press-release-responsive-category,
+    .press-release-xl-date,
+    .press-release-xl-category,
+    .press-release-sm-date,
+    .press-release-sm-category {
+      font-size: 12px;
+      line-height: 1.6em;
+    }
+  }
+
+  /* ==========================
+   * === COLOR VARIANTS
+   * ========================== */
+
+  /* Focus States - must come before all hover selectors */
+  .press-release-responsive:focus,
+  .press-release-xl:focus,
+  .press-release-sm:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  .press-release-responsive-link:focus,
+  .press-release-xl-link:focus,
+  .press-release-sm-link:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Light Variant (Default) */
+  .press-release-variant-light {
+    background: #F9FAFB;
+  }
+
+  .press-release-variant-light .press-release-responsive-headline,
+  .press-release-variant-light .press-release-xl-headline,
+  .press-release-variant-light .press-release-sm-headline,
+  .press-release-variant-light .press-release-responsive-date,
+  .press-release-variant-light .press-release-responsive-category,
+  .press-release-variant-light .press-release-xl-date,
+  .press-release-variant-light .press-release-xl-category,
+  .press-release-variant-light .press-release-sm-date,
+  .press-release-variant-light .press-release-sm-category {
+    color: #374151;
+  }
+
+  .press-release-variant-light .press-release-divider {
+    background: #D1D5DB;
+  }
+
+  .press-release-variant-light .press-release-responsive-separator,
+  .press-release-variant-light .press-release-xl-separator {
+    background: #374151;
+  }
+
+  /* Dark Variant */
+  .press-release-variant-dark {
+    background: #1E2939;
+  }
+
+  .press-release-variant-dark .press-release-responsive-headline,
+  .press-release-variant-dark .press-release-xl-headline,
+  .press-release-variant-dark .press-release-sm-headline,
+  .press-release-variant-dark .press-release-responsive-date,
+  .press-release-variant-dark .press-release-responsive-category,
+  .press-release-variant-dark .press-release-xl-date,
+  .press-release-variant-dark .press-release-xl-category,
+  .press-release-variant-dark .press-release-sm-date,
+  .press-release-variant-dark .press-release-sm-category {
+    color: white;
+  }
+
+  .press-release-variant-dark .press-release-divider {
+    background: rgb(255 255 255 / 10%);
+  }
+
+  .press-release-variant-dark .press-release-responsive-separator,
+  .press-release-variant-dark .press-release-xl-separator {
+    background: rgb(255 255 255 / 60%);
+  }
+
+  .press-release-variant-dark .press-release-responsive:hover,
+  .press-release-variant-dark .press-release-xl:hover,
+  .press-release-variant-dark .press-release-sm:hover {
+    background: rgb(255 255 255 / 5%);
+  }
+
+  /* Primary Variant */
+  .press-release-variant-primary {
+    background: #00685E;
+  }
+
+  .press-release-variant-primary .press-release-responsive-headline,
+  .press-release-variant-primary .press-release-xl-headline,
+  .press-release-variant-primary .press-release-sm-headline,
+  .press-release-variant-primary .press-release-responsive-date,
+  .press-release-variant-primary .press-release-responsive-category,
+  .press-release-variant-primary .press-release-xl-date,
+  .press-release-variant-primary .press-release-xl-category,
+  .press-release-variant-primary .press-release-sm-date,
+  .press-release-variant-primary .press-release-sm-category {
+    color: white;
+  }
+
+  .press-release-variant-primary .press-release-divider {
+    background: rgb(255 255 255 / 20%);
+  }
+
+  .press-release-variant-primary .press-release-responsive-separator,
+  .press-release-variant-primary .press-release-xl-separator {
+    background: rgb(255 255 255 / 60%);
+  }
+
+  .press-release-variant-primary .press-release-responsive:hover,
+  .press-release-variant-primary .press-release-xl:hover,
+  .press-release-variant-primary .press-release-sm:hover {
+    background: rgb(255 255 255 / 10%);
+  }
+
+  .press-release-variant-primary .press-release-responsive-link:hover,
+  .press-release-variant-primary .press-release-xl-link:hover,
+  .press-release-variant-primary .press-release-sm-link:hover {
+    color: #FBBF24; /* Accent yellow for primary variant */
+  }
+
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+
+  /* Keyboard Navigation */
+  .press-release-responsive[tabindex]:focus,
+  .press-release-xl[tabindex]:focus,
+  .press-release-sm[tabindex]:focus {
+    background: rgb(221 5 43 / 5%);
+    transform: translateX(4px);
+  }
+
+  /* Screen Reader Support */
+  .press-release-list-responsive[role="region"],
+  .press-release-list-xl[role="region"],
+  .press-release-list-sm[role="region"] {
+    /* Ensures proper accessibility labeling */
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .press-release-list-responsive,
+    .press-release-list-xl,
+    .press-release-list-sm {
+      border: 2px solid #1E2939;
+    }
+
+    .press-release-responsive-headline,
+    .press-release-xl-headline,
+    .press-release-sm-headline {
+      font-weight: 600;
+    }
+
+    .press-release-divider {
+      background: #1E2939;
+      height: 2px;
+    }
+
+    .press-release-responsive-separator,
+    .press-release-xl-separator {
+      background: #1E2939;
+      width: 2px;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .press-release-list-responsive,
+    .press-release-list-xl,
+    .press-release-list-sm,
+    .press-release-responsive,
+    .press-release-xl,
+    .press-release-sm,
+    .press-release-responsive-link,
+    .press-release-xl-link,
+    .press-release-sm-link {
+      transition: none;
+      animation: none;
+    }
+
+    .press-release-responsive:hover,
+    .press-release-xl:hover,
+    .press-release-sm:hover {
+      transform: none;
+    }
+
+    .press-release-interactive::before {
+      display: none;
+    }
+  }
+
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+
+  @media print {
+    .press-release-list-responsive,
+    .press-release-list-xl,
+    .press-release-list-sm {
+      background: white !important;
+      border: 1px solid #ddd;
+      box-shadow: none !important;
+      padding: 20px !important;
+      gap: 16px !important;
+    }
+
+    .press-release-responsive,
+    .press-release-xl,
+    .press-release-sm {
+      padding: 8px 0 !important;
+      border-bottom: 1px solid #eee;
+    }
+
+    .press-release-responsive:hover,
+    .press-release-xl:hover,
+    .press-release-sm:hover {
+      background: none !important;
+      transform: none !important;
+      padding: 8px 0 !important;
+      margin: 0 !important;
+    }
+
+    .press-release-responsive-headline,
+    .press-release-xl-headline,
+    .press-release-sm-headline {
+      color: black !important;
+      font-size: 16px !important;
+      line-height: 1.4 !important;
+    }
+
+    .press-release-responsive-link,
+    .press-release-xl-link,
+    .press-release-sm-link {
+      color: black !important;
+      text-decoration: none !important;
+    }
+
+    .press-release-responsive-date,
+    .press-release-responsive-category,
+    .press-release-xl-date,
+    .press-release-xl-category,
+    .press-release-sm-date,
+    .press-release-sm-category {
+      color: #666 !important;
+      font-size: 12px !important;
+    }
+
+    .press-release-divider {
+      background: #ddd !important;
+      height: 1px !important;
+    }
+
+    .press-release-responsive-separator,
+    .press-release-xl-separator {
+      background: #666 !important;
+      width: 1px !important;
+    }
+
+    .press-release-badge-date,
+    .press-release-badge-category {
+      background: #f0f0f0 !important;
+      color: black !important;
+      border: 1px solid #ddd !important;
+    }
+  }
+
+}

@@ -1,0 +1,610 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Portrait Section specific enhancements */
+        .portrait-section-fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .portrait-card-animate {
+            animation: cardSlideIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes cardSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .portrait-card-interactive {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .portrait-card-interactive:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* ODEG Background Images */
+        .demo-background-odeg-1 {
+            background-image: linear-gradient(to bottom, rgba(0, 61, 57, 0) 0%, rgba(0, 61, 57, 1) 100%), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .demo-background-odeg-2 {
+            background-image: linear-gradient(to bottom, rgba(0, 61, 57, 0) 0%, rgba(0, 61, 57, 1) 100%), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .demo-background-odeg-3 {
+            background-image: linear-gradient(to bottom, rgba(0, 61, 57, 0) 0%, rgba(0, 61, 57, 1) 100%), url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2026&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Overlay gradient from Figma */
+        .teaser-bg-gradient {
+            background: linear-gradient(180deg, rgba(0, 104, 94, 0) 0%, rgba(0, 61, 57, 1) 100%);
+        }
+    </style>
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h1">Section Component</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                Section Portrait
+            </h1>
+            <p class="mx-auto max-w-netinera-content text-netinera-white body-lg">
+                Pixelgenaue "Im Portrait" Sektion basierend auf Figma Node 1829-8426. Kombiniert Section Header LG Left mit drei ODEG Teaser Background Image Cards. Vollständig responsive und interaktiv.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Section Portrait - Complete Implementation -->
+            <section class="portrait-section-fade-in">
+                <div class="overline-sm spacing-overline-h2">Figma Node 1829-8426</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Section Portrait - Im Portrait
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Vollständige "Im Portrait" Sektion mit Section Header und 3 ODEG Teaser Background Image Cards. Exakte Umsetzung der Figma-Spezifikationen mit pixelgenauer Layout-Struktur.
+                </p>
+                
+                <!-- Portrait Section Implementation -->
+                <div class="relative bg-white shadow-netinera-section overflow-hidden" style="border-radius: 96px 0px 96px 0px;">
+                    <!-- Main content with exact padding from Figma: 80px 56px -->
+                    <div class="flex flex-col items-center gap-14 px-14 py-20">
+                        
+                        <!-- Section Header - Using section-header-lg-left -->
+                        <div class="section-header-lg-left">
+                            <h3 class="section-header-lg-left-title text-gray-800">IM PORTRAIT</h3>
+                            <p class="section-header-lg-left-subtitle text-gray-800">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                            </p>
+                        </div>
+                        
+                        <!-- Content section with gap 44px -->
+                        <div class="flex flex-col gap-11 w-full">
+                            
+                            <!-- Layout Group with 16px gap -->
+                            <div class="flex flex-col gap-4 w-full">
+                                
+                                <!-- Top Large Teaser Card -->
+                                <div class="portrait-card-interactive portrait-card-animate" style="animation-delay: 0.1s;">
+                                    <div class="flex flex-col justify-end overflow-hidden demo-background-odeg-1" style="height: 486px; border-radius: 64px 0px 0px 0px;">
+                                        <div class="flex flex-col justify-end teaser-bg-gradient p-9 h-full">
+                                            <div class="max-w-xl">
+                                                <div class="text-white overline-sm" style="font-family: 'Titillium Web', sans-serif; font-weight: 600; font-size: 14px; line-height: 1.1428571428571428em; letter-spacing: 11.428571598870414%; text-transform: uppercase;">
+                                                    ODEG
+                                                </div>
+                                                <h3 class="text-white" style="font-family: 'Titillium Web', sans-serif; font-weight: 400; font-size: 30px; line-height: 1.2em; text-transform: uppercase; margin-top: 16px;">
+                                                    Im Osten Deutschlands unverzichtbar
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Bottom Two Cards Row -->
+                                <div class="flex gap-4 w-full">
+                                    
+                                    <!-- Left Card -->
+                                    <div class="flex-1 portrait-card-interactive portrait-card-animate" style="animation-delay: 0.2s;">
+                                        <div class="flex flex-col justify-end overflow-hidden demo-background-odeg-2" style="height: 486px;">
+                                            <div class="flex flex-col justify-end teaser-bg-gradient p-9 h-full">
+                                                <div class="max-w-xl">
+                                                    <div class="text-white overline-sm" style="font-family: 'Titillium Web', sans-serif; font-weight: 600; font-size: 14px; line-height: 1.1428571428571428em; letter-spacing: 11.428571598870414%; text-transform: uppercase;">
+                                                        ODEG
+                                                    </div>
+                                                    <h3 class="text-white" style="font-family: 'Titillium Web', sans-serif; font-weight: 400; font-size: 30px; line-height: 1.2em; text-transform: uppercase; margin-top: 16px;">
+                                                        Im Osten Deutschland unverzichtbar
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Right Card -->
+                                    <div class="flex-1 portrait-card-interactive portrait-card-animate" style="animation-delay: 0.3s;">
+                                        <div class="flex flex-col justify-end overflow-hidden demo-background-odeg-3" style="height: 486px; border-radius: 0px 0px 64px 0px;">
+                                            <div class="flex flex-col justify-end teaser-bg-gradient p-9 h-full">
+                                                <div class="max-w-xl">
+                                                    <div class="text-white overline-sm" style="font-family: 'Titillium Web', sans-serif; font-weight: 600; font-size: 14px; line-height: 1.1428571428571428em; letter-spacing: 11.428571598870414%; text-transform: uppercase;">
+                                                        ODEG
+                                                    </div>
+                                                    <h3 class="text-white" style="font-family: 'Titillium Web', sans-serif; font-weight: 400; font-size: 30px; line-height: 1.2em; text-transform: uppercase; margin-top: 16px;">
+                                                        Im Osten Deutschland unverzichtbar
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Responsive Mobile Version -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Mobile Responsive</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Portrait Section - Mobile Layout
+                </h2>
+                
+                <div class="bg-white shadow-netinera-section overflow-hidden" style="border-radius: 48px 0px 48px 0px;">
+                    <!-- Mobile content with adjusted padding: 40px 28px -->
+                    <div class="lg:hidden flex flex-col items-center gap-10 px-7 py-10">
+                        
+                        <!-- Section Header - Mobile -->
+                        <div class="section-header-lg-left">
+                            <h3 class="section-header-lg-left-title text-gray-800">IM PORTRAIT</h3>
+                            <p class="section-header-lg-left-subtitle text-gray-800">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            </p>
+                        </div>
+                        
+                        <!-- Content section - Mobile Stack -->
+                        <div class="flex flex-col gap-6 w-full">
+                            
+                            <!-- Mobile Stack Cards -->
+                            <div class="flex flex-col gap-4 w-full">
+                                
+                                <!-- Mobile Card 1 -->
+                                <div class="portrait-card-interactive">
+                                    <div class="flex flex-col justify-end overflow-hidden demo-background-odeg-1" style="height: 202.5px; border-radius: 36px 0px 0px 0px;">
+                                        <div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full">
+                                            <div class="w-full">
+                                                <div class="text-white overline-xs" style="font-family: 'Titillium Web', sans-serif; font-weight: 600; font-size: 12px; line-height: 1.1666666666666667em; letter-spacing: 10.833333333333334%; text-transform: uppercase;">
+                                                    ODEG
+                                                </div>
+                                                <h5 class="text-white" style="font-family: 'Titillium Web', sans-serif; font-weight: 400; font-size: 20px; line-height: 1.2em; text-transform: uppercase; margin-top: 12px;">
+                                                    Im Osten Deutschland unverzichtbar
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Mobile Card 2 -->
+                                <div class="portrait-card-interactive">
+                                    <div class="flex flex-col justify-end overflow-hidden demo-background-odeg-2" style="height: 202.5px; border-radius: 24px;">
+                                        <div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full">
+                                            <div class="w-full">
+                                                <div class="text-white overline-xs" style="font-family: 'Titillium Web', sans-serif; font-weight: 600; font-size: 12px; line-height: 1.1666666666666667em; letter-spacing: 10.833333333333334%; text-transform: uppercase;">
+                                                    ODEG
+                                                </div>
+                                                <h5 class="text-white" style="font-family: 'Titillium Web', sans-serif; font-weight: 400; font-size: 20px; line-height: 1.2em; text-transform: uppercase; margin-top: 12px;">
+                                                    Im Osten Deutschland unverzichtbar
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Mobile Card 3 -->
+                                <div class="portrait-card-interactive">
+                                    <div class="flex flex-col justify-end overflow-hidden demo-background-odeg-3" style="height: 202.5px; border-radius: 0px 0px 36px 0px;">
+                                        <div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full">
+                                            <div class="w-full">
+                                                <div class="text-white overline-xs" style="font-family: 'Titillium Web', sans-serif; font-weight: 600; font-size: 12px; line-height: 1.1666666666666667em; letter-spacing: 10.833333333333334%; text-transform: uppercase;">
+                                                    ODEG
+                                                </div>
+                                                <h5 class="text-white" style="font-family: 'Titillium Web', sans-serif; font-weight: 400; font-size: 20px; line-height: 1.2em; text-transform: uppercase; margin-top: 12px;">
+                                                    Im Osten Deutschland unverzichtbar
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Implementation</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Code Implementation & Spezifikationen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- HTML Code Example -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;!-- Section Portrait - Figma Node 1829-8426 --&gt;
+&lt;div class="relative bg-white overflow-hidden" style="border-radius: 96px 0px 96px 0px;"&gt;
+  &lt;!-- Main content with exact padding from Figma: 80px 56px --&gt;
+  &lt;div class="flex flex-col items-center gap-14 px-14 py-20"&gt;
+    
+    &lt;!-- Section Header - Using section-header-lg-left --&gt;
+    &lt;div class="section-header-lg-left"&gt;
+      &lt;h3 class="section-header-lg-left-title text-gray-800"&gt;IM PORTRAIT&lt;/h3&gt;
+      &lt;p class="section-header-lg-left-subtitle text-gray-800"&gt;
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit...
+      &lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Content Layout Group --&gt;
+    &lt;div class="flex flex-col gap-11 w-full"&gt;
+      &lt;div class="flex flex-col gap-4 w-full"&gt;
+        
+        &lt;!-- Top Large Card --&gt;
+        &lt;div class="flex flex-col justify-end overflow-hidden demo-background-odeg-1" 
+             style="height: 486px; border-radius: 64px 0px 0px 0px;"&gt;
+          &lt;div class="flex flex-col justify-end teaser-bg-gradient p-9 h-full"&gt;
+            &lt;div class="max-w-xl"&gt;
+              &lt;div class="text-white overline-sm"&gt;ODEG&lt;/div&gt;
+              &lt;h3 class="text-white"&gt;Im Osten Deutschlands unverzichtbar&lt;/h3&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- Bottom Two Cards Row --&gt;
+        &lt;div class="flex gap-4 w-full"&gt;
+          &lt;!-- Left and Right Cards --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                    
+                    <!-- CSS Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">CSS Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Figma Node 1829-8426 Spezifikationen */
+
+/* Section Layout (layout_POWEIO) */
+.section-portrait {
+  background: white; /* fill_WRJESN */
+  border-radius: 96px 0px 96px 0px;
+  padding: 80px 56px; /* Desktop */
+  gap: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Content Layout (layout_Z1GC2Z) */
+.portrait-content {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  width: 100%;
+}
+
+/* Layout Group (layout_WM904V) */
+.portrait-layout-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Teaser Background Images */
+.teaser-background-image-top-xl {
+  height: 486px; /* layout_X55RET */
+  border-radius: 64px 0px 0px 0px;
+}
+
+.teaser-background-image-left-xl,
+.teaser-background-image-right-xl {
+  height: 486px; /* layout_GPW7BD */
+  flex: 1;
+}
+
+.teaser-background-image-right-xl {
+  border-radius: 0px 0px 64px 0px;
+}
+
+/* Typography Specifications */
+.portrait-overline {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.1428571428571428em;
+  letter-spacing: 11.428571598870414%;
+  text-transform: uppercase;
+  color: white;
+}
+
+.portrait-headline {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 16px;
+}
+
+/* Responsive Mobile */
+@media (max-width: 1023px) {
+  .section-portrait {
+    padding: 40px 28px;
+    border-radius: 48px 0px 48px 0px;
+    gap: 40px;
+  }
+  
+  .portrait-layout-group {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .teaser-background-image-mobile {
+    height: 202.5px;
+  }
+}</code></pre>
+                    </div>
+                    
+                    <!-- Component Integration -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Komponenten-Integration</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Verwendet bestehende Komponenten - Kein doppelter Code */
+
+/* Section Header Integration */
+.section-header-lg-left              /* ✅ Bereits implementiert */
+.section-header-lg-left-title        /* ✅ Bereits implementiert */
+.section-header-lg-left-subtitle     /* ✅ Bereits implementiert */
+
+/* Teaser Background Image Integration */
+.teaser-background-image-top-xl      /* ✅ Basis vorhanden */
+.teaser-background-image-left-xl     /* ✅ Basis vorhanden */
+.teaser-background-image-right-xl    /* ✅ Basis vorhanden */
+.teaser-bg-gradient                  /* ✅ Bereits implementiert */
+
+/* ODEG Typography Styles */
+.portrait-overline                   /* 🆕 Figma-exakt */
+.portrait-headline                   /* 🆕 Figma-exakt */
+
+/* Layout System */
+.layout-group                        /* ✅ Figma Layout System */
+.gap-16                             /* ✅ 16px Gap zwischen Cards */
+.gap-44                             /* ✅ 44px Content Gap */
+.gap-56                             /* ✅ 56px Section Gap */</code></pre>
+                    </div>
+                    
+                    <!-- Figma Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Exakte Figma Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Figma Node 1829-8426 - Exakte Spezifikationen */
+
+/* Section (layout_POWEIO) */
+mode: column
+alignItems: center
+alignSelf: stretch
+gap: 56px
+padding: 80px 56px
+background: #FFFFFF (fill_WRJESN)
+border-radius: 96px 0px 96px 0px
+
+/* Section Header (layout_DSJT7T) */
+mode: column
+alignSelf: stretch
+gap: 24px
+
+/* Content (layout_Z1GC2Z) */
+mode: column
+alignSelf: stretch
+gap: 44px
+
+/* Layout Group (layout_WM904V) */
+mode: column
+alignSelf: stretch
+gap: 16px
+
+/* Top Teaser (layout_X55RET) */
+mode: column
+justifyContent: stretch
+alignItems: stretch
+alignSelf: stretch
+gap: 28px
+height: 486px
+border-radius: 64px 0px 0px 0px
+
+/* Bottom Row (layout_LW7AFW) */
+mode: row
+justifyContent: stretch
+alignItems: stretch
+alignSelf: stretch
+gap: 16px
+
+/* Individual Teaser Cards (layout_GPW7BD) */
+mode: column
+justifyContent: flex-end
+gap: 28px
+height: 486px
+
+/* Right Card Border Radius */
+border-radius: 0px 0px 64px 0px
+
+/* Typography - Overline (style_AOAAAN) */
+fontFamily: Titillium Web
+fontWeight: 600
+fontSize: 14px
+lineHeight: 1.1428571428571428em
+letterSpacing: 11.428571598870414%
+textCase: UPPER
+
+/* Typography - Headline (style_0BN46Z) */
+fontFamily: Titillium Web
+fontWeight: 400
+fontSize: 30px
+lineHeight: 1.2em
+textCase: UPPER</code></pre>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Section Portrait Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue "Im Portrait" Sektion basierend auf Figma Node 1829-8426. Kombiniert Section Header LG Left mit 3 ODEG Teaser Background Image Cards. Layout: 1 große Top-Card + 2 nebeneinander. Vollständig responsive mit exakten Border Radius Spezifikationen.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Desktop: 96px Border, 80×56px Padding, 1+2 Layout</span>
+                <span>|</span>
+                <span>Mobile: 48px Border, 40×28px Padding, 3-Stack Layout</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Portrait Section with Animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const portraitCards = document.querySelectorAll('.portrait-card-interactive');
+            
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('portrait-card-animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            // Observe all portrait cards
+            portraitCards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Enhanced hover effects with slight parallax
+            portraitCards.forEach(card => {
+                card.addEventListener('mouseenter', (e) => {
+                    const cardRect = card.getBoundingClientRect();
+                    card.style.transformOrigin = 'center center';
+                });
+                
+                card.addEventListener('mousemove', (e) => {
+                    const cardRect = card.getBoundingClientRect();
+                    const cardCenterX = cardRect.left + cardRect.width / 2;
+                    const cardCenterY = cardRect.top + cardRect.height / 2;
+                    
+                    const rotateX = (e.clientY - cardCenterY) / 30;
+                    const rotateY = (cardCenterX - e.clientX) / 30;
+                    
+                    card.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+                });
+            });
+            
+            // Responsive indicator updates
+            function updateResponsiveIndicator() {
+                const indicator = document.querySelector('.responsive-indicator');
+                if (!indicator) return;
+                
+                const spans = indicator.querySelectorAll('span');
+                spans.forEach(span => span.style.display = 'none');
+                
+                if (window.innerWidth < 640) {
+                    spans[0].style.display = 'block';
+                } else if (window.innerWidth < 768) {
+                    spans[1].style.display = 'block';
+                } else if (window.innerWidth < 1024) {
+                    spans[2].style.display = 'block';
+                } else if (window.innerWidth < 1280) {
+                    spans[3].style.display = 'block';
+                } else {
+                    spans[4].style.display = 'block';
+                }
+            }
+            
+            window.addEventListener('resize', updateResponsiveIndicator);
+            updateResponsiveIndicator();
+        });
+    </script>
+
+</section>

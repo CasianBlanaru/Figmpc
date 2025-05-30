@@ -1,0 +1,154 @@
+<section class="bg-stone-100 p-8 font-sans">
+
+    <div class="mx-auto max-w-4xl">
+        <!-- Component Header -->
+        <header class="mb-8">
+            <h1 class="mb-2 text-netinera-dark headline-h2">Outline Button</h1>
+            <p class="text-netinera-gray-medium body-base">
+                Secondary action button - Figma Node: 1870-21547
+            </p>
+        </header>
+
+        <!-- Outline Button Examples -->
+        <section class="bg-white mb-8 p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">Standard Outline Button</h2>
+
+            <div class="space-y-6">
+                <!-- Default -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Default</h3>
+                    <button class="btn-outline">
+                        <span class="btn-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </span>
+                        OUTLINE BUTTON
+                    </button>
+                </div>
+
+                <!-- States -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">States</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="btn-outline">Normal</button>
+                        <button class="btn-outline btn-loading">Loading</button>
+                        <button class="btn-outline" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <!-- Sizes -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Sizes</h3>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <button class="btn-outline btn-size-sm">Small</button>
+                        <button class="btn-outline">Medium</button>
+                        <button class="btn-outline btn-size-lg">Large</button>
+                        <button class="btn-outline btn-size-xl">Extra Large</button>
+                    </div>
+                </div>
+
+                <!-- With Icons -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">With Icons</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="btn-outline">
+                            <span class="btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 6h18M3 12h18M3 18h18"/>
+                                </svg>
+                            </span>
+                            MENU
+                        </button>
+
+                        <button class="btn-outline btn-icon-only">
+                            <span class="btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 6h18M3 12h18M3 18h18"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Full Width -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Full Width</h3>
+                    <button class="btn-outline btn-full">FULL WIDTH OUTLINE</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dark Background Examples -->
+        <section class="bg-netinera-dark mb-8 p-8 rounded-lg">
+            <h2 class="mb-6 text-white headline-h4">Outline Button on Dark Background</h2>
+
+            <div class="space-y-6">
+                <!-- White Outline on Dark -->
+                <div>
+                    <h3 class="mb-4 text-white overline-sm">White Outline</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="btn-white">
+                            <span class="btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 12l2 2 4-4"/>
+                                </svg>
+                            </span>
+                            WHITE BUTTON
+                        </button>
+
+                        <button class="btn-white btn-icon-only">
+                            <span class="btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 5v14M5 12h14"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Example -->
+        <section class="bg-white p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">HTML Code</h2>
+            <pre class="bg-gray-100 p-4 rounded overflow-x-auto text-sm"><code>&lt;!-- Basic Outline Button --&gt;
+&lt;button class="btn-outline"&gt;
+    OUTLINE BUTTON
+&lt;/button&gt;
+
+&lt;!-- Outline Button with Icon --&gt;
+&lt;button class="btn-outline"&gt;
+    &lt;span class="btn-icon"&gt;
+        &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;
+            &lt;path d="M12 5v14M5 12h14"/&gt;
+        &lt;/svg&gt;
+    &lt;/span&gt;
+    OUTLINE BUTTON
+&lt;/button&gt;
+
+&lt;!-- Different Sizes --&gt;
+&lt;button class="btn-outline btn-size-sm"&gt;Small&lt;/button&gt;
+&lt;button class="btn-outline"&gt;Medium (Default)&lt;/button&gt;
+&lt;button class="btn-outline btn-size-lg"&gt;Large&lt;/button&gt;
+&lt;button class="btn-outline btn-size-xl"&gt;Extra Large&lt;/button&gt;
+
+&lt;!-- White Button for Dark Backgrounds --&gt;
+&lt;button class="btn-white"&gt;WHITE BUTTON&lt;/button&gt;
+
+&lt;!-- States --&gt;
+&lt;button class="btn-outline btn-loading"&gt;Loading&lt;/button&gt;
+&lt;button class="btn-outline" disabled&gt;Disabled&lt;/button&gt;</code></pre>
+        </section>
+    </div>
+
+    <!-- JavaScript for demo interactions -->
+    <script>
+        // Example button interactions
+        document.querySelectorAll('.btn-outline:not([disabled]):not(.btn-loading), .btn-white:not([disabled]):not(.btn-loading)').forEach(button => {
+            button.addEventListener('click', function() {
+                console.log('Outline button clicked:', this.textContent);
+            });
+        });
+    </script>
+</section>

@@ -1,0 +1,912 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Quote Component specific styles */
+        .quote-section-fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .quote-card-animate {
+            animation: quoteSlideIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes quoteSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .quote-card-interactive {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .quote-card-interactive:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 6px 12px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Quote XL Component Styles */
+        .quote-xl {
+            background: #F5F5F4; /* fill_W742UD */
+            border-radius: 64px 0px 64px 0px;
+            display: flex;
+            flex-direction: row;
+            width: 968px;
+        }
+        
+        .quote-xl-image {
+            width: 368px;
+            height: 207px;
+            border-radius: 64px 0px 64px 0px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quote-xl-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            gap: 10px;
+            padding: 32px;
+        }
+        
+        /* Quote SM Component Styles */
+        .quote-sm {
+            background: #F5F5F4; /* fill_W742UD */
+            border-radius: 36px 0px 36px 0px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 768px;
+        }
+        
+        .quote-sm-image {
+            width: 100%;
+            height: 184px;
+            border-radius: 36px 0px 36px 0px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quote-sm-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 24px;
+        }
+        
+        /* Portrait Image with Gradient Overlay */
+        .quote-portrait-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        .quote-gradient-overlay {
+            background: linear-gradient(180deg, rgba(166, 160, 155, 0) 0%, rgba(121, 113, 107, 1) 100%);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: flex-end;
+        }
+        
+        .quote-gradient-overlay-sm {
+            background: linear-gradient(180deg, rgba(166, 160, 155, 0) 0%, rgba(121, 113, 107, 1) 100%);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: flex-end;
+        }
+        
+        .quote-person-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        /* Quote Typography Specifications */
+        .quote-xl-overline {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.1428571428571428em;
+            letter-spacing: 11.428571598870414%;
+            text-transform: uppercase;
+            text-align: center;
+            color: #1E2939;
+        }
+        
+        .quote-xl-text {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 1.4545454545454546em;
+            text-align: center;
+            color: #1E2939;
+        }
+        
+        .quote-sm-overline {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 1.1666666666666667em;
+            letter-spacing: 13.333333532015482%;
+            text-transform: uppercase;
+            text-align: center;
+            color: #1E2939;
+        }
+        
+        .quote-sm-text {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.4444444444444444em;
+            text-align: center;
+            color: #1E2939;
+        }
+        
+        .quote-person-name-xl {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.4444444444444444em;
+            color: white;
+        }
+        
+        .quote-person-title-xl {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.625em;
+            color: white;
+        }
+        
+        .quote-person-name-sm {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5em;
+            color: white;
+        }
+        
+        .quote-person-title-sm {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.4285714285714286em;
+            color: white;
+        }
+        
+        /* Demo Background Images */
+        .demo-portrait-1 {
+            background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=368&h=207&q=80');
+        }
+        
+        .demo-portrait-2 {
+            background-image: url('https://images.unsplash.com/photo-1494790108755-2616b332c886?ixlib=rb-4.0.3&auto=format&fit=crop&w=368&h=207&q=80');
+        }
+        
+        .demo-portrait-3 {
+            background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=368&h=207&q=80');
+        }
+        
+        .demo-portrait-square-1 {
+            background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=328&h=328&q=80');
+        }
+        
+        .demo-portrait-square-2 {
+            background-image: url('https://images.unsplash.com/photo-1494790108755-2616b332c886?ixlib=rb-4.0.3&auto=format&fit=crop&w=328&h=328&q=80');
+        }
+        
+        /* Responsive Breakpoints */
+        @media (max-width: 1023px) {
+            .quote-xl {
+                width: 100%;
+                max-width: 768px;
+                flex-direction: column;
+                border-radius: 36px 0px 36px 0px;
+            }
+            
+            .quote-xl-image {
+                width: 100%;
+                height: 184px;
+                border-radius: 36px 0px 36px 0px;
+            }
+            
+            .quote-xl-content {
+                padding: 24px;
+                gap: 8px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .quote-sm {
+                border-radius: 24px 0px 24px 0px;
+            }
+            
+            .quote-sm-image {
+                border-radius: 24px 0px 24px 0px;
+                height: 160px;
+            }
+            
+            .quote-sm-content {
+                padding: 20px;
+            }
+        }
+</style>
+‚
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Component Library</div>
+            <h1 class="headline-h1 spacing-headline-body-h1">
+                Quote Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Pixelgenaue responsive Quote-Komponente basierend auf Figma Node 1841-1247. XL (968px Row Layout) und SM (768px Column Layout) Varianten mit Portrait Images, Gradient Overlays und Person Info. Vollständig responsive mit adaptiven Breakpoints.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Quote XL Variants -->
+            <section class="quote-section-fade-in">
+                <div class="overline-sm spacing-overline-h2">Figma Node 1841-1247</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Quote XL Component
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Desktop Quote Komponente mit 16:9 Portrait Image (368×207px), 64×0×64×0px Border Radius und Row Layout. Exakte Umsetzung der Figma-Spezifikationen.
+                </p>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Quote XL - CEO Variant -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Quote XL - CEO</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            quote-xl (968px × hug)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center w-full">
+                            <div class="quote-xl quote-card-interactive quote-card-animate" style="animation-delay: 0.1s;">
+                                <!-- Portrait Image with Gradient -->
+                                <div class="quote-xl-image">
+                                    <div class="quote-portrait-image demo-portrait-1">
+                                        <div class="quote-gradient-overlay">
+                                            <div class="quote-person-info">
+                                                <div class="quote-person-name-xl">Max Mustermann</div>
+                                                <div class="quote-person-title-xl">CEO</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quote Content -->
+                                <div class="quote-xl-content">
+                                    <div class="quote-xl-overline">Netinera</div>
+                                    <div class="quote-xl-text">
+                                        "Wir gestalten die Zukunft der Mobilität nachhaltig und innovativ. Unsere Züge und Busse verbinden Menschen und Regionen effizient."
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="quote-xl quote-card-interactive"&gt;
+  &lt;!-- Portrait Image with Gradient --&gt;
+  &lt;div class="quote-xl-image"&gt;
+    &lt;div class="quote-portrait-image demo-portrait-1"&gt;
+      &lt;div class="quote-gradient-overlay"&gt;
+        &lt;div class="quote-person-info"&gt;
+          &lt;div class="quote-person-name-xl"&gt;Max Mustermann&lt;/div&gt;
+          &lt;div class="quote-person-title-xl"&gt;CEO&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Quote Content --&gt;
+  &lt;div class="quote-xl-content"&gt;
+    &lt;div class="quote-xl-overline"&gt;Netinera&lt;/div&gt;
+    &lt;div class="quote-xl-text"&gt;
+      "Wir gestalten die Zukunft der Mobilität..."
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Quote XL - CTO Variant -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="overline-xs spacing-overline-h6">Quote XL - CTO</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            quote-xl Technologie Fokus
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center w-full">
+                            <div class="quote-xl quote-card-interactive quote-card-animate" style="animation-delay: 0.2s;">
+                                <!-- Portrait Image with Gradient -->
+                                <div class="quote-xl-image">
+                                    <div class="quote-portrait-image demo-portrait-2">
+                                        <div class="quote-gradient-overlay">
+                                            <div class="quote-person-info">
+                                                <div class="quote-person-name-xl">Anna Schmidt</div>
+                                                <div class="quote-person-title-xl">CTO</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quote Content -->
+                                <div class="quote-xl-content">
+                                    <div class="quote-xl-overline">Innovation</div>
+                                    <div class="quote-xl-text">
+                                        "Digitale Technologien revolutionieren den öffentlichen Verkehr. Mit KI und IoT schaffen wir intelligente Verkehrssysteme."
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quote XL - Nachhaltigkeit Variant -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Quote XL - Nachhaltigkeit</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            quote-xl Umwelt Fokus
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center w-full">
+                            <div class="quote-xl quote-card-interactive quote-card-animate" style="animation-delay: 0.3s;">
+                                <!-- Portrait Image with Gradient -->
+                                <div class="quote-xl-image">
+                                    <div class="quote-portrait-image demo-portrait-3">
+                                        <div class="quote-gradient-overlay">
+                                            <div class="quote-person-info">
+                                                <div class="quote-person-name-xl">Dr. Michael Weber</div>
+                                                <div class="quote-person-title-xl">Head of Sustainability</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quote Content -->
+                                <div class="quote-xl-content">
+                                    <div class="quote-xl-overline">Nachhaltigkeit</div>
+                                    <div class="quote-xl-text">
+                                        "Jeder Kilometer mit öffentlichen Verkehrsmitteln ist ein Beitrag zum Klimaschutz. Wir reduzieren CO2-Emissionen um 80% pro Person."
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quote SM Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Mobile & Tablet</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Quote SM Component
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Mobile Quote Komponente mit 1:1 Portrait Image, 36×0×36×0px Border Radius und Column Layout. Adaptive Typografie und responsive Breakpoints.
+                </p>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Quote SM - CEO Variant -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Quote SM - CEO</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            quote-sm (max-width: 768px)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center w-full">
+                            <div class="quote-sm quote-card-interactive quote-card-animate" style="animation-delay: 0.1s;">
+                                <!-- Portrait Image with Gradient -->
+                                <div class="quote-sm-image">
+                                    <div class="quote-portrait-image demo-portrait-square-1">
+                                        <div class="quote-gradient-overlay-sm">
+                                            <div class="quote-person-info">
+                                                <div class="quote-person-name-sm">Max Mustermann</div>
+                                                <div class="quote-person-title-sm">CEO</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quote Content -->
+                                <div class="quote-sm-content">
+                                    <div class="quote-sm-overline">Netinera</div>
+                                    <div class="quote-sm-text">
+                                        "Mobilität der Zukunft beginnt heute. Wir verbinden Menschen nachhaltig und effizient."
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quote SM - Innovation Variant -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="overline-xs spacing-overline-h6">Quote SM - Innovation</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            quote-sm Technologie Fokus
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center w-full">
+                            <div class="quote-sm quote-card-interactive quote-card-animate" style="animation-delay: 0.2s;">
+                                <!-- Portrait Image with Gradient -->
+                                <div class="quote-sm-image">
+                                    <div class="quote-portrait-image demo-portrait-square-2">
+                                        <div class="quote-gradient-overlay-sm">
+                                            <div class="quote-person-info">
+                                                <div class="quote-person-name-sm">Anna Schmidt</div>
+                                                <div class="quote-person-title-sm">CTO</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quote Content -->
+                                <div class="quote-sm-content">
+                                    <div class="quote-sm-overline">Innovation</div>
+                                    <div class="quote-sm-text">
+                                        "KI und digitale Systeme machen Mobilität intelligenter und kundenorientierter."
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Responsive Demo -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Responsive Behavior</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Adaptive Layout System
+                </h2>
+                
+                <div class="bg-netinera-secondary p-netinera-element-lg rounded-netinera-card-primary">
+                    <div class="text-white overline-xs spacing-overline-h6">Live Responsive Demo</div>
+                    <h4 class="mb-netinera-element-sm text-white headline-h4 spacing-headline-body-h4">
+                        Resize your browser to see the adaptive behavior
+                    </h4>
+                    
+                    <!-- Responsive Quote that adapts based on screen size -->
+                    <div class="flex justify-center mt-netinera-element-lg w-full">
+                        <div class="quote-xl quote-card-interactive">
+                            <!-- Portrait Image with Gradient -->
+                            <div class="quote-xl-image">
+                                <div class="quote-portrait-image demo-portrait-1">
+                                    <div class="quote-gradient-overlay">
+                                        <div class="quote-person-info">
+                                            <div class="quote-person-name-xl">Responsive Demo</div>
+                                            <div class="quote-person-title-xl">Adaptive Layout</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Quote Content -->
+                            <div class="quote-xl-content">
+                                <div class="quote-xl-overline">Live Demo</div>
+                                <div class="quote-xl-text">
+                                    "Diese Quote passt sich automatisch an verschiedene Bildschirmgrößen an. Desktop: Row Layout, Mobile: Column Layout."
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-netinera-element-sm mt-netinera-element-md text-gray-200">
+                        <p class="body-base">📱 Mobile (< 768px): Column Layout, 24×0×24×0px Border, 160px Image Height</p>
+                        <p class="body-base">💻 Tablet (768px - 1023px): Column Layout, 36×0×36×0px Border, 184px Image Height</p>
+                        <p class="body-base">🖥️ Desktop (> 1024px): Row Layout, 64×0×64×0px Border, 207px Image Height</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Implementation</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Code Implementation & Spezifikationen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- CSS Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">CSS Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Figma Node 1841-1247 Spezifikationen */
+
+/* Quote XL Component (layout_ZFQY97) */
+.quote-xl {
+  background: #F5F5F4; /* fill_W742UD */
+  border-radius: 64px 0px 64px 0px;
+  display: flex;
+  flex-direction: row;
+  width: 968px;
+}
+
+/* Portrait Image XL (layout_CP4YQX) */
+.quote-xl-image {
+  width: 368px;
+  height: 207px; /* 16:9 ratio */
+  border-radius: 64px 0px 64px 0px;
+}
+
+/* Quote Content XL (layout_0CBTMH) */
+.quote-xl-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 10px;
+  padding: 32px;
+}
+
+/* Quote SM Component (layout_DU8IJ8) */
+.quote-sm {
+  background: #F5F5F4; /* fill_W742UD */
+  border-radius: 36px 0px 36px 0px;
+  display: flex;
+  flex-direction: column;
+  max-width: 768px;
+}
+
+/* Portrait Image SM */
+.quote-sm-image {
+  width: 100%;
+  height: 184px;
+  border-radius: 36px 0px 36px 0px;
+}
+
+/* Quote Content SM (layout_EIMVCJ) */
+.quote-sm-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 24px;
+}</code></pre>
+                    </div>
+                    
+                    <!-- Typography Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Typography Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Quote XL Typography */
+
+/* Overline XL (style_6RVL2Y) */
+.quote-xl-overline {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.1428571428571428em;
+  letter-spacing: 11.428571598870414%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1E2939;
+}
+
+/* Quote Text XL (style_YQ3G28) */
+.quote-xl-text {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.4545454545454546em;
+  text-align: center;
+  color: #1E2939;
+}
+
+/* Person Name XL (style_6DE09O) */
+.quote-person-name-xl {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4444444444444444em;
+  color: white;
+}
+
+/* Person Title XL (style_R20CZM) */
+.quote-person-title-xl {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.625em;
+  color: white;
+}
+
+/* Quote SM Typography */
+
+/* Overline SM (style_RF3U3T) */
+.quote-sm-overline {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.1666666666666667em;
+  letter-spacing: 13.333333532015482%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1E2939;
+}
+
+/* Quote Text SM (style_0NH5JN) */
+.quote-sm-text {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4444444444444444em;
+  text-align: center;
+  color: #1E2939;
+}</code></pre>
+                    </div>
+                    
+                    <!-- Gradient Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Gradient & Image Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Portrait Image Gradient Overlay */
+
+/* Gradient XL (fill_4EWR4L) */
+.quote-gradient-overlay {
+  background: linear-gradient(180deg, 
+    rgba(166, 160, 155, 0) 0%, 
+    rgba(121, 113, 107, 1) 100%
+  );
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+/* Gradient SM (fill_1L6UXN) */
+.quote-gradient-overlay-sm {
+  background: linear-gradient(180deg, 
+    rgba(166, 160, 155, 0) 0%, 
+    rgba(121, 113, 107, 1) 100%
+  );
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+/* Portrait Image Dimensions */
+
+/* XL: 368×207px (16:9 ratio) */
+/* SM Desktop: 328×328px (1:1 ratio) */
+/* SM Mobile: 100%×160px (responsive) */
+
+/* Person Info Layout (layout_AGPRVQ) */
+.quote-person-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}</code></pre>
+                    </div>
+                    
+                    <!-- Responsive Specifications */
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Responsive Breakpoints</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Responsive Behavior */
+
+/* Desktop (> 1024px) */
+.quote-xl {
+  width: 968px;
+  flex-direction: row;
+  border-radius: 64px 0px 64px 0px;
+}
+
+.quote-xl-image {
+  width: 368px;
+  height: 207px;
+  border-radius: 64px 0px 64px 0px;
+}
+
+.quote-xl-content {
+  padding: 32px;
+  gap: 10px;
+}
+
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) {
+  .quote-xl {
+    width: 100%;
+    max-width: 768px;
+    flex-direction: column;
+    border-radius: 36px 0px 36px 0px;
+  }
+  
+  .quote-xl-image {
+    width: 100%;
+    height: 184px;
+    border-radius: 36px 0px 36px 0px;
+  }
+  
+  .quote-xl-content {
+    padding: 24px;
+    gap: 8px;
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+  .quote-sm {
+    border-radius: 24px 0px 24px 0px;
+  }
+  
+  .quote-sm-image {
+    border-radius: 24px 0px 24px 0px;
+    height: 160px;
+  }
+  
+  .quote-sm-content {
+    padding: 20px;
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Quote Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue Quote-Komponente basierend auf Figma Node 1841-1247. XL (968px Row Layout) und SM (768px Column Layout) Varianten mit Portrait Images, Gradient Overlays und Person Info. Vollständig responsive mit adaptiven Breakpoints.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>XL: 968×hug, 368×207px Image, 64px Border</span>
+                <span>|</span>
+                <span>SM: 768×hug, 100%×184px Image, 36px Border</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Quote Component with Animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const quoteCards = document.querySelectorAll('.quote-card-interactive');
+            
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('quote-card-animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            // Observe all quote cards
+            quoteCards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Enhanced hover effects with gentle parallax
+            quoteCards.forEach(card => {
+                card.addEventListener('mouseenter', (e) => {
+                    card.style.transformOrigin = 'center center';
+                });
+                
+                card.addEventListener('mousemove', (e) => {
+                    const cardRect = card.getBoundingClientRect();
+                    const cardCenterX = cardRect.left + cardRect.width / 2;
+                    const cardCenterY = cardRect.top + cardRect.height / 2;
+                    
+                    const rotateX = (e.clientY - cardCenterY) / 50;
+                    const rotateY = (cardCenterX - e.clientX) / 50;
+                    
+                    card.style.transform = `translateY(-4px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+                });
+            });
+            
+            // Responsive indicator updates
+            function updateResponsiveIndicator() {
+                const indicator = document.querySelector('.responsive-indicator');
+                if (!indicator) return;
+                
+                const spans = indicator.querySelectorAll('span');
+                spans.forEach(span => span.style.display = 'none');
+                
+                if (window.innerWidth < 640) {
+                    spans[0].style.display = 'block';
+                } else if (window.innerWidth < 768) {
+                    spans[1].style.display = 'block';
+                } else if (window.innerWidth < 1024) {
+                    spans[2].style.display = 'block';
+                } else if (window.innerWidth < 1280) {
+                    spans[3].style.display = 'block';
+                } else {
+                    spans[4].style.display = 'block';
+                }
+            }
+            
+            window.addEventListener('resize', updateResponsiveIndicator);
+            updateResponsiveIndicator();
+        });
+    </script>
+</section>

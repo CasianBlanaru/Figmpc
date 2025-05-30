@@ -1,0 +1,604 @@
+
+
+@layer components {
+  /* ==========================
+   * === TEASER INLINE RESPONSIVE
+   * ========================== */
+  
+  /* Main Responsive Teaser Container */
+  .teaser-inline-responsive {
+    display: flex;
+    align-items: stretch;
+    background: #F5F5F4; /* stone-100 default background */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Mobile first: 328px vertical layout - Figma Node 1849:13490 */
+    flex-direction: column;
+    max-width: 328px;
+    width: 100%;
+    border-radius: 36px 0; /* Mobile radius */
+  }
+  
+  .teaser-inline-responsive:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgb(30 41 57 / 10%), 0 4px 10px -2px rgb(30 41 57 / 5%);
+  }
+  
+  /* Responsive Image Container */
+  .teaser-inline-responsive-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    
+    /* Mobile: 328x185px - Figma Node 1849:13490 */
+    width: 100%;
+    height: 185px;
+    border-radius: 36px 0 0; /* Mobile top-left radius */
+  }
+  
+  .teaser-inline-responsive:hover .teaser-inline-responsive-image {
+    transform: scale(1.05);
+  }
+  
+  /* Content Area */
+  .teaser-inline-responsive-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    
+    /* Mobile: 24px padding, 20px gap - Figma Node 1849:13490 */
+    padding: 24px;
+    gap: 20px;
+  }
+  
+  /* Text Group Container */
+  .teaser-inline-responsive-text-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 16px; /* Text group gap */
+  }
+  
+  /* Main Text Area (Overline + Headline) */
+  .teaser-inline-responsive-main-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Overline to headline gap */
+  }
+  
+  /* Overline Text */
+  .teaser-inline-responsive-overline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #6B7280; /* gray-500 */
+    margin: 0;
+    
+    /* Mobile: 12px - Figma Node 1849:13490 */
+    font-size: 12px;
+    line-height: 1.167em;
+    letter-spacing: 13.33%;
+  }
+  
+  /* Headline Text */
+  .teaser-inline-responsive-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #1E2939; /* gray-800 */
+    margin: 0;
+    
+    /* Mobile: H4 SM 20px - Figma Node 1849:13490 */
+    font-size: 20px;
+    line-height: 1.4em;
+  }
+  
+  /* Subtitle Text */
+  .teaser-inline-responsive-subtitle {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    color: #4A5565; /* gray-600 */
+    margin: 0;
+    
+    /* Mobile: Body SM 14px */
+    font-size: 14px;
+    line-height: 1.714em;
+  }
+  
+  /* Actions Container */
+  .teaser-inline-responsive-actions {
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* Push to bottom */
+  }
+  
+  /* Action Link */
+  .teaser-inline-responsive-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.429em;
+    text-transform: uppercase;
+    color: #1E2939;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.025em;
+  }
+  
+  .teaser-inline-responsive-link:hover {
+    color: #DD052B;
+    transform: translateX(4px);
+  }
+  
+  .teaser-inline-responsive-link:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  
+  /* Link Icon */
+  .teaser-inline-responsive-link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .teaser-inline-responsive-link-icon svg {
+    width: 100%;
+    height: 100%;
+    color: inherit;
+  }
+  
+  .teaser-inline-responsive-link:hover .teaser-inline-responsive-link-icon {
+    transform: scale(1.1);
+  }
+  
+  /* ==========================
+   * === GRID LAYOUT
+   * ========================== */
+  
+  /* Responsive Grid Container */
+  .teaser-inline-grid-responsive {
+    display: grid;
+    gap: 24px; /* Element gap */
+    width: 100%;
+    
+    /* Mobile: 1 column */
+    grid-template-columns: 1fr;
+  }
+  
+  /* ==========================
+   * === COLOR VARIANTS
+   * ========================== */
+  
+  /* White Variant */
+  .teaser-inline-variant-white {
+    background: white;
+  }
+  
+  /* Primary Variant */
+  .teaser-inline-variant-primary {
+    background: #00BFAA; /* primary-600 */
+  }
+  
+  .teaser-inline-variant-primary .teaser-inline-responsive-headline,
+  .teaser-inline-variant-primary .teaser-inline-responsive-link {
+    color: white;
+  }
+  
+  .teaser-inline-variant-primary .teaser-inline-responsive-overline {
+    color: rgb(255 255 255 / 80%);
+  }
+  
+  .teaser-inline-variant-primary .teaser-inline-responsive-subtitle {
+    color: rgb(255 255 255 / 90%);
+  }
+  
+  .teaser-inline-variant-primary .teaser-inline-responsive-link:hover {
+    color: #FFF;
+    text-shadow: 0 0 8px rgb(255 255 255 / 50%);
+  }
+  
+  /* Secondary Variant */
+  .teaser-inline-variant-secondary {
+    background: #DD052B; /* secondary-700 */
+  }
+  
+  .teaser-inline-variant-secondary .teaser-inline-responsive-headline,
+  .teaser-inline-variant-secondary .teaser-inline-responsive-link {
+    color: white;
+  }
+  
+  .teaser-inline-variant-secondary .teaser-inline-responsive-overline {
+    color: rgb(255 255 255 / 80%);
+  }
+  
+  .teaser-inline-variant-secondary .teaser-inline-responsive-subtitle {
+    color: rgb(255 255 255 / 90%);
+  }
+  
+  .teaser-inline-variant-secondary .teaser-inline-responsive-link:hover {
+    color: #FFF;
+    text-shadow: 0 0 8px rgb(255 255 255 / 50%);
+  }
+  
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+  
+  /* Desktop breakpoint (1024px+) */
+  @media (width >= 1024px) {
+    .teaser-inline-responsive {
+      /* Desktop: 768px horizontal layout - Figma Node 1849:13490 */
+      flex-direction: row;
+      max-width: 768px;
+      border-radius: 64px 0; /* Desktop radius */
+    }
+    
+    .teaser-inline-responsive-image {
+      /* Desktop: 268x268px square - Figma Node 1849:13490 */
+      width: 268px;
+      height: 268px;
+      border-radius: 64px 0 0; /* Desktop top-left radius */
+    }
+    
+    .teaser-inline-responsive-content {
+      /* Desktop: 32px padding, 24px gap - Figma Node 1849:13490 */
+      padding: 32px;
+      gap: 24px;
+    }
+    
+    .teaser-inline-responsive-text-group {
+      gap: 20px; /* Desktop text group gap */
+    }
+    
+    .teaser-inline-responsive-main-text {
+      gap: 12px; /* Desktop overline to headline gap */
+    }
+    
+    .teaser-inline-responsive-overline {
+      /* Desktop: 14px overline */
+      font-size: 14px;
+      line-height: 1.143em;
+      letter-spacing: 10%;
+    }
+    
+    .teaser-inline-responsive-headline {
+      /* Desktop: H4 XL 24px - Figma Node 1849:13490 */
+      font-size: 24px;
+      line-height: 1.333em;
+    }
+    
+    .teaser-inline-responsive-subtitle {
+      /* Desktop: Body Base 16px */
+      font-size: 16px;
+      line-height: 1.625em;
+    }
+    
+    .teaser-inline-responsive-link {
+      font-size: 16px;
+      line-height: 1.5em;
+    }
+    
+    /* Desktop Grid Layout */
+    .teaser-inline-grid-responsive {
+      gap: 32px; /* Desktop grid gap */
+
+      /* Tablet: 2 columns */
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Large Desktop (1200px+) */
+  @media (width >= 1200px) {
+    .teaser-inline-grid-responsive {
+      /* Large desktop: adaptive columns */
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    }
+  }
+  
+  /* Tablet adaptation */
+  @media (width <= 1023px) and (width >= 768px) {
+    .teaser-inline-responsive {
+      max-width: 480px;
+      border-radius: 48px 0;
+    }
+    
+    .teaser-inline-responsive-image {
+      height: 160px;
+      border-radius: 48px 0 0;
+    }
+    
+    .teaser-inline-responsive-content {
+      padding: 28px;
+      gap: 22px;
+    }
+    
+    .teaser-inline-responsive-headline {
+      font-size: 22px;
+      line-height: 1.36em;
+    }
+    
+    .teaser-inline-responsive-subtitle {
+      font-size: 15px;
+      line-height: 1.6em;
+    }
+    
+    .teaser-inline-grid-responsive {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+  }
+  
+  /* Mobile optimization */
+  @media (width <= 767px) {
+    .teaser-inline-responsive {
+      max-width: 300px;
+      border-radius: 32px 0;
+    }
+    
+    .teaser-inline-responsive-image {
+      height: 160px;
+      border-radius: 32px 0 0;
+    }
+    
+    .teaser-inline-responsive-content {
+      padding: 20px;
+      gap: 18px;
+    }
+    
+    .teaser-inline-responsive-text-group {
+      gap: 14px;
+    }
+    
+    .teaser-inline-responsive-main-text {
+      gap: 6px;
+    }
+    
+    .teaser-inline-responsive-overline {
+      font-size: 11px;
+    }
+    
+    .teaser-inline-responsive-headline {
+      font-size: 18px;
+      line-height: 1.33em;
+    }
+    
+    .teaser-inline-responsive-subtitle {
+      font-size: 13px;
+      line-height: 1.54em;
+    }
+    
+    .teaser-inline-responsive-link {
+      font-size: 13px;
+    }
+    
+    .teaser-inline-grid-responsive {
+      gap: 20px;
+    }
+  }
+  
+  /* Small mobile optimization */
+  @media (width <= 479px) {
+    .teaser-inline-responsive {
+      max-width: 280px;
+      border-radius: 24px 0;
+    }
+    
+    .teaser-inline-responsive-image {
+      height: 140px;
+      border-radius: 24px 0 0;
+    }
+    
+    .teaser-inline-responsive-content {
+      padding: 16px;
+      gap: 16px;
+    }
+    
+    .teaser-inline-responsive-text-group {
+      gap: 12px;
+    }
+    
+    .teaser-inline-responsive-main-text {
+      gap: 4px;
+    }
+    
+    .teaser-inline-responsive-overline {
+      font-size: 10px;
+    }
+    
+    .teaser-inline-responsive-headline {
+      font-size: 16px;
+      line-height: 1.25em;
+    }
+    
+    .teaser-inline-responsive-subtitle {
+      font-size: 12px;
+      line-height: 1.5em;
+    }
+    
+    .teaser-inline-responsive-link {
+      font-size: 12px;
+    }
+    
+    .teaser-inline-grid-responsive {
+      gap: 16px;
+    }
+  }
+  
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+  
+  /* Focus States */
+  .teaser-inline-responsive:focus-within {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+    border-radius: inherit;
+  }
+  
+  /* Keyboard Navigation */
+  .teaser-inline-responsive:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+  }
+  
+  /* Screen Reader Support */
+  .teaser-inline-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .teaser-inline-responsive {
+      border: 2px solid currentcolor;
+    }
+    
+    .teaser-inline-responsive-headline {
+      font-weight: 600;
+      text-shadow: 0 0 1px currentcolor;
+    }
+    
+    .teaser-inline-responsive-link {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    
+    .teaser-inline-variant-primary,
+    .teaser-inline-variant-secondary {
+      border: 2px solid white;
+    }
+  }
+  
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .teaser-inline-responsive,
+    .teaser-inline-responsive-image,
+    .teaser-inline-responsive-link,
+    .teaser-inline-responsive-link-icon {
+      transition: none;
+      animation: none;
+    }
+    
+    .teaser-inline-responsive:hover,
+    .teaser-inline-responsive:hover .teaser-inline-responsive-image,
+    .teaser-inline-responsive-link:hover,
+    .teaser-inline-responsive-link:hover .teaser-inline-responsive-link-icon {
+      transform: none;
+    }
+  }
+  
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+  
+  @media print {
+    .teaser-inline-responsive {
+      border: 1px solid #ddd;
+      border-radius: 0;
+      break-inside: avoid;
+      margin-bottom: 20px;
+      box-shadow: none !important;
+      background: white !important;
+    }
+    
+    .teaser-inline-responsive-image {
+      border: 1px solid #ddd;
+      border-radius: 0;
+      width: 100px !important;
+      height: 60px !important;
+    }
+    
+    .teaser-inline-responsive-content {
+      padding: 15px !important;
+      gap: 10px !important;
+    }
+    
+    .teaser-inline-responsive-headline {
+      color: black !important;
+      font-size: 16px !important;
+      line-height: 1.3 !important;
+    }
+    
+    .teaser-inline-responsive-overline {
+      color: #666 !important;
+      font-size: 10px !important;
+    }
+    
+    .teaser-inline-responsive-subtitle {
+      color: #333 !important;
+      font-size: 12px !important;
+    }
+    
+    .teaser-inline-responsive-link {
+      color: black !important;
+      text-decoration: underline !important;
+      font-size: 12px !important;
+    }
+    
+    .teaser-inline-responsive-link-icon {
+      display: none !important;
+    }
+    
+    .teaser-inline-grid-responsive {
+      display: block;
+    }
+    
+    .teaser-inline-grid-responsive > * {
+      margin-bottom: 15px;
+    }
+  }
+  
+  /* ==========================
+   * === LOADING STATES
+   * ========================== */
+  
+  .teaser-inline-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: teaser-inline-loading 1.5s infinite;
+  }
+  
+  @keyframes teaser-inline-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  .teaser-inline-loading .teaser-inline-responsive-image {
+    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: teaser-inline-loading 1.5s infinite;
+  }
+  
+  .teaser-inline-loading .teaser-inline-responsive-headline,
+  .teaser-inline-loading .teaser-inline-responsive-overline,
+  .teaser-inline-loading .teaser-inline-responsive-subtitle,
+  .teaser-inline-loading .teaser-inline-responsive-link {
+    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: teaser-inline-loading 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+    height: 1em;
+    display: block;
+  }
+  
+} 

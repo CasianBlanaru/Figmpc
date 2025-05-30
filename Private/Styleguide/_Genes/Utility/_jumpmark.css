@@ -1,0 +1,13 @@
+/* === JUMPMARK */
+
+.jumpmark a {
+    @apply absolute top-[-500px] left-0 z-20 overflow-hidden;
+    @apply w-px h-px px-2 py-1;
+    @apply bg-white border shadow;
+
+    &:active,
+    &:focus {
+        @apply top-0 w-auto h-auto;
+        @apply text-black;
+    }
+}

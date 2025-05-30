@@ -1,0 +1,612 @@
+
+  /* Service Card Grid Container */
+  .netinera-service-card-grid {
+    display: grid;
+    gap: 24px; /* Mobile first */
+    width: 100%;
+    grid-template-columns: 1fr; /* Mobile: 1 column */
+  }
+
+  /* ==========================
+   * === SERVICE CARD COMPONENT
+   * ========================== */
+
+  /* Main Service Card */
+  .netinera-service-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 328px; /* Mobile constraint - Figma Node 1815:6096 */
+    background: transparent;
+    border-radius: 96px 0; /* Default Netinera border pattern */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .netinera-service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgb(30 41 57 / 15%);
+  }
+
+  /* Service Card Image */
+  .netinera-service-card-image {
+    width: 100%;
+    height: 157px; /* Mobile height - Figma Node 1815:6096 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #F3F4F6;
+    border-radius: 96px 0 0; /* Top-left radius only */
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .netinera-service-card-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgb(30 41 57 / 0%) 0%,
+      rgb(30 41 57 / 10%) 50%,
+      rgb(30 41 57 / 30%) 100%
+    );
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .netinera-service-card:hover .netinera-service-card-image::before {
+    opacity: 1;
+  }
+
+  /* Service Card Content */
+  .netinera-service-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Mobile gap - Figma Node 1815:6096 */
+    padding: 20px;
+    background: white;
+    flex: 1;
+    border-radius: 0 0 96px; /* Bottom-right radius only */
+  }
+
+  /* Service Card Overline */
+  .netinera-service-card-overline {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 12px; /* Mobile first */
+    line-height: 1.167em;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+
+  /* Service Card Headline */
+  .netinera-service-card-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 20px; /* Mobile first */
+    line-height: 1.4em;
+    color: #1E2939;
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+
+  .netinera-service-card:hover .netinera-service-card-headline {
+    color: #DD052B;
+  }
+
+  /* ==========================
+   * === SERVICE CARD VARIANTS
+   * ========================== */
+
+  /* White Variant */
+  .netinera-service-card.variant-white {
+    background: white;
+    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
+  }
+
+  .netinera-service-card.variant-white:hover {
+    box-shadow: 0 16px 32px rgb(30 41 57 / 12%);
+  }
+
+  /* Dark Variant */
+  .netinera-service-card.variant-dark {
+    background: #1E2939;
+  }
+
+  .netinera-service-card.variant-dark .netinera-service-card-content {
+    background: #1E2939;
+  }
+
+  .netinera-service-card.variant-dark .netinera-service-card-overline {
+    color: rgb(255 255 255 / 70%);
+  }
+
+  .netinera-service-card.variant-dark .netinera-service-card-headline {
+    color: white;
+  }
+
+  /* Compact Variant */
+  .netinera-service-card.variant-compact {
+    max-width: 280px;
+  }
+
+  .netinera-service-card.variant-compact .netinera-service-card-image {
+    height: 120px;
+  }
+
+  .netinera-service-card.variant-compact .netinera-service-card-content {
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .netinera-service-card.variant-compact .netinera-service-card-overline {
+    font-size: 11px;
+    line-height: 1.273em;
+  }
+
+  .netinera-service-card.variant-compact .netinera-service-card-headline {
+    font-size: 18px;
+    line-height: 1.333em;
+  }
+
+  /* ==========================
+   * === BORDER PATTERN VARIANTS
+   * ========================== */
+
+  /* Secondary Pattern */
+  .netinera-service-card.pattern-secondary {
+    border-radius: 48px 0;
+    border: 1px solid #E5E7EB;
+  }
+
+  .netinera-service-card.pattern-secondary .netinera-service-card-image {
+    border-radius: 48px 0 0;
+  }
+
+  .netinera-service-card.pattern-secondary .netinera-service-card-content {
+    border-radius: 0 0 48px;
+  }
+
+  .netinera-service-card.pattern-secondary:hover {
+    border-color: #DD052B;
+    box-shadow: 0 8px 20px rgb(221 5 43 / 10%);
+  }
+
+  /* Simple Pattern */
+  .netinera-service-card.pattern-simple {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgb(30 41 57 / 6%);
+  }
+
+  .netinera-service-card.pattern-simple .netinera-service-card-image {
+    border-radius: 12px 12px 0 0;
+  }
+
+  .netinera-service-card.pattern-simple .netinera-service-card-content {
+    border-radius: 0 0 12px 12px;
+  }
+
+  .netinera-service-card.pattern-simple:hover {
+    box-shadow: 0 6px 16px rgb(30 41 57 / 10%);
+  }
+
+  /* ==========================
+   * === LINK CARD VARIANT
+   * ========================== */
+
+  /* Link Card */
+  .netinera-service-card.is-link {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .netinera-service-card.is-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgb(221 5 43 / 5%) 0%,
+      rgb(221 5 43 / 0%) 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+
+  .netinera-service-card.is-link:hover::before {
+    opacity: 1;
+  }
+
+  .netinera-service-card.is-link:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgb(30 41 57 / 20%);
+  }
+
+  /* ==========================
+   * === INTERACTIVE STATES
+   * ========================== */
+
+  /* Pressed State */
+  .netinera-service-card[aria-pressed="true"] {
+    background: rgb(221 5 43 / 5%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgb(221 5 43 / 15%);
+  }
+
+  .netinera-service-card[aria-pressed="true"] .netinera-service-card-content {
+    background: rgb(221 5 43 / 5%);
+  }
+
+  .netinera-service-card[aria-pressed="true"] .netinera-service-card-headline {
+    color: #DD052B;
+  }
+
+  .netinera-service-card[aria-pressed="true"] .netinera-service-card-overline {
+    color: #B8041F;
+  }
+
+  /* Active State */
+  .netinera-service-card:active {
+    transform: translateY(-1px);
+    transition: transform 0.1s ease;
+  }
+
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+
+  /* Tablet breakpoint (≥ 768px) */
+  @media (width >= 768px) {
+    .netinera-service-card-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .netinera-service-card {
+      max-width: 340px;
+    }
+
+    .netinera-service-card-image {
+      height: 180px;
+    }
+
+    .netinera-service-card-content {
+      gap: 12px;
+      padding: 24px;
+    }
+
+    .netinera-service-card-overline {
+      font-size: 13px;
+      line-height: 1.231em;
+    }
+
+    .netinera-service-card-headline {
+      font-size: 22px;
+      line-height: 1.364em;
+    }
+  }
+
+  /* Desktop breakpoint (≥ 992px) */
+  @media (width >= 992px) {
+    .netinera-service-card-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .netinera-service-card {
+      max-width: 366px; /* Desktop constraint - Figma Node 1815:8423 */
+    }
+
+    .netinera-service-card-image {
+      height: 215px; /* Desktop height - Figma Node 1815:8423 */
+    }
+
+    .netinera-service-card-content {
+      gap: 16px; /* Desktop gap - Figma Node 1815:8423 */
+      padding: 28px;
+    }
+
+    .netinera-service-card-overline {
+      font-size: 14px;
+      line-height: 1.286em;
+    }
+
+    .netinera-service-card-headline {
+      font-size: 26px; /* Desktop headline - Figma Node 1815:8423 */
+      line-height: 1.308em;
+    }
+  }
+
+  /* Large desktop breakpoint (≥ 1200px) */
+  @media (width >= 1200px) {
+    .netinera-service-card-grid {
+      gap: 48px;
+    }
+
+    .netinera-service-card {
+      max-width: 400px;
+    }
+
+    .netinera-service-card-image {
+      height: 240px;
+    }
+
+    .netinera-service-card-content {
+      padding: 32px;
+      gap: 18px;
+    }
+
+    .netinera-service-card-headline {
+      font-size: 28px;
+      line-height: 1.286em;
+    }
+  }
+
+  /* Mobile optimization */
+  @media (width <= 767px) {
+    .netinera-service-card-grid {
+      gap: 20px;
+    }
+
+    .netinera-service-card {
+      max-width: 100%;
+    }
+
+    .netinera-service-card-image {
+      height: 140px;
+    }
+
+    .netinera-service-card-content {
+      padding: 18px;
+      gap: 8px;
+    }
+
+    .netinera-service-card-overline {
+      font-size: 11px;
+      line-height: 1.273em;
+    }
+
+    .netinera-service-card-headline {
+      font-size: 18px;
+      line-height: 1.333em;
+    }
+  }
+
+  /* Small mobile optimization */
+  @media (width <= 479px) {
+    .netinera-service-card-grid {
+      gap: 16px;
+    }
+
+    .netinera-service-card-image {
+      height: 120px;
+    }
+
+    .netinera-service-card-content {
+      padding: 16px;
+      gap: 6px;
+    }
+
+    .netinera-service-card-overline {
+      font-size: 10px;
+      line-height: 1.4em;
+    }
+
+    .netinera-service-card-headline {
+      font-size: 16px;
+      line-height: 1.375em;
+    }
+  }
+
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+
+  /* Focus States */
+  .netinera-service-card:focus,
+  .netinera-service-card.is-link:focus {
+    outline: 3px solid #DD052B;
+    outline-offset: 3px;
+    border-radius: 96px 0;
+  }
+
+  .netinera-service-card.pattern-secondary:focus {
+    border-radius: 48px 0;
+  }
+
+  .netinera-service-card.pattern-simple:focus {
+    border-radius: 12px;
+  }
+
+  /* Keyboard Navigation */
+  .netinera-service-card[tabindex]:focus {
+    background: rgb(221 5 43 / 2%);
+    transform: translateY(-2px);
+  }
+
+  /* Loading Placeholder - must come before tabindex:focus selectors */
+  .netinera-service-card.is-loading .netinera-service-card-image {
+    background: linear-gradient(
+      90deg,
+      #F3F4F6 25%,
+      #E5E7EB 50%,
+      #F3F4F6 75%
+    );
+    background-size: 200% 100%;
+    animation: netinera-service-card-loading 1.5s infinite;
+  }
+
+  .netinera-service-card.is-loading .netinera-service-card-overline,
+  .netinera-service-card.is-loading .netinera-service-card-headline {
+    background: #E5E7EB;
+    color: transparent;
+    border-radius: 4px;
+  }
+
+  .netinera-service-card.is-loading .netinera-service-card-overline {
+    height: 12px;
+    width: 60%;
+  }
+
+  .netinera-service-card.is-loading .netinera-service-card-headline {
+    height: 20px;
+    width: 80%;
+  }
+
+  /* Move variant-dark hover after all other specificity selectors */
+  .netinera-service-card.variant-dark:hover .netinera-service-card-headline {
+    color: #DD052B;
+  }
+
+  .netinera-service-card[tabindex]:focus .netinera-service-card-headline {
+    color: #DD052B;
+  }
+
+  /* Screen Reader Support */
+  .netinera-service-card[role="button"] {
+    /* Ensures proper accessibility labeling */
+  }
+
+  .netinera-service-card[aria-label] {
+    /* Custom accessible labels */
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .netinera-service-card {
+      border: 2px solid #1E2939;
+    }
+
+    .netinera-service-card-headline {
+      font-weight: 600;
+    }
+
+    .netinera-service-card:hover {
+      border-color: #DD052B;
+    }
+
+    .netinera-service-card:focus {
+      outline-width: 4px;
+    }
+
+    .netinera-service-card.variant-white {
+      border-color: #1E2939;
+    }
+
+    .netinera-service-card.variant-dark {
+      border-color: white;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .netinera-service-card,
+    .netinera-service-card-headline,
+    .netinera-service-card-image::before,
+    .netinera-service-card.is-link::before {
+      transition: none;
+      animation: none;
+    }
+
+    .netinera-service-card:hover,
+    .netinera-service-card.is-link:hover,
+    .netinera-service-card:active {
+      transform: none;
+    }
+
+    .netinera-service-card-image::before,
+    .netinera-service-card.is-link::before {
+      opacity: 0 !important;
+    }
+  }
+
+  /* ==========================
+   * === LOADING STATES
+   * ========================== */
+
+  @keyframes netinera-service-card-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+
+  @media print {
+    .netinera-service-card-grid {
+      display: block;
+      columns: 2;
+      column-gap: 20px;
+    }
+
+    .netinera-service-card {
+      background: white !important;
+      border: 1px solid #ddd !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      break-inside: avoid;
+      margin-bottom: 20px;
+      max-width: 100% !important;
+      transform: none !important;
+    }
+
+    .netinera-service-card-image {
+      height: 100px !important;
+      border-radius: 0 !important;
+      background-color: #f5f5f5 !important;
+    }
+
+    .netinera-service-card-image::before,
+    .netinera-service-card.is-link::before {
+      display: none !important;
+    }
+
+    .netinera-service-card-content {
+      background: white !important;
+      border-radius: 0 !important;
+      padding: 15px !important;
+      gap: 8px !important;
+    }
+
+    .netinera-service-card-overline {
+      color: #666 !important;
+      font-size: 11px !important;
+      line-height: 1.3 !important;
+    }
+
+    .netinera-service-card-headline {
+      color: black !important;
+      font-size: 16px !important;
+      line-height: 1.3 !important;
+      font-weight: 600 !important;
+    }
+
+    .netinera-service-card:hover,
+    .netinera-service-card:focus,
+    .netinera-service-card:active,
+    .netinera-service-card[aria-pressed="true"] {
+      background: white !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    .netinera-service-card.variant-dark .netinera-service-card-content {
+      background: white !important;
+    }
+
+    .netinera-service-card.variant-dark .netinera-service-card-overline,
+    .netinera-service-card.variant-dark .netinera-service-card-headline {
+      color: black !important;
+    }
+  }
+

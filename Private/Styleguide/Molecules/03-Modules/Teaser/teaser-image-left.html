@@ -1,0 +1,497 @@
+
+    <style>
+        /* Demo Background Images */
+        .figma-teaser-image {
+            background-image: url('./src/assets/teaser-landscape-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .demo-landscape-1 {
+            background-image: url('./src/assets/teaser-landscape-image.jpg');        
+        }
+        
+        .demo-landscape-2 {
+            background-image: url('./src/assets/teaser-landscape-image.jpg');        
+        }
+        
+        .demo-landscape-3 {
+            background-image: url('./src/assets/teaser-landscape-image.jpg');        
+        }
+        
+        .demo-landscape-4 {
+            background-image: url('./src/assets/teaser-landscape-image.jpg');
+        }
+        
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+    </style>
+
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h1">Responsive Komponente</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                Responsive Teaser System
+            </h1>
+            <p class="mx-auto max-w-netinera-content text-netinera-white body-lg">
+                Automatische Anpassung zwischen Mobile (SM) und Desktop (XL) Layout mit einem einzigen CSS-Klassensystem. Testen Sie es durch Änderung der Bildschirmgröße! Verwendet echtes Figma-Bildmaterial.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Single Responsive Teaser -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Adaptive Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Responsive Teaser - Eine Klasse, alle Größen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Responsive Teaser Example 1 -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Automatische Anpassung</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: Vertikal (328px) → Desktop: Horizontal (968×426px)
+                        </h4>
+                        
+                        <!-- Responsive Teaser Implementation -->
+                        <div class="flex justify-center">
+                            <div class="teaser-responsive">
+                                <div class="teaser-responsive-image figma-teaser-image"></div>
+                                <div class="teaser-responsive-content">
+                                    <div class="teaser-responsive-text-group">
+                                        <div class="teaser-responsive-main-text">
+                                            <div class="teaser-responsive-overline">Innovation</div>
+                                            <h3 class="teaser-responsive-headline">Nachhaltige Mobilität für die Zukunft</h3>
+                                        </div>
+                                        <p class="teaser-responsive-subtitle">
+                                            Moderne Verkehrslösungen für eine umweltfreundliche und effiziente Mobilität. Automatische Anpassung je nach Bildschirmgröße.
+                                        </p>
+                                    </div>
+                                    <div class="flex">
+                                        <button class="teaser-responsive-button">
+                                            Download
+                                            <div class="teaser-responsive-button-icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 11V13C2 13.5523 2.44772 14 3 14H13C13.5523 14 14 13.5523 14 13V11" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 2V10" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M5 7L8 10L11 7" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">Responsive HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-responsive"&gt;
+  &lt;div class="teaser-responsive-image figma-teaser-image"&gt;&lt;/div&gt;
+  &lt;div class="teaser-responsive-content"&gt;
+    &lt;div class="teaser-responsive-text-group"&gt;
+      &lt;div class="teaser-responsive-main-text"&gt;
+        &lt;div class="teaser-responsive-overline"&gt;Innovation&lt;/div&gt;
+        &lt;h3 class="teaser-responsive-headline"&gt;Nachhaltige Mobilität für die Zukunft&lt;/h3&gt;
+      &lt;/div&gt;
+      &lt;p class="teaser-responsive-subtitle"&gt;Moderne Verkehrslösungen...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="teaser-responsive-button"&gt;Download&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS für das Figma-Bild --&gt;
+&lt;style&gt;
+.figma-teaser-image {
+  background-image: url('./src/assets/teaser-landscape-image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+&lt;/style&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Responsive Teaser Example 2 -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Service Variante</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Gleiche Responsive-Klassen, anderer Content
+                        </h4>
+                        
+                        <div class="flex justify-center">
+                            <div class="teaser-responsive">
+                                <div class="teaser-responsive-image demo-landscape-2"></div>
+                                <div class="teaser-responsive-content">
+                                    <div class="teaser-responsive-text-group">
+                                        <div class="teaser-responsive-main-text">
+                                            <div class="teaser-responsive-overline">Service</div>
+                                            <h3 class="teaser-responsive-headline">Digitale Verkehrslösungen</h3>
+                                        </div>
+                                        <p class="teaser-responsive-subtitle">
+                                            Intelligente Systeme für optimierte Verkehrsflüsse und bessere Fahrgast-Informationen in Echtzeit.
+                                        </p>
+                                    </div>
+                                    <div class="flex">
+                                        <button class="teaser-responsive-button">
+                                            Mehr erfahren
+                                            <div class="teaser-responsive-button-icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 8H15" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M9 2L15 8L9 14" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Responsive Grid Layout -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Grid Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Responsive Teaser Grid
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Adaptive Grid System</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: 1 Spalte → Tablet: 2 Spalten → Desktop: Anpassend
+                        </h4>
+                        
+                        <!-- Responsive Grid Implementation -->
+                        <div class="teaser-grid-responsive">
+                            <div class="teaser-responsive">
+                                <div class="teaser-responsive-image figma-teaser-image"></div>
+                                <div class="teaser-responsive-content">
+                                    <div class="teaser-responsive-text-group">
+                                        <div class="teaser-responsive-main-text">
+                                            <div class="teaser-responsive-overline">Projekt</div>
+                                            <h5 class="teaser-responsive-headline">Smart City Initiative</h5>
+                                        </div>
+                                        <p class="teaser-responsive-subtitle">
+                                            Vernetzte Infrastrukturen für intelligente Städte der Zukunft.
+                                        </p>
+                                    </div>
+                                    <button class="teaser-responsive-button">
+                                        Entdecken
+                                        <div class="teaser-responsive-button-icon">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 8H15" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M9 2L15 8L9 14" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="teaser-responsive">
+                                <div class="teaser-responsive-image demo-landscape-3"></div>
+                                <div class="teaser-responsive-content">
+                                    <div class="teaser-responsive-text-group">
+                                        <div class="teaser-responsive-main-text">
+                                            <div class="teaser-responsive-overline">Innovation</div>
+                                            <h5 class="teaser-responsive-headline">Autonome Fahrzeuge</h5>
+                                        </div>
+                                        <p class="teaser-responsive-subtitle">
+                                            Die Zukunft des selbstfahrenden Verkehrs für alle Bürger.
+                                        </p>
+                                    </div>
+                                    <button class="teaser-responsive-button">
+                                        Download
+                                        <div class="teaser-responsive-button-icon">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2 11V13C2 13.5523 2.44772 14 3 14H13C13.5523 14 14 13.5523 14 13V11" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8 2V10" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5 7L8 10L11 7" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="teaser-responsive">
+                                <div class="teaser-responsive-image demo-landscape-4"></div>
+                                <div class="teaser-responsive-content">
+                                    <div class="teaser-responsive-text-group">
+                                        <div class="teaser-responsive-main-text">
+                                            <div class="teaser-responsive-overline">Nachhaltigkeit</div>
+                                            <h5 class="teaser-responsive-headline">Grüne Mobilität</h5>
+                                        </div>
+                                        <p class="teaser-responsive-subtitle">
+                                            Umweltfreundliche Verkehrslösungen für nachhaltige Entwicklung.
+                                        </p>
+                                    </div>
+                                    <button class="teaser-responsive-button">
+                                        Mehr erfahren
+                                        <div class="teaser-responsive-button-icon">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 2V14" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M13 7L8 2L3 7" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Grid Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">Responsive Grid Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-grid-responsive"&gt;
+  &lt;div class="teaser-responsive"&gt;
+    &lt;div class="teaser-responsive-image" style="background-image: url('image1.jpg');"&gt;&lt;/div&gt;
+    &lt;div class="teaser-responsive-content"&gt;
+      &lt;!-- Content --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="teaser-responsive"&gt;
+    &lt;div class="teaser-responsive-image" style="background-image: url('image2.jpg');"&gt;&lt;/div&gt;
+    &lt;div class="teaser-responsive-content"&gt;
+      &lt;!-- Content --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Weitere Teaser... --&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Full Width Responsive Teaser -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Full Width Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Responsive Full Width Teaser
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Hero Section Layout</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Volle Breite für Hero-Bereiche und Landingpages
+                        </h4>
+                        
+                        <!-- Full Width Responsive Teaser -->
+                        <div class="teaser-responsive-full">
+                            <div class="teaser-responsive-image demo-landscape-2"></div>
+                            <div class="teaser-responsive-content">
+                                <div class="teaser-responsive-text-group">
+                                    <div class="teaser-responsive-main-text">
+                                        <div class="teaser-responsive-overline">Zukunft</div>
+                                        <h3 class="teaser-responsive-headline">Intelligente Verkehrssysteme</h3>
+                                    </div>
+                                    <p class="teaser-responsive-subtitle">
+                                        Revolutionäre Technologien für die Mobilität von morgen. Vollständig responsive Design für alle Geräte und Bildschirmgrößen.
+                                    </p>
+                                </div>
+                                <div class="flex">
+                                    <button class="teaser-responsive-button">
+                                        Jetzt starten
+                                        <div class="teaser-responsive-button-icon">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 8H15" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M9 2L15 8L9 14" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Full Width Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">Full Width Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-responsive-full"&gt;
+  &lt;div class="teaser-responsive-image" style="background-image: url('hero-image.jpg');"&gt;&lt;/div&gt;
+  &lt;div class="teaser-responsive-content"&gt;
+    &lt;!-- Hero Content --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Documentation -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS System</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Responsive Class System
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Mobile-First Approach</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Responsive Breakpoints & Adaptive Classes
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Base Responsive Classes</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile First (bis 1023px) */
+.teaser-responsive {
+  width: 100%;
+  max-width: 328px;
+  border-radius: 36px 0px 36px 0px;
+  flex-direction: column;
+}
+
+.teaser-responsive-image {
+  height: 246px;
+  border-radius: 36px 0px 0px 0px;
+}
+
+.teaser-responsive-content {
+  padding: 24px;
+  gap: 32px;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Desktop Breakpoint (1024px+)</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>@media (min-width: 1024px) {
+  .teaser-responsive {
+    width: 968px;
+    height: 426px;
+    border-radius: 64px 0px 64px 0px;
+    flex-direction: row;
+  }
+  
+  .teaser-responsive-image {
+    width: 568px;
+    height: 426px;
+    border-radius: 64px 0px 0px 0px;
+  }
+  
+  .teaser-responsive-content {
+    padding: 32px;
+    gap: 36px;
+  }
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Responsive Typography</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile Typography (bis 1023px) */
+.teaser-responsive-overline {
+  font: 600 12px/1.17 "Titillium Web";
+  letter-spacing: 13.33%;
+}
+
+.teaser-responsive-headline {
+  font: 400 22px/1.27 "Titillium Web";
+}
+
+/* Desktop Typography (1024px+) */
+@media (min-width: 1024px) {
+  .teaser-responsive-overline {
+    font-size: 14px;
+    letter-spacing: 11.43%;
+  }
+  
+  .teaser-responsive-headline {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Grid System</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Responsive Grid */
+.teaser-grid-responsive {
+  display: grid;
+  gap: var(--spacing-element-lg);
+  
+  /* Mobile: 1 Spalte */
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .teaser-grid-responsive {
+    /* Tablet: 2 Spalten */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .teaser-grid-responsive {
+    /* Desktop: Adaptive */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Responsive Teaser System
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Vollständig responsive Teaser-Komponenten mit automatischer Anpassung zwischen Mobile (SM) und Desktop (XL) Layout. Mobile-First Approach mit präzisen Breakpoints für optimale Benutzererfahrung auf allen Geräten.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Responsive Design</span>
+                <span>|</span>
+                <span>Mobile-First</span>
+                <span>|</span>
+                <span>Auto-Adaptive</span>
+            </div>
+        </div>
+    </footer>
+</section>

@@ -1,0 +1,18 @@
+/* === COOKIEMAN */
+
+#cookieman-modal dialog {
+    .accordion-toggle {
+        @apply relative;
+        @apply flex w-full;
+
+        &::after {
+            @apply absolute top-0 right-0;
+
+            content: "+";
+        }
+
+        &[aria-expanded="true"]::after {
+            content: "-";
+        }
+    }
+}

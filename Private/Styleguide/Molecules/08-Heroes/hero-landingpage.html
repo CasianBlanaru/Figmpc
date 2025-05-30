@@ -1,0 +1,507 @@
+
+    
+    <style>
+        /* Responsive Indicator */
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        /* Showcase Container */
+        .showcase-container {
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        /* Component Preview */
+        .component-preview {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            margin: 1rem 0;
+            min-height: 400px;
+        }
+        
+        /* Code Display */
+        .code-display {
+            background: #1e293b;
+            color: #f1f5f9;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+        
+        /* Demo Background Images */
+        .demo-bg-1 { background-image: url('https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); }
+        .demo-bg-2 { background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); }
+        .demo-bg-3 { background-image: url('https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); }
+        
+        /* Animation Classes */
+        .hero-animate { animation: heroFadeIn 1s ease-out; }
+        @keyframes heroFadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    </style>
+
+<section class="bg-gray-50 font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-teal-600 to-teal-700 py-16 text-netinera-white">
+        <div class="mx-auto px-6 max-w-6xl text-center">
+            <div class="opacity-90 mb-4 font-medium text-sm uppercase tracking-wider">Netinera Design System - Phase 7</div>
+            <h1 class="mb-6 font-light text-netinera-white text-4xl lg:text-6xl leading-tight">
+                Hero Landing Page Components
+            </h1>
+            <p class="opacity-90 mx-auto max-w-4xl font-light text-netinera-white text-xl lg:text-2xl leading-relaxed">
+                Pixelgenaue Umsetzung der Figma Nodes 1768:32691 & 1751:24926. Fullscreen Hero mit Gradient Overlay, 
+                responsive Typography und interaktiven Buttons. Mobile: 33px Headline → Desktop: 60px Headline.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mx-auto px-6 py-12 max-w-7xl">
+
+        <!-- Component Overview -->
+        <section class="mb-16">
+            <div class="mb-4 font-medium text-teal-600 text-sm uppercase tracking-wider">Figma Nodes 1768:32691 & 1751:24926</div>
+            <h2 class="mb-8 font-light text-gray-900 text-3xl lg:text-5xl">
+                Hero Landing Page Implementation
+            </h2>
+            <div class="max-w-none netinera-news-detail-content">
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Fullscreen Hero Landing Page Component mit pixelgenauer Figma-Umsetzung. Features: Gradient Overlay, 
+                    Netinera Border Pattern (96px 0px 96px 0px), responsive Typography, 
+                    Mobile/Desktop Breakpoints und interaktive Button States.
+                </p>
+            </div>
+        </section>
+
+        <!-- Main Component: Full Viewport Hero -->
+        <section class="showcase-container">
+            <div class="mb-8">
+                <div class="mb-2 font-medium text-teal-600 text-sm uppercase tracking-wider">Hauptkomponente</div>
+                <h3 class="mb-4 font-light text-gray-900 text-2xl">Fullscreen Hero - Pixel Perfect Implementation</h3>
+                <p class="mb-6 text-gray-600">
+                    100vh Fullscreen Hero mit exakter Figma-Umsetzung. Mobile: 44px×16px Padding, 32px Gap → Desktop: 80px×56px Padding, 36px Gap.
+                </p>
+            </div>
+            
+            <div class="component-preview" style="padding: 0; min-height: 60vh;">
+                <!-- Hero Landing Page Component -->
+                <div class="demo-bg-1 netinera-hero-landingpage hero-animate" role="banner" aria-label="Hero Section">
+                    <div class="netinera-hero-landingpage-content">
+                        <div class="netinera-hero-landingpage-layout-group">
+                            <h2 class="netinera-hero-landingpage-headline">Moderne Mobilität für Deutschland</h2>
+                            <button class="netinera-hero-landingpage-button" onclick="handleHeroAction(this)" aria-label="Mehr erfahren über unsere Mobilität">
+                                <span class="netinera-hero-landingpage-button-text">Mehr erfahren</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8">
+                <div class="mb-2 font-medium text-gray-600 text-sm uppercase tracking-wider">HTML Implementation</div>
+                <pre class="code-display"><code>&lt;div class="demo-bg-1 netinera-hero-landingpage" role="banner"&gt;
+  &lt;div class="netinera-hero-landingpage-content"&gt;
+    &lt;div class="netinera-hero-landingpage-layout-group"&gt;
+      &lt;h2 class="netinera-hero-landingpage-headline"&gt;Moderne Mobilität für Deutschland&lt;/h2&gt;
+      &lt;button class="netinera-hero-landingpage-button"&gt;
+        &lt;span class="netinera-hero-landingpage-button-text"&gt;Mehr erfahren&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- Variant Showcase -->
+        <section class="showcase-container">
+            <div class="mb-8">
+                <div class="mb-2 font-medium text-teal-600 text-sm uppercase tracking-wider">Varianten & Modi</div>
+                <h3 class="mb-4 font-light text-gray-900 text-2xl">Gradient Overlays & Button Variants</h3>
+                <p class="mb-6 text-gray-600">
+                    Verschiedene Gradient Overlays (Primary Teal, Dark, Standard) und Button-Varianten für verschiedene Anwendungsfälle.
+                </p>
+            </div>
+            
+            <div class="gap-8 grid grid-cols-1 lg:grid-cols-2">
+                
+                <!-- Primary Variant -->
+                <div class="component-preview" style="padding: 0; min-height: 400px;">
+                    <div class="demo-bg-2 netinera-hero-landingpage netinera-hero-landingpage-variant-primary hero-animate">
+                        <div class="netinera-hero-landingpage-content">
+                            <div class="netinera-hero-landingpage-layout-group">
+                                <h2 class="netinera-hero-landingpage-headline">Nachhaltige Zukunft</h2>
+                                <button class="netinera-hero-landingpage-button">
+                                    <span class="netinera-hero-landingpage-button-text">Entdecken</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-4">
+                        <div class="mb-2 font-medium text-gray-700 text-sm">Primary Variant</div>
+                        <code class="text-gray-600 text-xs">netinera-hero-landingpage-variant-primary</code>
+                    </div>
+                </div>
+
+                <!-- Dark Variant -->
+                <div class="component-preview" style="padding: 0; min-height: 400px;">
+                    <div class="demo-bg-3 netinera-hero-landingpage netinera-hero-landingpage-variant-dark hero-animate">
+                        <div class="netinera-hero-landingpage-content">
+                            <div class="netinera-hero-landingpage-layout-group">
+                                <h2 class="netinera-hero-landingpage-headline">Innovation & Technik</h2>
+                                <button class="netinera-hero-landingpage-button">
+                                    <span class="netinera-hero-landingpage-button-text">Mehr erfahren</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-4">
+                        <div class="mb-2 font-medium text-gray-700 text-sm">Dark Variant</div>
+                        <code class="text-gray-600 text-xs">netinera-hero-landingpage-variant-dark</code>
+                    </div>
+                </div>
+
+                <!-- Secondary Button Variant -->
+                <div class="lg:col-span-2 component-preview" style="padding: 0; min-height: 400px;">
+                    <div class="demo-bg-1 netinera-hero-landingpage netinera-hero-landingpage-variant-secondary hero-animate">
+                        <div class="netinera-hero-landingpage-content">
+                            <div class="netinera-hero-landingpage-layout-group">
+                                <h2 class="netinera-hero-landingpage-headline">Digitale Transformation</h2>
+                                <button class="netinera-hero-landingpage-button">
+                                    <span class="netinera-hero-landingpage-button-text">Jetzt starten</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-4">
+                        <div class="mb-2 font-medium text-gray-700 text-sm">Secondary Button Variant</div>
+                        <code class="text-gray-600 text-xs">netinera-hero-landingpage-variant-secondary</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Border Pattern Variants -->
+        <section class="showcase-container">
+            <div class="mb-8">
+                <div class="mb-2 font-medium text-teal-600 text-sm uppercase tracking-wider">Border Pattern Varianten</div>
+                <h3 class="mb-4 font-light text-gray-900 text-2xl">Netinera Border Patterns</h3>
+                <p class="mb-6 text-gray-600">
+                    Verschiedene Border Radius Patterns für unterschiedliche Design-Kontexte: Standard, Secondary, Simple.
+                </p>
+            </div>
+            
+            <div class="gap-6 grid grid-cols-1 lg:grid-cols-3">
+                
+                <!-- Standard Pattern -->
+                <div class="component-preview" style="padding: 0; min-height: 300px;">
+                    <div class="demo-bg-2 netinera-hero-landingpage hero-animate" style="height: 300px;">
+                        <div class="netinera-hero-landingpage-content">
+                            <div class="netinera-hero-landingpage-layout-group">
+                                <h2 class="netinera-hero-landingpage-headline" style="font-size: 20px;">Standard Pattern</h2>
+                                <button class="netinera-hero-landingpage-button">
+                                    <span class="netinera-hero-landingpage-button-text">Standard</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-3">
+                        <code class="text-gray-600 text-xs">96px 0px 96px 0px</code>
+                    </div>
+                </div>
+
+                <!-- Secondary Pattern -->
+                <div class="component-preview" style="padding: 0; min-height: 300px;">
+                    <div class="demo-bg-3 netinera-hero-landingpage netinera-hero-landingpage-pattern-secondary hero-animate" style="height: 300px;">
+                        <div class="netinera-hero-landingpage-content">
+                            <div class="netinera-hero-landingpage-layout-group">
+                                <h2 class="netinera-hero-landingpage-headline" style="font-size: 20px;">Secondary Pattern</h2>
+                                <button class="netinera-hero-landingpage-button">
+                                    <span class="netinera-hero-landingpage-button-text">Secondary</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-3">
+                        <code class="text-gray-600 text-xs">0px 96px 0px 96px</code>
+                    </div>
+                </div>
+
+                <!-- Simple Pattern -->
+                <div class="component-preview" style="padding: 0; min-height: 300px;">
+                    <div class="demo-bg-1 netinera-hero-landingpage netinera-hero-landingpage-pattern-simple hero-animate" style="height: 300px;">
+                        <div class="netinera-hero-landingpage-content">
+                            <div class="netinera-hero-landingpage-layout-group">
+                                <h2 class="netinera-hero-landingpage-headline" style="font-size: 20px;">Simple Pattern</h2>
+                                <button class="netinera-hero-landingpage-button">
+                                    <span class="netinera-hero-landingpage-button-text">Simple</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-3">
+                        <code class="text-gray-600 text-xs">48px</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specifications -->
+        <section class="showcase-container">
+            <div class="mb-8">
+                <div class="mb-2 font-medium text-teal-600 text-sm uppercase tracking-wider">Technische Spezifikationen</div>
+                <h3 class="mb-4 font-light text-gray-900 text-2xl">Figma-Mapping & Responsive Behavior</h3>
+                <p class="mb-6 text-gray-600">
+                    Exakte Implementierung der Figma-Spezifikationen für alle Breakpoints und Komponenten-Zustände.
+                </p>
+            </div>
+            
+            <div class="gap-8 grid grid-cols-1 lg:grid-cols-2">
+                <div>
+                    <h4 class="mb-4 font-medium text-gray-900 text-lg">CSS Classes</h4>
+                    <div class="space-y-3">
+                        <div class="bg-gray-100 p-3 rounded-lg">
+                            <code class="font-medium text-gray-900 text-sm">.netinera-hero-landingpage</code>
+                            <p class="mt-1 text-gray-600 text-sm">Main container, 100vh height, background image</p>
+                        </div>
+                        <div class="bg-gray-100 p-3 rounded-lg">
+                            <code class="font-medium text-gray-900 text-sm">.netinera-hero-landingpage-content</code>
+                            <p class="mt-1 text-gray-600 text-sm">Overlay with gradient and backdrop filter</p>
+                        </div>
+                        <div class="bg-gray-100 p-3 rounded-lg">
+                            <code class="font-medium text-gray-900 text-sm">.netinera-hero-landingpage-layout-group</code>
+                            <p class="mt-1 text-gray-600 text-sm">Content layout container</p>
+                        </div>
+                        <div class="bg-gray-100 p-3 rounded-lg">
+                            <code class="font-medium text-gray-900 text-sm">.netinera-hero-landingpage-headline</code>
+                            <p class="mt-1 text-gray-600 text-sm">Typography: Mobile 33px → Desktop 60px</p>
+                        </div>
+                        <div class="bg-gray-100 p-3 rounded-lg">
+                            <code class="font-medium text-gray-900 text-sm">.netinera-hero-landingpage-button</code>
+                            <p class="mt-1 text-gray-600 text-sm">CTA button with interactive states</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="mb-4 font-medium text-gray-900 text-lg">Responsive Breakpoints</h4>
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 p-3 border border-blue-200 rounded-lg">
+                            <div class="font-medium text-blue-900 text-sm">Mobile (< 1024px)</div>
+                            <ul class="space-y-1 mt-2 text-blue-700 text-sm">
+                                <li>• Headline: 33px, line-height: 1.09</li>
+                                <li>• Padding: 44px 16px</li>
+                                <li>• Gap: 32px</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-3 border border-green-200 rounded-lg">
+                            <div class="font-medium text-green-900 text-sm">Desktop (≥ 1024px)</div>
+                            <ul class="space-y-1 mt-2 text-green-700 text-sm">
+                                <li>• Headline: 60px, line-height: 1.07</li>
+                                <li>• Padding: 80px 56px</li>
+                                <li>• Gap: 36px</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessibility Features -->
+        <section class="showcase-container">
+            <div class="mb-8">
+                <div class="mb-2 font-medium text-teal-600 text-sm uppercase tracking-wider">Accessibility & Best Practices</div>
+                <h3 class="mb-4 font-light text-gray-900 text-2xl">WCAG 2.1 AA Compliance</h3>
+                <p class="mb-6 text-gray-600">
+                    Umfassende Accessibility-Features für optimale Nutzerfreundlichkeit und WCAG-Konformität.
+                </p>
+            </div>
+            
+            <div class="gap-6 grid grid-cols-1 lg:grid-cols-3">
+                <div class="bg-white p-6 border border-gray-200 rounded-lg">
+                    <div class="mb-3 font-medium text-gray-900 text-lg">Semantic HTML</div>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li>• <code>role="banner"</code> für semantische Bedeutung</li>
+                        <li>• Proper heading hierarchy</li>
+                        <li>• Button accessibility labels</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 border border-gray-200 rounded-lg">
+                    <div class="mb-3 font-medium text-gray-900 text-lg">Keyboard Navigation</div>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li>• Focus-visible outline styles</li>
+                        <li>• Tab order optimization</li>
+                        <li>• Skip link support</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 border border-gray-200 rounded-lg">
+                    <div class="mb-3 font-medium text-gray-900 text-lg">Motion & Contrast</div>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li>• Reduced motion support</li>
+                        <li>• High contrast mode</li>
+                        <li>• Print stylesheet optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo -->
+        <section class="showcase-container">
+            <div class="mb-8">
+                <div class="mb-2 font-medium text-teal-600 text-sm uppercase tracking-wider">Interactive Demo</div>
+                <h3 class="mb-4 font-light text-gray-900 text-2xl">Real-time Component Testing</h3>
+                <p class="mb-6 text-gray-600">
+                    Testen Sie die verschiedenen Komponenten-Varianten interaktiv in verschiedenen Viewport-Größen.
+                </p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Controls -->
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="changeVariant('default')" class="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-lg text-white transition">
+                        Standard
+                    </button>
+                    <button onclick="changeVariant('primary')" class="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-lg text-white transition">
+                        Primary
+                    </button>
+                    <button onclick="changeVariant('dark')" class="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-lg text-white transition">
+                        Dark
+                    </button>
+                    <button onclick="changeVariant('secondary')" class="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-lg text-white transition">
+                        Secondary Button
+                    </button>
+                </div>
+                
+                <!-- Interactive Demo Component -->
+                <div class="component-preview" style="padding: 0; min-height: 500px;">
+                    <div id="interactive-hero" class="demo-bg-1 netinera-hero-landingpage hero-animate" style="height: 500px;">
+                        <div class="netinera-hero-landingpage-content">
+                            <div class="netinera-hero-landingpage-layout-group">
+                                <h2 class="netinera-hero-landingpage-headline">Interactive Demo</h2>
+                                <button class="netinera-hero-landingpage-button" onclick="handleInteractiveDemoAction()">
+                                    <span class="netinera-hero-landingpage-button-text">Interagieren</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 mt-20 py-12 text-white">
+        <div class="mx-auto px-6 max-w-6xl text-center">
+            <div class="opacity-70 mb-4 font-medium text-sm uppercase tracking-wider">Netinera Design System</div>
+            <h3 class="mb-4 font-light text-2xl">Phase 7: Hero Landing Page Complete</h3>
+            <p class="mx-auto max-w-2xl text-gray-400">
+                Pixelgenaue Figma-Implementierung mit 620+ Zeilen CSS, vollständig responsive, 
+                accessibility-optimiert und bereit für den Produktionseinsatz.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactive Features -->
+    <script>
+        // Hero action handler
+        function handleHeroAction(button) {
+            button.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                button.style.transform = '';
+                console.log('Hero action triggered');
+            }, 150);
+        }
+        
+        // Interactive demo action
+        function handleInteractiveDemoAction() {
+            const hero = document.getElementById('interactive-hero');
+            hero.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+                hero.style.transform = '';
+            }, 300);
+            console.log('Interactive demo action triggered');
+        }
+        
+        // Variant changer
+        function changeVariant(variant) {
+            const hero = document.getElementById('interactive-hero');
+            
+            // Remove all variant classes
+            hero.classList.remove(
+                'netinera-hero-landingpage-variant-primary',
+                'netinera-hero-landingpage-variant-dark',
+                'netinera-hero-landingpage-variant-secondary'
+            );
+            
+            // Add new variant class
+            if (variant !== 'default') {
+                hero.classList.add(`netinera-hero-landingpage-variant-${variant}`);
+            }
+            
+            // Update content based on variant
+            const headline = hero.querySelector('.netinera-hero-landingpage-headline');
+            const buttonText = hero.querySelector('.netinera-hero-landingpage-button-text');
+            
+            const content = {
+                'default': { headline: 'Interactive Demo', button: 'Interagieren' },
+                'primary': { headline: 'Primary Variant Demo', button: 'Entdecken' },
+                'dark': { headline: 'Dark Variant Demo', button: 'Erkunden' },
+                'secondary': { headline: 'Secondary Button Demo', button: 'Starten' }
+            };
+            
+            if (content[variant]) {
+                headline.textContent = content[variant].headline;
+                buttonText.textContent = content[variant].button;
+            }
+            
+            console.log(`Variant changed to: ${variant}`);
+        }
+        
+        // Analytics tracking
+        document.querySelectorAll('.netinera-hero-landingpage-button').forEach(button => {
+            button.addEventListener('click', () => {
+                console.log('Hero button clicked');
+                // Add your analytics tracking here
+            });
+        });
+        
+        // Accessibility enhancements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add keyboard navigation support
+            document.querySelectorAll('.netinera-hero-landingpage-button').forEach(button => {
+                button.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        button.click();
+                    }
+                });
+            });
+        });
+    </script>
+</section>

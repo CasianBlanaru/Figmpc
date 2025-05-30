@@ -1,0 +1,573 @@
+
+
+@layer components {
+  /* ==========================
+   * === SECTION HEADER LARGE CENTER
+   * ========================== */
+  
+  /* Large Center Container */
+  .section-header-lg-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Mobile gap - Figma Node 1717-4928 */
+    width: 100%;
+  }
+  
+  /* Large Center Title */
+  .section-header-lg-center-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: #1E2939;
+    margin: 0;
+    width: 100%;
+    
+    /* Mobile: H2 SM - Figma Node 1717-4928 */
+    font-size: 26px;
+    line-height: 1.231em;
+    letter-spacing: 1.54%;
+  }
+  
+  /* Large Center Subtitle */
+  .section-header-lg-center-subtitle {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: #1E2939;
+    margin: 0;
+    width: 100%;
+    
+    /* Mobile: Body Base */
+    font-size: 16px;
+    line-height: 1.625em;
+  }
+  
+  /* ==========================
+   * === SECTION HEADER LARGE LEFT
+   * ========================== */
+  
+  /* Large Left Container */
+  .section-header-lg-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Mobile gap - Figma Node 1717-4928 */
+    width: 100%;
+  }
+  
+  /* Large Left Title */
+  .section-header-lg-left-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: left;
+    color: #1E2939;
+    margin: 0;
+    width: 100%;
+    
+    /* Mobile: H2 SM - Figma Node 1717-4928 */
+    font-size: 26px;
+    line-height: 1.231em;
+    letter-spacing: 1.54%;
+  }
+  
+  /* Large Left Subtitle */
+  .section-header-lg-left-subtitle {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    text-align: left;
+    color: #1E2939;
+    margin: 0;
+    width: 100%;
+    
+    /* Mobile: Body Base */
+    font-size: 16px;
+    line-height: 1.625em;
+  }
+  
+  /* ==========================
+   * === SECTION HEADER MEDIUM CENTER
+   * ========================== */
+  
+  /* Medium Center Container */
+  .section-header-md-center {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Medium Center Title */
+  .section-header-md-center-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: #1E2939;
+    margin: 0;
+    width: 100%;
+    
+    /* Mobile: H3 SM - Figma Node 1717-4928 */
+    font-size: 22px;
+    line-height: 1.273em;
+  }
+  
+  /* ==========================
+   * === SECTION HEADER SMALL CENTER
+   * ========================== */
+  
+  /* Small Center Container */
+  .section-header-sm-center {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Small Center Title */
+  .section-header-sm-center-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: #1E2939;
+    margin: 0;
+    width: 100%;
+    
+    /* Mobile: H4 SM - Figma Node 1717-4928 */
+    font-size: 20px;
+    line-height: 1.4em;
+  }
+  
+  /* ==========================
+   * === UTILITY CLASSES
+   * ========================== */
+  
+  /* Generic Section Header Title */
+  .section-header-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #1E2939;
+    margin: 0;
+  }
+  
+  /* Generic Section Header Subtitle */
+  .section-header-subtitle {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    color: #1E2939;
+    margin: 0;
+  }
+  
+  /* Center Alignment */
+  .section-header-center {
+    text-align: center;
+    align-items: center;
+  }
+  
+  /* Left Alignment */
+  .section-header-left {
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+  
+  /* Desktop breakpoint (1024px+) */
+  @media (width >= 1024px) {
+    /* Large Center Desktop */
+    .section-header-lg-center {
+      gap: 24px; /* Desktop gap - Figma Node 1717-4928 */
+    }
+    
+    .section-header-lg-center-title {
+      /* Desktop: H2 XL - Figma Node 1717-4928 */
+      font-size: 40px;
+      line-height: 1.2em;
+      letter-spacing: 1.00%;
+    }
+    
+    .section-header-lg-center-subtitle {
+      /* Desktop: Body LG */
+      font-size: 18px;
+      line-height: 1.667em;
+    }
+    
+    /* Large Left Desktop */
+    .section-header-lg-left {
+      gap: 24px; /* Desktop gap - Figma Node 1717-4928 */
+    }
+    
+    .section-header-lg-left-title {
+      /* Desktop: H2 XL - Figma Node 1717-4928 */
+      font-size: 40px;
+      line-height: 1.2em;
+      letter-spacing: 1.00%;
+    }
+    
+    .section-header-lg-left-subtitle {
+      /* Desktop: Body LG */
+      font-size: 18px;
+      line-height: 1.667em;
+    }
+    
+    /* Medium Center Desktop */
+    .section-header-md-center {
+      width: 568px; /* Desktop constraint - Figma Node 1717-4928 */
+      margin: 0 auto;
+    }
+    
+    .section-header-md-center-title {
+      /* Desktop: H3 XL - Figma Node 1717-4928 */
+      font-size: 30px;
+      line-height: 1.2em;
+    }
+    
+    /* Small Center Desktop */
+    .section-header-sm-center-title {
+      /* Desktop: H4 XL - Figma Node 1717-4928 */
+      font-size: 24px;
+      line-height: 1.333em;
+    }
+  }
+  
+  /* Tablet adaptation */
+  @media (width <= 1023px) and (width >= 768px) {
+    .section-header-lg-center,
+    .section-header-lg-left {
+      gap: 22px;
+    }
+    
+    .section-header-lg-center-title,
+    .section-header-lg-left-title {
+      font-size: 32px;
+      line-height: 1.25em;
+    }
+    
+    .section-header-lg-center-subtitle,
+    .section-header-lg-left-subtitle {
+      font-size: 17px;
+      line-height: 1.6em;
+    }
+    
+    .section-header-md-center {
+      width: 100%;
+      max-width: 568px;
+      margin: 0 auto;
+    }
+    
+    .section-header-md-center-title {
+      font-size: 26px;
+      line-height: 1.23em;
+    }
+    
+    .section-header-sm-center-title {
+      font-size: 22px;
+      line-height: 1.36em;
+    }
+  }
+  
+  /* Mobile optimization */
+  @media (width <= 767px) {
+    .section-header-lg-center,
+    .section-header-lg-left {
+      gap: 18px;
+    }
+    
+    .section-header-lg-center-title,
+    .section-header-lg-left-title {
+      font-size: 24px;
+      line-height: 1.3em;
+      letter-spacing: 1.2%;
+    }
+    
+    .section-header-lg-center-subtitle,
+    .section-header-lg-left-subtitle {
+      font-size: 15px;
+      line-height: 1.6em;
+    }
+    
+    .section-header-md-center-title {
+      font-size: 20px;
+      line-height: 1.4em;
+    }
+    
+    .section-header-sm-center-title {
+      font-size: 18px;
+      line-height: 1.4em;
+    }
+  }
+  
+  /* Small mobile optimization */
+  @media (width <= 479px) {
+    .section-header-lg-center,
+    .section-header-lg-left {
+      gap: 16px;
+    }
+    
+    .section-header-lg-center-title,
+    .section-header-lg-left-title {
+      font-size: 22px;
+      line-height: 1.27em;
+      letter-spacing: 1%;
+    }
+    
+    .section-header-lg-center-subtitle,
+    .section-header-lg-left-subtitle {
+      font-size: 14px;
+      line-height: 1.5em;
+    }
+    
+    .section-header-md-center-title {
+      font-size: 18px;
+      line-height: 1.33em;
+    }
+    
+    .section-header-sm-center-title {
+      font-size: 16px;
+      line-height: 1.38em;
+    }
+  }
+  
+  /* ==========================
+   * === COLOR VARIANTS
+   * ========================== */
+  
+  /* Dark Text Variant (Default) */
+  .section-header-variant-dark {
+    color: #1E2939;
+  }
+  
+  .section-header-variant-dark .section-header-lg-center-title,
+  .section-header-variant-dark .section-header-lg-left-title,
+  .section-header-variant-dark .section-header-md-center-title,
+  .section-header-variant-dark .section-header-sm-center-title,
+  .section-header-variant-dark .section-header-title {
+    color: #1E2939;
+  }
+  
+  .section-header-variant-dark .section-header-lg-center-subtitle,
+  .section-header-variant-dark .section-header-lg-left-subtitle,
+  .section-header-variant-dark .section-header-subtitle {
+    color: #1E2939;
+  }
+  
+  /* White Text Variant */
+  .section-header-variant-white {
+    color: white;
+  }
+  
+  .section-header-variant-white .section-header-lg-center-title,
+  .section-header-variant-white .section-header-lg-left-title,
+  .section-header-variant-white .section-header-md-center-title,
+  .section-header-variant-white .section-header-sm-center-title,
+  .section-header-variant-white .section-header-title {
+    color: white;
+  }
+  
+  .section-header-variant-white .section-header-lg-center-subtitle,
+  .section-header-variant-white .section-header-lg-left-subtitle,
+  .section-header-variant-white .section-header-subtitle {
+    color: white;
+  }
+  
+  /* Primary Text Variant */
+  .section-header-variant-primary {
+    color: #DD052B;
+  }
+  
+  .section-header-variant-primary .section-header-lg-center-title,
+  .section-header-variant-primary .section-header-lg-left-title,
+  .section-header-variant-primary .section-header-md-center-title,
+  .section-header-variant-primary .section-header-sm-center-title,
+  .section-header-variant-primary .section-header-title {
+    color: #DD052B;
+  }
+  
+  .section-header-variant-primary .section-header-lg-center-subtitle,
+  .section-header-variant-primary .section-header-lg-left-subtitle,
+  .section-header-variant-primary .section-header-subtitle {
+    color: #6B7280;
+  }
+  
+  /* ==========================
+   * === ANIMATION ENHANCEMENTS
+   * ========================== */
+  
+  /* Section Header Animation */
+  .section-header-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .section-header-animate.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Staggered Animation for Title and Subtitle */
+  .section-header-animate .section-header-lg-center-title,
+  .section-header-animate .section-header-lg-left-title,
+  .section-header-animate .section-header-md-center-title,
+  .section-header-animate .section-header-sm-center-title,
+  .section-header-animate .section-header-title {
+    transition-delay: 0.1s;
+  }
+  
+  .section-header-animate .section-header-lg-center-subtitle,
+  .section-header-animate .section-header-lg-left-subtitle,
+  .section-header-animate .section-header-subtitle {
+    transition-delay: 0.2s;
+  }
+  
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+  
+  /* Focus States */
+  .section-header-lg-center:focus-within,
+  .section-header-lg-left:focus-within,
+  .section-header-md-center:focus-within,
+  .section-header-sm-center:focus-within {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .section-header-lg-center-title,
+    .section-header-lg-left-title,
+    .section-header-md-center-title,
+    .section-header-sm-center-title,
+    .section-header-title {
+      font-weight: 600;
+      text-shadow: 0 0 1px currentcolor;
+    }
+    
+    .section-header-lg-center-subtitle,
+    .section-header-lg-left-subtitle,
+    .section-header-subtitle {
+      font-weight: 500;
+    }
+  }
+  
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .section-header-animate,
+    .section-header-animate .section-header-lg-center-title,
+    .section-header-animate .section-header-lg-left-title,
+    .section-header-animate .section-header-md-center-title,
+    .section-header-animate .section-header-sm-center-title,
+    .section-header-animate .section-header-title,
+    .section-header-animate .section-header-lg-center-subtitle,
+    .section-header-animate .section-header-lg-left-subtitle,
+    .section-header-animate .section-header-subtitle {
+      transition: none;
+      animation: none;
+      transform: none !important;
+      opacity: 1 !important;
+      transition-delay: 0s !important;
+    }
+  }
+  
+  /* Screen Reader Support */
+  .section-header-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+  
+  @media print {
+    .section-header-lg-center,
+    .section-header-lg-left,
+    .section-header-md-center,
+    .section-header-sm-center {
+      break-inside: avoid;
+      margin-bottom: 20px;
+    }
+    
+    .section-header-lg-center-title,
+    .section-header-lg-left-title,
+    .section-header-md-center-title,
+    .section-header-sm-center-title,
+    .section-header-title {
+      color: black !important;
+      font-size: 18px !important;
+      line-height: 1.3 !important;
+      margin-bottom: 8px !important;
+    }
+    
+    .section-header-lg-center-subtitle,
+    .section-header-lg-left-subtitle,
+    .section-header-subtitle {
+      color: #666 !important;
+      font-size: 14px !important;
+      line-height: 1.4 !important;
+    }
+    
+    .section-header-md-center {
+      width: 100% !important;
+      margin: 0 !important;
+    }
+    
+    .section-header-animate {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+  
+  /* ==========================
+   * === LOADING STATES
+   * ========================== */
+  
+  .section-header-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: section-header-loading 1.5s infinite;
+  }
+  
+  @keyframes section-header-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  .section-header-loading .section-header-lg-center-title,
+  .section-header-loading .section-header-lg-left-title,
+  .section-header-loading .section-header-md-center-title,
+  .section-header-loading .section-header-sm-center-title,
+  .section-header-loading .section-header-title {
+    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: section-header-loading 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+    height: 1.2em;
+    display: block;
+  }
+  
+  .section-header-loading .section-header-lg-center-subtitle,
+  .section-header-loading .section-header-lg-left-subtitle,
+  .section-header-loading .section-header-subtitle {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: section-header-loading 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+    height: 1em;
+    display: block;
+  }
+  
+} 

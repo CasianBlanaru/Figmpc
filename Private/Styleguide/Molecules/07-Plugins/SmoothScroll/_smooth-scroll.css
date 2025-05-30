@@ -1,0 +1,78 @@
+/*
+ * ==========================
+ * === GLOBAL SMOOTH SCROLLING
+ * ========================== */
+
+/* Apply smooth scrolling globally */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  scrollbar-width: thin;
+  scrollbar-color: #9ca3af #f3f4f6; /* gray.400 gray.100 */
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================
+ * === CUSTOM SCROLLBAR STYLING
+ * ========================== */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6; /* gray.100 */
+  border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af; /* gray.400 */
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563; /* gray.600 */
+}
+
+::-webkit-scrollbar-corner {
+  background: #f3f4f6; /* gray.100 */
+}
+
+/* ==========================
+ * === SMOOTH SCROLL UTILITIES
+ * ========================== */
+
+/* Utility class for instant scrolling when needed */
+.scroll-auto {
+  scroll-behavior: auto !important;
+}
+
+/* Utility class for smooth scrolling */
+.scroll-smooth {
+  scroll-behavior: smooth !important;
+}
+
+/* Utility classes for scroll padding */
+.scroll-pt-0 { scroll-padding-top: 0 !important; }
+.scroll-pt-4 { scroll-padding-top: 1rem !important; }
+.scroll-pt-8 { scroll-padding-top: 2rem !important; }
+.scroll-pt-12 { scroll-padding-top: 3rem !important; }
+.scroll-pt-16 { scroll-padding-top: 4rem !important; }
+.scroll-pt-20 { scroll-padding-top: 5rem !important; }

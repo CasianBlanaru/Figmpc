@@ -1,0 +1,726 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Downloads Component Styles */
+        .downloads-section-fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .downloads-card-animate {
+            animation: downloadsSlideIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes downloadsSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+        
+        .downloads-card-interactive {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .downloads-card-interactive:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1), 0 4px 8px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .downloads-card-interactive:hover .downloads-button {
+            transform: scale(1.05);
+            background: #C2041F;
+        }
+        
+        /* Downloads Component Styles */
+        .downloads-teaser-inline-sm {
+            background: #FFFFFF; 
+            border-radius: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch;
+            align-items: stretch;
+            gap: 8px; 
+            padding: 16px 24px;
+            width: 100%;
+        }
+        
+        .downloads-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px; 
+            flex: 1;
+        }
+        
+        .downloads-text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2px; 
+            flex: 1;
+        }
+        
+        .downloads-title {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5em; 
+            color: #1E2939; 
+        }
+        
+        .downloads-meta {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.7142857142857142em; 
+            color: #1E2939; 
+        }
+        
+        .downloads-button {
+            background: #DD052B; 
+            border-radius: 12px;
+            width: 40px;
+            height: 40px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .downloads-icon {
+            color: white;
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* Download Icon SVG */
+        .download-icon-svg {
+            fill: none;
+            stroke: white;
+            stroke-width: 1.25px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        /* Responsive variants */
+        .downloads-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 16px;
+        }
+        
+        /* Animation states */
+        .downloads-downloading {
+            background: #B8B8B8;
+            pointer-events: none;
+        }
+        
+        .downloads-downloaded {
+            background: #10B981;
+        }
+        
+        @media (max-width: 767px) {
+            .downloads-teaser-inline-sm {
+                padding: 12px 16px;
+                gap: 6px;
+            }
+            
+            .downloads-content {
+                gap: 12px;
+            }
+            
+            .downloads-button {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .downloads-icon {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    </style>
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Component Library</div>
+            <h1 class="headline-h1 spacing-headline-body-h1">
+                Downloads Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Pixelgenaue responsive Downloads-Komponente basierend auf Figma Node 2612-12356. Teaser Inline SM mit Download-Button, exakter Typography und interaktiven States. Vollständig responsive und accessibility-optimiert.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Downloads Single Items -->
+            <section class="downloads-section-fade-in">
+                <div class="text-netinera-white overline-sm spacing-overline-h2">Figma Node 2612-12356</div>
+                <h2 class="text-netinera-white headline-h2 spacing-headline-body-h2">
+                    Downloads Teaser Inline SM
+                </h2>
+                <p class="mb-netinera-element-lg text-netinera-white body-lg">
+                    Download-Komponente mit Row Layout, exakter Typography und Download-Button. 40×40px Button mit #DD052B Background und Download-Icon.
+                </p>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Single Download Item -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Download Item - Ethikkodex</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            downloads-teaser-inline-sm
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="downloads-teaser-inline-sm downloads-card-interactive downloads-card-animate" style="animation-delay: 0.1s;">
+                            <div class="downloads-content">
+                                <div class="downloads-text-group">
+                                    <div class="downloads-title">NETINERA Ethikkodex</div>
+                                    <div class="downloads-meta">PDF, 455 kB</div>
+                                </div>
+                            </div>
+                            <button class="downloads-button" onclick="handleDownload(this, 'ethikkodex.pdf')">
+                                <svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7,10 12,15 17,10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="downloads-teaser-inline-sm downloads-card-interactive"&gt;
+  &lt;div class="downloads-content"&gt;
+    &lt;div class="downloads-text-group"&gt;
+      &lt;div class="downloads-title"&gt;NETINERA Ethikkodex&lt;/div&gt;
+      &lt;div class="downloads-meta"&gt;PDF, 455 kB&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="downloads-button" onclick="handleDownload(this, 'ethikkodex.pdf')"&gt;
+    &lt;svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24"&gt;
+      &lt;path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"&gt;&lt;/path&gt;
+      &lt;polyline points="7,10 12,15 17,10"&gt;&lt;/polyline&gt;
+      &lt;line x1="12" y1="15" x2="12" y2="3"&gt;&lt;/line&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Multiple Download Items -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="overline-xs spacing-overline-h6">Download Varianten</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Verschiedene Dokumenttypen und Größen
+                        </h4>
+                        
+                        <div class="downloads-list">
+                            <!-- Annual Report -->
+                            <div class="downloads-teaser-inline-sm downloads-card-interactive downloads-card-animate" style="animation-delay: 0.2s;">
+                                <div class="downloads-content">
+                                    <div class="downloads-text-group">
+                                        <div class="downloads-title">Geschäftsbericht 2023</div>
+                                        <div class="downloads-meta">PDF, 12,4 MB</div>
+                                    </div>
+                                </div>
+                                <button class="downloads-button" onclick="handleDownload(this, 'geschaeftsbericht-2023.pdf')">
+                                    <svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <!-- Sustainability Report -->
+                            <div class="downloads-teaser-inline-sm downloads-card-interactive downloads-card-animate" style="animation-delay: 0.3s;">
+                                <div class="downloads-content">
+                                    <div class="downloads-text-group">
+                                        <div class="downloads-title">Nachhaltigkeitsbericht</div>
+                                        <div class="downloads-meta">PDF, 8,7 MB</div>
+                                    </div>
+                                </div>
+                                <button class="downloads-button" onclick="handleDownload(this, 'nachhaltigkeitsbericht.pdf')">
+                                    <svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <!-- Technical Documentation -->
+                            <div class="downloads-teaser-inline-sm downloads-card-interactive downloads-card-animate" style="animation-delay: 0.4s;">
+                                <div class="downloads-content">
+                                    <div class="downloads-text-group">
+                                        <div class="downloads-title">Technische Spezifikationen</div>
+                                        <div class="downloads-meta">PDF, 2,1 MB</div>
+                                    </div>
+                                </div>
+                                <button class="downloads-button" onclick="handleDownload(this, 'tech-specs.pdf')">
+                                    <svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Downloads Grid Layout -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Grid Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Downloads Grid System
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Responsive Grid-Layout für mehrere Downloads mit automatischer Anpassung der Spaltenanzahl. Mobile: 1 Spalte, Tablet: 2 Spalten, Desktop: 3+ Spalten.
+                </p>
+                
+                <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                    <div class="overline-xs spacing-overline-h6">Downloads Grid</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Responsive Grid mit Auto-Fit
+                    </h4>
+                    
+                    <div class="downloads-grid">
+                        <!-- Grid Item 1 -->
+                        <div class="downloads-teaser-inline-sm downloads-card-interactive downloads-card-animate" style="animation-delay: 0.1s;">
+                            <div class="downloads-content">
+                                <div class="downloads-text-group">
+                                    <div class="downloads-title">Pressemitteilung Q4</div>
+                                    <div class="downloads-meta">PDF, 890 kB</div>
+                                </div>
+                            </div>
+                            <button class="downloads-button" onclick="handleDownload(this, 'press-q4.pdf')">
+                                <svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7,10 12,15 17,10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Grid Item 2 -->
+                        <div class="downloads-teaser-inline-sm downloads-card-interactive downloads-card-animate" style="animation-delay: 0.2s;">
+                            <div class="downloads-content">
+                                <div class="downloads-text-group">
+                                    <div class="downloads-title">Investoren Präsentation</div>
+                                    <div class="downloads-meta">PDF, 15,2 MB</div>
+                                </div>
+                            </div>
+                            <button class="downloads-button" onclick="handleDownload(this, 'investor-presentation.pdf')">
+                                <svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7,10 12,15 17,10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Grid Item 3 -->
+                        <div class="downloads-teaser-inline-sm downloads-card-interactive downloads-card-animate" style="animation-delay: 0.3s;">
+                            <div class="downloads-content">
+                                <div class="downloads-text-group">
+                                    <div class="downloads-title">Compliance Leitfaden</div>
+                                    <div class="downloads-meta">PDF, 1,8 MB</div>
+                                </div>
+                            </div>
+                            <button class="downloads-button" onclick="handleDownload(this, 'compliance.pdf')">
+                                <svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7,10 12,15 17,10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Grid Item 4 -->
+                        <div class="downloads-teaser-inline-sm downloads-card-interactive downloads-card-animate" style="animation-delay: 0.4s;">
+                            <div class="downloads-content">
+                                <div class="downloads-text-group">
+                                    <div class="downloads-title">Fahrzeug Katalog 2024</div>
+                                    <div class="downloads-meta">PDF, 24,7 MB</div>
+                                </div>
+                            </div>
+                            <button class="downloads-button" onclick="handleDownload(this, 'vehicle-catalog.pdf')">
+                                <svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7,10 12,15 17,10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Grid Item 5 -->
+                        <div class="downloads-teaser-inline-sm downloads-card-interactive downloads-card-animate" style="animation-delay: 0.5s;">
+                            <div class="downloads-content">
+                                <div class="downloads-text-group">
+                                    <div class="downloads-title">Sicherheitsrichtlinien</div>
+                                    <div class="downloads-meta">PDF, 3,4 MB</div>
+                                </div>
+                            </div>
+                            <button class="downloads-button" onclick="handleDownload(this, 'safety-guidelines.pdf')">
+                                <svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7,10 12,15 17,10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Grid Item 6 -->
+                        <div class="downloads-teaser-inline-sm downloads-card-interactive downloads-card-animate" style="animation-delay: 0.6s;">
+                            <div class="downloads-content">
+                                <div class="downloads-text-group">
+                                    <div class="downloads-title">Digitalisierungsstrategie</div>
+                                    <div class="downloads-meta">PDF, 6,1 MB</div>
+                                </div>
+                            </div>
+                            <button class="downloads-button" onclick="handleDownload(this, 'digital-strategy.pdf')">
+                                <svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7,10 12,15 17,10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Implementation</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Code Implementation & Spezifikationen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- CSS Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">CSS Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Figma Node 2612-12356 Spezifikationen */
+
+/* Downloads Teaser Inline SM (layout_DJXJ0A) */
+.downloads-teaser-inline-sm {
+  background: #FFFFFF; /* fill_CFXJD4 */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 8px;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+/* Content Layout (layout_G5PJ7T) */
+.downloads-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+/* Text Group (layout_BTRFTY) */
+.downloads-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+/* Download Button (layout_EGGO8S) */
+.downloads-button {
+  background: #DD052B; /* fill_W03M5S */
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}</code></pre>
+                    </div>
+                    
+                    <!-- Typography Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Typography Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Typography Specifications */
+
+/* Download Title (style_CE5O3I) */
+.downloads-title {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: #1E2939; /* fill_QN4YWH */
+}
+
+/* Download Meta (style_UX7I3E) */
+.downloads-meta {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7142857142857142em;
+  color: #1E2939; /* fill_QN4YWH */
+}
+
+/* Download Icon (stroke_4K4UVJ) */
+.download-icon-svg {
+  fill: none;
+  stroke: white;
+  stroke-width: 1.25px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}</code></pre>
+                    </div>
+                    
+                    <!-- JavaScript Implementation -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">JavaScript Implementation</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>// Enhanced Download Handler
+function handleDownload(button, filename) {
+  // Add downloading state
+  button.classList.add('downloads-downloading');
+  button.innerHTML = `
+    &lt;svg class="animate-spin downloads-icon" viewBox="0 0 24 24"&gt;
+      &lt;circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"&gt;&lt;/circle&gt;
+      &lt;path d="M4 12a8 8 0 0 1 8-8v4a4 4 0 0 0-4 4z" fill="currentColor"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+  `;
+  
+  // Simulate download delay
+  setTimeout(() => {
+    // Change to downloaded state
+    button.classList.remove('downloads-downloading');
+    button.classList.add('downloads-downloaded');
+    button.innerHTML = `
+      &lt;svg class="downloads-icon" viewBox="0 0 24 24"&gt;
+        &lt;path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2" fill="none"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    `;
+    
+    // Reset after 2 seconds
+    setTimeout(() => {
+      button.classList.remove('downloads-downloaded');
+      button.innerHTML = `
+        &lt;svg class="downloads-icon download-icon-svg" viewBox="0 0 24 24"&gt;
+          &lt;path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"&gt;&lt;/path&gt;
+          &lt;polyline points="7,10 12,15 17,10"&gt;&lt;/polyline&gt;
+          &lt;line x1="12" y1="15" x2="12" y2="3"&gt;&lt;/line&gt;
+        &lt;/svg&gt;
+      `;
+    }, 2000);
+  }, 1500);
+  
+  // Actual download logic would go here
+  console.log('Downloading:', filename);
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Downloads Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue Downloads-Komponente basierend auf Figma Node 2612-12356. Teaser Inline SM mit Row Layout, Download-Button und exakter Typography. Vollständig responsive mit Grid- und List-Varianten.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Layout: Row, 16×24px Padding, 8px Gap</span>
+                <span>|</span>
+                <span>Button: 40×40px, #DD052B, 12px Border Radius</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Downloads Component with Animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadCards = document.querySelectorAll('.downloads-card-interactive');
+            
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('downloads-card-animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            // Observe all download cards
+            downloadCards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Responsive indicator updates
+            function updateResponsiveIndicator() {
+                const indicator = document.querySelector('.responsive-indicator');
+                if (!indicator) return;
+                
+                const spans = indicator.querySelectorAll('span');
+                spans.forEach(span => span.style.display = 'none');
+                
+                if (window.innerWidth < 640) {
+                    spans[0].style.display = 'block';
+                } else if (window.innerWidth < 768) {
+                    spans[1].style.display = 'block';
+                } else if (window.innerWidth < 1024) {
+                    spans[2].style.display = 'block';
+                } else if (window.innerWidth < 1280) {
+                    spans[3].style.display = 'block';
+                } else {
+                    spans[4].style.display = 'block';
+                }
+            }
+            
+            window.addEventListener('resize', updateResponsiveIndicator);
+            updateResponsiveIndicator();
+        });
+        
+        // Enhanced Download Handler with Visual States
+        function handleDownload(button, filename) {
+            // Prevent multiple clicks
+            if (button.classList.contains('downloads-downloading')) {
+                return;
+            }
+            
+            // Add downloading state
+            button.classList.add('downloads-downloading');
+            const originalIcon = button.innerHTML;
+            
+            button.innerHTML = `
+                <svg class="animate-spin downloads-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="62.83" stroke-dashoffset="62.83">
+                        <animate attributeName="stroke-dashoffset" dur="2s" values="62.83;0" fill="freeze"/>
+                    </circle>
+                </svg>
+            `;
+            
+            // Simulate download progress
+            setTimeout(() => {
+                // Change to downloaded state
+                button.classList.remove('downloads-downloading');
+                button.classList.add('downloads-downloaded');
+                button.innerHTML = `
+                    <svg class="downloads-icon" viewBox="0 0 24 24" style="animation: checkmark 0.5s ease-in-out;">
+                        <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                `;
+                
+                // Add checkmark animation
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes checkmark {
+                        0% { transform: scale(0); }
+                        50% { transform: scale(1.2); }
+                        100% { transform: scale(1); }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    button.classList.remove('downloads-downloaded');
+                    button.innerHTML = originalIcon;
+                    document.head.removeChild(style);
+                }, 3000);
+            }, 2000);
+            
+            // Track download analytics (example)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'download', {
+                    event_category: 'File',
+                    event_label: filename,
+                    value: 1
+                });
+            }
+            
+            // Actual download implementation would go here
+            console.log(`Download started: ${filename}`);
+            
+            // Example: Create download link
+            // const link = document.createElement('a');
+            // link.href = `/downloads/${filename}`;
+            // link.download = filename;
+            // document.body.appendChild(link);
+            // link.click();
+            // document.body.removeChild(link);
+        }
+    </script>
+</section>

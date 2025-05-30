@@ -1,0 +1,64 @@
+/* === CARD */
+
+.card {
+  @apply relative;
+  @apply p-2.5 rounded lg:p-3;
+}
+
+.card-lg {
+  @apply rounded-lg;
+}
+
+/* === Outline */
+.card-outline {
+  @apply border border-neutral-50;
+}
+
+/* Service Card Gradient Overlay */
+.bg-gradient-service-card {
+  background: linear-gradient(
+    180deg,
+    rgb(0 104 94 / 0%) 0%,
+    rgb(0 104 94 / 0%) 50%,
+    rgb(0 104 94 / 100%) 100%
+  );
+}
+
+/* Variants */
+.card-info-primary {
+  .card-inner {
+    @apply bg-primary-50;
+  }
+
+  &::before {
+    @apply bg-primary-100;
+  }
+}
+
+.card-info-secondary {
+  .card-inner {
+    @apply bg-secondary-50;
+  }
+
+  &::before {
+    @apply bg-secondary-100;
+  }
+}
+
+.card-info-tertiary {
+  .card-inner {
+    @apply bg-teal-50;
+  }
+
+  &::before {
+    @apply bg-teal-100;
+  }
+}
+
+.card-info-outline {
+  .card-inner,
+  &::before {
+    @apply bg-white border border-neutral-50;
+  }
+}
+

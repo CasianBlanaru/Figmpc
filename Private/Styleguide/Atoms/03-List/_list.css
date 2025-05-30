@@ -1,0 +1,35 @@
+/* === LIST */
+/* stylelint-disable no-descending-specificity */
+
+ol,
+ul,
+.ul,
+.ol {
+  @apply mb-0;
+
+  li {
+    @apply mb-0.75;
+  }
+
+  &.txt-large li {
+    @apply mb-1;
+  }
+
+  &.txt-small li {
+    @apply mb-0.5;
+  }
+}
+
+/* === Ordered List */
+ol,
+.ol {
+    @apply list-decimal list-inside;
+}
+
+/* === Unordered List */
+ul,
+.ul {
+    @apply list-disc list-inside;
+}
+
+/* stylelint-enable no-descending-specificity */

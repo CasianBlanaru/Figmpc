@@ -1,0 +1,68 @@
+/* === HEADER */
+
+header .ce-headline-center {
+  @apply text-center;
+}
+
+
+.main-header {
+  @apply py-3 mb-5 lg:mb-10;
+  @apply border-b border-neutral-50;
+}
+
+.header-main-navigation {
+    /* Desktop scroll states - only apply on lg and above */
+    @media (width >= 1024px) {
+      &.scrolled {
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        z-index: 50;
+        width: min(1280px, calc(100vw - 40px));
+        height: 80px;
+        transform: translateX(-50%);
+
+        /* Add subtle background change on scroll */
+        .main-menu {
+          @apply rounded-2xl sm:rounded-xl;
+        }
+      }
+
+      &.hidden-up {
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        z-index: 50;
+        width: min(1340px, calc(100vw - 40px));
+        height: 80px;
+        transform: translateX(-50%) translateY(-120%);
+
+        .main-menu {
+          @apply rounded-2xl sm:rounded-xl;
+        }
+
+      }
+  }
+}
+
+@media (width >= 1024px) {
+.header-main-navigation {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 6;
+
+    @apply rounded-2xl sm:rounded-xl;
+  }
+
+  .main-page,
+  .hero-topic-wrapper,
+  .hero-primary,
+  .hero-simple {
+    position: relative;
+    padding-top: 105px;
+  }
+}
+
+

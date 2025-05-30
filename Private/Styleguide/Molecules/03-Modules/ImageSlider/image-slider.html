@@ -1,0 +1,219 @@
+<section class="bg-stone-100 p-8 font-sans">
+    
+    <div class="mx-auto max-w-6xl">
+        <!-- Component Header -->
+        <header class="mb-8">
+            <h1 class="mb-2 text-netinera-white headline-h2">Image Slider Component</h1>
+            <p class="text-netinera-white body-base">
+                Image Slider Component - Figma Nodes: 1780:35047 (Desktop), 1731:23716 (Mobile)
+            </p>
+        </header>
+
+        <!-- Responsive Image Slider -->
+        <section class="bg-white mb-8 p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">Responsive Image Slider</h2>
+            
+            <div class="space-y-6">
+                <!-- Standard Responsive Slider -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Auto-Responsive (Mobile: 328×185px → Desktop: 768×434px)</h3>
+                    <div class="flex justify-center">
+                        <div class="netinera-image-slider" id="slider1">
+                            <div class="netinera-image-slider-content">
+                                <div class="netinera-image-slider-navigation">
+                                    <button class="netinera-image-slider-nav-button" onclick="previousSlide('slider1')" aria-label="Vorheriges Bild">
+                                        <div class="netinera-image-slider-nav-button-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                    <div class="netinera-image-slider-image" 
+                                         style="background-image: url('https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    </div>
+                                    <button class="netinera-image-slider-nav-button" onclick="nextSlide('slider1')" aria-label="Nächstes Bild">
+                                        <div class="netinera-image-slider-nav-button-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="netinera-image-slider-pagination">
+                                <button class="netinera-image-slider-dot active" onclick="goToSlide('slider1', 0)" aria-label="Bild 1"></button>
+                                <button class="netinera-image-slider-dot" onclick="goToSlide('slider1', 1)" aria-label="Bild 2"></button>
+                                <button class="netinera-image-slider-dot" onclick="goToSlide('slider1', 2)" aria-label="Bild 3"></button>
+                                <button class="netinera-image-slider-dot" onclick="goToSlide('slider1', 3)" aria-label="Bild 4"></button>
+                            </div>
+                            <div class="netinera-image-slider-caption">
+                                Nachhaltige Bahntechnologie: Moderne Züge für umweltfreundliche Mobilität
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Variants -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Color Variants</h3>
+                    <div class="gap-8 grid grid-cols-1 lg:grid-cols-2">
+                        <!-- Dark Variant -->
+                        <div class="netinera-image-slider netinera-image-slider-dark" id="slider2">
+                            <div class="netinera-image-slider-content">
+                                <div class="netinera-image-slider-image" 
+                                     style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                </div>
+                            </div>
+                            <div class="netinera-image-slider-pagination">
+                                <button class="netinera-image-slider-dot active"></button>
+                                <button class="netinera-image-slider-dot"></button>
+                                <button class="netinera-image-slider-dot"></button>
+                            </div>
+                            <div class="netinera-image-slider-caption">Dark Variant</div>
+                        </div>
+
+                        <!-- Primary Variant -->
+                        <div class="netinera-image-slider netinera-image-slider-primary" id="slider3">
+                            <div class="netinera-image-slider-content">
+                                <div class="netinera-image-slider-image" 
+                                     style="background-image: url('https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                </div>
+                            </div>
+                            <div class="netinera-image-slider-pagination">
+                                <button class="netinera-image-slider-dot"></button>
+                                <button class="netinera-image-slider-dot active"></button>
+                                <button class="netinera-image-slider-dot"></button>
+                            </div>
+                            <div class="netinera-image-slider-caption">Primary Variant</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Border Pattern Variants -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Border Pattern Variants</h3>
+                    <div class="gap-8 grid grid-cols-1 lg:grid-cols-2">
+                        <!-- Secondary Pattern -->
+                        <div class="netinera-image-slider netinera-image-slider-pattern-secondary" id="slider4">
+                            <div class="netinera-image-slider-content">
+                                <div class="netinera-image-slider-image" 
+                                     style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                </div>
+                            </div>
+                            <div class="netinera-image-slider-pagination">
+                                <button class="netinera-image-slider-dot active"></button>
+                                <button class="netinera-image-slider-dot"></button>
+                            </div>
+                            <div class="netinera-image-slider-caption">Secondary Pattern</div>
+                        </div>
+
+                        <!-- Simple Pattern -->
+                        <div class="netinera-image-slider netinera-image-slider-pattern-simple" id="slider5">
+                            <div class="netinera-image-slider-content">
+                                <div class="netinera-image-slider-image" 
+                                     style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                </div>
+                            </div>
+                            <div class="netinera-image-slider-pagination">
+                                <button class="netinera-image-slider-dot"></button>
+                                <button class="netinera-image-slider-dot active"></button>
+                            </div>
+                            <div class="netinera-image-slider-caption">Simple Pattern</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Example -->
+        <section class="bg-white p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">HTML Code</h2>
+            <pre class="bg-gray-100 p-4 rounded overflow-x-auto text-sm"><code>&lt;!-- Basic Image Slider --&gt;
+&lt;div class="netinera-image-slider"&gt;
+    &lt;div class="netinera-image-slider-content"&gt;
+        &lt;div class="netinera-image-slider-navigation"&gt;
+            &lt;button class="netinera-image-slider-nav-button"&gt;...&lt;/button&gt;
+            &lt;div class="netinera-image-slider-image" style="background-image: url('...');"&gt;&lt;/div&gt;
+            &lt;button class="netinera-image-slider-nav-button"&gt;...&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="netinera-image-slider-pagination"&gt;
+        &lt;button class="netinera-image-slider-dot active"&gt;&lt;/button&gt;
+        &lt;button class="netinera-image-slider-dot"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="netinera-image-slider-caption"&gt;Caption text&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Color Variants --&gt;
+&lt;div class="netinera-image-slider netinera-image-slider-dark"&gt;...&lt;/div&gt;
+&lt;div class="netinera-image-slider netinera-image-slider-primary"&gt;...&lt;/div&gt;
+
+&lt;!-- Border Pattern Variants --&gt;
+&lt;div class="netinera-image-slider netinera-image-slider-pattern-secondary"&gt;...&lt;/div&gt;
+&lt;div class="netinera-image-slider netinera-image-slider-pattern-simple"&gt;...&lt;/div&gt;</code></pre>
+        </section>
+    </div>
+
+    <!-- JavaScript for slider functionality -->
+    <script>
+        // Simple slider data
+        const sliderData = {
+            'slider1': {
+                images: [
+                    'https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80'
+                ],
+                currentIndex: 0
+            }
+        };
+
+        function updateSlider(sliderId, index) {
+            const slider = document.getElementById(sliderId);
+            if (!slider || !sliderData[sliderId]) return;
+
+            const data = sliderData[sliderId];
+            const image = slider.querySelector('.netinera-image-slider-image');
+            const dots = slider.querySelectorAll('.netinera-image-slider-dot');
+
+            // Update image
+            if (image && data.images[index]) {
+                image.style.backgroundImage = `url('${data.images[index]}')`;
+            }
+
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+
+            data.currentIndex = index;
+        }
+
+        function nextSlide(sliderId) {
+            const data = sliderData[sliderId];
+            if (!data) return;
+            const nextIndex = (data.currentIndex + 1) % data.images.length;
+            updateSlider(sliderId, nextIndex);
+        }
+
+        function previousSlide(sliderId) {
+            const data = sliderData[sliderId];
+            if (!data) return;
+            const prevIndex = (data.currentIndex - 1 + data.images.length) % data.images.length;
+            updateSlider(sliderId, prevIndex);
+        }
+
+        function goToSlide(sliderId, index) {
+            updateSlider(sliderId, index);
+        }
+
+        // Auto-play for demo
+        setInterval(() => {
+            nextSlide('slider1');
+        }, 5000);
+
+        console.log('Image Slider Component Showcase loaded!');
+        console.log('Components: Responsive, Color Variants, Border Patterns, Navigation, Pagination');
+    </script>
+</section>

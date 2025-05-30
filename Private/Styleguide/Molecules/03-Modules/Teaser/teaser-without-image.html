@@ -1,0 +1,660 @@
+
+    <style>
+        /* Teaser Component Custom Styles */
+        .teaser-xl {
+            width: 968px;
+            height: 426px;
+            border-radius: 64px 0px 64px 0px;
+            background: white;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        
+        .teaser-xl-image {
+            width: 568px;
+            height: 426px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 64px 0px 0px 0px;
+        }
+        
+        .teaser-xl-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 32px;
+            gap: 36px;
+        }
+        
+        .teaser-xl-text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .teaser-xl-main-text {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        
+        .teaser-sm {
+            width: 328px;
+            border-radius: 36px 0px 36px 0px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        
+        .teaser-sm-image {
+            width: 328px;
+            height: 246px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 36px 0px 0px 0px;
+        }
+        
+        .teaser-sm-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            padding: 24px;
+        }
+        
+        .teaser-sm-text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .teaser-sm-main-text {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .teaser-button {
+            background: var(--color-netinera-secondary);
+            color: white;
+            border-radius: 12px;
+            height: 52px;
+            padding: 24px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-family-display);
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.4285714285714286;
+            letter-spacing: 5.714285799435207%;
+            text-transform: uppercase;
+            transition: var(--transition-normal);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .teaser-button:hover {
+            background: #B91C1C;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-card-hover);
+        }
+        
+        .teaser-button-icon {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Demo Background Images */
+        .demo-landscape-1 {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><linearGradient id="landscape1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%2300685E;stop-opacity:1" /><stop offset="50%" style="stop-color:%23DD052B;stop-opacity:1" /><stop offset="100%" style="stop-color:%231E2939;stop-opacity:1" /></linearGradient></defs><rect width="800" height="600" fill="url(%23landscape1)"/><circle cx="200" cy="200" r="100" fill="rgba(255,255,255,0.15)"/><rect x="500" y="300" width="200" height="200" fill="rgba(255,255,255,0.1)" rx="40"/><polygon points="100,400 300,350 250,550 50,500" fill="rgba(255,255,255,0.08)"/></svg>');
+        }
+        
+        .demo-landscape-2 {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><radialGradient id="landscape2" cx="50%" cy="50%" r="70%"><stop offset="0%" style="stop-color:%23DD052B;stop-opacity:1" /><stop offset="50%" style="stop-color:%2300685E;stop-opacity:1" /><stop offset="100%" style="stop-color:%23003D39;stop-opacity:1" /></radialGradient></defs><rect width="800" height="600" fill="url(%23landscape2)"/><circle cx="600" cy="150" r="80" fill="rgba(255,255,255,0.12)"/><rect x="100" y="100" width="150" height="400" fill="rgba(255,255,255,0.06)" rx="20"/></svg>');
+        }
+        
+        .demo-landscape-3 {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><linearGradient id="landscape3" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%231E2939;stop-opacity:1" /><stop offset="30%" style="stop-color:%2300685E;stop-opacity:1" /><stop offset="70%" style="stop-color:%23DD052B;stop-opacity:1" /><stop offset="100%" style="stop-color:%23003D39;stop-opacity:1" /></linearGradient></defs><rect width="800" height="600" fill="url(%23landscape3)"/><ellipse cx="400" cy="300" rx="200" ry="100" fill="rgba(255,255,255,0.08)"/><rect x="550" y="450" width="180" height="120" fill="rgba(255,255,255,0.06)" rx="15"/></svg>');
+        }
+        
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Typography specific for Teaser */
+        .teaser-xl-overline {
+            font-family: var(--font-family-display);
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.1428571428571428;
+            letter-spacing: 11.428571598870414%;
+            text-transform: uppercase;
+            color: var(--color-netinera-dark);
+        }
+        
+        .teaser-xl-headline {
+            font-family: var(--font-family-display);
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: var(--color-netinera-dark);
+        }
+        
+        .teaser-xl-subtitle {
+            font-family: var(--font-family-sans);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.6666666666666667;
+            color: var(--color-netinera-dark);
+        }
+        
+        .teaser-sm-overline {
+            font-family: var(--font-family-display);
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 1.1666666666666667;
+            letter-spacing: 13.333333532015482%;
+            text-transform: uppercase;
+            color: var(--color-netinera-dark);
+        }
+        
+        .teaser-sm-headline {
+            font-family: var(--font-family-display);
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 1.2727272727272727;
+            text-transform: uppercase;
+            color: var(--color-netinera-dark);
+        }
+        
+        .teaser-sm-subtitle {
+            font-family: var(--font-family-sans);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--color-netinera-dark);
+        }
+        
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        @media (min-width: 1200px) {
+            .grid-demo {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="md:hidden block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden lg:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h1">Komponente</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                Teaser Komponente
+            </h1>
+            <p class="mx-auto max-w-netinera-content text-netinera-white body-lg">
+                Pixel-perfekte Implementierung der Teaser Komponente mit zwei Größenvarianten (XL und SM) für Desktop und Mobile basierend auf Figma Node 1799-37967.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Desktop Teaser (XL) -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Desktop</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Teaser XL (968×426px)
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Primary XL Teaser -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Horizontal Layout XL</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Bild + Content nebeneinander (968×426px)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center">
+                            <div class="teaser-xl">
+                                <div class="teaser-xl-image demo-landscape-1"></div>
+                                <div class="teaser-xl-content">
+                                    <div class="teaser-xl-text-group">
+                                        <div class="teaser-xl-main-text">
+                                            <div class="teaser-xl-overline">Innovation</div>
+                                            <h3 class="teaser-xl-headline">Nachhaltige Mobilität für die Zukunft</h3>
+                                        </div>
+                                        <p class="teaser-xl-subtitle">
+                                            Moderne Verkehrslösungen für eine umweltfreundliche und effiziente Mobilität. Erfahren Sie mehr über unsere innovativen Projekte.
+                                        </p>
+                                    </div>
+                                    <div class="flex">
+                                        <button class="teaser-button">
+                                            Download
+                                            <div class="teaser-button-icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 11V13C2 13.5523 2.44772 14 3 14H13C13.5523 14 14 13.5523 14 13V11" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 2V10" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M5 7L8 10L11 7" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-xl"&gt;
+  &lt;div class="teaser-xl-image" style="background-image: url('image.jpg');"&gt;&lt;/div&gt;
+  &lt;div class="teaser-xl-content"&gt;
+    &lt;div class="teaser-xl-text-group"&gt;
+      &lt;div class="teaser-xl-main-text"&gt;
+        &lt;div class="teaser-xl-overline"&gt;Innovation&lt;/div&gt;
+        &lt;h3 class="teaser-xl-headline"&gt;Nachhaltige Mobilität für die Zukunft&lt;/h3&gt;
+      &lt;/div&gt;
+      &lt;p class="teaser-xl-subtitle"&gt;
+        Moderne Verkehrslösungen für eine umweltfreundliche und effiziente Mobilität...
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="flex"&gt;
+      &lt;button class="teaser-button"&gt;Download&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Secondary XL Teaser -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Variant 2 - Service</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Alternative Content-Variante
+                        </h4>
+                        
+                        <div class="flex justify-center">
+                            <div class="teaser-xl">
+                                <div class="teaser-xl-image demo-landscape-2"></div>
+                                <div class="teaser-xl-content">
+                                    <div class="teaser-xl-text-group">
+                                        <div class="teaser-xl-main-text">
+                                            <div class="teaser-xl-overline">Service</div>
+                                            <h3 class="teaser-xl-headline">Digitale Verkehrslösungen</h3>
+                                        </div>
+                                        <p class="teaser-xl-subtitle">
+                                            Intelligente Systeme für optimierte Verkehrsflüsse und bessere Fahrgast-Informationen in Echtzeit.
+                                        </p>
+                                    </div>
+                                    <div class="flex">
+                                        <button class="teaser-button">
+                                            Mehr erfahren
+                                            <div class="teaser-button-icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 2V14" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M13 7L8 2L3 7" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile Teaser (SM) -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Mobile</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Teaser SM (328px width)
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Primary SM Teaser -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Vertikales Layout SM</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Bild oben, Content unten (328px breit)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center">
+                            <div class="teaser-sm">
+                                <div class="teaser-sm-image demo-landscape-1"></div>
+                                <div class="teaser-sm-content">
+                                    <div class="teaser-sm-text-group">
+                                        <div class="teaser-sm-main-text">
+                                            <div class="teaser-sm-overline">Innovation</div>
+                                            <h5 class="teaser-sm-headline">Nachhaltige Mobilität</h5>
+                                        </div>
+                                        <p class="teaser-sm-subtitle">
+                                            Moderne Verkehrslösungen für eine umweltfreundliche Mobilität.
+                                        </p>
+                                    </div>
+                                    <div class="flex">
+                                        <button class="teaser-button" style="width: 100%;">
+                                            Download
+                                            <div class="teaser-button-icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 11V13C2 13.5523 2.44772 14 3 14H13C13.5523 14 14 13.5523 14 13V11" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 2V10" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M5 7L8 10L11 7" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-sm"&gt;
+  &lt;div class="teaser-sm-image" style="background-image: url('image.jpg');"&gt;&lt;/div&gt;
+  &lt;div class="teaser-sm-content"&gt;
+    &lt;div class="teaser-sm-text-group"&gt;
+      &lt;div class="teaser-sm-main-text"&gt;
+        &lt;div class="teaser-sm-overline"&gt;Innovation&lt;/div&gt;
+        &lt;h5 class="teaser-sm-headline"&gt;Nachhaltige Mobilität&lt;/h5&gt;
+      &lt;/div&gt;
+      &lt;p class="teaser-sm-subtitle"&gt;Moderne Verkehrslösungen...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="teaser-button" style="width: 100%;"&gt;Download&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Secondary SM Teaser -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Variant 2 - Service</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Alternative Mobile-Variante
+                        </h4>
+                        
+                        <div class="flex justify-center">
+                            <div class="teaser-sm">
+                                <div class="teaser-sm-image demo-landscape-3"></div>
+                                <div class="teaser-sm-content">
+                                    <div class="teaser-sm-text-group">
+                                        <div class="teaser-sm-main-text">
+                                            <div class="teaser-sm-overline">Zukunft</div>
+                                            <h5 class="teaser-sm-headline">Intelligente Systeme</h5>
+                                        </div>
+                                        <p class="teaser-sm-subtitle">
+                                            Digitale Infrastrukturen für die Mobilität von morgen.
+                                        </p>
+                                    </div>
+                                    <div class="flex">
+                                        <button class="teaser-button" style="width: 100%;">
+                                            Entdecken
+                                            <div class="teaser-button-icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 8H15" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M9 2L15 8L9 14" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Responsive Layout Demo -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Layout Examples</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Teaser in Context
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Grid Layout Example -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Grid Layout</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Responsive Teaser Grid (XL Desktop / SM Mobile)
+                        </h4>
+                        
+                        <div class="grid-demo">
+                            <div class="flex justify-center">
+                                <div class="teaser-sm">
+                                    <div class="teaser-sm-image demo-landscape-1"></div>
+                                    <div class="teaser-sm-content">
+                                        <div class="teaser-sm-text-group">
+                                            <div class="teaser-sm-main-text">
+                                                <div class="teaser-sm-overline">Projekt</div>
+                                                <h5 class="teaser-sm-headline">Smart City Initiative</h5>
+                                            </div>
+                                            <p class="teaser-sm-subtitle">
+                                                Vernetzte Infrastrukturen für intelligente Städte.
+                                            </p>
+                                        </div>
+                                        <button class="teaser-button" style="width: 100%;">Mehr erfahren</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <div class="teaser-sm">
+                                    <div class="teaser-sm-image demo-landscape-2"></div>
+                                    <div class="teaser-sm-content">
+                                        <div class="teaser-sm-text-group">
+                                            <div class="teaser-sm-main-text">
+                                                <div class="teaser-sm-overline">Innovation</div>
+                                                <h5 class="teaser-sm-headline">Autonome Fahrzeuge</h5>
+                                            </div>
+                                            <p class="teaser-sm-subtitle">
+                                                Die Zukunft des selbstfahrenden Verkehrs.
+                                            </p>
+                                        </div>
+                                        <button class="teaser-button" style="width: 100%;">Download</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Specifications -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS Spezifikationen</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Teaser Component Utilities
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">CSS Classes & Dimensions</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Exakte Figma-Spezifikationen
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Teaser XL (Desktop)</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Teaser XL Container */
+.teaser-xl {
+  width: 968px;
+  height: 426px;
+  border-radius: 64px 0px 64px 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Teaser XL Image */
+.teaser-xl-image {
+  width: 568px;
+  height: 426px;
+  border-radius: 64px 0px 0px 0px;
+}
+
+/* Teaser XL Content */
+.teaser-xl-content {
+  padding: 32px;
+  gap: 36px;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Teaser SM (Mobile)</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Teaser SM Container */
+.teaser-sm {
+  width: 328px;
+  border-radius: 36px 0px 36px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Teaser SM Image */
+.teaser-sm-image {
+  width: 328px;
+  height: 246px;
+  border-radius: 36px 0px 0px 0px;
+}
+
+/* Teaser SM Content */
+.teaser-sm-content {
+  padding: 24px;
+  gap: 32px;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Typography XL</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* XL Overline */
+.teaser-xl-overline {
+  font: 600 14px/1.14 "Titillium Web";
+  letter-spacing: 11.43%;
+  text-transform: uppercase;
+}
+
+/* XL Headline */
+.teaser-xl-headline {
+  font: 400 30px/1.2 "Titillium Web";
+  text-transform: uppercase;
+}
+
+/* XL Subtitle */
+.teaser-xl-subtitle {
+  font: 400 18px/1.67 "Roboto";
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Typography SM</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* SM Overline */
+.teaser-sm-overline {
+  font: 600 12px/1.17 "Titillium Web";
+  letter-spacing: 13.33%;
+  text-transform: uppercase;
+}
+
+/* SM Headline */
+.teaser-sm-headline {
+  font: 400 22px/1.27 "Titillium Web";
+  text-transform: uppercase;
+}
+
+/* SM Subtitle */
+.teaser-sm-subtitle {
+  font: 400 16px/1.75 "Roboto";
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Button Component</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Teaser Button */
+.teaser-button {
+  background: #DD052B;
+  color: white;
+  border-radius: 12px;
+  height: 52px;
+  padding: 24px 30px;
+  font: 600 14px/1.43 "Titillium Web";
+  letter-spacing: 5.71%;
+  text-transform: uppercase;
+  gap: 8px;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Teaser Komponente
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Vollständige Implementierung der Teaser Komponente mit XL und SM Varianten, responsivem Design und pixel-perfekten Spezifikationen basierend auf den exakten Figma-Werten.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Figma Node: 1799-37967</span>
+                <span>|</span>
+                <span>File: Zr15Lh1nQkYgJGcZ0nSnia</span>
+            </div>
+        </div>
+    </footer>
+</section>

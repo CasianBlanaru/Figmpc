@@ -1,0 +1,1033 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Section News specific styles */
+        .section-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content-animate {
+            animation: contentSlideIn 0.6s ease-out forwards;
+        }
+        
+        @keyframes contentSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* Section News Layout (Figma Node 1829-8450) */
+        .section-news {
+            background: #F5F5F4; /* fill_5E4332 */
+            border-radius: 96px 0px 96px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: stretch;
+            gap: 56px; /* layout_FR7LTE */
+            padding: 80px 56px;
+            width: 100%;
+        }
+        
+        /* Section Header LG Center Styles */
+        .section-header-lg-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: stretch;
+            gap: 24px; /* layout_IM8M6Y */
+            width: 100%;
+        }
+        
+        .section-main-title {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 1.2em; /* style_4TQAJ9 */
+            letter-spacing: 1.0000000149011612%;
+            text-transform: uppercase;
+            text-align: center;
+            color: #1E2939; /* fill_IFTTRJ */
+            width: fit-content;
+        }
+        
+        /* Content Layout Styles */
+        .news-content {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            gap: 44px; /* layout_PWQE9B */
+            width: 100%;
+        }
+        
+        .news-layout-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch;
+            align-items: stretch;
+            align-self: stretch;
+            gap: 32px; /* layout_244XBY */
+            width: 100%;
+        }
+        
+        /* News Column Styles */
+        .news-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px; /* layout_JJYMC0 */
+            width: 100%;
+        }
+        
+        /* Section Header MD Center Styles */
+        .section-header-md-center {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            width: 100%; /* layout_TY121H */
+        }
+        
+        .section-sub-title {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 1.2em; /* style_GU89TM */
+            text-transform: uppercase;
+            text-align: center;
+            color: #1E2939; /* fill_IFTTRJ */
+            width: 100%;
+        }
+        
+        /* News List Layout Group */
+        .news-list-layout-group {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            gap: 36px; /* layout_LOMJWF */
+            width: 100%;
+        }
+        
+        .news-items-layout-group {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            gap: 24px; /* layout_ANXEJG */
+            width: 100%;
+        }
+        
+        /* Press Release Styles */
+        .press-release-xl {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            gap: 12px; /* layout_VGQU5F */
+        }
+        
+        .press-release-text-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            align-self: stretch;
+            gap: 10px; /* layout_KQMRC5 */
+        }
+        
+        .press-release-date,
+        .press-release-category {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.7142857142857142em; /* style_VKPJLH */
+            color: #1E2939; /* fill_IFTTRJ */
+            width: fit-content;
+        }
+        
+        .press-release-line {
+            width: 1px;
+            height: 20px;
+            background: #1E2939; /* stroke_G38LVJ */
+        }
+        
+        .press-release-headline {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 1.4545454545454546em; /* style_SI37YT */
+            color: #1E2939; /* fill_IFTTRJ */
+            width: 100%;
+        }
+        
+        /* Divider Styles */
+        .news-divider {
+            width: 100%;
+            height: 1px;
+            background: #E7E5E4; /* stroke_S4CGQZ */
+        }
+        
+        /* Button Styles */
+        .news-buttons-group {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            gap: 10px; /* layout_XUGAQB */
+        }
+        
+        .news-primary-button {
+            background: #DD052B; /* fill_PSGRKE */
+            border-radius: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            padding: 24px;
+            height: 52px; /* layout_ITBP28 */
+            width: fit-content;
+            align-self: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+        }
+        
+        .news-primary-button:hover {
+            background: #C2041F;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(221, 5, 43, 0.3);
+        }
+        
+        .news-button-text {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.4285714285714286em; /* style_AFDCD7 */
+            letter-spacing: 5.714285799435207%;
+            text-transform: uppercase;
+            color: #FFFFFF; /* fill_R70IAY */
+        }
+        
+        .news-button-icon {
+            color: white;
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* Downloads Styles */
+        .downloads-layout-group {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            gap: 12px; /* layout_VGQU5F */
+            width: 100%;
+        }
+        
+        .downloads-teaser-inline-sm {
+            background: #FFFFFF; /* fill_R70IAY */
+            border-radius: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch;
+            align-items: stretch;
+            align-self: stretch;
+            gap: 8px;
+            padding: 16px 24px; /* layout_TG3EGG */
+            width: 100%;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .downloads-teaser-inline-sm:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(30, 41, 57, 0.1);
+        }
+        
+        .downloads-content-frame {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px; /* layout_LU793Z */
+            width: 100%;
+        }
+        
+        .downloads-text-frame {
+            display: flex;
+            flex-direction: column;
+            gap: 2px; /* layout_D7CRUN */
+            width: 100%;
+        }
+        
+        .downloads-text-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: stretch;
+            width: 100%; /* layout_UYC6TV */
+        }
+        
+        .downloads-title {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5em; /* style_FCS1BZ */
+            color: #1E2939; /* fill_IFTTRJ */
+            width: 100%;
+        }
+        
+        .downloads-meta {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.7142857142857142em; /* style_VKPJLH */
+            color: #1E2939; /* fill_IFTTRJ */
+            width: 100%;
+        }
+        
+        .downloads-button-icon {
+            background: #DD052B; /* fill_PSGRKE */
+            border-radius: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px; /* layout_U31QPM */
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .downloads-button-icon:hover {
+            background: #C2041F;
+            transform: scale(1.1);
+        }
+        
+        .downloads-icon {
+            width: 20px;
+            height: 20px;
+            stroke: white; /* stroke_QY5DM4 */
+            stroke-width: 1.25px;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1279px) {
+            .section-news {
+                padding: 64px 32px;
+                gap: 48px;
+                border-radius: 64px 0px 64px 0px;
+            }
+            
+            .section-main-title {
+                font-size: 36px;
+            }
+            
+            .section-sub-title {
+                font-size: 26px;
+            }
+            
+            .news-layout-row {
+                gap: 24px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .section-news {
+                padding: 48px 16px;
+                gap: 32px;
+                border-radius: 48px 0px 48px 0px;
+            }
+            
+            .section-main-title {
+                font-size: 28px;
+            }
+            
+            .section-sub-title {
+                font-size: 22px;
+            }
+            
+            .news-layout-row {
+                flex-direction: column;
+                gap: 32px;
+            }
+            
+            .news-column {
+                gap: 32px;
+            }
+            
+            .press-release-headline {
+                font-size: 18px;
+                line-height: 1.5em;
+            }
+            
+            .downloads-teaser-inline-sm {
+                padding: 12px 16px;
+            }
+        }
+        
+        @media (max-width: 479px) {
+            .section-news {
+                padding: 32px 16px;
+                gap: 24px;
+                border-radius: 32px 0px 32px 0px;
+            }
+            
+            .section-main-title {
+                font-size: 24px;
+                line-height: 1.3em;
+            }
+            
+            .section-sub-title {
+                font-size: 20px;
+            }
+            
+            .press-release-text-group {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            
+            .press-release-line {
+                display: none;
+            }
+            
+            .press-release-date::after {
+                content: " • ";
+                color: #1E2939;
+            }
+            
+            .downloads-content-frame {
+                gap: 12px;
+            }
+            
+            .downloads-button-icon {
+                width: 36px;
+                height: 36px;
+            }
+        }
+        
+        /* Interactive animations */
+        .press-release-interactive {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            padding: 12px;
+            margin: -12px;
+            border-radius: 8px;
+        }
+        
+        .press-release-interactive:hover {
+            background: rgba(245, 245, 244, 0.5);
+            transform: translateX(8px);
+        }
+        
+        /* Loading states */
+        .loading-state {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Component Library</div>
+            <h1 class="headline-h1 spacing-headline-body-h1">
+                Section News
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Pixelgenaue responsive Section-News-Komponente basierend auf Figma Node 1829-8450. Kombiniert News-List und Downloads-Komponenten in einem zweispaltigen Layout mit "AKTUELL" Header.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Complete Section Implementation -->
+            <section class="section-fade-in">
+                <div class="overline-sm spacing-overline-h2">Figma Node 1829-8450</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Section News
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Komplette Section mit "AKTUELL" Header und zweispaltigem Layout für Pressemitteilungen und Downloads. Exakte Umsetzung der Figma-Spezifikationen mit existierenden Komponenten.
+                </p>
+                
+                <div class="overflow-hidden">
+                    <!-- Section Implementation -->
+                    <div class="section-news">
+                        
+                        <!-- Section Header LG Center XL -->
+                        <div class="section-header-lg-center">
+                            <h2 class="section-main-title">Aktuell</h2>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="news-content">
+                            <!-- Layout Row -->
+                            <div class="news-layout-row">
+                                
+                                <!-- Pressemitteilungen Column -->
+                                <div class="content-animate news-column" style="animation-delay: 0.1s;">
+                                    
+                                    <!-- Section Header MD Center XL -->
+                                    <div class="section-header-md-center">
+                                        <h3 class="section-sub-title">Pressemitteilungen</h3>
+                                    </div>
+                                    
+                                    <!-- News List Layout Group -->
+                                    <div class="news-list-layout-group">
+                                        
+                                        <!-- News Items Group -->
+                                        <div class="news-items-layout-group">
+                                            
+                                            <!-- Press Release XL 1 -->
+                                            <div class="press-release-xl press-release-interactive">
+                                                <div class="press-release-text-group">
+                                                    <div class="press-release-date">24.5.2025</div>
+                                                    <div class="press-release-line"></div>
+                                                    <div class="press-release-category">metronom</div>
+                                                </div>
+                                                <div class="press-release-headline">metronom erhält Zuschlag für Verkehrsvertrag ENNO II</div>
+                                            </div>
+                                            
+                                            <!-- Divider -->
+                                            <div class="news-divider"></div>
+                                            
+                                            <!-- Press Release XL 2 -->
+                                            <div class="press-release-xl press-release-interactive">
+                                                <div class="press-release-text-group">
+                                                    <div class="press-release-date">23.5.2025</div>
+                                                    <div class="press-release-line"></div>
+                                                    <div class="press-release-category">Netinera Deutschland</div>
+                                                </div>
+                                                <div class="press-release-headline">NETINERA-Tochter ODEG erhält Zuschlag für Verkehrsvertrag in Westmecklenburg bis 2040</div>
+                                            </div>
+                                            
+                                            <!-- Divider -->
+                                            <div class="news-divider"></div>
+                                            
+                                            <!-- Press Release XL 3 -->
+                                            <div class="press-release-xl press-release-interactive">
+                                                <div class="press-release-text-group">
+                                                    <div class="press-release-date">21.5.2025</div>
+                                                    <div class="press-release-line"></div>
+                                                    <div class="press-release-category">Netinera Deutschland</div>
+                                                </div>
+                                                <div class="press-release-headline">NETINERA-Tochter ODEG erhält Zuschlag für Verkehrsvertrag in Westmecklenburg bis 2040</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Buttons Group -->
+                                        <div class="news-buttons-group">
+                                            <a href="#" class="news-primary-button">
+                                                <svg class="news-button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                                                    <path d="M5 12h14"></path>
+                                                    <path d="M12 5l7 7-7 7"></path>
+                                                </svg>
+                                                <span class="news-button-text">Zur übersicht</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Downloads Column -->
+                                <div class="content-animate news-column" style="animation-delay: 0.2s;">
+                                    
+                                    <!-- Section Header MD Center XL -->
+                                    <div class="section-header-md-center">
+                                        <h3 class="section-sub-title">Downloads</h3>
+                                    </div>
+                                    
+                                    <!-- Downloads Layout Group -->
+                                    <div class="downloads-layout-group">
+                                        
+                                        <!-- Teaser Inline SM 1 -->
+                                        <div class="downloads-teaser-inline-sm">
+                                            <div class="downloads-content-frame">
+                                                <div class="downloads-text-frame">
+                                                    <div class="downloads-text-content">
+                                                        <div class="downloads-title">NETINERA Ethikkodex</div>
+                                                        <div class="downloads-meta">PDF, 455 kB</div>
+                                                    </div>
+                                                </div>
+                                                <div class="downloads-button-icon">
+                                                    <svg class="downloads-icon" viewBox="0 0 24 24">
+                                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Teaser Inline SM 2 -->
+                                        <div class="downloads-teaser-inline-sm">
+                                            <div class="downloads-content-frame">
+                                                <div class="downloads-text-frame">
+                                                    <div class="downloads-text-content">
+                                                        <div class="downloads-title">NETINERA Ethikkodex</div>
+                                                        <div class="downloads-meta">PDF, 455 kB</div>
+                                                    </div>
+                                                </div>
+                                                <div class="downloads-button-icon">
+                                                    <svg class="downloads-icon" viewBox="0 0 24 24">
+                                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Code Example -->
+                    <div class="p-netinera-element-lg">
+                        <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="section-news"&gt;
+  &lt;!-- Section Header LG Center --&gt;
+  &lt;div class="section-header-lg-center"&gt;
+    &lt;h2 class="section-main-title"&gt;Aktuell&lt;/h2&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Content --&gt;
+  &lt;div class="news-content"&gt;
+    &lt;div class="news-layout-row"&gt;
+      
+      &lt;!-- Pressemitteilungen Column --&gt;
+      &lt;div class="news-column"&gt;
+        &lt;div class="section-header-md-center"&gt;
+          &lt;h3 class="section-sub-title"&gt;Pressemitteilungen&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class="news-list-layout-group"&gt;
+          &lt;div class="news-items-layout-group"&gt;
+            &lt;div class="press-release-xl"&gt;
+              &lt;div class="press-release-text-group"&gt;
+                &lt;div class="press-release-date"&gt;24.5.2025&lt;/div&gt;
+                &lt;div class="press-release-line"&gt;&lt;/div&gt;
+                &lt;div class="press-release-category"&gt;metronom&lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class="press-release-headline"&gt;Headlines...&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="news-buttons-group"&gt;
+            &lt;a href="#" class="news-primary-button"&gt;
+              &lt;span class="news-button-text"&gt;Zur übersicht&lt;/span&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;!-- Downloads Column --&gt;
+      &lt;div class="news-column"&gt;
+        &lt;div class="section-header-md-center"&gt;
+          &lt;h3 class="section-sub-title"&gt;Downloads&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class="downloads-layout-group"&gt;
+          &lt;div class="downloads-teaser-inline-sm"&gt;
+            &lt;div class="downloads-content-frame"&gt;
+              &lt;div class="downloads-text-frame"&gt;
+                &lt;div class="downloads-title"&gt;NETINERA Ethikkodex&lt;/div&gt;
+                &lt;div class="downloads-meta"&gt;PDF, 455 kB&lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class="downloads-button-icon"&gt;
+                &lt;svg class="downloads-icon" viewBox="0 0 24 24"&gt;
+                  &lt;path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"&gt;&lt;/path&gt;
+                  &lt;polyline points="7,10 12,15 17,10"&gt;&lt;/polyline&gt;
+                  &lt;line x1="12" y1="15" x2="12" y2="3"&gt;&lt;/line&gt;
+                &lt;/svg&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Implementation</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Code Implementation & Spezifikationen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- CSS Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">CSS Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Figma Node 1829-8450 Spezifikationen */
+
+/* Section News Layout (layout_FR7LTE) */
+.section-news {
+  background: #F5F5F4; /* fill_5E4332 */
+  border-radius: 96px 0px 96px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 56px;
+  padding: 80px 56px;
+  width: 100%;
+}
+
+/* Section Header LG Center (layout_IM8M6Y) */
+.section-header-lg-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Main Title (style_4TQAJ9) */
+.section-main-title {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.2em;
+  letter-spacing: 1.0000000149011612%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1E2939; /* fill_IFTTRJ */
+}
+
+/* Content Layout (layout_PWQE9B) */
+.news-content {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 44px;
+  width: 100%;
+}
+
+/* Row Layout (layout_244XBY) */
+.news-layout-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  align-self: stretch;
+  gap: 32px;
+  width: 100%;
+}</code></pre>
+                    </div>
+                    
+                    <!-- News Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">News Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* News Column Components */
+
+/* News Column (layout_JJYMC0) */
+.news-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Section Header MD Center (layout_TY121H) */
+.section-header-md-center {
+  background: #FFFFFF; /* fill_R70IAY */
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  width: 100%;
+}
+
+/* Sub Title (style_GU89TM) */
+.section-sub-title {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1E2939; /* fill_IFTTRJ */
+}
+
+/* Press Release XL (layout_VGQU5F) */
+.press-release-xl {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 12px;
+}
+
+/* Press Release Text Group (layout_KQMRC5) */
+.press-release-text-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  gap: 10px;
+}</code></pre>
+                    </div>
+                    
+                    <!-- Downloads Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Downloads Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Downloads Components */
+
+/* Teaser Inline SM (layout_TG3EGG) */
+.downloads-teaser-inline-sm {
+  background: #FFFFFF; /* fill_R70IAY */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  align-self: stretch;
+  gap: 8px;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+/* Content Frame (layout_LU793Z) */
+.downloads-content-frame {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Text Frame (layout_D7CRUN) */
+.downloads-text-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+/* Downloads Title (style_FCS1BZ) */
+.downloads-title {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: #1E2939; /* fill_IFTTRJ */
+}
+
+/* Downloads Meta (style_VKPJLH) */
+.downloads-meta {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7142857142857142em;
+  color: #1E2939; /* fill_IFTTRJ */
+}
+
+/* Button Icon (layout_U31QPM) */
+.downloads-button-icon {
+  background: #DD052B; /* fill_PSGRKE */
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Section News
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue Section-News-Komponente basierend auf Figma Node 1829-8450. Kombiniert News-List und Downloads-Komponenten in einem zweispaltigen Layout mit "AKTUELL" Header. Vollständig responsive mit exakten Figma-Spezifikationen.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Layout: 56px Gap, 80×56px Padding, 96px Border Radius</span>
+                <span>|</span>
+                <span>Row: 32px Gap, 40px Column Gap, 44px Content Gap</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Section News with Interactive Features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all interactive elements
+            const pressReleases = document.querySelectorAll('.press-release-interactive');
+            const downloadItems = document.querySelectorAll('.downloads-teaser-inline-sm');
+            const newsButton = document.querySelector('.news-primary-button');
+            const downloadButtons = document.querySelectorAll('.downloads-button-icon');
+            
+            // Press release interactions
+            pressReleases.forEach((release, index) => {
+                release.addEventListener('click', () => {
+                    console.log(`Navigate to press release ${index + 1}`);
+                    // Add navigation logic here
+                });
+            });
+            
+            // Download interactions
+            downloadItems.forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    if (!e.target.closest('.downloads-button-icon')) {
+                        console.log(`View download item ${index + 1}`);
+                        // Add view logic here
+                    }
+                });
+            });
+            
+            // Download button interactions
+            downloadButtons.forEach((button, index) => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Add loading state
+                    const originalHTML = button.innerHTML;
+                    button.innerHTML = `
+                        <svg class="animate-spin downloads-icon" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="62.83">
+                                <animate attributeName="stroke-dasharray" dur="1.5s" values="0 62.83;31.42 31.42;62.83 0" repeatCount="indefinite"/>
+                            </circle>
+                        </svg>
+                    `;
+                    
+                    // Simulate download
+                    setTimeout(() => {
+                        button.innerHTML = originalHTML;
+                        console.log(`Download started for item ${index + 1}`);
+                        // Add actual download logic here
+                    }, 2000);
+                });
+            });
+            
+            // News button interaction
+            if (newsButton) {
+                newsButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Add loading state
+                    const buttonText = newsButton.querySelector('.news-button-text');
+                    const originalText = buttonText.textContent;
+                    buttonText.textContent = 'Lädt...';
+                    
+                    // Simulate navigation
+                    setTimeout(() => {
+                        buttonText.textContent = originalText;
+                        console.log('Navigate to news overview');
+                        // window.location.href = '/news';
+                    }, 1500);
+                });
+            }
+            
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('content-animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            // Observe content elements
+            const contentElements = document.querySelectorAll('.news-column');
+            contentElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Responsive indicator updates
+            function updateResponsiveIndicator() {
+                const indicator = document.querySelector('.responsive-indicator');
+                if (!indicator) return;
+                
+                const spans = indicator.querySelectorAll('span');
+                spans.forEach(span => span.style.display = 'none');
+                
+                if (window.innerWidth < 640) {
+                    spans[0].style.display = 'block';
+                } else if (window.innerWidth < 768) {
+                    spans[1].style.display = 'block';
+                } else if (window.innerWidth < 1024) {
+                    spans[2].style.display = 'block';
+                } else if (window.innerWidth < 1280) {
+                    spans[3].style.display = 'block';
+                } else {
+                    spans[4].style.display = 'block';
+                }
+            }
+            
+            window.addEventListener('resize', updateResponsiveIndicator);
+            updateResponsiveIndicator();
+        });
+    </script>
+
+</section>

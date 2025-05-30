@@ -1,0 +1,899 @@
+
+
+@layer components {
+  /* ==========================
+   * === BASE TEASER BACKGROUND IMAGE
+   * ========================== */
+  
+  /* Base Background Image Container */
+  .teaser-bg-image {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .teaser-bg-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 15%);
+  }
+  
+  /* Gradient Overlay for Text Readability */
+  .teaser-bg-gradient {
+    position: relative;
+    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  /* ==========================
+   * === DESKTOP VARIANTS (XL)
+   * ========================== */
+  
+  /* Top Variant XL - Full Width */
+  .teaser-bg-image-top-xl {
+    width: 100%;
+    height: 486px; /* Desktop height - Figma Node 1831-9286 */
+    border-radius: 64px 0; /* Standard Netinera radius */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .teaser-bg-image-top-xl:hover {
+    transform: scale(1.01);
+    box-shadow: 0 20px 40px -10px rgb(30 41 57 / 15%);
+  }
+  
+  /* Top Variant Content */
+  .teaser-bg-image-top-xl-content {
+    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
+    padding: 36px; /* Desktop padding - Figma Node 1831-9286 */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  /* Top Variant Text Group */
+  .teaser-bg-image-top-xl-text {
+    max-width: 576px; /* Content constraint */
+  }
+  
+  /* Top Variant Overline */
+  .teaser-bg-image-top-xl-overline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 16px; /* Desktop overline - Figma Node 1831-9286 */
+    line-height: 1.25em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 8px;
+  }
+  
+  /* Top Variant Headline */
+  .teaser-bg-image-top-xl-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 30px; /* Desktop H3 XL */
+    line-height: 1.2em;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+  }
+  
+  /* Left Variant XL - Fixed Width */
+  .teaser-bg-image-left-xl {
+    width: 576px; /* Fixed width - Figma Node 1831-9286 */
+    height: 486px; /* Desktop height */
+    border-radius: 32px 0; /* Medium radius */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .teaser-bg-image-left-xl:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 15%);
+  }
+  
+  /* Left Variant Content */
+  .teaser-bg-image-left-xl-content {
+    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
+    padding: 36px; /* Desktop padding */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  /* Left Variant Text Group */
+  .teaser-bg-image-left-xl-text {
+    max-width: 100%;
+  }
+  
+  /* Left Variant Overline */
+  .teaser-bg-image-left-xl-overline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 16px; /* Desktop overline */
+    line-height: 1.25em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 8px;
+  }
+  
+  /* Left Variant Headline */
+  .teaser-bg-image-left-xl-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 30px; /* Desktop H3 XL */
+    line-height: 1.2em;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+  }
+  
+  /* Right Variant XL - Custom Radius */
+  .teaser-bg-image-right-xl {
+    width: 576px; /* Fixed width - Figma Node 1831-9286 */
+    height: 486px; /* Desktop height */
+    border-radius: 0 0 64px; /* Custom bottom-right radius */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .teaser-bg-image-right-xl:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 15%);
+  }
+  
+  /* Right Variant Content */
+  .teaser-bg-image-right-xl-content {
+    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
+    padding: 36px; /* Desktop padding */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  /* Right Variant Text Group */
+  .teaser-bg-image-right-xl-text {
+    max-width: 100%;
+  }
+  
+  /* Right Variant Overline */
+  .teaser-bg-image-right-xl-overline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 16px; /* Desktop overline */
+    line-height: 1.25em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 8px;
+  }
+  
+  /* Right Variant Headline */
+  .teaser-bg-image-right-xl-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 30px; /* Desktop H3 XL */
+    line-height: 1.2em;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+  }
+  
+  /* ==========================
+   * === MOBILE VARIANTS (SM)
+   * ========================== */
+  
+  /* Top Variant SM - Mobile */
+  .teaser-bg-image-top-sm {
+    width: 100%;
+    max-width: 384px; /* Mobile constraint */
+    height: 202.5px; /* Mobile height - Figma Node 1831-9286 */
+    border-radius: 36px 0 0; /* Mobile radius variant */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .teaser-bg-image-top-sm:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px -5px rgb(30 41 57 / 12%);
+  }
+  
+  /* Top Variant SM Content */
+  .teaser-bg-image-top-sm-content {
+    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
+    padding: 24px; /* Mobile padding - Figma Node 1831-9286 */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  /* Top Variant SM Text Group */
+  .teaser-bg-image-top-sm-text {
+    width: 100%;
+  }
+  
+  /* Top Variant SM Overline */
+  .teaser-bg-image-top-sm-overline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 12px; /* Mobile overline - Figma Node 1831-9286 */
+    line-height: 1.167em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 4px;
+  }
+  
+  /* Top Variant SM Headline */
+  .teaser-bg-image-top-sm-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px; /* Mobile H5 SM */
+    line-height: 1.444em;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+  }
+  
+  /* Center Variant SM - Mobile */
+  .teaser-bg-image-center-sm {
+    width: 100%;
+    max-width: 384px; /* Mobile constraint */
+    height: 202.5px; /* Mobile height */
+    border-radius: 24px 0; /* Mobile center radius */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .teaser-bg-image-center-sm:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px -5px rgb(30 41 57 / 12%);
+  }
+  
+  /* Center Variant SM Content */
+  .teaser-bg-image-center-sm-content {
+    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
+    padding: 24px; /* Mobile padding */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  /* Center Variant SM Text Group */
+  .teaser-bg-image-center-sm-text {
+    width: 100%;
+  }
+  
+  /* Center Variant SM Overline */
+  .teaser-bg-image-center-sm-overline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 12px; /* Mobile overline */
+    line-height: 1.167em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 4px;
+  }
+  
+  /* Center Variant SM Headline */
+  .teaser-bg-image-center-sm-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px; /* Mobile H5 SM */
+    line-height: 1.444em;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+  }
+  
+  /* ==========================
+   * === RESPONSIVE COMPONENTS
+   * ========================== */
+  
+  /* Responsive Teaser Background Image */
+  .teaser-bg-image-responsive {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Mobile first */
+    height: 202.5px;
+    max-width: 384px;
+    border-radius: 36px 0 0;
+  }
+  
+  .teaser-bg-image-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px -5px rgb(30 41 57 / 12%);
+  }
+  
+  /* Responsive Content */
+  .teaser-bg-image-responsive-content {
+    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    /* Mobile first */
+    padding: 24px;
+  }
+  
+  /* Responsive Text Group */
+  .teaser-bg-image-responsive-text {
+    width: 100%;
+  }
+  
+  /* Responsive Overline */
+  .teaser-bg-image-responsive-overline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 4px;
+    
+    /* Mobile first */
+    font-size: 12px;
+    line-height: 1.167em;
+  }
+  
+  /* Responsive Headline */
+  .teaser-bg-image-responsive-headline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+    
+    /* Mobile first */
+    font-size: 18px;
+    line-height: 1.444em;
+  }
+  
+  /* ==========================
+   * === LAYOUT VARIANTS
+   * ========================== */
+  
+  /* Grid Layout for Multiple Teasers */
+  .teaser-bg-image-grid {
+    display: grid;
+    gap: 24px;
+    width: 100%;
+  }
+  
+  /* Two Column Grid */
+  .teaser-bg-image-grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  /* Three Column Grid */
+  .teaser-bg-image-grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  /* Asymmetric Layout (1 large + 2 small) */
+  .teaser-bg-image-layout-asymmetric {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  
+  /* Large Teaser in Asymmetric Layout */
+  .teaser-bg-image-layout-large {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  /* Small Teasers in Asymmetric Layout */
+  .teaser-bg-image-layout-small {
+    grid-column: 1;
+  }
+  
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+  
+  /* Desktop breakpoint (1024px+) */
+  @media (width >= 1024px) {
+    .teaser-bg-image-responsive {
+      height: 486px; /* Desktop height */
+      max-width: none;
+      border-radius: 64px 0; /* Desktop radius */
+    }
+    
+    .teaser-bg-image-responsive:hover {
+      transform: scale(1.01);
+      box-shadow: 0 20px 40px -10px rgb(30 41 57 / 15%);
+    }
+    
+    .teaser-bg-image-responsive-content {
+      padding: 36px; /* Desktop padding */
+    }
+    
+    .teaser-bg-image-responsive-text {
+      max-width: 576px; /* Desktop content constraint */
+    }
+    
+    .teaser-bg-image-responsive-overline {
+      font-size: 16px; /* Desktop overline */
+      line-height: 1.25em;
+      margin-bottom: 8px;
+    }
+    
+    .teaser-bg-image-responsive-headline {
+      font-size: 30px; /* Desktop H3 XL */
+      line-height: 1.2em;
+    }
+    
+    /* Asymmetric Layout Desktop */
+    .teaser-bg-image-layout-asymmetric {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+    }
+    
+    .teaser-bg-image-layout-large {
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+    
+    .teaser-bg-image-layout-small {
+      grid-column: auto;
+      grid-row: 2;
+    }
+  }
+  
+  /* Tablet adaptation */
+  @media (width <= 1023px) and (width >= 768px) {
+    .teaser-bg-image-responsive {
+      height: 320px;
+      border-radius: 48px 0;
+    }
+    
+    .teaser-bg-image-responsive-content {
+      padding: 32px;
+    }
+    
+    .teaser-bg-image-responsive-overline {
+      font-size: 14px;
+      line-height: 1.2em;
+      margin-bottom: 6px;
+    }
+    
+    .teaser-bg-image-responsive-headline {
+      font-size: 24px;
+      line-height: 1.25em;
+    }
+    
+    .teaser-bg-image-top-xl,
+    .teaser-bg-image-left-xl,
+    .teaser-bg-image-right-xl {
+      height: 320px;
+      border-radius: 48px 0;
+    }
+    
+    .teaser-bg-image-left-xl,
+    .teaser-bg-image-right-xl {
+      width: 100%;
+      max-width: 480px;
+    }
+    
+    .teaser-bg-image-top-xl-content,
+    .teaser-bg-image-left-xl-content,
+    .teaser-bg-image-right-xl-content {
+      padding: 32px;
+    }
+    
+    .teaser-bg-image-top-xl-headline,
+    .teaser-bg-image-left-xl-headline,
+    .teaser-bg-image-right-xl-headline {
+      font-size: 24px;
+      line-height: 1.25em;
+    }
+    
+    .teaser-bg-image-top-xl-overline,
+    .teaser-bg-image-left-xl-overline,
+    .teaser-bg-image-right-xl-overline {
+      font-size: 14px;
+    }
+  }
+  
+  /* Mobile optimization */
+  @media (width <= 767px) {
+    .teaser-bg-image-responsive {
+      height: 180px;
+      border-radius: 32px 0 0;
+    }
+    
+    .teaser-bg-image-responsive-content {
+      padding: 20px;
+    }
+    
+    .teaser-bg-image-responsive-text {
+      max-width: 100%;
+    }
+    
+    .teaser-bg-image-responsive-overline {
+      font-size: 11px;
+      line-height: 1.1em;
+      margin-bottom: 3px;
+    }
+    
+    .teaser-bg-image-responsive-headline {
+      font-size: 16px;
+      line-height: 1.3em;
+    }
+    
+    .teaser-bg-image-top-xl,
+    .teaser-bg-image-left-xl,
+    .teaser-bg-image-right-xl {
+      width: 100%;
+      height: 180px;
+      border-radius: 32px 0 0;
+    }
+    
+    .teaser-bg-image-top-xl-content,
+    .teaser-bg-image-left-xl-content,
+    .teaser-bg-image-right-xl-content {
+      padding: 20px;
+    }
+    
+    .teaser-bg-image-top-xl-text,
+    .teaser-bg-image-left-xl-text,
+    .teaser-bg-image-right-xl-text {
+      max-width: 100%;
+    }
+    
+    .teaser-bg-image-top-xl-headline,
+    .teaser-bg-image-left-xl-headline,
+    .teaser-bg-image-right-xl-headline {
+      font-size: 16px;
+      line-height: 1.3em;
+    }
+    
+    .teaser-bg-image-top-xl-overline,
+    .teaser-bg-image-left-xl-overline,
+    .teaser-bg-image-right-xl-overline {
+      font-size: 11px;
+      margin-bottom: 3px;
+    }
+    
+    .teaser-bg-image-top-sm,
+    .teaser-bg-image-center-sm {
+      height: 160px;
+      border-radius: 24px 0 0;
+    }
+    
+    .teaser-bg-image-top-sm-content,
+    .teaser-bg-image-center-sm-content {
+      padding: 16px;
+    }
+    
+    .teaser-bg-image-top-sm-headline,
+    .teaser-bg-image-center-sm-headline {
+      font-size: 15px;
+      line-height: 1.27em;
+    }
+    
+    .teaser-bg-image-top-sm-overline,
+    .teaser-bg-image-center-sm-overline {
+      font-size: 10px;
+    }
+    
+    .teaser-bg-image-grid-2,
+    .teaser-bg-image-grid-3 {
+      grid-template-columns: 1fr;
+    }
+    
+    .teaser-bg-image-layout-asymmetric {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+    }
+    
+    .teaser-bg-image-layout-large {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    
+    .teaser-bg-image-layout-small {
+      grid-column: 1;
+      grid-row: auto;
+    }
+  }
+  
+  /* Small mobile optimization */
+  @media (width <= 479px) {
+    .teaser-bg-image-responsive {
+      height: 140px;
+      border-radius: 24px 0 0;
+    }
+    
+    .teaser-bg-image-responsive-content {
+      padding: 16px;
+    }
+    
+    .teaser-bg-image-responsive-overline {
+      font-size: 10px;
+      line-height: 1em;
+      margin-bottom: 2px;
+    }
+    
+    .teaser-bg-image-responsive-headline {
+      font-size: 14px;
+      line-height: 1.2em;
+    }
+    
+    .teaser-bg-image-top-xl,
+    .teaser-bg-image-left-xl,
+    .teaser-bg-image-right-xl {
+      height: 140px;
+      border-radius: 24px 0 0;
+    }
+    
+    .teaser-bg-image-top-xl-content,
+    .teaser-bg-image-left-xl-content,
+    .teaser-bg-image-right-xl-content {
+      padding: 16px;
+    }
+    
+    .teaser-bg-image-top-xl-headline,
+    .teaser-bg-image-left-xl-headline,
+    .teaser-bg-image-right-xl-headline {
+      font-size: 14px;
+      line-height: 1.2em;
+    }
+    
+    .teaser-bg-image-top-xl-overline,
+    .teaser-bg-image-left-xl-overline,
+    .teaser-bg-image-right-xl-overline {
+      font-size: 10px;
+      margin-bottom: 2px;
+    }
+    
+    .teaser-bg-image-top-sm,
+    .teaser-bg-image-center-sm {
+      height: 120px;
+      border-radius: 20px 0 0;
+    }
+    
+    .teaser-bg-image-top-sm-content,
+    .teaser-bg-image-center-sm-content {
+      padding: 12px;
+    }
+    
+    .teaser-bg-image-top-sm-headline,
+    .teaser-bg-image-center-sm-headline {
+      font-size: 13px;
+      line-height: 1.15em;
+    }
+    
+    .teaser-bg-image-top-sm-overline,
+    .teaser-bg-image-center-sm-overline {
+      font-size: 9px;
+    }
+  }
+  
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+  
+  /* Focus States */
+  .teaser-bg-image-top-xl:focus,
+  .teaser-bg-image-left-xl:focus,
+  .teaser-bg-image-right-xl:focus,
+  .teaser-bg-image-top-sm:focus,
+  .teaser-bg-image-center-sm:focus,
+  .teaser-bg-image-responsive:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+  }
+  
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .teaser-bg-gradient,
+    .teaser-bg-image-top-xl-content,
+    .teaser-bg-image-left-xl-content,
+    .teaser-bg-image-right-xl-content,
+    .teaser-bg-image-top-sm-content,
+    .teaser-bg-image-center-sm-content,
+    .teaser-bg-image-responsive-content {
+      background: rgb(0 0 0 / 90%) !important;
+    }
+    
+    .teaser-bg-image-top-xl-headline,
+    .teaser-bg-image-left-xl-headline,
+    .teaser-bg-image-right-xl-headline,
+    .teaser-bg-image-top-sm-headline,
+    .teaser-bg-image-center-sm-headline,
+    .teaser-bg-image-responsive-headline {
+      font-weight: 600;
+      text-shadow: 0 0 2px currentcolor;
+    }
+  }
+  
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .teaser-bg-image,
+    .teaser-bg-image-top-xl,
+    .teaser-bg-image-left-xl,
+    .teaser-bg-image-right-xl,
+    .teaser-bg-image-top-sm,
+    .teaser-bg-image-center-sm,
+    .teaser-bg-image-responsive {
+      transition: none;
+      animation: none;
+    }
+    
+    .teaser-bg-image:hover,
+    .teaser-bg-image-top-xl:hover,
+    .teaser-bg-image-left-xl:hover,
+    .teaser-bg-image-right-xl:hover,
+    .teaser-bg-image-top-sm:hover,
+    .teaser-bg-image-center-sm:hover,
+    .teaser-bg-image-responsive:hover {
+      transform: none;
+    }
+  }
+  
+  /* Screen Reader Support */
+  .teaser-bg-image-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+  
+  @media print {
+    .teaser-bg-image,
+    .teaser-bg-image-top-xl,
+    .teaser-bg-image-left-xl,
+    .teaser-bg-image-right-xl,
+    .teaser-bg-image-top-sm,
+    .teaser-bg-image-center-sm,
+    .teaser-bg-image-responsive {
+      border: 1px solid #ddd;
+      border-radius: 0;
+      break-inside: avoid;
+      margin-bottom: 20px;
+      box-shadow: none !important;
+      height: auto !important;
+      background: white !important;
+    }
+    
+    .teaser-bg-gradient,
+    .teaser-bg-image-top-xl-content,
+    .teaser-bg-image-left-xl-content,
+    .teaser-bg-image-right-xl-content,
+    .teaser-bg-image-top-sm-content,
+    .teaser-bg-image-center-sm-content,
+    .teaser-bg-image-responsive-content {
+      background: white !important;
+      padding: 15px !important;
+      height: auto !important;
+    }
+    
+    .teaser-bg-image-top-xl-headline,
+    .teaser-bg-image-left-xl-headline,
+    .teaser-bg-image-right-xl-headline,
+    .teaser-bg-image-top-sm-headline,
+    .teaser-bg-image-center-sm-headline,
+    .teaser-bg-image-responsive-headline {
+      color: black !important;
+      font-size: 16px !important;
+      line-height: 1.3 !important;
+    }
+    
+    .teaser-bg-image-top-xl-overline,
+    .teaser-bg-image-left-xl-overline,
+    .teaser-bg-image-right-xl-overline,
+    .teaser-bg-image-top-sm-overline,
+    .teaser-bg-image-center-sm-overline,
+    .teaser-bg-image-responsive-overline {
+      color: #666 !important;
+      font-size: 12px !important;
+    }
+    
+    .teaser-bg-image-grid,
+    .teaser-bg-image-grid-2,
+    .teaser-bg-image-grid-3,
+    .teaser-bg-image-layout-asymmetric {
+      display: block;
+    }
+    
+    .teaser-bg-image-grid > *,
+    .teaser-bg-image-grid-2 > *,
+    .teaser-bg-image-grid-3 > *,
+    .teaser-bg-image-layout-asymmetric > * {
+      margin-bottom: 15px;
+    }
+  }
+  
+  /* ==========================
+   * === LOADING STATES
+   * ========================== */
+  
+  .teaser-bg-image-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: teaser-bg-image-loading 1.5s infinite;
+  }
+  
+  @keyframes teaser-bg-image-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  .teaser-bg-image-loading .teaser-bg-image-top-xl-headline,
+  .teaser-bg-image-loading .teaser-bg-image-left-xl-headline,
+  .teaser-bg-image-loading .teaser-bg-image-right-xl-headline,
+  .teaser-bg-image-loading .teaser-bg-image-top-sm-headline,
+  .teaser-bg-image-loading .teaser-bg-image-center-sm-headline,
+  .teaser-bg-image-loading .teaser-bg-image-responsive-headline {
+    background: linear-gradient(90deg, rgb(255 255 255 / 30%) 25%, rgb(255 255 255 / 50%) 50%, rgb(255 255 255 / 30%) 75%);
+    background-size: 200% 100%;
+    animation: teaser-bg-image-loading 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+    height: 1.2em;
+    display: block;
+  }
+  
+  .teaser-bg-image-loading .teaser-bg-image-top-xl-overline,
+  .teaser-bg-image-loading .teaser-bg-image-left-xl-overline,
+  .teaser-bg-image-loading .teaser-bg-image-right-xl-overline,
+  .teaser-bg-image-loading .teaser-bg-image-top-sm-overline,
+  .teaser-bg-image-loading .teaser-bg-image-center-sm-overline,
+  .teaser-bg-image-loading .teaser-bg-image-responsive-overline {
+    background: linear-gradient(90deg, rgb(255 255 255 / 40%) 25%, rgb(255 255 255 / 60%) 50%, rgb(255 255 255 / 40%) 75%);
+    background-size: 200% 100%;
+    animation: teaser-bg-image-loading 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+    height: 0.8em;
+    display: block;
+  }
+  
+} 

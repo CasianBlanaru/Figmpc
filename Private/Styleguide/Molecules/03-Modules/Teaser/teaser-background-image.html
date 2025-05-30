@@ -1,0 +1,519 @@
+
+    <style>
+        /* Teaser Background Image Custom Styles */
+        .teaser-bg-image {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        .teaser-bg-gradient {
+            background: linear-gradient(
+                180deg, 
+                rgba(0, 104, 94, 0) 0%, 
+                rgba(0, 61, 57, 1) 100%
+            );
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+        
+        .demo-background-1 {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23DD052B;stop-opacity:1" /><stop offset="50%" style="stop-color:%2300685E;stop-opacity:1" /><stop offset="100%" style="stop-color:%231E2939;stop-opacity:1" /></linearGradient></defs><rect width="800" height="600" fill="url(%23bg1)"/><circle cx="200" cy="150" r="80" fill="rgba(255,255,255,0.1)"/><circle cx="600" cy="400" r="120" fill="rgba(255,255,255,0.05)"/><rect x="100" y="300" width="200" height="100" fill="rgba(255,255,255,0.08)" rx="20"/></svg>');
+        }
+        
+        .demo-background-2 {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><linearGradient id="bg2" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%2300685E;stop-opacity:1" /><stop offset="50%" style="stop-color:%23DD052B;stop-opacity:1" /><stop offset="100%" style="stop-color:%23003D39;stop-opacity:1" /></linearGradient></defs><rect width="800" height="600" fill="url(%23bg2)"/><polygon points="100,100 300,150 250,350 50,300" fill="rgba(255,255,255,0.06)"/><circle cx="650" cy="200" r="60" fill="rgba(255,255,255,0.08)"/></svg>');
+        }
+        
+        .demo-background-3 {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><radialGradient id="bg3" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%231E2939;stop-opacity:1" /><stop offset="70%" style="stop-color:%2300685E;stop-opacity:1" /><stop offset="100%" style="stop-color:%23DD052B;stop-opacity:1" /></radialGradient></defs><rect width="800" height="600" fill="url(%23bg3)"/><rect x="300" y="100" width="150" height="400" fill="rgba(255,255,255,0.04)" rx="10"/><circle cx="150" cy="450" r="100" fill="rgba(255,255,255,0.06)"/></svg>');
+        }
+        
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-md);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+    </style>
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="md:hidden block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden lg:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h1">Komponente</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                Teaser Background Image
+            </h1>
+            <p class="mx-auto max-w-netinera-content text-netinera-white body-lg">
+                Pixel-perfekte Implementierung der Teaser Background Image Komponente mit Gradient-Overlays und responsivem Design für Desktop und Mobile basierend auf Figma Node 1831-9286.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Desktop Varianten (XL) -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Desktop</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Teaser Background Image XL
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Top Variant (XL) -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Top Variant (XL)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            teaser-background-image-top-xl
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="teaser-bg-image rounded-netinera-lg overflow-hidden demo-background-1" style="height: 486px;">
+                            <div class="flex flex-col justify-end teaser-bg-gradient p-9 h-full">
+                                <div class="max-w-xl">
+                                    <div class="text-white overline-sm spacing-overline-h3">
+                                        Innovation
+                                    </div>
+                                    <h3 class="text-white headline-h3">
+                                        Nachhaltige Mobilität für die Zukunft
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-bg-image rounded-netinera-lg overflow-hidden" style="height: 486px; background-image: url('image.jpg');"&gt;
+  &lt;div class="flex flex-col justify-end teaser-bg-gradient p-9 h-full"&gt;
+    &lt;div class="max-w-xl"&gt;
+      &lt;div class="text-white overline-sm spacing-overline-h3"&gt;
+        Innovation
+      &lt;/div&gt;
+      &lt;h3 class="text-white headline-h3"&gt;
+        Nachhaltige Mobilität für die Zukunft
+      &lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Left Variant (XL) -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Left Variant (XL)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            teaser-background-image-left-xl
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="w-full max-w-lg">
+                            <div class="teaser-bg-image rounded-netinera-md overflow-hidden demo-background-2" style="width: 576px; height: 486px;">
+                                <div class="flex flex-col justify-end teaser-bg-gradient p-9 h-full">
+                                    <div class="max-w-xl">
+                                        <div class="text-white overline-sm spacing-overline-h3">
+                                            Service
+                                        </div>
+                                        <h3 class="text-white headline-h3">
+                                            Digitale Verkehrslösungen
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-bg-image rounded-netinera-md overflow-hidden" style="width: 576px; height: 486px; background-image: url('image.jpg');"&gt;
+  &lt;div class="flex flex-col justify-end teaser-bg-gradient p-9 h-full"&gt;
+    &lt;div class="max-w-xl"&gt;
+      &lt;div class="text-white overline-sm spacing-overline-h3"&gt;
+        Service
+      &lt;/div&gt;
+      &lt;h3 class="text-white headline-h3"&gt;
+        Digitale Verkehrslösungen
+      &lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Right Variant (XL) -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Right Variant (XL)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            teaser-background-image-right-xl
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="w-full max-w-lg">
+                            <div class="teaser-bg-image overflow-hidden demo-background-3" style="width: 576px; height: 486px; border-radius: 0px 0px 64px 0px;">
+                                <div class="flex flex-col justify-end teaser-bg-gradient p-9 h-full">
+                                    <div class="max-w-xl">
+                                        <div class="text-white overline-sm spacing-overline-h3">
+                                            Zukunft
+                                        </div>
+                                        <h3 class="text-white headline-h3">
+                                            Intelligente Infrastrukturen
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-bg-image overflow-hidden" style="width: 576px; height: 486px; border-radius: 0px 0px 64px 0px; background-image: url('image.jpg');"&gt;
+  &lt;div class="flex flex-col justify-end teaser-bg-gradient p-9 h-full"&gt;
+    &lt;div class="max-w-xl"&gt;
+      &lt;div class="text-white overline-sm spacing-overline-h3"&gt;
+        Zukunft
+      &lt;/div&gt;
+      &lt;h3 class="text-white headline-h3"&gt;
+        Intelligente Infrastrukturen
+      &lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile Varianten (SM) -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Mobile</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Teaser Background Image SM
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Top Variant (SM) -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Top Variant (SM)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            teaser-background-image-top-sm
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="mx-auto w-full max-w-sm">
+                            <div class="teaser-bg-image overflow-hidden demo-background-1" style="height: 202.5px; border-radius: 36px 0px 0px 0px;">
+                                <div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full">
+                                    <div class="w-full">
+                                        <div class="text-white overline-xs spacing-overline-h5">
+                                            Innovation
+                                        </div>
+                                        <h5 class="text-white headline-h5">
+                                            Nachhaltige Mobilität
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-bg-image overflow-hidden" style="height: 202.5px; border-radius: 36px 0px 0px 0px; background-image: url('image.jpg');"&gt;
+  &lt;div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full"&gt;
+    &lt;div class="w-full"&gt;
+      &lt;div class="text-white overline-xs spacing-overline-h5"&gt;
+        Innovation
+      &lt;/div&gt;
+      &lt;h5 class="text-white headline-h5"&gt;
+        Nachhaltige Mobilität
+      &lt;/h5&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Center Variant (SM) -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Center Variant (SM)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            teaser-background-image-center-sm
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="mx-auto w-full max-w-sm">
+                            <div class="teaser-bg-image rounded-netinera-md overflow-hidden demo-background-2" style="height: 202.5px;">
+                                <div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full">
+                                    <div class="w-full">
+                                        <div class="text-white overline-xs spacing-overline-h5">
+                                            Service
+                                        </div>
+                                        <h5 class="text-white headline-h5">
+                                            Digitale Lösungen
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-bg-image rounded-netinera-md overflow-hidden" style="height: 202.5px; background-image: url('image.jpg');"&gt;
+  &lt;div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full"&gt;
+    &lt;div class="w-full"&gt;
+      &lt;div class="text-white overline-xs spacing-overline-h5"&gt;
+        Service
+      &lt;/div&gt;
+      &lt;h5 class="text-white headline-h5"&gt;
+        Digitale Lösungen
+      &lt;/h5&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Variant (SM) -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Bottom Variant (SM)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            teaser-background-image-bottom-sm
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="mx-auto w-full max-w-sm">
+                            <div class="teaser-bg-image overflow-hidden demo-background-3" style="height: 202.5px; border-radius: 0px 0px 36px 0px;">
+                                <div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full">
+                                    <div class="w-full">
+                                        <div class="text-white overline-xs spacing-overline-h5">
+                                            Zukunft
+                                        </div>
+                                        <h5 class="text-white headline-h5">
+                                            Intelligente Systeme
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="teaser-bg-image overflow-hidden" style="height: 202.5px; border-radius: 0px 0px 36px 0px; background-image: url('image.jpg');"&gt;
+  &lt;div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full"&gt;
+    &lt;div class="w-full"&gt;
+      &lt;div class="text-white overline-xs spacing-overline-h5"&gt;
+        Zukunft
+      &lt;/div&gt;
+      &lt;h5 class="text-white headline-h5"&gt;
+        Intelligente Systeme
+      &lt;/h5&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Responsive Layout Example -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Responsive</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Responsive Implementation
+                </h2>
+                
+                <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Responsive Teaser Grid</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Automatische Anpassung für alle Bildschirmgrößen
+                    </h4>
+                    
+                    <!-- Responsive Grid Implementation -->
+                    <div class="gap-netinera-element-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <!-- Mobile responsive -->
+                        <div class="teaser-bg-image rounded-netinera-card-primary h-48 md:h-56 overflow-hidden demo-background-1">
+                            <div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full">
+                                <div class="w-full">
+                                    <div class="text-white overline-xs spacing-overline-h6">
+                                        Projekt
+                                    </div>
+                                    <h6 class="text-white headline-h6">
+                                        Smart City Initiative
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="teaser-bg-image rounded-netinera-card-secondary h-48 md:h-56 overflow-hidden demo-background-2">
+                            <div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full">
+                                <div class="w-full">
+                                    <div class="text-white overline-xs spacing-overline-h6">
+                                        Innovation
+                                    </div>
+                                    <h6 class="text-white headline-h6">
+                                        Autonome Fahrzeuge
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="teaser-bg-image rounded-netinera-card-primary h-48 md:h-56 overflow-hidden demo-background-3">
+                            <div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full">
+                                <div class="w-full">
+                                    <div class="text-white overline-xs spacing-overline-h6">
+                                        Nachhaltigkeit
+                                    </div>
+                                    <h6 class="text-white headline-h6">
+                                        Grüne Mobilität
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Responsive Code Example -->
+                    <div class="mt-netinera-element-md">
+                        <div class="overline-xs spacing-overline-h6">Responsive Grid Implementation</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="gap-netinera-element-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"&gt;
+  &lt;div class="teaser-bg-image rounded-netinera-card-primary h-48 md:h-56 overflow-hidden" style="background-image: url('image1.jpg');"&gt;
+    &lt;div class="flex flex-col justify-end teaser-bg-gradient p-6 h-full"&gt;
+      &lt;div class="w-full"&gt;
+        &lt;div class="text-white overline-xs spacing-overline-h6"&gt;Projekt&lt;/div&gt;
+        &lt;h6 class="text-white headline-h6"&gt;Smart City Initiative&lt;/h6&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- Weitere Teaser... --&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Utility Classes -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS Utilities</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Teaser Background Image Utilities
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">CSS Custom Properties</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Verfügbare Utility-Klassen
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Background Image Base Class</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>.teaser-bg-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Gradient Overlay Class</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>.teaser-bg-gradient {
+  background: linear-gradient(
+    180deg, 
+    rgba(0, 104, 94, 0) 0%, 
+    rgba(0, 61, 57, 1) 100%
+  );
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Desktop Dimensions</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Desktop Teaser XL */
+.teaser-xl {
+  width: 576px;
+  height: 486px;
+}
+
+/* Full-width Desktop */
+.teaser-xl-full {
+  height: 486px;
+  width: 100%;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Mobile Dimensions</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile Teaser SM */
+.teaser-sm {
+  width: 100%;
+  height: 202.5px;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Border Radius Variants</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Netinera Border Radius Pattern */
+.teaser-radius-top {
+  border-radius: 64px 0px 0px 0px; /* XL */
+  border-radius: 36px 0px 0px 0px; /* SM */
+}
+
+.teaser-radius-bottom {
+  border-radius: 0px 0px 64px 0px; /* XL */
+  border-radius: 0px 0px 36px 0px; /* SM */
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Teaser Background Image Komponente
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Vollständige Implementierung der Teaser Background Image Komponente mit Gradient-Overlays, responsivem Design und allen Desktop- und Mobile-Varianten basierend auf den exakten Figma-Spezifikationen.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Figma Node: 1831-9286</span>
+                <span>|</span>
+                <span>File: Zr15Lh1nQkYgJGcZ0nSnia</span>
+            </div>
+        </div>
+    </footer>
+</section>

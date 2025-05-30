@@ -1,0 +1,604 @@
+
+    <style>
+        /* Section Header Custom Styles */
+        
+        /* Section Header Large - Center */
+        .section-header-lg-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; /* Mobile gap */
+            width: 100%;
+        }
+        
+        .section-header-lg-center-title {
+            font-family: var(--font-family-display);
+            font-weight: 400;
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--color-netinera-dark);
+            
+            /* Mobile: H2 SM */
+            font-size: 26px;
+            line-height: 1.2307692307692308;
+            letter-spacing: 1.5384615613864017%;
+        }
+        
+        .section-header-lg-center-subtitle {
+            font-family: var(--font-family-sans);
+            font-weight: 400;
+            text-align: center;
+            color: var(--color-netinera-dark);
+            
+            /* Mobile: Body Base */
+            font-size: 16px;
+            line-height: 1.625;
+        }
+        
+        /* Section Header Large - Left */
+        .section-header-lg-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Mobile gap */
+            width: 100%;
+        }
+        
+        .section-header-lg-left-title {
+            font-family: var(--font-family-display);
+            font-weight: 400;
+            text-transform: uppercase;
+            text-align: left;
+            color: var(--color-netinera-dark);
+            
+            /* Mobile: H2 SM */
+            font-size: 26px;
+            line-height: 1.2307692307692308;
+            letter-spacing: 1.5384615613864017%;
+        }
+        
+        .section-header-lg-left-subtitle {
+            font-family: var(--font-family-sans);
+            font-weight: 400;
+            text-align: left;
+            color: var(--color-netinera-dark);
+            
+            /* Mobile: Body Base */
+            font-size: 16px;
+            line-height: 1.625;
+        }
+        
+        /* Section Header Medium - Center */
+        .section-header-md-center {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .section-header-md-center-title {
+            font-family: var(--font-family-display);
+            font-weight: 400;
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--color-netinera-dark);
+            
+            /* Mobile: H3 SM */
+            font-size: 22px;
+            line-height: 1.2727272727272727;
+        }
+        
+        /* Section Header Small - Center */
+        .section-header-sm-center {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .section-header-sm-center-title {
+            font-family: var(--font-family-display);
+            font-weight: 400;
+            text-align: center;
+            color: var(--color-netinera-dark);
+            
+            /* Mobile: H4 SM */
+            font-size: 20px;
+            line-height: 1.4;
+        }
+        
+        /* Desktop Responsive (1024px+) */
+        @media (min-width: 1024px) {
+            .section-header-lg-center {
+                gap: 24px; /* Desktop gap */
+            }
+            
+            .section-header-lg-center-title {
+                /* Desktop: H2 XL */
+                font-size: 40px;
+                line-height: 1.2;
+                letter-spacing: 1.0000000149011612%;
+            }
+            
+            .section-header-lg-center-subtitle {
+                /* Desktop: Body LG */
+                font-size: 18px;
+                line-height: 1.6666666666666667;
+            }
+            
+            .section-header-lg-left {
+                gap: 24px; /* Desktop gap */
+            }
+            
+            .section-header-lg-left-title {
+                /* Desktop: H2 XL */
+                font-size: 40px;
+                line-height: 1.2;
+                letter-spacing: 1.0000000149011612%;
+            }
+            
+            .section-header-lg-left-subtitle {
+                /* Desktop: Body LG */
+                font-size: 18px;
+                line-height: 1.6666666666666667;
+            }
+            
+            .section-header-md-center {
+                width: 568px;
+                margin: 0 auto;
+            }
+            
+            .section-header-md-center-title {
+                /* Desktop: H3 XL */
+                font-size: 30px;
+                line-height: 1.2;
+            }
+            
+            .section-header-sm-center-title {
+                /* Desktop: H4 XL */
+                font-size: 24px;
+                line-height: 1.3333333333333333;
+            }
+        }
+        
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+    </style>
+
+    <section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Komponente</div>
+            <h1 class="headline-h1 spacing-headline-body-h1">
+                Section Header
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Pixel-perfekte Implementierung der Section Header Komponente mit verschiedenen Größen (LG, MD, SM) und Ausrichtungen (Center, Left) für Desktop und Mobile basierend auf Figma Node 1717-4928.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Section Header Large -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Large Headers</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Section Header LG
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Large Center -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Center Alignment</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            section-header-lg-center (Title + Subtitle)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="section-header-lg-center">
+                            <h2 class="section-header-lg-center-title">
+                                Nachhaltige Mobilität für die Zukunft
+                            </h2>
+                            <p class="section-header-lg-center-subtitle">
+                                Moderne Verkehrslösungen für eine umweltfreundliche und effiziente Mobilität. Entdecken Sie innovative Technologien und Services für nachhaltigen Transport.
+                            </p>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="section-header-lg-center"&gt;
+  &lt;h2 class="section-header-lg-center-title"&gt;
+    Nachhaltige Mobilität für die Zukunft
+  &lt;/h2&gt;
+  &lt;p class="section-header-lg-center-subtitle"&gt;
+    Moderne Verkehrslösungen für eine umweltfreundliche und effiziente Mobilität...
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Large Left -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Left Alignment</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            section-header-lg-left (Title + Subtitle)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="section-header-lg-left">
+                            <h2 class="section-header-lg-left-title">
+                                Digitale Verkehrslösungen
+                            </h2>
+                            <p class="section-header-lg-left-subtitle">
+                                Intelligente Systeme für optimierte Verkehrsflüsse und bessere Fahrgast-Informationen in Echtzeit. Vernetzte Infrastrukturen für smarte Städte.
+                            </p>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="section-header-lg-left"&gt;
+  &lt;h2 class="section-header-lg-left-title"&gt;
+    Digitale Verkehrslösungen
+  &lt;/h2&gt;
+  &lt;p class="section-header-lg-left-subtitle"&gt;
+    Intelligente Systeme für optimierte Verkehrsflüsse...
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Header Medium -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Medium Headers</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Section Header MD
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Medium Center -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Center Alignment</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            section-header-md-center (Title only, 568px Desktop)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="section-header-md-center">
+                            <h3 class="section-header-md-center-title">
+                                Innovative Technologien
+                            </h3>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="section-header-md-center"&gt;
+  &lt;h3 class="section-header-md-center-title"&gt;
+    Innovative Technologien
+  &lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Medium Center Alternative -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Alternative Content</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Verschiedene Überschrift Längen
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="section-header-md-center">
+                            <h3 class="section-header-md-center-title">
+                                Autonome Fahrzeuge und KI-gesteuerte Navigation
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Header Small -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Small Headers</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Section Header SM
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Small Center -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Center Alignment</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            section-header-sm-center (Compact Title)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="section-header-sm-center">
+                            <h4 class="section-header-sm-center-title">
+                                Smart City Initiative
+                            </h4>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="section-header-sm-center"&gt;
+  &lt;h4 class="section-header-sm-center-title"&gt;
+    Smart City Initiative
+  &lt;/h4&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Small Center Grid -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Multiple Headers</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Grid Layout mit mehreren Section Headers
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="gap-netinera-element-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                            <div class="section-header-sm-center">
+                                <h4 class="section-header-sm-center-title">
+                                    Grüne Mobilität
+                                </h4>
+                            </div>
+                            
+                            <div class="section-header-sm-center">
+                                <h4 class="section-header-sm-center-title">
+                                    Digitale Services
+                                </h4>
+                            </div>
+                            
+                            <div class="section-header-sm-center">
+                                <h4 class="section-header-sm-center-title">
+                                    Fahrgast Experience
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real-World Layout Examples -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Layout Examples</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Section Headers in Context
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Page Layout Example -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Landingpage Layout</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Hierarchische Struktur mit verschiedenen Header-Größen
+                        </h4>
+                        
+                        <!-- Page Layout Implementation -->
+                        <div class="space-y-netinera-section-md">
+                            <!-- Main Section -->
+                            <div class="section-header-lg-center">
+                                <h2 class="section-header-lg-center-title">
+                                    Die Zukunft der Mobilität
+                                </h2>
+                                <p class="section-header-lg-center-subtitle">
+                                    Entdecken Sie innovative Lösungen für nachhaltigen und effizienten Transport in Smart Cities.
+                                </p>
+                            </div>
+                            
+                            <!-- Sub Section -->
+                            <div class="section-header-md-center">
+                                <h3 class="section-header-md-center-title">
+                                    Unsere Kernbereiche
+                                </h3>
+                            </div>
+                            
+                            <!-- Features Grid -->
+                            <div class="gap-netinera-element-lg grid grid-cols-1 md:grid-cols-3">
+                                <div class="bg-stone-50 p-netinera-element-md rounded-netinera-sm text-center">
+                                    <div class="section-header-sm-center">
+                                        <h4 class="section-header-sm-center-title">
+                                            Autonome Systeme
+                                        </h4>
+                                    </div>
+                                    <p class="mt-netinera-element-sm body-sm">
+                                        KI-gesteuerte Verkehrslösungen für optimierte Routen und Sicherheit.
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-stone-50 p-netinera-element-md rounded-netinera-sm text-center">
+                                    <div class="section-header-sm-center">
+                                        <h4 class="section-header-sm-center-title">
+                                            Nachhaltigkeit
+                                        </h4>
+                                    </div>
+                                    <p class="mt-netinera-element-sm body-sm">
+                                        Umweltfreundliche Antriebe und energieeffiziente Infrastrukturen.
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-stone-50 p-netinera-element-md rounded-netinera-sm text-center">
+                                    <div class="section-header-sm-center">
+                                        <h4 class="section-header-sm-center-title">
+                                            Digitalisierung
+                                        </h4>
+                                    </div>
+                                    <p class="mt-netinera-element-sm body-sm">
+                                        Vernetzte Services und datenbasierte Optimierung von Verkehrsflüssen.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Specifications -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS Spezifikationen</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Section Header Utilities
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Responsive Typography</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Mobile-First mit Desktop-Overrides
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Section Header Large (Mobile → Desktop)</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile (default) */
+.section-header-lg-center-title {
+  font: 400 26px/1.23 "Titillium Web";
+  letter-spacing: 1.54%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section-header-lg-center-subtitle {
+  font: 400 16px/1.625 "Roboto";
+  text-align: center;
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .section-header-lg-center-title {
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: 1%;
+  }
+  
+  .section-header-lg-center-subtitle {
+    font-size: 18px;
+    line-height: 1.67;
+  }
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Section Header Medium (Responsive Width)</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile */
+.section-header-md-center {
+  width: 100%;
+}
+
+.section-header-md-center-title {
+  font: 400 22px/1.27 "Titillium Web";
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .section-header-md-center {
+    width: 568px;
+    margin: 0 auto;
+  }
+  
+  .section-header-md-center-title {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Section Header Small</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile */
+.section-header-sm-center-title {
+  font: 400 20px/1.4 "Titillium Web";
+  text-align: center;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .section-header-sm-center-title {
+    font-size: 24px;
+    line-height: 1.33;
+  }
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Gap Spacing</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Responsive Gaps */
+.section-header-lg-center,
+.section-header-lg-left {
+  gap: 20px; /* Mobile */
+}
+
+@media (min-width: 1024px) {
+  .section-header-lg-center,
+  .section-header-lg-left {
+    gap: 24px; /* Desktop */
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Section Header Komponente
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Vollständige Implementierung der Section Header Komponente mit allen Größenvarianten (LG, MD, SM) und Ausrichtungsoptionen (Center, Left). Responsive Design mit präzisen Figma-Spezifikationen für optimale Typografie-Hierarchien.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Figma Node: 1717-4928</span>
+                <span>|</span>
+                <span>File: Zr15Lh1nQkYgJGcZ0nSnia</span>
+            </div>
+        </div>
+    </footer>
+
+</section>

@@ -1,0 +1,158 @@
+/* Cookie Banner Styles */
+:root {
+  --primary-500: #3B82F6;
+  --primary-600: #2563EB;
+  --primary-700: #1D4ED8;
+  --banner-transition-duration: 300ms;
+  --modal-transition-duration: 250ms;
+}
+
+/* Banner Animation */
+#cookie-banner {
+  transition: transform var(--banner-transition-duration) ease-in-out,
+              opacity var(--banner-transition-duration) ease-in-out;
+  box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 10%),
+              0 -2px 4px -1px rgb(0 0 0 / 6%);
+}
+
+/* Additional animation for cookie banner */
+.cookie-banner-visible {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+/* Modal background animation */
+#cookie-settings-modal .fixed[aria-hidden="true"] {
+  transition: opacity var(--modal-transition-duration) ease;
+}
+
+/* Modal animation */
+#cookie-settings-modal .inline-block {
+  transition: opacity var(--modal-transition-duration) ease,
+              transform var(--modal-transition-duration) ease;
+}
+
+/* Modal open animation */
+#cookie-settings-modal:not(.hidden) .inline-block {
+  animation: modal-open var(--modal-transition-duration) ease forwards;
+}
+
+/* Floating Settings Button */
+#floating-cookie-settings {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 40;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  will-change: transform, opacity;
+}
+
+#floating-cookie-settings.invisible {
+  visibility: hidden;
+}
+
+#floating-cookie-settings button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%),
+              0 2px 4px -1px rgb(0 0 0 / 6%);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  min-width: 44px;
+  min-height: 44px;
+  background-color: #10162F;
+  animation: pulse 2s infinite;
+}
+
+#floating-cookie-settings button:hover,
+#floating-cookie-settings button:focus {
+  background-color: #1A237E;
+  transform: scale(1.05);
+}
+
+#floating-cookie-settings button:focus-visible {
+  outline: 3px solid #FFF;
+  outline-offset: 3px;
+}
+
+/* High contrast mode improvements */
+@media (forced-colors: active) {
+  #floating-cookie-settings button {
+    border: 2px solid ButtonText;
+  }
+
+  #floating-cookie-settings button:focus-visible {
+    outline: 2px solid ButtonText;
+  }
+}
+
+/* Mobile adjustments */
+@media (width <= 640px) {
+  #cookie-banner {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  #cookie-settings-modal .inline-block {
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+/* iOS Safari Fix */
+@supports (-webkit-touch-callout: none) {
+  #cookie-banner {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  #floating-cookie-settings {
+    bottom: calc(env(safe-area-inset-bottom, 0) + 1rem);
+  }
+}
+
+/* Animation for the modal */
+@keyframes modal-open {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Create a glowing effect */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(37 99 235 / 40%);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgb(37 99 235 / 0%);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgb(37 99 235 / 0%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Reduce animations for users who prefer reduced motion */
+  #floating-cookie-settings,
+  #floating-cookie-settings button,
+  #cookie-banner,
+  #cookie-settings-modal .inline-block {
+    transition-duration: 0.1s;
+    animation-duration: 0.1s;
+  }
+
+  #floating-cookie-settings button {
+    animation: none; /* Disable pulse animation */
+  }
+}

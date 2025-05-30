@@ -1,0 +1,96 @@
+/* === ADDITIONAL VARIABLES */
+
+:root {
+  /* ============================
+   * === ICOMOON AS VARIABLES ===
+   * ============================
+   * Update Icons from packages/sitepackage/Resources/Public/Fonts/Icomoon/style.css
+   */
+
+  /* Navigation & UI */
+  --icon-menu: "\e922";
+  --icon-minus: "\e925";
+  --icon-plus: "\e926";
+  --icon-player-stop: "\e923";
+  --icon-close: "\e924";
+  --icon-play-teaser: "\e900";
+  --icon-arrow-button: "\e91a";
+  --icon-chevron-left: "\e91b";
+  --icon-image: "\e91c";
+  --icon-chevron-right: "\e91d";
+  --icon-play-button: "\e91e";
+  --icon-play1: "\e91f";
+  --icon-slider-btn-left: "\e920";
+  --icon-slider-btn-right: "\e921";
+  --icon-search: "\e90b";
+
+  /* Transport & Business */
+  --icon-briefcase-business: "\e90c";
+  --icon-building: "\e90d";
+  --icon-bus: "\e90f";
+  --icon-euro: "\e910";
+  --icon-flag: "\e911";
+  --icon-gem: "\e912";
+  --icon-hand-heart: "\e913";
+  --icon-road: "\e914";
+  --icon-steering-wheel: "\e915";
+  --icon-ticket: "\e916";
+  --icon-track: "\e917";
+  --icon-train: "\e918";
+  --icon-users: "\e919";
+
+  /* Arrows & Navigation */
+  --icon-arrow-up: "\ea3a";
+  --icon-arrow-down: "\ea3e";
+  --icon-arrow-left: "\ea40";
+  --icon-arrow-right: "\ea3c";
+
+  /* Form Elements */
+  --icon-checkbox-true: "\ea52";
+  --icon-checkbox-false: "\ea53";
+  --icon-radio-true: "\ea54";
+  --icon-radio-false: "\ea56";
+
+  /* Media & Files */
+  --icon-images: "\e90e";
+  --icon-pin: "\e947";
+  --icon-link: "\e9cb";
+
+  /* Notifications */
+  --icon-warning: "\ea07";
+  --icon-notification: "\ea08";
+  --icon-info: "\ea0c";
+
+  /* Actions */
+  --icon-download: "\e960";
+  --icon-upload: "\e961";
+
+  /* Social Media */
+  --icon-twitter: "\e901";
+  --icon-facebook: "\e902";
+  --icon-linkedin: "\e903";
+  --icon-xing: "\e904";
+  --icon-instagram: "\e905";
+  --icon-youtube: "\e906";
+  --icon-telegram: "\e907";
+  --icon-whatsapp: "\e908";
+
+  /* UI Controls */
+  --icon-chevron-up: "\f106";
+  --icon-chevron-down: "\f107";
+  --icon-check: "\f00c";
+
+  /* Contact & Communication */
+  --icon-mail: "\e909";
+  --icon-phone: "\e90a";
+  --icon-edit: "\f044";
+  --icon-chat: "\f0e5";
+  --icon-calendar: "\f133";
+  --icon-map: "\f278";
+
+  /* Media Controls */
+  --icon-play: "\f04b";
+  --icon-pause: "\f04c";
+  --icon-stop: "\f04d";
+  --icon-external-link: "\f08e";
+}

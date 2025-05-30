@@ -1,0 +1,746 @@
+
+    
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<    class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h1">Komponente</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                Image Slider Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content text-netinera-white body-lg">
+                Responsive Image Slider Komponente mit Navigation und Pagination basierend auf Figma Nodes 1780-35047 (Desktop) und 1731-23716 (Mobile). Automatische Anpassung zwischen Mobile (328×185px) und Desktop (768×434px).
+            </p>
+        </div>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Responsive Image Slider -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Responsive Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Image Slider - Automatische Anpassung mit Figma Dots
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Responsive Image Slider Example 1 -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Figma-Konforme Pagination Dots</div>
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Automatische Navigation & Größenanpassung</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: 328×185px (Touch) → Desktop: 768×434px (Navigation Buttons)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center">
+                            <div class="image-slider-responsive">
+                                <div class="image-slider-responsive-content">
+                                    <div class="image-slider-responsive-navigation">
+                                        <button class="image-slider-responsive-nav-button" onclick="previousSlide('slider1')">
+                                            <div class="image-slider-responsive-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                        <div class="image-slider-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                                        <button class="image-slider-responsive-nav-button" onclick="nextSlide('slider1')">
+                                            <div class="image-slider-responsive-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="image-slider-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                                    <div class="image-slider-responsive-caption">
+                                        Nachhaltige Bahntechnologie: Moderne Züge für umweltfreundliche Mobilität
+                                    </div>
+                                </div>
+                                <div class="image-slider-responsive-pagination">
+                                    <div class="image-slider-responsive-dot active" onclick="goToSlide('slider1', 0)"></div>
+                                    <div class="image-slider-responsive-dot" onclick="goToSlide('slider1', 1)"></div>
+                                    <div class="image-slider-responsive-dot" onclick="goToSlide('slider1', 2)"></div>
+                                    <div class="image-slider-responsive-dot" onclick="goToSlide('slider1', 3)"></div>
+                                    <div class="image-slider-responsive-dot" onclick="goToSlide('slider1', 4)"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="image-slider-responsive"&gt;
+  &lt;div class="image-slider-responsive-content"&gt;
+    &lt;div class="image-slider-responsive-navigation"&gt;
+      &lt;button class="image-slider-responsive-nav-button" onclick="previousSlide('slider1')"&gt;
+        &lt;div class="image-slider-responsive-nav-button-icon"&gt;
+          &lt;svg&gt;...&lt;/svg&gt;
+        &lt;/div&gt;
+      &lt;/button&gt;
+      &lt;div class="image-slider-responsive-image" style="background-image: url('...');"&gt;&lt;/div&gt;
+      &lt;button class="image-slider-responsive-nav-button" onclick="nextSlide('slider1')"&gt;
+        &lt;div class="image-slider-responsive-nav-button-icon"&gt;
+          &lt;svg&gt;...&lt;/svg&gt;
+        &lt;/div&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="image-slider-responsive-image" style="background-image: url('...');"&gt;&lt;/div&gt;
+    &lt;div class="image-slider-responsive-caption"&gt;Caption Text&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="image-slider-responsive-pagination"&gt;
+    &lt;div class="image-slider-responsive-dot active"&gt;&lt;/div&gt;
+    &lt;div class="image-slider-responsive-dot"&gt;&lt;/div&gt;
+    &lt;!-- More dots... --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Responsive Image Slider Example 2 -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Alternative Bildinhalte</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Verschiedene Bilder mit identischem Layout
+                        </h4>
+                        
+                        <div class="flex justify-center">
+                            <div class="image-slider-responsive">
+                                <div class="image-slider-responsive-content">
+                                    <div class="image-slider-responsive-navigation">
+                                        <button class="image-slider-responsive-nav-button" onclick="previousSlide('slider2')">
+                                            <div class="image-slider-responsive-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                        <div class="image-slider-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                                        <button class="image-slider-responsive-nav-button" onclick="nextSlide('slider2')">
+                                            <div class="image-slider-responsive-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="image-slider-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                                    <div class="image-slider-responsive-caption">
+                                        Innovation im ÖPNV: Digitale Lösungen für effiziente Verkehrssysteme
+                                    </div>
+                                </div>
+                                <div class="image-slider-responsive-pagination">
+                                    <div class="image-slider-responsive-dot" onclick="goToSlide('slider2', 0)"></div>
+                                    <div class="image-slider-responsive-dot active" onclick="goToSlide('slider2', 1)"></div>
+                                    <div class="image-slider-responsive-dot" onclick="goToSlide('slider2', 2)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fixed Size Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Fixed Size Variants</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Image Slider - Feste Desktop/Mobile Größen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Desktop XL -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Desktop XL Variant</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            image-slider-xl (1064px Container, 768×434px Images)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center">
+                            <div class="image-slider-xl">
+                                <div class="image-slider-xl-content">
+                                    <div class="image-slider-xl-navigation">
+                                        <button class="image-slider-xl-nav-button" onclick="previousSlideXL('slider1')">
+                                            <div class="image-slider-xl-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                        <div class="image-slider-xl-image" style="background-image: url('https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                                        <button class="image-slider-xl-nav-button" onclick="nextSlideXL('slider1')">
+                                            <div class="image-slider-xl-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="image-slider-xl-caption">
+                                        Projektgalerie: Erfolgreiche Umsetzung nachhaltiger Mobilitätsprojekte
+                                    </div>
+                                </div>
+                                <div class="image-slider-xl-pagination">
+                                    <div class="image-slider-xl-dot active" onclick="goToSlideXL('slider1', 0)"></div>
+                                    <div class="image-slider-xl-dot" onclick="goToSlideXL('slider1', 1)"></div>
+                                    <div class="image-slider-xl-dot" onclick="goToSlideXL('slider1', 2)"></div>
+                                    <div class="image-slider-xl-dot" onclick="goToSlideXL('slider1', 3)"></div>
+                                    <div class="image-slider-xl-dot" onclick="goToSlideXL('slider1', 4)"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="image-slider-xl"&gt;
+  &lt;div class="image-slider-xl-content"&gt;
+    &lt;div class="image-slider-xl-navigation"&gt;
+      &lt;button class="image-slider-xl-nav-button"&gt;
+        &lt;div class="image-slider-xl-nav-button-icon"&gt;
+          &lt;svg&gt;...&lt;/svg&gt;
+        &lt;/div&gt;
+      &lt;/button&gt;
+      &lt;div class="image-slider-xl-image" style="background-image: url('...');"&gt;&lt;/div&gt;
+      &lt;button class="image-slider-xl-nav-button"&gt;
+        &lt;div class="image-slider-xl-nav-button-icon"&gt;
+          &lt;svg&gt;...&lt;/svg&gt;
+        &lt;/div&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="image-slider-xl-caption"&gt;Caption Text&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="image-slider-xl-pagination"&gt;
+    &lt;div class="image-slider-xl-dot active"&gt;&lt;/div&gt;
+    &lt;div class="image-slider-xl-dot"&gt;&lt;/div&gt;
+    &lt;!-- More dots... --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Mobile SM -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Mobile SM Variant</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            image-slider-sm (Full Width, 185px Height, Touch Navigation)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center">
+                            <div class="image-slider-sm">
+                                <div class="image-slider-sm-content">
+                                    <div class="image-slider-sm-image" style="background-image: url('https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                                    <div class="image-slider-sm-caption">
+                                        Mobile Ansicht: Swipe für Navigation zwischen Bildern
+                                    </div>
+                                </div>
+                                <div class="image-slider-sm-pagination">
+                                    <div class="image-slider-sm-dot" onclick="goToSlideSM('slider2', 0)"></div>
+                                    <div class="image-slider-sm-dot" onclick="goToSlideSM('slider2', 1)"></div>
+                                    <div class="image-slider-sm-dot active" onclick="goToSlideSM('slider2', 2)"></div>
+                                    <div class="image-slider-sm-dot" onclick="goToSlideSM('slider2', 3)"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="image-slider-sm"&gt;
+  &lt;div class="image-slider-sm-content"&gt;
+    &lt;div class="image-slider-sm-image" style="background-image: url('...');"&gt;&lt;/div&gt;
+    &lt;div class="image-slider-sm-caption"&gt;Caption Text&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="image-slider-sm-pagination"&gt;
+    &lt;div class="image-slider-sm-dot"&gt;&lt;/div&gt;
+    &lt;div class="image-slider-sm-dot active"&gt;&lt;/div&gt;
+    &lt;!-- More dots... --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation & Pagination Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Navigation & Pagination</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Image Slider - Button & Dot Varianten
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Button Variants -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Navigation Button Varianten</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Primary, Secondary und White Button Styles
+                        </h4>
+                        
+                        <!-- Button Variants Implementation -->
+                        <div class="flex flex-wrap justify-center gap-netinera-element-md">
+                            <!-- Primary Buttons -->
+                            <div class="image-slider-responsive">
+                                <div class="image-slider-responsive-content">
+                                    <div class="image-slider-responsive-navigation">
+                                        <button class="image-slider-responsive-nav-button image-slider-nav-button-primary">
+                                            <div class="image-slider-responsive-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                        <div class="image-slider-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');"></div>
+                                        <button class="image-slider-responsive-nav-button image-slider-nav-button-primary">
+                                            <div class="image-slider-responsive-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="image-slider-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');"></div>
+                                    <div class="image-slider-responsive-caption">Primary Buttons</div>
+                                </div>
+                                <div class="image-slider-responsive-pagination image-slider-pagination-primary">
+                                    <div class="image-slider-responsive-dot active"></div>
+                                    <div class="image-slider-responsive-dot"></div>
+                                    <div class="image-slider-responsive-dot"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Secondary Buttons -->
+                            <div class="image-slider-responsive">
+                                <div class="image-slider-responsive-content">
+                                    <div class="image-slider-responsive-navigation">
+                                        <button class="image-slider-responsive-nav-button image-slider-nav-button-secondary">
+                                            <div class="image-slider-responsive-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                        <div class="image-slider-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1569863959165-56dac8ac7e93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');"></div>
+                                        <button class="image-slider-responsive-nav-button image-slider-nav-button-secondary">
+                                            <div class="image-slider-responsive-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="image-slider-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1569863959165-56dac8ac7e93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');"></div>
+                                    <div class="image-slider-responsive-caption">Secondary Buttons</div>
+                                </div>
+                                <div class="image-slider-responsive-pagination">
+                                    <div class="image-slider-responsive-dot"></div>
+                                    <div class="image-slider-responsive-dot active"></div>
+                                    <div class="image-slider-responsive-dot"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- White Buttons -->
+                            <div class="image-slider-responsive">
+                                <div class="image-slider-responsive-content">
+                                    <div class="image-slider-responsive-navigation">
+                                        <button class="image-slider-responsive-nav-button image-slider-nav-button-white">
+                                            <div class="image-slider-responsive-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                        <div class="image-slider-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');"></div>
+                                        <button class="image-slider-responsive-nav-button image-slider-nav-button-white">
+                                            <div class="image-slider-responsive-nav-button-icon">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="image-slider-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');"></div>
+                                    <div class="image-slider-responsive-caption">White Buttons</div>
+                                </div>
+                                <div class="image-slider-responsive-pagination">
+                                    <div class="image-slider-responsive-dot"></div>
+                                    <div class="image-slider-responsive-dot"></div>
+                                    <div class="image-slider-responsive-dot active"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Button Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">Button Variant Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;!-- Primary Buttons --&gt;
+&lt;button class="image-slider-responsive-nav-button image-slider-nav-button-primary"&gt;
+
+&lt;!-- Secondary Buttons --&gt;
+&lt;button class="image-slider-responsive-nav-button image-slider-nav-button-secondary"&gt;
+
+&lt;!-- White Buttons --&gt;
+&lt;button class="image-slider-responsive-nav-button image-slider-nav-button-white"&gt;
+
+&lt;!-- Primary Pagination --&gt;
+&lt;div class="image-slider-responsive-pagination image-slider-pagination-primary"&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Specifications -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS Spezifikationen</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Image Slider Component System
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Tailwind Utility Classes</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Vollständig in src/input.css integriert
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Verfügbare Klassen</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Responsive Image Slider */
+.image-slider-responsive
+.image-slider-responsive-content
+.image-slider-responsive-navigation
+.image-slider-responsive-image
+.image-slider-responsive-nav-button
+.image-slider-responsive-nav-button-icon
+.image-slider-responsive-caption
+.image-slider-responsive-pagination
+.image-slider-responsive-dot
+
+/* Fixed Size Variants */
+.image-slider-xl / .image-slider-sm
+.image-slider-xl-content / .image-slider-sm-content
+.image-slider-xl-navigation
+.image-slider-xl-image / .image-slider-sm-image
+.image-slider-xl-nav-button / .image-slider-sm-nav-button
+.image-slider-xl-caption / .image-slider-sm-caption
+.image-slider-xl-pagination / .image-slider-sm-pagination
+.image-slider-xl-dot / .image-slider-sm-dot
+
+/* Utility Classes */
+.image-slider-grid-responsive
+
+/* Component Variants */
+.image-slider-variant-primary
+.image-slider-variant-white
+.image-slider-variant-dark
+
+/* Navigation Button Variants */
+.image-slider-nav-button-primary
+.image-slider-nav-button-secondary
+.image-slider-nav-button-white
+
+/* Pagination Variants */
+.image-slider-pagination-primary
+.image-slider-pagination-white</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Responsive Verhalten</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile (< 1024px) */
+.image-slider-responsive {
+  width: 100%;
+  gap: 20px;
+}
+
+.image-slider-responsive-navigation {
+  display: none; /* Hidden on mobile */
+}
+
+.image-slider-responsive-image {
+  height: 185px;
+  border-radius: 24px;
+}
+
+/* Desktop (≥ 1024px) */
+.image-slider-responsive {
+  width: 1064px;
+  gap: 24px;
+}
+
+.image-slider-responsive-navigation {
+  display: flex; /* Shown on desktop */
+}
+
+.image-slider-responsive-image {
+  width: 768px;
+  height: 434px;
+  border-radius: 36px;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Navigation Button Spezifikationen</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Navigation Buttons */
+.image-slider-responsive-nav-button {
+  background: #E5E7EB;
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  color: #1E2939;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.image-slider-responsive-nav-button:hover {
+  background: #D1D5DB;
+  transform: translateY(-1px);
+}
+
+.image-slider-responsive-nav-button-icon {
+  width: 20px;
+  height: 20px;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Pagination Spezifikationen</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Pagination Dots */
+.image-slider-responsive-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.image-slider-responsive-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E5E7EB;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.image-slider-responsive-dot.active {
+  background: #DD052B;
+}
+
+.image-slider-responsive-dot:hover {
+  background: #D1D5DB;
+}
+
+.image-slider-responsive-dot.active:hover {
+  background: #B91C1C;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Typography</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Image Slider Caption */
+.image-slider-responsive-caption {
+  font-family: var(--font-family-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4285714285714286;
+  text-align: center;
+  color: var(--color-netinera-dark);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Image Slider Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Responsive Image Slider Komponente mit Navigation Buttons und Pagination Dots. Automatische Anpassung zwischen Mobile (Touch Navigation, 185px) und Desktop (Button Navigation, 434px). Vollständig mit Tailwind Utility Classes implementiert.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Desktop: Node 1780-35047 (1064px Container, 768×434px Images)</span>
+                <span>|</span>
+                <span>Mobile: Node 1731-23716 (Full Width, 185px Height)</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced JavaScript for Figma Dots Demo -->
+    <script>
+        // Slide data for different sliders
+        const sliderData = {
+            'slider1': {
+                images: [
+                    'https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80'
+                ],
+                captions: [
+                    'Nachhaltige Bahntechnologie: Moderne Züge für umweltfreundliche Mobilität',
+                    'Innovation im ÖPNV: Digitale Lösungen für effiziente Verkehrssysteme',
+                    'Projektgalerie: Erfolgreiche Umsetzung nachhaltiger Mobilitätsprojekte',
+                    'Infrastrukturdevelopment: Neue Standards für moderne Verkehrsknotenpunkte',
+                    'Zukunft der Mobilität: Intelligente Transportlösungen für smarte Städte'
+                ],
+                currentSlide: 0
+            },
+            'slider2': {
+                images: [
+                    'https://images.unsplash.com/photo-1569863959165-56dac8ac7e93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80'
+                ],
+                captions: [
+                    'Innovation im ÖPNV: Digitale Lösungen für effiziente Verkehrssysteme',
+                    'Smart Cities: Vernetzte Mobilität für die urbane Zukunft',
+                    'Elektromobilität: Umweltfreundliche Antriebe für den öffentlichen Verkehr',
+                    'Bahnhofstechnik: Moderne Infrastruktur für optimierte Fahrgastströme',
+                    'Verkehrsmanagement: Intelligente Steuerung für effiziente Mobilität',
+                    'Fahrgastinformation: Digitale Services für bessere Reiseerlebnisse'
+                ],
+                currentSlide: 1
+            }
+        };
+        
+        function previousSlide(sliderId) {
+            const data = sliderData[sliderId];
+            if (data) {
+                data.currentSlide = (data.currentSlide - 1 + data.images.length) % data.images.length;
+                updateSlideContent(sliderId);
+                updateDots(sliderId);
+            }
+        }
+        
+        function nextSlide(sliderId) {
+            const data = sliderData[sliderId];
+            if (data) {
+                data.currentSlide = (data.currentSlide + 1) % data.images.length;
+                updateSlideContent(sliderId);
+                updateDots(sliderId);
+            }
+        }
+        
+        function goToSlide(sliderId, slideIndex) {
+            const data = sliderData[sliderId];
+            if (data) {
+                data.currentSlide = slideIndex;
+                updateSlideContent(sliderId);
+                updateDots(sliderId);
+            }
+        }
+        
+        function updateSlideContent(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const data = sliderData[sliderId];
+            
+            if (slider && data) {
+                const images = slider.querySelectorAll('.slider-image');
+                const caption = slider.querySelector('.slider-caption');
+                
+                images.forEach(img => {
+                    img.style.backgroundImage = `url('${data.images[data.currentSlide]}')`;
+                });
+                
+                if (caption) {
+                    caption.textContent = data.captions[data.currentSlide];
+                }
+            }
+        }
+        
+        function updateDots(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const data = sliderData[sliderId];
+            
+            if (slider && data) {
+                const dots = slider.querySelectorAll('.image-slider-responsive-dot, .image-slider-xl-dot, .image-slider-sm-dot');
+                
+                dots.forEach((dot, index) => {
+                    if (index === data.currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+        }
+        
+        // XL and SM specific functions for clarity
+        function previousSlideXL(sliderId) {
+            previousSlide(sliderId);
+        }
+        
+        function nextSlideXL(sliderId) {
+            nextSlide(sliderId);
+        }
+        
+        function goToSlideXL(sliderId, slideIndex) {
+            goToSlide(sliderId, slideIndex);
+        }
+        
+        function goToSlideSM(sliderId, slideIndex) {
+            goToSlide(sliderId, slideIndex);
+        }
+        
+        // Initialize sliders on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            Object.keys(sliderData).forEach(sliderId => {
+                updateSlideContent(sliderId);
+                updateDots(sliderId);
+            });
+            
+            console.log('Image Slider Component with Figma Dots loaded successfully!');
+            console.log('Figma Node 1751:24965 - Carousel Pagination implemented');
+        });
+    </script>
+</section>

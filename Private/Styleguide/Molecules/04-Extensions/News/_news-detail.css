@@ -1,0 +1,268 @@
+/* ==========================
+ * === NEWS DETAIL STYLES
+ * ========================== */
+
+/* Prose styling for article content */
+.news-detail-content .prose {
+  @apply text-base text-gray-800 leading-relaxed;
+}
+
+.news-detail-content .prose h2 {
+  @apply  text-2xl text-gray-800 mt-8 mb-4 leading-tight;
+}
+
+.news-detail-content .prose h3 {
+  @apply  text-xl text-gray-800 mt-6 mb-3 leading-tight;
+}
+
+.news-detail-content .prose h4 {
+  @apply  text-lg text-gray-800 mt-4 mb-2 leading-tight;
+}
+
+.news-detail-content .prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.news-detail-content .prose ul,
+.news-detail-content .prose ol {
+  @apply ml-6 mb-4 space-y-2;
+}
+
+.news-detail-content .prose li {
+  @apply leading-relaxed;
+}
+
+.news-detail-content .prose blockquote {
+  @apply border-l-4 border-secondary-600 pl-4 italic text-gray-700 my-6 bg-gray-50 p-4 rounded-r-lg;
+}
+
+.news-detail-content .prose a {
+  @apply text-primary-700 hover:text-primary-800 underline transition-colors;
+}
+
+.news-detail-content .prose strong {
+  @apply font-semibold text-gray-900;
+}
+
+.news-detail-content .prose em {
+  @apply italic;
+}
+
+.news-detail-content .prose img {
+  @apply rounded-lg my-6 w-full h-auto;
+}
+
+.news-detail-content .prose table {
+  @apply w-full border-collapse border border-gray-300 my-6;
+}
+
+.news-detail-content .prose th,
+.news-detail-content .prose td {
+  @apply border border-gray-300 px-4 py-2 text-left;
+}
+
+.news-detail-content .prose th {
+  @apply bg-gray-100 font-semibold;
+}
+
+/* Responsive adjustments for mobile */
+@media (width <= 768px) {
+  .news-detail-content .prose h2 {
+    @apply text-xl mt-6 mb-3;
+  }
+
+  .news-detail-content .prose h3 {
+    @apply text-lg mt-4 mb-2;
+  }
+
+  .news-detail-content .prose h4 {
+    @apply text-base mt-3 mb-2;
+  }
+}
+
+/* 
+  News Detail Extension Component - Netinera Design System  
+  Detailed news article layout with enhanced typography and media
+*/
+
+@layer components {
+  .netinera-news-detail {
+    @apply max-w-4xl mx-auto;
+
+    font-family: Roboto, sans-serif;
+  }
+  
+  .netinera-news-detail-header {
+    @apply mb-8;
+  }
+  
+  .netinera-news-detail-meta {
+    @apply flex flex-wrap gap-4 text-sm text-gray-600 mb-4;
+
+    font-family: Roboto, sans-serif;
+  }
+  
+  .netinera-news-detail-category {
+    @apply px-3 py-1 rounded-full text-white text-xs font-semibold uppercase tracking-wide;
+
+    background-color: #00685E; /* Netinera primary color */
+    font-family: 'Titillium Web', sans-serif;
+  }
+  
+  .netinera-news-detail-date {
+    @apply text-gray-600;
+  }
+  
+  .netinera-news-detail-title {
+    @apply text-4xl font-bold mb-6 leading-tight;
+
+    color: #1E2939; /* Netinera dark color */
+    font-family: 'Titillium Web', sans-serif;
+  }
+  
+  .netinera-news-detail-teaser {
+    @apply text-xl text-gray-700 mb-8 leading-relaxed;
+
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+  }
+  
+  .netinera-news-detail-image {
+    @apply w-full rounded-lg mb-8 shadow-lg;
+  }
+  
+  .netinera-news-detail-content {
+    /* Custom content styles instead of prose classes */
+    @apply max-w-none;
+
+    font-size: 18px;
+    line-height: 1.7;
+    color: #374151;
+  }
+  
+  .netinera-news-detail-content h2 {
+    @apply text-2xl font-semibold mt-8 mb-4;
+
+    color: #1E2939; /* Netinera dark color */
+    font-family: 'Titillium Web', sans-serif;
+  }
+  
+  .netinera-news-detail-content h3 {
+    @apply text-xl font-semibold mt-6 mb-3;
+
+    color: #1E2939; /* Netinera dark color */
+    font-family: 'Titillium Web', sans-serif;
+  }
+  
+  .netinera-news-detail-content h4 {
+    @apply text-lg font-semibold mt-4 mb-2;
+
+    color: #1E2939; /* Netinera dark color */
+    font-family: 'Titillium Web', sans-serif;
+  }
+  
+  .netinera-news-detail-content p {
+    @apply mb-6 leading-relaxed;
+
+    font-family: Roboto, sans-serif;
+  }
+  
+  .netinera-news-detail-content ul,
+  .netinera-news-detail-content ol {
+    @apply mb-6 pl-6 space-y-2;
+  }
+  
+  .netinera-news-detail-content li {
+    @apply leading-relaxed;
+  }
+  
+  .netinera-news-detail-content blockquote {
+    @apply my-6 pl-4 border-l-4 italic;
+
+    border-color: #00685E; /* Netinera primary color */
+    background-color: #F5F5F4; /* Netinera light background */
+  }
+  
+  .netinera-news-detail-content a {
+    color: #00685E; /* Netinera primary color */
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  
+  .netinera-news-detail-content a:hover {
+    color: #DD052B; /* Netinera secondary color */
+  }
+  
+  .netinera-news-detail-content strong {
+    @apply font-semibold;
+
+    color: #1F2937;
+  }
+  
+  .netinera-news-detail-content em {
+    @apply italic;
+  }
+  
+  .netinera-news-detail-content img {
+    @apply my-6 rounded-lg w-full h-auto;
+  }
+  
+  .netinera-news-detail-content table {
+    @apply my-6 border border-gray-300 w-full border-collapse;
+  }
+  
+  .netinera-news-detail-content th,
+  .netinera-news-detail-content td {
+    @apply border border-gray-300 px-4 py-2 text-left;
+  }
+  
+  .netinera-news-detail-content th {
+    @apply bg-gray-100 font-semibold;
+  }
+  
+  .netinera-news-detail-tags {
+    @apply flex flex-wrap gap-2 mt-8;
+  }
+  
+  .netinera-news-detail-tag {
+    @apply px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm;
+
+    font-family: Roboto, sans-serif;
+    transition: all 0.2s ease;
+  }
+  
+  .netinera-news-detail-tag:hover {
+    background-color: #F5F5F4; /* Netinera light background */
+    color: #00685E; /* Netinera primary color */
+  }
+  
+  .netinera-news-detail-author {
+    @apply border-t border-gray-200 pt-6 mt-8;
+  }
+  
+  .netinera-news-detail-author-info {
+    @apply flex items-center gap-4;
+  }
+  
+  .netinera-news-detail-author-avatar {
+    @apply w-12 h-12 rounded-full bg-gray-300;
+  }
+  
+  .netinera-news-detail-author-text {
+    @apply flex-1;
+  }
+  
+  .netinera-news-detail-author-name {
+    @apply font-semibold;
+
+    color: #1E2939; /* Netinera dark color */
+    font-family: 'Titillium Web', sans-serif;
+  }
+  
+  .netinera-news-detail-author-role {
+    @apply text-sm text-gray-600;
+
+    font-family: Roboto, sans-serif;
+  }
+
+}

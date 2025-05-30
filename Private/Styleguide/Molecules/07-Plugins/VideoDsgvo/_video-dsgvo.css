@@ -1,0 +1,33 @@
+/* === VIDEO (DSGVO) */
+
+.online-media-overlay {
+  @apply relative;
+
+  iframe {
+    @apply absolute top-0 bottom-0 left-0 right-0;
+    @apply w-full h-full rounded;
+  }
+}
+
+.online-media-icon {
+  @apply absolute top-0 left-0;
+  @apply w-full h-full;
+
+  .btn {
+    @apply flex items-center justify-center;
+    @apply w-full h-full;
+
+    .icon {
+      @apply relative;
+      @apply flex items-center justify-center;
+      @apply w-12 h-8;
+      @apply rounded;
+
+      background: rgb(0 0 0 / 50%);
+
+      &::after {
+        @apply border border-2 border-l-0 border-white;
+      }
+    }
+  }
+}

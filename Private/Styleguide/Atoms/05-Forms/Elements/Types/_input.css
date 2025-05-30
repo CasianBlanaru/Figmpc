@@ -1,0 +1,47 @@
+/* === INPUT */
+/* stylelint-disable no-descending-specificity */
+
+/* TODO: Hover and Focus States! */
+
+input,
+select,
+textarea,
+.form-input,
+.form-select,
+.form-textarea {
+  @apply block w-full px-1.5 h-[3rem];
+  @apply text-black border rounded-sm border-neutral-100;
+  @apply transition-all duration-500;
+
+  &:focus,
+  &.pseudo-focus {
+      @apply border-neutral-400;
+  }
+
+  &:hover,
+  &.pseudo-hover {
+      @apply border-neutral-600;
+  }
+
+  &.error {
+      @apply text-red-600 border-red-600;
+  }
+
+  &:disabled,
+  &.disabled {
+      @apply bg-neutral-50;
+  }
+}
+
+/* === Textarea */
+textarea,
+.form-textarea {
+  @apply h-40 p-1.75;
+}
+
+/* === Select */
+select,
+.form-select-wrap {
+  /* Styles here ... */
+}
+/* stylelint-enable no-descending-specificity */

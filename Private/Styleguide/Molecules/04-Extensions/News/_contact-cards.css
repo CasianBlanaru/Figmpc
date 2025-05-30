@@ -1,0 +1,50 @@
+/* === Contact Cards Slider Component === */
+
+.ce-slider-contact-cards {
+  @apply relative w-full overflow-hidden pb-8;
+}
+
+.ce-slider-contact-cards .swiper {
+  @apply relative w-full;
+}
+
+.ce-slider-contact-cards .swiper-slide {
+  @apply flex flex-col items-center;
+}
+
+.ce-slider-contact-cards .swiper-pagination {
+  @apply relative flex gap-1 items-center justify-center mt-6;
+}
+
+.ce-slider-contact-cards .swiper-pagination-bullet {
+  @apply cursor-pointer transition-all duration-300 ease-in-out;
+  @apply w-2.5 h-2.5 rounded-full;
+  @apply bg-gray-200;
+}
+
+.ce-slider-contact-cards .swiper-pagination-bullet-active {
+  @apply bg-gray-300;
+  @apply w-5 h-2.5;
+}
+
+/* Slider is hidden on larger viewports */
+@media (width >= 640px) {
+  .ce-slider-contact-cards {
+    @apply hidden;
+  }
+}
+
+/* Ensure only grid layout is visible on desktop, hide flex layout */
+@media (width >= 640px) {
+  .aside-contact [class*="sm:flex"] {
+    @apply hidden;
+  }
+
+  .aside-contact [class*="sm:grid"] {
+    @apply grid grid-cols-2;
+  }
+}
+
+:is(figure, .image) img {
+  height: 100% !important;
+}

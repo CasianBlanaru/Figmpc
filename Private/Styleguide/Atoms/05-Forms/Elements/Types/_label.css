@@ -1,0 +1,7 @@
+/* === LABEL */
+
+label,
+.label {
+  @apply block mb-1;
+  @apply text-sm font-medium;
+}

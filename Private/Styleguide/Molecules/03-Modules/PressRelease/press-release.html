@@ -1,0 +1,605 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Demo Container Styles */
+        .demo-press-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(30, 41, 57, 0.1);
+        }
+    </style>
+
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h1">News Module</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                Press Release Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content text-netinera-white body-lg">
+                Press Release Component basierend auf Figma News/Press Nodes. Mobile (18px Headlines) → Desktop (22px Headlines). Mit Date/Category Meta Information und responsive Layout.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Responsive Press Release -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Responsive Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Press Release - Automatische Mobile/Desktop Anpassung
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Responsive Press Release List -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Responsive Press Release Liste</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: 18px Headlines, Column Layout → Desktop: 22px Headlines, Row Meta Layout
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="demo-press-container">
+                            <div class="press-release-list-responsive">
+                                <div class="press-release-responsive">
+                                    <div class="press-release-responsive-meta">
+                                        <time class="press-release-responsive-date">15. März 2024</time>
+                                        <div class="press-release-responsive-separator"></div>
+                                        <span class="press-release-responsive-category">Unternehmen</span>
+                                    </div>
+                                    <h3 class="press-release-responsive-headline">
+                                        <a href="#" class="press-release-responsive-link">
+                                            Netinera stellt neue nachhaltige Mobilitätslösungen vor
+                                        </a>
+                                    </h3>
+                                </div>
+                                
+                                <div class="press-release-divider"></div>
+                                
+                                <div class="press-release-responsive">
+                                    <div class="press-release-responsive-meta">
+                                        <time class="press-release-responsive-date">8. März 2024</time>
+                                        <div class="press-release-responsive-separator"></div>
+                                        <span class="press-release-responsive-category">Innovation</span>
+                                    </div>
+                                    <h3 class="press-release-responsive-headline">
+                                        <a href="#" class="press-release-responsive-link">
+                                            Digitale Transformation im öffentlichen Verkehr erreicht nächste Stufe
+                                        </a>
+                                    </h3>
+                                </div>
+                                
+                                <div class="press-release-divider"></div>
+                                
+                                <div class="press-release-responsive">
+                                    <div class="press-release-responsive-meta">
+                                        <time class="press-release-responsive-date">28. Februar 2024</time>
+                                        <div class="press-release-responsive-separator"></div>
+                                        <span class="press-release-responsive-category">Technologie</span>
+                                    </div>
+                                    <h3 class="press-release-responsive-headline">
+                                        <a href="#" class="press-release-responsive-link">
+                                            KI-gestützte Verkehrsoptimierung erhöht Effizienz um 30%
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;!-- Responsive Press Release List --&gt;
+&lt;div class="press-release-list-responsive"&gt;
+  &lt;div class="press-release-responsive"&gt;
+    &lt;div class="press-release-responsive-meta"&gt;
+      &lt;time class="press-release-responsive-date"&gt;15. März 2024&lt;/time&gt;
+      &lt;div class="press-release-responsive-separator"&gt;&lt;/div&gt;
+      &lt;span class="press-release-responsive-category"&gt;Unternehmen&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;h3 class="press-release-responsive-headline"&gt;
+      &lt;a href="#" class="press-release-responsive-link"&gt;
+        Netinera stellt neue nachhaltige Mobilitätslösungen vor
+      &lt;/a&gt;
+    &lt;/h3&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="press-release-divider"&gt;&lt;/div&gt;
+  
+  &lt;!-- Additional press releases... --&gt;
+&lt;/div&gt;
+
+&lt;!-- Mobile: 18px Headlines, Column Meta --&gt;
+&lt;!-- Desktop: 22px Headlines, Row Meta --&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fixed Size Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Fixed Size Variants</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Press Release - Desktop XL & Mobile SM
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Desktop XL Press Release -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Desktop XL (22px Headlines)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            22px Headlines • Row Meta Layout • 10px Gap • 20px Separator
+                        </h4>
+                        
+                        <div class="demo-press-container">
+                            <div class="press-release-list-xl">
+                                <div class="press-release-xl">
+                                    <div class="press-release-xl-meta">
+                                        <time class="press-release-xl-date">15. März 2024</time>
+                                        <div class="press-release-xl-separator"></div>
+                                        <span class="press-release-xl-category">Unternehmen</span>
+                                    </div>
+                                    <h3 class="press-release-xl-headline">
+                                        <a href="#" class="press-release-xl-link">
+                                            Netinera stellt neue nachhaltige Mobilitätslösungen vor
+                                        </a>
+                                    </h3>
+                                </div>
+                                
+                                <div class="press-release-divider"></div>
+                                
+                                <div class="press-release-xl">
+                                    <div class="press-release-xl-meta">
+                                        <time class="press-release-xl-date">8. März 2024</time>
+                                        <div class="press-release-xl-separator"></div>
+                                        <span class="press-release-xl-category">Innovation</span>
+                                    </div>
+                                    <h3 class="press-release-xl-headline">
+                                        <a href="#" class="press-release-xl-link">
+                                            Digitale Transformation im öffentlichen Verkehr erreicht nächste Stufe
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile SM Press Release -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Mobile SM (18px Headlines)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            18px Headlines • Column Meta Layout • 8px Gap • Hidden Separator
+                        </h4>
+                        
+                        <div class="demo-press-container">
+                            <div class="press-release-list-sm">
+                                <div class="press-release-sm">
+                                    <div class="press-release-sm-meta">
+                                        <time class="press-release-sm-date">15. März 2024</time>
+                                        <span class="press-release-sm-category">Unternehmen</span>
+                                    </div>
+                                    <h3 class="press-release-sm-headline">
+                                        <a href="#" class="press-release-sm-link">
+                                            Netinera stellt neue nachhaltige Mobilitätslösungen vor
+                                        </a>
+                                    </h3>
+                                </div>
+                                
+                                <div class="press-release-divider"></div>
+                                
+                                <div class="press-release-sm">
+                                    <div class="press-release-sm-meta">
+                                        <time class="press-release-sm-date">8. März 2024</time>
+                                        <span class="press-release-sm-category">Innovation</span>
+                                    </div>
+                                    <h3 class="press-release-sm-headline">
+                                        <a href="#" class="press-release-sm-link">
+                                            Digitale Transformation im öffentlichen Verkehr erreicht nächste Stufe
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Single Press Release Items -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Individual Items</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Press Release - Einzelne Items mit Interactive States
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Interactive Press Release Items -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Interactive Hover States</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Hover für Highlight-Effekt und Link-Farbwechsel
+                        </h4>
+                        
+                        <div class="space-y-netinera-element-md">
+                            
+                            <!-- Regular Press Release Item -->
+                            <div class="press-release-responsive press-release-interactive">
+                                <div class="press-release-responsive-meta">
+                                    <time class="press-release-responsive-date">20. Februar 2024</time>
+                                    <div class="press-release-responsive-separator"></div>
+                                    <span class="press-release-responsive-category">Nachhaltigkeit</span>
+                                </div>
+                                <h3 class="press-release-responsive-headline">
+                                    <a href="#" class="press-release-responsive-link">
+                                        Neue Elektrobus-Flotte reduziert CO2-Emissionen um 40%
+                                    </a>
+                                </h3>
+                            </div>
+                            
+                            <div class="press-release-divider"></div>
+                            
+                            <!-- Press Release with Badge Styling -->
+                            <div class="press-release-responsive press-release-interactive press-release-badges">
+                                <div class="press-release-responsive-meta">
+                                    <span class="press-release-badge-date">12. Februar 2024</span>
+                                    <span class="press-release-badge-category">Metronom</span>
+                                </div>
+                                <h3 class="press-release-responsive-headline">
+                                    <a href="#" class="press-release-responsive-link">
+                                        metronom erhält Zuschlag für Verkehrsvertrag ENNO II
+                                    </a>
+                                </h3>
+                            </div>
+                            
+                            <div class="press-release-divider"></div>
+                            
+                            <!-- Press Release with Different Category -->
+                            <div class="press-release-responsive press-release-interactive">
+                                <div class="press-release-responsive-meta">
+                                    <time class="press-release-responsive-date">5. Februar 2024</time>
+                                    <div class="press-release-responsive-separator"></div>
+                                    <span class="press-release-responsive-category">Verkehr</span>
+                                </div>
+                                <h3 class="press-release-responsive-headline">
+                                    <a href="#" class="press-release-responsive-link">
+                                        Pünktlichkeitsrate erreicht mit 96,5% neuen Höchststand
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Color Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Color Variants</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Press Release - Light, Dark & Primary Backgrounds
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Color Variants Grid -->
+                    <div class="space-y-netinera-element-md">
+                        
+                        <!-- Light Variant (Default) -->
+                        <div class="demo-press-container">
+                            <div class="press-release-list-responsive press-release-variant-light">
+                                <div class="press-release-responsive">
+                                    <div class="press-release-responsive-meta">
+                                        <time class="press-release-responsive-date">15. März 2024</time>
+                                        <div class="press-release-responsive-separator"></div>
+                                        <span class="press-release-responsive-category">Light Background</span>
+                                    </div>
+                                    <h3 class="press-release-responsive-headline">
+                                        <a href="#" class="press-release-responsive-link">
+                                            Light Variant Press Release Demonstration
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dark Variant -->
+                        <div class="demo-press-container">
+                            <div class="press-release-list-responsive press-release-variant-dark">
+                                <div class="press-release-responsive">
+                                    <div class="press-release-responsive-meta">
+                                        <time class="press-release-responsive-date">15. März 2024</time>
+                                        <div class="press-release-responsive-separator"></div>
+                                        <span class="press-release-responsive-category">Dark Background</span>
+                                    </div>
+                                    <h3 class="press-release-responsive-headline">
+                                        <a href="#" class="press-release-responsive-link">
+                                            Dark Variant Press Release Demonstration
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Primary Variant -->
+                        <div class="demo-press-container">
+                            <div class="press-release-list-responsive press-release-variant-primary">
+                                <div class="press-release-responsive">
+                                    <div class="press-release-responsive-meta">
+                                        <time class="press-release-responsive-date">15. März 2024</time>
+                                        <div class="press-release-responsive-separator"></div>
+                                        <span class="press-release-responsive-category">Primary Background</span>
+                                    </div>
+                                    <h3 class="press-release-responsive-headline">
+                                        <a href="#" class="press-release-responsive-link">
+                                            Primary Variant Press Release Demonstration
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Specifications -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS Spezifikationen</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Press Release Component System
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Tailwind Utility Classes</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Vollständig in src/input.css integriert
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Verfügbare Klassen</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Responsive Press Release */
+.press-release-list-responsive
+.press-release-responsive
+.press-release-responsive-meta
+.press-release-responsive-date
+.press-release-responsive-category
+.press-release-responsive-separator
+.press-release-responsive-headline
+.press-release-responsive-link
+
+/* Fixed Size Variants */
+.press-release-list-xl / .press-release-list-sm
+.press-release-xl / .press-release-sm
+.press-release-xl-meta / .press-release-sm-meta
+.press-release-xl-date / .press-release-sm-date
+.press-release-xl-category / .press-release-sm-category
+.press-release-xl-separator / .press-release-sm-separator
+.press-release-xl-headline / .press-release-sm-headline
+.press-release-xl-link / .press-release-sm-link
+
+/* Interactive Elements */
+.press-release-interactive
+.press-release-divider
+
+/* Badge Variants */
+.press-release-badges
+.press-release-badge-date
+.press-release-badge-category
+
+/* Color Variants */
+.press-release-variant-light
+.press-release-variant-dark
+.press-release-variant-primary</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Responsive Verhalten</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile (< 768px) */
+.press-release-responsive-headline {
+  font-size: 18px;
+  line-height: 1.4em;
+}
+
+.press-release-responsive-meta {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.press-release-responsive-separator {
+  display: none; /* Hidden on mobile */
+}
+
+.press-release-responsive-date::after {
+  content: " • ";
+  color: #1E2939;
+}
+
+/* Desktop (≥ 768px) */
+.press-release-responsive-headline {
+  font-size: 22px;
+  line-height: 1.4545454545454546em;
+}
+
+.press-release-responsive-meta {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.press-release-responsive-separator {
+  display: block; /* Shown on desktop */
+  width: 1px;
+  height: 20px;
+  background: #1E2939;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Typography System</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Press Release Headlines */
+.press-release-responsive-headline,
+.press-release-xl-headline {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  color: #1E2939;
+  margin: 0;
+  width: 100%;
+}
+
+.press-release-sm-headline {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4em;
+  color: #1E2939;
+}
+
+/* Press Release Meta Information */
+.press-release-responsive-date,
+.press-release-responsive-category,
+.press-release-xl-date,
+.press-release-xl-category,
+.press-release-sm-date,
+.press-release-sm-category {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7142857142857142em;
+  color: #1E2939;
+  margin: 0;
+}
+
+/* Press Release Links */
+.press-release-responsive-link,
+.press-release-xl-link,
+.press-release-sm-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.press-release-responsive-link:hover,
+.press-release-xl-link:hover,
+.press-release-sm-link:hover {
+  color: #DD052B;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Press Release Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Press Release Component mit responsive Layout. Mobile: 18px Headlines, Column Meta Layout. Desktop: 22px Headlines, Row Meta Layout mit Separator. Mit Interactive States und Color Variants.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Press Release Interactive Effects
+        function addPressReleaseInteractivity() {
+            const pressReleases = document.querySelectorAll('.press-release-interactive');
+            
+            pressReleases.forEach(pressRelease => {
+                pressRelease.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(4px)';
+                    this.style.background = 'rgba(221, 5, 43, 0.02)';
+                    this.style.borderRadius = '8px';
+                    this.style.padding = '16px';
+                    this.style.margin = '-16px 0';
+                });
+                
+                pressRelease.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                    this.style.background = '';
+                    this.style.borderRadius = '';
+                    this.style.padding = '';
+                    this.style.margin = '';
+                });
+            });
+        }
+
+        // Responsive indicator updates
+        function updateResponsiveIndicator() {
+            const indicator = document.querySelector('.responsive-indicator');
+            if (!indicator) return;
+            
+            const spans = indicator.querySelectorAll('span');
+            spans.forEach(span => span.style.display = 'none');
+            
+            if (window.innerWidth < 640) {
+                spans[0].style.display = 'block';
+            } else if (window.innerWidth < 768) {
+                spans[1].style.display = 'block';
+            } else if (window.innerWidth < 1024) {
+                spans[2].style.display = 'block';
+            } else if (window.innerWidth < 1280) {
+                spans[3].style.display = 'block';
+            } else {
+                spans[4].style.display = 'block';
+            }
+        }
+
+        window.addEventListener('resize', updateResponsiveIndicator);
+        window.addEventListener('load', updateResponsiveIndicator);
+        window.addEventListener('load', addPressReleaseInteractivity);
+        
+        updateResponsiveIndicator();
+        addPressReleaseInteractivity();
+
+        console.log('Press Release Component Showcase loaded!');
+        console.log('Components: Responsive, Desktop XL, Mobile SM, Interactive, Color Variants');
+    </script>
+
+</section>

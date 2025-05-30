@@ -1,0 +1,347 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Temporary icon placeholders using CSS shapes */
+        .icon-building {
+            width: 48px;
+            height: 48px;
+            background: white;
+            mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" stroke-width="1.25" fill="none"><rect x="4" y="2" width="6" height="20"/><rect x="14" y="6" width="6" height="14"/><path d="M6 10h2"/><path d="M6 14h2"/><path d="M16 10h2"/><path d="M16 14h2"/></svg>') center/contain no-repeat;
+            -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" stroke-width="1.25" fill="none"><rect x="4" y="2" width="6" height="20"/><rect x="14" y="6" width="6" height="14"/><path d="M6 10h2"/><path d="M6 14h2"/><path d="M16 10h2"/><path d="M16 14h2"/></svg>') center/contain no-repeat;
+        }
+        
+        .icon-train {
+            width: 48px;
+            height: 48px;
+            background: white;
+            mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" stroke-width="1.25" fill="none"><rect x="4" y="6" width="16" height="12" rx="2"/><circle cx="8" cy="16" r="1"/><circle cx="16" cy="16" r="1"/><path d="M8 6h8"/><path d="M8 14h8"/><path d="M4 15h2"/><path d="M18 15h2"/></svg>') center/contain no-repeat;
+            -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" stroke-width="1.25" fill="none"><rect x="4" y="6" width="16" height="12" rx="2"/><circle cx="8" cy="16" r="1"/><circle cx="16" cy="16" r="1"/><path d="M8 6h8"/><path d="M8 14h8"/><path d="M4 15h2"/><path d="M18 15h2"/></svg>') center/contain no-repeat;
+        }
+        
+        .icon-briefcase {
+            width: 48px;
+            height: 48px;
+            background: white;
+            mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" stroke-width="1.25" fill="none"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M12 12h0"/></svg>') center/contain no-repeat;
+            -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" stroke-width="1.25" fill="none"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M12 12h0"/></svg>') center/contain no-repeat;
+        }
+    </style>
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Section Component</div>
+            <h1 class="headline-h1 spacing-headline-body-h1">
+                Section Company Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Pixelgenaue responsive Section Company Komponente basierend auf Figma Node 1815-8442. Kombiniert Section Header (XL) mit drei Teaser Topic Komponenten. Automatische Anpassung zwischen Mobile (Single Column) und Desktop (Row Layout mit 32px Gap).
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- NEW: Service Section - Complete Figma Implementation (Node 1815-8378) -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Figma Node 1815-8378</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Leistungen Section - Komplette Sektion
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Vollständige Sektion basierend auf Figma Node 1815-8378. Kombiniert Section Header (LG Left) mit Contact Cards und Carousel Navigation.
+                </p>
+                
+                <!-- Leistungen Section Implementation -->
+                <div class="relative bg-white rounded-netinera-container-large overflow-hidden">
+                    <!-- Background layer with gradient overlay -->
+                    <div class="z-10 absolute inset-0 flex flex-col justify-end gap-3 bg-gradient-to-b from-transparent via-teal-900/0 to-teal-900/100 backdrop-blur-[30px] p-6 pointer-events-none">
+                    </div>
+                    
+                    <!-- Main content with exact padding from Figma: 80px 56px -->
+                    <div class="z-20 relative flex flex-col items-center gap-14 px-14 py-20">
+                        
+                        <!-- Section Header - Using section-header-lg-left -->
+                        <div class="section-header-lg-left">
+                            <h3 class="section-header-lg-left-title text-white">LEISTUNGEN</h3>
+                            <p class="section-header-lg-left-subtitle text-white">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                            </p>
+                        </div>
+                        
+                        <!-- Content section with gap 44px -->
+                        <div class="flex flex-col gap-11 w-full">
+                            
+                            <!-- Main layout group with gap 24px -->
+                            <div class="flex flex-col items-center gap-6 w-full">
+                                
+                                <!-- Cards row with horizontal scroll and gap 32px -->
+                                <div class="flex flex-row justify-center gap-8 pb-4 w-full overflow-x-auto">
+                                    
+                                    <!-- Navigation arrows - left -->
+                                    <div class="hidden lg:flex items-center">
+                                        <button class="group flex justify-center items-center bg-gray-300 hover:bg-red-600 rounded-xl w-10 h-10 transition-colors">
+                                            <svg class="w-4 h-4 text-gray-800 group-hover:text-white transition-colors" viewBox="0 0 16 16" fill="currentColor">
+                                                <path d="M8 12l-4-4 4-4v8z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    
+                                    <!-- Contact Cards - Using contact-card-xl styling -->
+                                    <div class="contact-card-xl contact-card-variant-white">
+                                        <div class="bg-gradient-to-br from-green-400 to-teal-600 rounded-netinera-card-secondary contact-card-xl-image"></div>
+                                        <div class="contact-card-xl-content">
+                                            <div class="text-gray-700 text-center overline-sm">ÖPNV & NACHHALTIGKEIT</div>
+                                            <h4 class="text-gray-800 text-center headline-h4">Nachhaltig in die Zukunft</h4>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-card-xl contact-card-variant-white">
+                                        <div class="bg-gradient-to-br from-blue-400 to-purple-600 rounded-netinera-card-secondary contact-card-xl-image"></div>
+                                        <div class="contact-card-xl-content">
+                                            <div class="text-gray-700 text-center overline-sm">TECHNIK & INNOVATION</div>
+                                            <h4 class="text-gray-800 text-center headline-h4">Nächster Halt: Zukunft</h4>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-card-xl contact-card-variant-white">
+                                        <div class="bg-gradient-to-br from-orange-400 to-red-600 rounded-netinera-card-secondary contact-card-xl-image"></div>
+                                        <div class="contact-card-xl-content">
+                                            <div class="text-gray-700 text-center overline-sm">INSTANDHALTUNG & SERVICE</div>
+                                            <h4 class="text-gray-800 text-center headline-h4">Warum es bei uns läuft wie geschmiert</h4>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Navigation arrows - right -->
+                                    <div class="hidden lg:flex items-center">
+                                        <button class="group flex justify-center items-center bg-gray-300 hover:bg-red-600 rounded-xl w-10 h-10 transition-colors">
+                                            <svg class="w-4 h-4 text-gray-800 group-hover:text-white transition-colors" viewBox="0 0 16 16" fill="currentColor">
+                                                <path d="M8 4l4 4-4 4V4z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <!-- Carousel Pagination -->
+                                <div class="image-slider-responsive-pagination image-slider-pagination-count-5">
+                                    <button class="image-slider-responsive-dot active" aria-label="Slide 1"></button>
+                                    <button class="image-slider-responsive-dot" aria-label="Slide 2"></button>
+                                    <button class="image-slider-responsive-dot" aria-label="Slide 3"></button>
+                                    <button class="image-slider-responsive-dot" aria-label="Slide 4"></button>
+                                    <button class="image-slider-responsive-dot" aria-label="Slide 5"></button>
+                                </div>
+                            </div>
+                            
+                            <!-- Bottom Navigation Buttons -->
+                            <div class="flex justify-end items-center gap-1.5 w-full">
+                                <button class="flex justify-center items-center gap-3 bg-red-600 hover:bg-red-700 px-3 rounded-xl w-20 h-10 transition-colors">
+                                    <svg class="w-4 h-4 text-white" viewBox="0 0 16 16" fill="currentColor">
+                                        <path d="M8 12l-4-4 4-4v8z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4 text-white" viewBox="0 0 16 16" fill="currentColor">
+                                        <path d="M8 4l4 4-4 4V4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Code Example for Leistungen Section -->
+                <div class="bg-white mt-netinera-element-lg p-netinera-element-lg rounded-netinera-card-primary">
+                    <div class="overline-xs spacing-overline-h6">HTML Implementation - Figma Node 1815-8378</div>
+                    <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="relative bg-white rounded-netinera-container-large overflow-hidden"&gt;
+  &lt;!-- Background layer with gradient overlay --&gt;
+  &lt;div class="absolute inset-0 bg-gradient-to-b from-transparent via-teal-900/0 to-teal-900/100 backdrop-blur-[30px]"&gt;&lt;/div&gt;
+  
+  &lt;!-- Main content with exact padding from Figma: 80px 56px --&gt;
+  &lt;div class="z-20 relative flex flex-col items-center gap-14 px-14 py-20"&gt;
+    
+    &lt;!-- Section Header - Using section-header-lg-left --&gt;
+    &lt;div class="section-header-lg-left"&gt;
+      &lt;h3 class="section-header-lg-left-title text-white"&gt;LEISTUNGEN&lt;/h3&gt;
+      &lt;p class="section-header-lg-left-subtitle text-white"&gt;
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit...
+      &lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Cards row with contact-card-xl styling --&gt;
+    &lt;div class="flex flex-row justify-center gap-8 w-full overflow-x-auto"&gt;
+      &lt;div class="contact-card-xl contact-card-variant-white"&gt;
+        &lt;div class="bg-gradient-to-br from-green-400 to-teal-600 contact-card-xl-image"&gt;&lt;/div&gt;
+        &lt;div class="contact-card-xl-content"&gt;
+          &lt;div class="text-gray-700 text-center overline-sm"&gt;ÖPNV &amp; NACHHALTIGKEIT&lt;/div&gt;
+          &lt;h4 class="text-gray-800 text-center headline-h4"&gt;Nachhaltig in die Zukunft&lt;/h4&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- Repeat for other cards --&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Carousel Pagination --&gt;
+    &lt;div class="image-slider-responsive-pagination image-slider-pagination-count-5"&gt;
+      &lt;button class="image-slider-responsive-dot active"&gt;&lt;/button&gt;
+      &lt;!-- More dots --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Section Company Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue Section Company Komponente basierend auf Figma Node 1815-8442. Kombiniert Section Header LG Center mit drei Teaser Topic Komponenten. Responsive Layout: Mobile Single Column → Desktop Row mit 32px Gap. Nutzt bestehende Komponenten ohne Code-Duplikation.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Mobile: 48px Border, 40×28px Padding, Column Layout</span>
+                <span>|</span>
+                <span>Desktop: 96px Border, 80×56px Padding, Row Layout, 32px Gap</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel navigation functionality for Leistungen Section
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.contact-card-xl');
+            const dots = document.querySelectorAll('.image-slider-responsive-dot');
+            const navButtons = document.querySelectorAll('button:has(svg)');
+            
+            if (cards.length === 0 || dots.length === 0) return;
+            
+            let currentSlide = 0;
+            const totalSlides = Math.min(cards.length, 3); // Only 3 cards visible
+            
+            function showSlide(index) {
+                // Update dots
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+                
+                // Update cards visibility with smooth animation
+                cards.forEach((card, i) => {
+                    if (i >= index && i < index + 3) {
+                        card.style.transform = 'translateX(0)';
+                        card.style.opacity = '1';
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.transform = `translateX(${(i - index) * 100}%)`;
+                        card.style.opacity = '0.6';
+                        card.style.display = 'none';
+                    }
+                });
+                
+                currentSlide = index;
+            }
+            
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    if (index < totalSlides) {
+                        showSlide(index);
+                    }
+                });
+            });
+            
+            // Arrow navigation
+            navButtons.forEach(button => {
+                const svg = button.querySelector('svg path');
+                if (svg) {
+                    const pathData = svg.getAttribute('d');
+                    
+                    if (pathData === 'M8 12l-4-4 4-4v8z') {
+                        // Left arrow
+                        button.addEventListener('click', () => {
+                            const newIndex = currentSlide > 0 ? currentSlide - 1 : totalSlides - 1;
+                            showSlide(newIndex);
+                        });
+                    } else if (pathData === 'M8 4l4 4-4 4V4z') {
+                        // Right arrow
+                        button.addEventListener('click', () => {
+                            const newIndex = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0;
+                            showSlide(newIndex);
+                        });
+                    }
+                }
+            });
+            
+            // Initialize with first slide
+            showSlide(0);
+            
+            // Add smooth transitions
+            cards.forEach(card => {
+                card.style.transition = 'all 0.3s ease-in-out';
+            });
+        });
+        
+        // Add responsive indicator updates
+        function updateResponsiveIndicator() {
+            const indicator = document.querySelector('.responsive-indicator');
+            if (!indicator) return;
+            
+            const spans = indicator.querySelectorAll('span');
+            spans.forEach(span => span.style.display = 'none');
+            
+            if (window.innerWidth < 640) {
+                spans[0].style.display = 'block'; // XS
+            } else if (window.innerWidth < 768) {
+                spans[1].style.display = 'block'; // SM
+            } else if (window.innerWidth < 1024) {
+                spans[2].style.display = 'block'; // MD
+            } else if (window.innerWidth < 1280) {
+                spans[3].style.display = 'block'; // LG
+            } else {
+                spans[4].style.display = 'block'; // XL
+            }
+        }
+        
+        window.addEventListener('resize', updateResponsiveIndicator);
+        updateResponsiveIndicator();
+    </script>
+</section>

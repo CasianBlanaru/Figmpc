@@ -1,0 +1,280 @@
+
+    <style>
+        /* Additional custom styles for demonstration */
+        .demo-section {
+            background: linear-gradient(135deg, #f5f5f4 0%, #e7e5e4 100%);
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+    </style>
+<section class="bg-netinera-light font-sans">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-netinera-section">
+        <div class="py-netinera-element-lg container-netinera-landingpage">
+            <h1 class="font-display font-bold text-netinera-white text-2xl">
+                Netinera Design System
+            </h1>
+            <p class="mt-2 font-sans text-netinera-white">
+                Teaser Related Components - Tailwind 4 Integration
+            </p>
+        </div>
+    </header>
+
+    <!-- Component Showcase -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Introduction -->
+            <section class="text-center">
+                <h2 class="mb-netinera-element-md font-display font-bold text-netinera-dark text-3xl">
+                    Teaser Related Components
+                </h2>
+                <p class="mx-auto max-w-netinera-content font-sans text-netinera-dark text-lg">
+                    Konsistente Utility-Klassen mit <code class="bg-netinera-dark px-2 py-1 rounded-netinera-xs font-mono text-netinera-white text-sm">netinera-</code> Präfix für optimale Wiederverwendbarkeit.
+                </p>
+            </section>
+
+            <!-- Teaser Related - White Background Variant -->
+            <section class="p-netinera-section-md rounded-netinera-card-primary demo-section">
+                <h3 class="mb-netinera-element-md font-display font-semibold text-netinera-dark text-xl">
+                    Teaser Related - White Background
+                </h3>
+                
+                <div class="gap-netinera-element-lg grid grid-cols-1 lg:grid-cols-2">
+                    <!-- Teaser Card 1 -->
+                    <div class="bg-white max-w-netinera-card-desktop card-netinera-primary">
+                        <div class="p-netinera-card">
+                            <div class="flex justify-between items-start gap-netinera-element-sm">
+                                <!-- Content Section -->
+                                <div class="flex-1">
+                                    <h4 class="mb-netinera-element-xs font-display font-semibold text-netinera-dark text-lg">
+                                        Nachhaltige Mobilität
+                                    </h4>
+                                    <p class="font-sans text-netinera-dark text-sm leading-relaxed">
+                                        Innovative Lösungen für umweltfreundlichen Transport in der Zukunft.
+                                    </p>
+                                </div>
+                                <!-- Icon Section -->
+                                <div class="flex-shrink-0">
+                                    <div class="flex justify-center items-center bg-netinera-primary rounded-netinera-md w-12 h-12">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+                                            <path d="M12 2L2 7V10C2 16 12 22 12 22S22 16 22 10V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teaser Card 2 -->
+                    <div class="bg-white max-w-netinera-card-desktop card-netinera-primary">
+                        <div class="p-netinera-card">
+                            <div class="flex justify-between items-start gap-netinera-element-sm">
+                                <!-- Content Section -->
+                                <div class="flex-1">
+                                    <h4 class="mb-netinera-element-xs font-display font-semibold text-netinera-dark text-lg">
+                                        Digitale Innovation
+                                    </h4>
+                                    <p class="font-sans text-netinera-dark text-sm leading-relaxed">
+                                        Modernste Technologien für intelligente Verkehrssysteme und Fahrgastinformation.
+                                    </p>
+                                </div>
+                                <!-- Icon Section -->
+                                <div class="flex-shrink-0">
+                                    <div class="flex justify-center items-center bg-netinera-secondary rounded-netinera-md w-12 h-12">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+                                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Example -->
+                <div class="mt-netinera-element-lg">
+                    <h4 class="mb-netinera-element-sm font-display font-medium text-netinera-dark">HTML Code:</h4>
+                    <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="bg-white max-w-netinera-card-desktop card-netinera-primary"&gt;
+  &lt;div class="p-netinera-card"&gt;
+    &lt;div class="flex justify-between items-start gap-netinera-element-sm"&gt;
+      &lt;div class="flex-1"&gt;
+        &lt;h4 class="mb-netinera-element-xs font-display font-semibold text-netinera-dark text-lg"&gt;
+          Nachhaltige Mobilität
+        &lt;/h4&gt;
+        &lt;p class="font-sans text-netinera-dark text-sm leading-relaxed"&gt;
+          Innovative Lösungen für umweltfreundlichen Transport in der Zukunft.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="flex-shrink-0"&gt;
+        &lt;div class="flex justify-center items-center bg-netinera-primary rounded-netinera-md w-12 h-12"&gt;
+          &lt;!-- Icon SVG --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Teaser Related - Stone Background Variant -->
+            <section class="p-netinera-section-md rounded-netinera-card-secondary demo-section">
+                <h3 class="mb-netinera-element-md font-display font-semibold text-netinera-dark text-xl">
+                    Teaser Related - Stone Background
+                </h3>
+                
+                <div class="gap-netinera-element-lg grid grid-cols-1 lg:grid-cols-2">
+                    <!-- Teaser Card 3 -->
+                    <div class="bg-stone-100 max-w-netinera-card-desktop card-netinera-secondary">
+                        <div class="p-netinera-card">
+                            <div class="flex justify-between items-start gap-netinera-element-sm">
+                                <!-- Content Section -->
+                                <div class="flex-1">
+                                    <h4 class="mb-netinera-element-xs font-display font-semibold text-netinera-dark text-lg">
+                                        Regionale Vernetzung
+                                    </h4>
+                                    <p class="font-sans text-netinera-dark text-sm leading-relaxed">
+                                        Effiziente Verbindungen zwischen städtischen und ländlichen Gebieten.
+                                    </p>
+                                </div>
+                                <!-- Icon Section -->
+                                <div class="flex-shrink-0">
+                                    <div class="flex justify-center items-center bg-netinera-primary rounded-netinera-md w-12 h-12">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+                                            <path d="M21 16V8A2 2 0 0 0 19 6H5A2 2 0 0 0 3 8V16A2 2 0 0 0 5 18H19A2 2 0 0 0 21 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7 6V4A2 2 0 0 1 9 2H15A2 2 0 0 1 17 4V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teaser Card 4 -->
+                    <div class="bg-stone-100 max-w-netinera-card-desktop card-netinera-secondary">
+                        <div class="p-netinera-card">
+                            <div class="flex justify-between items-start gap-netinera-element-sm">
+                                <!-- Content Section -->
+                                <div class="flex-1">
+                                    <h4 class="mb-netinera-element-xs font-display font-semibold text-netinera-dark text-lg">
+                                        Fahrgastservice
+                                    </h4>
+                                    <p class="font-sans text-netinera-dark text-sm leading-relaxed">
+                                        Kundenorientierte Services für eine komfortable und zuverlässige Reise.
+                                    </p>
+                                </div>
+                                <!-- Icon Section -->
+                                <div class="flex-shrink-0">
+                                    <div class="flex justify-center items-center bg-netinera-secondary rounded-netinera-md w-12 h-12">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+                                            <path d="M16 21V19A2 2 0 0 0 14 17H10A2 2 0 0 0 8 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Example -->
+                <div class="mt-netinera-element-lg">
+                    <h4 class="mb-netinera-element-sm font-display font-medium text-netinera-dark">HTML Code:</h4>
+                    <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="bg-stone-100 max-w-netinera-card-desktop card-netinera-secondary"&gt;
+  &lt;div class="p-netinera-card"&gt;
+    &lt;div class="flex justify-between items-start gap-netinera-element-sm"&gt;
+      &lt;div class="flex-1"&gt;
+        &lt;h4 class="mb-netinera-element-xs font-display font-semibold text-netinera-dark text-lg"&gt;
+          Regionale Vernetzung
+        &lt;/h4&gt;
+        &lt;p class="font-sans text-netinera-dark text-sm leading-relaxed"&gt;
+          Effiziente Verbindungen zwischen städtischen und ländlichen Gebieten.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="flex-shrink-0"&gt;
+        &lt;div class="flex justify-center items-center bg-netinera-primary rounded-netinera-md w-12 h-12"&gt;
+          &lt;!-- Icon SVG --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Responsive Demonstration -->
+            <section class="p-netinera-section-md rounded-netinera-container demo-section">
+                <h3 class="mb-netinera-element-md font-display font-semibold text-netinera-dark text-xl">
+                    Responsive Breakpoints
+                </h3>
+                
+                <div class="space-y-netinera-element-md">
+                    <div class="bg-white p-netinera-element-sm rounded-netinera-card-primary">
+                        <h4 class="mb-netinera-element-xs font-display font-medium text-netinera-dark">
+                            Netinera Custom Breakpoints:
+                        </h4>
+                        <ul class="space-y-1 font-sans text-netinera-dark text-sm">
+                            <li><code class="bg-netinera-dark px-2 py-1 rounded-netinera-xs font-mono text-netinera-white text-xs">netinera-mobile:</code> 360px+</li>
+                            <li><code class="bg-netinera-dark px-2 py-1 rounded-netinera-xs font-mono text-netinera-white text-xs">netinera-tablet:</code> 768px+</li>
+                            <li><code class="bg-netinera-dark px-2 py-1 rounded-netinera-xs font-mono text-netinera-white text-xs">netinera-desktop:</code> 1024px+</li>
+                            <li><code class="bg-netinera-dark px-2 py-1 rounded-netinera-xs font-mono text-netinera-white text-xs">netinera-wide:</code> 1280px+</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-netinera-element-sm rounded-netinera-card-primary">
+                        <h4 class="mb-netinera-element-xs font-display font-medium text-netinera-dark">
+                            Responsive Card Example:
+                        </h4>
+                        <pre class="p-netinera-element-sm overflow-x-auto text-xs code-display"><code>&lt;div class="netinera-mobile:w-full max-w-netinera-card-desktop netinera-tablet:max-w-netinera-card-mobile"&gt;
+  &lt;!-- Card adapts from 368px (desktop) to 328px (tablet) to full width (mobile) --&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Button Components -->
+            <section class="p-netinera-section-md rounded-netinera-card-primary demo-section">
+                <h3 class="mb-netinera-element-md font-display font-semibold text-netinera-dark text-xl">
+                    Button Components
+                </h3>
+                
+                <div class="flex flex-wrap gap-netinera-element-sm">
+                    <button class="btn-netinera-primary">
+                        Primary Button
+                    </button>
+                    <button class="btn-netinera-secondary">
+                        Secondary Button
+                    </button>
+                </div>
+
+                <!-- Button Code Example -->
+                <div class="mt-netinera-element-lg">
+                    <h4 class="mb-netinera-element-sm font-display font-medium text-netinera-dark">Button Classes:</h4>
+                    <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;button class="btn-netinera-primary"&gt;Primary Button&lt;/button&gt;
+&lt;button class="btn-netinera-secondary"&gt;Secondary Button&lt;/button&gt;</code></pre>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-md text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <p class="font-sans text-sm">
+                Netinera Design System - Tailwind 4 Integration mit konsistentem <code class="bg-netinera-primary px-2 py-1 rounded-netinera-xs">netinera-</code> Naming
+            </p>
+            <p class="mt-2 font-sans text-gray-400 text-xs">
+                Figma Node: 1602-2513 | File: Zr15Lh1nQkYgJGcZ0nSnia
+            </p>
+        </div>
+    </footer>
+</section>

@@ -1,0 +1,16 @@
+/* === TYPO3: Filelinks */
+
+.ce-uploads {
+  @apply p-0 m-0;
+  @apply list-none;
+
+  li {
+    @apply flex items-center gap-2;
+
+    div {
+      a {
+        @apply block;
+      }
+    }
+  }
+}

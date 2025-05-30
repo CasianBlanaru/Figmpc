@@ -1,0 +1,26 @@
+/* === TAB */
+
+/* TODO: Check overflow behavior */
+
+/* List */
+.tab-list {
+  @apply flex flex-row gap-1 flex-nowrap lg:gap-3;
+  @apply border-b border-neutral-50;
+}
+
+/* Item */
+.tab-item {
+  @apply relative;
+  @apply inline-flex h-[3.625rem] items-center;
+  @apply no-underline;
+
+  &.active {
+    &::after {
+      @apply absolute left-0 bottom-[-1px];
+      @apply w-full h-[.188rem];
+      @apply bg-primary-900;
+
+      content: "";
+    }
+  }
+}

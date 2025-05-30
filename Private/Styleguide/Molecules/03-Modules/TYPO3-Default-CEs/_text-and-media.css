@@ -1,0 +1,68 @@
+/* === TYPO3: Text / Textpic / Textmedia / Bullets */
+
+.frame-type-text,
+.frame-type-textpic,
+.frame-type-textmedia,
+.frame-type-bullets {
+  ul,
+  ol,
+  dl {
+    @apply mb-1.25;
+  }
+
+  .ce-bodytext {
+    @apply mx-0 max-w-[inherit];
+  }
+}
+
+/* Text and Media / Image Position */
+.ce-textpic {
+  .ce-bodytext {
+    > *:last-child {
+      @apply mb-0;
+    }
+  }
+
+  &.ce-above {
+    .ce-gallery {
+      @apply pb-6 mb-4;
+
+      img {
+        @apply w-full h-auto object-cover max-h-[500px];
+      }
+    }
+  }
+
+  &.ce-below {
+    .ce-gallery {
+      @apply pt-6 mt-4;
+
+      img {
+        @apply w-full h-auto object-cover max-h-[500px];
+      }
+    }
+  }
+
+  &.ce-right,
+  &.ce-left {
+    @apply col-span-12;
+    @apply flex flex-col gap-3 lg:flex-row lg:gap-5;
+
+    > .ce-gallery,
+    > .ce-bodytext {
+      @apply lg:basis-1/2 lg:w-1/2;
+    }
+
+    > .ce-gallery {
+      @apply lg:max-w-none lg:flex-shrink-0;
+
+      img {
+        @apply w-full h-auto object-cover max-h-[500px];
+      }
+    }
+  }
+
+  &.ce-right {
+    @apply flex-col-reverse lg:flex-row-reverse;
+  }
+}

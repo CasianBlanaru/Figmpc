@@ -1,0 +1,435 @@
+
+    
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+    </style>
+>
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Feature Components</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                Feature Card Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content text-netinera-white body-lg">
+                Responsive Feature Card Component mit Background Image, Icon und Text Content. Automatische Anpassung zwischen Mobile (328px) und Desktop (368px) mit Gradient Overlays.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Responsive Feature Card -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Responsive Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Feature Card - Automatische Mobile/Desktop Anpassung
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Responsive Feature Card Example -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Automatische Layout-Anpassung</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: 328px Width × 36px Border Radius → Desktop: 368px × 64px Border Radius
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center">
+                            <div class="feature-card-responsive">
+                                <div class="feature-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <div class="feature-card-responsive-overlay">
+                                        <div class="feature-card-responsive-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-card-responsive-content">
+                                            <div class="feature-card-responsive-overline">Innovation</div>
+                                            <h3 class="feature-card-responsive-headline">Smart Technology</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;!-- Responsive Feature Card --&gt;
+&lt;div class="feature-card-responsive"&gt;
+  &lt;div class="feature-card-responsive-image" 
+       style="background-image: url('...');"&gt;
+    &lt;div class="feature-card-responsive-overlay"&gt;
+      &lt;div class="feature-card-responsive-icon"&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+      &lt;/div&gt;
+      &lt;div class="feature-card-responsive-content"&gt;
+        &lt;div class="feature-card-responsive-overline"&gt;Innovation&lt;/div&gt;
+        &lt;h3 class="feature-card-responsive-headline"&gt;Smart Technology&lt;/h3&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Mobile: 328px width, 200px image height, 36px radius --&gt;
+&lt;!-- Desktop: 368px width, 240px image height, 64px radius --&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Feature Card Grid -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Feature Card Grid Layout</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: 1 Spalte → Tablet: 2 Spalten → Desktop: 3 Spalten
+                        </h4>
+                        
+                        <div class="feature-card-grid-responsive">
+                            <!-- Feature Card 1 -->
+                            <div class="feature-card-responsive">
+                                <div class="feature-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <div class="feature-card-responsive-overlay">
+                                        <div class="feature-card-responsive-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2 18L22 18" stroke="currentColor" stroke-linecap="round"/>
+                                                <path d="M6 8L18 8" stroke="currentColor" stroke-linecap="round"/>
+                                                <path d="M6 8L6 18" stroke="currentColor" stroke-linecap="round"/>
+                                                <path d="M18 8L18 18" stroke="currentColor" stroke-linecap="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-card-responsive-content">
+                                            <div class="feature-card-responsive-overline">Mobilität</div>
+                                            <h3 class="feature-card-responsive-headline">Nahverkehr</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Feature Card 2 -->
+                            <div class="feature-card-responsive">
+                                <div class="feature-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&ixid=M3wxMJA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <div class="feature-card-responsive-overlay">
+                                        <div class="feature-card-responsive-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                                <path d="M8 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-card-responsive-content">
+                                            <div class="feature-card-responsive-overline">Qualität</div>
+                                            <h3 class="feature-card-responsive-headline">Zuverlässigkeit</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Feature Card 3 -->
+                            <div class="feature-card-responsive">
+                                <div class="feature-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMJA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <div class="feature-card-responsive-overlay">
+                                        <div class="feature-card-responsive-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-card-responsive-content">
+                                            <div class="feature-card-responsive-overline">Service</div>
+                                            <h3 class="feature-card-responsive-headline">Support</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fixed Size Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Fixed Size Variants</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Feature Card - Desktop XL & Mobile SM
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Desktop XL Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Desktop XL (368px)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            368px Width • 64px Border Radius • 240px Image Height • 24px Overlay Padding
+                        </h4>
+                        
+                        <div class="flex justify-center">
+                            <div class="feature-card-xl">
+                                <div class="feature-card-xl-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&ixid=M3wxMJA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <div class="feature-card-xl-overlay">
+                                        <div class="feature-card-xl-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-card-xl-content">
+                                            <div class="feature-card-xl-overline">Innovation</div>
+                                            <h3 class="feature-card-xl-headline">Digitale Zukunft</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile SM Specifications -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Mobile SM (328px)</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            328px Width • 36px Border Radius • 200px Image Height • 20px Overlay Padding
+                        </h4>
+                        
+                        <div class="flex justify-center">
+                            <div class="feature-card-sm">
+                                <div class="feature-card-sm-image" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMJA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <div class="feature-card-sm-overlay">
+                                        <div class="feature-card-sm-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                                <path d="M8 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-card-sm-content">
+                                            <div class="feature-card-sm-overline">Service</div>
+                                            <h3 class="feature-card-sm-headline">Kundenservice</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Color Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Color Variants</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Feature Card - Primary, Secondary & Dark Variants
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Color Variants Grid -->
+                    <div class="gap-netinera-element-lg grid grid-cols-1 lg:grid-cols-3">
+                        
+                        <!-- Primary Variant -->
+                        <div class="feature-card-responsive feature-card-variant-primary">
+                            <div class="feature-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMJA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                <div class="feature-card-responsive-overlay">
+                                    <div class="feature-card-responsive-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="feature-card-responsive-content">
+                                        <div class="feature-card-responsive-overline">Primary</div>
+                                        <h3 class="feature-card-responsive-headline">Teal Gradient</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Secondary Variant -->
+                        <div class="feature-card-responsive feature-card-variant-secondary">
+                            <div class="feature-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&ixid=M3wxMJA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                <div class="feature-card-responsive-overlay">
+                                    <div class="feature-card-responsive-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M8 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="feature-card-responsive-content">
+                                        <div class="feature-card-responsive-overline">Secondary</div>
+                                        <h3 class="feature-card-responsive-headline">Red Gradient</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dark Variant -->
+                        <div class="feature-card-responsive feature-card-variant-dark">
+                            <div class="feature-card-responsive-image" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMJA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                <div class="feature-card-responsive-overlay">
+                                    <div class="feature-card-responsive-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="feature-card-responsive-content">
+                                        <div class="feature-card-responsive-overline">Dark</div>
+                                        <h3 class="feature-card-responsive-headline">Dark Gradient</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Specifications -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS Spezifikationen</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Feature Card Component System
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Tailwind Utility Classes</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Vollständig in src/input.css integriert
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Verfügbare Klassen</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Responsive Feature Card */
+.feature-card-responsive
+.feature-card-responsive-image
+.feature-card-responsive-overlay
+.feature-card-responsive-icon
+.feature-card-responsive-content
+.feature-card-responsive-overline
+.feature-card-responsive-headline
+
+/* Fixed Size Variants */
+.feature-card-xl / .feature-card-sm
+.feature-card-xl-image / .feature-card-sm-image
+.feature-card-xl-overlay / .feature-card-sm-overlay
+.feature-card-xl-icon / .feature-card-sm-icon
+.feature-card-xl-content / .feature-card-sm-content
+.feature-card-xl-overline / .feature-card-sm-overline
+.feature-card-xl-headline / .feature-card-sm-headline
+
+/* Grid Layout */
+.feature-card-grid-responsive
+
+/* Color Variants */
+.feature-card-variant-primary
+.feature-card-variant-secondary
+.feature-card-variant-dark</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Responsive Verhalten</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile (< 1024px) */
+.feature-card-responsive {
+  width: 100%;
+  max-width: 328px;
+  border-radius: 36px 0px 36px 0px;
+}
+
+.feature-card-responsive-image {
+  height: 200px;
+  border-radius: 36px 0px 0px 0px;
+}
+
+.feature-card-responsive-overlay {
+  padding: 20px;
+}
+
+/* Desktop (≥ 1024px) */
+.feature-card-responsive {
+  max-width: 368px;
+  border-radius: 64px 0px 64px 0px;
+}
+
+.feature-card-responsive-image {
+  height: 240px;
+  border-radius: 64px 0px 0px 0px;
+}
+
+.feature-card-responsive-overlay {
+  padding: 24px;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Typography</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Feature Card Typography */
+.feature-card-responsive-overline {
+  font-family: var(--font-family-sans);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: white;
+  opacity: 0.9;
+}
+
+.feature-card-responsive-headline {
+  font-family: var(--font-family-display);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: white;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Feature Card Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Responsive Feature Card Component mit Background Image, Icon und Content. Automatische Anpassung zwischen Mobile (328px, 200px Image, 36px Radius) und Desktop (368px, 240px Image, 64px Radius). Mit Gradient Overlays und Color Variants.
+            </div>
+        </div>
+    </footer>
+</section>

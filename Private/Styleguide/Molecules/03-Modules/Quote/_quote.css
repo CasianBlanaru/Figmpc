@@ -1,0 +1,593 @@
+@layer components {
+  /* ==========================
+   * === QUOTE XL COMPONENT (DESKTOP)
+   * ========================== */
+
+  /* Quote XL Container - Figma Node 1841-1247 */
+  .netinera-quote-xl {
+    background: #F5F5F4; /* Netinera light background */
+    border-radius: 64px 0; /* Netinera signature pattern */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 968px; /* Figma specification */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .netinera-quote-xl:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 10%), 0 6px 12px -2px rgb(30 41 57 / 5%);
+  }
+
+  /* Quote XL Image Container */
+  .netinera-quote-xl-image {
+    width: 368px; /* Figma: 368×207px */
+    height: 207px;
+    border-radius: 64px 0 0; /* Top-left radius only */
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* Quote XL Content Container */
+  .netinera-quote-xl-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 10px; /* Figma spacing */
+    padding: 32px;
+    text-align: center;
+  }
+
+  /* ==========================
+   * === QUOTE SM COMPONENT (MOBILE/TABLET)
+   * ========================== */
+
+  /* Quote SM Container */
+  .netinera-quote-sm {
+    background: #F5F5F4; /* Netinera light background */
+    border-radius: 36px 0; /* Scaled down pattern */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 768px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .netinera-quote-sm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -4px rgb(30 41 57 / 10%), 0 4px 8px -2px rgb(30 41 57 / 5%);
+  }
+
+  /* Quote SM Image Container */
+  .netinera-quote-sm-image {
+    width: 100%;
+    height: 184px; /* Mobile height */
+    border-radius: 36px 0 0; /* Top-left radius only */
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* Quote SM Content Container */
+  .netinera-quote-sm-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Mobile spacing */
+    padding: 24px;
+    text-align: center;
+  }
+
+  /* ==========================
+   * === PORTRAIT IMAGE WITH GRADIENT
+   * ========================== */
+
+  /* Portrait Image Base */
+  .netinera-quote-portrait-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  /* Gradient Overlay - XL */
+  .netinera-quote-gradient-overlay {
+    background: linear-gradient(
+      180deg,
+      rgb(166 160 155 / 0%) 0%,
+      rgb(121 113 107 / 100%) 100%
+    );
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Gradient Overlay - SM */
+  .netinera-quote-gradient-overlay-sm {
+    background: linear-gradient(
+      180deg,
+      rgb(166 160 155 / 0%) 0%,
+      rgb(121 113 107 / 100%) 100%
+    );
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Person Information Container */
+  .netinera-quote-person-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+  }
+
+  /* ==========================
+   * === QUOTE TYPOGRAPHY
+   * ========================== */
+
+  /* Quote XL Overline */
+  .netinera-quote-xl-overline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.143em;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #1E2939;
+    margin: 0;
+  }
+
+  /* Quote XL Text */
+  .netinera-quote-xl-text {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.455em;
+    text-align: center;
+    color: #1E2939;
+    margin: 0;
+    max-width: 500px;
+  }
+
+  /* Quote SM Overline */
+  .netinera-quote-sm-overline {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.167em;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #1E2939;
+    margin: 0;
+  }
+
+  /* Quote SM Text */
+  .netinera-quote-sm-text {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.444em;
+    text-align: center;
+    color: #1E2939;
+    margin: 0;
+    max-width: 400px;
+  }
+
+  /* Person Name - XL */
+  .netinera-quote-person-name-xl {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.444em;
+    color: white;
+    margin: 0;
+  }
+
+  /* Person Title - XL */
+  .netinera-quote-person-title-xl {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.625em;
+    color: white;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  /* Person Name - SM */
+  .netinera-quote-person-name-sm {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5em;
+    color: white;
+    margin: 0;
+  }
+
+  /* Person Title - SM */
+  .netinera-quote-person-title-sm {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.429em;
+    color: white;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+
+  /* Tablet breakpoint (≥ 768px, < 1024px) */
+  @media (width >= 768px) and (width <= 1023px) {
+    .netinera-quote-xl {
+      max-width: 768px;
+      flex-direction: column;
+      border-radius: 36px 0;
+    }
+
+    .netinera-quote-xl-image {
+      width: 100%;
+      height: 184px;
+      border-radius: 36px 0 0;
+    }
+
+    .netinera-quote-xl-content {
+      padding: 24px;
+      gap: 8px;
+    }
+
+    .netinera-quote-xl-overline {
+      font-size: 12px;
+      line-height: 1.167em;
+    }
+
+    .netinera-quote-xl-text {
+      font-size: 18px;
+      line-height: 1.444em;
+      max-width: 400px;
+    }
+
+    .netinera-quote-gradient-overlay {
+      padding: 16px;
+    }
+
+    .netinera-quote-person-name-xl {
+      font-size: 16px;
+      line-height: 1.5em;
+    }
+
+    .netinera-quote-person-title-xl {
+      font-size: 14px;
+      line-height: 1.429em;
+    }
+  }
+
+  /* Mobile breakpoint (< 768px) */
+  @media (width <= 767px) {
+    .netinera-quote-xl {
+      max-width: 100%;
+      flex-direction: column;
+      border-radius: 24px 0;
+    }
+
+    .netinera-quote-xl-image {
+      width: 100%;
+      height: 160px;
+      border-radius: 24px 0 0;
+    }
+
+    .netinera-quote-xl-content {
+      padding: 20px;
+      gap: 6px;
+    }
+
+    .netinera-quote-xl-overline {
+      font-size: 11px;
+      line-height: 1.273em;
+    }
+
+    .netinera-quote-xl-text {
+      font-size: 16px;
+      line-height: 1.5em;
+      max-width: 300px;
+    }
+
+    .netinera-quote-sm {
+      border-radius: 24px 0;
+    }
+
+    .netinera-quote-sm-image {
+      border-radius: 24px 0 0;
+      height: 160px;
+    }
+
+    .netinera-quote-sm-content {
+      padding: 20px;
+      gap: 6px;
+    }
+
+    .netinera-quote-sm-overline {
+      font-size: 11px;
+      line-height: 1.273em;
+    }
+
+    .netinera-quote-sm-text {
+      font-size: 16px;
+      line-height: 1.5em;
+      max-width: 300px;
+    }
+
+    .netinera-quote-gradient-overlay,
+    .netinera-quote-gradient-overlay-sm {
+      padding: 14px;
+    }
+
+    .netinera-quote-person-name-xl,
+    .netinera-quote-person-name-sm {
+      font-size: 14px;
+      line-height: 1.429em;
+    }
+
+    .netinera-quote-person-title-xl,
+    .netinera-quote-person-title-sm {
+      font-size: 12px;
+      line-height: 1.5em;
+    }
+  }
+
+  /* Small mobile optimization */
+  @media (width <= 479px) {
+    .netinera-quote-xl,
+    .netinera-quote-sm {
+      border-radius: 20px 0;
+    }
+
+    .netinera-quote-xl-image,
+    .netinera-quote-sm-image {
+      border-radius: 20px 0 0;
+      height: 140px;
+    }
+
+    .netinera-quote-xl-content,
+    .netinera-quote-sm-content {
+      padding: 16px;
+      gap: 4px;
+    }
+
+    .netinera-quote-xl-text,
+    .netinera-quote-sm-text {
+      font-size: 14px;
+      line-height: 1.429em;
+      max-width: 250px;
+    }
+
+    .netinera-quote-gradient-overlay,
+    .netinera-quote-gradient-overlay-sm {
+      padding: 12px;
+    }
+  }
+
+  /* ==========================
+   * === ANIMATION VARIANTS
+   * ========================== */
+
+  /* Fade In Animation */
+  .netinera-quote-fade-in {
+    animation: netinera-quote-fade-in-up 0.6s ease-out;
+  }
+
+  @keyframes netinera-quote-fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide In Animation */
+  .netinera-quote-slide-in {
+    animation: netinera-quote-slide-in 0.8s ease-out forwards;
+  }
+
+  @keyframes netinera-quote-slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Interactive Enhanced Hover */
+  .netinera-quote-interactive {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .netinera-quote-interactive:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 10%), 0 6px 12px -2px rgb(30 41 57 / 5%);
+  }
+
+  .netinera-quote-interactive:active {
+    transform: translateY(-2px);
+    transition: transform 0.1s ease;
+  }
+
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+
+  /* Focus States */
+  .netinera-quote-xl:focus,
+  .netinera-quote-sm:focus {
+    outline: 3px solid #DD052B;
+    outline-offset: 3px;
+  }
+
+  /* Keyboard Navigation */
+  .netinera-quote-xl[tabindex]:focus,
+  .netinera-quote-sm[tabindex]:focus {
+    background: rgb(221 5 43 / 2%);
+    transform: translateY(-2px);
+  }
+
+  /* Screen Reader Support */
+  .netinera-quote-xl[role="blockquote"],
+  .netinera-quote-sm[role="blockquote"] {
+    /* Ensures proper accessibility labeling */
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .netinera-quote-xl,
+    .netinera-quote-sm {
+      border: 2px solid #1E2939;
+    }
+
+    .netinera-quote-xl-text,
+    .netinera-quote-sm-text,
+    .netinera-quote-xl-overline,
+    .netinera-quote-sm-overline {
+      font-weight: 600;
+    }
+
+    .netinera-quote-gradient-overlay,
+    .netinera-quote-gradient-overlay-sm {
+      background: linear-gradient(
+        180deg,
+        rgb(0 0 0 / 0%) 0%,
+        rgb(0 0 0 / 80%) 100%
+      );
+    }
+
+    .netinera-quote-person-name-xl,
+    .netinera-quote-person-name-sm,
+    .netinera-quote-person-title-xl,
+    .netinera-quote-person-title-sm {
+      text-shadow: 1px 1px 2px rgb(0 0 0 / 80%);
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .netinera-quote-xl,
+    .netinera-quote-sm,
+    .netinera-quote-interactive {
+      transition: none;
+      animation: none;
+    }
+
+    .netinera-quote-fade-in,
+    .netinera-quote-slide-in {
+      animation: none;
+    }
+
+    .netinera-quote-xl:hover,
+    .netinera-quote-sm:hover,
+    .netinera-quote-interactive:hover,
+    .netinera-quote-interactive:active {
+      transform: none;
+    }
+  }
+
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+
+  @media print {
+    .netinera-quote-xl,
+    .netinera-quote-sm {
+      background: white !important;
+      border: 1px solid #ddd !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      break-inside: avoid;
+      margin-bottom: 20px;
+      transform: none !important;
+      flex-direction: column !important;
+    }
+
+    .netinera-quote-xl-image,
+    .netinera-quote-sm-image {
+      border-radius: 0 !important;
+      height: 150px !important;
+      width: 100% !important;
+    }
+
+    .netinera-quote-portrait-image {
+      background-color: #f5f5f5 !important;
+    }
+
+    .netinera-quote-gradient-overlay,
+    .netinera-quote-gradient-overlay-sm {
+      background: rgb(0 0 0 / 70%) !important;
+      padding: 12px !important;
+    }
+
+    .netinera-quote-xl-content,
+    .netinera-quote-sm-content {
+      padding: 15px !important;
+      gap: 8px !important;
+    }
+
+    .netinera-quote-xl-overline,
+    .netinera-quote-sm-overline {
+      color: #666 !important;
+      font-size: 11px !important;
+      line-height: 1.3 !important;
+    }
+
+    .netinera-quote-xl-text,
+    .netinera-quote-sm-text {
+      color: black !important;
+      font-size: 16px !important;
+      line-height: 1.4 !important;
+      max-width: 100% !important;
+    }
+
+    .netinera-quote-person-name-xl,
+    .netinera-quote-person-name-sm,
+    .netinera-quote-person-title-xl,
+    .netinera-quote-person-title-sm {
+      color: white !important;
+      text-shadow: 1px 1px 2px rgb(0 0 0 / 80%) !important;
+      font-size: 14px !important;
+      line-height: 1.3 !important;
+    }
+  }
+
+}

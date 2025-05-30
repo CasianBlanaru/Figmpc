@@ -1,0 +1,28 @@
+/* === MODAL (Global) */
+
+.modal {
+  .modal-dialog {
+    @apply max-w-full m-3;
+    @apply lg:max-w-[1280px];
+  }
+
+  /* == Btn Close */
+  .btn-close {
+    /* Styles here ... */
+  }
+
+  /* == Modal Content */
+  .modal-content {
+    @apply lg:mx-auto lg:w-3/4;
+  }
+
+  /* == Modal Header */
+  .modal-header {
+    /* Styles here ... */
+  }
+
+  /* == Modal Footer */
+  .modal-footer {
+    /* Styles here ... */
+  }
+}

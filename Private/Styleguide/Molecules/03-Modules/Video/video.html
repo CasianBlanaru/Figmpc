@@ -1,0 +1,520 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+    </style>
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Komponente</div>
+            <h1 class="headline-h1 spacing-headline-body-h1">
+                Video Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Responsive Video Komponente mit Play-Button und Caption basierend auf Figma Nodes 1794-36849 (Desktop) und 1741-24148 (Mobile). Automatische Anpassung zwischen Mobile (185px) und Desktop (433px) Höhe.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Responsive Video -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Responsive Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Video - Automatische Anpassung
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Responsive Video Example 1 -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Automatische Größenanpassung</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: 185px → Desktop: 433px Höhe (16:9 Aspect Ratio)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center">
+                            <div class="video-responsive">
+                                <div class="video-responsive-container" style="background-image: url('https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <button class="video-responsive-play-button" onclick="alert('Video wird abgespielt')">
+                                        <div class="video-responsive-play-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="video-responsive-caption">
+                                    Nachhaltigkeit in der Mobilität: Innovative Lösungen für die Zukunft
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="video-responsive"&gt;
+  &lt;div class="video-responsive-container" style="background-image: url('...');"&gt;
+    &lt;button class="video-responsive-play-button" onclick="playVideo()"&gt;
+      &lt;div class="video-responsive-play-icon"&gt;
+        &lt;svg width="20" height="20" viewBox="0 0 24 24" fill="white"&gt;
+          &lt;path d="M8 5v14l11-7z"/&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="video-responsive-caption"&gt;
+    Nachhaltigkeit in der Mobilität...
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Responsive Video Example 2 -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Alternative Videoinhalte</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Verschiedene Video-Thumbnails mit identischem Layout
+                        </h4>
+                        
+                        <div class="flex justify-center">
+                            <div class="video-responsive">
+                                <div class="video-responsive-container" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <button class="video-responsive-play-button" onclick="alert('Video wird abgespielt')">
+                                        <div class="video-responsive-play-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="video-responsive-caption">
+                                    Moderne Bahntechnologie: Ein Blick hinter die Kulissen
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fixed Size Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Fixed Size Variants</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Video - Feste Desktop/Mobile Größen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Desktop XL -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Desktop XL Variant</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            video-xl (768px × 433px Desktop)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center">
+                            <div class="video-xl">
+                                <div class="video-xl-container" style="background-image: url('https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <button class="video-xl-play-button" onclick="alert('Desktop Video wird abgespielt')">
+                                        <div class="video-xl-play-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="video-xl-caption">
+                                    Unternehmensvorstellung: Unser Weg zu nachhaltiger Mobilität
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="video-xl"&gt;
+  &lt;div class="video-xl-container" style="background-image: url('...');"&gt;
+    &lt;button class="video-xl-play-button" onclick="playVideo()"&gt;
+      &lt;div class="video-xl-play-icon"&gt;
+        &lt;svg width="20" height="20" viewBox="0 0 24 24" fill="white"&gt;
+          &lt;path d="M8 5v14l11-7z"/&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="video-xl-caption"&gt;
+    Unternehmensvorstellung...
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Mobile SM -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Mobile SM Variant</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            video-sm (Full Width × 185px Mobile)
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="flex justify-center">
+                            <div class="video-sm">
+                                <div class="video-sm-container" style="background-image: url('https://images.unsplash.com/photo-1569863959165-56dac8ac7e93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <button class="video-sm-play-button" onclick="alert('Mobile Video wird abgespielt')">
+                                        <div class="video-sm-play-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="video-sm-caption">
+                                    Praxisbeispiel: Erfolgreiche Projektrealisierung
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="video-sm"&gt;
+  &lt;div class="video-sm-container" style="background-image: url('...');"&gt;
+    &lt;button class="video-sm-play-button" onclick="playVideo()"&gt;
+      &lt;div class="video-sm-play-icon"&gt;
+        &lt;svg width="20" height="20" viewBox="0 0 24 24" fill="white"&gt;
+          &lt;path d="M8 5v14l11-7z"/&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="video-sm-caption"&gt;
+    Praxisbeispiel...
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grid Layout Examples -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Grid Layouts</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Video - Grid Systems
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Responsive Grid -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Responsive Grid</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Mobile: 1 Spalte → Desktop: 2 Spalten
+                        </h4>
+                        
+                        <!-- Grid Implementation -->
+                        <div class="video-grid-responsive">
+                            <div class="video-responsive">
+                                <div class="video-responsive-container" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <button class="video-responsive-play-button" onclick="alert('Grid Video 1 wird abgespielt')">
+                                        <div class="video-responsive-play-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="video-responsive-caption">
+                                    Projektvideo 1: Digitale Transformation im ÖPNV
+                                </div>
+                            </div>
+                            
+                            <div class="video-responsive">
+                                <div class="video-responsive-container" style="background-image: url('https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                                    <button class="video-responsive-play-button" onclick="alert('Grid Video 2 wird abgespielt')">
+                                        <div class="video-responsive-play-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="video-responsive-caption">
+                                    Projektvideo 2: Elektromobilität und Infrastruktur
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Grid Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">Responsive Grid Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="video-grid-responsive"&gt;
+  &lt;div class="video-responsive"&gt;
+    &lt;div class="video-responsive-container" style="background-image: url('...');"&gt;
+      &lt;button class="video-responsive-play-button" onclick="playVideo()"&gt;
+        &lt;div class="video-responsive-play-icon"&gt;
+          &lt;svg width="20" height="20" viewBox="0 0 24 24" fill="white"&gt;
+            &lt;path d="M8 5v14l11-7z"/&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="video-responsive-caption"&gt;Projektvideo 1...&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Weitere Videos... --&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Color & Button Variants -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Color & Button Variants</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Verschiedene Hintergrundfarben und Button-Varianten
+                        </h4>
+                        
+                        <!-- Color Variants Implementation -->
+                        <div class="flex flex-wrap justify-center gap-netinera-element-md">
+                            <div class="video-responsive video-variant-primary">
+                                <div class="video-responsive-container" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
+                                    <button class="video-responsive-play-button video-play-button-primary" onclick="alert('Primary Video')">
+                                        <div class="video-responsive-play-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="video-responsive-caption">Primary Video</div>
+                            </div>
+                            
+                            <div class="video-responsive video-variant-white">
+                                <div class="video-responsive-container" style="background-image: url('https://images.unsplash.com/photo-1558618666-8c5ae2fa6d90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
+                                    <button class="video-responsive-play-button video-play-button-white" onclick="alert('White Video')">
+                                        <div class="video-responsive-play-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="video-responsive-caption">White Variant</div>
+                            </div>
+                            
+                            <div class="video-responsive video-variant-dark">
+                                <div class="video-responsive-container" style="background-image: url('https://images.unsplash.com/photo-1569863959165-56dac8ac7e93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
+                                    <button class="video-responsive-play-button video-play-button-secondary" onclick="alert('Dark Video')">
+                                        <div class="video-responsive-play-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="video-responsive-caption">Dark Variant</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Color Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">Variant Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="video-responsive video-variant-primary"&gt;
+  &lt;button class="video-responsive-play-button video-play-button-primary"&gt;...&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="video-responsive video-variant-white"&gt;
+  &lt;button class="video-responsive-play-button video-play-button-white"&gt;...&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="video-responsive video-variant-dark"&gt;
+  &lt;button class="video-responsive-play-button video-play-button-secondary"&gt;...&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Specifications -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS Spezifikationen</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Video Component System
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Tailwind Utility Classes</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Vollständig in src/input.css integriert
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Verfügbare Klassen</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Responsive Video */
+.video-responsive
+.video-responsive-container
+.video-responsive-play-button
+.video-responsive-play-icon
+.video-responsive-caption
+
+/* Fixed Size Variants */
+.video-xl / .video-sm
+.video-xl-container / .video-sm-container
+.video-xl-play-button / .video-sm-play-button
+.video-xl-play-icon / .video-sm-play-icon
+.video-xl-caption / .video-sm-caption
+
+/* Utility Classes */
+.video-grid-responsive
+
+/* Component Variants */
+.video-variant-primary
+.video-variant-white
+.video-variant-dark
+
+/* Button Variants */
+.video-play-button-primary
+.video-play-button-secondary
+.video-play-button-white</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Responsive Verhalten</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile (< 1024px) */
+.video-responsive {
+  width: 100%;
+}
+
+.video-responsive-container {
+  height: 185px;
+  border-radius: 24px;
+  padding: 16px;
+}
+
+/* Desktop (≥ 1024px) */
+.video-responsive {
+  width: 768px;
+}
+
+.video-responsive-container {
+  height: 433px;
+  border-radius: 36px;
+  padding: 28px;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Play Button Spezifikationen</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Play Button (Alle Varianten) */
+.video-responsive-play-button {
+  background: #DD052B;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.video-responsive-play-button:hover {
+  background: #B91C1C;
+  transform: translateY(-1px);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.32);
+}
+
+.video-responsive-play-icon {
+  width: 20px;
+  height: 20px;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Gradient Overlay</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Video Gradient Overlay */
+.video-responsive-container {
+  background-image: linear-gradient(
+    180deg, 
+    rgba(0, 0, 0, 0) 0%, 
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Typography</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Video Caption */
+.video-responsive-caption {
+  font-family: var(--font-family-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4285714285714286;
+  text-align: center;
+  color: var(--color-netinera-dark);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Video Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Responsive Video Komponente mit Play-Button und Caption. Automatische Anpassung zwischen Mobile (185px) und Desktop (433px) Höhe bei 16:9 Aspect Ratio. Vollständig mit Tailwind Utility Classes implementiert.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>Desktop: Node 1794-36849 (768px × 433px)</span>
+                <span>|</span>
+                <span>Mobile: Node 1741-24148 (Full Width × 185px)</span>
+            </div>
+        </div>
+    </footer>
+
+</section>

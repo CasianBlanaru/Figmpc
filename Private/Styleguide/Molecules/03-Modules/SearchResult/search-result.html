@@ -1,0 +1,663 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Demo Container Styles */
+        .demo-search-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(30, 41, 57, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Search Module</div>
+            <h1 class="headline-h1 spacing-headline-body-h1">
+                Search Result Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Search Result Component für Netinera. Responsive Suchergebnis-Listen mit Meta-Informationen, Kategorien und Snippet-Text. Mobile-first Design mit optimaler UX.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Search Result List -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Responsive Layout</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Search Result - Suchergebnis Liste
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Search Result Header -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Suchergebnis Header</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Anzahl Ergebnisse, Suchbegriff und Filter-Optionen
+                        </h4>
+                        
+                        <!-- Search Result Header Component -->
+                        <div class="search-result-header">
+                            <div class="search-result-header-info">
+                                <h3 class="search-result-header-title">Suchergebnisse für "Nachhaltigkeit"</h3>
+                                <p class="search-result-header-count">142 Ergebnisse in 0,28 Sekunden</p>
+                            </div>
+                            <div class="search-result-header-actions">
+                                <div class="search-result-sort">
+                                    <label for="sort" class="search-result-sort-label">Sortieren nach:</label>
+                                    <select id="sort" class="search-result-sort-select">
+                                        <option value="relevance">Relevanz</option>
+                                        <option value="date">Datum</option>
+                                        <option value="title">Titel</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Result Items -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Responsive Search Result Liste</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Suchergebnis Items mit Titel, URL, Snippet und Meta-Info
+                        </h4>
+                        
+                        <!-- Component Implementation -->
+                        <div class="demo-search-container">
+                            <div class="search-result-list">
+                                
+                                <!-- Search Result Item 1 -->
+                                <div class="search-result-item">
+                                    <div class="search-result-item-header">
+                                        <div class="search-result-item-category">Unternehmen</div>
+                                        <time class="search-result-item-date">15. März 2024</time>
+                                    </div>
+                                    <h3 class="search-result-item-title">
+                                        <a href="#" class="search-result-item-link">
+                                            Netinera setzt neue Maßstäbe für nachhaltige Mobilität im öffentlichen Verkehr
+                                        </a>
+                                    </h3>
+                                    <div class="search-result-item-url">netinera.de/nachhaltigkeit/mobilitaet</div>
+                                    <p class="search-result-item-snippet">
+                                        Die Netinera Gruppe implementiert innovative Lösungen für umweltfreundliche Verkehrssysteme. Mit modernster Technologie und einer klaren Vision für die Zukunft der Mobilität...
+                                    </p>
+                                    <div class="search-result-item-tags">
+                                        <span class="search-result-tag">Nachhaltigkeit</span>
+                                        <span class="search-result-tag">Innovation</span>
+                                        <span class="search-result-tag">Mobilität</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="search-result-divider"></div>
+                                
+                                <!-- Search Result Item 2 -->
+                                <div class="search-result-item">
+                                    <div class="search-result-item-header">
+                                        <div class="search-result-item-category">News</div>
+                                        <time class="search-result-item-date">8. März 2024</time>
+                                    </div>
+                                    <h3 class="search-result-item-title">
+                                        <a href="#" class="search-result-item-link">
+                                            Elektrische Busflotte: 40% Reduktion der CO2-Emissionen erreicht
+                                        </a>
+                                    </h3>
+                                    <div class="search-result-item-url">netinera.de/news/elektrobus-flotte-co2</div>
+                                    <p class="search-result-item-snippet">
+                                        Die neue elektrische Busflotte der Netinera Gruppe zeigt beeindruckende Umweltergebnisse. Die Analyse der ersten sechs Monate bestätigt eine signifikante Reduktion...
+                                    </p>
+                                    <div class="search-result-item-actions">
+                                        <button class="search-result-action-btn search-result-save">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                                            </svg>
+                                            Speichern
+                                        </button>
+                                        <button class="search-result-action-btn search-result-share">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.50-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                                            </svg>
+                                            Teilen
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="search-result-divider"></div>
+                                
+                                <!-- Search Result Item 3 -->
+                                <div class="search-result-item">
+                                    <div class="search-result-item-header">
+                                        <div class="search-result-item-category">Service</div>
+                                        <time class="search-result-item-date">28. Februar 2024</time>
+                                    </div>
+                                    <h3 class="search-result-item-title">
+                                        <a href="#" class="search-result-item-link">
+                                            Nachhaltigkeitsbericht 2024: Transparenz und Verantwortung im Fokus
+                                        </a>
+                                    </h3>
+                                    <div class="search-result-item-url">netinera.de/service/nachhaltigkeitsbericht-2024</div>
+                                    <p class="search-result-item-snippet">
+                                        Der umfassende Nachhaltigkeitsbericht der Netinera Gruppe dokumentiert die Fortschritte in allen Bereichen der nachhaltigen Unternehmensführung...
+                                    </p>
+                                    <div class="search-result-item-badges">
+                                        <span class="search-result-badge search-result-badge-pdf">PDF</span>
+                                        <span class="search-result-badge search-result-badge-new">Neu</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Code Example -->
+                        <div class="mt-netinera-element-md">
+                            <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;!-- Search Result List --&gt;
+&lt;div class="search-result-list"&gt;
+  &lt;div class="search-result-item"&gt;
+    &lt;div class="search-result-item-header"&gt;
+      &lt;div class="search-result-item-category"&gt;Unternehmen&lt;/div&gt;
+      &lt;time class="search-result-item-date"&gt;15. März 2024&lt;/time&gt;
+    &lt;/div&gt;
+    &lt;h3 class="search-result-item-title"&gt;
+      &lt;a href="#" class="search-result-item-link"&gt;
+        Suchergebnis Titel hier
+      &lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;div class="search-result-item-url"&gt;netinera.de/beispiel&lt;/div&gt;
+    &lt;p class="search-result-item-snippet"&gt;
+      Suchergebnis Beschreibung mit relevanten Keywords...
+    &lt;/p&gt;
+    &lt;div class="search-result-item-tags"&gt;
+      &lt;span class="search-result-tag"&gt;Tag&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="search-result-divider"&gt;&lt;/div&gt;
+  
+  &lt;!-- Additional search results... --&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search Result Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Result Variants</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Search Result - Verschiedene Content Types
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Document Results -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Document Search Results</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            PDF-Dokumente, Downloads und Berichte
+                        </h4>
+                        
+                        <div class="demo-search-container">
+                            <div class="search-result-list-documents search-result-list">
+                                
+                                <!-- Document Item 1 -->
+                                <div class="search-result-item search-result-item-document">
+                                    <div class="search-result-item-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="search-result-item-content">
+                                        <div class="search-result-item-header">
+                                            <div class="search-result-item-category">Dokument</div>
+                                            <div class="search-result-item-filesize">2.4 MB</div>
+                                        </div>
+                                        <h3 class="search-result-item-title">
+                                            <a href="#" class="search-result-item-link">
+                                                Nachhaltigkeitsstrategie_2024_Netinera.pdf
+                                            </a>
+                                        </h3>
+                                        <div class="search-result-item-url">netinera.de/downloads/sustainability</div>
+                                        <p class="search-result-item-snippet">
+                                            Umfassendes Strategiepapier zur nachhaltigen Unternehmensführung und Umweltzielen für 2024-2030.
+                                        </p>
+                                        <div class="search-result-item-badges">
+                                            <span class="search-result-badge search-result-badge-pdf">PDF</span>
+                                            <span class="search-result-badge search-result-badge-size">2.4 MB</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="search-result-divider"></div>
+                                
+                                <!-- Document Item 2 -->
+                                <div class="search-result-item search-result-item-document">
+                                    <div class="search-result-item-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="search-result-item-content">
+                                        <div class="search-result-item-header">
+                                            <div class="search-result-item-category">Präsentation</div>
+                                            <div class="search-result-item-filesize">5.8 MB</div>
+                                        </div>
+                                        <h3 class="search-result-item-title">
+                                            <a href="#" class="search-result-item-link">
+                                                Green_Mobility_Solutions_Präsentation.pptx
+                                            </a>
+                                        </h3>
+                                        <div class="search-result-item-url">netinera.de/downloads/presentations</div>
+                                        <p class="search-result-item-snippet">
+                                            Präsentation zu innovativen Lösungen für umweltfreundliche Mobilität im öffentlichen Verkehr.
+                                        </p>
+                                        <div class="search-result-item-badges">
+                                            <span class="search-result-badge search-result-badge-ppt">PPTX</span>
+                                            <span class="search-result-badge search-result-badge-size">5.8 MB</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Results -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Video Search Results</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Video-Inhalte mit Thumbnails und Dauer
+                        </h4>
+                        
+                        <div class="demo-search-container">
+                            <div class="search-result-list-videos search-result-list">
+                                
+                                <!-- Video Item -->
+                                <div class="search-result-item search-result-item-video">
+                                    <div class="search-result-item-thumbnail">
+                                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                                             alt="Video Thumbnail" class="search-result-video-thumbnail">
+                                        <div class="search-result-video-duration">4:32</div>
+                                        <div class="search-result-video-play">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="search-result-item-content">
+                                        <div class="search-result-item-header">
+                                            <div class="search-result-item-category">Video</div>
+                                            <time class="search-result-item-date">12. März 2024</time>
+                                        </div>
+                                        <h3 class="search-result-item-title">
+                                            <a href="#" class="search-result-item-link">
+                                                Nachhaltige Mobilität: Unser Weg in die Zukunft
+                                            </a>
+                                        </h3>
+                                        <div class="search-result-item-url">netinera.de/videos/nachhaltigkeit</div>
+                                        <p class="search-result-item-snippet">
+                                            CEO Andreas Müller erklärt die Vision der Netinera Gruppe für nachhaltige Mobilität und die konkreten Schritte zur Umsetzung.
+                                        </p>
+                                        <div class="search-result-item-badges">
+                                            <span class="search-result-badge search-result-badge-video">Video</span>
+                                            <span class="search-result-badge search-result-badge-duration">4:32</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search Pagination -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Navigation</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Search Result - Pagination & Load More
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Pagination -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Search Result Pagination</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Klassische Seitennummerierung für Suchergebnisse
+                        </h4>
+                        
+                        <div class="search-result-pagination">
+                            <button class="search-result-pagination-btn search-result-pagination-prev" disabled>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                                </svg>
+                                Zurück
+                            </button>
+                            
+                            <div class="search-result-pagination-numbers">
+                                <button class="search-result-pagination-number search-result-pagination-current" aria-current="page">1</button>
+                                <button class="search-result-pagination-number">2</button>
+                                <button class="search-result-pagination-number">3</button>
+                                <span class="search-result-pagination-ellipsis">...</span>
+                                <button class="search-result-pagination-number">15</button>
+                            </div>
+                            
+                            <button class="search-result-pagination-btn search-result-pagination-next">
+                                Weiter
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Load More -->
+                    <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Load More Pattern</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Kontinuierliches Laden für bessere Mobile UX
+                        </h4>
+                        
+                        <div class="search-result-load-more">
+                            <div class="search-result-load-more-info">
+                                <span class="search-result-load-more-count">20 von 142 Ergebnissen angezeigt</span>
+                            </div>
+                            <button class="search-result-load-more-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                                </svg>
+                                20 weitere Ergebnisse laden
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- No Results State -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Empty States</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Search Result - Empty & Error States
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- No Results -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="text-netinera-dark overline-sm spacing-overline-h4">Keine Suchergebnisse</div>
+                        <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                            Empty State für erfolglose Suchen
+                        </h4>
+                        
+                        <div class="search-result-empty">
+                            <div class="search-result-empty-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                </svg>
+                            </div>
+                            <h3 class="search-result-empty-title">Keine Ergebnisse gefunden</h3>
+                            <p class="search-result-empty-description">
+                                Für Ihren Suchbegriff "unbekannter-begriff" wurden keine Ergebnisse gefunden.
+                            </p>
+                            <div class="search-result-empty-suggestions">
+                                <h4 class="search-result-empty-suggestions-title">Versuchen Sie es mit:</h4>
+                                <ul class="search-result-empty-suggestions-list">
+                                    <li>Überprüfung der Rechtschreibung</li>
+                                    <li>Verwendung allgemeinerer Suchbegriffe</li>
+                                    <li>Weniger Suchbegriffe verwenden</li>
+                                </ul>
+                            </div>
+                            <button class="search-result-empty-btn">
+                                Neue Suche starten
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Specifications -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS Spezifikationen</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Search Result Component System
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Tailwind Utility Classes</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Vollständig in src/input.css integriert
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Verfügbare Klassen</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Search Result Components */
+.search-result-list
+.search-result-item
+.search-result-item-header
+.search-result-item-category
+.search-result-item-date
+.search-result-item-title
+.search-result-item-link
+.search-result-item-url
+.search-result-item-snippet
+.search-result-item-tags
+.search-result-tag
+.search-result-divider
+
+/* Search Result Variants */
+.search-result-item-document
+.search-result-item-video
+.search-result-item-thumbnail
+.search-result-video-thumbnail
+.search-result-video-duration
+.search-result-video-play
+
+/* Search Result Actions */
+.search-result-item-actions
+.search-result-action-btn
+.search-result-save
+.search-result-share
+
+/* Search Result Badges */
+.search-result-item-badges
+.search-result-badge
+.search-result-badge-pdf
+.search-result-badge-new
+.search-result-badge-video
+.search-result-badge-duration
+
+/* Pagination Components */
+.search-result-pagination
+.search-result-pagination-btn
+.search-result-pagination-numbers
+.search-result-pagination-number
+.search-result-pagination-current
+.search-result-load-more
+.search-result-load-more-btn
+
+/* Empty States */
+.search-result-empty
+.search-result-empty-icon
+.search-result-empty-title
+.search-result-empty-description</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Search Result Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Search Result Component für umfassende Suchergebnis-Darstellung. Mit responsivem Layout, verschiedenen Content-Types, Pagination und Empty States. Optimiert für Desktop und Mobile.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Search Result Interactive Effects
+        function addSearchResultInteractivity() {
+            const searchItems = document.querySelectorAll('.search-result-item');
+            
+            searchItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.background = 'rgba(221, 5, 43, 0.02)';
+                    this.style.borderRadius = '8px';
+                    this.style.padding = '16px';
+                    this.style.margin = '-16px 0';
+                    this.style.transform = 'translateX(4px)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.background = '';
+                    this.style.borderRadius = '';
+                    this.style.padding = '';
+                    this.style.margin = '';
+                    this.style.transform = '';
+                });
+            });
+            
+            // Save/Share functionality
+            const saveButtons = document.querySelectorAll('.search-result-save');
+            const shareButtons = document.querySelectorAll('.search-result-share');
+            
+            saveButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.style.background = '#10B981';
+                    this.innerHTML = this.innerHTML.replace('Speichern', 'Gespeichert');
+                    setTimeout(() => {
+                        this.style.background = '';
+                        this.innerHTML = this.innerHTML.replace('Gespeichert', 'Speichern');
+                    }, 2000);
+                });
+            });
+            
+            shareButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Share functionality triggered');
+                });
+            });
+        }
+
+        // Load More functionality
+        function setupLoadMore() {
+            const loadMoreBtn = document.querySelector('.search-result-load-more-btn');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    this.innerHTML = 'Lädt...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '20 weitere Ergebnisse laden';
+                        this.disabled = false;
+                        
+                        const countElement = document.querySelector('.search-result-load-more-count');
+                        if (countElement) {
+                            countElement.textContent = '40 von 142 Ergebnissen angezeigt';
+                        }
+                    }, 1500);
+                });
+            }
+        }
+
+        // Search Result pagination
+        function setupPagination() {
+            const paginationNumbers = document.querySelectorAll('.search-result-pagination-number');
+            paginationNumbers.forEach(number => {
+                number.addEventListener('click', function() {
+                    document.querySelector('.search-result-pagination-current').classList.remove('search-result-pagination-current');
+                    this.classList.add('search-result-pagination-current');
+                    this.setAttribute('aria-current', 'page');
+                });
+            });
+        }
+
+        // Responsive indicator updates
+        function updateResponsiveIndicator() {
+            const indicator = document.querySelector('.responsive-indicator');
+            if (!indicator) return;
+            
+            const spans = indicator.querySelectorAll('span');
+            spans.forEach(span => span.style.display = 'none');
+            
+            if (window.innerWidth < 640) {
+                spans[0].style.display = 'block';
+            } else if (window.innerWidth < 768) {
+                spans[1].style.display = 'block';
+            } else if (window.innerWidth < 1024) {
+                spans[2].style.display = 'block';
+            } else if (window.innerWidth < 1280) {
+                spans[3].style.display = 'block';
+            } else {
+                spans[4].style.display = 'block';
+            }
+        }
+
+        window.addEventListener('resize', updateResponsiveIndicator);
+        window.addEventListener('load', updateResponsiveIndicator);
+        window.addEventListener('load', addSearchResultInteractivity);
+        window.addEventListener('load', setupLoadMore);
+        window.addEventListener('load', setupPagination);
+        
+        updateResponsiveIndicator();
+        addSearchResultInteractivity();
+        setupLoadMore();
+        setupPagination();
+
+        console.log('Search Result Component Showcase loaded!');
+        console.log('Components: Search Results, Documents, Videos, Pagination, Empty States');
+    </script>
+</section>

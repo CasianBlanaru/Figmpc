@@ -1,0 +1,100 @@
+<div class="row">
+  <div class="px-4">
+    <section class="ke-search-container" aria-labelledby="search-heading">
+      <h2 id="search-heading" class="sr-only">Suchformular</h2>
+
+      <form
+        method="get"
+        id="form_kesearch_pi1"
+        name="form_kesearch_pi1"
+        action="/suche"
+        role="search"
+        aria-label="Website durchsuchen"
+      >
+        <div class="search-wrapper">
+          <div class="input-group">
+            <label for="ke_search_sword" class="sr-only">Suchbegriff eingeben</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true">
+                <i class="icon icon-search"></i>
+              </span>
+            </div>
+            <input
+              type="search"
+              id="ke_search_sword"
+              name="tx_kesearch_pi1[sword]"
+              class="form-control"
+              placeholder="Suchbegriff"
+              aria-describedby="search-help"
+              minlength="3"
+              required
+            />
+            <div id="search-help" class="sr-only">
+              Bitte geben Sie mindestens 3 Zeichen ein
+            </div>
+          </div>
+
+          <div class="search-actions">
+            <button
+              type="submit"
+              class="btn btn-solid-primary"
+              aria-label="Suche starten"
+            >
+              <i class="icon icon-search" aria-hidden="true"></i>
+              <span>Suchen</span>
+            </button>
+
+            <button
+              type="reset"
+              class="ml-2 btn-outline-secondary btn"
+              aria-label="Suchformular zurücksetzen"
+            >
+              <i class="icon icon-close" aria-hidden="true"></i>
+              <span>Zurücksetzen</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Suchergebnisse -->
+    <section class="ke-search-results" aria-labelledby="search-results-heading">
+      <h2 id="search-results-heading" class="sr-only">Suchergebnisse</h2>
+
+      <div class="results-summary">
+        <p class="text-muted">5 Treffer gefunden</p>
+      </div>
+
+      <ol class="list-unstyled">
+        <li class="search-result">
+          <article>
+            <h3 class="result-title">
+              <a href="/styleguide-2/teasers/teaser-related">Teaser Related</a>
+            </h3>
+            <p class="result-excerpt">Header Overline</p>
+          </article>
+        </li>
+
+        <li class="search-result">
+          <article>
+            <h3 class="result-title">
+              <a href="/styleguide-2/hero">Hero</a>
+            </h3>
+            <p class="result-excerpt">Header Text Overline</p>
+          </article>
+        </li>
+
+        <li class="search-result">
+          <article>
+            <h3 class="result-title">
+              <a href="/">Home</a>
+            </h3>
+            <p class="result-excerpt">
+              WIR BEWEGEN MENSCHEN IN IHRER REGION. ZUVERLÄSSIG, NACHHALTIG, ERFOLGREICH.
+            </p>
+          </article>
+        </li>
+      </ol>
+    </section>
+  </div>
+</div>

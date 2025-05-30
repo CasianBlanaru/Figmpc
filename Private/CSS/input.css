@@ -1,0 +1,146 @@
+/* stylelint-disable */
+
+@import "tailwindcss";
+@import "./theme.css";
+
+
+
+/* ============= */
+/* === GENES === */
+/* ============= */
+@import "../Styleguide/_Genes/_variables.css";
+@import "../Styleguide/_Genes/_helper.css";
+@import "../Styleguide/_Genes/_fonts.css";
+@import "../Styleguide/_Genes/Utility/_jumpmark.css";
+@import "../Styleguide/_Genes/Utility/_animation.css";
+@import "../Styleguide/_Genes/Utility/_section-header-utilities.css";
+
+/* ============= */
+/* === ATOMS === */
+/* ============= */
+
+/* Globals */
+@import "../Styleguide/Atoms/00-Globals/Grid/_grid.css";
+@import "../Styleguide/Atoms/00-Globals/Colors/_colors.css";
+@import "../Styleguide/Atoms/00-Globals/_body.css";
+@import "../Styleguide/Atoms/00-Globals/_spacing.css";
+
+/* Typographie */
+@import "../Styleguide/Atoms/01-Typographie/Headings/_heading.css";
+@import "../Styleguide/Atoms/01-Typographie/Text/_text.css";
+@import "../Styleguide/Atoms/01-Typographie/_typography.css";
+
+/* Links */
+@import "../Styleguide/Atoms/02-Links/_links.css";
+
+/* List */
+@import "../Styleguide/Atoms/03-List/_list.css";
+
+/* Table */
+@import "../Styleguide/Atoms/04-Table/_table.css";
+
+/* Forms */
+@import "../Styleguide/Atoms/05-Forms/forms.css";
+@import "../Styleguide/Atoms/05-Forms/Buttons/_buttons.css";
+@import "../Styleguide/Atoms/05-Forms/Elements/Types/_checkbox-radio.css";
+@import "../Styleguide/Atoms/05-Forms/Elements/Types/_fieldset.css";
+@import "../Styleguide/Atoms/05-Forms/Elements/Types/_input.css";
+@import "../Styleguide/Atoms/05-Forms/Elements/Types/_label.css";
+@import "../Styleguide/Atoms/05-Forms/Elements/Types/_placeholder.css";
+
+/* Divider */
+@import "../Styleguide/Atoms/06-Divider/_divider.css";
+
+/* Media */
+@import "../Styleguide/Atoms/07-Media/Caption/_caption.css";
+@import "../Styleguide/Atoms/07-Media/Images/_images.css";
+@import "../Styleguide/Atoms/07-Media/Media/_media.css";
+
+/* Card */
+@import "../Styleguide/Atoms/08-Card/_card.css";
+
+/* Tags */
+@import "../Styleguide/Atoms/09-Tags/_tag.css";
+
+/* Tab */
+@import "../Styleguide/Atoms/10-Tab/_tab.css";
+
+/* ================== */
+/* === MOLECULES === */
+/* ================== */
+
+/* Header & Footer */
+@import "../Styleguide/Molecules/01-Header/_header.css";
+@import "../Styleguide/Molecules/02-Footer/_footer.css";
+
+/* Modules */
+@import "../Styleguide/Molecules/03-Modules/Accordion/_accordion.css";
+@import "../Styleguide/Molecules/03-Modules/CompanyStats/_company-stats.css";
+@import "../Styleguide/Molecules/03-Modules/ContactCard/_contact-card.css";
+@import "../Styleguide/Molecules/03-Modules/CookieBanner/_cookie-banner.css";
+@import "../Styleguide/Molecules/03-Modules/CookieBanner/cookie-banner.css";
+@import "../Styleguide/Molecules/03-Modules/Downloads/_downloads.css";
+@import "../Styleguide/Molecules/03-Modules/FeatureCard/_feature-card.css";
+@import "../Styleguide/Molecules/03-Modules/Hero/_hero.css";
+@import "../Styleguide/Molecules/03-Modules/Image/_image.css";
+@import "../Styleguide/Molecules/03-Modules/ImageSlider/_image-slider.css";
+@import "../Styleguide/Molecules/03-Modules/Navigation/_navigation.css";
+@import "../Styleguide/Molecules/03-Modules/NewsList/_news-list.css";
+@import "../Styleguide/Molecules/03-Modules/Portrait/_portrait.css";
+@import "../Styleguide/Molecules/03-Modules/PressRelease/_press-release.css";
+@import "../Styleguide/Molecules/03-Modules/Quote/_quote.css";
+@import "../Styleguide/Molecules/03-Modules/SearchResult/_search-result.css";
+@import "../Styleguide/Molecules/03-Modules/ServiceCard/_service-card.css";
+@import "../Styleguide/Molecules/03-Modules/Slider/_slider.css";
+@import "../Styleguide/Molecules/03-Modules/Teaser/_teaser.css";
+@import "../Styleguide/Molecules/03-Modules/Teaser/_teaser-background-image.css";
+@import "../Styleguide/Molecules/03-Modules/Teaser/_teaser-image-left.css";
+@import "../Styleguide/Molecules/03-Modules/Teaser/_teaser-inline.css";
+@import "../Styleguide/Molecules/03-Modules/Teaser/_teaser-related.css";
+@import "../Styleguide/Molecules/03-Modules/Teaser/_teaser-topic.css";
+@import "../Styleguide/Molecules/03-Modules/Video/_video.css";
+
+/* TYPO3 Default Content Elements */
+@import "../Styleguide/Molecules/03-Modules/TYPO3-Default-CEs/_filelinks.css";
+@import "../Styleguide/Molecules/03-Modules/TYPO3-Default-CEs/_menus.css";
+@import "../Styleguide/Molecules/03-Modules/TYPO3-Default-CEs/_text-and-media.css";
+@import "../Styleguide/Molecules/03-Modules/TYPO3-Default-CEs/_textAndMedia.css";
+@import "../Styleguide/Molecules/03-Modules/TYPO3-Default-CEs/_uploads.css";
+
+/* Extensions */
+@import "../Styleguide/Molecules/04-Extensions/News/_contact-cards.css";
+@import "../Styleguide/Molecules/04-Extensions/News/_news-detail.css";
+@import "../Styleguide/Molecules/04-Extensions/News/_news-list-minimal.css";
+@import "../Styleguide/Molecules/04-Extensions/TtAddress/_tt-address-slider.css";
+
+/* Menus */
+@import "../Styleguide/Molecules/05-Menus/Breadcrumb/_breadcrumb.css";
+@import "../Styleguide/Molecules/05-Menus/Main-Menu/_main-menu.css";
+@import "../Styleguide/Molecules/05-Menus/Main-Menu/_main-menu-toggle.css";
+@import "../Styleguide/Molecules/05-Menus/Pagination/_pagination.css";
+
+/* Plugins */
+@import "../Styleguide/Molecules/07-Plugins/BackToTop/_backtotop.css";
+/* @import "../Styleguide/Molecules/07-Plugins/ChoicesJS/_choices.css"; */
+@import "../Styleguide/Molecules/07-Plugins/Cookieman/_cookieman.css";
+@import "../Styleguide/Molecules/07-Plugins/KeSearch/_kesearch.css";
+@import "../Styleguide/Molecules/07-Plugins/Lightbox/_lightbox.css";
+@import "../Styleguide/Molecules/07-Plugins/Modal/_modal.css";
+@import "../Styleguide/Molecules/07-Plugins/SmoothScroll/_smooth-scroll.css";
+@import "../Styleguide/Molecules/07-Plugins/VideoDsgvo/_video-dsgvo.css";
+@import "../Styleguide/Molecules/07-Plugins/prismjs/_prismjs.css";
+
+/* Heroes */
+@import "../Styleguide/Molecules/08-Heroes/hero.css";
+
+/* ================== */
+/* === ORGANISMS === */
+/* ================== */
+
+@import "../Styleguide/Organisms/SectionCompanyStats/_section-company-stats.css";
+@import "../Styleguide/Organisms/SectionHeader/_section-header.css";
+@import "../Styleguide/Organisms/SectionNews/_section-news.css";
+@import "../Styleguide/Organisms/SectionPortrait/_section-portrait.css";
+@import "../Styleguide/Organisms/SectionRouteMap/_section-route-map.css";
+@import "../Styleguide/Organisms/SectionService/_section-service.css";
+@import "../Styleguide/Organisms/SectionTechnik/_section-technik.css";

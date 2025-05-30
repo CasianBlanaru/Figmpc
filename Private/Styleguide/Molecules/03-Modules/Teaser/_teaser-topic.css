@@ -1,0 +1,648 @@
+@layer components {
+  /* ==========================
+   * === TEASER TOPIC RESPONSIVE
+   * ========================== */
+
+  /* Main Responsive Teaser Container */
+  .teaser-topic-responsive {
+    display: flex;
+    flex-direction: column;
+    background: #F5F5F4; /* stone-100 default background */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Mobile first: 328px - Figma Node 1829-6665 */
+    max-width: 328px;
+    width: 100%;
+    border-radius: 32px 0; /* Mobile radius */
+    padding: 24px; /* Mobile padding */
+    gap: 20px; /* Mobile gap */
+  }
+
+  .teaser-topic-responsive:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgb(30 41 57 / 10%), 0 4px 10px -2px rgb(30 41 57 / 5%);
+  }
+
+  /* Responsive Content Area */
+  .teaser-topic-responsive-content {
+    order: 2; /* Content below illustration */
+    text-align: center;
+  }
+
+  /* Responsive Title */
+  .teaser-topic-responsive-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #1E2939; /* gray-800 */
+    margin: 0;
+
+    /* Mobile: H5 SM 18px - Figma Node 1829-6665 */
+    font-size: 18px;
+    line-height: 1.444em;
+  }
+
+  /* Responsive Illustration Area */
+  .teaser-topic-responsive-illustration {
+    order: 1; /* Illustration above content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00BFAA; /* primary-600 default */
+    border-radius: 20px 0; /* Mobile illustration radius */
+
+    /* Mobile: icon area size */
+    height: 120px;
+    width: 100%;
+  }
+
+  /* ==========================
+   * === TEASER TOPIC SMALL (SM)
+   * ========================== */
+
+  /* Small Fixed Variant Container */
+  .teaser-topic-sm {
+    display: flex;
+    flex-direction: column;
+    background: #F5F5F4; /* stone-100 default background */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Desktop: 368px - Figma Node 1829-6661 */
+    width: 368px;
+    border-radius: 36px 0; /* Desktop radius */
+    padding: 28px; /* Desktop padding */
+    gap: 24px; /* Desktop gap */
+  }
+
+  .teaser-topic-sm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgb(30 41 57 / 10%), 0 4px 10px -2px rgb(30 41 57 / 5%);
+  }
+
+  /* Small Content Area */
+  .teaser-topic-sm-content {
+    order: 2; /* Content below illustration */
+    text-align: center;
+  }
+
+  /* Small Title */
+  .teaser-topic-sm-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #1E2939; /* gray-800 */
+    margin: 0;
+
+    /* Desktop SM: H4 XL 24px - Figma Node 1829-6661 */
+    font-size: 24px;
+    line-height: 1.333em;
+  }
+
+  /* Small Illustration Area */
+  .teaser-topic-sm-illustration {
+    order: 1; /* Illustration above content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00BFAA; /* primary-600 default */
+    border-radius: 24px 0; /* Desktop illustration radius */
+
+    /* Desktop SM: icon area size */
+    height: 140px;
+    width: 100%;
+  }
+
+  /* ==========================
+   * === TEASER TOPIC LARGE (LG)
+   * ========================== */
+
+  /* Large Fixed Variant Container */
+  .teaser-topic-lg {
+    display: flex;
+    flex-direction: column;
+    background: #F5F5F4; /* stone-100 default background */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Desktop: 468px - Figma Node 1829-6661 */
+    width: 468px;
+    border-radius: 40px 0; /* Large desktop radius */
+    padding: 32px; /* Large desktop padding */
+    gap: 28px; /* Large desktop gap */
+  }
+
+  .teaser-topic-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgb(30 41 57 / 10%), 0 4px 10px -2px rgb(30 41 57 / 5%);
+  }
+
+  /* Large Content Area */
+  .teaser-topic-lg-content {
+    order: 2; /* Content below illustration */
+    text-align: center;
+  }
+
+  /* Large Title */
+  .teaser-topic-lg-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #1E2939; /* gray-800 */
+    margin: 0;
+
+    /* Desktop LG: H3 XL 30px - Figma Node 1829-6661 */
+    font-size: 30px;
+    line-height: 1.2em;
+  }
+
+  /* Large Illustration Area */
+  .teaser-topic-lg-illustration {
+    order: 1; /* Illustration above content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00BFAA; /* primary-600 default */
+    border-radius: 28px 0; /* Large desktop illustration radius */
+
+    /* Desktop LG: icon area size */
+    height: 160px;
+    width: 100%;
+  }
+
+  /* ==========================
+   * === ICON CONTAINER
+   * ========================== */
+
+  /* Icon Container */
+  .teaser-topic-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    transition: all 0.3s ease;
+  }
+
+  .teaser-topic-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Loading selectors - must come before hover selectors */
+  .teaser-topic-loading .teaser-topic-icon {
+    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: teaser-topic-loading 1.5s infinite;
+    border-radius: 50%;
+  }
+
+  /* Icon Hover Effect */
+  .teaser-topic-responsive:hover .teaser-topic-icon,
+  .teaser-topic-sm:hover .teaser-topic-icon,
+  .teaser-topic-lg:hover .teaser-topic-icon {
+    transform: scale(1.1);
+  }
+
+  /* ==========================
+   * === GRID LAYOUT
+   * ========================== */
+
+  /* Responsive Grid Container */
+  .teaser-topic-grid-responsive {
+    display: grid;
+    gap: 24px; /* Element gap */
+    width: 100%;
+
+    /* Mobile: 1 column */
+    grid-template-columns: 1fr;
+  }
+
+  /* ==========================
+   * === COLOR VARIANTS
+   * ========================== */
+
+  /* Primary Variant (Default) */
+  .teaser-topic-primary .teaser-topic-responsive-illustration,
+  .teaser-topic-primary .teaser-topic-sm-illustration,
+  .teaser-topic-primary .teaser-topic-lg-illustration {
+    background: #00BFAA; /* primary-600 */
+  }
+
+  /* Secondary Variant */
+  .teaser-topic-secondary .teaser-topic-responsive-illustration,
+  .teaser-topic-secondary .teaser-topic-sm-illustration,
+  .teaser-topic-secondary .teaser-topic-lg-illustration {
+    background: #DD052B; /* secondary-700 */
+  }
+
+  /* Dark Variant */
+  .teaser-topic-dark .teaser-topic-responsive-illustration,
+  .teaser-topic-dark .teaser-topic-sm-illustration,
+  .teaser-topic-dark .teaser-topic-lg-illustration {
+    background: #1E2939; /* gray-800 */
+  }
+
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+
+  /* Desktop breakpoint (1024px+) */
+  @media (width >= 1024px) {
+    .teaser-topic-responsive {
+      /* Desktop: 368px - Figma Node 1829-6661 */
+      max-width: 368px;
+      border-radius: 36px 0; /* Desktop radius */
+      padding: 28px; /* Desktop padding */
+      gap: 24px; /* Desktop gap */
+    }
+
+    .teaser-topic-responsive-title {
+      /* Desktop: H4 XL 24px - Figma Node 1829-6661 */
+      font-size: 24px;
+      line-height: 1.333em;
+    }
+
+    .teaser-topic-responsive-illustration {
+      border-radius: 24px 0; /* Desktop illustration radius */
+      height: 140px; /* Desktop icon area height */
+    }
+
+    /* Desktop Grid Layout */
+    .teaser-topic-grid-responsive {
+      gap: 32px; /* Desktop grid gap */
+
+      /* Tablet: 2 columns */
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Large Desktop (1200px+) */
+  @media (width >= 1200px) {
+    .teaser-topic-grid-responsive {
+      /* Large desktop: 3+ columns */
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+  }
+
+  /* Tablet adaptation */
+  @media (width <= 1023px) and (width >= 768px) {
+    .teaser-topic-responsive {
+      max-width: 350px;
+      border-radius: 34px 0;
+      padding: 26px;
+      gap: 22px;
+    }
+
+    .teaser-topic-responsive-title {
+      font-size: 20px;
+      line-height: 1.4em;
+    }
+
+    .teaser-topic-responsive-illustration {
+      border-radius: 22px 0;
+      height: 130px;
+    }
+
+    .teaser-topic-sm {
+      width: 320px;
+      border-radius: 32px 0;
+      padding: 24px;
+      gap: 20px;
+    }
+
+    .teaser-topic-sm-title {
+      font-size: 20px;
+      line-height: 1.4em;
+    }
+
+    .teaser-topic-sm-illustration {
+      border-radius: 20px 0;
+      height: 120px;
+    }
+
+    .teaser-topic-lg {
+      width: 400px;
+      border-radius: 36px 0;
+      padding: 28px;
+      gap: 24px;
+    }
+
+    .teaser-topic-lg-title {
+      font-size: 24px;
+      line-height: 1.33em;
+    }
+
+    .teaser-topic-lg-illustration {
+      border-radius: 24px 0;
+      height: 140px;
+    }
+
+    .teaser-topic-grid-responsive {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+  }
+
+  /* Mobile optimization */
+  @media (width <= 767px) {
+    .teaser-topic-responsive {
+      max-width: 300px;
+      border-radius: 28px 0;
+      padding: 20px;
+      gap: 18px;
+    }
+
+    .teaser-topic-responsive-title {
+      font-size: 16px;
+      line-height: 1.38em;
+    }
+
+    .teaser-topic-responsive-illustration {
+      border-radius: 18px 0;
+      height: 100px;
+    }
+
+    .teaser-topic-sm {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 28px 0;
+      padding: 20px;
+      gap: 18px;
+    }
+
+    .teaser-topic-sm-title {
+      font-size: 16px;
+      line-height: 1.38em;
+    }
+
+    .teaser-topic-sm-illustration {
+      border-radius: 18px 0;
+      height: 100px;
+    }
+
+    .teaser-topic-lg {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 28px 0;
+      padding: 20px;
+      gap: 18px;
+    }
+
+    .teaser-topic-lg-title {
+      font-size: 16px;
+      line-height: 1.38em;
+    }
+
+    .teaser-topic-lg-illustration {
+      border-radius: 18px 0;
+      height: 100px;
+    }
+
+    .teaser-topic-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .teaser-topic-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .teaser-topic-grid-responsive {
+      gap: 20px;
+    }
+  }
+
+  /* Small mobile optimization */
+  @media (width <= 479px) {
+    .teaser-topic-responsive {
+      max-width: 280px;
+      border-radius: 24px 0;
+      padding: 16px;
+      gap: 16px;
+    }
+
+    .teaser-topic-responsive-title {
+      font-size: 14px;
+      line-height: 1.3em;
+    }
+
+    .teaser-topic-responsive-illustration {
+      border-radius: 16px 0;
+      height: 80px;
+    }
+
+    .teaser-topic-sm,
+    .teaser-topic-lg {
+      max-width: 280px;
+      border-radius: 24px 0;
+      padding: 16px;
+      gap: 16px;
+    }
+
+    .teaser-topic-sm-title,
+    .teaser-topic-lg-title {
+      font-size: 14px;
+      line-height: 1.3em;
+    }
+
+    .teaser-topic-sm-illustration,
+    .teaser-topic-lg-illustration {
+      border-radius: 16px 0;
+      height: 80px;
+    }
+
+    .teaser-topic-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .teaser-topic-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .teaser-topic-grid-responsive {
+      gap: 16px;
+    }
+  }
+
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+
+  /* Focus States */
+  .teaser-topic-responsive:focus,
+  .teaser-topic-sm:focus,
+  .teaser-topic-lg:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+  }
+
+  /* Keyboard Navigation */
+  .teaser-topic-responsive:focus-within,
+  .teaser-topic-sm:focus-within,
+  .teaser-topic-lg:focus-within {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+    border-radius: inherit;
+  }
+
+  /* Screen Reader Support */
+  .teaser-topic-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .teaser-topic-responsive,
+    .teaser-topic-sm,
+    .teaser-topic-lg {
+      border: 2px solid currentcolor;
+    }
+
+    .teaser-topic-responsive-title,
+    .teaser-topic-sm-title,
+    .teaser-topic-lg-title {
+      font-weight: 600;
+      text-shadow: 0 0 1px currentcolor;
+    }
+
+    .teaser-topic-responsive-illustration,
+    .teaser-topic-sm-illustration,
+    .teaser-topic-lg-illustration {
+      border: 2px solid white;
+    }
+
+    .teaser-topic-icon svg {
+      stroke-width: 2;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .teaser-topic-responsive,
+    .teaser-topic-sm,
+    .teaser-topic-lg,
+    .teaser-topic-icon {
+      transition: none;
+      animation: none;
+    }
+
+    .teaser-topic-responsive:hover,
+    .teaser-topic-sm:hover,
+    .teaser-topic-lg:hover,
+    .teaser-topic-responsive:hover .teaser-topic-icon,
+    .teaser-topic-sm:hover .teaser-topic-icon,
+    .teaser-topic-lg:hover .teaser-topic-icon {
+      transform: none;
+    }
+  }
+
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+
+  @media print {
+    .teaser-topic-responsive,
+    .teaser-topic-sm,
+    .teaser-topic-lg {
+      border: 1px solid #ddd;
+      border-radius: 0;
+      break-inside: avoid;
+      margin-bottom: 20px;
+      box-shadow: none !important;
+      background: white !important;
+      max-width: none !important;
+      width: auto !important;
+      padding: 15px !important;
+      gap: 10px !important;
+    }
+
+    .teaser-topic-responsive-illustration,
+    .teaser-topic-sm-illustration,
+    .teaser-topic-lg-illustration {
+      background: #f0f0f0 !important;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      height: 60px !important;
+    }
+
+    .teaser-topic-responsive-title,
+    .teaser-topic-sm-title,
+    .teaser-topic-lg-title {
+      color: black !important;
+      font-size: 14px !important;
+      line-height: 1.3 !important;
+    }
+
+    .teaser-topic-icon {
+      width: 24px !important;
+      height: 24px !important;
+    }
+
+    .teaser-topic-icon svg {
+      width: 20px !important;
+      height: 20px !important;
+      stroke: black !important;
+    }
+
+    .teaser-topic-grid-responsive {
+      display: block;
+    }
+
+    .teaser-topic-grid-responsive > * {
+      margin-bottom: 15px;
+    }
+  }
+
+  /* ==========================
+   * === LOADING STATES
+   * ========================== */
+
+  .teaser-topic-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: teaser-topic-loading 1.5s infinite;
+  }
+
+  @keyframes teaser-topic-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .teaser-topic-loading .teaser-topic-responsive-illustration,
+  .teaser-topic-loading .teaser-topic-sm-illustration,
+  .teaser-topic-loading .teaser-topic-lg-illustration {
+    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%) !important;
+    background-size: 200% 100%;
+    animation: teaser-topic-loading 1.5s infinite;
+  }
+
+  .teaser-topic-loading .teaser-topic-responsive-title,
+  .teaser-topic-loading .teaser-topic-sm-title,
+  .teaser-topic-loading .teaser-topic-lg-title {
+    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: teaser-topic-loading 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+    height: 1.2em;
+    display: block;
+  }
+
+  .teaser-topic-loading .teaser-topic-icon svg {
+    opacity: 0;
+  }
+
+}

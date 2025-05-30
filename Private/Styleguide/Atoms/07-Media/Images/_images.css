@@ -1,0 +1,84 @@
+/* === IMAGES */
+
+figure,
+.image {
+  @apply w-full;
+
+  img {
+    @apply h-auto max-w-full;
+    @apply object-cover;
+  }
+}
+
+.img-fluid {
+  @apply h-auto max-w-full;
+}
+
+/* Placeholder */
+
+.placeholder {
+  @apply relative overflow-hidden;
+  @apply rounded;
+
+  /* Optional, if additional Icon is used for Placeholder */
+
+  /*
+  &::after {
+    @apply absolute top-0 left-0;
+    @apply w-full h-full;
+    @apply bg-center bg-no-repeat;
+
+    background-image: url("../Images/...");
+    background-size: 3rem auto;
+    content: "";
+  }
+  */
+
+  img {
+    @apply object-cover w-full h-full;
+  }
+}
+
+/* Gallery Styling */
+.ce-gallery {
+  @apply w-full;
+
+  .ce-row {
+    @apply flex flex-col lg:flex-row lg:flex-wrap lg:gap-4;
+  }
+
+  .ce-column {
+    @apply flex-grow basis-auto;
+  }
+
+  /* Styling für mehrere Spalten */
+  &[data-ce-columns="2"] {
+    .ce-column {
+      @apply lg:basis-[calc(50%-0.5rem)];
+    }
+  }
+
+  &[data-ce-columns="3"] {
+    .ce-column {
+      @apply lg:basis-[calc(33.333%-0.75rem)];
+    }
+  }
+
+  &[data-ce-columns="4"] {
+    .ce-column {
+      @apply lg:basis-[calc(25%-0.75rem)];
+    }
+  }
+
+  figure {
+    @apply m-0 h-full;
+
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+
+  figcaption {
+    @apply mt-2 text-sm text-stone-600;
+  }
+}

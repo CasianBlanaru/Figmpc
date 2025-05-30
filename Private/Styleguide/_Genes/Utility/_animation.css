@@ -1,0 +1,22 @@
+
+/* ==========================
+ * === CUSTOM ANIMATIONS
+ * ========================== */
+
+/* Related Teaser Hover Animations */
+.teaser-related-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.teaser-related-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgb(0 0 0 / 15%);
+}
+
+.teaser-related-arrow {
+  transition: transform 0.3s ease-in-out;
+}
+
+.teaser-related-card:hover .teaser-related-arrow {
+  transform: translateX(8px);
+}

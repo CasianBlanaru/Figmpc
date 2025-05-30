@@ -1,0 +1,332 @@
+<section class="bg-stone-100 p-8 font-sans">
+    
+    <div class="mx-auto max-w-6xl">
+        <!-- Component Header -->
+        <header class="mb-8">
+            <h1 class="mb-2 text-netinera-white headline-h2">Navigation Component</h1>
+            <p class="text-netinera-white body-base">
+                Hauptnavigation mit Desktop und Mobile Variants - Figma Node: 1801-8462
+            </p>
+        </header>
+
+        <!-- Desktop Navigation -->
+        <section class="bg-white mb-8 p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">Desktop Navigation</h2>
+            
+            <div class="space-y-6">
+                <!-- Standard Desktop Nav -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Standard Desktop (≥992px)</h3>
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <nav class="netinera-navigation">
+                            <div class="netinera-nav-logo-container">
+                                <div class="netinera-nav-logo">
+                                    <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Netinera Logo -->
+                                        <rect x="0" y="10" width="40" height="20" class="logo-primary"/>
+                                        <rect x="45" y="10" width="40" height="20" class="logo-primary"/>
+                                        <rect x="90" y="10" width="20" height="20" class="logo-accent"/>
+                                        <text x="120" y="25" font-family="Titillium Web" font-weight="700" font-size="18" class="logo-primary">NETINERA</text>
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <div class="netinera-nav-menu">
+                                <a href="#" class="netinera-nav-link active" aria-current="page">Startseite</a>
+                                <a href="#" class="netinera-nav-link">Unternehmen</a>
+                                <a href="#" class="netinera-nav-link">Leistungen</a>
+                                <a href="#" class="netinera-nav-link">Karriere</a>
+                                <a href="#" class="netinera-nav-link">Presse</a>
+                                <a href="#" class="netinera-nav-link">Kontakt</a>
+                                <a href="#" class="netinera-nav-cta">Fahrplan</a>
+                            </div>
+                            
+                            <button class="netinera-nav-toggle" aria-label="Navigation öffnen" aria-expanded="false">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            
+                            <div class="netinera-nav-mobile-menu" role="menu">
+                                <a href="#" class="netinera-nav-link active" role="menuitem">Startseite</a>
+                                <a href="#" class="netinera-nav-link" role="menuitem">Unternehmen</a>
+                                <a href="#" class="netinera-nav-link" role="menuitem">Leistungen</a>
+                                <a href="#" class="netinera-nav-link" role="menuitem">Karriere</a>
+                                <a href="#" class="netinera-nav-link" role="menuitem">Presse</a>
+                                <a href="#" class="netinera-nav-link" role="menuitem">Kontakt</a>
+                                <a href="#" class="netinera-nav-cta" role="menuitem">Fahrplan</a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Different Active States -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Verschiedene Aktive Zustände</h3>
+                    <div class="space-y-4">
+                        <!-- Unternehmen active -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <nav class="netinera-navigation">
+                                <div class="netinera-nav-logo-container">
+                                    <div class="netinera-nav-logo">
+                                        <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0" y="10" width="40" height="20" class="logo-primary"/>
+                                            <rect x="45" y="10" width="40" height="20" class="logo-primary"/>
+                                            <rect x="90" y="10" width="20" height="20" class="logo-accent"/>
+                                            <text x="120" y="25" font-family="Titillium Web" font-weight="700" font-size="18" class="logo-primary">NETINERA</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="netinera-nav-menu">
+                                    <a href="#" class="netinera-nav-link">Startseite</a>
+                                    <a href="#" class="netinera-nav-link active" aria-current="page">Unternehmen</a>
+                                    <a href="#" class="netinera-nav-link">Leistungen</a>
+                                    <a href="#" class="netinera-nav-link">Karriere</a>
+                                    <a href="#" class="netinera-nav-link">Presse</a>
+                                    <a href="#" class="netinera-nav-link">Kontakt</a>
+                                    <a href="#" class="netinera-nav-cta">Fahrplan</a>
+                                </div>
+                                
+                                <button class="netinera-nav-toggle" aria-label="Navigation öffnen" aria-expanded="false">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                            </nav>
+                        </div>
+
+                        <!-- Karriere active -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <nav class="netinera-navigation">
+                                <div class="netinera-nav-logo-container">
+                                    <div class="netinera-nav-logo">
+                                        <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0" y="10" width="40" height="20" class="logo-primary"/>
+                                            <rect x="45" y="10" width="40" height="20" class="logo-primary"/>
+                                            <rect x="90" y="10" width="20" height="20" class="logo-accent"/>
+                                            <text x="120" y="25" font-family="Titillium Web" font-weight="700" font-size="18" class="logo-primary">NETINERA</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="netinera-nav-menu">
+                                    <a href="#" class="netinera-nav-link">Startseite</a>
+                                    <a href="#" class="netinera-nav-link">Unternehmen</a>
+                                    <a href="#" class="netinera-nav-link">Leistungen</a>
+                                    <a href="#" class="netinera-nav-link active" aria-current="page">Karriere</a>
+                                    <a href="#" class="netinera-nav-link">Presse</a>
+                                    <a href="#" class="netinera-nav-link">Kontakt</a>
+                                    <a href="#" class="netinera-nav-cta">Fahrplan</a>
+                                </div>
+                                
+                                <button class="netinera-nav-toggle" aria-label="Navigation öffnen" aria-expanded="false">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile Navigation -->
+        <section class="bg-white mb-8 p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">Mobile Navigation</h2>
+            
+            <div class="space-y-6">
+                <!-- Mobile Closed -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Mobile Geschlossen (<992px)</h3>
+                    <div class="mx-auto border border-gray-200 rounded-lg max-w-sm overflow-hidden">
+                        <nav class="netinera-navigation" style="padding: 20px 16px;">
+                            <div class="netinera-nav-logo-container" style="flex-direction: column;">
+                                <div class="netinera-nav-logo" style="width: 150px; height: 32px;">
+                                    <svg viewBox="0 0 150 32" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0" y="8" width="30" height="16" class="logo-primary"/>
+                                        <rect x="35" y="8" width="30" height="16" class="logo-primary"/>
+                                        <rect x="70" y="8" width="15" height="16" class="logo-accent"/>
+                                        <text x="90" y="20" font-family="Titillium Web" font-weight="700" font-size="14" class="logo-primary">NETINERA</text>
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <div class="netinera-nav-menu" style="display: none;">
+                                <!-- Hidden on mobile -->
+                            </div>
+                            
+                            <button class="netinera-nav-toggle" aria-label="Navigation öffnen" aria-expanded="false">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Mobile Open -->
+                <div>
+                    <h3 class="mb-4 text-netinera-dark overline-sm">Mobile Geöffnet</h3>
+                    <div class="mx-auto border border-gray-200 rounded-lg max-w-sm overflow-hidden">
+                        <nav class="netinera-navigation nav-mobile-open" style="padding: 20px 16px;">
+                            <div class="netinera-nav-logo-container" style="flex-direction: column;">
+                                <div class="netinera-nav-logo" style="width: 150px; height: 32px;">
+                                    <svg viewBox="0 0 150 32" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0" y="8" width="30" height="16" class="logo-primary"/>
+                                        <rect x="35" y="8" width="30" height="16" class="logo-primary"/>
+                                        <rect x="70" y="8" width="15" height="16" class="logo-accent"/>
+                                        <text x="90" y="20" font-family="Titillium Web" font-weight="700" font-size="14" class="logo-primary">NETINERA</text>
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <button class="netinera-nav-toggle" aria-label="Navigation schließen" aria-expanded="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M18 6L6 18M6 6l12 12" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            
+                            <div class="netinera-nav-mobile-menu active" role="menu">
+                                <a href="#" class="netinera-nav-link active" role="menuitem">Startseite</a>
+                                <a href="#" class="netinera-nav-link" role="menuitem">Unternehmen</a>
+                                <a href="#" class="netinera-nav-link" role="menuitem">Leistungen</a>
+                                <a href="#" class="netinera-nav-link" role="menuitem">Karriere</a>
+                                <a href="#" class="netinera-nav-link" role="menuitem">Presse</a>
+                                <a href="#" class="netinera-nav-link" role="menuitem">Kontakt</a>
+                                <a href="#" class="netinera-nav-cta" role="menuitem">Fahrplan</a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Example -->
+        <section class="bg-white p-8 rounded-lg">
+            <h2 class="mb-6 text-netinera-dark headline-h4">HTML Code</h2>
+            <pre class="bg-gray-100 p-4 rounded overflow-x-auto text-sm"><code>&lt;!-- Desktop + Mobile Navigation --&gt;
+&lt;nav class="netinera-navigation"&gt;
+    &lt;div class="netinera-nav-logo-container"&gt;
+        &lt;div class="netinera-nav-logo"&gt;
+            &lt;svg viewBox="0 0 200 40"&gt;
+                &lt;!-- Netinera Logo SVG --&gt;
+                &lt;rect x="0" y="10" width="40" height="20" class="logo-primary"/&gt;
+                &lt;rect x="45" y="10" width="40" height="20" class="logo-primary"/&gt;
+                &lt;rect x="90" y="10" width="20" height="20" class="logo-accent"/&gt;
+                &lt;text x="120" y="25" class="logo-primary"&gt;NETINERA&lt;/text&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Desktop Menu --&gt;
+    &lt;div class="netinera-nav-menu"&gt;
+        &lt;a href="#" class="netinera-nav-link active" aria-current="page"&gt;Startseite&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-link"&gt;Unternehmen&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-link"&gt;Leistungen&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-link"&gt;Karriere&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-link"&gt;Presse&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-link"&gt;Kontakt&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-cta"&gt;Fahrplan&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Mobile Toggle --&gt;
+    &lt;button class="netinera-nav-toggle" aria-label="Navigation öffnen"&gt;
+        &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;
+            &lt;path d="M3 12h18M3 6h18M3 18h18" stroke-width="2"/&gt;
+        &lt;/svg&gt;
+    &lt;/button&gt;
+    
+    &lt;!-- Mobile Menu --&gt;
+    &lt;div class="netinera-nav-mobile-menu" role="menu"&gt;
+        &lt;a href="#" class="netinera-nav-link active" role="menuitem"&gt;Startseite&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-link" role="menuitem"&gt;Unternehmen&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-link" role="menuitem"&gt;Leistungen&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-link" role="menuitem"&gt;Karriere&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-link" role="menuitem"&gt;Presse&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-link" role="menuitem"&gt;Kontakt&lt;/a&gt;
+        &lt;a href="#" class="netinera-nav-cta" role="menuitem"&gt;Fahrplan&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+        </section>
+    </div>
+
+    <!-- JavaScript for demo interactions -->
+    <script>
+        // Navigation demo functionality
+        document.querySelectorAll('.netinera-nav-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const nav = this.closest('.netinera-navigation');
+                const mobileMenu = nav.querySelector('.netinera-nav-mobile-menu');
+                const isOpen = mobileMenu.classList.contains('active');
+                
+                if (isOpen) {
+                    mobileMenu.classList.remove('active');
+                    nav.classList.remove('nav-mobile-open');
+                    this.setAttribute('aria-expanded', 'false');
+                    this.setAttribute('aria-label', 'Navigation öffnen');
+                    this.innerHTML = `
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    `;
+                } else {
+                    mobileMenu.classList.add('active');
+                    nav.classList.add('nav-mobile-open');
+                    this.setAttribute('aria-expanded', 'true');
+                    this.setAttribute('aria-label', 'Navigation schließen');
+                    this.innerHTML = `
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M18 6L6 18M6 6l12 12" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    `;
+                }
+            });
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.netinera-nav-mobile-menu .netinera-nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const nav = this.closest('.netinera-navigation');
+                const toggle = nav.querySelector('.netinera-nav-toggle');
+                const mobileMenu = nav.querySelector('.netinera-nav-mobile-menu');
+                
+                mobileMenu.classList.remove('active');
+                nav.classList.remove('nav-mobile-open');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.setAttribute('aria-label', 'Navigation öffnen');
+                toggle.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                `;
+                
+                console.log('Navigation link clicked:', this.textContent);
+            });
+        });
+
+        // Demo active state switching
+        document.querySelectorAll('.netinera-nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!this.closest('.netinera-nav-mobile-menu')) {
+                    e.preventDefault();
+                    
+                    // Remove active from siblings
+                    const menu = this.closest('.netinera-nav-menu');
+                    if (menu) {
+                        menu.querySelectorAll('.netinera-nav-link').forEach(l => {
+                            l.classList.remove('active');
+                            l.removeAttribute('aria-current');
+                        });
+                        
+                        // Add active to clicked link
+                        this.classList.add('active');
+                        this.setAttribute('aria-current', 'page');
+                    }
+                }
+            });
+        });
+    </script>
+</section>

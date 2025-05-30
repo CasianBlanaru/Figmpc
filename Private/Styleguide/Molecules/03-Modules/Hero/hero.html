@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netinera Design System - Hero Landingpage Component</title>
+    
+    <!-- Font Integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS 4 -->
+    <link href="./dist/web/styles.css" rel="stylesheet">
+    
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Hero Landingpage - Exact Figma Implementation */
+        .hero-landingpage {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            align-items: stretch;
+            align-self: stretch;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            border-radius: 96px 0px 96px 0px;
+            overflow: hidden;
+            position: relative;
+            background-image: url('./src/assets/hero-landingpage-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .hero-landingpage-content {
+            /* Exact Figma gradient fill_CHBWHC */
+            background: linear-gradient(180deg, 
+                rgba(0, 104, 94, 0) 0%, 
+                rgba(0, 61, 57, 1) 100%
+            );
+            backdrop-filter: blur(30px); /* effect_5T332D */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-self: stretch;
+            width: 100%;
+            height: 100%;
+            padding: 44px 16px; /* Mobile padding from layout_APGHYJ */
+            gap: 12px; /* Mobile gap from layout_APGHYJ */
+        }
+        
+        .hero-landingpage-layout-group {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            gap: 32px; /* exact Figma gap from layout_NY0J69 */
+            width: 100%;
+        }
+        
+        .hero-landingpage-headline {
+            /* Mobile Typography - Exact Figma style_6SDE6D */
+            font-family: var(--font-family-display);
+            font-weight: 400;
+            font-size: 33px;
+            line-height: 1.0909090909090908;
+            letter-spacing: 1.2121212301832256%;
+            text-transform: uppercase;
+            text-align: left;
+            color: white; /* fill_BZXOX3 */
+            width: 100%;
+        }
+        
+        .hero-landingpage-button {
+            /* Exact Figma button styling */
+            background: var(--color-netinera-secondary); /* fill_JGU2QG */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            padding: 24px;
+            border-radius: 12px;
+            height: 52px; /* exact Figma height */
+            width: fit-content;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .hero-landingpage-button:hover {
+            background: #c4042a;
+            transform: translateY(-2px);
+        }
+        
+        .hero-landingpage-button-text {
+            /* Exact Figma button text style_Q3HQJJ */
+            font-family: var(--font-family-display);
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.4285714285714286;
+            letter-spacing: 5.714285799435207%;
+            text-transform: uppercase;
+            text-align: left;
+            color: white; /* fill_BZXOX3 */
+        }
+        
+        /* Desktop Responsive Breakpoint */
+        @media (min-width: 1024px) {
+            .hero-landingpage-content {
+                /* Desktop padding from layout_3J383Y */
+                padding: 80px 56px;
+                gap: 36px; /* Desktop gap from layout_3J383Y */
+            }
+            
+            .hero-landingpage-layout-group {
+                gap: 36px; /* Desktop gap from layout_9GTRBG */
+                width: fit-content; /* Desktop sizing from layout_9GTRBG */
+                align-self: flex-start;
+            }
+            
+            .hero-landingpage-headline {
+                /* Desktop Typography - Exact Figma style_SPTQOL */
+                font-size: 60px;
+                line-height: 1.0666666666666667;
+                letter-spacing: 0.6666666766007742%;
+                width: fit-content; /* Desktop sizing from layout_8HM6LN */
+            }
+        }
+        
+        /* Color Variants */
+        .hero-landingpage-variant-primary .hero-landingpage-content {
+            background: linear-gradient(180deg, 
+                rgba(0, 104, 94, 0) 0%, 
+                rgba(0, 104, 94, 1) 100%
+            );
+        }
+        
+        .hero-landingpage-variant-dark .hero-landingpage-content {
+            background: linear-gradient(180deg, 
+                rgba(30, 41, 57, 0) 0%, 
+                rgba(30, 41, 57, 1) 100%
+            );
+        }
+        
+        .hero-landingpage-variant-secondary .hero-landingpage-button {
+            background: var(--color-netinera-primary);
+        }
+        
+        .hero-landingpage-variant-secondary .hero-landingpage-button:hover {
+            background: #005a52;
+        }
+    </style>
+</head>
+<body class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="overline-sm spacing-overline-h1">Figma Nodes 1768:32691 & 1751:24926</div>
+            <h1 class="headline-h1 spacing-headline-body-h1">
+                Hero Landingpage Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content body-lg">
+                Pixelgenaue Implementierung basierend auf Figma-Spezifikationen. Responsive Hero mit Hintergrundbild, Gradient-Overlay und Backdrop-Filter. Mobile: 33px Headline, 44px×16px Padding → Desktop: 60px Headline, 80px×56px Padding.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Main Example - Responsive Hero Landingpage -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Hauptkomponente</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Hero Landingpage - Responsive
+                </h2>
+                
+                <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Automatische Mobile-Desktop Anpassung</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Mobile: 33px Headline, 44px×16px Padding, 32px Gap → Desktop: 60px Headline, 80px×56px Padding, 36px Gap
+                    </h4>
+                    
+                    <!-- Responsive Component Implementation -->
+                    <div class="hero-landingpage">
+                        <div class="hero-landingpage-content">
+                            <div class="hero-landingpage-layout-group">
+                                <h2 class="hero-landingpage-headline">Moderne Mobilität für Deutschland</h2>
+                                <button class="hero-landingpage-button">
+                                    <span class="hero-landingpage-button-text">Mehr erfahren</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Code Example -->
+                    <div class="mt-netinera-element-md">
+                        <div class="overline-xs spacing-overline-h6">HTML Implementation</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;div class="hero-landingpage"&gt;
+  &lt;div class="hero-landingpage-content"&gt;
+    &lt;div class="hero-landingpage-layout-group"&gt;
+      &lt;h2 class="hero-landingpage-headline"&gt;Moderne Mobilität für Deutschland&lt;/h2&gt;
+      &lt;button class="hero-landingpage-button"&gt;
+        &lt;span class="hero-landingpage-button-text"&gt;Mehr erfahren&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Color Variants -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Farbvarianten</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Primary, Dark und Secondary Button
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- Color Variants Grid -->
+                    <div class="gap-netinera-element-lg grid grid-cols-1 lg:grid-cols-2">
+                        
+                        <!-- Primary Variant -->
+                        <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                            <div class="text-netinera-dark overline-sm spacing-overline-h4">Primary Gradient</div>
+                            <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                                Netinera Primary (Teal) Gradient Overlay
+                            </h4>
+                            
+                            <div class="hero-landingpage hero-landingpage-variant-primary" style="height: 400px;">
+                                <div class="hero-landingpage-content">
+                                    <div class="hero-landingpage-layout-group">
+                                        <h2 class="hero-landingpage-headline">Nachhaltige Zukunft</h2>
+                                        <button class="hero-landingpage-button">
+                                            <span class="hero-landingpage-button-text">Entdecken</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dark Variant -->
+                        <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                            <div class="text-netinera-dark overline-sm spacing-overline-h4">Dark Gradient</div>
+                            <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                                Netinera Dark Gradient Overlay
+                            </h4>
+                            
+                            <div class="hero-landingpage hero-landingpage-variant-dark" style="height: 400px;">
+                                <div class="hero-landingpage-content">
+                                    <div class="hero-landingpage-layout-group">
+                                        <h2 class="hero-landingpage-headline">Innovation & Technik</h2>
+                                        <button class="hero-landingpage-button">
+                                            <span class="hero-landingpage-button-text">Mehr erfahren</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Button Variant -->
+                        <div class="lg:col-span-2 bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                            <div class="text-netinera-dark overline-sm spacing-overline-h4">Secondary Button</div>
+                            <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                                Primary Button (Teal) statt Secondary (Red)
+                            </h4>
+                            
+                            <div class="hero-landingpage hero-landingpage-variant-secondary" style="height: 400px;">
+                                <div class="hero-landingpage-content">
+                                    <div class="hero-landingpage-layout-group">
+                                        <h2 class="hero-landingpage-headline">Digitale Transformation</h2>
+                                        <button class="hero-landingpage-button">
+                                            <span class="hero-landingpage-button-text">Jetzt starten</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Specifications -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">CSS Spezifikationen</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Exakte Figma-Implementierung
+                </h2>
+                
+                <div class="bg-stone-100 p-netinera-element-lg rounded-netinera-card-secondary">
+                    <div class="text-netinera-dark overline-sm spacing-overline-h4">Figma Nodes 1768:32691 & 1751:24926 Mapping</div>
+                    <h4 class="mb-netinera-element-md headline-h4 spacing-headline-body-h4">
+                        Direkte Umsetzung der Figma-Spezifikationen für Mobile und Desktop
+                    </h4>
+                    
+                    <div class="space-y-netinera-element-md">
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Component Structure</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Main Component */
+.hero-landingpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  height: 100vh;
+  border-radius: 96px 0px 96px 0px;
+  background-image: url('./src/assets/hero-landingpage-background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Content with Gradient Overlay */
+.hero-landingpage-content {
+  background: linear-gradient(180deg, 
+    rgba(0, 104, 94, 0) 0%, 
+    rgba(0, 61, 57, 1) 100%
+  );
+  backdrop-filter: blur(30px); /* Figma effect_5T332D */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 44px 16px; /* Mobile */
+  gap: 12px; /* Mobile */
+}
+
+/* Layout Group */
+.hero-landingpage-layout-group {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* Figma exact */
+  width: 100%; /* Mobile: stretch */
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Typography - Mobile vs Desktop</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile Headline (style_6SDE6D) */
+.hero-landingpage-headline {
+  font-family: 'Titillium Web';
+  font-weight: 400;
+  font-size: 33px; /* Mobile */
+  line-height: 1.0909090909090908;
+  letter-spacing: 1.2121212301832256%;
+  text-transform: uppercase;
+  text-align: left;
+  color: white;
+}
+
+/* Desktop Headline (style_SPTQOL) */
+@media (min-width: 1024px) {
+  .hero-landingpage-headline {
+    font-size: 60px; /* Desktop */
+    line-height: 1.0666666666666667;
+    letter-spacing: 0.6666666766007742%;
+    width: fit-content; /* Desktop: hug */
+  }
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Button Styling</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Primary Button (exact Figma) */
+.hero-landingpage-button {
+  background: #DD052B; /* fill_JGU2QG */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 24px;
+  border-radius: 12px;
+  height: 52px; /* exact Figma height */
+  width: fit-content;
+}
+
+/* Button Text (style_Q3HQJJ) */
+.hero-landingpage-button-text {
+  font-family: 'Titillium Web';
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4285714285714286;
+  letter-spacing: 5.714285799435207%;
+  text-transform: uppercase;
+  color: white;
+}</code></pre>
+                        </div>
+                        
+                        <div>
+                            <div class="overline-xs spacing-overline-h6">Responsive Behavior</div>
+                            <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Mobile (< 1024px) - Node 1751:24926 */
+.hero-landingpage-content {
+  padding: 44px 16px; /* layout_APGHYJ */
+  gap: 12px; /* layout_APGHYJ */
+}
+
+.hero-landingpage-layout-group {
+  gap: 32px; /* layout_NY0J69 */
+  width: 100%; /* align-self: stretch */
+}
+
+/* Desktop (≥ 1024px) - Node 1768:32691 */
+@media (min-width: 1024px) {
+  .hero-landingpage-content {
+    padding: 80px 56px; /* layout_3J383Y */
+    gap: 36px; /* layout_3J383Y */
+  }
+  
+  .hero-landingpage-layout-group {
+    gap: 36px; /* layout_9GTRBG */
+    width: fit-content; /* sizing: hug */
+    align-self: flex-start;
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Figma Nodes 1768:32691 & 1751:24926</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Hero Landingpage Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue Implementierung des Hero Landingpage mit Hintergrundbild, Gradient-Overlay und Backdrop-Filter. Mobile: 33px Headline, 44px×16px Padding → Desktop: 60px Headline, 80px×56px Padding mit automatischer Responsive-Anpassung.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html> 

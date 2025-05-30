@@ -1,0 +1,133 @@
+/* === FORMS */
+
+/* Form-Groups */
+.form-group {
+  @apply flex flex-col flex-wrap w-full mb-3;
+}
+
+.form-group-btn {
+  @apply flex flex-row gap-1;
+}
+
+/* Form-Elements */
+
+/* TODO: please test */
+.form-element {
+  @apply flex flex-col flex-wrap w-full mb-3;
+}
+
+.form-element-btn {
+  @apply flex flex-row gap-1;
+}
+
+/* Input Styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  @apply w-full py-3 px-5 rounded-full;
+  @apply border-1 border-stone-400;
+
+  background-color: #f9fafb;
+
+  @apply text-stone-800;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  @apply transition-all duration-200;
+}
+
+select,
+textarea {
+  @apply !border-1 !border-stone-400;
+}
+
+textarea {
+  @apply rounded-2xl min-h-24;
+}
+
+/* Enhanced Select Styling */
+select {
+  @apply appearance-none bg-no-repeat pr-16 rounded-full;
+  @apply border-1 border-stone-400;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23374151'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-size: 1.25rem;
+  background-position: right 16px center;
+  border-radius: 9999px !important;
+  padding-left: 12px !important;
+}
+
+/* Force rounded corners for all browsers */
+select.rounded-full {
+  border-radius: 9999px !important;
+  padding-left: 12px !important;
+  border-color: #57534e !important;
+}
+
+/* Form-Rows / Cols */
+.form-row {
+  @apply grid grid-cols-12 gap-x-3;
+
+  .col-6 {
+    @apply col-span-12 lg:col-span-6;
+  }
+
+  .col-3 {
+    @apply col-span-12 lg:col-span-3;
+  }
+
+  .col-4 {
+    @apply col-span-12 lg:col-span-6 xl:col-span-4;
+  }
+
+  .col-12 {
+    @apply col-span-12;
+  }
+}
+
+/* Form Error */
+.error * {
+      @apply text-red-600;
+}
+
+.form-text {
+  @apply text-sm mt-0.5;
+}
+
+/* Error state */
+.error input[type="text"],
+.error input[type="email"],
+.error input[type="password"],
+.error input[type="search"],
+.error input[type="url"],
+.error input[type="tel"],
+.error input[type="number"],
+.error input[type="date"],
+.error textarea,
+.error select {
+  @apply border-red-600;
+  @apply focus:ring-red-500;
+}
+
+/* Placeholder Styling */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="search"]::placeholder,
+input[type="url"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="number"]::placeholder,
+input[type="date"]::placeholder,
+textarea::placeholder {
+  @apply text-stone-600 opacity-70;
+  @apply transition-all duration-200;
+}
+
+.form-element-radio {
+  @apply p-0;
+}

@@ -1,0 +1,34 @@
+/* stylelint-disable */
+
+@import "tailwindcss";
+@import "./theme.css";
+
+/* ============= */
+/* === GENES === */
+/* ============= */
+@import "../Styleguide/_Genes/_helper.css";
+@import "../Styleguide/_Genes/_fonts.css";
+
+/* Globals */
+@import "../Styleguide/Atoms/00-Globals/Colors/_colors.css";
+@import "../Styleguide/Atoms/00-Globals/_body.css";
+/* @import "../Styleguide/Atoms/00-Globals/_spacing.css"; */
+
+/* Typographie */
+@import "../Styleguide/Atoms/01-Typographie/Headings/_heading.css";
+@import "../Styleguide/Atoms/01-Typographie/Text/_text.css";
+
+/* Links */
+@import "../Styleguide/Atoms/02-Links/_links.css";
+
+/* List */
+@import "../Styleguide/Atoms/03-List/_list.css";
+
+/* Table */
+@import "../Styleguide/Atoms/04-Table/_table.css";
+
+/* Forms */
+@import "../Styleguide/Atoms/05-Forms/Buttons/_button.css";
+
+/* TYPO3: Default Content Elements */
+@import "../Styleguide/Molecules/03-Modules/TYPO3-Default-CEs/_text-and-media.css";

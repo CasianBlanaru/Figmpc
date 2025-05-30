@@ -1,0 +1,377 @@
+@layer components {
+  /* ==========================
+   * === DOWNLOADS TEASER INLINE SM
+   * ========================== */
+
+  /* Main Downloads Item Container  */
+  .downloads-teaser-inline-sm {
+    background: #FFF;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    gap: 8px;
+    padding: 16px 24px;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+  }
+
+  .downloads-teaser-inline-sm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgb(0 0 0 / 10%), 0 4px 8px -2px rgb(0 0 0 / 5%);
+  }
+
+  /* Downloads Content Container  */
+  .downloads-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+  }
+
+  /* Downloads Text Group  */
+  .downloads-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  /* Downloads Title Typography  */
+  .downloads-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5em;
+    color: #1E2939;
+    width: 100%;
+  }
+
+  /* Downloads Meta Typography  */
+  .downloads-meta {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.714em;
+    color: #1E2939;
+    width: 100%;
+    opacity: 0.7;
+  }
+
+  /* Downloads Button  */
+  .downloads-button {
+    background: #DD052B;
+    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    flex-shrink: 0;
+  }
+
+  .downloads-button:hover {
+    background: #C2041F;
+    transform: scale(1.05);
+  }
+
+  .downloads-button:active {
+    background: #A10318;
+    transform: scale(0.98);
+  }
+
+  /* Downloads Icon  */
+  .downloads-icon {
+    color: white;
+    width: 20px;
+    height: 20px;
+  }
+
+  .download-icon-svg {
+    fill: none;
+    stroke: white;
+    stroke-width: 1.25px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ==========================
+   * === DOWNLOADS LAYOUTS
+   * ========================== */
+
+  /* Downloads List Layout */
+  .downloads-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  /* Downloads Grid Layout */
+  .downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+    width: 100%;
+  }
+
+  /* ==========================
+   * === DOWNLOADS STATES
+   * ========================== */
+
+  /* Downloading State */
+  .downloads-downloading {
+    background: #B8B8B8;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  .downloads-downloading .downloads-icon {
+    animation: downloads-spin 1s linear infinite;
+  }
+
+  @keyframes downloads-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Downloaded State */
+  .downloads-downloaded {
+    background: #10B981;
+  }
+
+  .downloads-downloaded:hover {
+    background: #059669;
+  }
+
+  /* ==========================
+   * === DOWNLOADS ANIMATIONS
+   * ========================== */
+
+  /* Fade In Animation */
+  .downloads-section-fade-in {
+    animation: downloads-fade-in-up 0.6s ease-out;
+  }
+
+  @keyframes downloads-fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Card Slide In Animation */
+  .downloads-card-animate {
+    animation: downloads-slide-in 0.8s ease-out forwards;
+  }
+
+  @keyframes downloads-slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-40px) scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  /* Interactive Card Enhancement */
+  .downloads-card-interactive {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Focus States for Accessibility */
+  .downloads-button:focus {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+  }
+
+  .downloads-card-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgb(0 0 0 / 10%), 0 4px 8px -2px rgb(0 0 0 / 5%);
+  }
+
+  .downloads-card-interactive:hover .downloads-button {
+    transform: scale(1.05);
+    background: #C2041F;
+  }
+
+  /* ==========================
+   * === RESPONSIVE DESIGN
+   * ========================== */
+
+  /* Mobile Optimization */
+  @media (width <= 767px) {
+    .downloads-teaser-inline-sm {
+      padding: 12px 16px;
+      gap: 6px;
+    }
+
+    .downloads-content {
+      gap: 12px;
+    }
+
+    .downloads-button {
+      width: 36px;
+      height: 36px;
+    }
+
+    .downloads-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .downloads-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+
+  /* Small Mobile */
+  @media (width <= 479px) {
+    .downloads-teaser-inline-sm {
+      padding: 10px 12px;
+      gap: 4px;
+    }
+
+    .downloads-content {
+      gap: 10px;
+    }
+
+    .downloads-title {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .downloads-meta {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .downloads-button {
+      width: 32px;
+      height: 32px;
+    }
+
+    .downloads-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  /* ==========================
+   * === ACCESSIBILITY
+   * ========================== */
+
+  .downloads-teaser-inline-sm:focus-within {
+    outline: 2px solid #DD052B;
+    outline-offset: 2px;
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .downloads-teaser-inline-sm {
+      border: 2px solid #1E2939;
+    }
+
+    .downloads-title,
+    .downloads-meta {
+      font-weight: 600;
+    }
+
+    .downloads-button {
+      border: 2px solid #FFF;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .downloads-teaser-inline-sm,
+    .downloads-button,
+    .downloads-card-interactive {
+      transition: none;
+      transform: none !important;
+    }
+
+    .downloads-section-fade-in,
+    .downloads-card-animate {
+      animation: none;
+      opacity: 1;
+    }
+
+    .downloads-downloading .downloads-icon {
+      animation: none;
+    }
+  }
+
+  /* ==========================
+   * === PRINT STYLES
+   * ========================== */
+
+  @media print {
+    .downloads-teaser-inline-sm {
+      background: white !important;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      padding: 12px;
+      break-inside: avoid;
+      margin-bottom: 8px;
+    }
+
+    .downloads-button {
+      display: none;
+    }
+
+    .downloads-title,
+    .downloads-meta {
+      color: black !important;
+    }
+
+    .downloads-list,
+    .downloads-grid {
+      display: block;
+    }
+
+    .downloads-grid .downloads-teaser-inline-sm {
+      margin-bottom: 12px;
+    }
+  }
+
+  /* ==========================
+   * === LOADING STATES
+   * ========================== */
+
+  .downloads-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: downloads-loading 1.5s infinite;
+  }
+
+  @keyframes downloads-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .downloads-loading .downloads-title,
+  .downloads-loading .downloads-meta {
+    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: downloads-loading 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+  }
+
+}

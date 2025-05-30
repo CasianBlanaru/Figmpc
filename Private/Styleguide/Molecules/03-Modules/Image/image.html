@@ -1,0 +1,867 @@
+
+    <style>
+        .responsive-indicator {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-netinera-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-netinera-sm);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .code-display {
+            background: #1e2939;
+            color: #f5f5f4;
+            border-radius: var(--radius-netinera-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        /* Image Component specific styles */
+        .section-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .image-animate {
+            animation: imageSlideIn 0.6s ease-out forwards;
+        }
+        
+        @keyframes imageSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* Image Landscape 16:9 XL */
+        .image-landscape-16-9-xl {  
+            display: flex;  
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            width: 768px; 
+        }
+        
+        .image-landscape-16-9-frame {
+            background-size: cover;
+            background-position: center;
+            border-radius: 36px;
+            align-self: stretch;
+            width: 100%; 
+            height: 428px;
+            transition: all 0.3s ease;
+        }
+        
+        .image-landscape-16-9-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(30, 41, 57, 0.15);
+        }
+        
+        /* Image Landscape 4:3 XL */
+        .image-landscape-4-3-xl {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 768px; 
+        }
+        
+        .image-landscape-4-3-frame {
+            background-size: cover;
+            background-position: center;
+            border-radius: 36px;
+            align-self: stretch;
+            width: 100%; 
+            height: 575px;
+            transition: all 0.3s ease;
+        }
+        
+        .image-landscape-4-3-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(30, 41, 57, 0.15);
+        }
+        
+        /* Image Square 1:1 XL */
+        .image-square-1-1-xl {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 468px; 
+        }
+        
+        .image-square-1-1-frame {
+            background-size: cover;
+            background-position: center;
+            border-radius: 36px;
+            width: 468px; 
+            height: 468px;
+            transition: all 0.3s ease;
+        }
+        
+        .image-square-1-1-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(30, 41, 57, 0.15);
+        }
+        
+        /* Text Container XL */
+        .image-text-xl {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-self: stretch;
+            width: 100%;
+        }
+        
+        /* Square Text Container XL */
+        .image-text-square-xl {
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch;
+            align-items: stretch;
+            align-self: stretch;
+            width: 100%;
+        }
+        
+        /* Caption Text */
+        .image-caption-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.4285714285714286em;
+            text-align: center;
+            color: #1E2939; 
+            width: fit-content; 
+        }
+        
+        .image-caption-text-fill {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.4285714285714286em;
+            text-align: center;
+            color: #1E2939; 
+            width: 100%; 
+        }
+        
+        /* Image SM Variants */
+        .image-landscape-16-9-sm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: stretch;
+            gap: 12px;
+            width: 100%;
+        }
+        
+        .image-landscape-16-9-sm-frame {
+            background-size: cover;
+            background-position: center;
+            border-radius: 24px;
+            align-self: stretch;
+            width: 100%; 
+            height: 185px;
+            transition: all 0.3s ease;
+        }
+        
+        .image-landscape-16-9-sm-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(30, 41, 57, 0.15);
+        }
+        
+        .image-landscape-4-3-sm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: stretch;
+            gap: 12px;
+            width: 100%;
+        }
+        
+        .image-landscape-4-3-sm-frame {
+            background-size: cover;
+            background-position: center;
+            border-radius: 24px;
+            align-self: stretch;
+            width: 100%; 
+            height: 246px;
+            transition: all 0.3s ease;
+        }
+        
+        .image-landscape-4-3-sm-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(30, 41, 57, 0.15);
+        }
+        
+        .image-square-1-1-sm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: stretch;
+            gap: 12px;
+            width: 100%;
+        }
+        
+        .image-square-1-1-sm-frame {
+            background-size: cover;
+            background-position: center;
+            border-radius: 24px;
+            align-self: stretch;
+            width: 100%; 
+            height: 328px;
+            transition: all 0.3s ease;
+        }
+        
+        .image-square-1-1-sm-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(30, 41, 57, 0.15);
+        }
+        
+        /* Demo Images */
+        .demo-image-1 {
+            background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=428&q=80');
+        }
+        
+        .demo-image-2 {
+            background-image: url('https://images.unsplash.com/photo-1570125909232-eb263c188f7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=768&h=575&q=80');
+        }
+        
+        .demo-image-3 {
+            background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=468&h=468&q=80');
+        }
+        
+        .demo-image-4 {
+            background-image: url('https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=185&q=80');
+        }
+        
+        .demo-image-5 {
+            background-image: url('https://images.unsplash.com/photo-1517094503204-8e5a3e12b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=246&q=80');
+        }
+        
+        .demo-image-6 {
+            background-image: url('https://images.unsplash.com/photo-1589578667272-e8bc5b7b9e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=328&q=80');
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1279px) {
+            .image-landscape-16-9-xl,
+            .image-landscape-4-3-xl {
+                width: 100%;
+                max-width: 768px;
+            }
+            
+            .image-square-1-1-xl {
+                width: 100%;
+                max-width: 468px;
+            }
+            
+            .image-landscape-16-9-frame {
+                height: auto;
+                aspect-ratio: 16/9;
+            }
+            
+            .image-landscape-4-3-frame {
+                height: auto;
+                aspect-ratio: 4/3;
+            }
+            
+            .image-square-1-1-frame {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1/1;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .image-landscape-16-9-xl,
+            .image-landscape-4-3-xl,
+            .image-square-1-1-xl {
+                width: 100%;
+            }
+            
+            .image-landscape-16-9-frame,
+            .image-landscape-4-3-frame,
+            .image-square-1-1-frame {
+                border-radius: 20px;
+            }
+            
+            .image-landscape-16-9-sm-frame,
+            .image-landscape-4-3-sm-frame,
+            .image-square-1-1-sm-frame {
+                border-radius: 16px;
+            }
+            
+            .image-landscape-16-9-sm-frame {
+                height: auto;
+                aspect-ratio: 16/9;
+            }
+            
+            .image-landscape-4-3-sm-frame {
+                height: auto;
+                aspect-ratio: 4/3;
+            }
+            
+            .image-square-1-1-sm-frame {
+                height: auto;
+                aspect-ratio: 1/1;
+            }
+        }
+        
+        @media (max-width: 479px) {
+            .image-landscape-16-9-frame,
+            .image-landscape-4-3-frame,
+            .image-square-1-1-frame {
+                border-radius: 16px;
+            }
+            
+            .image-landscape-16-9-sm-frame,
+            .image-landscape-4-3-sm-frame,
+            .image-square-1-1-sm-frame {
+                border-radius: 12px;
+            }
+            
+            .image-caption-text,
+            .image-caption-text-fill {
+                font-size: 12px;
+                line-height: 1.5em;
+            }
+        }
+        
+        /* Interactive animations */
+        .image-hover-effect {
+            transition: all 0.4s ease;
+        }
+        
+        .image-hover-effect:hover {
+            transform: scale(1.03) rotate(0.5deg);
+        }
+        
+        /* Loading states */
+        .image-loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Variant Styles */
+        .variant-wrapper {
+            margin-bottom: 80px;
+        }
+        
+        .variant-label {
+            display: inline-block;
+            background: #DD052B;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+    </style>
+<section class="bg-netinera-light font-sans">
+
+    <!-- Responsive Indicator -->
+    <div class="responsive-indicator">
+        <span class="sm:hidden block">Mobile (XS)</span>
+        <span class="hidden md:hidden sm:block">Mobile (SM)</span>
+        <span class="hidden lg:hidden md:block">Tablet (MD)</span>
+        <span class="hidden xl:hidden lg:block">Desktop (LG)</span>
+        <span class="hidden xl:block">Desktop (XL)</span>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-netinera-primary text-netinera-white">
+        <div class="py-netinera-section-lg text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h1">Component Library</div>
+            <h1 class="text-netinera-white headline-h1 spacing-headline-body-h1">
+                Image Component
+            </h1>
+            <p class="mx-auto max-w-netinera-content text-netinera-white body-lg">
+                Pixelgenaue responsive Image-Komponente basierend auf Figma Node 1759-26544. Verschiedene Formate (16:9, 4:3, 1:1) in XL und SM Varianten mit Caption Text.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-netinera-section-xl">
+        <div class="space-y-netinera-section-lg container-netinera-landingpage">
+
+            <!-- Component Overview -->
+            <section class="section-fade-in">
+                <div class="overline-sm spacing-overline-h2">Figma Node 1759-26544</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Image Component
+                </h2>
+                <p class="mb-netinera-element-lg body-lg">
+                    Flexible Image-Komponente mit verschiedenen Formaten und Größen. XL-Varianten mit festen Breiten (768px/468px) und SM-Varianten mit responsiver Breite. Alle mit Caption Text.
+                </p>
+            </section>
+
+            <!-- XL Variants -->
+            <section class="variant-wrapper">
+                <div class="variant-label">XL Varianten - Feste Breiten</div>
+                
+                <div class="overflow-hidden">
+                    <div class="space-y-16">
+                        
+                        <!-- Image Landscape 16:9 XL -->
+                        <div class="mx-auto image-landscape-16-9-xl">
+                            <div class="image-landscape-16-9-frame demo-image-1 image-hover-effect"></div>
+                            <div class="image-text-xl">
+                                <div class="image-caption-text">
+                                    Moderne Züge im Bahnhof: 16:9 Landscape Format (768×428px)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Image Landscape 4:3 XL -->
+                        <div class="mx-auto image-landscape-4-3-xl">
+                            <div class="image-landscape-4-3-frame demo-image-2 image-hover-effect"></div>
+                            <div class="image-text-xl">
+                                <div class="image-caption-text">
+                                    Nachhaltige Mobilität: 4:3 Landscape Format (768×575px)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Image Square 1:1 XL -->
+                        <div class="mx-auto image-square-1-1-xl">
+                            <div class="image-square-1-1-frame demo-image-3 image-hover-effect"></div>
+                            <div class="image-text-square-xl">
+                                <div class="image-caption-text-fill">
+                                    Innovation im Schienenverkehr: 1:1 Square Format (468×468px)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Code Example XL -->
+                    <div class="p-netinera-element-lg">
+                        <div class="overline-xs spacing-overline-h6">HTML Implementation XL</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;!-- Image Landscape 16:9 XL --&gt;
+&lt;div class="image-landscape-16-9-xl"&gt;
+  &lt;div class="image-landscape-16-9-frame demo-image-1"&gt;&lt;/div&gt;
+  &lt;div class="image-text-xl"&gt;
+    &lt;div class="image-caption-text"&gt;
+      Moderne Züge im Bahnhof: 16:9 Landscape Format (768×428px)
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Image Landscape 4:3 XL --&gt;
+&lt;div class="image-landscape-4-3-xl"&gt;
+  &lt;div class="image-landscape-4-3-frame demo-image-2"&gt;&lt;/div&gt;
+  &lt;div class="image-text-xl"&gt;
+    &lt;div class="image-caption-text"&gt;
+      Nachhaltige Mobilität: 4:3 Landscape Format (768×575px)
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Image Square 1:1 XL --&gt;
+&lt;div class="image-square-1-1-xl"&gt;
+  &lt;div class="image-square-1-1-frame demo-image-3"&gt;&lt;/div&gt;
+  &lt;div class="image-text-square-xl"&gt;
+    &lt;div class="image-caption-text-fill"&gt;
+      Innovation im Schienenverkehr: 1:1 Square Format (468×468px)
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SM Variants -->
+            <section class="variant-wrapper">
+                <div class="variant-label">SM Varianten - Responsive Breiten</div>
+                
+                <div class="overflow-hidden">
+                    <div class="space-y-16">
+                        
+                        <!-- Image Landscape 16:9 SM -->
+                        <div class="image-landscape-16-9-sm">
+                            <div class="image-landscape-16-9-sm-frame demo-image-4 image-hover-effect"></div>
+                            <div class="image-caption-text-fill">
+                                Komfortable Reise: 16:9 Responsive Format (Auto Height: 185px)
+                            </div>
+                        </div>
+                        
+                        <!-- Image Landscape 4:3 SM -->
+                        <div class="image-landscape-4-3-sm">
+                            <div class="image-landscape-4-3-sm-frame demo-image-5 image-hover-effect"></div>
+                            <div class="image-caption-text-fill">
+                                Bahnhof der Zukunft: 4:3 Responsive Format (Auto Height: 246px)
+                            </div>
+                        </div>
+                        
+                        <!-- Image Square 1:1 SM -->
+                        <div class="image-square-1-1-sm">
+                            <div class="image-square-1-1-sm-frame demo-image-6 image-hover-effect"></div>
+                            <div class="image-caption-text-fill">
+                                Moderne Architektur: 1:1 Responsive Format (Auto Height: 328px)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Code Example SM -->
+                    <div class="p-netinera-element-lg">
+                        <div class="overline-xs spacing-overline-h6">HTML Implementation SM</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>&lt;!-- Image Landscape 16:9 SM --&gt;
+&lt;div class="image-landscape-16-9-sm"&gt;
+  &lt;div class="image-landscape-16-9-sm-frame demo-image-4"&gt;&lt;/div&gt;
+  &lt;div class="image-caption-text-fill"&gt;
+    Komfortable Reise: 16:9 Responsive Format (Auto Height: 185px)
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Image Landscape 4:3 SM --&gt;
+&lt;div class="image-landscape-4-3-sm"&gt;
+  &lt;div class="image-landscape-4-3-sm-frame demo-image-5"&gt;&lt;/div&gt;
+  &lt;div class="image-caption-text-fill"&gt;
+    Bahnhof der Zukunft: 4:3 Responsive Format (Auto Height: 246px)
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Image Square 1:1 SM --&gt;
+&lt;div class="image-square-1-1-sm"&gt;
+  &lt;div class="image-square-1-1-sm-frame demo-image-6"&gt;&lt;/div&gt;
+  &lt;div class="image-caption-text-fill"&gt;
+    Moderne Architektur: 1:1 Responsive Format (Auto Height: 328px)
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section>
+                <div class="overline-sm spacing-overline-h2">Implementation</div>
+                <h2 class="headline-h2 spacing-headline-body-h2">
+                    Code Implementation & Spezifikationen
+                </h2>
+                
+                <div class="space-y-netinera-element-lg">
+                    
+                    <!-- CSS Specifications XL -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">CSS Spezifikationen XL</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Figma Node 1759-26544 XL Spezifikationen */
+
+/* Image Landscape 16:9 XL (layout_J444SV) */
+.image-landscape-16-9-xl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 768px;
+}
+
+.image-landscape-16-9-frame {
+  background-size: cover;
+  background-position: center;
+  border-radius: 36px;
+  align-self: stretch;
+  width: 100%; /* layout_0BJVIF */
+  height: 428px;
+}
+
+/* Image Landscape 4:3 XL (layout_RZ6YN1) */
+.image-landscape-4-3-xl {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 768px;
+}
+
+.image-landscape-4-3-frame {
+  background-size: cover;
+  background-position: center;
+  border-radius: 36px;
+  align-self: stretch;
+  width: 100%; /* layout_NZC4IS */
+  height: 575px;
+}
+
+/* Image Square 1:1 XL (layout_8GPYOX) */
+.image-square-1-1-xl {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 468px;
+}
+
+.image-square-1-1-frame {
+  background-size: cover;
+  background-position: center;
+  border-radius: 36px;
+  width: 468px; /* layout_YX1PSC */
+  height: 468px;
+}</code></pre>
+                    </div>
+                    
+                    <!-- CSS Specifications SM -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">CSS Spezifikationen SM</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Image SM Variants (layout_OGTLZB) */
+
+/* Image Landscape 16:9 SM */
+.image-landscape-16-9-sm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 12px;
+  width: 100%;
+}
+
+.image-landscape-16-9-sm-frame {
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  align-self: stretch;
+  width: 100%; /* layout_3IGPFF */
+  height: 185px;
+}
+
+/* Image Landscape 4:3 SM */
+.image-landscape-4-3-sm-frame {
+  height: 246px; /* layout_K9UXUR */
+}
+
+/* Image Square 1:1 SM */
+.image-square-1-1-sm-frame {
+  height: 328px; /* layout_P3YAVD */
+}
+
+/* Caption Text (style_R9X6NF) */
+.image-caption-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4285714285714286em;
+  text-align: center;
+  color: #1E2939; /* fill_DS1W3E */
+  width: fit-content; /* layout_UIU1PR */
+}
+
+.image-caption-text-fill {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4285714285714286em;
+  text-align: center;
+  color: #1E2939; /* fill_DS1W3E */
+  width: 100%; /* layout_HDUDQE */
+}</code></pre>
+                    </div>
+                    
+                    <!-- Responsive Specifications -->
+                    <div class="bg-white p-netinera-element-lg rounded-netinera-card-primary">
+                        <div class="overline-xs spacing-overline-h6">Responsive Spezifikationen</div>
+                        <pre class="p-netinera-element-sm overflow-x-auto code-display"><code>/* Responsive Design */
+
+/* Desktop (max-width: 1279px) */
+.image-landscape-16-9-xl,
+.image-landscape-4-3-xl {
+  width: 100%;
+  max-width: 768px;
+}
+
+.image-square-1-1-xl {
+  width: 100%;
+  max-width: 468px;
+}
+
+.image-landscape-16-9-frame {
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.image-landscape-4-3-frame {
+  height: auto;
+  aspect-ratio: 4/3;
+}
+
+.image-square-1-1-frame {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+/* Mobile (max-width: 767px) */
+.image-landscape-16-9-frame,
+.image-landscape-4-3-frame,
+.image-square-1-1-frame {
+  border-radius: 20px;
+}
+
+.image-landscape-16-9-sm-frame,
+.image-landscape-4-3-sm-frame,
+.image-square-1-1-sm-frame {
+  border-radius: 16px;
+  height: auto;
+  aspect-ratio: var(--aspect-ratio);
+}
+
+/* Mobile XS (max-width: 479px) */
+.image-caption-text,
+.image-caption-text-fill {
+  font-size: 12px;
+  line-height: 1.5em;
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-netinera-dark py-netinera-section-lg text-netinera-white">
+        <div class="text-center container-netinera-landingpage">
+            <div class="text-netinera-white overline-sm spacing-overline-h3">Netinera Design System</div>
+            <h3 class="text-netinera-white headline-h3 spacing-headline-body-h3">
+                Image Component
+            </h3>
+            <div class="mx-auto max-w-netinera-content text-gray-300 body-base">
+                Pixelgenaue Image-Komponente basierend auf Figma Node 1759-26544. Verschiedene Formate und Größen mit XL und SM Varianten. Vollständig responsive mit exakten Figma-Spezifikationen.
+            </div>
+            <div class="flex justify-center space-x-4 mt-netinera-element-lg font-mono text-gray-400 text-sm">
+                <span>XL: 768px/468px, SM: Responsive, Gaps: 14px/12px</span>
+                <span>|</span>
+                <span>Formats: 16:9, 4:3, 1:1 mit Caption Text</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Image Component with Interactive Features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all image components
+            const imageFrames = document.querySelectorAll('[class*="frame"]');
+            const captionTexts = document.querySelectorAll('[class*="caption-text"]');
+            
+            // Image frame interactions
+            imageFrames.forEach((frame, index) => {
+                frame.addEventListener('click', () => {
+                    console.log(`Image ${index + 1} clicked`);
+                    
+                    // Add click effect
+                    frame.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        frame.style.transform = 'scale(1.02)';
+                    }, 150);
+                    
+                    setTimeout(() => {
+                        frame.style.transform = 'scale(1)';
+                    }, 300);
+                });
+                
+                // Lazy loading effect
+                frame.addEventListener('mouseenter', () => {
+                    if (!frame.style.backgroundImage) {
+                        frame.classList.add('image-loading');
+                        
+                        setTimeout(() => {
+                            frame.classList.remove('image-loading');
+                        }, 1000);
+                    }
+                });
+            });
+            
+            // Caption text interactions
+            captionTexts.forEach(caption => {
+                caption.addEventListener('mouseenter', () => {
+                    caption.style.fontWeight = '500';
+                    caption.style.transform = 'scale(1.05)';
+                });
+                
+                caption.addEventListener('mouseleave', () => {
+                    caption.style.fontWeight = '400';
+                    caption.style.transform = 'scale(1)';
+                });
+            });
+            
+            // Responsive aspect ratio handling
+            function handleResponsiveImages() {
+                const smFrames = document.querySelectorAll('[class*="-sm-frame"]');
+                
+                smFrames.forEach(frame => {
+                    if (window.innerWidth <= 767) {
+                        if (frame.classList.contains('image-landscape-16-9-sm-frame')) {
+                            frame.style.setProperty('--aspect-ratio', '16/9');
+                        } else if (frame.classList.contains('image-landscape-4-3-sm-frame')) {
+                            frame.style.setProperty('--aspect-ratio', '4/3');
+                        } else if (frame.classList.contains('image-square-1-1-sm-frame')) {
+                            frame.style.setProperty('--aspect-ratio', '1/1');
+                        }
+                    }
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', handleResponsiveImages);
+            handleResponsiveImages();
+            
+            // Image error handling
+            imageFrames.forEach(frame => {
+                frame.addEventListener('error', () => {
+                    frame.style.backgroundColor = '#f5f5f4';
+                    frame.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #1e2939; font-family: Roboto, sans-serif;">Bild konnte nicht geladen werden</div>';
+                });
+            });
+            
+            // Responsive indicator updates
+            function updateResponsiveIndicator() {
+                const indicator = document.querySelector('.responsive-indicator');
+                if (!indicator) return;
+                
+                const spans = indicator.querySelectorAll('span');
+                spans.forEach(span => span.style.display = 'none');
+                
+                if (window.innerWidth < 640) {
+                    spans[0].style.display = 'block';
+                } else if (window.innerWidth < 768) {
+                    spans[1].style.display = 'block';
+                } else if (window.innerWidth < 1024) {
+                    spans[2].style.display = 'block';
+                } else if (window.innerWidth < 1280) {
+                    spans[3].style.display = 'block';
+                } else {
+                    spans[4].style.display = 'block';
+                }
+            }
+            
+            window.addEventListener('resize', updateResponsiveIndicator);
+            updateResponsiveIndicator();
+        });
+    </script>
+</section>

@@ -1,0 +1,10 @@
+/* === GRID */
+
+.container-fluid {
+    @apply box-content max-w-screen-xl;
+    @apply px-5 mx-auto lg:px-10;
+}
+
+.grid-row {
+    @apply grid grid-cols-12 gap-x-2 lg:gap-x-4;
+}
