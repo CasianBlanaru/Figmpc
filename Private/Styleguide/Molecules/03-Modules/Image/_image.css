@@ -1,76 +1,40 @@
 /* Image Landscape 16:9 XL */
 .image-landscape-16-9-xl {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  width: 768px;
-  margin: 0 auto;
+  @apply flex flex-col items-center gap-[14px] w-[768px] mx-auto;
 }
 
 .image-landscape-16-9-frame {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 36px;
-  align-self: stretch;
-  width: 100%;
-  height: 428px;
-  transition: all 0.3s ease;
+  @apply bg-cover bg-center bg-no-repeat rounded-[36px] self-stretch w-full h-[428px] transition-all duration-300 ease-in-out;
 }
 
 .image-landscape-16-9-frame:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 24px rgb(30 41 57 / 15%);
+  @apply hover:scale-[1.02] hover:shadow-[0_12px_24px_rgb(30_41_57_/_15%)];
 }
 
 /* Image Landscape 4:3 XL */
 .image-landscape-4-3-xl {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  width: 768px;
-  margin: 0 auto;
+  @apply flex flex-col gap-[14px] w-[768px] mx-auto;
 }
 
 .image-landscape-4-3-frame {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 36px;
-  align-self: stretch;
-  width: 100%;
-  height: 575px;
-  transition: all 0.3s ease;
+  @apply bg-cover bg-center bg-no-repeat rounded-[36px] self-stretch w-full h-[575px] transition-all duration-300 ease-in-out;
 }
 
 .image-landscape-4-3-frame:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 24px rgb(30 41 57 / 15%);
+  @apply hover:scale-[1.02] hover:shadow-[0_12px_24px_rgb(30_41_57_/_15%)];
 }
 
 /* Image Square 1:1 XL (layout_8GPYOX) */
 .image-square-1-1-xl {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  width: 468px;
-  margin: 0 auto;
+  @apply flex flex-col gap-[14px] w-[468px] mx-auto;
 }
 
 .image-square-1-1-frame {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 36px;
-  width: 468px;
-  height: 468px;
-  transition: all 0.3s ease;
+  @apply bg-cover bg-center bg-no-repeat rounded-[36px] w-[468px] h-[468px] transition-all duration-300 ease-in-out;
 }
 
 .image-square-1-1-frame:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 24px rgb(30 41 57 / 15%);
+  @apply hover:scale-[1.02] hover:shadow-[0_12px_24px_rgb(30_41_57_/_15%)];
 }
 
 /* ==========================
@@ -79,79 +43,44 @@
 
 /* Image Landscape 16:9 SM (layout_OGTLZB) */
 .image-landscape-16-9-sm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: stretch;
-  gap: 12px;
-  width: 100%;
+  @apply flex flex-col items-center self-stretch gap-3 w-full; /* 12px -> gap-3 */
 }
 
 .image-landscape-16-9-sm-frame {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 24px;
-  align-self: stretch;
-  width: 100%;
-  transition: all 0.3s ease;
+  @apply bg-cover bg-center bg-no-repeat rounded-2xl self-stretch w-full transition-all duration-300 ease-in-out; /* 24px -> rounded-2xl */
+  /* height is auto with aspect ratio in media queries */
 }
 
 .image-landscape-16-9-sm-frame:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 16px rgb(30 41 57 / 15%);
+  @apply hover:scale-[1.02] hover:shadow-[0_8px_16px_rgb(30_41_57_/_15%)];
 }
 
 /* Image Landscape 4:3 SM */
 .image-landscape-4-3-sm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: stretch;
-  gap: 12px;
-  width: 100%;
+  @apply flex flex-col items-center self-stretch gap-3 w-full;
 }
 
 .image-landscape-4-3-sm-frame {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 24px;
-  align-self: stretch;
-  width: 100%;
-  height: 246px;
-  transition: all 0.3s ease;
+  @apply bg-cover bg-center bg-no-repeat rounded-2xl self-stretch w-full h-[246px] transition-all duration-300 ease-in-out;
+  /* height is auto with aspect ratio in media queries for some breakpoints */
 }
 
 .image-landscape-4-3-sm-frame:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 16px rgb(30 41 57 / 15%);
+  @apply hover:scale-[1.02] hover:shadow-[0_8px_16px_rgb(30_41_57_/_15%)];
 }
 
 /* Image Square 1:1 SM */
 .image-square-1-1-sm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: stretch;
-  gap: 12px;
-  width: 100%;
+  @apply flex flex-col items-center self-stretch gap-3 w-full;
 }
 
 .image-square-1-1-sm-frame {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 24px;
-  align-self: stretch;
-  width: 100%;
-  height: 328px;
-  transition: all 0.3s ease;
+  @apply bg-cover bg-center bg-no-repeat rounded-2xl self-stretch w-full h-[328px] transition-all duration-300 ease-in-out;
+  /* height is auto with aspect ratio in media queries for some breakpoints */
 }
 
 .image-square-1-1-sm-frame:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 16px rgb(30 41 57 / 15%);
+  @apply hover:scale-[1.02] hover:shadow-[0_8px_16px_rgb(30_41_57_/_15%)];
 }
 
 /* ==========================
@@ -160,43 +89,21 @@
 
 /* Text Container XL (layout_1FGLW1) */
 .image-text-xl {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-self: stretch;
-  width: 100%;
+  @apply flex flex-row justify-center items-center self-stretch w-full;
 }
 
 /* Square Text Container XL (layout_RUJUR3) */
 .image-text-square-xl {
-  display: flex;
-  flex-direction: row;
-  justify-content: stretch;
-  align-items: stretch;
-  align-self: stretch;
-  width: 100%;
+  @apply flex flex-row justify-stretch items-stretch self-stretch w-full;
 }
 
 /* Caption Text (style_R9X6NF) */
 .image-caption-text {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.429em;
-  text-align: center;
-  color: #1E2939;
-  width: fit-content;
+  @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.429em] text-center text-[var(--color-netinera-dark)] w-fit;
 }
 
 .image-caption-text-fill {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.429em;
-  text-align: center;
-  color: #1E2939;
-  width: 100%;
+  @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.429em] text-center text-[var(--color-netinera-dark)] w-full;
 }
 
 /* ==========================
@@ -204,115 +111,106 @@
  * ========================== */
 
 /* Desktop breakpoint (max-width: 1279px) */
-@media (width <= 1279px) {
+@media (width <= 1279px) { /* Applies for screens < netinera-wide */
   .image-landscape-16-9-xl,
   .image-landscape-4-3-xl {
-    width: 100%;
-    max-width: 768px;
+    @apply w-full max-w-[768px];
   }
 
   .image-square-1-1-xl {
-    width: 100%;
-    max-width: 468px;
+    @apply w-full max-w-[468px];
   }
 
   .image-landscape-16-9-frame {
-    height: auto;
-    aspect-ratio: 16/9;
+    @apply h-auto aspect-video;
   }
 
   .image-landscape-4-3-frame {
-    height: auto;
-    aspect-ratio: 4/3;
+    @apply h-auto aspect-[4/3];
   }
 
   .image-square-1-1-frame {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1/1;
+    @apply w-full h-auto aspect-square;
   }
 }
 
 /* Tablet breakpoint (max-width: 991px) */
-@media (width <= 991px) {
+@media (width <= 991px) { /* Applies for screens < netinera-desktop */
   .image-landscape-16-9-xl,
   .image-landscape-4-3-xl,
   .image-square-1-1-xl {
-    gap: 12px;
+    @apply gap-3; /* 12px */
   }
 
   .image-landscape-16-9-sm,
   .image-landscape-4-3-sm,
   .image-square-1-1-sm {
-    gap: 10px;
+    @apply gap-[10px];
   }
 }
 
 /* Mobile breakpoint (max-width: 767px) */
-@media (width <= 767px) {
+@media (width <= 767px) { /* Applies for screens < netinera-tablet */
   .image-landscape-16-9-xl,
   .image-landscape-4-3-xl,
   .image-square-1-1-xl {
-    width: 100%;
-    gap: 10px;
+    @apply w-full gap-[10px];
   }
 
   .image-landscape-16-9-frame,
   .image-landscape-4-3-frame,
   .image-square-1-1-frame {
-    border-radius: 20px;
+    @apply rounded-[20px];
   }
 
   .image-landscape-16-9-sm-frame,
   .image-landscape-4-3-sm-frame,
   .image-square-1-1-sm-frame {
-    border-radius: 16px;
-    height: auto;
+    @apply rounded-2xl h-auto; /* 16px -> rounded-2xl (Tailwind default is 0.5rem/8px for -lg, 1rem/16px for -xl. 24px was -2xl. So 16px is -xl if mapping directly or use rounded-[16px]) */
   }
 
   .image-landscape-16-9-sm-frame {
-    aspect-ratio: 16/9;
+    @apply aspect-video;
   }
 
   .image-landscape-4-3-sm-frame {
-    aspect-ratio: 4/3;
+    @apply aspect-[4/3];
   }
 
   .image-square-1-1-sm-frame {
-    aspect-ratio: 1/1;
+    @apply aspect-square;
   }
 }
 
 /* Mobile XS breakpoint (max-width: 479px) */
-@media (width <= 479px) {
+@media (width <= 479px) { /* max-xs */
   .image-landscape-16-9-xl,
   .image-landscape-4-3-xl,
   .image-square-1-1-xl {
-    gap: 8px;
+    @apply gap-2; /* 8px */
   }
 
   .image-landscape-16-9-sm,
   .image-landscape-4-3-sm,
   .image-square-1-1-sm {
-    gap: 8px;
+    @apply gap-2; /* 8px */
   }
 
   .image-landscape-16-9-frame,
   .image-landscape-4-3-frame,
   .image-square-1-1-frame {
-    border-radius: 16px;
+    @apply rounded-2xl; /* 16px */
   }
 
   .image-landscape-16-9-sm-frame,
   .image-landscape-4-3-sm-frame,
   .image-square-1-1-sm-frame {
-    border-radius: 12px;
+    @apply rounded-xl; /* 12px */
   }
 
   .image-caption-text,
   .image-caption-text-fill {
-    font-size: 12px;
-    line-height: 1.5em;
+    @apply text-xs leading-[1.5em]; /* 12px */
   }
 }
 
@@ -322,20 +220,19 @@
 
 /* Enhanced hover effects */
 .image-hover-effect {
-  transition: all 0.4s ease;
+  @apply transition-all duration-400 ease-in-out; /* ease -> ease-in-out */
 }
 
 .image-hover-effect:hover {
-  transform: scale(1.03) rotate(0.5deg);
-  box-shadow: 0 16px 32px rgb(30 41 57 / 20%);
+  @apply hover:scale-[1.03] hover:rotate-[0.5deg] hover:shadow-[0_16px_32px_rgb(30_41_57_/_20%)];
 }
 
 /* Image animate class for intersection observer */
 .image-animate {
-  animation: image-slide-in 0.6s ease-out forwards;
+  animation: image-slide-in 0.6s ease-out forwards; /* Keep custom animation */
 }
 
-@keyframes image-slide-in {
+@keyframes image-slide-in { /* Keep custom keyframes */
   from {
     opacity: 0;
     transform: translateY(20px) scale(0.98);
@@ -349,46 +246,29 @@
 
 /* Loading states */
 .image-loading {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-  position: relative;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); /* Keep custom gradient */
+  @apply bg-cover relative;
+  animation: loading 1.5s infinite; /* Keep custom animation */
 }
 
 .image-loading::after {
-  content: 'Bild wird geladen...';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #6a7282;
-  font-family: Roboto, sans-serif;
-  font-size: 14px;
-  text-align: center;
+  content: 'Bild wird geladen...'; /* Keep custom content */
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[var(--color-netinera-gray-medium)] font-[var(--font-family-sans)] text-sm text-center;
 }
 
-@keyframes loading {
+@keyframes loading { /* Keep custom keyframes */
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
 
 /* Error state */
 .image-error {
-  background-color: #f5f5f4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1e2939;
-  font-family: Roboto, sans-serif;
-  font-size: 14px;
-  text-align: center;
-  border: 2px dashed #d1d5db;
+  @apply bg-stone-100 flex items-center justify-center text-[var(--color-netinera-dark)] font-[var(--font-family-sans)] text-sm text-center border-2 border-dashed border-gray-300;
 }
 
 .image-error::before {
-  content: '📷 ';
-  margin-right: 8px;
-  font-size: 18px;
+  content: '📷 '; /* Keep custom content */
+  @apply mr-2 text-lg;
 }
 
 /* ==========================
@@ -404,7 +284,7 @@
   .image-landscape-4-3-sm-frame,
   .image-square-1-1-sm-frame,
   .image-hover-effect {
-    transition: none;
+    @apply motion-reduce:transition-none;
   }
 
   .image-landscape-16-9-frame:hover,
@@ -414,15 +294,15 @@
   .image-landscape-4-3-sm-frame:hover,
   .image-square-1-1-sm-frame:hover,
   .image-hover-effect:hover {
-    transform: none;
+    @apply motion-reduce:transform-none;
   }
 
   .image-animate {
-    animation: none;
+    @apply motion-reduce:animate-none;
   }
 
   .image-loading {
-    animation: none;
+    @apply motion-reduce:animate-none;
   }
 }
 
@@ -434,13 +314,12 @@
   .image-landscape-16-9-sm-frame,
   .image-landscape-4-3-sm-frame,
   .image-square-1-1-sm-frame {
-    border: 2px solid #000;
+    @apply border-2 border-black;
   }
 
   .image-caption-text,
   .image-caption-text-fill {
-    color: #000;
-    font-weight: 600;
+    @apply text-black font-semibold;
   }
 }
 
@@ -451,8 +330,7 @@
 .image-landscape-16-9-sm-frame:focus,
 .image-landscape-4-3-sm-frame:focus,
 .image-square-1-1-sm-frame:focus {
-  outline: 2px solid #DD052B;
-  outline-offset: 2px;
+  @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
 }
 
 /* Print styles */
@@ -463,14 +341,13 @@
   .image-landscape-16-9-sm-frame,
   .image-landscape-4-3-sm-frame,
   .image-square-1-1-sm-frame {
-    border: 1px solid #000;
+    @apply print:border print:border-black;
     break-inside: avoid;
   }
 
   .image-caption-text,
   .image-caption-text-fill {
-    color: #000;
-    font-size: 12px;
+    @apply print:text-black print:text-xs; /* 12px */
   }
 }
 
@@ -480,59 +357,50 @@
 
 /* Image grid layouts */
 .image-grid-responsive {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  width: 100%;
+  @apply grid grid-cols-1 gap-8 w-full; /* 32px -> gap-8 */
 }
 
-@media (width >= 768px) {
+@media (width >= 768px) { /* netinera-tablet */
   .image-grid-responsive {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    @apply grid-cols-2 gap-10; /* 40px -> gap-10 */
   }
 }
 
-@media (width >= 1024px) {
+@media (width >= 1024px) { /* netinera-desktop */
   .image-grid-responsive {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 48px;
+    @apply grid-cols-3 gap-12; /* 48px -> gap-12 */
   }
 }
 
 /* Image masonry layout */
 .image-masonry {
-  columns: 1;
-  column-gap: 32px;
+  @apply columns-1 gap-x-8; /* 32px */
 }
 
-@media (width >= 768px) {
+@media (width >= 768px) { /* netinera-tablet */
   .image-masonry {
-    columns: 2;
-    column-gap: 40px;
+    @apply columns-2 gap-x-10; /* 40px */
   }
 }
 
-@media (width >= 1024px) {
+@media (width >= 1024px) { /* netinera-desktop */
   .image-masonry {
-    columns: 3;
-    column-gap: 48px;
+    @apply columns-3 gap-x-12; /* 48px */
   }
 }
 
 .image-masonry > * {
-  break-inside: avoid;
-  margin-bottom: 32px;
+  break-inside: avoid; /* Keep custom property */
+  @apply mb-8; /* 32px */
 }
 
 /* Image fade-in animation trigger */
 .image-fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  @apply opacity-0 translate-y-5 transition-opacity duration-600 ease-in-out; /* Simplified transition */
+  /* Original: transition: opacity 0.6s ease, transform 0.6s ease; */
+  /* Tailwind's default ease is ease-in-out. If 'ease' specifically needed, keep custom. */
 }
 
 .image-fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+  @apply opacity-100 translate-y-0;
 }

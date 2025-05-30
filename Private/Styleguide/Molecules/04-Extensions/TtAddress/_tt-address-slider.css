@@ -16,25 +16,16 @@
 
 /* Desktop Grid Layout */
 .desktop-grid-item {
-  @apply w-full;
-
-  transition: all 0.3s ease;
-  display: inline-block !important;
+  @apply w-full transition-all duration-300 ease-in-out !inline-block;
 }
 
 /* Styling for desktop mode (disabled swiper) */
 .swiper-initialized.swiper-disabled {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 24px;
+  @apply flex flex-wrap justify-start gap-6; /* 24px -> gap-6 */
 }
 
 .swiper-initialized.swiper-disabled .swiper-wrapper {
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 24px;
-  width: 100%;
+  @apply flex-wrap justify-start gap-6 w-full; /* Assumes parent is already flex, just managing wrap and gap */
 }
 
 /* === TT-Address Card Overrides === */
@@ -42,25 +33,33 @@
 .tt-address-card-figure img,
 .tt-address-card-image {
   @apply rounded-tl-[64px] rounded-br-[64px];
+  /* Responsive overrides will be handled by Tailwind prefixes if this is base, or within media queries if these are desktop-first */
 }
 
 /* Responsive Breakpoints */
-@media (width >= 640px) {
-  .tt-address-card-figure img,
-  .tt-address-card-image {
-    @apply rounded-tl-[36px] rounded-br-[36px];
-  }
+/* Refactored to use Tailwind prefixes directly on the classes where possible, */
+/* but some complex calc() widths will remain in media queries with @apply. */
 
-  .swiper-initialized.swiper-disabled .desktop-grid-item {
-    width: calc(33.333% - 16px) !important;
-    margin-right: 0 !important;
-    margin-bottom: 0 !important;
-  }
+.tt-address-card-figure img,
+.tt-address-card-image {
+  /* Base style is rounded-tl-[64px] rounded-br-[64px] from above */
+  /* On sm (640px) and up, it changes */
+  @apply sm:rounded-tl-[36px] sm:rounded-br-[36px];
 }
 
-/* Tablet Breakpoint */
-@media (width >= 768px) and (width < 1024px) {
-  .swiper-initialized.swiper-disabled .desktop-grid-item {
-    width: calc(50% - 12px) !important;
-  }
+.swiper-initialized.swiper-disabled .desktop-grid-item {
+  /* Default width is w-full from its own definition */
+  /* sm: (640px+) */
+  @apply sm:!w-[calc(33.333%-16px)] sm:!mr-0 sm:!mb-0;
+  /* md: (768px+) up to lg (1024px) */
+  @apply md:!w-[calc(50%-12px)];
+  /* lg: (1024px+) it seems it would revert to sm behavior or needs another rule if different for lg */
+  /* To ensure lg also has the 3-column behavior if md was meant to be tablet-only: */
+  @apply lg:!w-[calc(33.333%-16px)];
 }
+
+/* Original media queries are now merged using Tailwind prefixes. */
+/* The original media query for tablet (768px to 1024px) is handled by md: prefix. */
+/* The original media query for sm (640px+) is handled by sm: prefix. */
+/* If lg (1024px+) should differ from sm, a specific lg: rule would be needed. */
+/* Added lg: to revert to 3-column for larger than tablet */

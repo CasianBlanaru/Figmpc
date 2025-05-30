@@ -5,26 +5,16 @@
 
   /* Portrait Section Main Container - Figma Node 1829-8426 */
   .netinera-portrait-section {
-    position: relative;
-    background: white;
-    border-radius: 96px 0; /* Netinera signature pattern */
-    box-shadow: 0 4px 16px rgb(30 41 57 / 8%);
-    overflow: hidden;
-    width: 100%;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply relative bg-white rounded-tl-[96px] rounded-br-[96px] shadow-[0_4px_16px_rgb(30_41_57_/_8%)] overflow-hidden w-full transition-all duration-300 ease-in-out;
   }
 
   .netinera-portrait-section:hover {
-    box-shadow: 0 8px 32px rgb(30 41 57 / 12%);
+    @apply hover:shadow-[0_8px_32px_rgb(30_41_57_/_12%)];
   }
 
   /* Portrait Section Content Wrapper */
   .netinera-portrait-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 56px; /* Desktop gap - Figma specification */
-    padding: 80px 56px; /* Desktop padding - Figma specification */
+    @apply flex flex-col items-center gap-14 p-20 px-14; /* gap 56px->14, p 80px 56px -> p-20 px-14 */
   }
 
   /* ==========================
@@ -33,35 +23,17 @@
 
   /* Portrait Section Header */
   .netinera-portrait-header {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    text-align: left;
-    width: 100%;
-    max-width: 800px;
+    @apply flex flex-col gap-4 text-left w-full max-w-3xl; /* 16px->gap-4, 800px->max-w-3xl (768px is 3xl, 896px is 4xl) */
   }
 
   /* Portrait Header Title */
   .netinera-portrait-header-title {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-size: 24px; /* Desktop first */
-    line-height: 1.333em;
-    color: #1E2939;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-semibold text-[24px] leading-[1.333em] text-[var(--color-netinera-dark)] uppercase tracking-[0.05em] m-0;
   }
 
   /* Portrait Header Subtitle */
   .netinera-portrait-header-subtitle {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 18px; /* Desktop first */
-    line-height: 1.556em;
-    color: #4B5563;
-    margin: 0;
-    max-width: 600px;
+    @apply font-[var(--font-family-sans)] font-normal text-lg leading-[1.556em] text-gray-600 m-0 max-w-2xl; /* #4B5563 is gray-600. 18px->text-lg. 600px->max-w-2xl (576px) or max-w-xl (640px) */
   }
 
   /* ==========================
@@ -70,26 +42,21 @@
 
   /* Portrait Grid Container */
   .netinera-portrait-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 16px; /* Figma specification */
-    width: 100%;
+    @apply flex flex-col gap-4 w-full; /* 16px -> gap-4 */
   }
 
   /* Portrait Grid Top Row (Single Large Card) */
   .netinera-portrait-grid-top {
-    width: 100%;
+    @apply w-full;
   }
 
   /* Portrait Grid Bottom Row (Two Cards) */
   .netinera-portrait-grid-bottom {
-    display: flex;
-    gap: 16px; /* Figma specification */
-    width: 100%;
+    @apply flex gap-4 w-full; /* 16px -> gap-4 */
   }
 
   .netinera-portrait-grid-bottom > * {
-    flex: 1;
+    @apply flex-1;
   }
 
   /* ==========================
@@ -98,57 +65,35 @@
 
   /* Portrait Card Base */
   .netinera-portrait-card {
-    position: relative;
-    width: 100%;
-    height: 486px; /* Figma specification */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 0; /* Default no radius */
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    @apply relative w-full h-[486px] bg-cover bg-center bg-no-repeat rounded-none overflow-hidden transition-all duration-300 ease-in-out cursor-pointer flex flex-col justify-end;
   }
 
   .netinera-portrait-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px -10px rgb(30 41 57 / 20%), 0 8px 16px -4px rgb(30 41 57 / 10%);
+    @apply transform -translate-y-1.5 shadow-[0_20px_40px_-10px_rgb(30_41_57_/_20%),_0_8px_16px_-4px_rgb(30_41_57_/_10%)]; /* -6px -> -translate-y-1.5 */
   }
 
   /* Portrait Card Variants with Border Radius */
   .netinera-portrait-card-top-left {
-    border-radius: 64px 0 0; /* Top-left radius only */
+    @apply rounded-tl-[64px]; /* Top-left radius only */
   }
 
   .netinera-portrait-card-bottom-right {
-    border-radius: 0 0 64px; /* Bottom-right radius only */
+    @apply rounded-br-[64px]; /* Bottom-right radius only */
   }
 
   /* Portrait Card Gradient Overlay */
   .netinera-portrait-card-overlay {
     background: linear-gradient(
       180deg,
-      rgb(0 104 94 / 0%) 0%,
-      rgb(0 61 57 / 100%) 100%
+      rgb(0 104 94 / 0%) 0%, /* Netinera Primary transparent */
+      rgb(0 61 57 / 100%) 100% /* Primary-900 opaque */
     );
-    padding: 36px; /* Figma specification */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
-    position: relative;
-    z-index: 2;
+    @apply p-9 flex flex-col justify-end h-full relative z-[2]; /* 36px -> p-9 */
   }
 
   /* Portrait Card Content */
   .netinera-portrait-card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 16px; /* Figma specification */
-    max-width: 600px;
+    @apply flex flex-col gap-4 max-w-2xl; /* 16px -> gap-4, 600px -> max-w-2xl (576px) or max-w-[600px] */
   }
 
   /* ==========================
@@ -157,35 +102,17 @@
 
   /* Portrait Card Overline */
   .netinera-portrait-card-overline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.143em;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-semibold text-sm leading-[1.143em] tracking-[0.11em] uppercase text-white m-0; /* 14px */
   }
 
   /* Portrait Card Headline */
   .netinera-portrait-card-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 30px; /* Desktop first */
-    line-height: 1.2em;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-[30px] leading-[1.2em] uppercase text-white m-0;
   }
 
   /* Portrait Card Description (Optional) */
   .netinera-portrait-card-description {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5em;
-    color: rgb(255 255 255 / 90%);
-    margin: 0;
+    @apply font-[var(--font-family-sans)] font-normal text-base leading-[1.5em] text-white/90 m-0; /* 16px, rgb(255 255 255 / 90%) */
   }
 
   /* ==========================
@@ -193,146 +120,131 @@
    * ========================== */
 
   /* Tablet breakpoint (≥ 768px, < 1024px) */
-  @media (width >= 768px) and (width <= 1023px) {
+  @media (width >= 768px) and (width <= 1023px) { /* netinera-tablet range */
     .netinera-portrait-content-wrapper {
-      padding: 60px 40px;
-      gap: 48px;
+      @apply p-10 px-10 gap-12; /* p:60px 40px, gap:48px */
     }
 
     .netinera-portrait-header-title {
-      font-size: 22px;
-      line-height: 1.273em;
+      @apply text-[22px] leading-[1.273em];
     }
 
     .netinera-portrait-header-subtitle {
-      font-size: 16px;
-      line-height: 1.5em;
+      @apply text-base leading-[1.5em]; /* 16px */
     }
 
     .netinera-portrait-card {
-      height: 400px;
+      @apply h-[400px];
     }
 
     .netinera-portrait-card-overlay {
-      padding: 32px;
+      @apply p-8; /* 32px */
     }
 
     .netinera-portrait-card-headline {
-      font-size: 26px;
-      line-height: 1.154em;
+      @apply text-[26px] leading-[1.154em];
     }
 
     .netinera-portrait-card-top-left {
-      border-radius: 48px 0 0;
+      @apply rounded-tl-[48px];
     }
 
     .netinera-portrait-card-bottom-right {
-      border-radius: 0 0 48px;
+      @apply rounded-br-[48px];
     }
   }
 
   /* Mobile breakpoint (< 768px) */
-  @media (width <= 767px) {
+  @media (width <= 767px) { /* max-netinera-mobile */
     .netinera-portrait-section {
-      border-radius: 36px 0;
+      @apply rounded-tl-[36px] rounded-br-[36px];
     }
 
     .netinera-portrait-content-wrapper {
-      padding: 40px 24px;
-      gap: 32px;
+      @apply py-10 px-6 gap-8; /* p:40px 24px, gap:32px */
     }
 
     .netinera-portrait-header-title {
-      font-size: 20px;
-      line-height: 1.4em;
+      @apply text-[20px] leading-[1.4em];
     }
 
     .netinera-portrait-header-subtitle {
-      font-size: 16px;
-      line-height: 1.5em;
+      @apply text-base leading-[1.5em]; /* 16px */
     }
 
     .netinera-portrait-grid-bottom {
-      flex-direction: column;
-      gap: 16px;
+      @apply flex-col gap-4; /* 16px */
     }
 
     .netinera-portrait-card {
-      height: 300px;
+      @apply h-[300px];
     }
 
     .netinera-portrait-card-overlay {
-      padding: 24px;
+      @apply p-6; /* 24px */
     }
 
     .netinera-portrait-card-content {
-      gap: 12px;
+      @apply gap-3; /* 12px */
     }
 
     .netinera-portrait-card-overline {
-      font-size: 12px;
-      line-height: 1.167em;
+      @apply text-xs leading-[1.167em]; /* 12px */
     }
 
     .netinera-portrait-card-headline {
-      font-size: 22px;
-      line-height: 1.273em;
+      @apply text-[22px] leading-[1.273em];
     }
 
     .netinera-portrait-card-description {
-      font-size: 14px;
-      line-height: 1.429em;
+      @apply text-sm leading-[1.429em]; /* 14px */
     }
 
     .netinera-portrait-card-top-left {
-      border-radius: 36px 0 0;
+      @apply rounded-tl-[36px];
     }
 
     .netinera-portrait-card-bottom-right {
-      border-radius: 0 0 36px;
+      @apply rounded-br-[36px];
     }
   }
 
   /* Small mobile optimization */
-  @media (width <= 479px) {
+  @media (width <= 479px) { /* max-xs */
     .netinera-portrait-section {
-      border-radius: 24px 0;
+      @apply rounded-tl-[24px] rounded-br-[24px];
     }
 
     .netinera-portrait-content-wrapper {
-      padding: 32px 20px;
-      gap: 24px;
+      @apply py-8 px-5 gap-6; /* p:32px 20px, gap:24px */
     }
 
     .netinera-portrait-header-title {
-      font-size: 18px;
-      line-height: 1.333em;
+      @apply text-lg leading-[1.333em]; /* 18px */
     }
 
     .netinera-portrait-header-subtitle {
-      font-size: 14px;
-      line-height: 1.429em;
+      @apply text-sm leading-[1.429em]; /* 14px */
     }
 
     .netinera-portrait-card {
-      height: 240px;
+      @apply h-[240px];
     }
 
     .netinera-portrait-card-overlay {
-      padding: 20px;
+      @apply p-5; /* 20px */
     }
 
     .netinera-portrait-card-headline {
-      font-size: 18px;
-      line-height: 1.333em;
+      @apply text-lg leading-[1.333em]; /* 18px */
     }
 
     .netinera-portrait-card-top-left {
-      border-radius: 24px 0 0;
+      @apply rounded-tl-[24px];
     }
 
     .netinera-portrait-card-bottom-right {
-      border-radius: 0 0 24px;
+      @apply rounded-br-[24px];
     }
   }
 
@@ -342,64 +254,40 @@
 
   /* Fade In Animation */
   .netinera-portrait-fade-in {
-    animation: netinera-portrait-fade-in-up 0.6s ease-out;
+    animation: netinera-portrait-fade-in-up 0.6s ease-out; /* Keep custom animation */
   }
 
-  @keyframes netinera-portrait-fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  @keyframes netinera-portrait-fade-in-up { /* Keep custom keyframes */
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   /* Slide In Animation */
   .netinera-portrait-slide-in {
-    animation: netinera-portrait-slide-in 0.8s ease-out forwards;
+    animation: netinera-portrait-slide-in 0.8s ease-out forwards; /* Keep custom animation */
   }
 
-  @keyframes netinera-portrait-slide-in {
-    from {
-      opacity: 0;
-      transform: translateY(40px) scale(0.95);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+  @keyframes netinera-portrait-slide-in { /* Keep custom keyframes */
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
   }
 
-  /* Staggered Animation Support */
-  .netinera-portrait-card:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-
-  .netinera-portrait-card:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  .netinera-portrait-card:nth-child(3) {
-    animation-delay: 0.3s;
-  }
+  /* Staggered Animation Support - these will remain as direct CSS */
+  .netinera-portrait-card:nth-child(1) { animation-delay: 0.1s; }
+  .netinera-portrait-card:nth-child(2) { animation-delay: 0.2s; }
+  .netinera-portrait-card:nth-child(3) { animation-delay: 0.3s; }
 
   /* Interactive Enhanced Hover */
   .netinera-portrait-interactive {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply transition-all duration-300 ease-in-out cursor-pointer; /* Added cursor-pointer here */
   }
 
   .netinera-portrait-interactive:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px -10px rgb(30 41 57 / 20%), 0 8px 16px -4px rgb(30 41 57 / 10%);
+    @apply transform -translate-y-1.5 shadow-[0_20px_40px_-10px_rgb(30_41_57_/_20%),_0_8px_16px_-4px_rgb(30_41_57_/_10%)]; /* -6px -> -translate-y-1.5 */
   }
 
   .netinera-portrait-interactive:active {
-    transform: translateY(-3px);
-    transition: transform 0.1s ease;
+    @apply transform -translate-y-[3px] transition-transform duration-100 ease-in-out; /* 3px, 0.1s ease */
   }
 
   /* ==========================
@@ -407,59 +295,47 @@
    * ========================== */
 
   /* Focus States */
-  .netinera-portrait-section:focus {
-    outline: 3px solid #DD052B;
-    outline-offset: 3px;
+  .netinera-portrait-section:focus-visible { /* Changed to focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-[3px];
   }
 
-  .netinera-portrait-card:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
-    border-radius: inherit;
+  .netinera-portrait-card:focus-visible { /* Changed to focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
+    border-radius: inherit; /* Keep custom, or make specific if possible e.g. rounded-tl-[64px] if it's for -xl variant */
   }
 
   /* Keyboard Navigation */
-  .netinera-portrait-card[tabindex]:focus {
-    background-color: rgb(221 5 43 / 5%);
-    transform: translateY(-2px);
+  .netinera-portrait-card[tabindex]:focus-visible { /* Changed to focus-visible */
+    @apply bg-[var(--color-netinera-secondary)]/5 transform -translate-y-0.5;
   }
 
   /* Screen Reader Support */
-  .netinera-portrait-section[role="region"] {
-    /* Ensures proper accessibility labeling */
-  }
-
-  .netinera-portrait-card[role="button"] {
-    /* Ensures proper accessibility labeling for interactive cards */
-  }
+  .netinera-portrait-section[role="region"] {}
+  .netinera-portrait-card[role="button"] {}
 
   /* High Contrast Mode */
   @media (prefers-contrast: high) {
     .netinera-portrait-section {
-      border: 2px solid #1E2939;
+      @apply border-2 border-[var(--color-netinera-dark)];
     }
 
     .netinera-portrait-card {
-      border: 2px solid #DD052B;
+      @apply border-2 border-[var(--color-netinera-secondary)];
     }
 
     .netinera-portrait-header-title,
     .netinera-portrait-card-headline {
-      font-weight: 700;
+      @apply font-bold; /* 700 */
     }
 
     .netinera-portrait-card-overlay {
-      background: linear-gradient(
-        180deg,
-        rgb(0 0 0 / 0%) 0%,
-        rgb(0 0 0 / 90%) 100%
-      );
+      background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 0.9) 100%) !important;
     }
 
     .netinera-portrait-card-overline,
     .netinera-portrait-card-headline,
     .netinera-portrait-card-description {
-      text-shadow: 2px 2px 4px rgb(0 0 0 / 80%);
+      text-shadow: 2px 2px 4px rgb(0 0 0 / 0.8); /* Keep custom text-shadow */
     }
   }
 
@@ -468,19 +344,18 @@
     .netinera-portrait-section,
     .netinera-portrait-card,
     .netinera-portrait-interactive {
-      transition: none;
-      animation: none;
+      @apply motion-reduce:transition-none motion-reduce:animation-none motion-reduce:transform-none !important;
     }
 
     .netinera-portrait-fade-in,
     .netinera-portrait-slide-in {
-      animation: none;
+      @apply motion-reduce:animation-none;
     }
 
     .netinera-portrait-card:hover,
     .netinera-portrait-interactive:hover,
     .netinera-portrait-interactive:active {
-      transform: none;
+      @apply motion-reduce:transform-none;
     }
   }
 
@@ -490,34 +365,20 @@
 
   /* Background Image Base Class */
   .netinera-portrait-bg-image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    @apply bg-cover bg-center bg-no-repeat;
   }
 
-  /* Background Image with Overlay Gradients */
+  /* Background Image with Overlay Gradients - these define background-image, not overlays to be placed on top */
   .netinera-portrait-bg-gradient-dark {
-    background-image: linear-gradient(
-      180deg,
-      rgb(0 61 57 / 0%) 0%,
-      rgb(0 61 57 / 100%) 100%
-    );
+    background-image: linear-gradient(180deg, rgb(0 61 57 / 0%) 0%, rgb(0 61 57 / 100%) 100%); /* primary-900 */
   }
 
   .netinera-portrait-bg-gradient-primary {
-    background-image: linear-gradient(
-      180deg,
-      rgb(221 5 43 / 0%) 0%,
-      rgb(221 5 43 / 100%) 100%
-    );
+    background-image: linear-gradient(180deg, rgb(221 5 43 / 0%) 0%, rgb(221 5 43 / 100%) 100%); /* secondary */
   }
 
   .netinera-portrait-bg-gradient-neutral {
-    background-image: linear-gradient(
-      180deg,
-      rgb(30 41 57 / 0%) 0%,
-      rgb(30 41 57 / 100%) 100%
-    );
+    background-image: linear-gradient(180deg, rgb(30 41 57 / 0%) 0%, rgb(30 41 57 / 100%) 100%); /* netinera-dark */
   }
 
   /* ==========================
@@ -526,69 +387,53 @@
 
   @media print {
     .netinera-portrait-section {
-      background: white !important;
-      border: 1px solid #ddd !important;
-      border-radius: 0 !important;
-      box-shadow: none !important;
+      @apply print:bg-white !important print:border print:border-gray-300 !important print:rounded-none !important print:shadow-none !important print:transform-none !important print:flex-col !important;
       break-inside: avoid;
-      margin-bottom: 30px;
+      margin-bottom: 30px; /* Keep */
     }
 
     .netinera-portrait-content-wrapper {
-      padding: 20px !important;
-      gap: 20px !important;
+      @apply print:p-5 !important print:gap-5 !important; /* 20px */
     }
 
     .netinera-portrait-grid-bottom {
-      flex-direction: column !important;
-      gap: 10px !important;
+      @apply print:flex-col !important print:gap-2.5 !important; /* 10px */
     }
 
     .netinera-portrait-card {
-      height: 200px !important;
-      border-radius: 0 !important;
-      border: 1px solid #ddd !important;
-      transform: none !important;
-      box-shadow: none !important;
+      @apply print:h-[200px] !important print:rounded-none !important print:border print:border-gray-300 !important print:transform-none !important print:shadow-none !important;
     }
 
     .netinera-portrait-card-overlay {
-      background: rgb(0 0 0 / 70%) !important;
-      padding: 15px !important;
+      background: rgb(0 0 0 / 0.7) !important; /* Keep */
+      @apply print:p-[15px] !important;
     }
 
     .netinera-portrait-header-title {
-      color: black !important;
-      font-size: 18px !important;
-      line-height: 1.3 !important;
+      @apply print:text-black !important print:text-lg !important print:leading-[1.3] !important; /* 18px */
     }
 
     .netinera-portrait-header-subtitle {
-      color: #666 !important;
-      font-size: 14px !important;
-      line-height: 1.4 !important;
+      @apply print:text-gray-500 !important print:text-sm !important print:leading-[1.4] !important; /* #666 */
     }
 
     .netinera-portrait-card-overline,
     .netinera-portrait-card-headline,
     .netinera-portrait-card-description {
-      color: white !important;
-      text-shadow: 1px 1px 2px rgb(0 0 0 / 80%) !important;
+      @apply print:text-white !important;
+      text-shadow: 1px 1px 2px rgb(0 0 0 / 0.8) !important; /* Keep */
     }
 
     .netinera-portrait-card-headline {
-      font-size: 16px !important;
-      line-height: 1.3 !important;
+      @apply print:text-base !important print:leading-[1.3] !important; /* 16px */
     }
 
     .netinera-portrait-card-overline {
-      font-size: 11px !important;
-      line-height: 1.3 !important;
+      @apply print:text-[11px] !important print:leading-[1.3] !important;
     }
 
     .netinera-portrait-card-description {
-      font-size: 12px !important;
-      line-height: 1.3 !important;
+      @apply print:text-xs !important print:leading-[1.3] !important; /* 12px */
     }
   }
 

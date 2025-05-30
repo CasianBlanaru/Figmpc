@@ -252,7 +252,7 @@
   .contact-card-variant-primary .contact-card-sm-contact-item:hover {
     @apply text-[#FFE2E7]; /* Custom light pink for hover on primary card */
   }
-  
+
   /* Dark variant hover - specific hover for dark variant contact items */
   .contact-card-variant-dark .contact-card-responsive-contact-item:hover,
   .contact-card-variant-dark .contact-card-xl-contact-item:hover,

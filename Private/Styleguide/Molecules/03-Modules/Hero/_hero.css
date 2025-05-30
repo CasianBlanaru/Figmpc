@@ -7,126 +7,70 @@
 
   /* Hero Landingpage - Exact Figma Implementation */
   .hero-landingpage {
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: stretch;
-    align-self: stretch;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    border-radius: 96px 0;
-    overflow: hidden;
-    position: relative;
-    background-image: url('./src/assets/hero-landingpage-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    @apply flex flex-col justify-stretch items-stretch self-stretch w-full h-screen rounded-tl-[96px] rounded-br-[96px] overflow-hidden relative bg-cover bg-center bg-no-repeat;
+    /* background-image needs to be set in HTML or via more specific CSS if dynamic */
+    /* background-image: url('./src/assets/hero-landingpage-background.jpg'); */ /* Kept for reference */
   }
 
   .hero-landingpage-content {
     /* Exact Figma gradient fill_CHBWHC */
     background: linear-gradient(180deg,
-      rgb(0 104 94 / 0%) 0%,
-      rgb(0 61 57 / 100%) 100%
+      rgb(0 104 94 / 0%) 0%, /* Netinera Primary transparent */
+      rgb(0 61 57 / 100%) 100% /* Netinera Primary-900 opaque */
     );
-    backdrop-filter: blur(30px); /* effect_5T332D */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-self: stretch;
-    width: 100%;
-    height: 100%;
-    padding: 44px 16px; /* Mobile padding from layout_APGHYJ */
-    gap: 12px; /* Mobile gap from layout_APGHYJ */
+    @apply backdrop-blur-[30px] flex flex-col justify-end self-stretch w-full h-full py-11 px-4 gap-3; /* p:44px 16px, gap:12px */
+    /* Mobile padding and gap from layout_APGHYJ */
   }
 
   .hero-landingpage-layout-group {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 32px; /* exact Figma gap from layout_NY0J69 */
-    width: 100%;
+    @apply flex flex-col self-stretch gap-8 w-full; /* gap: 32px */
+    /* exact Figma gap from layout_NY0J69 */
   }
 
-  .hero-landingpage-headline {
-    /* Mobile Typography - Exact Figma style_6SDE6D */
-    font-family: var(--font-family-display);
-    font-weight: 400;
-    font-size: 33px;
-    line-height: 1.091;
-    letter-spacing: 1.21%;
-    text-transform: uppercase;
-    text-align: left;
-    color: white; /* fill_BZXOX3 */
-    width: 100%;
+  /* Mobile Typography - Exact Figma style_6SDE6D */
+    @apply font-[var(--font-family-display)] font-normal text-[33px] leading-[1.091] tracking-[0.0121em] uppercase text-left text-white w-full;
+    /* Desktop Typography - Exact Figma style_SPTQOL */
+    @apply netinera-desktop:text-[60px] netinera-desktop:leading-[1.067] netinera-desktop:tracking-[0.0067em] netinera-desktop:w-fit;
   }
 
   .hero-landingpage-button {
     /* Exact Figma button styling */
-    background: var(--color-netinera-secondary); /* fill_JGU2QG */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    padding: 24px;
-    border-radius: 12px;
-    height: 52px; /* exact Figma height */
-    width: fit-content;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    @apply bg-[var(--color-netinera-secondary)] flex flex-row justify-center items-center gap-1.5 p-6 rounded-xl h-[52px] w-fit border-none cursor-pointer transition-all duration-200 ease-in-out;
   }
 
   .hero-landingpage-button:hover {
-    background: #c4042a;
-    transform: translateY(-2px);
+    @apply hover:bg-[#c4042a] hover:-translate-y-0.5;
   }
 
   /* Focus States - must come before variant hover selectors */
-  .hero-landingpage-button:focus {
-    outline: 2px solid #FFF;
-    outline-offset: 2px;
+  .hero-landingpage-button:focus { /* Should be focus-visible */
+    @apply focus:outline-2 focus:outline-white focus:outline-offset-2;
   }
 
   .hero-landingpage-button-text {
     /* Exact Figma button text style_Q3HQJJ */
-    font-family: var(--font-family-display);
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.429;
-    letter-spacing: 5.71%;
-    text-transform: uppercase;
-    text-align: left;
-    color: white; /* fill_BZXOX3 */
+    @apply font-[var(--font-family-display)] font-semibold text-sm leading-[1.429] tracking-[0.0571em] uppercase text-left text-white; /* 14px, weight 600 */
   }
 
   /* ==========================
    * === RESPONSIVE DESIGN
    * ========================== */
 
-  /* Desktop Responsive Breakpoint */
-  @media (width >= 1024px) {
-    .hero-landingpage-content {
-      /* Desktop padding from layout_3J383Y */
-      padding: 80px 56px;
-      gap: 36px; /* Desktop gap from layout_3J383Y */
-    }
-
-    .hero-landingpage-layout-group {
-      gap: 36px; /* Desktop gap from layout_9GTRBG */
-      width: fit-content; /* Desktop sizing from layout_9GTRBG */
-      align-self: flex-start;
-    }
-
-    .hero-landingpage-headline {
-      /* Desktop Typography - Exact Figma style_SPTQOL */
-      font-size: 60px;
-      line-height: 1.067;
-      letter-spacing: 0.67%;
-      width: fit-content; /* Desktop sizing from layout_8HM6LN */
-    }
+  /* Desktop Responsive Breakpoint - Styles merged into base classes using netinera-desktop: */
+  .hero-landingpage-content {
+    /* Mobile padding and gap already applied */
+    /* Desktop padding from layout_3J383Y */
+    @apply netinera-desktop:py-20 netinera-desktop:px-14 netinera-desktop:gap-9; /* p:80px 56px, gap:36px */
   }
+
+  .hero-landingpage-layout-group {
+    /* Mobile gap already applied */
+    /* Desktop gap from layout_9GTRBG */
+    @apply netinera-desktop:gap-9 netinera-desktop:w-fit netinera-desktop:self-start;
+  }
+
+  /* Headline responsive styles are already merged into .hero-landingpage-headline */
+
 
   /* ==========================
    * === COLOR VARIANTS
@@ -135,26 +79,26 @@
   /* Primary Variant */
   .hero-landingpage-variant-primary .hero-landingpage-content {
     background: linear-gradient(180deg,
-      rgb(0 104 94 / 0%) 0%,
-      rgb(0 104 94 / 100%) 100%
+      rgb(0 104 94 / 0%) 0%, /* Netinera Primary transparent */
+      rgb(0 104 94 / 100%) 100% /* Netinera Primary opaque - Note: original had Primary-900 for second stop */
     );
   }
 
   /* Dark Variant */
   .hero-landingpage-variant-dark .hero-landingpage-content {
     background: linear-gradient(180deg,
-      rgb(30 41 57 / 0%) 0%,
-      rgb(30 41 57 / 100%) 100%
+      rgb(var(--color-netinera-dark-rgb) / 0) 0%, /* Assuming --color-netinera-dark-rgb variable */
+      rgb(var(--color-netinera-dark-rgb) / 1) 100%
     );
   }
 
   /* Secondary Button Variant */
   .hero-landingpage-variant-secondary .hero-landingpage-button {
-    background: var(--color-netinera-primary);
+    @apply bg-[var(--color-netinera-primary)];
   }
 
   .hero-landingpage-variant-secondary .hero-landingpage-button:hover {
-    background: #005a52;
+    @apply hover:bg-[#005a52]; /* Darker primary */
   }
 
   /* ==========================
@@ -164,19 +108,18 @@
   /* High Contrast Mode */
   @media (prefers-contrast: high) {
     .hero-landingpage-content {
-      background: rgb(0 0 0 / 90%) !important;
+      background: rgb(0 0 0 / 0.9) !important;
     }
 
     .hero-landingpage-button {
-      border: 2px solid #FFF;
+      @apply border-2 border-white;
     }
   }
 
   /* Reduced Motion */
   @media (prefers-reduced-motion: reduce) {
     .hero-landingpage-button {
-      transition: none;
-      transform: none !important;
+      @apply motion-reduce:transition-none motion-reduce:transform-none !important;
     }
   }
 
@@ -186,29 +129,25 @@
 
   @media print {
     .hero-landingpage {
-      height: 50vh !important;
-      border-radius: 0;
-      background: white !important;
-      border: 1px solid #ddd;
+      @apply print:h-[50vh] !important print:rounded-none print:bg-white !important print:border print:border-gray-300 !important;
       break-inside: avoid;
     }
 
     .hero-landingpage-content {
-      background: rgb(0 0 0 / 10%) !important;
-      backdrop-filter: none !important;
+      background: rgb(0 0 0 / 0.1) !important; /* Important to override other gradients */
+      @apply print:backdrop-blur-none !important;
     }
 
     .hero-landingpage-headline {
-      color: black !important;
+      @apply print:text-black !important;
     }
 
     .hero-landingpage-button {
-      background: black !important;
-      box-shadow: none !important;
+      @apply print:bg-black !important print:shadow-none !important;
     }
 
     .hero-landingpage-button-text {
-      color: white !important;
+      @apply print:text-white !important;
     }
   }
 

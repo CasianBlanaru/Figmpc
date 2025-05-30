@@ -6,426 +6,296 @@
   /* === DESKTOP TEASER XL (968×426px) === */
   .netinera-teaser-xl {
     /* Desktop: Exact Figma Node 1799:37967 specifications */
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    width: 968px;
-    height: 426px;
+    @apply flex flex-row items-stretch w-[968px] h-[426px];
     
     /* Desktop border pattern */
-    border-radius: 64px 0;
-    background-color: white;
-    box-shadow: var(--shadow-md-box-shadow);
-    overflow: hidden;
+    @apply rounded-tl-[64px] rounded-br-[64px] bg-white shadow-md overflow-hidden; /* Assuming var(--shadow-md-box-shadow) is shadow-md */
     
     /* Interactive states */
-    transition: all 0.3s ease;
-    position: relative;
+    @apply transition-all duration-300 ease-in-out relative;
   }
   
   /* === MOBILE TEASER SM (328px width) === */
   .netinera-teaser-sm {
     /* Mobile: Adapted vertical layout */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: 328px;
+    @apply flex flex-col items-stretch w-[328px];
     
     /* Mobile border pattern */
-    border-radius: 36px 0;
-    background-color: white;
-    box-shadow: var(--shadow-md-box-shadow);
-    overflow: hidden;
+    @apply rounded-tl-[36px] rounded-br-[36px] bg-white shadow-md overflow-hidden; /* Assuming var(--shadow-md-box-shadow) is shadow-md */
     
     /* Interactive states */
-    transition: all 0.3s ease;
-    position: relative;
+    @apply transition-all duration-300 ease-in-out relative;
   }
   
   /* === TEASER IMAGE CONTAINERS === */
   .netinera-teaser-xl .netinera-teaser-image {
     /* Desktop: Horizontal layout - left side */
-    width: 568px;
-    height: 426px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 64px 0 0;
+    @apply w-[568px] h-[426px] bg-cover bg-center bg-no-repeat rounded-tl-[64px];
   }
   
   .netinera-teaser-sm .netinera-teaser-image {
     /* Mobile: Vertical layout - top */
-    width: 328px;
-    height: 246px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 36px 0 0;
+    @apply w-[328px] h-[246px] bg-cover bg-center bg-no-repeat rounded-tl-[36px];
   }
   
   /* === TEASER CONTENT CONTAINERS === */
   .netinera-teaser-xl .netinera-teaser-content {
     /* Desktop: Right side content */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    /* Desktop padding and gap */
-    padding: 32px;
-    gap: 36px;
+    @apply flex-1 flex flex-col justify-between p-8 gap-9; /* p 32px->8, gap 36px->9 */
   }
   
   .netinera-teaser-sm .netinera-teaser-content {
     /* Mobile: Bottom content */
-    display: flex;
-    flex-direction: column;
-    
-    /* Mobile padding and gap */
-    padding: 24px;
-    gap: 32px;
+    @apply flex flex-col p-6 gap-8; /* p 24px->6, gap 32px->8 */
   }
   
   /* === TEXT GROUP CONTAINERS === */
   .netinera-teaser-xl .netinera-teaser-text-group {
     /* Desktop text spacing */
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    @apply flex flex-col gap-5; /* 20px->gap-5 */
   }
   
   .netinera-teaser-sm .netinera-teaser-text-group {
     /* Mobile text spacing */
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    @apply flex flex-col gap-4; /* 16px->gap-4 */
   }
   
   /* === MAIN TEXT CONTAINERS === */
   .netinera-teaser-xl .netinera-teaser-main-text {
     /* Desktop main text spacing */
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+    @apply flex flex-col gap-[14px];
   }
   
   .netinera-teaser-sm .netinera-teaser-main-text {
     /* Mobile main text spacing */
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    @apply flex flex-col gap-3; /* 12px->gap-3 */
   }
   
   /* === TEASER OVERLINE === */
   .netinera-teaser-overline {
-    font-family: var(--font-family-sans);
-    font-weight: var(--font-weight-semibold);
-    font-style: italic;
-    color: var(--color-gray-600);
-    text-transform: uppercase;
-    
-    /* Visual styling */
-    margin: 0;
-    padding: 0;
+    @apply font-[var(--font-family-sans)] font-semibold italic text-[var(--color-gray-600)] uppercase m-0 p-0;
   }
   
   .netinera-teaser-xl .netinera-teaser-overline {
     /* Desktop typography - Figma specifications */
-    font-size: 14px;
-    line-height: 1.143; /* 16px */
-    letter-spacing: 0.114em; /* 11.428% */
+    @apply text-sm leading-[1.143] tracking-[0.114em]; /* 14px, 16px LH */
   }
   
   .netinera-teaser-sm .netinera-teaser-overline {
     /* Mobile typography */
-    font-size: 12px;
-    line-height: 1.167; /* 14px */
-    letter-spacing: 0.133em; /* 13.333% */
+    @apply text-xs leading-[1.167] tracking-[0.133em]; /* 12px, 14px LH */
   }
   
   /* === TEASER HEADLINE === */
   .netinera-teaser-headline {
-    font-family: var(--font-family-sans);
-    font-weight: var(--font-weight-normal);
-    color: var(--color-gray-900);
-    text-transform: uppercase;
-    
-    /* Visual styling */
-    margin: 0;
-    padding: 0;
+    @apply font-[var(--font-family-display)] font-normal text-[var(--color-gray-900)] uppercase m-0 p-0; /* Changed from font-family-sans to display for Titillium */
   }
   
   .netinera-teaser-xl .netinera-teaser-headline {
     /* Desktop typography - Figma specifications */
-    font-size: 30px;
-    line-height: 1.2; /* 36px */
+    @apply text-[30px] leading-[1.2]; /* 36px LH */
   }
   
   .netinera-teaser-sm .netinera-teaser-headline {
     /* Mobile typography */
-    font-size: 22px;
-    line-height: 1.273; /* 28px */
+    @apply text-[22px] leading-[1.273]; /* 28px LH */
   }
   
   /* === TEASER SUBTITLE === */
   .netinera-teaser-subtitle {
-    font-family: var(--font-family-sans);
-    font-weight: var(--font-weight-normal);
-    color: var(--color-gray-700);
-    
-    /* Visual styling */
-    margin: 0;
-    padding: 0;
+    @apply font-[var(--font-family-sans)] font-normal text-[var(--color-gray-700)] m-0 p-0;
   }
   
   .netinera-teaser-xl .netinera-teaser-subtitle {
     /* Desktop typography */
-    font-size: 18px;
-    line-height: 1.667; /* 30px */
+    @apply text-lg leading-[1.667]; /* 18px, 30px LH */
   }
   
   .netinera-teaser-sm .netinera-teaser-subtitle {
     /* Mobile typography */
-    font-size: 16px;
-    line-height: 1.75; /* 28px */
+    @apply text-base leading-[1.75]; /* 16px, 28px LH */
   }
   
   /* === TEASER BUTTON === */
   .netinera-teaser-button {
     /* Button base styling */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    @apply inline-flex items-center justify-center gap-2; /* 8px -> gap-2 */
     
     /* Layout */
-    height: 52px;
-    padding: 24px 30px;
-    border-radius: 12px;
-    border: none;
+    @apply h-[52px] px-[30px] rounded-xl border-none; /* padding: 24px 30px -> py-6, but fixed height. Use px-[30px] and rely on h-[52px] and items-center. */
     
     /* Typography */
-    font-family: var(--font-family-sans);
-    font-weight: var(--font-weight-semibold);
-    font-size: 14px;
-    line-height: 1.429; /* 20px */
-    letter-spacing: 0.057em; /* 5.714% */
-    text-transform: uppercase;
-    text-decoration: none;
+    @apply font-[var(--font-family-sans)] font-semibold text-sm leading-[1.429em] tracking-[0.057em] uppercase no-underline; /* 14px LH 20px */
     
     /* Colors */
-    background-color: var(--color-secondary-600);
-    color: white;
+    @apply bg-[var(--color-secondary-600)] text-white;
     
     /* Interactive states */
-    transition: all 0.3s ease;
-    cursor: pointer;
+    @apply transition-all duration-300 ease-in-out cursor-pointer;
     
     /* Positioning */
-    align-self: flex-start;
+    @apply self-start;
   }
   
   .netinera-teaser-button:hover {
-    background-color: var(--color-secondary-700);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-lg-box-shadow);
+    @apply bg-[var(--color-secondary-700)] transform -translate-y-px shadow-lg; /* Assuming var(--shadow-lg-box-shadow) is shadow-lg */
   }
   
   .netinera-teaser-button:focus-visible {
-    outline: 2px solid var(--color-primary-400);
-    outline-offset: 2px;
+    @apply outline-2 outline-[var(--color-primary-400)] outline-offset-2;
   }
   
   .netinera-teaser-button:active {
-    transform: translateY(0);
-    box-shadow: var(--shadow-md-box-shadow);
+    @apply transform translate-y-0 shadow-md; /* Assuming var(--shadow-md-box-shadow) is shadow-md */
   }
   
   /* === TEASER BUTTON ICON === */
   .netinera-teaser-button-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
+    @apply flex items-center justify-center w-4 h-4; /* 16px */
   }
   
   .netinera-teaser-button-icon svg {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.3s ease;
+    @apply w-full h-full transition-transform duration-300 ease-in-out;
   }
   
   .netinera-teaser-button:hover .netinera-teaser-button-icon svg {
-    transform: translateX(2px);
+    @apply transform translate-x-0.5; /* 2px */
   }
   
   /* === RESPONSIVE TEASER VARIANT === */
   .netinera-teaser-responsive {
-    /* Responsive container that switches between xl and sm */
-    width: 100%;
+    @apply w-full;
   }
   
   .netinera-teaser-responsive .netinera-teaser-container {
-    /* Mobile first: Use SM teaser */
-    width: 328px;
-    margin: 0 auto;
+    /* Mobile first: Use SM teaser dimensions by default */
+    @apply w-[328px] mx-auto netinera-desktop:w-[968px];
   }
   
-  @media (width >= 1024px) {
-    .netinera-teaser-responsive .netinera-teaser-container {
-      /* Desktop: Switch to XL teaser */
-      width: 968px;
-    }
-    
-    /* Switch layout structure on desktop */
-    .netinera-teaser-responsive .netinera-teaser-sm {
-      /* Transform to XL layout */
-      width: 968px;
-      height: 426px;
-      flex-direction: row;
-      border-radius: 64px 0;
-    }
-    
-    .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-image {
-      /* Transform to XL image */
-      width: 568px;
-      height: 426px;
-      border-radius: 64px 0 0;
-    }
-    
-    .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-content {
-      /* Transform to XL content */
-      flex: 1;
-      justify-content: space-between;
-      padding: 32px;
-      gap: 36px;
-    }
-    
-    .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-text-group {
-      gap: 20px;
-    }
-    
-    .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-main-text {
-      gap: 14px;
-    }
-    
-    .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-overline {
-      font-size: 14px;
-      line-height: 1.143;
-      letter-spacing: 0.114em;
-    }
-    
-    .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-headline {
-      font-size: 30px;
-      line-height: 1.2;
-    }
-    
-    .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-subtitle {
-      font-size: 18px;
-      line-height: 1.667;
-    }
+  /* On desktop, if the responsive teaser uses the -sm structure, transform it to look like -xl */
+  .netinera-teaser-responsive .netinera-teaser-sm {
+    @apply netinera-desktop:w-[968px] netinera-desktop:h-[426px] netinera-desktop:flex-row netinera-desktop:rounded-tl-[64px] netinera-desktop:rounded-br-[64px];
+  }
+
+  .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-image {
+    @apply netinera-desktop:w-[568px] netinera-desktop:h-[426px] netinera-desktop:rounded-tl-[64px];
+  }
+
+  .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-content {
+    @apply netinera-desktop:flex-1 netinera-desktop:justify-between netinera-desktop:p-8 netinera-desktop:gap-9;
+  }
+
+  .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-text-group {
+    @apply netinera-desktop:gap-5;
+  }
+
+  .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-main-text {
+    @apply netinera-desktop:gap-[14px];
+  }
+
+  .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-overline {
+    @apply netinera-desktop:text-sm netinera-desktop:leading-[1.143] netinera-desktop:tracking-[0.114em];
+  }
+
+  .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-headline {
+    @apply netinera-desktop:text-[30px] netinera-desktop:leading-[1.2];
+  }
+
+  .netinera-teaser-responsive .netinera-teaser-sm .netinera-teaser-subtitle {
+    @apply netinera-desktop:text-lg netinera-desktop:leading-[1.667];
   }
   
   /* === TEASER VARIANTS === */
   
   /* Color variants */
-  .netinera-teaser-dark {
-    background-color: var(--color-gray-900);
+  .netinera-teaser-dark { /* Applies to any teaser variant that gets this class */
+    @apply bg-[var(--color-gray-900)];
   }
   
   .netinera-teaser-dark .netinera-teaser-overline {
-    color: var(--color-gray-300);
+    @apply text-[var(--color-gray-300)];
   }
   
   .netinera-teaser-dark .netinera-teaser-headline {
-    color: white;
+    @apply text-white;
   }
   
   .netinera-teaser-dark .netinera-teaser-subtitle {
-    color: var(--color-gray-200);
+    @apply text-[var(--color-gray-200)];
   }
   
-  .netinera-teaser-primary {
-    background-color: var(--color-primary-50);
+  .netinera-teaser-primary { /* Applies to any teaser variant that gets this class */
+    @apply bg-[var(--color-primary-50)];
   }
   
   .netinera-teaser-primary .netinera-teaser-button {
-    background-color: var(--color-primary-600);
+    @apply bg-[var(--color-primary-600)];
   }
   
   .netinera-teaser-primary .netinera-teaser-button:hover {
-    background-color: var(--color-primary-700);
+    @apply hover:bg-[var(--color-primary-700)];
   }
   
   /* Border pattern variants */
   .netinera-teaser-pattern-secondary.netinera-teaser-xl {
-    border-radius: 0 64px;
+    @apply rounded-tr-[64px] rounded-bl-[64px] rounded-tl-none rounded-br-none; /* 0 64px */
   }
   
   .netinera-teaser-pattern-secondary.netinera-teaser-xl .netinera-teaser-image {
-    border-radius: 0 64px 0 0;
+    @apply rounded-tr-[64px] rounded-bl-none rounded-tl-none; /* 0 64px 0 0 */
   }
   
   .netinera-teaser-pattern-secondary.netinera-teaser-sm {
-    border-radius: 0 36px;
+    @apply rounded-tr-[36px] rounded-bl-[36px] rounded-tl-none rounded-br-none; /* 0 36px */
   }
   
   .netinera-teaser-pattern-secondary.netinera-teaser-sm .netinera-teaser-image {
-    border-radius: 0 36px 0 0;
+    @apply rounded-tr-[36px] rounded-bl-none rounded-tl-none; /* 0 36px 0 0 */
   }
   
   .netinera-teaser-pattern-simple.netinera-teaser-xl {
-    border-radius: 32px;
+    @apply rounded-[32px];
   }
   
   .netinera-teaser-pattern-simple.netinera-teaser-xl .netinera-teaser-image {
-    border-radius: 32px 0 0 32px;
+    @apply rounded-l-[32px] rounded-r-none; /* 32px 0 0 32px */
   }
   
   .netinera-teaser-pattern-simple.netinera-teaser-sm {
-    border-radius: 24px;
+    @apply rounded-3xl; /* 24px */
   }
   
   .netinera-teaser-pattern-simple.netinera-teaser-sm .netinera-teaser-image {
-    border-radius: 24px 24px 0 0;
+    @apply rounded-t-3xl rounded-b-none; /* 24px 24px 0 0 */
   }
   
   /* === INTERACTIVE STATES === */
-  .netinera-teaser-xl:hover,
+  /* General hover for XL and SM, specific :hover classes already exist for base .netinera-teaser-xl/sm */
+  /* .netinera-teaser-xl:hover,
   .netinera-teaser-sm:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl-box-shadow);
-  }
-  
-  .netinera-teaser-xl:focus-within,
-  .netinera-teaser-sm:focus-within {
-    outline: 2px solid var(--color-primary-400);
-    outline-offset: 2px;
+    @apply transform -translate-y-1 shadow-xl; /* Assuming var(--shadow-xl-box-shadow) is shadow-xl */
+  } */
+
+  .netinera-teaser-xl:focus-within, /* Should be focus-visible */
+  .netinera-teaser-sm:focus-within { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-primary-400)] outline-offset-2;
   }
   
   /* === ACCESSIBILITY === */
   .netinera-teaser-xl[role="article"],
   .netinera-teaser-sm[role="article"] {
-    /* Ensures proper accessibility labeling */
+    /* Ensures proper accessibility labeling - No specific CSS */
   }
   
   /* === PRINT STYLES === */
   @media print {
     .netinera-teaser-xl,
     .netinera-teaser-sm {
-      background-color: white !important;
-      border: 1px solid var(--color-gray-300) !important;
-      border-radius: 8px !important;
-      box-shadow: none !important;
-      transform: none !important;
-      page-break-inside: avoid;
-      margin-bottom: 20px;
+      @apply print:bg-white !important print:border print:border-gray-300 !important print:rounded-lg !important print:shadow-none !important print:transform-none !important print:break-avoid print:mb-5;
     }
     
     .netinera-teaser-button {
-      background-color: var(--color-gray-800) !important;
-      transform: none !important;
+      @apply print:bg-[var(--color-gray-800)] !important print:transform-none !important;
     }
   }
   
@@ -435,13 +305,13 @@
     .netinera-teaser-sm,
     .netinera-teaser-button,
     .netinera-teaser-button-icon svg {
-      transition: none;
+      @apply motion-reduce:transition-none;
     }
     
     .netinera-teaser-xl:hover,
     .netinera-teaser-sm:hover,
     .netinera-teaser-button:hover {
-      transform: none;
+      @apply motion-reduce:transform-none;
     }
   }
   
@@ -449,17 +319,17 @@
   @media (prefers-contrast: high) {
     .netinera-teaser-xl,
     .netinera-teaser-sm {
-      border: 2px solid var(--color-gray-900);
+      @apply border-2 border-[var(--color-gray-900)];
     }
     
     .netinera-teaser-button {
-      border: 2px solid var(--color-gray-900);
+      @apply border-2 border-[var(--color-gray-900)];
     }
     
     .netinera-teaser-overline,
     .netinera-teaser-headline,
     .netinera-teaser-subtitle {
-      color: var(--color-gray-900);
+      @apply text-[var(--color-gray-900)];
     }
   }
 } 

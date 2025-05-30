@@ -5,42 +5,23 @@
 
   /* Quote XL Container - Figma Node 1841-1247 */
   .netinera-quote-xl {
-    background: #F5F5F4; /* Netinera light background */
-    border-radius: 64px 0; /* Netinera signature pattern */
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 968px; /* Figma specification */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    position: relative;
+    @apply bg-stone-100 rounded-tl-[64px] rounded-br-[64px] flex flex-row w-full max-w-[968px] transition-all duration-300 ease-in-out overflow-hidden relative; /* #F5F5F4 is stone-100 */
+    /* box-shadow applied on hover */
   }
 
   .netinera-quote-xl:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 10%), 0 6px 12px -2px rgb(30 41 57 / 5%);
+    @apply transform -translate-y-1 shadow-[0_15px_30px_-5px_rgb(30_41_57_/_10%),_0_6px_12px_-2px_rgb(30_41_57_/_5%)];
   }
 
   /* Quote XL Image Container */
   .netinera-quote-xl-image {
-    width: 368px; /* Figma: 368×207px */
-    height: 207px;
-    border-radius: 64px 0 0; /* Top-left radius only */
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
+    @apply w-[368px] h-[207px] rounded-tl-[64px] relative overflow-hidden flex-shrink-0;
+    /* background image to be applied inline or via more specific class */
   }
 
   /* Quote XL Content Container */
   .netinera-quote-xl-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    gap: 10px; /* Figma spacing */
-    padding: 32px;
-    text-align: center;
+    @apply flex flex-col justify-center items-center flex-1 gap-2.5 p-8 text-center; /* 10px -> gap-2.5, 32px -> p-8 */
   }
 
   /* ==========================
@@ -49,41 +30,23 @@
 
   /* Quote SM Container */
   .netinera-quote-sm {
-    background: #F5F5F4; /* Netinera light background */
-    border-radius: 36px 0; /* Scaled down pattern */
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 768px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    position: relative;
+    @apply bg-stone-100 rounded-tl-[36px] rounded-br-[36px] flex flex-col w-full max-w-[768px] transition-all duration-300 ease-in-out overflow-hidden relative;
+    /* box-shadow applied on hover */
   }
 
   .netinera-quote-sm:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px -4px rgb(30 41 57 / 10%), 0 4px 8px -2px rgb(30 41 57 / 5%);
+    @apply transform -translate-y-0.5 shadow-[0_10px_20px_-4px_rgb(30_41_57_/_10%),_0_4px_8px_-2px_rgb(30_41_57_/_5%)]; /* -2px -> -translate-y-0.5 */
   }
 
   /* Quote SM Image Container */
   .netinera-quote-sm-image {
-    width: 100%;
-    height: 184px; /* Mobile height */
-    border-radius: 36px 0 0; /* Top-left radius only */
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
+    @apply w-full h-[184px] rounded-tl-[36px] relative overflow-hidden flex-shrink-0;
+    /* background image to be applied inline or via more specific class */
   }
 
   /* Quote SM Content Container */
   .netinera-quote-sm-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px; /* Mobile spacing */
-    padding: 24px;
-    text-align: center;
+    @apply flex flex-col justify-center items-center gap-2 p-6 text-center; /* 8px -> gap-2, 24px -> p-6 */
   }
 
   /* ==========================
@@ -92,55 +55,24 @@
 
   /* Portrait Image Base */
   .netinera-quote-portrait-image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
+    @apply w-full h-full bg-cover bg-center bg-no-repeat flex flex-col justify-end relative;
   }
 
   /* Gradient Overlay - XL */
   .netinera-quote-gradient-overlay {
-    background: linear-gradient(
-      180deg,
-      rgb(166 160 155 / 0%) 0%,
-      rgb(121 113 107 / 100%) 100%
-    );
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: flex-end;
-    position: relative;
-    z-index: 2;
+    background: linear-gradient(180deg, rgb(166 160 155 / 0%) 0%, rgb(121 113 107 / 100%) 100%); /* Keep custom gradient */
+    @apply p-5 flex flex-col h-full justify-end relative z-[2]; /* 20px -> p-5 */
   }
 
   /* Gradient Overlay - SM */
   .netinera-quote-gradient-overlay-sm {
-    background: linear-gradient(
-      180deg,
-      rgb(166 160 155 / 0%) 0%,
-      rgb(121 113 107 / 100%) 100%
-    );
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: flex-end;
-    position: relative;
-    z-index: 2;
+    background: linear-gradient(180deg, rgb(166 160 155 / 0%) 0%, rgb(121 113 107 / 100%) 100%); /* Keep custom gradient */
+    @apply p-4 flex flex-col h-full justify-end relative z-[2]; /* 16px -> p-4 */
   }
 
   /* Person Information Container */
   .netinera-quote-person-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    text-align: left;
+    @apply flex flex-col gap-0.5 text-left; /* 2px -> gap-0.5 */
   }
 
   /* ==========================
@@ -149,94 +81,42 @@
 
   /* Quote XL Overline */
   .netinera-quote-xl-overline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.143em;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-    text-align: center;
-    color: #1E2939;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-semibold text-sm leading-[1.143em] tracking-[0.11em] uppercase text-center text-[var(--color-netinera-dark)] m-0; /* 14px */
   }
 
   /* Quote XL Text */
   .netinera-quote-xl-text {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 1.455em;
-    text-align: center;
-    color: #1E2939;
-    margin: 0;
-    max-width: 500px;
+    @apply font-[var(--font-family-display)] font-normal text-[22px] leading-[1.455em] text-center text-[var(--color-netinera-dark)] m-0 max-w-[500px];
   }
 
   /* Quote SM Overline */
   .netinera-quote-sm-overline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 1.167em;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    text-align: center;
-    color: #1E2939;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-semibold text-xs leading-[1.167em] tracking-[0.13em] uppercase text-center text-[var(--color-netinera-dark)] m-0; /* 12px */
   }
 
   /* Quote SM Text */
   .netinera-quote-sm-text {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.444em;
-    text-align: center;
-    color: #1E2939;
-    margin: 0;
-    max-width: 400px;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.444em] text-center text-[var(--color-netinera-dark)] m-0 max-w-[400px]; /* 18px -> text-lg */
   }
 
   /* Person Name - XL */
   .netinera-quote-person-name-xl {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.444em;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.444em] text-white m-0; /* 18px */
   }
 
   /* Person Title - XL */
   .netinera-quote-person-title-xl {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.625em;
-    color: white;
-    margin: 0;
-    opacity: 0.9;
+    @apply font-[var(--font-family-sans)] font-normal text-base leading-[1.625em] text-white m-0 opacity-90; /* 16px */
   }
 
   /* Person Name - SM */
   .netinera-quote-person-name-sm {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5em;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-base leading-[1.5em] text-white m-0; /* 16px */
   }
 
   /* Person Title - SM */
   .netinera-quote-person-title-sm {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.429em;
-    color: white;
-    margin: 0;
-    opacity: 0.9;
+    @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.429em] text-white m-0 opacity-90; /* 14px */
   }
 
   /* ==========================

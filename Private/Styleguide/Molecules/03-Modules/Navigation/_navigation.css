@@ -5,135 +5,68 @@
 
   /* Responsive Navigation Container */
   .navigation-responsive {
-    background: #FFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
-    align-items: stretch;
-    align-self: stretch;
-    padding: 20px 16px; /* Mobile first */
-    width: 100%;
-    position: relative;
-    transition: all 0.3s ease;
+    @apply bg-white flex flex-row justify-stretch items-stretch self-stretch py-5 px-4 w-full relative transition-all duration-300 ease-in-out; /* p:20px 16px */
   }
 
   /* Responsive Navigation Logo */
   .navigation-responsive-logo {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    flex-shrink: 0;
+    @apply flex flex-row gap-2.5 items-center flex-shrink-0; /* 10px -> gap-2.5 */
   }
 
   /* Responsive Navigation Menu */
   .navigation-responsive-menu {
-    display: none; /* Hidden on mobile by default */
-    flex-direction: row;
-    align-items: center;
-    gap: 32px;
-    margin-left: auto;
+    @apply hidden flex-row items-center gap-8 ml-auto; /* Default hidden on mobile, shown via media query. 32px -> gap-8 */
   }
 
   /* Responsive Navigation Link */
   .navigation-responsive-link {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.75;
-    color: #1E2939;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+    @apply font-[var(--font-family-sans)] font-normal text-base leading-7 text-[var(--color-netinera-dark)] no-underline py-2 px-4 rounded-lg transition-all duration-300 ease-in-out whitespace-nowrap; /* 16px, LH 1.75 (28px), p:8px 16px */
   }
 
   .navigation-responsive-link:hover {
-    background: #F5F5F4;
-    color: #00685E;
+    @apply bg-stone-100 text-[var(--color-netinera-primary)]; /* #F5F5F4 is stone-100. #00685E is primary */
   }
 
   .navigation-responsive-link.active {
-    background: #00685E;
-    color: #FFF;
+    @apply bg-[var(--color-netinera-primary)] text-white;
   }
 
   /* Responsive Navigation CTA */
   .navigation-responsive-cta {
-    background: #DD052B;
-    color: #FFF;
-    font-family: Roboto, sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.429;
-    letter-spacing: 0.0571em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    white-space: nowrap;
+    @apply bg-[var(--color-netinera-secondary)] text-white font-[var(--font-family-sans)] font-semibold text-sm leading-[1.429em] tracking-[0.0571em] uppercase no-underline py-3 px-6 rounded-lg transition-all duration-300 ease-in-out border-none cursor-pointer whitespace-nowrap; /* 14px, p:12px 24px */
   }
 
   .navigation-responsive-cta:hover {
-    background: #B91C1C;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgb(221 5 43 / 30%);
+    @apply hover:bg-[#B91C1C] hover:-translate-y-px hover:shadow-[0_4px_12px_rgb(221_5_43_/_30%)]; /* #B91C1C is secondary-800 */
   }
 
   .navigation-responsive-cta:active {
-    transform: translateY(0);
+    @apply active:translate-y-0;
   }
 
   /* Responsive Navigation Toggle */
   .navigation-responsive-toggle {
-    display: flex; /* Shown on mobile */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    margin-left: auto;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    @apply flex bg-none border-none cursor-pointer p-2 ml-auto items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 ease-in-out; /* Shown on mobile by default (flex). Hidden on desktop via media query. */
   }
 
   .navigation-responsive-toggle:hover {
-    background: #F5F5F4;
+    @apply hover:bg-stone-100; /* #F5F5F4 */
   }
 
   .navigation-responsive-toggle svg {
-    width: 24px;
+    width: 24px; /* Direct style */
     height: 24px;
-    color: #1E2939;
-    stroke: #1E2939;
+    color: var(--color-netinera-dark); /* #1E2939 */
+    stroke: var(--color-netinera-dark);
   }
 
   /* Responsive Navigation Mobile Menu */
   .navigation-responsive-mobile-menu {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #FFF;
-    padding: 24px 16px;
-    box-shadow: 0 4px 12px rgb(30 41 57 / 15%);
-    border-top: 1px solid #E5E7EB;
-    z-index: 1000;
+    @apply hidden flex-col items-start gap-6 absolute top-full left-0 right-0 bg-white py-6 px-4 shadow-[0_4px_12px_rgb(30_41_57_/_15%)] border-t border-gray-200 z-[1000]; /* #E5E7EB is gray-200. gap 24px -> gap-6, p:24px 16px -> py-6 px-4 */
   }
 
   .navigation-responsive-mobile-menu.active {
-    display: flex;
+    @apply flex;
   }
 
   /* ==========================
@@ -142,81 +75,39 @@
 
   /* Desktop XL Navigation Container */
   .navigation-xl {
-    background: #FFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
-    align-items: stretch;
-    align-self: stretch;
-    padding: 20px 56px; /* Desktop padding */
-    width: 100%;
+    @apply bg-white flex flex-row justify-stretch items-stretch self-stretch py-5 px-14 w-full; /* p:20px 56px */
   }
 
   /* Desktop XL Navigation Logo */
   .navigation-xl-logo {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    flex-shrink: 0;
+    @apply flex flex-row gap-2.5 items-center flex-shrink-0;
   }
 
   /* Desktop XL Navigation Menu */
   .navigation-xl-menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 32px;
-    margin-left: auto;
+    @apply flex flex-row items-center gap-8 ml-auto; /* 32px -> gap-8 */
   }
 
   /* Desktop XL Navigation Link */
   .navigation-xl-link {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.75;
-    color: #1E2939;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+    @apply font-[var(--font-family-sans)] font-normal text-base leading-7 text-[var(--color-netinera-dark)] no-underline py-2 px-4 rounded-lg transition-all duration-300 ease-in-out whitespace-nowrap;
   }
 
   .navigation-xl-link:hover {
-    background: #F5F5F4;
-    color: #00685E;
+    @apply bg-stone-100 text-[var(--color-netinera-primary)];
   }
 
   .navigation-xl-link.active {
-    background: #00685E;
-    color: #FFF;
+    @apply bg-[var(--color-netinera-primary)] text-white;
   }
 
   /* Desktop XL Navigation CTA */
   .navigation-xl-cta {
-    background: #DD052B;
-    color: #FFF;
-    font-family: Roboto, sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.429;
-    letter-spacing: 0.0571em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    white-space: nowrap;
+    @apply bg-[var(--color-netinera-secondary)] text-white font-[var(--font-family-sans)] font-semibold text-sm leading-[1.429em] tracking-[0.0571em] uppercase no-underline py-3 px-6 rounded-lg transition-all duration-300 ease-in-out border-none cursor-pointer whitespace-nowrap;
   }
 
   .navigation-xl-cta:hover {
-    background: #B91C1C;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgb(221 5 43 / 30%);
+    @apply hover:bg-[#B91C1C] hover:-translate-y-px hover:shadow-[0_4px_12px_rgb(221_5_43_/_30%)];
   }
 
   /* ==========================
@@ -225,121 +116,59 @@
 
   /* Mobile SM Navigation Container */
   .navigation-sm {
-    background: #FFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
-    align-items: stretch;
-    padding: 20px 16px; /* Mobile padding */
-    width: 100%;
-    max-width: 328px;
-    position: relative;
+    @apply bg-white flex flex-row justify-stretch items-stretch py-5 px-4 w-full max-w-[328px] relative;
   }
 
   /* Mobile SM Navigation Logo */
   .navigation-sm-logo {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    flex-shrink: 0;
+    @apply flex flex-row gap-2.5 items-center flex-shrink-0;
   }
 
   /* Mobile SM Navigation Toggle */
   .navigation-sm-toggle {
-    display: flex;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    margin-left: auto;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    @apply flex bg-none border-none cursor-pointer p-2 ml-auto items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 ease-in-out;
   }
 
   .navigation-sm-toggle:hover {
-    background: #F5F5F4;
+    @apply hover:bg-stone-100;
   }
 
   .navigation-sm-toggle svg {
-    width: 24px;
+    width: 24px; /* Direct style */
     height: 24px;
-    color: #1E2939;
-    stroke: #1E2939;
+    color: var(--color-netinera-dark);
+    stroke: var(--color-netinera-dark);
   }
 
   /* Mobile SM Navigation Mobile Menu */
   .navigation-sm-mobile-menu {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #FFF;
-    padding: 24px 16px;
-    box-shadow: 0 4px 12px rgb(30 41 57 / 15%);
-    border-top: 1px solid #E5E7EB;
-    z-index: 1000;
+    @apply hidden flex-col items-start gap-6 absolute top-full left-0 right-0 bg-white py-6 px-4 shadow-[0_4px_12px_rgb(30_41_57_/_15%)] border-t border-gray-200 z-[1000];
   }
 
   .navigation-sm-mobile-menu.active {
-    display: flex;
+    @apply flex;
   }
 
   /* Mobile SM Navigation Link */
   .navigation-sm-link {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.75;
-    color: #1E2939;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    width: 100%;
+    @apply font-[var(--font-family-sans)] font-normal text-base leading-7 text-[var(--color-netinera-dark)] no-underline py-2 px-4 rounded-lg transition-all duration-300 ease-in-out w-full;
   }
 
   .navigation-sm-link:hover {
-    background: #F5F5F4;
-    color: #00685E;
+    @apply bg-stone-100 text-[var(--color-netinera-primary)];
   }
 
   .navigation-sm-link.active {
-    background: #00685E;
-    color: #FFF;
+    @apply bg-[var(--color-netinera-primary)] text-white;
   }
 
   /* Mobile SM Navigation CTA */
   .navigation-sm-cta {
-    background: #DD052B;
-    color: #FFF;
-    font-family: Roboto, sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.429;
-    letter-spacing: 0.0571em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    width: fit-content;
+    @apply bg-[var(--color-netinera-secondary)] text-white font-[var(--font-family-sans)] font-semibold text-sm leading-[1.429em] tracking-[0.0571em] uppercase no-underline py-3 px-6 rounded-lg transition-all duration-300 ease-in-out border-none cursor-pointer w-fit;
   }
 
   .navigation-sm-cta:hover {
-    background: #B91C1C;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgb(221 5 43 / 30%);
+    @apply hover:bg-[#B91C1C] hover:-translate-y-px hover:shadow-[0_4px_12px_rgb(221_5_43_/_30%)];
   }
 
   /* ==========================
@@ -348,29 +177,24 @@
 
   /* Netinera Logo */
   .netinera-logo {
-    width: 200px; /* Desktop default */
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    @apply w-[200px] h-10 flex items-center justify-start; /* Desktop default. Responsive handled in media queries */
   }
 
   .netinera-logo svg {
-    width: 100%;
-    height: 100%;
+    @apply w-full h-full;
   }
 
   /* Logo Color Variants */
   .netinera-logo .logo-primary {
-    fill: #00685E;
+    @apply fill-[var(--color-netinera-primary)];
   }
 
   .netinera-logo .logo-accent {
-    fill: #DD052B;
+    @apply fill-[var(--color-netinera-secondary)];
   }
 
   .netinera-logo .logo-white {
-    fill: #FFF;
+    @apply fill-white;
   }
 
   /* ==========================
@@ -383,117 +207,109 @@
   .navigation-sm-link:focus,
   .navigation-responsive-cta:focus,
   .navigation-xl-cta:focus,
-  .navigation-sm-cta:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
+  .navigation-sm-cta:focus { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
   }
 
-  .navigation-responsive-toggle:focus,
-  .navigation-sm-toggle:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
+  .navigation-responsive-toggle:focus, /* Should be focus-visible */
+  .navigation-sm-toggle:focus { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
   }
 
   /* Light Variant (Default) */
   .navigation-variant-light {
-    background: #FFF;
+    @apply bg-white;
   }
 
   .navigation-variant-light .navigation-responsive-link,
   .navigation-variant-light .navigation-xl-link,
   .navigation-variant-light .navigation-sm-link {
-    color: #1E2939;
+    @apply text-[var(--color-netinera-dark)];
   }
 
   .navigation-variant-light .navigation-responsive-toggle svg,
   .navigation-variant-light .navigation-sm-toggle svg {
-    color: #1E2939;
-    stroke: #1E2939;
+    color: var(--color-netinera-dark); /* Direct style for SVG */
+    stroke: var(--color-netinera-dark);
   }
 
   /* Dark Variant */
   .navigation-variant-dark {
-    background: #1E2939;
+    @apply bg-[var(--color-netinera-dark)];
   }
 
   .navigation-variant-dark .navigation-responsive-link,
   .navigation-variant-dark .navigation-xl-link,
   .navigation-variant-dark .navigation-sm-link {
-    color: #FFF;
+    @apply text-white;
   }
 
   .navigation-variant-dark .navigation-responsive-link.active,
   .navigation-variant-dark .navigation-xl-link.active,
   .navigation-variant-dark .navigation-sm-link.active {
-    background: #00685E;
-    color: #FFF;
+    @apply bg-[var(--color-netinera-primary)] text-white;
   }
 
   .navigation-variant-dark .navigation-responsive-toggle svg,
   .navigation-variant-dark .navigation-sm-toggle svg {
-    color: #FFF;
-    stroke: #FFF;
+    color: white; /* Direct style for SVG */
+    stroke: white;
   }
 
   .navigation-variant-dark .navigation-responsive-toggle:hover,
   .navigation-variant-dark .navigation-sm-toggle:hover {
-    background: rgb(255 255 255 / 10%);
+    @apply bg-white/10;
   }
 
   .navigation-variant-dark .navigation-responsive-mobile-menu,
   .navigation-variant-dark .navigation-sm-mobile-menu {
-    background: #1E2939;
-    border-top-color: rgb(255 255 255 / 20%);
+    @apply bg-[var(--color-netinera-dark)] border-t-white/20;
   }
 
   /* Primary Variant */
   .navigation-variant-primary {
-    background: #00685E;
+    @apply bg-[var(--color-netinera-primary)];
   }
 
   .navigation-variant-primary .navigation-responsive-link,
   .navigation-variant-primary .navigation-xl-link,
   .navigation-variant-primary .navigation-sm-link {
-    color: #FFF;
+    @apply text-white;
   }
 
   .navigation-variant-primary .navigation-responsive-link:hover,
   .navigation-variant-primary .navigation-xl-link:hover,
   .navigation-variant-primary .navigation-sm-link:hover {
-    background: rgb(255 255 255 / 15%);
-    color: #FFF;
+    @apply bg-white/15 text-white;
   }
 
   .navigation-variant-primary .navigation-responsive-link.active,
   .navigation-variant-primary .navigation-xl-link.active,
   .navigation-variant-primary .navigation-sm-link.active {
-    background: #DD052B;
-    color: #FFF;
+    @apply bg-[var(--color-netinera-secondary)] text-white;
   }
 
   .navigation-variant-primary .navigation-responsive-toggle svg,
   .navigation-variant-primary .navigation-sm-toggle svg {
-    color: #FFF;
-    stroke: #FFF;
+    color: white; /* Direct style for SVG */
+    stroke: white;
   }
 
   .navigation-variant-primary .navigation-responsive-toggle:hover,
   .navigation-variant-primary .navigation-sm-toggle:hover {
-    background: rgb(255 255 255 / 15%);
+    @apply bg-white/15;
   }
 
   .navigation-variant-primary .navigation-responsive-mobile-menu,
   .navigation-variant-primary .navigation-sm-mobile-menu {
-    background: #00685E;
-    border-top-color: rgb(255 255 255 / 20%);
+    @apply bg-[var(--color-netinera-primary)] border-t-white/20;
   }
 
   /* Dark variant hover - must come after primary variant and focus states */
   .navigation-variant-dark .navigation-responsive-link:hover,
   .navigation-variant-dark .navigation-xl-link:hover,
   .navigation-variant-dark .navigation-sm-link:hover {
-    background: rgb(255 255 255 / 10%);
-    color: #FFF;
+    @apply bg-white/10 text-white;
   }
 
   /* ==========================
@@ -501,97 +317,89 @@
    * ========================== */
 
   /* Desktop breakpoint (≥ 992px) */
-  @media (width >= 992px) {
+  @media (width >= 992px) { /* Using 992px as per original, maps roughly to lg or netinera-desktop */
     .navigation-responsive {
-      padding: 20px 56px; /* Desktop padding */
+      @apply py-5 px-14; /* Desktop padding: 20px 56px */
     }
 
     .navigation-responsive-menu {
-      display: flex; /* Shown on desktop */
+      @apply flex; /* Shown on desktop */
     }
 
     .navigation-responsive-toggle {
-      display: none; /* Hidden on desktop */
+      @apply hidden; /* Hidden on desktop */
     }
 
     .navigation-responsive-mobile-menu {
-      display: none !important; /* Force hidden on desktop */
+      @apply hidden !important; /* Force hidden on desktop */
     }
 
-    .netinera-logo {
-      width: 200px;
-      height: 40px;
+    .netinera-logo { /* Desktop default size, already defined but can be reiterated here if needed */
+      @apply w-[200px] h-10;
     }
   }
 
   /* Tablet adaptation */
-  @media (width <= 991px) and (width >= 768px) {
+  @media (width <= 991px) and (width >= 768px) { /* Between netinera-mobile and netinera-desktop */
     .navigation-responsive {
-      padding: 16px 20px;
+      @apply py-4 px-5; /* 16px 20px */
     }
 
     .netinera-logo {
-      width: 160px;
-      height: 32px;
+      @apply w-40 h-8; /* 160px 32px */
     }
 
     .navigation-responsive-cta,
-    .navigation-sm-cta {
-      padding: 10px 20px;
-      font-size: 12px;
+    .navigation-sm-cta { /* Apply to sm variant as well if it's used on tablet */
+      @apply py-2.5 px-5 text-xs; /* 10px 20px, 12px font */
     }
   }
 
   /* Mobile optimization */
-  @media (width <= 767px) {
+  @media (width <= 767px) { /* max-netinera-mobile */
     .navigation-responsive,
-    .navigation-xl {
-      padding: 16px 20px;
+    .navigation-xl { /* XL also gets mobile overrides */
+      @apply py-4 px-5; /* 16px 20px */
     }
 
     .netinera-logo {
-      width: 140px;
-      height: 28px;
+      @apply w-[140px] h-7; /* 28px */
     }
 
     .navigation-responsive-cta,
     .navigation-xl-cta,
     .navigation-sm-cta {
-      padding: 10px 20px;
-      font-size: 12px;
+      @apply py-2.5 px-5 text-xs; /* 10px 20px, 12px font */
     }
   }
 
   /* Small mobile optimization */
-  @media (width <= 479px) {
+  @media (width <= 479px) { /* max-xs */
     .navigation-responsive,
     .navigation-xl,
     .navigation-sm {
-      padding: 12px 16px;
+      @apply py-3 px-4; /* 12px 16px */
     }
 
     .netinera-logo {
-      width: 120px;
-      height: 24px;
+      @apply w-30 h-6; /* 120px 24px */
     }
 
     .navigation-responsive-toggle,
     .navigation-sm-toggle {
-      width: 36px;
-      height: 36px;
+      @apply w-9 h-9; /* 36px */
     }
 
     .navigation-responsive-toggle svg,
     .navigation-sm-toggle svg {
-      width: 20px;
+      width: 20px; /* Direct style */
       height: 20px;
     }
 
     .navigation-responsive-cta,
     .navigation-xl-cta,
     .navigation-sm-cta {
-      padding: 8px 16px;
-      font-size: 11px;
+      @apply py-2 px-4 text-[11px]; /* 8px 16px */
     }
   }
 
@@ -604,19 +412,19 @@
     .navigation-responsive,
     .navigation-xl,
     .navigation-sm {
-      border: 1px solid #1E2939;
+      @apply border border-[ButtonText]; /* Using system color ButtonText */
     }
 
     .navigation-responsive-link,
     .navigation-xl-link,
     .navigation-sm-link {
-      font-weight: 500;
+      @apply font-medium;
     }
 
     .navigation-responsive-cta,
     .navigation-xl-cta,
     .navigation-sm-cta {
-      border: 2px solid #1E2939;
+      @apply border-2 border-[ButtonText];
     }
   }
 
@@ -630,8 +438,7 @@
     .navigation-sm-cta,
     .navigation-responsive-toggle,
     .navigation-sm-toggle {
-      transition: none;
-      transform: none !important;
+      @apply motion-reduce:transition-none motion-reduce:transform-none !important;
     }
   }
 
@@ -643,46 +450,38 @@
     .navigation-responsive,
     .navigation-xl,
     .navigation-sm {
-      background: white !important;
-      border-bottom: 1px solid #ddd;
-      box-shadow: none !important;
-      padding: 10px 0 !important;
+      @apply print:bg-white !important print:border-b print:border-gray-300 !important print:shadow-none !important print:py-2.5 print:px-0 !important;
     }
 
     .navigation-responsive-menu,
     .navigation-xl-menu {
-      display: flex !important;
-      gap: 16px !important;
+      @apply print:flex !important print:gap-4 !important; /* 16px */
     }
 
     .navigation-responsive-toggle,
     .navigation-sm-toggle {
-      display: none !important;
+      @apply print:hidden !important;
     }
 
     .navigation-responsive-mobile-menu,
     .navigation-sm-mobile-menu {
-      display: none !important;
+      @apply print:hidden !important;
     }
 
     .navigation-responsive-link,
     .navigation-xl-link,
     .navigation-sm-link {
-      color: black !important;
-      padding: 4px 8px !important;
+      @apply print:text-black !important print:py-1 print:px-2 !important;
     }
 
     .navigation-responsive-cta,
     .navigation-xl-cta,
     .navigation-sm-cta {
-      background: black !important;
-      color: white !important;
-      box-shadow: none !important;
+      @apply print:bg-black !important print:text-white !important print:shadow-none !important;
     }
 
     .netinera-logo {
-      width: 120px !important;
-      height: 24px !important;
+      @apply print:w-30 !important print:h-6 !important; /* 120px 24px */
     }
   }
 

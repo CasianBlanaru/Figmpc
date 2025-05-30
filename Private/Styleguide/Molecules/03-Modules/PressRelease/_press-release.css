@@ -5,19 +5,11 @@
 
   /* Responsive Press Release List Container */
   .press-release-list-responsive {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px; /* Mobile first gap */
-    width: 100%;
-    padding: 24px; /* Mobile first padding */
-    background: white;
-    border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply flex flex-col items-stretch gap-6 w-full p-6 bg-white rounded-xl transition-all duration-300 ease-in-out; /* gap 24px->6, p 24px->6, rounded 12px->xl */
   }
 
   .press-release-list-responsive:hover {
-    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
+    @apply shadow-[0_4px_12px_rgb(30_41_57_/_8%)];
   }
 
   /* ==========================
@@ -26,94 +18,53 @@
 
   /* Individual Press Release Item */
   .press-release-responsive {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 12px; /* Figma layout spacing */
-    width: 100%;
-    padding: 16px 0; /* Mobile first padding */
-    transition: all 0.3s ease;
-    cursor: pointer;
+    @apply flex flex-col self-stretch gap-3 w-full py-4 px-0 transition-all duration-300 ease-in-out cursor-pointer; /* gap 12px->3, p 16px 0 -> py-4 */
   }
 
   .press-release-responsive:hover {
-    transform: translateX(4px);
-    background: rgb(221 5 43 / 2%);
-    border-radius: 8px;
-    padding: 16px;
-    margin: -16px 0;
+    @apply transform translate-x-1 bg-[var(--color-netinera-secondary)]/5 rounded-lg p-4 -my-4; /* Using 5% opacity for bg. Negative margin to compensate padding. */
   }
 
   /* Press Release Meta Information Container */
   .press-release-responsive-meta {
-    display: flex;
-    flex-direction: column; /* Mobile first: column layout */
-    align-items: flex-start;
-    align-self: stretch;
-    gap: 4px; /* Mobile gap */
-    width: 100%;
+    @apply flex flex-col items-start self-stretch gap-1 w-full; /* 4px -> gap-1 */
+    /* Responsive changes for flex-direction handled in media queries */
   }
 
   /* Press Release Date */
   .press-release-responsive-date {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.714em; /* Figma line height */
-    color: #1E2939;
-    margin: 0;
-    white-space: nowrap;
+    @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.714em] text-[var(--color-netinera-dark)] m-0 whitespace-nowrap;
   }
 
   /* Press Release Date with separator on mobile */
   .press-release-responsive-date::after {
-    content: " • ";
-    color: #1E2939;
-    margin-left: 4px;
+    content: " • "; /* Keep custom content */
+    @apply text-[var(--color-netinera-dark)] ml-1;
+    /* This separator is hidden on larger screens via media query */
   }
 
   /* Press Release Category */
   .press-release-responsive-category {
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    line-height: 1.714em; /* Figma line height */
-    color: #1E2939;
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 500;
+    @apply font-[var(--font-family-sans)] text-sm leading-[1.714em] text-[var(--color-netinera-dark)] m-0 uppercase font-medium;
   }
 
   /* Press Release Separator Line */
   .press-release-responsive-separator {
-    width: 1px;
-    height: 20px;
-    background: #1E2939;
-    flex-shrink: 0;
-    display: none; /* Hidden on mobile */
+    @apply w-px h-5 bg-[var(--color-netinera-dark)] flex-shrink-0 hidden; /* Hidden on mobile by default */
   }
 
   /* Press Release Headline */
   .press-release-responsive-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px; /* Mobile first */
-    line-height: 1.4em; /* Mobile line height */
-    color: #1E2939;
-    width: 100%;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.4em] text-[var(--color-netinera-dark)] w-full m-0; /* 18px -> text-lg */
   }
 
   /* Press Release Link */
   .press-release-responsive-link {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: block;
-    width: 100%;
+    @apply text-inherit no-underline transition-colors duration-300 ease-in-out block w-full;
   }
 
   .press-release-responsive-link:hover {
-    color: #DD052B;
+    @apply text-[var(--color-netinera-secondary)];
   }
 
   /* ==========================
@@ -122,99 +73,50 @@
 
   /* Desktop XL Press Release List Container */
   .press-release-list-xl {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 32px; /* Desktop gap */
-    width: 100%;
-    padding: 40px; /* Desktop padding */
-    background: white;
-    border-radius: 16px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply flex flex-col items-stretch gap-8 w-full p-10 bg-white rounded-2xl transition-all duration-300 ease-in-out; /* gap 32px->8, p 40px->10, rounded 16px->2xl */
   }
 
   /* Desktop XL Individual Press Release Item */
   .press-release-xl {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 12px; /* Figma layout spacing */
-    width: 100%;
-    padding: 20px 0; /* Desktop padding */
-    transition: all 0.3s ease;
-    cursor: pointer;
+    @apply flex flex-col self-stretch gap-3 w-full py-5 px-0 transition-all duration-300 ease-in-out cursor-pointer; /* gap 12px->3, p 20px 0 -> py-5 */
   }
 
   .press-release-xl:hover {
-    transform: translateX(8px);
-    background: rgb(221 5 43 / 2%);
-    border-radius: 8px;
-    padding: 20px;
-    margin: -20px 0;
+    @apply transform translate-x-2 bg-[var(--color-netinera-secondary)]/5 rounded-lg p-5 -my-5; /* Negative margin to compensate padding */
   }
 
   /* Desktop XL Press Release Meta */
   .press-release-xl-meta {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-self: stretch;
-    gap: 10px; /* Figma gap spacing */
-    width: 100%;
+    @apply flex flex-row items-center self-stretch gap-2.5 w-full; /* 10px -> gap-2.5 */
   }
 
   /* Desktop XL Press Release Date */
   .press-release-xl-date {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.714em; /* Figma line height */
-    color: #1E2939;
-    margin: 0;
-    white-space: nowrap;
+    @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.714em] text-[var(--color-netinera-dark)] m-0 whitespace-nowrap;
   }
 
   /* Desktop XL Press Release Category */
   .press-release-xl-category {
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    line-height: 1.714em; /* Figma line height */
-    color: #1E2939;
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 500;
+    @apply font-[var(--font-family-sans)] text-sm leading-[1.714em] text-[var(--color-netinera-dark)] m-0 uppercase font-medium;
   }
 
   /* Desktop XL Press Release Separator */
   .press-release-xl-separator {
-    width: 1px;
-    height: 20px;
-    background: #1E2939;
-    flex-shrink: 0;
+    @apply w-px h-5 bg-[var(--color-netinera-dark)] flex-shrink-0;
   }
 
   /* Desktop XL Press Release Headline */
   .press-release-xl-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 22px; /* Desktop size */
-    line-height: 1.455em; /* Figma line height */
-    color: #1E2939;
-    width: 100%;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-[22px] leading-[1.455em] text-[var(--color-netinera-dark)] w-full m-0;
   }
 
   /* Desktop XL Press Release Link */
   .press-release-xl-link {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: block;
-    width: 100%;
+    @apply text-inherit no-underline transition-colors duration-300 ease-in-out block w-full;
   }
 
   .press-release-xl-link:hover {
-    color: #DD052B;
+    @apply text-[var(--color-netinera-secondary)];
   }
 
   /* ==========================
@@ -223,97 +125,50 @@
 
   /* Mobile SM Press Release List Container */
   .press-release-list-sm {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 20px; /* Small mobile gap */
-    width: 100%;
-    max-width: 400px;
-    padding: 20px; /* Small mobile padding */
-    background: white;
-    border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply flex flex-col items-stretch gap-5 w-full max-w-[400px] p-5 bg-white rounded-xl transition-all duration-300 ease-in-out; /* gap 20px->5, p 20px->5, rounded 12px->xl */
   }
 
   /* Mobile SM Individual Press Release Item */
   .press-release-sm {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 12px; /* Figma layout spacing */
-    width: 100%;
-    padding: 16px 0; /* Mobile padding */
-    transition: all 0.3s ease;
-    cursor: pointer;
+    @apply flex flex-col self-stretch gap-3 w-full py-4 px-0 transition-all duration-300 ease-in-out cursor-pointer; /* gap 12px->3, p 16px 0 -> py-4 */
   }
 
   .press-release-sm:hover {
-    transform: translateX(4px);
-    background: rgb(221 5 43 / 2%);
-    border-radius: 8px;
-    padding: 16px;
-    margin: -16px 0;
+    @apply transform translate-x-1 bg-[var(--color-netinera-secondary)]/5 rounded-lg p-4 -my-4;
   }
 
   /* Mobile SM Press Release Meta */
   .press-release-sm-meta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    align-self: stretch;
-    gap: 4px; /* Small mobile gap */
-    width: 100%;
+    @apply flex flex-col items-start self-stretch gap-1 w-full; /* 4px -> gap-1 */
   }
 
   /* Mobile SM Press Release Date */
   .press-release-sm-date {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.714em; /* Figma line height */
-    color: #1E2939;
-    margin: 0;
+    @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.714em] text-[var(--color-netinera-dark)] m-0;
   }
 
   .press-release-sm-date::after {
-    content: " • ";
-    color: #1E2939;
-    margin-left: 4px;
+    content: " • "; /* Keep custom content */
+    @apply text-[var(--color-netinera-dark)] ml-1;
   }
 
   /* Mobile SM Press Release Category */
   .press-release-sm-category {
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    line-height: 1.714em; /* Figma line height */
-    color: #1E2939;
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 500;
+    @apply font-[var(--font-family-sans)] text-sm leading-[1.714em] text-[var(--color-netinera-dark)] m-0 uppercase font-medium;
   }
 
   /* Mobile SM Press Release Headline */
   .press-release-sm-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px; /* Mobile size */
-    line-height: 1.4em; /* Mobile line height */
-    color: #1E2939;
-    width: 100%;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.4em] text-[var(--color-netinera-dark)] w-full m-0; /* 18px -> text-lg */
   }
 
   /* Mobile SM Press Release Link */
   .press-release-sm-link {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: block;
-    width: 100%;
+    @apply text-inherit no-underline transition-colors duration-300 ease-in-out block w-full;
   }
 
   .press-release-sm-link:hover {
-    color: #DD052B;
+    @apply text-[var(--color-netinera-secondary)];
   }
 
   /* ==========================
@@ -322,33 +177,22 @@
 
   /* Press Release Interactive Enhancement */
   .press-release-interactive {
-    position: relative;
-    overflow: hidden;
+    @apply relative overflow-hidden;
   }
 
   .press-release-interactive::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgb(221 5 43 / 5%), transparent);
-    transition: left 0.5s ease;
+    @apply absolute top-0 -left-full w-full h-full transition-[left] duration-500 ease-in-out;
+    background: linear-gradient(90deg, transparent, rgb(var(--color-netinera-secondary-rgb) / 0.05), transparent); /* Assuming --color-netinera-secondary-rgb */
   }
 
   .press-release-interactive:hover::before {
-    left: 100%;
+    @apply left-full;
   }
 
   /* Press Release Divider */
   .press-release-divider {
-    width: 100%;
-    height: 1px;
-    background: #E7E5E4; /* Figma stroke color */
-    border: none;
-    margin: 0;
-    flex-shrink: 0;
+    @apply w-full h-px bg-stone-200 border-none m-0 flex-shrink-0; /* #E7E5E4 is stone-200 */
   }
 
   /* ==========================
@@ -356,41 +200,22 @@
    * ========================== */
 
   /* Badge Styled Press Releases */
-  .press-release-badges .press-release-responsive-meta {
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
+  .press-release-badges .press-release-responsive-meta { /* Applies to responsive variant with badges */
+    @apply flex-row items-center gap-3; /* 12px -> gap-3 */
   }
 
   /* Badge Date */
   .press-release-badge-date {
-    background: #F3F4F6;
-    color: #1E2939;
-    font-family: Roboto, sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.5em;
-    padding: 4px 8px;
-    border-radius: 6px;
-    white-space: nowrap;
+    @apply bg-gray-100 text-[var(--color-netinera-dark)] font-[var(--font-family-sans)] font-medium text-xs leading-[1.5em] py-1 px-2 rounded-md whitespace-nowrap; /* #F3F4F6 is gray-100 */
   }
 
   .press-release-badge-date::after {
-    content: none; /* Remove separator for badges */
+    @apply content-none; /* Remove separator for badges */
   }
 
   /* Badge Category */
   .press-release-badge-category {
-    background: #DD052B;
-    color: white;
-    font-family: Roboto, sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.5em;
-    text-transform: uppercase;
-    padding: 4px 8px;
-    border-radius: 6px;
-    white-space: nowrap;
+    @apply bg-[var(--color-netinera-secondary)] text-white font-[var(--font-family-sans)] font-medium text-xs leading-[1.5em] uppercase py-1 px-2 rounded-md whitespace-nowrap;
   }
 
   /* ==========================
@@ -398,134 +223,116 @@
    * ========================== */
 
   /* Tablet breakpoint (≥ 768px) */
-  @media (width >= 768px) {
-    .press-release-responsive-meta {
-      flex-direction: row;
-      align-items: center;
-      gap: 10px;
+  @media (width >= 768px) { /* netinera-tablet */
+    .press-release-responsive-meta { /* Styles for the -responsive variant on tablet */
+      @apply flex-row items-center gap-2.5; /* 10px */
     }
 
     .press-release-responsive-date::after {
-      content: none; /* Remove mobile separator */
+      @apply content-none; /* Remove mobile separator */
     }
 
     .press-release-responsive-separator {
-      display: block; /* Show separator on tablet+ */
+      @apply block; /* Show separator on tablet+ */
     }
 
     .press-release-responsive-headline {
-      font-size: 20px;
-      line-height: 1.4em;
+      @apply text-[20px] leading-[1.4em];
     }
 
-    .press-release-list-responsive {
-      padding: 32px;
-      gap: 28px;
+    .press-release-list-responsive { /* Styles for the -responsive list on tablet */
+      @apply p-8 gap-7; /* p 32px, gap 28px */
     }
 
-    .press-release-responsive {
-      padding: 18px 0;
+    .press-release-responsive { /* Styles for the -responsive item on tablet */
+      @apply py-[18px] px-0;
     }
 
     .press-release-responsive:hover {
-      padding: 18px;
-      margin: -18px 0;
-      transform: translateX(6px);
+      @apply p-[18px] -my-[18px] transform translate-x-1.5; /* 6px */
     }
   }
 
   /* Desktop breakpoint (≥ 1024px) */
-  @media (width >= 1024px) {
-    .press-release-responsive-headline {
-      font-size: 22px;
-      line-height: 1.455em;
+  @media (width >= 1024px) { /* netinera-desktop */
+    .press-release-responsive-headline { /* Further refinement for -responsive variant's headline on desktop */
+      @apply text-[22px] leading-[1.455em];
     }
 
-    .press-release-list-responsive {
-      padding: 40px;
-      gap: 32px;
+    .press-release-list-responsive { /* Further refinement for -responsive list on desktop */
+      @apply p-10 gap-8; /* p 40px, gap 32px */
     }
 
-    .press-release-responsive {
-      padding: 20px 0;
+    .press-release-responsive { /* Further refinement for -responsive item on desktop */
+      @apply py-5 px-0; /* 20px */
     }
 
     .press-release-responsive:hover {
-      padding: 20px;
-      margin: -20px 0;
-      transform: translateX(8px);
+      @apply p-5 -my-5 transform translate-x-2; /* 8px */
     }
   }
 
   /* Large desktop optimization */
-  @media (width >= 1280px) {
+  @media (width >= 1280px) { /* netinera-wide */
     .press-release-list-responsive,
-    .press-release-list-xl {
-      padding: 48px;
-      gap: 36px;
+    .press-release-list-xl { /* Apply to both -responsive and -xl list variants */
+      @apply p-12 gap-9; /* p 48px, gap 36px */
     }
 
     .press-release-responsive,
-    .press-release-xl {
-      padding: 24px 0;
+    .press-release-xl { /* Apply to both -responsive and -xl item variants */
+      @apply py-6 px-0; /* 24px */
     }
 
     .press-release-responsive:hover,
     .press-release-xl:hover {
-      padding: 24px;
-      margin: -24px 0;
-      transform: translateX(12px);
+      @apply p-6 -my-6 transform translate-x-3; /* 12px */
     }
   }
 
-  /* Mobile optimization */
-  @media (width <= 767px) {
-    .press-release-sm-meta {
-      gap: 4px;
+  /* Mobile optimization - These are overrides for -xl and -sm variants when viewport is small */
+  @media (width <= 767px) { /* max-netinera-mobile */
+    .press-release-sm-meta { /* This specifically targets -sm variant's meta */
+      @apply gap-1; /* 4px */
     }
 
     .press-release-list-responsive,
     .press-release-list-xl,
-    .press-release-list-sm {
-      padding: 24px;
-      gap: 20px;
+    .press-release-list-sm { /* All list variants get these overrides */
+      @apply p-6 gap-5; /* p 24px, gap 20px */
     }
 
     .press-release-responsive,
     .press-release-xl,
-    .press-release-sm {
-      padding: 16px 0;
+    .press-release-sm { /* All item variants get these overrides */
+      @apply py-4 px-0; /* 16px */
     }
 
     .press-release-responsive:hover,
     .press-release-xl:hover,
     .press-release-sm:hover {
-      padding: 16px;
-      margin: -16px 0;
-      transform: translateX(4px);
+      @apply p-4 -my-4 transform translate-x-1; /* 4px */
     }
   }
 
   /* Small mobile optimization */
-  @media (width <= 479px) {
+  @media (width <= 479px) { /* max-xs */
     .press-release-list-responsive,
     .press-release-list-xl,
     .press-release-list-sm {
-      padding: 20px;
-      gap: 16px;
+      @apply p-5 gap-4; /* p 20px, gap 16px */
     }
 
     .press-release-responsive,
     .press-release-xl,
     .press-release-sm {
-      padding: 12px 0;
+      @apply py-3 px-0; /* 12px */
     }
 
     .press-release-responsive-headline,
     .press-release-xl-headline,
-    .press-release-sm-headline {
-      font-size: 16px;
-      line-height: 1.4em;
+    .press-release-sm-headline { /* All headline variants */
+      @apply text-base leading-[1.4em]; /* 16px */
     }
 
     .press-release-responsive-date,
@@ -533,9 +340,8 @@
     .press-release-xl-date,
     .press-release-xl-category,
     .press-release-sm-date,
-    .press-release-sm-category {
-      font-size: 12px;
-      line-height: 1.6em;
+    .press-release-sm-category { /* All meta text variants */
+      @apply text-xs leading-[1.6em]; /* 12px */
     }
   }
 
@@ -544,25 +350,21 @@
    * ========================== */
 
   /* Focus States - must come before all hover selectors */
-  .press-release-responsive:focus,
-  .press-release-xl:focus,
-  .press-release-sm:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
-    border-radius: 8px;
+  .press-release-responsive:focus, /* Should be focus-visible */
+  .press-release-xl:focus, /* Should be focus-visible */
+  .press-release-sm:focus { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2 rounded-lg;
   }
 
-  .press-release-responsive-link:focus,
-  .press-release-xl-link:focus,
-  .press-release-sm-link:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
-    border-radius: 4px;
+  .press-release-responsive-link:focus, /* Should be focus-visible */
+  .press-release-xl-link:focus, /* Should be focus-visible */
+  .press-release-sm-link:focus { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2 rounded-sm;
   }
 
   /* Light Variant (Default) */
   .press-release-variant-light {
-    background: #F9FAFB;
+    @apply bg-gray-50; /* #F9FAFB */
   }
 
   .press-release-variant-light .press-release-responsive-headline,
@@ -574,21 +376,21 @@
   .press-release-variant-light .press-release-xl-category,
   .press-release-variant-light .press-release-sm-date,
   .press-release-variant-light .press-release-sm-category {
-    color: #374151;
+    @apply text-gray-700; /* #374151 */
   }
 
   .press-release-variant-light .press-release-divider {
-    background: #D1D5DB;
+    @apply bg-gray-300; /* #D1D5DB */
   }
 
   .press-release-variant-light .press-release-responsive-separator,
   .press-release-variant-light .press-release-xl-separator {
-    background: #374151;
+    @apply bg-gray-700; /* #374151 */
   }
 
   /* Dark Variant */
   .press-release-variant-dark {
-    background: #1E2939;
+    @apply bg-[var(--color-netinera-dark)];
   }
 
   .press-release-variant-dark .press-release-responsive-headline,
@@ -600,27 +402,27 @@
   .press-release-variant-dark .press-release-xl-category,
   .press-release-variant-dark .press-release-sm-date,
   .press-release-variant-dark .press-release-sm-category {
-    color: white;
+    @apply text-white;
   }
 
   .press-release-variant-dark .press-release-divider {
-    background: rgb(255 255 255 / 10%);
+    @apply bg-white/10;
   }
 
   .press-release-variant-dark .press-release-responsive-separator,
   .press-release-variant-dark .press-release-xl-separator {
-    background: rgb(255 255 255 / 60%);
+    @apply bg-white/60;
   }
 
   .press-release-variant-dark .press-release-responsive:hover,
   .press-release-variant-dark .press-release-xl:hover,
   .press-release-variant-dark .press-release-sm:hover {
-    background: rgb(255 255 255 / 5%);
+    @apply bg-white/5;
   }
 
   /* Primary Variant */
   .press-release-variant-primary {
-    background: #00685E;
+    @apply bg-[var(--color-netinera-primary)];
   }
 
   .press-release-variant-primary .press-release-responsive-headline,
@@ -632,28 +434,28 @@
   .press-release-variant-primary .press-release-xl-category,
   .press-release-variant-primary .press-release-sm-date,
   .press-release-variant-primary .press-release-sm-category {
-    color: white;
+    @apply text-white;
   }
 
   .press-release-variant-primary .press-release-divider {
-    background: rgb(255 255 255 / 20%);
+    @apply bg-white/20;
   }
 
   .press-release-variant-primary .press-release-responsive-separator,
   .press-release-variant-primary .press-release-xl-separator {
-    background: rgb(255 255 255 / 60%);
+    @apply bg-white/60;
   }
 
   .press-release-variant-primary .press-release-responsive:hover,
   .press-release-variant-primary .press-release-xl:hover,
   .press-release-variant-primary .press-release-sm:hover {
-    background: rgb(255 255 255 / 10%);
+    @apply bg-white/10;
   }
 
   .press-release-variant-primary .press-release-responsive-link:hover,
   .press-release-variant-primary .press-release-xl-link:hover,
   .press-release-variant-primary .press-release-sm-link:hover {
-    color: #FBBF24; /* Accent yellow for primary variant */
+    @apply text-yellow-400; /* #FBBF24 is approx yellow-400 */
   }
 
   /* ==========================
@@ -661,18 +463,17 @@
    * ========================== */
 
   /* Keyboard Navigation */
-  .press-release-responsive[tabindex]:focus,
-  .press-release-xl[tabindex]:focus,
-  .press-release-sm[tabindex]:focus {
-    background: rgb(221 5 43 / 5%);
-    transform: translateX(4px);
+  .press-release-responsive[tabindex]:focus, /* Should be focus-visible */
+  .press-release-xl[tabindex]:focus, /* Should be focus-visible */
+  .press-release-sm[tabindex]:focus { /* Should be focus-visible */
+    @apply bg-[var(--color-netinera-secondary)]/5 transform translate-x-1;
   }
 
   /* Screen Reader Support */
   .press-release-list-responsive[role="region"],
   .press-release-list-xl[role="region"],
   .press-release-list-sm[role="region"] {
-    /* Ensures proper accessibility labeling */
+    /* Ensures proper accessibility labeling - No specific CSS */
   }
 
   /* High Contrast Mode */
@@ -680,24 +481,22 @@
     .press-release-list-responsive,
     .press-release-list-xl,
     .press-release-list-sm {
-      border: 2px solid #1E2939;
+      @apply border-2 border-[var(--color-netinera-dark)];
     }
 
     .press-release-responsive-headline,
     .press-release-xl-headline,
     .press-release-sm-headline {
-      font-weight: 600;
+      @apply font-semibold;
     }
 
     .press-release-divider {
-      background: #1E2939;
-      height: 2px;
+      @apply bg-[var(--color-netinera-dark)] h-0.5;
     }
 
     .press-release-responsive-separator,
     .press-release-xl-separator {
-      background: #1E2939;
-      width: 2px;
+      @apply bg-[var(--color-netinera-dark)] w-0.5;
     }
   }
 
@@ -712,18 +511,17 @@
     .press-release-responsive-link,
     .press-release-xl-link,
     .press-release-sm-link {
-      transition: none;
-      animation: none;
+      @apply motion-reduce:transition-none motion-reduce:animation-none;
     }
 
     .press-release-responsive:hover,
     .press-release-xl:hover,
     .press-release-sm:hover {
-      transform: none;
+      @apply motion-reduce:transform-none;
     }
 
     .press-release-interactive::before {
-      display: none;
+      @apply motion-reduce:hidden; /* Or transition-none if it's a CSS transition based effect */
     }
   }
 
@@ -735,42 +533,31 @@
     .press-release-list-responsive,
     .press-release-list-xl,
     .press-release-list-sm {
-      background: white !important;
-      border: 1px solid #ddd;
-      box-shadow: none !important;
-      padding: 20px !important;
-      gap: 16px !important;
+      @apply print:bg-white !important print:border print:border-gray-300 print:shadow-none !important print:p-5 !important print:gap-4 !important;
     }
 
     .press-release-responsive,
     .press-release-xl,
     .press-release-sm {
-      padding: 8px 0 !important;
-      border-bottom: 1px solid #eee;
+      @apply print:py-2 print:px-0 !important print:border-b print:border-gray-200;
     }
 
     .press-release-responsive:hover,
     .press-release-xl:hover,
     .press-release-sm:hover {
-      background: none !important;
-      transform: none !important;
-      padding: 8px 0 !important;
-      margin: 0 !important;
+      @apply print:bg-transparent !important print:transform-none !important print:p-2 print:px-0 !important print:m-0 !important;
     }
 
     .press-release-responsive-headline,
     .press-release-xl-headline,
     .press-release-sm-headline {
-      color: black !important;
-      font-size: 16px !important;
-      line-height: 1.4 !important;
+      @apply print:text-black !important print:text-base !important print:leading-[1.4] !important;
     }
 
     .press-release-responsive-link,
     .press-release-xl-link,
     .press-release-sm-link {
-      color: black !important;
-      text-decoration: none !important;
+      @apply print:text-black !important print:no-underline !important;
     }
 
     .press-release-responsive-date,
@@ -779,26 +566,21 @@
     .press-release-xl-category,
     .press-release-sm-date,
     .press-release-sm-category {
-      color: #666 !important;
-      font-size: 12px !important;
+      @apply print:text-gray-500 !important print:text-xs !important;
     }
 
     .press-release-divider {
-      background: #ddd !important;
-      height: 1px !important;
+      @apply print:bg-gray-300 !important print:h-px !important;
     }
 
     .press-release-responsive-separator,
     .press-release-xl-separator {
-      background: #666 !important;
-      width: 1px !important;
+      @apply print:bg-gray-500 !important print:w-px !important;
     }
 
     .press-release-badge-date,
     .press-release-badge-category {
-      background: #f0f0f0 !important;
-      color: black !important;
-      border: 1px solid #ddd !important;
+      @apply print:bg-gray-100 !important print:text-black !important print:border print:border-gray-300 !important;
     }
   }
 

@@ -28,23 +28,23 @@
 }
 
 /* Slider is hidden on larger viewports */
-@media (width >= 640px) {
-  .ce-slider-contact-cards {
-    @apply hidden;
-  }
+.ce-slider-contact-cards {
+  @apply sm:hidden; /* Was: @media (width >= 640px) */
 }
 
 /* Ensure only grid layout is visible on desktop, hide flex layout */
-@media (width >= 640px) {
+/* These rules are very specific and rely on attribute selectors for existing Tailwind classes. */
+/* While they can be kept, a better approach would be to manage visibility directly in HTML or via JS. */
+@media (width >= 640px) { /* Keeping media query for these complex selectors for now */
   .aside-contact [class*="sm:flex"] {
-    @apply hidden;
+    @apply hidden; /* This would effectively be sm:hidden if applied directly */
   }
 
   .aside-contact [class*="sm:grid"] {
-    @apply grid grid-cols-2;
+    @apply grid grid-cols-2; /* This would be sm:grid sm:grid-cols-2 if applied directly */
   }
 }
 
-:is(figure, .image) img {
-  height: 100% !important;
+:is(figure, .image) img { /* Global override - consider scope */
+  @apply h-full !important;
 }

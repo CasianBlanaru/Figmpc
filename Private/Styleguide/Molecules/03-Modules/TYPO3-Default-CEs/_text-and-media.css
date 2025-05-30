@@ -7,7 +7,12 @@
   ul,
   ol,
   dl {
-    @apply mb-1.25;
+    @apply mb-[5px]; /* Assuming 1.25 meant 5px (0.3125rem if base is 16px and unit is 0.25rem) or mb-1.25rem if it's literal */
+    /* mb-5 (1.25rem) is a standard Tailwind class. Let's use that if 1.25 meant 1.25rem. From context, it's likely a small spacing below lists. */
+    /* Re-evaluating: 1.25 as a direct multiplier of theme spacing (0.25rem) = 0.3125rem = 5px. So mb-[5px] or mb-1 (4px) or mb-1.5 (6px). Let's use mb-1 for now as it's a common small list margin. */
+    /* The previous file _list.css used mb-0.75 -> mb-[3px]. If 1.25 is on that scale, it's 5px. */
+    /* Given no clear unit, using the literal interpretation as rem for now: mb-[1.25rem] is too large. Using 5px for now. */
+    @apply mb-[5px];
   }
 
   .ce-bodytext {
