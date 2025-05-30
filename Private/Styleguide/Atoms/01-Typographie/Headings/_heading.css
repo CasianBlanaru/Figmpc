@@ -16,145 +16,93 @@
   .h4,
   .h5,
   .h6 {
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-align: left;
-    color: #1E2939;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal uppercase text-left text-[var(--color-netinera-dark)] m-0;
+    /* font-weight is defined per heading level in theme.css vars, e.g. --font-weight-headline-h1-sm */
   }
 
   /* === H1 HEADING === */
   h1,
   .h1 {
-    /* Mobile First (320px+) */
-    font-size: 32px;
-    line-height: 1.125em; /* 36px / 32px = 1.125 */
-    letter-spacing: 1.25%; /* Mobile letter-spacing */
-    margin-bottom: 24px; /* Mobile spacing */
-
-    /* Desktop (1024px+) */
-    @media (width >= 1024px) {
-      font-size: 60px;
-      line-height: 1.067em; /* 64px / 60px = 1.0667 */
-      letter-spacing: 0.67%; /* Desktop letter-spacing */
-      margin-bottom: 36px; /* Desktop spacing */
-    }
+    /* Base mobile styles from (width <= 767px) */
+    @apply text-[28px] leading-[1.2em] font-[var(--font-weight-headline-h1-sm)] mb-[var(--spacing-headline-body-h1-sm)]; /* Using sm margin for base mobile */
+    /* Tablet styles using 'sm' variables */
+    @apply netinera-tablet:text-[var(--font-size-headline-h1-sm)] netinera-tablet:leading-[var(--line-height-headline-h1-sm)] netinera-tablet:tracking-[var(--letter-spacing-headline-h1-sm)];
+    /* Desktop styles using 'xl' variables */
+    @apply netinera-desktop:text-[var(--font-size-headline-h1-xl)] netinera-desktop:leading-[var(--line-height-headline-h1-xl)] netinera-desktop:tracking-[var(--letter-spacing-headline-h1-xl)] netinera-desktop:font-[var(--font-weight-headline-h1-xl)] netinera-desktop:mb-[var(--spacing-headline-body-h1-xl)];
   }
 
   /* === H2 HEADING === */
   h2,
   .h2 {
-    /* Mobile First */
-    font-size: 26px;
-    line-height: 1.231em; /* 32px / 26px = 1.2308 */
-    letter-spacing: 1.54%; /* Mobile letter-spacing */
-    margin-bottom: 20px; /* Mobile spacing */
-
-    /* Desktop */
-    @media (width >= 1024px) {
-      font-size: 40px;
-      line-height: 1.2em; /* 48px / 40px = 1.2 */
-      letter-spacing: 1.0%; /* Desktop letter-spacing */
-      margin-bottom: 32px; /* Desktop spacing */
-    }
+    /* Base mobile styles from (width <= 767px) */
+    @apply text-[24px] leading-[1.25em] font-[var(--font-weight-headline-h2-sm)] mb-[var(--spacing-headline-body-h2-sm)]; /* Using sm margin for base mobile */
+    /* Tablet styles using 'sm' variables */
+    @apply netinera-tablet:text-[var(--font-size-headline-h2-sm)] netinera-tablet:leading-[var(--line-height-headline-h2-sm)] netinera-tablet:tracking-[var(--letter-spacing-headline-h2-sm)];
+    /* Desktop styles using 'xl' variables */
+    @apply netinera-desktop:text-[var(--font-size-headline-h2-xl)] netinera-desktop:leading-[var(--line-height-headline-h2-xl)] netinera-desktop:tracking-[var(--letter-spacing-headline-h2-xl)] netinera-desktop:font-[var(--font-weight-headline-h2-xl)] netinera-desktop:mb-[var(--spacing-headline-body-h2-xl)];
   }
 
   /* === H3 HEADING === */
   h3,
   .h3 {
-    /* Mobile First */
-    font-size: 22px;
-    line-height: 1.273em; /* 28px / 22px = 1.2727 */
-    margin-bottom: 16px; /* Mobile spacing */
-
-    /* Desktop */
-    @media (width >= 1024px) {
-      font-size: 30px;
-      line-height: 1.2em; /* 36px / 30px = 1.2 */
-      margin-bottom: 20px; /* Desktop spacing */
-    }
+    /* Base mobile styles from (width <= 767px) */
+    @apply text-[20px] leading-[1.3em] font-[var(--font-weight-headline-h3-sm)] mb-[var(--spacing-headline-body-h3-sm)]; /* Using sm margin for base mobile */
+    /* Tablet styles using 'sm' variables */
+    @apply netinera-tablet:text-[var(--font-size-headline-h3-sm)] netinera-tablet:leading-[var(--line-height-headline-h3-sm)];
+    /* letter-spacing for H3-sm not in theme.css, defaults to browser/Tailwind normal for tablet */
+    /* Desktop styles using 'xl' variables */
+    @apply netinera-desktop:text-[var(--font-size-headline-h3-xl)] netinera-desktop:leading-[var(--line-height-headline-h3-xl)] netinera-desktop:font-[var(--font-weight-headline-h3-xl)] netinera-desktop:mb-[var(--spacing-headline-body-h3-xl)];
+    /* letter-spacing for H3-xl not in theme.css */
   }
 
   /* === H4 HEADING === */
   h4,
   .h4 {
-    /* Mobile First */
-    font-size: 20px;
-    line-height: 1.4em; /* 28px / 20px = 1.4 */
-    margin-bottom: 14px; /* Mobile spacing */
-
-    /* Desktop */
-    @media (width >= 1024px) {
-      font-size: 24px;
-      line-height: 1.333em; /* 32px / 24px = 1.333 */
-      margin-bottom: 16px; /* Desktop spacing */
-    }
+    @apply text-[var(--font-size-headline-h4-sm)] leading-[var(--line-height-headline-h4-sm)] font-[var(--font-weight-headline-h4-sm)] mb-[var(--spacing-headline-body-h4-sm)];
+    /* letter-spacing for H4-sm not in theme.css */
+    @apply netinera-desktop:text-[var(--font-size-headline-h4-xl)] netinera-desktop:leading-[var(--line-height-headline-h4-xl)] netinera-desktop:font-[var(--font-weight-headline-h4-xl)] netinera-desktop:mb-[var(--spacing-headline-body-h4-xl)];
+    /* letter-spacing for H4-xl not in theme.css */
   }
 
   /* === H5 HEADING === */
   h5,
   .h5 {
-    /* Mobile First */
-    font-size: 18px;
-    line-height: 1.444em; /* 26px / 18px = 1.444 */
-    margin-bottom: 12px; /* Mobile spacing */
-
-    /* Desktop */
-    @media (width >= 1024px) {
-      font-size: 22px;
-      line-height: 1.455em; /* 32px / 22px = 1.455 */
-      margin-bottom: 14px; /* Desktop spacing */
-    }
+    @apply text-[var(--font-size-headline-h5-sm)] leading-[var(--line-height-headline-h5-sm)] font-[var(--font-weight-headline-h5-sm)] mb-[var(--spacing-headline-body-h5-sm)];
+    /* letter-spacing for H5-sm not in theme.css */
+    @apply netinera-desktop:text-[var(--font-size-headline-h5-xl)] netinera-desktop:leading-[var(--line-height-headline-h5-xl)] netinera-desktop:font-[var(--font-weight-headline-h5-xl)] netinera-desktop:mb-[var(--spacing-headline-body-h5-xl)];
+    /* letter-spacing for H5-xl not in theme.css */
   }
 
   /* === H6 HEADING === */
   h6,
   .h6 {
-    /* Mobile First */
-    font-size: 16px;
-    line-height: 1.5em; /* 24px / 16px = 1.5 */
-    margin-bottom: 10px; /* Mobile spacing */
-
-    /* Desktop */
-    @media (width >= 1024px) {
-      font-size: 18px;
-      line-height: 1.444em; /* 26px / 18px = 1.444 */
-      margin-bottom: 12px; /* Desktop spacing */
-    }
+    @apply text-[var(--font-size-headline-h6-sm)] leading-[var(--line-height-headline-h6-sm)] font-[var(--font-weight-headline-h6-sm)] mb-[var(--spacing-headline-body-h6-sm)];
+    /* letter-spacing for H6-sm not in theme.css */
+    @apply netinera-desktop:text-[var(--font-size-headline-h6-xl)] netinera-desktop:leading-[var(--line-height-headline-h6-xl)] netinera-desktop:font-[var(--font-weight-headline-h6-xl)] netinera-desktop:mb-[var(--spacing-headline-body-h6-xl)];
+    /* letter-spacing for H6-xl not in theme.css */
   }
 
   /* === OVERLINE STYLES === */
   .overline {
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.143em; /* 16px / 14px = 1.143 */
-    letter-spacing: 11.43%;
-    text-transform: uppercase;
-    text-align: left;
-    color: #1E2939;
-    margin-bottom: 0;
+    @apply font-[var(--font-family-display)] uppercase text-left text-[var(--color-netinera-dark)] mb-0 italic;
+    /* Default to 'sm' variant styles if .overline is used alone */
+    @apply font-[var(--font-weight-overline-sm)] text-[var(--font-size-overline-sm)] leading-[var(--line-height-overline-sm)] tracking-[var(--letter-spacing-overline-sm)];
   }
 
   /* Overline Variants */
   .overline-xs {
-    font-size: 12px;
-    line-height: 1.167em; /* 14px / 12px = 1.167 */
-    letter-spacing: 13.33%;
+    @apply font-[var(--font-family-display)] uppercase text-left text-[var(--color-netinera-dark)] mb-0 italic;
+    @apply font-[var(--font-weight-overline-xs)] text-[var(--font-size-overline-xs)] leading-[var(--line-height-overline-xs)] tracking-[var(--letter-spacing-overline-xs)];
   }
 
   .overline-sm {
-    font-size: 14px;
-    line-height: 1.143em; /* 16px / 14px = 1.143 */
-    letter-spacing: 11.43%;
+    @apply font-[var(--font-family-display)] uppercase text-left text-[var(--color-netinera-dark)] mb-0 italic;
+    @apply font-[var(--font-weight-overline-sm)] text-[var(--font-size-overline-sm)] leading-[var(--line-height-overline-sm)] tracking-[var(--letter-spacing-overline-sm)];
   }
 
   .overline-base {
-    font-size: 16px;
-    line-height: 1.25em; /* 20px / 16px = 1.25 */
-    letter-spacing: 10%;
+    @apply font-[var(--font-family-display)] uppercase text-left text-[var(--color-netinera-dark)] mb-0 italic;
+    @apply font-[var(--font-weight-overline-base)] text-[var(--font-size-overline-base)] leading-[var(--line-height-overline-base)] tracking-[var(--letter-spacing-overline-base)];
   }
 }
 
@@ -163,15 +111,15 @@
 
 /* Header spacing utilities */
 .header-spacing-tight header {
-  gap: 8px;
+  @apply gap-2;
 }
 
 .header-spacing-normal header {
-  gap: 16px;
+  @apply gap-4;
 }
 
 .header-spacing-loose header {
-  gap: 24px;
+  @apply gap-6;
 }
 
 /* ==========================
@@ -181,149 +129,60 @@
 
 /* Header Container with Overline + Headline */
 header:has(.overline, h1, h2, h3, h4, h5, h6) {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
+  @apply flex flex-col items-start w-full;
 }
 
 /* Overline + H1 Combination */
 header:has(.overline + h1) {
-  gap: 16px; /* Mobile spacing */
-}
-
-@media (width >= 1024px) {
-  header:has(.overline + h1) {
-    gap: 20px; /* Desktop spacing - Figma Node layout_GYYD8O */
-  }
+  @apply gap-4 netinera-desktop:gap-5; /* Mobile spacing / Desktop spacing */
 }
 
 /* Overline + H2 Combination */
 header:has(.overline + h2) {
-  gap: 14px; /* Mobile spacing */
-}
-
-@media (width >= 1024px) {
-  header:has(.overline + h2) {
-    gap: 16px; /* Desktop spacing - Figma Node layout_5NYWH5 */
-  }
+  @apply gap-[14px] netinera-desktop:gap-4; /* Mobile spacing / Desktop spacing */
 }
 
 /* Overline + H3 Combination */
 header:has(.overline + h3) {
-  gap: 12px; /* Mobile spacing */
-}
-
-@media (width >= 1024px) {
-  header:has(.overline + h3) {
-    gap: 14px; /* Desktop spacing - Figma Node layout_UTYBBQ */
-  }
+  @apply gap-3 netinera-desktop:gap-[14px]; /* Mobile spacing / Desktop spacing */
 }
 
 /* Overline Styling within Headers */
 header .overline {
-  order: -1; /* Ensure overline appears before headline */
-  margin-bottom: 0; /* Remove default margin, use gap instead */
-  color: #6A7282; /* Softer color for overlines in headers */
+  @apply order-[-1] mb-0 text-[var(--color-netinera-gray-medium)];
 }
 
 /* === HEADER SECTION VARIANTS === */
 
 /* Header Section XL (Desktop Layout) */
 .header-section-xl {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 64px;
-  padding: 32px;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  /* Default tablet and smaller, overridden by netinera-wide for larger screens */
+  @apply flex flex-col items-center w-full max-w-netinera-landingpage mx-auto p-6 gap-12 netinera-wide:p-8 netinera-wide:gap-16;
 }
 
 /* Header Section SM (Mobile Layout) */
 .header-section-sm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px;
-  padding: 48px 16px;
-  width: 100%;
-  max-width: 360px;
-  margin: 0 auto;
+  /* Styles for screens <= 767px take precedence */
+  @apply flex flex-col items-center gap-6 py-8 px-4 w-full max-w-[var(--width-container-mobile)] mx-auto;
 }
 
 /* === HEADER GROUP VARIANTS === */
 
 /* Header Group with Background */
 .header-group {
-  background: #FFF;
-  border-radius: 16px;
-  padding: 32px;
-  width: 100%;
+  /* Mobile base, tablet, and wide overrides */
+  @apply bg-white rounded-2xl w-full p-5 netinera-tablet:p-6 netinera-wide:p-8;
 }
 
 .header-group-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 56px;
-  width: 100%;
-}
-
-@media (width <= 767px) {
-  .header-group-content {
-    gap: 28px;
-  }
+  /* Mobile base, tablet, and wide overrides */
+  @apply flex flex-col items-center w-full gap-7 netinera-tablet:gap-10 netinera-wide:gap-14;
 }
 
 /* === RESPONSIVE DESIGN === */
 
-/* Tablet breakpoint */
-@media (width <= 1279px) {
-  .header-section-xl {
-    width: 100%;
-    padding: 24px;
-    gap: 48px;
-  }
-
-  .header-group {
-    padding: 24px;
-  }
-
-  .header-group-content {
-    gap: 40px;
-  }
-}
-
-/* Mobile breakpoint */
-@media (width <= 767px) {
-  .header-section-sm {
-    width: 100%;
-    padding: 32px 16px;
-    gap: 24px;
-  }
-
-  .header-group {
-    padding: 20px;
-  }
-
-  /* Further reduce heading sizes for very small screens */
-  h1, .h1 {
-    font-size: 28px;
-    line-height: 1.2em;
-  }
-
-  h2, .h2 {
-    font-size: 24px;
-    line-height: 1.25em;
-  }
-
-  h3, .h3 {
-    font-size: 20px;
-    line-height: 1.3em;
-  }
-}
+/* Media queries for .header-section-*, .header-group*, and H1-H3 font sizes
+   have been merged into their respective class definitions using responsive prefixes. */
 
 /* === ACCESSIBILITY & SPECIAL STATES === */
 
@@ -331,16 +190,14 @@ header .overline {
 @media (prefers-contrast: high) {
   h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: #000;
-    font-weight: 600;
+    @apply text-black font-semibold;
   }
 
   .overline,
   .overline-xs,
   .overline-sm,
   .overline-base {
-    color: #000;
-    font-weight: 700;
+    @apply text-black font-bold;
   }
 }
 
@@ -348,7 +205,7 @@ header .overline {
 @media print {
   h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: #000;
+    @apply text-black;
     break-after: avoid;
   }
 
@@ -356,7 +213,7 @@ header .overline {
   .overline-xs,
   .overline-sm,
   .overline-base {
-    color: #000;
+    @apply text-black;
   }
 
   header {
@@ -364,7 +221,7 @@ header .overline {
   }
 
   .header-group {
-    border: 1px solid #000;
+    @apply border border-black;
     break-inside: avoid;
   }
 }
@@ -372,37 +229,36 @@ header .overline {
 /* === FOCUS STATES FOR ACCESSIBILITY === */
 h1:focus, h2:focus, h3:focus, h4:focus, h5:focus, h6:focus,
 .h1:focus, .h2:focus, .h3:focus, .h4:focus, .h5:focus, .h6:focus {
-  outline: 2px solid #DD052B; /* Netinera Primary */
-  outline-offset: 2px;
+  @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
 }
 
 /* === UTILITY CLASSES === */
 
 /* Text alignment utilities for headers */
 .header-text-left {
-  text-align: left;
+  @apply text-left;
 }
 
 .header-text-center {
-  text-align: center;
+  @apply text-center;
 }
 
 .header-text-right {
-  text-align: right;
+  @apply text-right;
 }
 
 /* Header color variants */
 .header-primary h1, .header-primary h2, .header-primary h3,
 .header-primary h4, .header-primary h5, .header-primary h6 {
-  color: #DD052B; /* Netinera Primary */
+  @apply text-[var(--color-netinera-secondary)];
 }
 
 .header-white h1, .header-white h2, .header-white h3,
 .header-white h4, .header-white h5, .header-white h6 {
-  color: #FFF;
+  @apply text-white;
 }
 
 .header-gray h1, .header-gray h2, .header-gray h3,
 .header-gray h4, .header-gray h5, .header-gray h6 {
-  color: #6A7282; /* Netinera Gray */
+  @apply text-[var(--color-netinera-gray-medium)];
 }

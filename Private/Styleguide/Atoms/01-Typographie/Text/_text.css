@@ -8,61 +8,39 @@
 
 /* Paragraph Base Styles */
 p {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.75em; /* 28px / 16px = 1.75 */
-  text-align: left;
-  color: #1E2939; /* Netinera Primary Text */
-  margin: 0 0 20px; /* Bottom margin for paragraph spacing */
+  @apply font-[var(--font-family-sans)] font-[var(--font-weight-body-base)] text-[var(--font-size-body-base)] leading-[var(--line-height-body-base)] text-left text-[var(--color-netinera-dark)] mb-5;
+  /* Desktop line-height from media query */
+  @apply netinera-desktop:leading-[1.5em] netinera-desktop:mb-5; /* 1.5em, 20px */
 }
 
 /* Body Text Large */
 .text-lg,
 .body-lg {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.6667em; /* 30px / 18px = 1.6667 */
-  text-align: left;
-  color: #1E2939;
-  margin-bottom: 24px; /* Larger spacing for large text */
+  /* Mobile first styles from original .body-lg */
+  @apply font-[var(--font-family-sans)] font-[var(--font-weight-body-lg)] text-[var(--font-size-body-lg)] leading-[var(--line-height-body-lg)] text-left text-[var(--color-netinera-dark)] mb-6; /* 18px, 1.6667em, mb-24px */
+  /* Desktop styles from @media (width >= 1024px) .body-lg are identical to mobile, so no netinera-desktop needed if vars are same */
 }
 
 /* Body Text Base (Default) */
 .text-base,
 .body-base {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.75em; /* 28px / 16px = 1.75 */
-  text-align: left;
-  color: #1E2939;
-  margin-bottom: 20px;
+  @apply font-[var(--font-family-sans)] font-[var(--font-weight-body-base)] text-[var(--font-size-body-base)] leading-[var(--line-height-body-base)] text-left text-[var(--color-netinera-dark)] mb-5;
+  /* Desktop line-height from media query */
+  @apply netinera-desktop:leading-[1.5em] netinera-desktop:mb-5;
 }
 
 /* Body Text Small */
 .text-sm,
 .body-sm {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
-  text-align: left;
-  color: #1E2939;
-  margin-bottom: 16px;
+  @apply font-[var(--font-family-sans)] font-[var(--font-weight-body-sm)] text-[var(--font-size-body-sm)] leading-[var(--line-height-body-sm)] text-left text-[var(--color-netinera-dark)] mb-4; /* 14px, 1.4286em, mb-16px */
 }
 
 /* Body Text Extra Small */
 .text-xs,
 .body-xs {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.5em; /* 18px / 12px = 1.5 */
-  text-align: left;
-  color: #1E2939;
-  margin-bottom: 12px;
+  /* Assuming font-weight-body-xs is 400 and line-height-body-xs is 1.5 if not in theme.css */
+  /* For now, using values from original CSS if specific theme.css vars are missing */
+  @apply font-[var(--font-family-sans)] font-normal text-[12px] leading-[1.5em] text-left text-[var(--color-netinera-dark)] mb-3; /* 12px, 1.5em, mb-12px */
 }
 
 /* ==========================
@@ -71,32 +49,11 @@ p {
 
 /* Desktop Body Text XL */
 .body-xl-desktop {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.6em; /* 32px / 20px = 1.6 */
-  text-align: left;
-  color: #1E2939;
-  margin-bottom: 28px;
-}
-
-/* Desktop Body Text Large */
-@media (width >= 1024px) {
-  .body-lg {
-    font-size: 18px;
-    line-height: 1.6667em; /* 30px / 18px = 1.6667 */
-    margin-bottom: 24px;
-  }
-}
-
-/* Desktop Body Text Base */
-@media (width >= 1024px) {
-  .body-base,
-  p {
-    font-size: 16px;
-    line-height: 1.5em; /* 24px / 16px = 1.5 - Desktop line-height */
-    margin-bottom: 20px;
-  }
+  /* This class implies desktop-only usage, so no mobile prefix needed if only used on desktop contexts */
+  /* However, to be safe and allow usage on mobile that then changes on desktop: */
+  /* @apply mobile-styles netinera-desktop:text-[20px] netinera-desktop:leading-[1.6em] netinera-desktop:font-[var(--font-family-sans)] netinera-desktop:font-normal netinera-desktop:text-left netinera-desktop:text-[var(--color-netinera-dark)] netinera-desktop:mb-7; */
+  /* Simpler: if it's only for desktop, just apply desktop styles */
+  @apply font-[var(--font-family-sans)] font-normal text-[20px] leading-[1.6em] text-left text-[var(--color-netinera-dark)] mb-7; /* 20px, 1.6em, mb-28px */
 }
 
 /* ==========================
@@ -105,28 +62,25 @@ p {
 
 /* Strong/Bold Text */
 b,
-strong,
+strong {
+  @apply font-[var(--font-weight-bold)]; /* Corresponds to font-bold */
+}
+
 .text-bold,
-.font-bold {
-  font-family: Roboto, sans-serif;
-  font-weight: 700;
-  color: inherit;
+.font-bold { /* .font-bold is a Tailwind class, this ensures it uses the theme variable if needed */
+  @apply font-[var(--font-weight-bold)];
 }
 
 /* Medium Weight Text */
 .text-medium,
-.font-medium {
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
-  color: inherit;
+.font-medium { /* .font-medium is a Tailwind class */
+  @apply font-[var(--font-weight-medium)]; /* Corresponds to font-medium */
 }
 
 /* Light Weight Text */
 .text-light,
-.font-light {
-  font-family: Roboto, sans-serif;
-  font-weight: 300;
-  color: inherit;
+.font-light { /* .font-light is a Tailwind class */
+  @apply font-[var(--font-weight-light)]; /* Corresponds to font-light */
 }
 
 /* ==========================
@@ -135,35 +89,17 @@ strong,
 
 /* Subtitle Large */
 .subtitle-lg {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.6667em; /* 30px / 18px = 1.6667 */
-  text-align: left;
-  color: #1E2939;
-  margin-bottom: 18px;
+  @apply font-[var(--font-family-sans)] font-normal text-[var(--font-size-body-lg)] leading-[var(--line-height-body-lg)] text-left text-[var(--color-netinera-dark)] mb-[18px];
 }
 
 /* Subtitle Base */
 .subtitle-base {
-  font-family: Roboto, sans-serif;
-  font-weight: 500; /* Medium weight for subtitles */
-  font-size: 16px;
-  line-height: 1.625em; /* 26px / 16px = 1.625 */
-  text-align: left;
-  color: #1E2939;
-  margin-bottom: 16px;
+  @apply font-[var(--font-family-sans)] font-medium text-[var(--font-size-body-base)] leading-[1.625em] text-left text-[var(--color-netinera-dark)] mb-4; /* line-height from original */
 }
 
 /* Subtitle Small */
 .subtitle-sm {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
-  text-align: left;
-  color: #1E2939;
-  margin-bottom: 14px;
+  @apply font-[var(--font-family-sans)] font-normal text-[var(--font-size-body-sm)] leading-[var(--line-height-body-sm)] text-left text-[var(--color-netinera-dark)] mb-[14px];
 }
 
 /* ==========================
@@ -173,48 +109,24 @@ strong,
 /* Caption Text */
 .caption,
 .meta-caption {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
-  text-align: left;
-  color: #6A7282; /* Softer gray for captions */
-  margin-bottom: 12px;
+  @apply font-[var(--font-family-sans)] font-normal text-[var(--font-size-body-sm)] leading-[var(--line-height-body-sm)] text-left text-[var(--color-netinera-gray-medium)] mb-3;
 }
 
 /* Caption Bold */
 .caption-bold,
 .meta-caption-medium {
-  font-family: Roboto, sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
-  text-align: left;
-  color: #6A7282;
-  margin-bottom: 12px;
+  @apply font-[var(--font-family-sans)] font-bold text-[var(--font-size-body-sm)] leading-[var(--line-height-body-sm)] text-left text-[var(--color-netinera-gray-medium)] mb-3;
 }
 
 /* Caption Small */
 .caption-sm {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.5em; /* 18px / 12px = 1.5 */
-  text-align: left;
-  color: #6A7282;
-  margin-bottom: 10px;
+  /* Assuming 12px is text-xs equivalent for font-size and line-height if not in theme vars */
+  @apply font-[var(--font-family-sans)] font-normal text-[12px] leading-[1.5em] text-left text-[var(--color-netinera-gray-medium)] mb-[10px];
 }
 
 /* Image Caption (specific for image components) */
 .image-caption {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
-  text-align: center; /* Center-aligned for image captions */
-  color: #1E2939;
-  margin-bottom: 0;
-  width: fit-content;
+  @apply font-[var(--font-family-sans)] font-normal text-[var(--font-size-body-sm)] leading-[var(--line-height-body-sm)] text-center text-[var(--color-netinera-dark)] mb-0 w-fit;
 }
 
 /* ==========================
@@ -224,54 +136,46 @@ strong,
 /* Button Text */
 .button-text,
 .btn-text {
-  font-family: 'Titillium Web', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.4286em; /* 20px / 14px = 1.4286 */
-  letter-spacing: 5.71%; /* Button text letter-spacing */
-  text-transform: uppercase;
-  text-align: center;
-  color: #FFF; /* Default white for buttons */
-  margin-bottom: 0; /* No margin for button text */
+  @apply font-[var(--font-family-display)] font-[var(--font-weight-semibold)] text-[var(--font-size-button-sm)] leading-[var(--line-height-button-sm)] tracking-[var(--letter-spacing-button-sm)] uppercase text-center text-white mb-0;
 }
 
 /* Button Text Dark */
 .button-text-dark {
-  color: #1E2939;
+  @apply text-[var(--color-netinera-dark)];
 }
 
 /* Button Text Primary */
 .button-text-primary {
-  color: #DD052B; /* Netinera Primary */
+  @apply text-[var(--color-netinera-secondary)]; /* DD052B is --color-netinera-secondary (accent) */
 }
 
 /* ==========================
  * === TEXT ALIGNMENT UTILITIES
  * ========================== */
 
-.text-left { text-align: left; }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.text-justify { text-align: justify; }
+.text-left { @apply text-left; }
+.text-center { @apply text-center; }
+.text-right { @apply text-right; }
+.text-justify { @apply text-justify; }
 
 /* ==========================
  * === TEXT COLOR VARIANTS
  * ========================== */
 
 /* Primary Text Colors */
-.text-primary { color: #1E2939; } /* Main text color */
-.text-secondary { color: #6A7282; } /* Secondary gray */
-.text-muted { color: #99A1AF; } /* Muted gray */
+.text-primary { @apply text-[var(--color-netinera-dark)]; }      /* Main text color */
+.text-secondary { @apply text-[var(--color-netinera-gray-medium)]; } /* Secondary gray */
+.text-muted { @apply text-[#99A1AF]; }                           /* Muted gray */
 
 /* Brand Colors */
-.text-brand-primary { color: #DD052B; } /* Netinera Primary Red */
-.text-brand-secondary { color: #00BFA7; } /* Netinera Secondary Teal */
+.text-brand-primary { @apply text-[var(--color-netinera-secondary)]; } /* Netinera Secondary Red (DD052B) */
+.text-brand-secondary { @apply text-[#00BFA7]; }                     /* Netinera Secondary Teal */
 
 /* State Colors */
-.text-white { color: #FFF; }
-.text-black { color: #000; }
-.text-gray-light { color: #D1D5DC; }
-.text-gray-dark { color: #364153; }
+.text-white { @apply text-white; }
+.text-black { @apply text-black; }
+.text-gray-light { @apply text-[#D1D5DC]; } /* Consider mapping to Tailwind gray-300 if appropriate */
+.text-gray-dark { @apply text-[#364153]; }  /* Consider mapping to a Tailwind gray if appropriate */
 
 /* ==========================
  * === LEGACY COMPATIBILITY
@@ -292,50 +196,38 @@ small,
  * ========================== */
 
 /* Mobile optimizations */
-@media (width <= 767px) {
+@media (width <= 767px) { /* Corresponds to max 'netinera-mobile' or 'sm' breakpoint */
   p,
   .body-base {
-    font-size: 16px;
-    line-height: 1.75em; /* Keep mobile line-height for readability */
-    margin-bottom: 18px;
+    @apply text-[16px] leading-[1.75em] mb-[18px];
   }
   
   .body-lg {
-    font-size: 16px;
-    line-height: 1.75em;
-    margin-bottom: 20px;
+    @apply text-[16px] leading-[1.75em] mb-5; /* 20px */
   }
   
-  .body-xl-desktop {
-    font-size: 18px;
-    line-height: 1.6667em;
-    margin-bottom: 22px;
+  .body-xl-desktop { /* This class name implies desktop, applying mobile styles here is per original CSS */
+    @apply text-[18px] leading-[1.6667em] mb-[22px];
   }
 }
 
 /* XS Mobile breakpoint */
-@media (width <= 479px) {
+@media (width <= 479px) { /* Styles for very small screens */
   p,
   .body-base {
-    font-size: 14px;
-    line-height: 1.5714em; /* 22px / 14px = 1.5714 */
-    margin-bottom: 16px;
+    @apply text-[14px] leading-[1.5714em] mb-4; /* 16px */
   }
   
   .body-lg {
-    font-size: 16px;
-    line-height: 1.625em; /* 26px / 16px = 1.625 */
-    margin-bottom: 18px;
+    @apply text-[16px] leading-[1.625em] mb-[18px];
   }
   
   .subtitle-lg {
-    font-size: 16px;
-    line-height: 1.5em;
+    @apply text-[16px] leading-[1.5em];
   }
   
   .subtitle-base {
-    font-size: 14px;
-    line-height: 1.4286em;
+    @apply text-[14px] leading-[1.4286em];
   }
 }
 
@@ -344,20 +236,20 @@ small,
  * ========================== */
 
 /* Text Spacing Variants */
-.text-spacing-tight p { margin-bottom: 12px; }
-.text-spacing-normal p { margin-bottom: 20px; }
-.text-spacing-loose p { margin-bottom: 28px; }
+.text-spacing-tight p { @apply mb-3; }
+.text-spacing-normal p { @apply mb-5; }
+.text-spacing-loose p { @apply mb-7; }
 
 /* No margin utility */
 .text-no-margin,
-.m-0 {
-  margin: 0 !important;
+.m-0 { /* .m-0 is a Tailwind class, this provides an alias or ensures !important */
+  @apply m-0 !important;
 }
 
 /* Margin bottom utilities */
-.mb-tight { margin-bottom: 12px; }
-.mb-normal { margin-bottom: 20px; }
-.mb-loose { margin-bottom: 28px; }
+.mb-tight { @apply mb-3; }
+.mb-normal { @apply mb-5; }
+.mb-loose { @apply mb-7; }
 
 /* ==========================
  * === ACCESSIBILITY & SPECIAL STATES
@@ -367,17 +259,15 @@ small,
 @media (prefers-contrast: high) {
   p, .body-base, .body-lg, .body-sm, .body-xs,
   .subtitle-lg, .subtitle-base, .subtitle-sm {
-    color: #000;
-    font-weight: 600;
+    @apply text-black font-semibold;
   }
   
   .caption, .meta-caption, .caption-bold, .meta-caption-medium {
-    color: #000;
-    font-weight: 700;
+    @apply text-black font-bold;
   }
   
-  .text-secondary, .text-muted {
-    color: #000;
+  .text-secondary, .text-muted { /* Ensure these also have high contrast if they are different grays */
+    @apply text-black;
   }
 }
 
@@ -386,20 +276,17 @@ small,
   p, .body-base, .body-lg, .body-sm, .body-xs,
   .subtitle-lg, .subtitle-base, .subtitle-sm,
   .caption, .meta-caption, .caption-bold, .meta-caption-medium {
-    color: #000;
-    font-size: 12pt;
-    line-height: 1.4;
+    @apply text-black text-[12pt] leading-[1.4];
   }
   
   .button-text, .btn-text {
-    color: #000;
+    @apply text-black;
   }
 }
 
 /* Focus states for interactive text elements */
 .text-interactive:focus {
-  outline: 2px solid #DD052B;
-  outline-offset: 2px;
+  @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
 }
 
 /* ==========================
@@ -411,38 +298,24 @@ p a,
 .body-base a,
 .body-lg a,
 .body-sm a {
-  color: #DD052B;
-  text-decoration: underline;
-  transition: color 0.2s ease;
+  @apply text-[var(--color-netinera-secondary)] underline transition-colors duration-200 ease-in-out;
 }
 
 p a:hover,
 .body-base a:hover,
 .body-lg a:hover,
 .body-sm a:hover {
-  color: #B91C1C;
-  text-decoration: none;
+  @apply text-[var(--color-secondary-800)] no-underline;
 }
 
 /* Quote styling */
 blockquote {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.6667em;
-  font-style: italic;
-  color: #364153;
-  border-left: 4px solid #DD052B;
-  padding-left: 24px;
-  margin: 24px 0;
+  @apply font-[var(--font-family-sans)] font-normal text-[var(--font-size-body-lg)] leading-[var(--line-height-body-lg)] italic text-[#364153] border-l-4 border-[var(--color-netinera-secondary)] pl-6 my-6;
 }
 
 /* Code styling */
 code {
-  font-family: Monaco, Consolas, monospace;
-  font-size: 0.875em;
-  padding: 2px 6px;
-  border-radius: 4px;
+  @apply font-mono text-[0.875em] px-[6px] py-[2px] rounded-sm bg-gray-100 text-gray-800; /* Added some default bg/color for code */
 }
 
 /* ==========================
@@ -451,22 +324,19 @@ code {
 
 /* Text container max-widths for optimal readability */
 .text-container {
-  max-width: 65ch; /* Optimal reading width */
-  margin: 0 auto;
+  @apply max-w-[65ch] mx-auto;
 }
 
 .text-container-wide {
-  max-width: 80ch;
-  margin: 0 auto;
+  @apply max-w-[80ch] mx-auto;
 }
 
 .text-container-narrow {
-  max-width: 45ch;
-  margin: 0 auto;
+  @apply max-w-[45ch] mx-auto;
 }
 
-/* Line height utilities */
-.leading-tight { line-height: 1.25; }
-.leading-normal { line-height: 1.5; }
-.leading-relaxed { line-height: 1.75; }
-.leading-loose { line-height: 2; }
+/* Line height utilities - these match Tailwind's, potentially redundant unless customizing */
+.leading-tight { @apply leading-tight; }
+.leading-normal { @apply leading-normal; }
+.leading-relaxed { @apply leading-relaxed; }
+.leading-loose { @apply leading-loose; }

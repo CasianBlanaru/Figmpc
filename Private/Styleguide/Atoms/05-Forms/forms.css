@@ -31,42 +31,36 @@ input[type="number"],
 input[type="date"],
 textarea,
 select {
-  @apply w-full py-3 px-5 rounded-full;
-  @apply border-1 border-stone-400;
-
-  background-color: #f9fafb;
-
+  @apply w-full py-3 px-5 rounded-full bg-gray-50; /* #f9fafb is gray-50 */
+  @apply border border-stone-400; /* Assuming border-1 meant 1px border */
   @apply text-stone-800;
-  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  @apply focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent;
   @apply transition-all duration-200;
 }
 
 select,
 textarea {
-  @apply !border-1 !border-stone-400;
+  @apply !border !border-stone-400; /* Ensure border width is 1px if that was the intent */
 }
 
 textarea {
-  @apply rounded-2xl min-h-24;
+  @apply rounded-2xl min-h-24; /* Overrides rounded-full for textarea */
 }
 
 /* Enhanced Select Styling */
 select {
-  @apply appearance-none bg-no-repeat pr-16 rounded-full;
-  @apply border-1 border-stone-400;
+  @apply appearance-none bg-no-repeat pr-16; /* rounded-full is applied by default from above */
+  @apply border border-stone-400; /* Assuming border-1 meant 1px border */
 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23374151'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); /* Changed stroke to gray-500 (#6b7280) for better visibility on bg-gray-50 */
   background-size: 1.25rem;
-  background-position: right 16px center;
-  border-radius: 9999px !important;
-  padding-left: 12px !important;
+  background-position: right 1rem center; /* 16px -> 1rem */
+  /* border-radius and padding-left are handled by the default input styling or specific overrides below if select.rounded-full is used */
 }
 
-/* Force rounded corners for all browsers */
-select.rounded-full {
-  border-radius: 9999px !important;
-  padding-left: 12px !important;
-  border-color: #57534e !important;
+/* Force rounded corners for all browsers - specific class if needed beyond default select styling */
+select.rounded-full { /* This class might be redundant if select already gets rounded-full and padding from the common input style */
+  @apply !rounded-full !pl-3 !border-stone-600; /* 12px -> pl-3. #57534e is stone-600 */
 }
 
 /* Form-Rows / Cols */

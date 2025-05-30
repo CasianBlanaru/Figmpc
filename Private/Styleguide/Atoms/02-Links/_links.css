@@ -1,11 +1,11 @@
 /* === Base */
 a,
 .link {
-  @apply text-black hover:text-black focus:text-black;
-  @apply hover:text-primary-700 focus:text-primary-700;
+  @apply text-black; /* Base color */
+  @apply hover:text-[var(--color-primary-700)] focus:text-[var(--color-primary-700)];
   @apply transition-colors duration-500;
 
-  p & {
+  p & { /* When link is inside a paragraph */
     @apply underline underline-offset-4 hover:no-underline focus:no-underline;
   }
 }
@@ -15,17 +15,17 @@ a,
 /* Quicklink */
 .link-quicklink {
   @apply flex gap-1 flex-nowrap;
-  @apply text-left text-black hover:text-black focus:text-black;
+  @apply text-left text-black hover:text-black focus:text-black; /* Base color, hover/focus can be more specific if needed */
 
   > * {
-    @apply leading-1;
+    @apply leading-none; /* Assuming leading-1 meant line-height: 1 */
   }
 
   .icon {
     @apply flex-shrink-0;
 
     &::before {
-      @apply leading-1;
+      @apply leading-none; /* Assuming leading-1 meant line-height: 1 */
     }
   }
 
@@ -38,11 +38,10 @@ a,
       &::after {
         @apply absolute top-0 bottom-0 right-0;
         @apply flex items-center;
-        @apply content-[var(--icon-arrow-right)];
-        @apply text-lg text-primary-700;
+        @apply content-[var(--icon-arrow-right)] text-lg text-[var(--color-primary-700)];
         @apply transition-transform duration-500;
 
-        font-family: icomoon, sans-serif;
+        font-family: icomoon, sans-serif; /* Keep custom font for icon */
       }
     }
   }
@@ -60,11 +59,10 @@ a,
   @apply inline-flex items-center gap-1 flex-nowrap;
 
   &::after {
-    @apply content-[var(--icon-arrow-right)];
-    @apply text-lg text-primary-700 leading-1;
+    @apply content-[var(--icon-arrow-right)] text-lg text-[var(--color-primary-700)] leading-none; /* Assuming leading-1 meant line-height: 1 */
     @apply transition-transform duration-500;
 
-    font-family: icomoon, sans-serif;
+    font-family: icomoon, sans-serif; /* Keep custom font for icon */
   }
 
   &:hover,
@@ -107,68 +105,49 @@ a,
 
 @layer components {
   .netinera-link {
-    color: #00685E; /* Netinera primary color */
-    text-decoration: underline;
-    transition: color 0.2s ease;
+    @apply text-[var(--color-netinera-primary)] underline transition-colors duration-200 ease-in-out;
   }
   
   .netinera-link:hover,
   .netinera-link:focus {
-    color: #DD052B; /* Netinera secondary color */
+    @apply text-[var(--color-netinera-secondary)];
   }
   
   .netinera-link-external {
-    position: relative;
+    @apply relative;
   }
   
   .netinera-link-external::after {
-    content: '↗';
-    margin-left: 4px;
-    font-size: 0.8em;
+    content: '↗'; /* Keep custom content */
+    @apply ml-1 text-[0.8em];
   }
   
   .netinera-link-button {
-    @apply inline-block px-4 py-2 rounded;
-
-    background-color: #00685E; /* Netinera primary color */
-    color: white;
-    text-decoration: none;
-    transition: all 0.2s ease;
+    @apply inline-block px-4 py-2 rounded bg-[var(--color-netinera-primary)] text-white no-underline transition-all duration-200 ease-in-out;
   }
   
   .netinera-link-button:hover {
-    background-color: #DD052B; /* Netinera secondary color */
-    transform: translateY(-1px);
+    @apply hover:bg-[var(--color-netinera-secondary)] hover:-translate-y-px;
   }
   
   .netinera-link-secondary {
-    @apply text-lg;
-
-    color: #00685E; /* Netinera primary color */
-    text-decoration: none;
-    transition: color 0.2s ease;
+    @apply text-lg text-[var(--color-netinera-primary)] no-underline transition-colors duration-200 ease-in-out;
   }
   
   .netinera-link-secondary:hover {
-    color: #DD052B; /* Netinera secondary color */
-    text-decoration: underline;
+    @apply hover:text-[var(--color-netinera-secondary)] hover:underline;
   }
   
   .netinera-link-small {
-    @apply text-sm;
-
-    color: #6A7282; /* Netinera gray medium */
+    @apply text-sm text-[var(--color-netinera-gray-medium)];
   }
   
   .netinera-link-underlined {
-    @apply text-lg leading-tight;
-
-    color: #00685E; /* Netinera primary color */
-    text-decoration: underline;
+    @apply text-lg leading-tight text-[var(--color-netinera-primary)] underline transition-colors duration-200 ease-in-out;
   }
   
   .netinera-link-underlined:hover {
-    color: #DD052B; /* Netinera secondary color */
+    @apply hover:text-[var(--color-netinera-secondary)];
   }
 
 }

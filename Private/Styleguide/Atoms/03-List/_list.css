@@ -8,7 +8,7 @@ ul,
   @apply mb-0;
 
   li {
-    @apply mb-0.75;
+    @apply mb-[3px]; /* Assuming 0.75 meant 3px, as 0.75 is not a standard Tailwind step */
   }
 
   &.txt-large li {
