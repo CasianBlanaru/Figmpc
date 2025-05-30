@@ -12,35 +12,14 @@ body {
 
 /* Enhanced focus styles for better accessibility with smooth scrolling */
 [tabindex]:focus {
-  outline: 2px solid var(--color-primary-400);
-  outline-offset: 2px;
-  scroll-margin-top: 5rem;
+  @apply outline-2 outline-[var(--color-primary-400)] outline-offset-2 focus:scroll-mt-20;
 }
 
 /* Focus styles for skip links - base selector first */
 .skip-link {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 9999;
-  padding: 0.5rem 1rem;
-  background: var(--color-primary-600);
-  color: white;
-  text-decoration: none;
-  border-radius: 0.375rem; /* 6px - equivalent to borderRadius.md */
-  transform: translateY(-100vh);
-  transition: transform 0.2s ease;
+  @apply absolute top-4 left-4 z-[9999] px-4 py-2 bg-[var(--color-primary-600)] text-white no-underline rounded-md -translate-y-[100vh] transition-transform duration-200 ease-in-out;
 }
 
 .skip-link:focus {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 9999;
-  padding: 0.5rem 1rem;
-  background: var(--color-primary-600);
-  color: white;
-  text-decoration: none;
-  border-radius: 0.375rem; /* 6px - equivalent to borderRadius.md */
-  transform: translateY(0);
+  @apply translate-y-0;
 }

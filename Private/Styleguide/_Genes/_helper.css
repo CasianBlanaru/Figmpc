@@ -13,12 +13,7 @@
 /* === A11Y Helper Classes */
 
 .sr-only {
-  @apply absolute overflow-hidden;
-  @apply w-0 h-0;
-
-  font-size: 0;
-  line-height: 0;
-  text-indent: -999px;
+  @apply sr-only;
 }
 
 /* === STRETCHED LINK */

@@ -31,179 +31,100 @@
 
 /* Space Before */
 .frame-space-before-none {
-  padding-top: 0;
+  @apply pt-0;
 }
 
 .frame-space-before-extra-small {
-  padding-top: var(--spacing-10); /* 40px */
+  @apply pt-3 netinera-tablet:pt-10; /* mobile: 12px, netinera-tablet: 40px */
 }
 
 .frame-space-before-small {
-  padding-top: var(--spacing-11); /* 44px */
+  @apply pt-6 netinera-tablet:pt-11; /* mobile: 24px, netinera-tablet: 44px */
 }
 
 .frame-space-before-medium {
-  padding-top: var(--spacing-12); /* 48px */
+  @apply pt-8 netinera-tablet:pt-12; /* mobile: 32px, netinera-tablet: 48px */
 }
 
 .frame-space-before-large {
-  padding-top: var(--spacing-20); /* 80px */
+  @apply pt-10 netinera-tablet:pt-20; /* mobile: 40px, netinera-tablet: 80px */
 }
 
 .frame-space-before-extra-large {
-  padding-top: var(--spacing-24); /* 96px */
+  @apply pt-16 netinera-tablet:pt-24; /* mobile: 64px, netinera-tablet: 96px */
 }
 
 /* Space After */
 .frame-space-after-none {
-  margin-bottom: 0;
+  @apply mb-0;
 }
 
 .frame-space-after-extra-small {
-  margin-bottom: var(--spacing-10); /* 40px */
+  @apply mb-3 netinera-tablet:mb-10; /* mobile: 12px, netinera-tablet: 40px */
 }
 
 .frame-space-after-small {
-  margin-bottom: var(--spacing-11); /* 44px */
+  @apply mb-6 netinera-tablet:mb-11; /* mobile: 24px, netinera-tablet: 44px */
 }
 
 .frame-space-after-medium {
-  margin-bottom: var(--spacing-12); /* 48px */
+  @apply mb-8 netinera-tablet:mb-12; /* mobile: 32px, netinera-tablet: 48px */
 }
 
 .frame-space-after-large {
-  margin-bottom: var(--spacing-20); /* 80px */
+  @apply mb-10 netinera-tablet:mb-20; /* mobile: 40px, netinera-tablet: 80px */
 }
 
 .frame-space-after-extra-large {
-  margin-bottom: var(--spacing-24); /* 96px */
+  @apply mb-16 netinera-tablet:mb-24; /* mobile: 64px, netinera-tablet: 96px */
 }
-
-/* Responsive spacing for small screens */
-@media (width <= 768px) {
-  .frame-space-before-extra-small {
-      padding-top: var(--spacing-3); /* 12px */
-  }
-
-  .frame-space-before-small {
-      padding-top: var(--spacing-6); /* 24px */
-  }
-
-  .frame-space-before-medium {
-      padding-top: var(--spacing-8); /* 32px */
-  }
-
-  .frame-space-before-large {
-      padding-top: var(--spacing-10); /* 40px */
-  }
-
-  .frame-space-before-extra-large {
-      padding-top: var(--spacing-16); /* 64px */
-  }
-
-  .frame-space-after-extra-small {
-      margin-bottom: var(--spacing-3); /* 12px */
-  }
-
-  .frame-space-after-small {
-      margin-bottom: var(--spacing-6); /* 24px */
-  }
-
-  .frame-space-after-medium {
-      margin-bottom: var(--spacing-8); /* 32px */
-  }
-
-  .frame-space-after-large {
-      margin-bottom: var(--spacing-10); /* 40px */
-  }
-
-  .frame-space-after-extra-large {
-      margin-bottom: var(--spacing-16); /* 64px */
-  }
-}
-
 
 /* Legacy Spacing Classes (für TYPO3 Backend) */
 
 .space-before-none {
-  padding-top: 0 !important;
+  @apply pt-0 !important;
 }
 
 .space-before-extra-small {
-  padding-top: var(--spacing-2) !important; /* 8px */
+  @apply pt-2 !important; /* 8px */
 }
 
 .space-before-small {
-  padding-top: var(--spacing-4) !important; /* 16px */
+  @apply pt-4 sm:pt-6 !important; /* base: 16px, sm: 24px */
 }
 
 .space-before-medium {
-  padding-top: var(--spacing-20) !important; /* 80px */
+  @apply pt-20 sm:pt-12 !important; /* base: 80px, sm: 48px */
 }
 
 .space-before-large {
-  padding-top: var(--spacing-16) !important; /* 64px */
+  @apply pt-16 sm:pt-20 !important; /* base: 64px, sm: 80px */
 }
 
 .space-before-extra-large {
-  padding-top: var(--spacing-24) !important; /* 96px */
+  @apply pt-24 sm:pt-32 !important; /* base: 96px, sm: 128px */
 }
 
 .space-after-none {
-  margin-bottom: 0 !important;
+  @apply mb-0 !important;
 }
 
 .space-after-extra-small {
-  margin-bottom: var(--spacing-2) !important; /* 8px */
+  @apply mb-2 !important; /* 8px */
 }
 
 .space-after-small {
-  margin-bottom: var(--spacing-4) !important; /* 16px */
+  @apply mb-4 sm:mb-6 !important; /* base: 16px, sm: 24px */
 }
 
 .space-after-medium {
-  margin-bottom: var(--spacing-8) !important; /* 32px */
+  @apply mb-8 sm:mb-12 !important; /* base: 32px, sm: 48px */
 }
 
 .space-after-large {
-  margin-bottom: var(--spacing-16) !important; /* 64px */
+  @apply mb-16 sm:mb-20 !important; /* base: 64px, sm: 80px */
 }
 
 .space-after-extra-large {
-  margin-bottom: var(--spacing-24) !important; /* 96px */
-}
-
-/* Responsive Legacy Spacing */
-@media (width >= 640px) {
-  .space-before-small {
-    padding-top: var(--spacing-6) !important; /* 24px */
-  }
-
-  .space-before-medium {
-    padding-top: var(--spacing-12) !important; /* 48px */
-  }
-
-  .space-before-large {
-    padding-top: var(--spacing-20) !important; /* 80px */
-  }
-
-  .space-before-extra-large {
-    padding-top: var(--spacing-32) !important; /* 128px */
-  }
-
-  .space-after-small {
-    margin-bottom: var(--spacing-6) !important; /* 24px */
-  }
-
-  .space-after-medium {
-    margin-bottom: var(--spacing-12) !important; /* 48px */
-  }
-
-  .space-after-large {
-    margin-bottom: var(--spacing-20) !important; /* 80px */
-  }
-
-  .space-after-extra-large {
-    margin-bottom: var(--spacing-32) !important; /* 128px */
-  }
+  @apply mb-24 sm:mb-32 !important; /* base: 96px, sm: 128px */
 }
