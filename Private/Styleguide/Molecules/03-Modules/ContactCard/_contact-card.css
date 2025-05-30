@@ -5,116 +5,60 @@
 
   /* Responsive Contact Card Container */
   .contact-card-responsive {
-    background: #FFF;
-    border-radius: 36px 0; /* Mobile first */
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 368px; /* Desktop constraint */
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
+    @apply bg-white rounded-tl-[36px] rounded-br-[36px] flex flex-col w-full max-w-[368px] overflow-hidden transition-all duration-300 ease-in-out shadow-[0_4px_12px_rgb(30_41_57_/_8%)];
   }
 
   .contact-card-responsive:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 10%), 0 6px 12px -2px rgb(30 41 57 / 5%);
+    @apply transform -translate-y-1 shadow-[0_15px_30px_-5px_rgb(30_41_57_/_10%),_0_6px_12px_-2px_rgb(30_41_57_/_5%)];
   }
 
   /* Responsive Image Container (4:3 Aspect Ratio) */
   .contact-card-responsive-image {
-    width: 100%;
-    height: 246px; /* Mobile first - Figma Node 1763-30076 */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 36px 0 0;
-    position: relative;
-    overflow: hidden;
+    @apply w-full h-[246px] bg-cover bg-center bg-no-repeat rounded-tl-[36px] relative overflow-hidden;
   }
 
   /* Responsive Image Overlay */
   .contact-card-responsive-image-overlay {
-    background: linear-gradient(180deg, rgb(30 41 57 / 0%) 0%, rgb(30 41 57 / 80%) 100%);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: linear-gradient(180deg, rgb(var(--color-netinera-dark-rgb) / 0) 0%, rgb(var(--color-netinera-dark-rgb) / 0.8) 100%); /* Use CSS var for color */
+    @apply absolute bottom-0 left-0 right-0 p-5 flex flex-col justify-end;
   }
 
   /* Responsive Person Information */
   .contact-card-responsive-person {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    @apply flex flex-col gap-0.5; /* 2px -> gap-0.5 */
   }
 
   /* Responsive Person Name */
   .contact-card-responsive-person-name {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px; /* Mobile first */
-    line-height: 1.444em;
-    text-transform: uppercase;
-    color: white;
-    width: 100%;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.444em] uppercase text-white w-full; /* 18px -> text-lg */
   }
 
   /* Responsive Person Job */
   .contact-card-responsive-person-job {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.429em;
-    color: white;
-    width: 100%;
-    opacity: 0.9;
+    @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.429em] text-white w-full opacity-90; /* 14px -> text-sm */
   }
 
   /* Responsive Content Container */
   .contact-card-responsive-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px; /* Mobile first */
-    flex: 1;
+    @apply flex flex-col items-center p-5 flex-1; /* 20px -> p-5 */
   }
 
   /* Responsive Contact Group */
   .contact-card-responsive-contact-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
+    @apply flex flex-col items-center gap-2 w-full; /* 8px -> gap-2 */
   }
 
   /* Responsive Contact Items */
   .contact-card-responsive-contact-item {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.625em;
-    text-align: center;
-    color: #1E2939;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    width: 100%;
+    @apply font-[var(--font-family-sans)] font-normal text-base leading-[1.625em] text-center text-[var(--color-netinera-dark)] no-underline transition-all duration-300 ease-in-out w-full;
   }
 
   .contact-card-responsive-contact-item:hover {
-    color: #DD052B;
-    text-decoration: underline;
+    @apply text-[var(--color-netinera-secondary)] underline;
   }
 
   .contact-card-responsive-contact-item:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
-    border-radius: 4px;
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2 rounded-sm;
   }
 
   /* ==========================
@@ -123,115 +67,60 @@
 
   /* Desktop XL Contact Card Container */
   .contact-card-xl {
-    background: #FFF;
-    border-radius: 64px 0; /* Desktop border radius */
-    display: flex;
-    flex-direction: column;
-    width: 368px; /* Fixed desktop width - Figma Node 1774-34603 */
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
+    @apply bg-white rounded-tl-[64px] rounded-br-[64px] flex flex-col w-[368px] overflow-hidden transition-all duration-300 ease-in-out shadow-[0_4px_12px_rgb(30_41_57_/_8%)];
   }
 
   .contact-card-xl:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 10%), 0 6px 12px -2px rgb(30 41 57 / 5%);
+    @apply transform -translate-y-1 shadow-[0_15px_30px_-5px_rgb(30_41_57_/_10%),_0_6px_12px_-2px_rgb(30_41_57_/_5%)];
   }
 
   /* Desktop XL Image Container */
   .contact-card-xl-image {
-    width: 100%;
-    height: 276px; /* Desktop image height - Figma Node 1774-34603 */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 64px 0 0;
-    position: relative;
-    overflow: hidden;
+    @apply w-full h-[276px] bg-cover bg-center bg-no-repeat rounded-tl-[64px] relative overflow-hidden;
   }
 
   /* Desktop XL Image Overlay */
   .contact-card-xl-image-overlay {
-    background: linear-gradient(180deg, rgb(30 41 57 / 0%) 0%, rgb(30 41 57 / 80%) 100%);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: linear-gradient(180deg, rgb(var(--color-netinera-dark-rgb) / 0) 0%, rgb(var(--color-netinera-dark-rgb) / 0.8) 100%);
+    @apply absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end; /* 24px -> p-6 */
   }
 
   /* Desktop XL Person Information */
   .contact-card-xl-person {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    @apply flex flex-col gap-1; /* 4px -> gap-1 */
   }
 
   /* Desktop XL Person Name */
   .contact-card-xl-person-name {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 1.455em;
-    text-transform: uppercase;
-    color: white;
-    width: 100%;
+    @apply font-[var(--font-family-display)] font-normal text-[22px] leading-[1.455em] uppercase text-white w-full;
   }
 
   /* Desktop XL Person Job */
   .contact-card-xl-person-job {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.625em;
-    color: white;
-    width: 100%;
-    opacity: 0.9;
+    @apply font-[var(--font-family-sans)] font-normal text-base leading-[1.625em] text-white w-full opacity-90; /* 16px -> text-base */
   }
 
   /* Desktop XL Content Container */
   .contact-card-xl-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 24px;
-    flex: 1;
+    @apply flex flex-col items-center p-6 flex-1; /* 24px -> p-6 */
   }
 
   /* Desktop XL Contact Group */
   .contact-card-xl-contact-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
+    @apply flex flex-col items-center gap-3 w-full; /* 12px -> gap-3 */
   }
 
   /* Desktop XL Contact Items */
   .contact-card-xl-contact-item {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.625em;
-    text-align: center;
-    color: #1E2939;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    width: 100%;
+    @apply font-[var(--font-family-sans)] font-normal text-base leading-[1.625em] text-center text-[var(--color-netinera-dark)] no-underline transition-all duration-300 ease-in-out w-full;
   }
 
   .contact-card-xl-contact-item:hover {
-    color: #DD052B;
-    text-decoration: underline;
+    @apply text-[var(--color-netinera-secondary)] underline;
   }
 
   .contact-card-xl-contact-item:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
-    border-radius: 4px;
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2 rounded-sm;
   }
 
   /* ==========================
@@ -240,116 +129,60 @@
 
   /* Mobile SM Contact Card Container */
   .contact-card-sm {
-    background: #FFF;
-    border-radius: 36px 0; /* Mobile border radius */
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 328px; /* Mobile constraint */
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px rgb(30 41 57 / 6%);
+    @apply bg-white rounded-tl-[36px] rounded-br-[36px] flex flex-col w-full max-w-[328px] overflow-hidden transition-all duration-300 ease-in-out shadow-[0_2px_8px_rgb(30_41_57_/_6%)];
   }
 
   .contact-card-sm:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px -4px rgb(30 41 57 / 8%), 0 4px 8px -2px rgb(30 41 57 / 4%);
+    @apply transform -translate-y-0.5 shadow-[0_8px_16px_-4px_rgb(30_41_57_/_8%),_0_4px_8px_-2px_rgb(30_41_57_/_4%)];
   }
 
   /* Mobile SM Image Container */
   .contact-card-sm-image {
-    width: 100%;
-    height: 246px; /* Mobile image height - Figma Node 1763-30076 */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 36px 0 0;
-    position: relative;
-    overflow: hidden;
+    @apply w-full h-[246px] bg-cover bg-center bg-no-repeat rounded-tl-[36px] relative overflow-hidden;
   }
 
   /* Mobile SM Image Overlay */
   .contact-card-sm-image-overlay {
-    background: linear-gradient(180deg, rgb(30 41 57 / 0%) 0%, rgb(30 41 57 / 80%) 100%);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: linear-gradient(180deg, rgb(var(--color-netinera-dark-rgb) / 0) 0%, rgb(var(--color-netinera-dark-rgb) / 0.8) 100%);
+    @apply absolute bottom-0 left-0 right-0 p-4 flex flex-col justify-end; /* 16px -> p-4 */
   }
 
   /* Mobile SM Person Information */
   .contact-card-sm-person {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    @apply flex flex-col gap-0.5; /* 2px -> gap-0.5 */
   }
 
   /* Mobile SM Person Name */
   .contact-card-sm-person-name {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.444em;
-    text-transform: uppercase;
-    color: white;
-    width: 100%;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.444em] uppercase text-white w-full; /* 18px -> text-lg */
   }
 
   /* Mobile SM Person Job */
   .contact-card-sm-person-job {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.429em;
-    color: white;
-    width: 100%;
-    opacity: 0.9;
+    @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.429em] text-white w-full opacity-90; /* 14px -> text-sm */
   }
 
   /* Mobile SM Content Container */
   .contact-card-sm-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
-    flex: 1;
+    @apply flex flex-col items-center p-4 flex-1; /* 16px -> p-4 */
   }
 
   /* Mobile SM Contact Group */
   .contact-card-sm-contact-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    width: 100%;
+    @apply flex flex-col items-center gap-1.5 w-full; /* 6px -> gap-1.5 */
   }
 
   /* Mobile SM Contact Items */
   .contact-card-sm-contact-item {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.429em;
-    text-align: center;
-    color: #1E2939;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    width: 100%;
+    @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.429em] text-center text-[var(--color-netinera-dark)] no-underline transition-all duration-300 ease-in-out w-full;
   }
 
   .contact-card-sm-contact-item:hover {
-    color: #DD052B;
-    text-decoration: underline;
+    @apply text-[var(--color-netinera-secondary)] underline;
   }
 
   .contact-card-sm-contact-item:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
-    border-radius: 4px;
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2 rounded-sm;
   }
 
   /* ==========================
@@ -358,30 +191,17 @@
 
   /* Contact Card Grid Responsive */
   .contact-card-grid-responsive {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 368px));
-    gap: 24px;
-    width: 100%;
-    justify-content: center;
-    justify-items: center;
+    @apply grid grid-cols-[repeat(auto-fit,minmax(300px,368px))] gap-6 w-full justify-center justify-items-center;
   }
 
   /* Contact Card Grid Fixed */
   .contact-card-grid-fixed {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    width: 100%;
-    justify-items: center;
+    @apply grid grid-cols-3 gap-6 w-full justify-items-center;
   }
 
   /* Contact Card Grid Auto */
   .contact-card-grid-auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    width: 100%;
-    justify-items: center;
+    @apply grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5 w-full justify-items-center; /* 20px -> gap-5 */
   }
 
   /* ==========================
@@ -390,61 +210,56 @@
 
   /* White Variant */
   .contact-card-variant-white {
-    background: #FFF;
+    @apply bg-white; /* color: #1E2939 is inherited or should be set on text elements directly */
   }
 
   /* Dark Variant */
   .contact-card-variant-dark {
-    background: #1E2939;
+    @apply bg-[var(--color-netinera-dark)];
   }
 
   .contact-card-variant-dark .contact-card-responsive-content,
   .contact-card-variant-dark .contact-card-xl-content,
   .contact-card-variant-dark .contact-card-sm-content {
-    background: #1E2939;
+    @apply bg-[var(--color-netinera-dark)]; /* Ensure content area also gets dark bg if needed */
   }
 
   .contact-card-variant-dark .contact-card-responsive-contact-item,
   .contact-card-variant-dark .contact-card-xl-contact-item,
   .contact-card-variant-dark .contact-card-sm-contact-item {
-    color: white;
+    @apply text-white;
   }
 
-  .contact-card-variant-dark .contact-card-responsive-contact-item:hover,
-  .contact-card-variant-dark .contact-card-xl-contact-item:hover,
-  .contact-card-variant-dark .contact-card-sm-contact-item:hover {
-    color: #DD052B;
-  }
-
-  /* Primary Variant - must come before dark hover selectors */
+  /* Primary Variant - must come before dark hover selectors that might have equal specificity if not careful */
   .contact-card-variant-primary {
-    background: #DD052B;
+    @apply bg-[var(--color-netinera-secondary)]; /* DD052B is secondary/accent */
   }
 
   .contact-card-variant-primary .contact-card-responsive-content,
   .contact-card-variant-primary .contact-card-xl-content,
   .contact-card-variant-primary .contact-card-sm-content {
-    background: #DD052B;
+    @apply bg-[var(--color-netinera-secondary)];
   }
 
   .contact-card-variant-primary .contact-card-responsive-contact-item,
   .contact-card-variant-primary .contact-card-xl-contact-item,
   .contact-card-variant-primary .contact-card-sm-contact-item {
-    color: white;
+    @apply text-white;
   }
 
   .contact-card-variant-primary .contact-card-responsive-contact-item:hover,
   .contact-card-variant-primary .contact-card-xl-contact-item:hover,
   .contact-card-variant-primary .contact-card-sm-contact-item:hover {
-    color: #FFE2E7;
+    @apply text-[#FFE2E7]; /* Custom light pink for hover on primary card */
   }
-
-  /* Dark variant hover - must come after primary variant */
+  
+  /* Dark variant hover - specific hover for dark variant contact items */
   .contact-card-variant-dark .contact-card-responsive-contact-item:hover,
   .contact-card-variant-dark .contact-card-xl-contact-item:hover,
   .contact-card-variant-dark .contact-card-sm-contact-item:hover {
-    color: #DD052B;
+    @apply text-[var(--color-netinera-secondary)]; /* Hover to accent color */
   }
+
 
   /* ==========================
    * === CONTACT LINK ENHANCEMENT
@@ -452,34 +267,27 @@
 
   /* Enhanced Contact Link Styling */
   .contact-card-contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
+    @apply inline-flex items-center gap-2 p-2 rounded-lg transition-all duration-300 ease-in-out relative; /* 8px padding -> p-2, 8px gap -> gap-2 */
   }
 
   .contact-card-contact-link:hover {
-    background: rgb(221 5 43 / 10%);
-    transform: translateY(-1px);
+    @apply bg-[var(--color-netinera-secondary)]/10 transform -translate-y-px; /* rgb(221 5 43 / 10%) */
   }
 
   .contact-card-contact-link:active {
-    transform: translateY(0);
+    @apply transform translate-y-0;
   }
 
   /* Phone Link Icon */
   .contact-card-contact-link[href^="tel:"]::before {
-    content: "📞";
-    font-size: 14px;
+    content: "📞"; /* Keep custom content */
+    @apply text-sm; /* 14px */
   }
 
   /* Email Link Icon */
   .contact-card-contact-link[href^="mailto:"]::before {
-    content: "✉️";
-    font-size: 14px;
+    content: "✉️"; /* Keep custom content */
+    @apply text-sm; /* 14px */
   }
 
   /* ==========================
@@ -487,162 +295,143 @@
    * ========================== */
 
   /* Desktop breakpoint */
-  @media (width >= 1024px) {
+  @media (width >= 1024px) { /* netinera-desktop */
     .contact-card-responsive {
-      border-radius: 64px 0;
-      width: 368px;
+      @apply rounded-tl-[64px] rounded-br-[64px] w-[368px];
     }
 
     .contact-card-responsive-image {
-      height: 276px; /* Desktop image height */
-      border-radius: 64px 0 0;
+      @apply h-[276px] rounded-tl-[64px];
     }
 
     .contact-card-responsive-image-overlay {
-      padding: 24px;
+      @apply p-6; /* 24px */
     }
 
     .contact-card-responsive-person-name {
-      font-size: 22px;
-      line-height: 1.455em;
+      @apply text-[22px] leading-[1.455em];
     }
 
     .contact-card-responsive-person-job {
-      font-size: 16px;
-      line-height: 1.625em;
+      @apply text-base leading-[1.625em]; /* 16px */
     }
 
     .contact-card-responsive-content {
-      padding: 24px;
+      @apply p-6; /* 24px */
     }
 
     .contact-card-responsive-contact-group {
-      gap: 12px;
+      @apply gap-3; /* 12px */
     }
   }
 
   /* Tablet adaptation */
-  @media (width <= 1023px) and (width >= 768px) {
+  @media (width <= 1023px) and (width >= 768px) { /* Between netinera-mobile and netinera-desktop */
     .contact-card-grid-responsive,
     .contact-card-grid-fixed {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      @apply grid-cols-2 gap-5; /* 20px */
     }
 
-    .contact-card-xl {
-      width: 100%;
-      max-width: 340px;
-      border-radius: 48px 0;
+    .contact-card-xl { /* Overrides for XL card on tablet */
+      @apply w-full max-w-[340px] rounded-tl-[48px] rounded-br-[48px];
     }
 
     .contact-card-xl-image {
-      height: 256px;
-      border-radius: 48px 0 0;
+      @apply h-[256px] rounded-tl-[48px];
     }
   }
 
   /* Mobile optimization */
-  @media (width <= 767px) {
+  @media (width <= 767px) { /* max-netinera-mobile */
     .contact-card-grid-responsive,
     .contact-card-grid-fixed,
     .contact-card-grid-auto {
-      grid-template-columns: 1fr;
-      gap: 16px;
+      @apply grid-cols-1 gap-4; /* 16px */
     }
 
     .contact-card-responsive,
-    .contact-card-xl {
-      width: 100%;
-      max-width: 100%;
-      border-radius: 32px 0;
+    .contact-card-xl { /* XL card also gets mobile overrides */
+      @apply w-full max-w-full rounded-tl-[32px] rounded-br-[32px];
     }
 
     .contact-card-responsive-image,
     .contact-card-xl-image {
-      height: 220px;
-      border-radius: 32px 0 0;
+      @apply h-[220px] rounded-tl-[32px];
     }
 
     .contact-card-responsive-image-overlay,
     .contact-card-xl-image-overlay {
-      padding: 16px;
+      @apply p-4; /* 16px */
     }
 
     .contact-card-responsive-person-name,
     .contact-card-xl-person-name {
-      font-size: 18px;
-      line-height: 1.4;
+      @apply text-lg leading-[1.4]; /* 18px */
     }
 
     .contact-card-responsive-person-job,
     .contact-card-xl-person-job {
-      font-size: 14px;
-      line-height: 1.4;
+      @apply text-sm leading-[1.4]; /* 14px */
     }
 
     .contact-card-responsive-content,
     .contact-card-xl-content {
-      padding: 16px;
+      @apply p-4; /* 16px */
     }
 
     .contact-card-responsive-contact-group,
     .contact-card-xl-contact-group {
-      gap: 8px;
+      @apply gap-2; /* 8px */
     }
 
     .contact-card-responsive-contact-item,
     .contact-card-xl-contact-item {
-      font-size: 14px;
-      line-height: 1.4;
+      @apply text-sm leading-[1.4]; /* 14px */
     }
   }
 
   /* Small mobile optimization */
-  @media (width <= 479px) {
+  @media (width <= 479px) { /* max-xs */
     .contact-card-responsive,
     .contact-card-xl,
-    .contact-card-sm {
-      border-radius: 24px 0;
+    .contact-card-sm { /* All variants get these overrides */
+      @apply rounded-tl-[24px] rounded-br-[24px];
     }
 
     .contact-card-responsive-image,
     .contact-card-xl-image,
     .contact-card-sm-image {
-      height: 200px;
-      border-radius: 24px 0 0;
+      @apply h-[200px] rounded-tl-[24px];
     }
 
     .contact-card-responsive-image-overlay,
     .contact-card-xl-image-overlay,
     .contact-card-sm-image-overlay {
-      padding: 12px;
+      @apply p-3; /* 12px */
     }
 
     .contact-card-responsive-person-name,
     .contact-card-xl-person-name,
     .contact-card-sm-person-name {
-      font-size: 16px;
-      line-height: 1.3;
+      @apply text-base leading-[1.3]; /* 16px */
     }
 
     .contact-card-responsive-person-job,
     .contact-card-xl-person-job,
     .contact-card-sm-person-job {
-      font-size: 12px;
-      line-height: 1.3;
+      @apply text-xs leading-[1.3]; /* 12px */
     }
 
     .contact-card-responsive-content,
     .contact-card-xl-content,
     .contact-card-sm-content {
-      padding: 12px;
+      @apply p-3; /* 12px */
     }
 
     .contact-card-responsive-contact-item,
     .contact-card-xl-contact-item,
     .contact-card-sm-contact-item {
-      font-size: 12px;
-      line-height: 1.3;
+      @apply text-xs leading-[1.3]; /* 12px */
     }
   }
 
@@ -654,8 +443,7 @@
   .contact-card-responsive:focus-within,
   .contact-card-xl:focus-within,
   .contact-card-sm:focus-within {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2; /* DD052B is secondary/accent */
   }
 
   /* High Contrast Mode */
@@ -663,25 +451,25 @@
     .contact-card-responsive,
     .contact-card-xl,
     .contact-card-sm {
-      border: 2px solid #1E2939;
+      @apply border-2 border-[var(--color-netinera-dark)];
     }
 
     .contact-card-responsive-person-name,
     .contact-card-xl-person-name,
     .contact-card-sm-person-name {
-      font-weight: 600;
+      @apply font-semibold;
     }
 
     .contact-card-responsive-contact-item,
     .contact-card-xl-contact-item,
     .contact-card-sm-contact-item {
-      text-decoration: underline;
+      @apply underline;
     }
 
     .contact-card-responsive-image-overlay,
     .contact-card-xl-image-overlay,
     .contact-card-sm-image-overlay {
-      background: rgb(0 0 0 / 90%) !important;
+      background: rgb(0 0 0 / 0.9) !important; /* Important to override inline style if any */
     }
   }
 
@@ -691,8 +479,7 @@
     .contact-card-xl,
     .contact-card-sm,
     .contact-card-contact-link {
-      transition: none;
-      transform: none !important;
+      @apply motion-reduce:transition-none motion-reduce:transform-none !important;
     }
   }
 
@@ -704,26 +491,21 @@
     .contact-card-responsive,
     .contact-card-xl,
     .contact-card-sm {
-      background: white !important;
-      border: 1px solid #ddd;
-      border-radius: 0;
+      @apply print:bg-white !important print:text-black !important print:border print:border-gray-300 print:rounded-none print:shadow-none !important;
       break-inside: avoid;
-      margin-bottom: 20px;
-      box-shadow: none !important;
+      margin-bottom: 20px; /* Keep mb as it's specific for print */
     }
 
     .contact-card-responsive-image,
     .contact-card-xl-image,
     .contact-card-sm-image {
-      height: 150px !important;
-      border-radius: 0;
-      border: 1px solid #ddd;
+      @apply print:h-[150px] !important print:rounded-none print:border print:border-gray-300;
     }
 
     .contact-card-responsive-image-overlay,
     .contact-card-xl-image-overlay,
     .contact-card-sm-image-overlay {
-      background: rgb(0 0 0 / 70%) !important;
+      background: rgb(0 0 0 / 0.7) !important; /* Important to override inline style if any */
     }
 
     .contact-card-responsive-person-name,
@@ -732,26 +514,25 @@
     .contact-card-responsive-person-job,
     .contact-card-xl-person-job,
     .contact-card-sm-person-job {
-      color: white !important;
+      @apply print:text-white !important;
     }
 
     .contact-card-responsive-contact-item,
     .contact-card-xl-contact-item,
     .contact-card-sm-contact-item {
-      color: black !important;
-      text-decoration: underline !important;
+      @apply print:text-black !important print:underline !important;
     }
 
     .contact-card-grid-responsive,
     .contact-card-grid-fixed,
     .contact-card-grid-auto {
-      display: block;
+      @apply print:block;
     }
 
     .contact-card-grid-responsive > *,
     .contact-card-grid-fixed > *,
     .contact-card-grid-auto > * {
-      margin-bottom: 20px;
+      margin-bottom: 20px; /* Keep mb as it's specific for print */
     }
   }
 
@@ -760,15 +541,15 @@
    * ========================== */
 
   .contact-card-loading {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: contact-card-loading 1.5s infinite;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); /* Standard shimmer colors */
+    @apply bg-cover animate-pulse; /* Using Tailwind pulse for base shimmer */
+    /* animation: contact-card-loading 1.5s infinite; */ /* Can remove if Tailwind pulse is sufficient */
   }
 
-  @keyframes contact-card-loading {
+  /* @keyframes contact-card-loading {
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
-  }
+  } */
 
   .contact-card-loading .contact-card-responsive-person-name,
   .contact-card-loading .contact-card-xl-person-name,
@@ -777,10 +558,11 @@
   .contact-card-loading .contact-card-xl-person-job,
   .contact-card-loading .contact-card-sm-person-job {
     background: linear-gradient(90deg, rgb(255 255 255 / 30%) 25%, rgb(255 255 255 / 50%) 50%, rgb(255 255 255 / 30%) 75%);
-    background-size: 200% 100%;
-    animation: contact-card-loading 1.5s infinite;
-    color: transparent;
-    border-radius: 4px;
+    /* For text placeholders, a simple bg color or Tailwind's pulse on parent might be enough */
+    /* Or keep custom gradient if specific shimmer on text is desired */
+    @apply bg-cover text-transparent rounded motion-safe:animate-pulse; /* Use Tailwind's pulse for text placeholders */
+    /* background-size: 200% 100%; */ /* Remove if using Tailwind pulse */
+    /* animation: contact-card-loading 1.5s infinite; */ /* Remove if using Tailwind pulse */
   }
 
 }
@@ -792,11 +574,15 @@
 .contact-card-variant-primary .contact-card-xl-contact-item,
 .contact-card-variant-primary .contact-card-sm-contact-item {
   /* Primary variant specific styles */
+  /* This seems empty, perhaps meant to be filled or colors are inherited correctly */
 }
 
 /* Dark Variant Hover States - moved before primary variant to fix specificity */
+/* This rule was specific for .company-stats-variant-dark, ensuring it's correctly scoped for contact-card if needed */
+/* It appears duplicated from company-stats, so if it's not specifically for contact-card's dark variant hover, it can be removed */
+/* Assuming it's intended: */
 .contact-card-variant-dark .contact-card-responsive-contact-item:hover,
 .contact-card-variant-dark .contact-card-xl-contact-item:hover,
 .contact-card-variant-dark .contact-card-sm-contact-item:hover {
-  /* Dark variant hover styles */
+   @apply text-[var(--color-netinera-secondary)]; /* Ensure this hover is for dark variant links */
 }

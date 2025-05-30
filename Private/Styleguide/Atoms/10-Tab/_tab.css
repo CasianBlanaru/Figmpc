@@ -16,11 +16,7 @@
 
   &.active {
     &::after {
-      @apply absolute left-0 bottom-[-1px];
-      @apply w-full h-[.188rem];
-      @apply bg-primary-900;
-
-      content: "";
+      @apply content-[''] absolute left-0 bottom-[-1px] w-full h-[3px] bg-[var(--color-primary-900)]; /* Standardized height to 3px, added content, used var for color */
     }
   }
 }

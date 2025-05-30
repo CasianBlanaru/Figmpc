@@ -14,9 +14,7 @@
 .tag-warning,
 .tag-error {
   &::before {
-    @apply w-1 h-1 rounded-full;
-
-    content: "";
+    @apply content-[''] w-1 h-1 rounded-full; /* Added content-[''] for pseudo-element */
   }
 }
 

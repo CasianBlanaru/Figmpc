@@ -21,11 +21,11 @@
     /* State: Focus */
     &:focus,
     &.pseudo-focus {
-      outline: none;
+      @apply outline-none;
 
       + label > span::before,
       + span::before {
-        @apply border-2 border-primary-500 ring-2 ring-primary-500/30;
+        @apply border-2 border-[var(--color-primary-500)] ring-2 ring-[var(--color-primary-500)]/30;
       }
     }
 
@@ -34,7 +34,7 @@
     &.pseudo-hover {
       + label > span::before,
       + span::before {
-        @apply border-2 border-primary-500;
+        @apply border-2 border-[var(--color-primary-500)];
       }
     }
 
@@ -117,7 +117,7 @@
   &:checked {
     + label > span::before,
     + span::before {
-      @apply bg-primary-600 border-primary-600;
+      @apply bg-[var(--color-primary-600)] border-[var(--color-primary-600)];
     }
   }
 }
@@ -131,18 +131,14 @@
     }
 
     &::after {
-      @apply absolute top-[3px] left-[3px];
-      @apply w-[18px] h-[18px];
-      @apply rounded-full bg-white;
-
-      transform: scale(0.6);
+      @apply absolute top-[3px] left-[3px] w-[18px] h-[18px] rounded-full bg-white scale-[0.6];
     }
   }
 
   &:checked {
     + label > span::before,
     + span::before {
-      @apply bg-primary-600 border-primary-600;
+      @apply bg-[var(--color-primary-600)] border-[var(--color-primary-600)];
     }
   }
 }

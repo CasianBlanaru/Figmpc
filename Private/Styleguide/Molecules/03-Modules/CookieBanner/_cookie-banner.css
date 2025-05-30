@@ -6,125 +6,108 @@
 
   /* Banner Animation */
   transition: transform var(--banner-transition-duration) ease-in-out,
-              opacity var(--banner-transition-duration) ease-in-out;
-  box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 10%),
-              0 -2px 4px -1px rgb(0 0 0 / 6%);
+              opacity var(--banner-transition-duration) ease-in-out; /* Keep custom transition */
+  @apply shadow-[0_-4px_6px_-1px_rgb(0_0_0_/_10%),_0_-2px_4px_-1px_rgb(0_0_0_/_6%)];
 }
 
 /* Additional animation for cookie banner */
 .cookie-banner-visible {
-  transform: translateY(0) !important;
-  opacity: 1 !important;
+  @apply !translate-y-0 !opacity-100;
 }
 
 /* Modal background animation */
 #cookie-settings-modal .fixed[aria-hidden="true"] {
-  transition: opacity var(--modal-transition-duration) ease;
+  transition: opacity var(--modal-transition-duration) ease; /* Keep custom transition */
 }
 
 /* Modal animation */
 #cookie-settings-modal .inline-block {
   transition: opacity var(--modal-transition-duration) ease,
-              transform var(--modal-transition-duration) ease;
+              transform var(--modal-transition-duration) ease; /* Keep custom transition */
 }
 
 /* Modal open animation */
 #cookie-settings-modal:not(.hidden) .inline-block {
-  animation: modal-open var(--modal-transition-duration) ease forwards;
+  animation: modal-open var(--modal-transition-duration) ease forwards; /* Keep custom animation */
 }
 
 /* Floating Settings Button */
 #floating-cookie-settings {
-  position: fixed;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 40;
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-  will-change: transform, opacity;
+  @apply fixed left-4 bottom-4 z-40;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; /* Keep custom transition */
+  will-change: transform, opacity; /* Keep custom will-change */
 }
 
 #floating-cookie-settings.invisible {
-  visibility: hidden;
+  @apply invisible;
 }
 
 #floating-cookie-settings button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: white;
-  background-color: var(--primary-600, #4F46E5);
-  border-radius: 9999px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%),
-              0 2px 4px -1px rgb(0 0 0 / 6%);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  @apply flex items-center justify-center p-3 text-sm font-medium text-white rounded-full shadow-md;
+  background-color: var(--primary-600, #4F46E5); /* Use variable with fallback */
+  /* box-shadow is Tailwind's shadow-md. Original: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%) */
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Keep custom transition */
 }
 
 #floating-cookie-settings button:hover {
-  background-color: var(--primary-700, #4338CA);
-  transform: scale(1.05);
+  background-color: var(--primary-700, #4338CA); /* Use variable with fallback */
+  @apply hover:scale-105;
 }
 
 #floating-cookie-settings button:focus-visible {
-  outline: 2px solid var(--primary-600, #4F46E5);
-  outline-offset: 2px;
+  @apply focus-visible:outline-2 focus-visible:outline-[var(--primary-600,#4F46E5)] focus-visible:outline-offset-2;
 }
 
 /* Verbesserter Hover-Effekt für den Floating Button */
 #floating-cookie-settings button svg {
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease; /* Keep custom transition for SVG */
 }
 
 #floating-cookie-settings button:hover svg {
-  transform: rotate(15deg);
+  @apply hover:rotate-15;
 }
 
 /* High contrast mode improvements */
 @media (forced-colors: active) {
   #floating-cookie-settings button {
-    border: 2px solid ButtonText;
+    @apply border-2 border-[ButtonText];
   }
 
   #floating-cookie-settings button:focus-visible {
-    outline: 2px solid ButtonText;
+    @apply outline-2 outline-[ButtonText];
   }
 }
 
 /* Tastatur-Fokus-Stile */
 #cookie-banner button:focus-visible,
 #cookie-settings-modal button:focus-visible,
-#floating-cookie-settings:focus-visible {
-  outline: 2px solid var(--primary-600, #4F46E5);
-  outline-offset: 2px;
+#floating-cookie-settings:focus-visible { /* This selector for #floating-cookie-settings might be too broad if it's not interactive itself */
+  @apply outline-2 outline-[var(--primary-600,#4F46E5)] outline-offset-2;
 }
 
 /* Mobile adjustments */
 @media (width <= 640px) {
   #cookie-banner {
-    max-height: 80vh;
-    overflow-y: auto;
+    @apply max-h-[80vh] overflow-y-auto;
   }
 
   #cookie-settings-modal .inline-block {
-    max-width: calc(100vw - 2rem);
+    @apply max-w-[calc(100vw-2rem)];
   }
 
   #floating-cookie-settings {
-    bottom: 0.75rem;
-    left: 0.75rem;
+    @apply bottom-3 left-3;
   }
 }
 
 /* iOS Safari Fix */
 @supports (-webkit-touch-callout: none) {
   #cookie-banner {
-    padding-bottom: env(safe-area-inset-bottom, 0);
+    @apply pb-[env(safe-area-inset-bottom,0)];
   }
 
   #floating-cookie-settings {
-    bottom: calc(env(safe-area-inset-bottom, 0) + 1rem);
+    @apply bottom-[calc(env(safe-area-inset-bottom,0)+1rem)];
   }
 }
 

@@ -6,50 +6,25 @@
   
   /* Responsive Company Stats Container */
   .company-stats-responsive {
-    background: #DD052B; /* Netinera Primary Red */
-    border-radius: 24px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 368px; /* Desktop constraint */
-    padding: 32px 24px;
-    gap: 16px;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 12px rgb(221 5 43 / 15%);
+    @apply bg-[var(--color-netinera-secondary)] rounded-tl-[24px] rounded-br-[24px] flex flex-col justify-between items-center w-full max-w-[368px] p-8 px-6 gap-4 overflow-hidden transition-all duration-300 ease-in-out shadow-[0_4px_12px_rgb(221_5_43_/_15%)];
   }
   
   .company-stats-responsive:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px -5px rgb(221 5 43 / 20%), 0 6px 12px -2px rgb(221 5 43 / 10%);
+    @apply transform -translate-y-1 shadow-[0_15px_30px_-5px_rgb(221_5_43_/_20%),_0_6px_12px_-2px_rgb(221_5_43_/_10%)];
   }
   
   /* Responsive Layout Group */
   .company-stats-responsive-layout-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    align-self: stretch;
-    gap: 16px;
+    @apply flex flex-row justify-start items-center self-stretch gap-4;
   }
   
   /* Responsive Icon Container */
   .company-stats-responsive-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    background: rgb(255 255 255 / 15%);
-    border-radius: 12px;
-    flex-shrink: 0;
+    @apply flex justify-center items-center w-12 h-12 bg-white/15 rounded-xl flex-shrink-0;
   }
   
   .company-stats-responsive-icon svg {
-    width: 24px;
+    width: 24px; /* Keep as direct attributes, Tailwind doesn't style SVG internals via class */
     height: 24px;
     color: white;
     stroke: white;
@@ -59,48 +34,22 @@
   
   /* Responsive Text Group */
   .company-stats-responsive-text-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    flex: 1;
-    gap: 2px;
+    @apply flex flex-col justify-center items-start flex-1 gap-0.5; /* 2px -> gap-0.5 */
   }
   
   /* Responsive Number */
   .company-stats-responsive-number {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 60px; /* Desktop first */
-    line-height: 1.067em;
-    letter-spacing: 1.00%;
-    text-transform: uppercase;
-    color: white;
-    width: 100%;
+    @apply font-[var(--font-family-display)] font-normal text-[60px] leading-[1.067em] tracking-[0.01em] uppercase text-white w-full;
   }
   
   /* Responsive Label */
   .company-stats-responsive-label {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.444em;
-    text-transform: uppercase;
-    color: white;
-    width: 100%;
-    opacity: 0.9;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.444em] uppercase text-white w-full opacity-90; /* 18px -> text-lg */
   }
   
   /* Responsive Subline */
   .company-stats-responsive-subline {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.625em;
-    text-align: center;
-    color: white;
-    width: 100%;
-    opacity: 0.85;
+    @apply font-[var(--font-family-sans)] font-normal text-base leading-[1.625em] text-center text-white w-full opacity-[0.85];
   }
   
   /* ==========================
@@ -109,49 +58,25 @@
   
   /* Desktop XL Company Stats Container */
   .company-stats-xl {
-    background: #DD052B; /* Netinera Primary Red */
-    border-radius: 24px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 368px; /* Fixed desktop width */
-    padding: 32px 24px;
-    gap: 16px;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 12px rgb(221 5 43 / 15%);
+    @apply bg-[var(--color-netinera-secondary)] rounded-tl-[24px] rounded-br-[24px] flex flex-col justify-between items-center w-[368px] p-8 px-6 gap-4 overflow-hidden transition-all duration-300 ease-in-out shadow-[0_4px_12px_rgb(221_5_43_/_15%)];
   }
   
   .company-stats-xl:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px -5px rgb(221 5 43 / 20%), 0 6px 12px -2px rgb(221 5 43 / 10%);
+    @apply transform -translate-y-1 shadow-[0_15px_30px_-5px_rgb(221_5_43_/_20%),_0_6px_12px_-2px_rgb(221_5_43_/_10%)];
   }
   
   /* Desktop XL Layout Group */
   .company-stats-xl-layout-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    align-self: stretch;
-    gap: 16px;
+    @apply flex flex-row justify-start items-center self-stretch gap-4;
   }
   
   /* Desktop XL Icon Container */
   .company-stats-xl-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    background: rgb(255 255 255 / 15%);
-    border-radius: 12px;
-    flex-shrink: 0;
+    @apply flex justify-center items-center w-12 h-12 bg-white/15 rounded-xl flex-shrink-0;
   }
   
   .company-stats-xl-icon svg {
-    width: 24px;
+    width: 24px; /* Direct style attributes */
     height: 24px;
     color: white;
     stroke: white;
@@ -161,48 +86,22 @@
   
   /* Desktop XL Text Group */
   .company-stats-xl-text-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    flex: 1;
-    gap: 2px;
+    @apply flex flex-col justify-center items-start flex-1 gap-0.5; /* 2px -> gap-0.5 */
   }
   
   /* Desktop XL Number */
   .company-stats-xl-number {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 60px;
-    line-height: 1.067em;
-    letter-spacing: 1.00%;
-    text-transform: uppercase;
-    color: white;
-    width: 100%;
+    @apply font-[var(--font-family-display)] font-normal text-[60px] leading-[1.067em] tracking-[0.01em] uppercase text-white w-full;
   }
   
   /* Desktop XL Label */
   .company-stats-xl-label {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.444em;
-    text-transform: uppercase;
-    color: white;
-    width: 100%;
-    opacity: 0.9;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.444em] uppercase text-white w-full opacity-90;
   }
   
   /* Desktop XL Subline */
   .company-stats-xl-subline {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.625em;
-    text-align: center;
-    color: white;
-    width: 100%;
-    opacity: 0.85;
+    @apply font-[var(--font-family-sans)] font-normal text-base leading-[1.625em] text-center text-white w-full opacity-[0.85];
   }
   
   /* ==========================
@@ -211,49 +110,25 @@
   
   /* Mobile SM Company Stats Container */
   .company-stats-sm {
-    background: #DD052B; /* Netinera Primary Red */
-    border-radius: 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 328px; /* Fixed mobile width */
-    padding: 24px 20px;
-    gap: 12px;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px rgb(221 5 43 / 12%);
+    @apply bg-[var(--color-netinera-secondary)] rounded-tl-[20px] rounded-br-[20px] flex flex-col justify-between items-center w-[328px] py-6 px-5 gap-3 overflow-hidden transition-all duration-300 ease-in-out shadow-[0_2px_8px_rgb(221_5_43_/_12%)];
   }
   
   .company-stats-sm:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px -4px rgb(221 5 43 / 15%), 0 4px 8px -2px rgb(221 5 43 / 8%);
+    @apply transform -translate-y-0.5 shadow-[0_8px_16px_-4px_rgb(221_5_43_/_15%),_0_4px_8px_-2px_rgb(221_5_43_/_8%)]; /* -2px -> -translate-y-0.5 */
   }
   
   /* Mobile SM Layout Group */
   .company-stats-sm-layout-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    align-self: stretch;
-    gap: 12px;
+    @apply flex flex-row justify-start items-center self-stretch gap-3;
   }
   
   /* Mobile SM Icon Container */
   .company-stats-sm-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: rgb(255 255 255 / 15%);
-    border-radius: 10px;
-    flex-shrink: 0;
+    @apply flex justify-center items-center w-10 h-10 bg-white/15 rounded-[10px] flex-shrink-0;
   }
   
   .company-stats-sm-icon svg {
-    width: 20px;
+    width: 20px; /* Direct style attributes */
     height: 20px;
     color: white;
     stroke: white;
@@ -263,48 +138,22 @@
   
   /* Mobile SM Text Group */
   .company-stats-sm-text-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    flex: 1;
-    gap: 1px;
+    @apply flex flex-col justify-center items-start flex-1 gap-px; /* 1px -> gap-px */
   }
   
   /* Mobile SM Number */
   .company-stats-sm-number {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 1.2em;
-    letter-spacing: 1.50%;
-    text-transform: uppercase;
-    color: white;
-    width: 100%;
+    @apply font-[var(--font-family-display)] font-normal text-[40px] leading-[1.2em] tracking-[0.015em] uppercase text-white w-full;
   }
   
   /* Mobile SM Label */
   .company-stats-sm-label {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5em;
-    text-transform: uppercase;
-    color: white;
-    width: 100%;
-    opacity: 0.9;
+    @apply font-[var(--font-family-display)] font-normal text-base leading-[1.5em] uppercase text-white w-full opacity-90;
   }
   
   /* Mobile SM Subline */
   .company-stats-sm-subline {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.429em;
-    text-align: center;
-    color: white;
-    width: 100%;
-    opacity: 0.85;
+    @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.429em] text-center text-white w-full opacity-[0.85];
   }
   
   /* ==========================
@@ -313,40 +162,22 @@
   
   /* Company Stats Container */
   .company-stats-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    @apply flex flex-col items-center w-full max-w-[1200px] mx-auto;
   }
   
   /* Figma Grid Layout (2616:12855) */
   .company-stats-figma-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    width: 100%;
-    justify-items: center;
+    @apply grid grid-cols-3 gap-6 w-full justify-items-center;
   }
   
   /* Auto Grid Layout */
   .company-stats-grid-auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-    width: 100%;
-    justify-items: center;
+    @apply grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-6 w-full justify-items-center;
   }
   
   /* Responsive Grid */
   .company-stats-grid-responsive {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 368px));
-    gap: 24px;
-    width: 100%;
-    justify-content: center;
-    justify-items: center;
+    @apply grid grid-cols-[repeat(auto-fit,minmax(300px,368px))] gap-6 w-full justify-center justify-items-center;
   }
   
   /* ==========================
@@ -355,31 +186,30 @@
   
   /* Primary Variant (Default) */
   .company-stats-variant-primary {
-    background: #DD052B; /* Netinera Primary Red */
+    @apply bg-[var(--color-netinera-secondary)]; /* Netinera Primary Red is Secondary in theme */
   }
   
   /* Secondary Variant */
   .company-stats-variant-secondary {
-    background: #00BFA7; /* Netinera Secondary Teal */
+    @apply bg-[#00BFA7]; /* Netinera Secondary Teal */
   }
   
   .company-stats-variant-secondary:hover {
-    box-shadow: 0 15px 30px -5px rgb(0 191 167 / 20%), 0 6px 12px -2px rgb(0 191 167 / 10%);
+    @apply shadow-[0_15px_30px_-5px_rgb(0_191_167_/_20%),_0_6px_12px_-2px_rgb(0_191_167_/_10%)];
   }
   
   /* Dark Variant */
   .company-stats-variant-dark {
-    background: #1E2939; /* Netinera Dark */
+    @apply bg-[var(--color-netinera-dark)];
   }
   
   .company-stats-variant-dark:hover {
-    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 20%), 0 6px 12px -2px rgb(30 41 57 / 10%);
+    @apply shadow-[0_15px_30px_-5px_rgb(30_41_57_/_20%),_0_6px_12px_-2px_rgb(30_41_57_/_10%)];
   }
   
   /* White Variant */
   .company-stats-variant-white {
-    background: #FFF;
-    color: #1E2939;
+    @apply bg-white text-[var(--color-netinera-dark)];
   }
   
   .company-stats-variant-white .company-stats-responsive-number,
@@ -391,20 +221,20 @@
   .company-stats-variant-white .company-stats-responsive-subline,
   .company-stats-variant-white .company-stats-xl-subline,
   .company-stats-variant-white .company-stats-sm-subline {
-    color: #1E2939;
+    @apply text-[var(--color-netinera-dark)];
   }
   
   .company-stats-variant-white .company-stats-responsive-icon,
   .company-stats-variant-white .company-stats-xl-icon,
   .company-stats-variant-white .company-stats-sm-icon {
-    background: rgb(30 41 57 / 10%);
+    @apply bg-[var(--color-netinera-dark)]/10; /* rgb(30 41 57 / 10%) */
   }
   
   .company-stats-variant-white .company-stats-responsive-icon svg,
   .company-stats-variant-white .company-stats-xl-icon svg,
   .company-stats-variant-white .company-stats-sm-icon svg {
-    color: #1E2939;
-    stroke: #1E2939;
+    color: var(--color-netinera-dark); /* Direct CSS for SVG color */
+    stroke: var(--color-netinera-dark); /* Direct CSS for SVG stroke */
   }
   
   /* ==========================
@@ -413,35 +243,29 @@
   
   /* Counter Animation */
   .company-stats-counter {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
+    @apply opacity-0 translate-y-5 transition-all duration-[600ms] ease-out;
   }
   
   .company-stats-counter.animate {
-    opacity: 1;
-    transform: translateY(0);
+    @apply opacity-100 translate-y-0;
   }
   
   /* Stats Animation on Scroll */
   .stats-card-animate {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply opacity-0 translate-y-10 scale-95 transition-all duration-[800ms] ease-in-out; /* 40px -> translate-y-10, cubic-bezier -> ease-in-out */
   }
   
   .stats-card-animate.in-view {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+    @apply opacity-100 translate-y-0 scale-100;
   }
   
   /* Interactive Enhancement */
   .stats-card-interactive {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply transition-all duration-300 ease-in-out;
   }
   
   .stats-card-interactive:hover {
-    transform: translateY(-4px) scale(1.02);
+    @apply transform -translate-y-1 scale-[1.02];
   }
   
   /* ==========================
@@ -449,135 +273,116 @@
    * ========================== */
   
   /* Tablet Design */
-  @media (width <= 1023px) {
+  @media (width <= 1023px) { /* max-netinera-tablet */
     .company-stats-figma-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      @apply grid-cols-2 gap-5; /* 20px */
     }
     
     .company-stats-responsive {
-      max-width: 320px;
-      padding: 28px 20px;
+      @apply max-w-[320px] py-7 px-5; /* 28px, 20px */
     }
     
     .company-stats-responsive-number {
-      font-size: 48px;
-      line-height: 1.1;
+      @apply text-[48px] leading-[1.1];
     }
     
     .company-stats-responsive-label {
-      font-size: 16px;
+      @apply text-base; /* 16px */
     }
     
     .company-stats-responsive-subline {
-      font-size: 14px;
-      line-height: 1.5;
+      @apply text-sm leading-[1.5]; /* 14px */
     }
   }
   
   /* Mobile Design */
-  @media (width <= 767px) {
+  @media (width <= 767px) { /* max-netinera-mobile */
     .company-stats-figma-grid,
     .company-stats-grid-auto,
     .company-stats-grid-responsive {
-      grid-template-columns: 1fr;
-      gap: 16px;
+      @apply grid-cols-1 gap-4; /* 16px */
     }
     
     .company-stats-responsive,
-    .company-stats-xl {
-      width: 100%;
-      max-width: 100%;
-      padding: 24px 20px;
-      border-radius: 20px 0;
+    .company-stats-xl { /* .company-stats-xl also gets mobile overrides */
+      @apply w-full max-w-full py-6 px-5 rounded-tl-[20px] rounded-br-[20px]; /* 24px, 20px */
     }
     
     .company-stats-responsive-layout-group,
     .company-stats-xl-layout-group {
-      gap: 12px;
+      @apply gap-3; /* 12px */
     }
     
     .company-stats-responsive-icon,
     .company-stats-xl-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
+      @apply w-10 h-10 rounded-[10px]; /* 40px */
     }
     
     .company-stats-responsive-icon svg,
     .company-stats-xl-icon svg {
-      width: 20px;
-      height: 20px;
+      width: 20px; /* Direct style */
+      height: 20px; /* Direct style */
     }
     
     .company-stats-responsive-number,
     .company-stats-xl-number {
-      font-size: 40px;
-      line-height: 1.2;
+      @apply text-[40px] leading-[1.2];
     }
     
     .company-stats-responsive-label,
     .company-stats-xl-label {
-      font-size: 16px;
-      line-height: 1.5;
+      @apply text-base leading-[1.5]; /* 16px */
     }
     
     .company-stats-responsive-subline,
     .company-stats-xl-subline {
-      font-size: 14px;
-      line-height: 1.4;
+      @apply text-sm leading-[1.4]; /* 14px */
     }
   }
   
   /* Small Mobile */
-  @media (width <= 479px) {
+  @media (width <= 479px) { /* max-xs or similar, smallest */
     .company-stats-responsive,
     .company-stats-xl,
-    .company-stats-sm {
-      padding: 20px 16px;
-      border-radius: 16px 0;
+    .company-stats-sm { /* All variants get these overrides */
+      @apply py-5 px-4 rounded-tl-[16px] rounded-br-[16px]; /* 20px, 16px */
     }
     
     .company-stats-responsive-layout-group,
     .company-stats-xl-layout-group,
     .company-stats-sm-layout-group {
-      gap: 10px;
+      @apply gap-[10px];
     }
     
     .company-stats-responsive-icon,
     .company-stats-xl-icon,
     .company-stats-sm-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+      @apply w-9 h-9 rounded-lg; /* 36px */
     }
     
     .company-stats-responsive-icon svg,
     .company-stats-xl-icon svg,
     .company-stats-sm-icon svg {
-      width: 18px;
-      height: 18px;
+      width: 18px; /* Direct style */
+      height: 18px; /* Direct style */
     }
     
     .company-stats-responsive-number,
     .company-stats-xl-number,
     .company-stats-sm-number {
-      font-size: 32px;
-      line-height: 1.25;
+      @apply text-[32px] leading-[1.25];
     }
     
     .company-stats-responsive-label,
     .company-stats-xl-label,
     .company-stats-sm-label {
-      font-size: 14px;
-      line-height: 1.4;
+      @apply text-sm leading-[1.4]; /* 14px */
     }
     
     .company-stats-responsive-subline,
     .company-stats-xl-subline,
     .company-stats-sm-subline {
-      font-size: 12px;
-      line-height: 1.3;
+      @apply text-xs leading-[1.3]; /* 12px */
     }
   }
   
@@ -589,8 +394,7 @@
   .company-stats-responsive:focus-within,
   .company-stats-xl:focus-within,
   .company-stats-sm:focus-within {
-    outline: 2px solid #FFF;
-    outline-offset: 2px;
+    @apply outline-2 outline-white outline-offset-2;
   }
   
   /* High Contrast Mode */
@@ -598,7 +402,7 @@
     .company-stats-responsive,
     .company-stats-xl,
     .company-stats-sm {
-      border: 2px solid #FFF;
+      @apply border-2 border-white;
     }
     
     .company-stats-responsive-number,
@@ -607,7 +411,7 @@
     .company-stats-responsive-label,
     .company-stats-xl-label,
     .company-stats-sm-label {
-      font-weight: 600;
+      @apply font-semibold;
     }
   }
   
@@ -619,10 +423,7 @@
     .company-stats-counter,
     .stats-card-animate,
     .stats-card-interactive {
-      transition: none;
-      transform: none !important;
-      animation: none;
-      opacity: 1;
+      @apply motion-reduce:transition-none motion-reduce:transform-none motion-reduce:animate-none motion-reduce:opacity-100;
     }
   }
   
@@ -634,13 +435,9 @@
     .company-stats-responsive,
     .company-stats-xl,
     .company-stats-sm {
-      background: white !important;
-      color: black !important;
-      border: 1px solid #ddd;
-      border-radius: 0;
+      @apply print:bg-white !important print:text-black !important print:border print:border-gray-300 print:rounded-none print:shadow-none !important;
       break-inside: avoid;
-      margin-bottom: 20px;
-      box-shadow: none !important;
+      margin-bottom: 20px; /* Keep mb as it's specific for print */
     }
     
     .company-stats-responsive-number,
@@ -652,32 +449,32 @@
     .company-stats-responsive-subline,
     .company-stats-xl-subline,
     .company-stats-sm-subline {
-      color: black !important;
+      @apply print:text-black !important;
     }
     
     .company-stats-responsive-icon,
     .company-stats-xl-icon,
     .company-stats-sm-icon {
-      background: #f0f0f0 !important;
+      @apply print:bg-gray-100 !important;
     }
     
     .company-stats-responsive-icon svg,
     .company-stats-xl-icon svg,
     .company-stats-sm-icon svg {
-      color: black !important;
-      stroke: black !important;
+      color: black !important; /* Direct style */
+      stroke: black !important; /* Direct style */
     }
     
     .company-stats-figma-grid,
     .company-stats-grid-auto,
     .company-stats-grid-responsive {
-      display: block;
+      @apply print:block;
     }
     
     .company-stats-figma-grid > *,
     .company-stats-grid-auto > *,
     .company-stats-grid-responsive > * {
-      margin-bottom: 20px;
+      margin-bottom: 20px; /* Keep mb as it's specific for print */
     }
   }
   
@@ -686,7 +483,7 @@
    * ========================== */
   
   .company-stats-loading {
-    background: linear-gradient(90deg, #DD052B 25%, #FF2B50 50%, #DD052B 75%);
+    background: linear-gradient(90deg, var(--color-netinera-secondary) 25%, #FF2B50 50%, var(--color-netinera-secondary) 75%); /* Use variable */
     background-size: 200% 100%;
     animation: company-stats-loading 1.5s infinite;
   }
@@ -703,10 +500,13 @@
   .company-stats-loading .company-stats-xl-label,
   .company-stats-loading .company-stats-sm-label {
     background: linear-gradient(90deg, rgb(255 255 255 / 30%) 25%, rgb(255 255 255 / 50%) 50%, rgb(255 255 255 / 30%) 75%);
-    background-size: 200% 100%;
-    animation: company-stats-loading 1.5s infinite;
-    color: transparent;
-    border-radius: 4px;
+    @apply bg-cover animate-pulse text-transparent rounded; /* Using pulse for text loading, or keep custom gradient + animation */
+    /* Re-evaluate if custom gradient animation is preferred over Tailwind's pulse for text */
+    /* For now, keeping custom gradient if it's visually distinct from a simple pulse */
+    background-size: 200% 100%; /* Keep if custom animation is used */
+    animation: company-stats-loading 1.5s infinite; /* Keep if custom animation is used */
+    /* color: transparent; */ /* Already applied by text-transparent */
+    /* border-radius: 4px; */ /* Tailwind rounded is fine */
   }
   
 } 
