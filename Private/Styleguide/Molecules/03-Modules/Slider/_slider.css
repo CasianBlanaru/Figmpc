@@ -40,6 +40,6 @@
 }
 
 .swiper-pagination-bullet-active {
-  @apply bg-secondary-700;
+  @apply bg-[var(--color-secondary-700)]; /* Use theme variable */
   @apply w-5 h-2.5;
 }

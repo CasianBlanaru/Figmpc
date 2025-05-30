@@ -17,9 +17,9 @@
               &::before {
           @apply absolute top-2.5 left-3;
           @apply content-[var(--icon-download)];
-          @apply text-xl text-secondary-500;
+          @apply text-xl text-[var(--color-secondary-500)];
 
-          font-family: icomoon, sans-serif;
+          font-family: icomoon, sans-serif; /* Keep custom font for icon */
         }
     }
   }

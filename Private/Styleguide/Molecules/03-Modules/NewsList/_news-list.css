@@ -5,218 +5,116 @@
 
   /* Responsive News List Container */
   .news-list-responsive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
-    padding: 24px;
-    background: white;
-    border-radius: 24px 0;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply flex flex-col items-center gap-10 w-full p-6 bg-white rounded-tl-[24px] rounded-br-[24px] overflow-hidden transition-all duration-300 ease-in-out; /* No base shadow */
   }
 
   .news-list-responsive:hover {
-    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
+    @apply shadow-[0_4px_12px_rgb(30_41_57_/_8%)]; /* Shadow only on hover */
   }
 
   /* News Section Header */
   .news-section-header {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    width: 100%;
-    text-align: center;
+    @apply flex flex-col self-stretch w-full text-center;
   }
 
   /* News Section Title */
   .news-section-title {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 24px; /* Mobile first */
-    line-height: 1.2em;
-    text-transform: uppercase;
-    text-align: center;
-    color: #1E2939;
-    margin: 0;
-    width: 100%;
+    @apply font-[var(--font-family-display)] font-normal text-[24px] leading-[1.2em] uppercase text-center text-[var(--color-netinera-dark)] m-0 w-full; /* Mobile first */
   }
 
   /* News Content Group */
   .news-content-group {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 36px;
-    width: 100%;
+    @apply flex flex-col self-stretch gap-9 w-full; /* 36px -> gap-9 */
   }
 
   /* News Items Group */
   .news-items-group {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 24px;
-    width: 100%;
+    @apply flex flex-col self-stretch gap-6 w-full; /* 24px -> gap-6 */
   }
 
   /* Press Release Item */
   .news-press-release {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 12px;
-    width: 100%;
-    padding: 16px 0;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    @apply flex flex-col self-stretch gap-3 w-full py-4 px-0 transition-all duration-300 ease-in-out cursor-pointer; /* 12px -> gap-3, 16px -> py-4 */
   }
 
   .news-press-release:hover {
-    transform: translateX(4px);
-    background: rgb(221 5 43 / 2%);
-    border-radius: 8px;
-    padding: 16px;
-    margin: -16px 0;
+    @apply transform translate-x-1 bg-[var(--color-netinera-secondary)]/5 rounded-lg p-4 -my-4; /* original bg was rgb(221 5 43 / 2%) - using 5% opacity for visibility */
+    /* Negative margin to compensate padding requires parent overflow control or careful layout */
   }
 
   /* Press Release Text Group (Date/Category Row) */
   .news-press-release-text-group {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-self: stretch;
-    gap: 10px;
-    width: 100%;
+    @apply flex flex-row items-center self-stretch gap-2.5 w-full; /* 10px -> gap-2.5 */
   }
 
   /* Press Release Date */
   .news-date,
   .news-press-release-date {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.714em;
-    color: #1E2939;
-    margin: 0;
-    white-space: nowrap;
+    @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.714em] text-[var(--color-netinera-dark)] m-0 whitespace-nowrap;
   }
 
   /* Press Release Category */
   .news-category,
   .news-press-release-category {
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    line-height: 1.714em;
-    color: #1E2939;
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 500;
+    @apply font-[var(--font-family-sans)] text-sm leading-[1.714em] text-[var(--color-netinera-dark)] m-0 uppercase font-medium;
   }
 
   /* Press Release Divider Line */
   .news-press-release-line {
-    width: 1px;
-    height: 20px;
-    background: #1E2939;
-    flex-shrink: 0;
+    @apply w-px h-5 bg-[var(--color-netinera-dark)] flex-shrink-0; /* 20px -> h-5 */
   }
 
   /* Press Release Headline */
   .news-headline,
   .news-press-release-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.455em;
-    color: #1E2939;
-    width: 100%;
-    margin: 0;
-    cursor: pointer;
-    transition: color 0.3s ease;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.455em] text-[var(--color-netinera-dark)] w-full m-0 cursor-pointer transition-colors duration-300 ease-in-out; /* 18px -> text-lg */
   }
 
   .news-headline:hover,
   .news-press-release-headline:hover {
-    color: #DD052B;
+    @apply text-[var(--color-netinera-secondary)];
   }
 
   /* News Divider */
   .news-divider {
-    width: 100%;
-    height: 1px;
-      background: #E7E5E4;
-    border: none;
-    margin: 0;
+    @apply w-full h-px bg-stone-200 border-none m-0; /* #E7E5E4 is stone-200 */
   }
 
   /* News Buttons Group */
   .news-buttons-group {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 10px;
-    align-items: center;
+    @apply flex flex-col self-stretch gap-2.5 items-center; /* 10px -> gap-2.5 */
   }
 
   /* News Primary Button */
   .news-button,
   .news-primary-button {
-    background: #DD052B;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    padding: 16px 24px;
-    height: 48px;
-    width: fit-content;
-    align-self: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    font-family: Roboto, sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.429em;
-    color: white;
-    text-align: center;
+    @apply bg-[var(--color-netinera-secondary)] rounded-xl flex flex-row justify-center items-center gap-1.5 py-4 px-6 h-12 w-fit self-center transition-all duration-300 ease-in-out cursor-pointer border-none no-underline font-[var(--font-family-sans)] font-medium text-sm leading-[1.429em] text-white text-center; /* 16px 24px padding, 48px height, 14px font */
   }
 
   .news-button:hover,
   .news-primary-button:hover {
-    background: #B8041F;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px -4px rgb(221 5 43 / 30%);
-    color: white;
-    text-decoration: none;
+    @apply bg-[#B8041F] transform -translate-y-0.5 shadow-[0_8px_16px_-4px_rgb(221_5_43_/_30%)] text-white no-underline; /* Darker secondary */
   }
 
   /* General Focus States - must come before hover states */
-  .news-press-release:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
-    border-radius: 8px;
+  .news-press-release:focus { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2 rounded-lg;
   }
 
   /* General SM selectors - must come before XL hover states */
-  .news-list-sm .news-press-release {
-    padding: 12px 0;
-  }
+  /* This seems to be a general style for .news-list-sm context, will handle with responsive if it's a specific breakpoint rule */
+  /* .news-list-sm .news-press-release {
+    @apply py-3;
+  } */
 
   .news-button:active,
   .news-primary-button:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 8px -2px rgb(221 5 43 / 30%);
+    @apply transform translate-y-0 shadow-[0_4px_8px_-2px_rgb(221_5_43_/_30%)];
   }
 
-  .news-button:focus,
-  .news-primary-button:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
+  .news-button:focus, /* Should be focus-visible */
+  .news-primary-button:focus { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
   }
 
   /* ==========================
@@ -225,61 +123,46 @@
 
   /* Desktop XL News List Container */
   .news-list-xl {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 48px;
-    width: 100%;
-    padding: 40px;
-    background: white;
-    border-radius: 48px 0;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply flex flex-col items-center gap-12 w-full p-10 bg-white rounded-tl-[48px] rounded-br-[48px] overflow-hidden transition-all duration-300 ease-in-out; /* gap 48px, p 40px */
   }
 
   .news-list-xl:hover {
-    box-shadow: 0 8px 20px rgb(30 41 57 / 12%);
+    @apply shadow-[0_8px_20px_rgb(30_41_57_/_12%)];
   }
 
   /* Desktop XL Title */
   .news-list-xl .news-section-title {
-    font-size: 30px;
-    line-height: 1.2em;
+    @apply text-[30px] leading-[1.2em];
   }
 
   /* Desktop XL Content Spacing */
   .news-list-xl .news-content-group {
-    gap: 40px;
+    @apply gap-10; /* 40px */
   }
 
   .news-list-xl .news-items-group {
-    gap: 32px;
+    @apply gap-8; /* 32px */
   }
 
   /* Desktop XL Press Release */
   .news-list-xl .news-press-release {
-    padding: 20px 0;
+    @apply py-5 px-0; /* 20px */
   }
 
   .news-list-xl .news-press-release:hover {
-    padding: 20px;
-    margin: -20px 0;
-    transform: translateX(8px);
+    @apply p-5 -my-5 transform translate-x-2; /* original margin -20px 0. padding 20px. */
   }
 
   /* Desktop XL Headlines */
   .news-list-xl .news-headline,
   .news-list-xl .news-press-release-headline {
-    font-size: 22px;
-    line-height: 1.455em;
+    @apply text-[22px] leading-[1.455em];
   }
 
   /* Desktop XL Button */
   .news-list-xl .news-button,
   .news-list-xl .news-primary-button {
-    padding: 20px 32px;
-    height: 52px;
-    font-size: 16px;
+    @apply py-5 px-8 h-[52px] text-base; /* p:20px 32px, 16px font */
   }
 
   /* ==========================
@@ -288,49 +171,36 @@
 
   /* Mobile SM News List Container */
   .news-list-sm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    width: 100%;
-    padding: 20px;
-    background: white;
-    border-radius: 20px 0;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply flex flex-col items-center gap-8 w-full p-5 bg-white rounded-tl-[20px] rounded-br-[20px] overflow-hidden transition-all duration-300 ease-in-out; /* gap 32px, p 20px */
   }
 
   .news-list-sm:hover {
-    box-shadow: 0 2px 8px rgb(30 41 57 / 6%);
+    @apply shadow-[0_2px_8px_rgb(30_41_57_/_6%)];
   }
 
   /* Mobile SM Title */
   .news-list-sm .news-section-title {
-    font-size: 20px;
-    line-height: 1.3em;
+    @apply text-[20px] leading-[1.3em];
   }
 
   /* News SM Content Spacing */
   .news-list-sm .news-content-group {
-    gap: 28px;
+    @apply gap-7; /* 28px */
   }
 
   .news-list-sm .news-items-group {
-    gap: 20px;
+    @apply gap-5; /* 20px */
   }
 
   /* News SM Press Release Hover */
-  .news-list-sm .news-press-release:hover {
-    padding: 12px;
-    margin: -12px 0;
-    transform: translateX(4px);
+  .news-list-sm .news-press-release:hover { /* Base .news-press-release already has py-3 for sm */
+    @apply p-3 -my-3 transform translate-x-1; /* padding 12px, margin -12px */
   }
 
   /* Mobile SM Headlines */
   .news-list-sm .news-headline,
   .news-list-sm .news-press-release-headline {
-    font-size: 16px;
-    line-height: 1.5em;
+    @apply text-base leading-[1.5em]; /* 16px */
   }
 
   /* Mobile SM Date/Category */
@@ -338,17 +208,13 @@
   .news-list-sm .news-press-release-date,
   .news-list-sm .news-category,
   .news-list-sm .news-press-release-category {
-  font-size: 12px;
-    line-height: 1.6em;
+    @apply text-xs leading-[1.6em]; /* 12px */
   }
 
   /* Mobile SM Button */
   .news-list-sm .news-button,
   .news-list-sm .news-primary-button {
-    padding: 14px 20px;
-    height: 44px;
-    font-size: 14px;
-    width: 100%;
+    @apply py-[14px] px-5 h-11 text-sm w-full; /* 44px height */
   }
 
   /* ==========================
@@ -357,10 +223,10 @@
 
   /* Fade In Animation */
   .news-section-fade-in {
-    animation: news-list-fade-in 0.6s ease-out;
+    animation: news-list-fade-in 0.6s ease-out; /* Keep custom animation */
   }
 
-  @keyframes news-list-fade-in {
+  @keyframes news-list-fade-in { /* Keep custom keyframes */
     from {
       opacity: 0;
       transform: translateY(30px);
@@ -374,10 +240,10 @@
 
   /* Item Slide In Animation */
   .news-item-animate {
-    animation: news-item-slide-in 0.8s ease-out forwards;
+    animation: news-item-slide-in 0.8s ease-out forwards; /* Keep custom animation */
   }
 
-  @keyframes news-item-slide-in {
+  @keyframes news-item-slide-in { /* Keep custom keyframes */
     from {
       opacity: 0;
       transform: translateY(20px) scale(0.98);
@@ -391,15 +257,11 @@
 
   /* Interactive Animation Class */
   .news-item-interactive {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply transition-all duration-300 ease-in-out;
   }
 
-  .news-item-interactive:hover {
-    transform: translateX(8px);
-    background: rgb(255 255 255 / 50%);
-    border-radius: 8px;
-    padding: 16px;
-    margin: -16px;
+  .news-item-interactive:hover { /* This style applies to .news-press-release when .news-item-interactive is on it */
+    @apply transform translate-x-2 bg-white/50 rounded-lg p-4 -m-4; /* rgb(255 255 255 / 50%) */
   }
 
   /* ==========================
@@ -407,125 +269,105 @@
    * ========================== */
 
   /* Desktop breakpoint */
-  @media (width >= 1024px) {
-    .news-list-responsive {
-      border-radius: 48px 0;
-      padding: 40px;
-      gap: 48px;
+  @media (width >= 1024px) { /* netinera-desktop */
+    .news-list-responsive { /* Overrides for the base responsive variant on desktop */
+      @apply rounded-tl-[48px] rounded-br-[48px] p-10 gap-12; /* p 40px, gap 48px */
     }
 
     .news-list-responsive .news-section-title {
-      font-size: 30px;
-      line-height: 1.2em;
+      @apply text-[30px] leading-[1.2em];
     }
 
     .news-list-responsive .news-content-group {
-      gap: 40px;
+      @apply gap-10; /* 40px */
     }
 
     .news-list-responsive .news-items-group {
-      gap: 32px;
+      @apply gap-8; /* 32px */
     }
 
     .news-list-responsive .news-press-release {
-      padding: 20px 0;
+      @apply py-5 px-0; /* 20px */
     }
 
     .news-list-responsive .news-press-release:hover {
-      padding: 20px;
-      margin: -20px 0;
-      transform: translateX(8px);
+      @apply p-5 -my-5 transform translate-x-2;
     }
 
     .news-list-responsive .news-headline,
     .news-list-responsive .news-press-release-headline {
-      font-size: 22px;
-      line-height: 1.455em;
+      @apply text-[22px] leading-[1.455em];
     }
 
     .news-list-responsive .news-button,
     .news-list-responsive .news-primary-button {
-      padding: 20px 32px;
-      height: 52px;
-      font-size: 16px;
-      width: fit-content;
+      @apply py-5 px-8 h-[52px] text-base w-fit;
     }
   }
 
   /* Tablet adaptation */
-  @media (width <= 1023px) and (width >= 768px) {
+  @media (width <= 1023px) and (width >= 768px) { /* Between netinera-mobile and netinera-desktop */
     .news-list-responsive,
-    .news-list-xl {
-      border-radius: 36px 0;
-      padding: 32px;
-      gap: 40px;
+    .news-list-xl { /* Apply tablet overrides to both responsive and XL variants */
+      @apply rounded-tl-[36px] rounded-br-[36px] p-8 gap-10; /* p 32px, gap 40px */
     }
 
     .news-list-responsive .news-section-title,
     .news-list-xl .news-section-title {
-      font-size: 26px;
-      line-height: 1.2em;
+      @apply text-[26px] leading-[1.2em];
     }
 
     .news-list-responsive .news-headline,
     .news-list-xl .news-headline,
     .news-list-responsive .news-press-release-headline,
     .news-list-xl .news-press-release-headline {
-      font-size: 20px;
-      line-height: 1.4em;
+      @apply text-[20px] leading-[1.4em];
     }
 
     .news-list-responsive .news-button,
     .news-list-xl .news-button,
     .news-list-responsive .news-primary-button,
     .news-list-xl .news-primary-button {
-      padding: 18px 28px;
-      height: 50px;
-      font-size: 15px;
+      @apply py-[18px] px-7 h-[50px] text-[15px];
     }
   }
 
   /* Mobile optimization */
-  @media (width <= 767px) {
+  @media (width <= 767px) { /* max-netinera-mobile */
     .news-list-responsive,
     .news-list-xl,
-    .news-list-sm {
-      border-radius: 24px 0;
-      padding: 24px;
-      gap: 32px;
+    .news-list-sm { /* All variants get these overrides */
+      @apply rounded-tl-[24px] rounded-br-[24px] p-6 gap-8; /* p 24px, gap 32px */
     }
 
     .news-list-responsive .news-section-title,
     .news-list-xl .news-section-title,
     .news-list-sm .news-section-title {
-      font-size: 22px;
-      line-height: 1.3em;
+      @apply text-[22px] leading-[1.3em];
     }
 
     .news-list-responsive .news-content-group,
     .news-list-xl .news-content-group,
     .news-list-sm .news-content-group {
-      gap: 28px;
+      @apply gap-7; /* 28px */
     }
 
     .news-list-responsive .news-items-group,
     .news-list-xl .news-items-group,
     .news-list-sm .news-items-group {
-      gap: 20px;
+      @apply gap-5; /* 20px */
     }
 
     .news-list-responsive .news-press-release,
     .news-list-xl .news-press-release,
-    .news-list-sm .news-press-release {
-      padding: 16px 0;
+    .news-list-sm .news-press-release { /* Base padding for .news-press-release is py-4 (16px) */
+      @apply py-4 px-0;
     }
 
     .news-list-responsive .news-press-release:hover,
     .news-list-xl .news-press-release:hover,
-    .news-list-sm .news-press-release:hover {
-      padding: 16px;
-      margin: -16px 0;
-      transform: translateX(4px);
+    .news-list-sm .news-press-release:hover { /* Hover padding is p-4 (16px) */
+      @apply p-4 -my-4 transform translate-x-1;
     }
 
     .news-list-responsive .news-headline,
@@ -534,8 +376,7 @@
     .news-list-responsive .news-press-release-headline,
     .news-list-xl .news-press-release-headline,
     .news-list-sm .news-press-release-headline {
-      font-size: 18px;
-      line-height: 1.4em;
+      @apply text-lg leading-[1.4em]; /* 18px */
     }
 
     .news-list-responsive .news-button,
@@ -544,46 +385,40 @@
     .news-list-responsive .news-primary-button,
     .news-list-xl .news-primary-button,
     .news-list-sm .news-primary-button {
-      padding: 16px 24px;
-      height: 48px;
-      font-size: 14px;
-      width: 100%;
+      @apply py-4 px-6 h-12 text-sm w-full; /* p 16px 24px, h 48px, font 14px */
     }
   }
 
   /* Small mobile optimization */
-  @media (width <= 479px) {
+  @media (width <= 479px) { /* max-xs */
     .news-list-responsive,
     .news-list-xl,
     .news-list-sm {
-      border-radius: 20px 0;
-      padding: 20px;
-      gap: 28px;
+      @apply rounded-tl-[20px] rounded-br-[20px] p-5 gap-7; /* p 20px, gap 28px */
     }
 
     .news-list-responsive .news-section-title,
     .news-list-xl .news-section-title,
     .news-list-sm .news-section-title {
-      font-size: 20px;
-      line-height: 1.3em;
+      @apply text-[20px] leading-[1.3em];
     }
 
     .news-list-responsive .news-content-group,
     .news-list-xl .news-content-group,
     .news-list-sm .news-content-group {
-      gap: 24px;
+      @apply gap-6; /* 24px */
     }
 
     .news-list-responsive .news-items-group,
     .news-list-xl .news-items-group,
     .news-list-sm .news-items-group {
-      gap: 16px;
+      @apply gap-4; /* 16px */
     }
 
     .news-list-responsive .news-press-release,
     .news-list-xl .news-press-release,
     .news-list-sm .news-press-release {
-      padding: 12px 0;
+      @apply py-3 px-0; /* 12px */
     }
 
     .news-list-responsive .news-headline,
@@ -592,8 +427,7 @@
     .news-list-responsive .news-press-release-headline,
     .news-list-xl .news-press-release-headline,
     .news-list-sm .news-press-release-headline {
-      font-size: 16px;
-      line-height: 1.4em;
+      @apply text-base leading-[1.4em]; /* 16px */
     }
 
     .news-list-responsive .news-date,
@@ -608,8 +442,7 @@
     .news-list-responsive .news-press-release-category,
     .news-list-xl .news-press-release-category,
     .news-list-sm .news-press-release-category {
-      font-size: 12px;
-      line-height: 1.6em;
+      @apply text-xs leading-[1.6em]; /* 12px */
     }
 
     .news-list-responsive .news-button,
@@ -618,9 +451,7 @@
     .news-list-responsive .news-primary-button,
     .news-list-xl .news-primary-button,
     .news-list-sm .news-primary-button {
-      padding: 14px 20px;
-      height: 44px;
-      font-size: 14px;
+      @apply py-[14px] px-5 h-11 text-sm; /* h 44px */
     }
   }
 
@@ -630,7 +461,7 @@
 
   /* Light Variant */
   .news-list-variant-light {
-    background: #F9FAFB;
+    @apply bg-gray-50; /* #F9FAFB */
   }
 
   .news-list-variant-light .news-section-title,
@@ -640,16 +471,16 @@
   .news-list-variant-light .news-press-release-date,
   .news-list-variant-light .news-category,
   .news-list-variant-light .news-press-release-category {
-    color: #374151;
+    @apply text-gray-700; /* #374151 */
   }
 
   .news-list-variant-light .news-divider {
-    background: #D1D5DB;
+    @apply bg-gray-300; /* #D1D5DB */
   }
 
   /* Dark Variant */
   .news-list-variant-dark {
-    background: #1E2939;
+    @apply bg-[var(--color-netinera-dark)];
   }
 
   .news-list-variant-dark .news-section-title,
@@ -659,19 +490,19 @@
   .news-list-variant-dark .news-press-release-date,
   .news-list-variant-dark .news-category,
   .news-list-variant-dark .news-press-release-category {
-    color: white;
+    @apply text-white;
   }
 
   .news-list-variant-dark .news-divider {
-    background: rgb(255 255 255 / 10%);
+    @apply bg-white/10; /* rgb(255 255 255 / 10%) */
   }
 
   .news-list-variant-dark .news-press-release-line {
-    background: rgb(255 255 255 / 60%);
+    @apply bg-white/60; /* rgb(255 255 255 / 60%) */
   }
 
   .news-list-variant-dark .news-press-release:hover {
-    background: rgb(255 255 255 / 5%);
+    @apply bg-white/5; /* rgb(255 255 255 / 5%) */
   }
 
   /* ==========================
@@ -682,23 +513,20 @@
   .news-list-responsive:focus-within,
   .news-list-xl:focus-within,
   .news-list-sm:focus-within {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
   }
 
   /* Keyboard Navigation */
-  .news-headline:focus,
-  .news-press-release-headline:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
-    border-radius: 4px;
+  .news-headline:focus, /* Should be focus-visible */
+  .news-press-release-headline:focus { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2 rounded-sm;
   }
 
   /* Screen Reader Support */
   .news-list-responsive[role="region"],
   .news-list-xl[role="region"],
   .news-list-sm[role="region"] {
-    /* Ensures proper accessibility labeling */
+    /* Ensures proper accessibility labeling - No specific CSS */
   }
 
   /* High Contrast Mode */
@@ -706,23 +534,21 @@
     .news-list-responsive,
     .news-list-xl,
     .news-list-sm {
-      border: 2px solid #1E2939;
+      @apply border-2 border-[var(--color-netinera-dark)];
     }
 
     .news-section-title,
     .news-headline,
     .news-press-release-headline {
-      font-weight: 600;
+      @apply font-semibold;
     }
 
     .news-divider {
-      background: #1E2939;
-      height: 2px;
+      @apply bg-[var(--color-netinera-dark)] h-0.5; /* 2px */
     }
 
     .news-press-release-line {
-      background: #1E2939;
-      width: 2px;
+      @apply bg-[var(--color-netinera-dark)] w-0.5; /* 2px */
     }
   }
 
@@ -734,20 +560,19 @@
     .news-press-release,
     .news-button,
     .news-primary-button {
-      transition: none;
-      animation: none;
+      @apply motion-reduce:transition-none motion-reduce:animation-none;
     }
 
     .news-press-release:hover,
     .news-button:hover,
     .news-primary-button:hover {
-      transform: none;
+      @apply motion-reduce:transform-none;
     }
 
     .news-section-fade-in,
     .news-item-animate,
-    .news-item-interactive {
-      animation: none;
+    .news-item-interactive { /* Assuming .news-item-interactive also has animation/transition */
+      @apply motion-reduce:animation-none motion-reduce:transform-none !important; /* important to override inline transforms from JS */
     }
   }
 
@@ -759,25 +584,19 @@
     .news-list-responsive,
     .news-list-xl,
     .news-list-sm {
-      background: white !important;
-      border: 1px solid #ddd;
-      border-radius: 0;
+      @apply print:bg-white !important print:border print:border-gray-300 print:rounded-none print:shadow-none !important print:p-5 !important;
       break-inside: avoid;
-      margin-bottom: 20px;
-      box-shadow: none !important;
-      padding: 20px !important;
+      margin-bottom: 20px; /* Keep */
     }
 
     .news-section-title {
-      color: black !important;
-      font-size: 18px !important;
+      @apply print:text-black !important print:text-lg !important; /* 18px */
       page-break-after: avoid;
     }
 
     .news-headline,
     .news-press-release-headline {
-      color: black !important;
-      font-size: 14px !important;
+      @apply print:text-black !important print:text-sm !important; /* 14px */
       page-break-inside: avoid;
     }
 
@@ -785,33 +604,28 @@
     .news-press-release-date,
     .news-category,
     .news-press-release-category {
-      color: #666 !important;
-      font-size: 12px !important;
+      @apply print:text-gray-500 !important print:text-xs !important; /* #666 */
     }
 
     .news-divider {
-      background: #ddd !important;
+      @apply print:bg-gray-300 !important;
       page-break-inside: avoid;
     }
 
     .news-press-release-line {
-      background: #666 !important;
+      @apply print:bg-gray-500 !important;
     }
 
     .news-button,
     .news-primary-button {
-      border: 1px solid #666 !important;
-      background: white !important;
-      color: black !important;
-      box-shadow: none !important;
+      @apply print:border print:border-gray-500 !important print:bg-white !important print:text-black !important print:shadow-none !important;
       page-break-inside: avoid;
     }
 
     .news-press-release:hover,
     .news-button:hover,
     .news-primary-button:hover {
-      background: white !important;
-      transform: none !important;
+      @apply print:bg-white !important print:transform-none !important;
     }
   }
 

@@ -7,28 +7,17 @@
   
   /* Base Background Image Container */
   .teaser-bg-image {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply relative bg-cover bg-center bg-no-repeat overflow-hidden transition-all duration-300 ease-in-out;
   }
   
   .teaser-bg-image:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 15%);
+    @apply transform scale-[1.02] shadow-[0_15px_30px_-5px_rgb(30_41_57_/_15%)];
   }
   
   /* Gradient Overlay for Text Readability */
   .teaser-bg-gradient {
-    position: relative;
-    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: linear-gradient(180deg, transparent 0%, rgb(var(--color-netinera-dark-rgb)/0.1) 30%, rgb(var(--color-netinera-dark-rgb)/0.8) 100%); /* Assuming --color-netinera-dark-rgb as 30,41,57 */
+    @apply relative w-full h-full flex flex-col justify-end;
   }
   
   /* ==========================
@@ -37,167 +26,92 @@
   
   /* Top Variant XL - Full Width */
   .teaser-bg-image-top-xl {
-    width: 100%;
-    height: 486px; /* Desktop height - Figma Node 1831-9286 */
-    border-radius: 64px 0; /* Standard Netinera radius */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply w-full h-[486px] rounded-tl-[64px] rounded-br-[64px] bg-cover bg-center bg-no-repeat overflow-hidden transition-all duration-300 ease-in-out;
   }
   
   .teaser-bg-image-top-xl:hover {
-    transform: scale(1.01);
-    box-shadow: 0 20px 40px -10px rgb(30 41 57 / 15%);
+    @apply transform scale-[1.01] shadow-[0_20px_40px_-10px_rgb(30_41_57_/_15%)];
   }
   
   /* Top Variant Content */
   .teaser-bg-image-top-xl-content {
-    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
-    padding: 36px; /* Desktop padding - Figma Node 1831-9286 */
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: linear-gradient(180deg, transparent 0%, rgb(var(--color-netinera-dark-rgb)/0.1) 30%, rgb(var(--color-netinera-dark-rgb)/0.8) 100%);
+    @apply p-9 h-full flex flex-col justify-end; /* 36px -> p-9 */
   }
   
   /* Top Variant Text Group */
   .teaser-bg-image-top-xl-text {
-    max-width: 576px; /* Content constraint */
+    @apply max-w-[576px];
   }
   
   /* Top Variant Overline */
   .teaser-bg-image-top-xl-overline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 16px; /* Desktop overline - Figma Node 1831-9286 */
-    line-height: 1.25em;
-    text-transform: uppercase;
-    color: white;
-    margin-bottom: 8px;
+    @apply font-[var(--font-family-display)] font-semibold italic text-base leading-[1.25em] uppercase text-white mb-2; /* 16px -> text-base, 8px -> mb-2 */
   }
   
   /* Top Variant Headline */
   .teaser-bg-image-top-xl-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 30px; /* Desktop H3 XL */
-    line-height: 1.2em;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-[30px] leading-[1.2em] uppercase text-white m-0;
   }
   
   /* Left Variant XL - Fixed Width */
   .teaser-bg-image-left-xl {
-    width: 576px; /* Fixed width - Figma Node 1831-9286 */
-    height: 486px; /* Desktop height */
-    border-radius: 32px 0; /* Medium radius */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply w-[576px] h-[486px] rounded-tl-[32px] rounded-br-[32px] bg-cover bg-center bg-no-repeat overflow-hidden transition-all duration-300 ease-in-out;
   }
   
   .teaser-bg-image-left-xl:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 15%);
+    @apply transform scale-[1.02] shadow-[0_15px_30px_-5px_rgb(30_41_57_/_15%)];
   }
   
   /* Left Variant Content */
   .teaser-bg-image-left-xl-content {
-    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
-    padding: 36px; /* Desktop padding */
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: linear-gradient(180deg, transparent 0%, rgb(var(--color-netinera-dark-rgb)/0.1) 30%, rgb(var(--color-netinera-dark-rgb)/0.8) 100%);
+    @apply p-9 h-full flex flex-col justify-end;
   }
   
   /* Left Variant Text Group */
   .teaser-bg-image-left-xl-text {
-    max-width: 100%;
+    @apply max-w-full;
   }
   
   /* Left Variant Overline */
   .teaser-bg-image-left-xl-overline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 16px; /* Desktop overline */
-    line-height: 1.25em;
-    text-transform: uppercase;
-    color: white;
-    margin-bottom: 8px;
+    @apply font-[var(--font-family-display)] font-semibold italic text-base leading-[1.25em] uppercase text-white mb-2;
   }
   
   /* Left Variant Headline */
   .teaser-bg-image-left-xl-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 30px; /* Desktop H3 XL */
-    line-height: 1.2em;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-[30px] leading-[1.2em] uppercase text-white m-0;
   }
   
   /* Right Variant XL - Custom Radius */
   .teaser-bg-image-right-xl {
-    width: 576px; /* Fixed width - Figma Node 1831-9286 */
-    height: 486px; /* Desktop height */
-    border-radius: 0 0 64px; /* Custom bottom-right radius */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply w-[576px] h-[486px] rounded-br-[64px] bg-cover bg-center bg-no-repeat overflow-hidden transition-all duration-300 ease-in-out; /* rounded-bl-none rounded-tr-none if only one corner */
   }
   
   .teaser-bg-image-right-xl:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 15%);
+    @apply transform scale-[1.02] shadow-[0_15px_30px_-5px_rgb(30_41_57_/_15%)];
   }
   
   /* Right Variant Content */
   .teaser-bg-image-right-xl-content {
-    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
-    padding: 36px; /* Desktop padding */
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: linear-gradient(180deg, transparent 0%, rgb(var(--color-netinera-dark-rgb)/0.1) 30%, rgb(var(--color-netinera-dark-rgb)/0.8) 100%);
+    @apply p-9 h-full flex flex-col justify-end;
   }
   
   /* Right Variant Text Group */
   .teaser-bg-image-right-xl-text {
-    max-width: 100%;
+    @apply max-w-full;
   }
   
   /* Right Variant Overline */
   .teaser-bg-image-right-xl-overline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 16px; /* Desktop overline */
-    line-height: 1.25em;
-    text-transform: uppercase;
-    color: white;
-    margin-bottom: 8px;
+    @apply font-[var(--font-family-display)] font-semibold italic text-base leading-[1.25em] uppercase text-white mb-2;
   }
   
   /* Right Variant Headline */
   .teaser-bg-image-right-xl-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 30px; /* Desktop H3 XL */
-    line-height: 1.2em;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-[30px] leading-[1.2em] uppercase text-white m-0;
   }
   
   /* ==========================
@@ -206,114 +120,62 @@
   
   /* Top Variant SM - Mobile */
   .teaser-bg-image-top-sm {
-    width: 100%;
-    max-width: 384px; /* Mobile constraint */
-    height: 202.5px; /* Mobile height - Figma Node 1831-9286 */
-    border-radius: 36px 0 0; /* Mobile radius variant */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply w-full max-w-[384px] h-[202.5px] rounded-tl-[36px] bg-cover bg-center bg-no-repeat overflow-hidden transition-all duration-300 ease-in-out;
   }
   
   .teaser-bg-image-top-sm:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px -5px rgb(30 41 57 / 12%);
+    @apply transform scale-[1.02] shadow-[0_10px_20px_-5px_rgb(30_41_57_/_12%)];
   }
   
   /* Top Variant SM Content */
   .teaser-bg-image-top-sm-content {
-    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
-    padding: 24px; /* Mobile padding - Figma Node 1831-9286 */
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: linear-gradient(180deg, transparent 0%, rgb(var(--color-netinera-dark-rgb)/0.1) 30%, rgb(var(--color-netinera-dark-rgb)/0.8) 100%);
+    @apply p-6 h-full flex flex-col justify-end; /* 24px -> p-6 */
   }
   
   /* Top Variant SM Text Group */
   .teaser-bg-image-top-sm-text {
-    width: 100%;
+    @apply w-full;
   }
   
   /* Top Variant SM Overline */
   .teaser-bg-image-top-sm-overline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 12px; /* Mobile overline - Figma Node 1831-9286 */
-    line-height: 1.167em;
-    text-transform: uppercase;
-    color: white;
-    margin-bottom: 4px;
+    @apply font-[var(--font-family-display)] font-semibold italic text-xs leading-[1.167em] uppercase text-white mb-1; /* 12px, 4px->mb-1 */
   }
   
   /* Top Variant SM Headline */
   .teaser-bg-image-top-sm-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px; /* Mobile H5 SM */
-    line-height: 1.444em;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.444em] uppercase text-white m-0; /* 18px -> text-lg */
   }
   
   /* Center Variant SM - Mobile */
   .teaser-bg-image-center-sm {
-    width: 100%;
-    max-width: 384px; /* Mobile constraint */
-    height: 202.5px; /* Mobile height */
-    border-radius: 24px 0; /* Mobile center radius */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply w-full max-w-[384px] h-[202.5px] rounded-tl-[24px] rounded-br-[24px] bg-cover bg-center bg-no-repeat overflow-hidden transition-all duration-300 ease-in-out;
   }
   
   .teaser-bg-image-center-sm:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px -5px rgb(30 41 57 / 12%);
+    @apply transform scale-[1.02] shadow-[0_10px_20px_-5px_rgb(30_41_57_/_12%)];
   }
   
   /* Center Variant SM Content */
   .teaser-bg-image-center-sm-content {
-    background: linear-gradient(180deg, transparent 0%, rgb(30 41 57 / 10%) 30%, rgb(30 41 57 / 80%) 100%);
-    padding: 24px; /* Mobile padding */
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: linear-gradient(180deg, transparent 0%, rgb(var(--color-netinera-dark-rgb)/0.1) 30%, rgb(var(--color-netinera-dark-rgb)/0.8) 100%);
+    @apply p-6 h-full flex flex-col justify-end; /* 24px -> p-6 */
   }
   
   /* Center Variant SM Text Group */
   .teaser-bg-image-center-sm-text {
-    width: 100%;
+    @apply w-full;
   }
   
   /* Center Variant SM Overline */
   .teaser-bg-image-center-sm-overline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 12px; /* Mobile overline */
-    line-height: 1.167em;
-    text-transform: uppercase;
-    color: white;
-    margin-bottom: 4px;
+    @apply font-[var(--font-family-display)] font-semibold italic text-xs leading-[1.167em] uppercase text-white mb-1;
   }
   
   /* Center Variant SM Headline */
   .teaser-bg-image-center-sm-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px; /* Mobile H5 SM */
-    line-height: 1.444em;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.444em] uppercase text-white m-0;
   }
   
   /* ==========================

@@ -5,59 +5,31 @@
 
   /* Responsive Feature Card Container */
   .feature-card-responsive {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 328px; /* Mobile first */
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
-    border-radius: 36px 0 0; /* Mobile first */
+    @apply flex flex-col w-full max-w-[328px] overflow-hidden transition-all duration-300 ease-in-out shadow-[0_4px_12px_rgb(30_41_57_/_8%)] rounded-tl-[36px];
   }
 
   .feature-card-responsive:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 10%), 0 6px 12px -2px rgb(30 41 57 / 5%);
+    @apply transform -translate-y-1 shadow-[0_15px_30px_-5px_rgb(30_41_57_/_10%),_0_6px_12px_-2px_rgb(30_41_57_/_5%)];
   }
 
   /* Responsive Feature Card Image */
   .feature-card-responsive-image {
-    width: 100%;
-    height: 200px; /* Mobile first */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 36px 0 0; /* Mobile first */
-    position: relative;
-    overflow: hidden;
+    @apply w-full h-[200px] bg-cover bg-center bg-no-repeat rounded-tl-[36px] relative overflow-hidden;
   }
 
   /* Responsive Feature Card Overlay */
   .feature-card-responsive-overlay {
-    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%);
-    position: absolute;
-    inset: 0;
-    padding: 20px; /* Mobile first */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 12px;
+    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%); /* Using Netinera Primary and Primary-900 for gradient */
+    @apply absolute inset-0 p-5 flex flex-col justify-end gap-3; /* 20px padding, 12px gap */
   }
 
   /* Responsive Feature Card Icon */
   .feature-card-responsive-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    background: rgb(255 255 255 / 15%);
-    border-radius: 12px;
-    flex-shrink: 0;
+    @apply flex justify-center items-center w-12 h-12 bg-white/15 rounded-xl flex-shrink-0; /* 48px, 12px radius */
   }
 
   .feature-card-responsive-icon svg {
-    width: 24px;
+    width: 24px; /* Direct style */
     height: 24px;
     color: white;
     stroke: white;
@@ -67,33 +39,17 @@
 
   /* Responsive Feature Card Content */
   .feature-card-responsive-content {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    flex: 1;
+    @apply flex flex-col gap-1 flex-1; /* 4px -> gap-1 */
   }
 
   /* Responsive Feature Card Overline */
   .feature-card-responsive-overline {
-    font-family: Roboto, sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 1.33;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: white;
-    opacity: 0.9;
+    @apply font-[var(--font-family-sans)] font-semibold text-xs leading-[1.33] uppercase tracking-[0.1em] text-white opacity-90;
   }
 
   /* Responsive Feature Card Headline */
   .feature-card-responsive-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-[20px] leading-[1.2] uppercase text-white m-0;
   }
 
   /* ==========================
@@ -102,58 +58,31 @@
 
   /* Desktop XL Feature Card Container */
   .feature-card-xl {
-    display: flex;
-    flex-direction: column;
-    width: 368px; /* Fixed desktop width */
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 12px rgb(30 41 57 / 8%);
-    border-radius: 64px 0 0; /* Desktop border radius */
+    @apply flex flex-col w-[368px] overflow-hidden transition-all duration-300 ease-in-out shadow-[0_4px_12px_rgb(30_41_57_/_8%)] rounded-tl-[64px];
   }
 
   .feature-card-xl:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px -5px rgb(30 41 57 / 10%), 0 6px 12px -2px rgb(30 41 57 / 5%);
+    @apply transform -translate-y-1 shadow-[0_15px_30px_-5px_rgb(30_41_57_/_10%),_0_6px_12px_-2px_rgb(30_41_57_/_5%)];
   }
 
   /* Desktop XL Feature Card Image */
   .feature-card-xl-image {
-    width: 100%;
-    height: 240px; /* Desktop image height */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 64px 0 0; /* Desktop border radius */
-    position: relative;
-    overflow: hidden;
+    @apply w-full h-[240px] bg-cover bg-center bg-no-repeat rounded-tl-[64px] relative overflow-hidden;
   }
 
   /* Desktop XL Feature Card Overlay */
   .feature-card-xl-overlay {
-    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%);
-    position: absolute;
-    inset: 0;
-    padding: 24px; /* Desktop padding */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 16px;
+    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%); /* Using Netinera Primary and Primary-900 for gradient */
+    @apply absolute inset-0 p-6 flex flex-col justify-end gap-4; /* 24px padding, 16px gap */
   }
 
   /* Desktop XL Feature Card Icon */
   .feature-card-xl-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 52px;
-    height: 52px;
-    background: rgb(255 255 255 / 15%);
-    border-radius: 14px;
-    flex-shrink: 0;
+    @apply flex justify-center items-center w-[52px] h-[52px] bg-white/15 rounded-[14px] flex-shrink-0;
   }
 
   .feature-card-xl-icon svg {
-    width: 26px;
+    width: 26px; /* Direct style */
     height: 26px;
     color: white;
     stroke: white;
@@ -163,33 +92,17 @@
 
   /* Desktop XL Feature Card Content */
   .feature-card-xl-content {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    flex: 1;
+    @apply flex flex-col gap-1.5 flex-1; /* 6px -> gap-1.5 */
   }
 
   /* Desktop XL Feature Card Overline */
   .feature-card-xl-overline {
-    font-family: Roboto, sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.29;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: white;
-    opacity: 0.9;
+    @apply font-[var(--font-family-sans)] font-semibold text-sm leading-[1.29] uppercase tracking-[0.1em] text-white opacity-90; /* 14px -> text-sm */
   }
 
   /* Desktop XL Feature Card Headline */
   .feature-card-xl-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 1.17;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-[24px] leading-[1.17] uppercase text-white m-0;
   }
 
   /* ==========================
@@ -198,58 +111,31 @@
 
   /* Mobile SM Feature Card Container */
   .feature-card-sm {
-    display: flex;
-    flex-direction: column;
-    width: 328px; /* Fixed mobile width */
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px rgb(30 41 57 / 6%);
-    border-radius: 36px 0 0; /* Mobile border radius */
+    @apply flex flex-col w-[328px] overflow-hidden transition-all duration-300 ease-in-out shadow-[0_2px_8px_rgb(30_41_57_/_6%)] rounded-tl-[36px];
   }
 
   .feature-card-sm:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px -4px rgb(30 41 57 / 8%), 0 4px 8px -2px rgb(30 41 57 / 4%);
+    @apply transform -translate-y-0.5 shadow-[0_8px_16px_-4px_rgb(30_41_57_/_8%),_0_4px_8px_-2px_rgb(30_41_57_/_4%)];
   }
 
   /* Mobile SM Feature Card Image */
   .feature-card-sm-image {
-    width: 100%;
-    height: 200px; /* Mobile image height */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 36px 0 0; /* Mobile border radius */
-    position: relative;
-    overflow: hidden;
+    @apply w-full h-[200px] bg-cover bg-center bg-no-repeat rounded-tl-[36px] relative overflow-hidden;
   }
 
   /* Mobile SM Feature Card Overlay */
   .feature-card-sm-overlay {
-    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%);
-    position: absolute;
-    inset: 0;
-    padding: 20px; /* Mobile padding */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 12px;
+    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%); /* Using Netinera Primary and Primary-900 for gradient */
+    @apply absolute inset-0 p-5 flex flex-col justify-end gap-3; /* 20px padding, 12px gap */
   }
 
   /* Mobile SM Feature Card Icon */
   .feature-card-sm-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    background: rgb(255 255 255 / 15%);
-    border-radius: 10px;
-    flex-shrink: 0;
+    @apply flex justify-center items-center w-[44px] h-[44px] bg-white/15 rounded-[10px] flex-shrink-0;
   }
 
   .feature-card-sm-icon svg {
-    width: 20px;
+    width: 20px; /* Direct style */
     height: 20px;
     color: white;
     stroke: white;
@@ -259,33 +145,17 @@
 
   /* Mobile SM Feature Card Content */
   .feature-card-sm-content {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    flex: 1;
+    @apply flex flex-col gap-1 flex-1; /* 4px -> gap-1 */
   }
 
   /* Mobile SM Feature Card Overline */
   .feature-card-sm-overline {
-    font-family: Roboto, sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 1.33;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: white;
-    opacity: 0.9;
+    @apply font-[var(--font-family-sans)] font-semibold text-xs leading-[1.33] uppercase tracking-[0.1em] text-white opacity-90;
   }
 
   /* Mobile SM Feature Card Headline */
   .feature-card-sm-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.22;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
+    @apply font-[var(--font-family-display)] font-normal text-lg leading-[1.22] uppercase text-white m-0; /* 18px -> text-lg */
   }
 
   /* ==========================
@@ -294,30 +164,17 @@
 
   /* Feature Card Grid Responsive */
   .feature-card-grid-responsive {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 368px));
-    gap: 24px;
-    width: 100%;
-    justify-content: center;
-    justify-items: center;
+    @apply grid grid-cols-[repeat(auto-fit,minmax(300px,368px))] gap-6 w-full justify-center justify-items-center;
   }
 
   /* Feature Card Grid Fixed */
   .feature-card-grid-fixed {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    width: 100%;
-    justify-items: center;
+    @apply grid grid-cols-3 gap-6 w-full justify-items-center;
   }
 
   /* Feature Card Grid Auto */
   .feature-card-grid-auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    width: 100%;
-    justify-items: center;
+    @apply grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5 w-full justify-items-center; /* 20px -> gap-5 */
   }
 
   /* ==========================
@@ -328,21 +185,21 @@
   .feature-card-variant-primary .feature-card-responsive-overlay,
   .feature-card-variant-primary .feature-card-xl-overlay,
   .feature-card-variant-primary .feature-card-sm-overlay {
-    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%);
+    background: linear-gradient(180deg, rgb(0 104 94 / 0%) 0%, rgb(0 61 57 / 100%) 100%); /* Netinera Primary (#00685E) / Primary-900 (#003d37) */
   }
 
   /* Secondary Variant (Red) */
   .feature-card-variant-secondary .feature-card-responsive-overlay,
   .feature-card-variant-secondary .feature-card-xl-overlay,
   .feature-card-variant-secondary .feature-card-sm-overlay {
-    background: linear-gradient(180deg, rgb(221 5 43 / 0%) 0%, rgb(185 28 28 / 100%) 100%);
+    background: linear-gradient(180deg, rgb(221 5 43 / 0%) 0%, rgb(185 28 28 / 100%) 100%); /* Netinera Secondary (#DD052B) / darker red */
   }
 
   /* Dark Variant */
   .feature-card-variant-dark .feature-card-responsive-overlay,
   .feature-card-variant-dark .feature-card-xl-overlay,
   .feature-card-variant-dark .feature-card-sm-overlay {
-    background: linear-gradient(180deg, rgb(30 41 57 / 0%) 0%, rgb(17 24 39 / 100%) 100%);
+    background: linear-gradient(180deg, rgb(30 41 57 / 0%) 0%, rgb(17 24 39 / 100%) 100%); /* Netinera Dark / darker */
   }
 
   /* ==========================
@@ -350,165 +207,140 @@
    * ========================== */
 
   /* Desktop breakpoint */
-  @media (width >= 1024px) {
+  @media (width >= 1024px) { /* netinera-desktop */
     .feature-card-responsive {
-      max-width: 368px;
-      border-radius: 64px 0;
+      @apply max-w-[368px] rounded-tl-[64px];
     }
 
     .feature-card-responsive-image {
-      height: 240px; /* Desktop image height */
-      border-radius: 64px 0 0;
+      @apply h-[240px] rounded-tl-[64px];
     }
 
     .feature-card-responsive-overlay {
-      padding: 24px;
-      gap: 16px;
+      @apply p-6 gap-4; /* 24px, 16px */
     }
 
     .feature-card-responsive-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
+      @apply w-[52px] h-[52px] rounded-[14px];
     }
 
     .feature-card-responsive-icon svg {
-      width: 26px;
+      width: 26px; /* Direct style */
       height: 26px;
     }
 
     .feature-card-responsive-content {
-      gap: 6px;
+      @apply gap-1.5; /* 6px */
     }
 
     .feature-card-responsive-overline {
-      font-size: 14px;
-      line-height: 1.29;
+      @apply text-sm leading-[1.29]; /* 14px */
     }
 
     .feature-card-responsive-headline {
-      font-size: 24px;
-      line-height: 1.17;
+      @apply text-[24px] leading-[1.17];
     }
   }
 
   /* Tablet adaptation */
-  @media (1023px >= width >= 768px) {
+  @media (1023px >= width >= 768px) { /* Styles for screens between netinera-mobile and netinera-desktop */
     .feature-card-grid-responsive,
     .feature-card-grid-fixed {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      @apply grid-cols-2 gap-5; /* 20px */
     }
 
-    .feature-card-xl {
-      width: 100%;
-      max-width: 340px;
-      border-radius: 48px 0;
+    .feature-card-xl { /* Overrides for XL card on tablet */
+      @apply w-full max-w-[340px] rounded-tl-[48px];
     }
 
     .feature-card-xl-image {
-      height: 220px;
-      border-radius: 48px 0 0;
+      @apply h-[220px] rounded-tl-[48px];
     }
   }
 
   /* Mobile optimization */
-  @media (width <= 767px) {
+  @media (width <= 767px) { /* max-netinera-mobile */
     .feature-card-grid-responsive,
     .feature-card-grid-fixed,
     .feature-card-grid-auto {
-      grid-template-columns: 1fr;
-      gap: 16px;
+      @apply grid-cols-1 gap-4; /* 16px */
     }
 
     .feature-card-responsive,
-    .feature-card-xl {
-      width: 100%;
-      max-width: 100%;
-      border-radius: 32px 0;
+    .feature-card-xl { /* XL card also gets mobile overrides */
+      @apply w-full max-w-full rounded-tl-[32px];
     }
 
     .feature-card-responsive-image,
     .feature-card-xl-image {
-      height: 180px;
-      border-radius: 32px 0 0;
+      @apply h-[180px] rounded-tl-[32px];
     }
 
     .feature-card-responsive-overlay,
     .feature-card-xl-overlay {
-      padding: 16px;
-      gap: 10px;
+      @apply p-4 gap-[10px]; /* 16px, 10px */
     }
 
     .feature-card-responsive-icon,
     .feature-card-xl-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
+      @apply w-10 h-10 rounded-lg; /* 40px, 8px */
     }
 
     .feature-card-responsive-icon svg,
     .feature-card-xl-icon svg {
-      width: 20px;
+      width: 20px; /* Direct style */
       height: 20px;
     }
 
     .feature-card-responsive-overline,
     .feature-card-xl-overline {
-      font-size: 10px;
-      line-height: 1.2;
+      @apply text-[10px] leading-[1.2];
     }
 
     .feature-card-responsive-headline,
     .feature-card-xl-headline {
-      font-size: 16px;
-      line-height: 1.25;
+      @apply text-base leading-[1.25]; /* 16px */
     }
   }
 
   /* Small mobile optimization */
-  @media (width <= 479px) {
+  @media (width <= 479px) { /* max-xs */
     .feature-card-responsive,
     .feature-card-xl,
-    .feature-card-sm {
-      border-radius: 24px 0;
+    .feature-card-sm { /* All variants get these overrides */
+      @apply rounded-tl-[24px];
     }
 
     .feature-card-responsive-image,
     .feature-card-xl-image,
     .feature-card-sm-image {
-      height: 160px;
-      border-radius: 24px 0 0;
+      @apply h-[160px] rounded-tl-[24px];
     }
 
     .feature-card-responsive-overlay,
     .feature-card-xl-overlay,
     .feature-card-sm-overlay {
-      padding: 12px;
-      gap: 8px;
-      background: rgb(0 0 0 / 90%) !important;
+      @apply p-3 gap-2; /* 12px, 8px */
+      background: rgb(0 0 0 / 0.9) !important; /* Important to override other gradients */
     }
 
     .feature-card-responsive-icon,
     .feature-card-xl-icon,
     .feature-card-sm-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
+      @apply w-9 h-9 rounded-[6px]; /* 36px */
     }
 
     .feature-card-responsive-icon svg,
     .feature-card-xl-icon svg,
     .feature-card-sm-icon svg {
-      width: 18px;
+      width: 18px; /* Direct style */
       height: 18px;
     }
 
     .feature-card-responsive-headline,
     .feature-card-xl-headline,
     .feature-card-sm-headline {
-      font-size: 14px;
-      line-height: 1.3;
+      @apply text-sm leading-[1.3]; /* 14px */
     }
   }
 
@@ -520,8 +352,7 @@
   .feature-card-responsive:focus-within,
   .feature-card-xl:focus-within,
   .feature-card-sm:focus-within {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2; /* DD052B */
   }
 
   /* High Contrast Mode */
@@ -529,19 +360,19 @@
     .feature-card-responsive,
     .feature-card-xl,
     .feature-card-sm {
-      border: 2px solid #1E2939;
+      @apply border-2 border-[var(--color-netinera-dark)];
     }
 
     .feature-card-responsive-headline,
     .feature-card-xl-headline,
     .feature-card-sm-headline {
-      font-weight: 600;
+      @apply font-semibold;
     }
 
     .feature-card-responsive-overlay,
     .feature-card-xl-overlay,
     .feature-card-sm-overlay {
-      background: rgb(0 0 0 / 90%) !important;
+      background: rgb(0 0 0 / 0.9) !important; /* Important to override other gradients */
     }
   }
 
@@ -550,8 +381,7 @@
     .feature-card-responsive,
     .feature-card-xl,
     .feature-card-sm {
-      transition: none;
-      transform: none !important;
+      @apply motion-reduce:transition-none motion-reduce:transform-none !important;
     }
   }
 
@@ -563,26 +393,21 @@
     .feature-card-responsive,
     .feature-card-xl,
     .feature-card-sm {
-      background: white !important;
-      border: 1px solid #ddd;
-      border-radius: 0;
+      @apply print:bg-white !important print:text-black !important print:border print:border-gray-300 print:rounded-none print:shadow-none !important;
       break-inside: avoid;
-      margin-bottom: 20px;
-      box-shadow: none !important;
+      margin-bottom: 20px; /* Keep mb as it's specific for print */
     }
 
     .feature-card-responsive-image,
     .feature-card-xl-image,
     .feature-card-sm-image {
-      height: 150px !important;
-      border-radius: 0;
-      border: 1px solid #ddd;
+      @apply print:h-[150px] !important print:rounded-none print:border print:border-gray-300;
     }
 
     .feature-card-responsive-overlay,
     .feature-card-xl-overlay,
     .feature-card-sm-overlay {
-      background: rgb(0 0 0 / 70%) !important;
+      background: rgb(0 0 0 / 0.7) !important; /* Important to override other gradients */
     }
 
     .feature-card-responsive-overline,
@@ -591,19 +416,19 @@
     .feature-card-responsive-headline,
     .feature-card-xl-headline,
     .feature-card-sm-headline {
-      color: white !important;
+      @apply print:text-white !important;
     }
 
     .feature-card-grid-responsive,
     .feature-card-grid-fixed,
     .feature-card-grid-auto {
-      display: block;
+      @apply print:block;
     }
 
     .feature-card-grid-responsive > *,
     .feature-card-grid-fixed > *,
     .feature-card-grid-auto > * {
-      margin-bottom: 20px;
+      margin-bottom: 20px; /* Keep mb as it's specific for print */
     }
   }
 

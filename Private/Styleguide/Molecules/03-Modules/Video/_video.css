@@ -4,100 +4,49 @@
 
 /* Video Responsive Container */
 .video-responsive {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px; /* layout_LTPFTC */
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
+  @apply flex flex-col items-center gap-[14px] w-full max-w-[768px] mx-auto;
 }
 
 .video-responsive-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 24px; /* Mobile first */
-  width: 100%;
-  height: 185px; /* Mobile height */
-  padding: 16px;
-  transition: all 0.3s ease;
-  
+  @apply relative flex items-center justify-center bg-cover bg-center bg-no-repeat rounded-3xl w-full h-[185px] p-4 transition-all duration-300 ease-in-out; /* Mobile first: rounded-24px, h-185px, p-16px */
   /* Gradient overlay */
-  background-image: linear-gradient(
-    180deg, 
-    rgb(0 0 0 / 0%) 0%, 
-    rgb(0 0 0 / 65%) 100%
-  );
+  background-image: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 0.65) 100%); /* Kept custom gradient */
+  /* Responsive styles for height, radius, padding are applied via media queries below */
 }
 
 .video-responsive-container:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 24px rgb(30 41 57 / 15%);
+  @apply transform scale-[1.02] shadow-[0_12px_24px_rgb(30_41_57_/_15%)];
 }
 
-/* Desktop responsive behavior */
-@media (width >= 1024px) {
-  .video-responsive {
-    width: 768px; /* layout_J444SV */
-  }
-  
-  .video-responsive-container {
-    height: 433px; /* Desktop height */
-    border-radius: 36px;
-    padding: 28px;
-  }
+/* Desktop responsive behavior - Merged into main classes with prefixes */
+.video-responsive {
+  @apply netinera-desktop:w-[768px];
 }
+.video-responsive-container {
+  @apply netinera-desktop:h-[433px] netinera-desktop:rounded-[36px] netinera-desktop:p-7; /* p 28px */
+}
+
 
 /* Video Responsive Play Button */
 .video-responsive-play-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #DD052B; /* Netinera Primary */
-  border: none;
-  border-radius: 12px;
-  width: 44px;
-  height: 44px;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 24%);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 10;
+  @apply flex items-center justify-center bg-[var(--color-netinera-secondary)] border-none rounded-xl w-11 h-11 shadow-[0_1px_2px_0_rgb(0_0_0_/_24%)] cursor-pointer transition-all duration-300 ease-in-out z-10; /* 12px->rounded-xl, 44px->w-11,h-11 */
 }
 
 .video-responsive-play-button:hover {
-  background: #B91C1C;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 32%);
+  @apply bg-[#B91C1C] transform -translate-y-px shadow-[0_4px_8px_0_rgb(0_0_0_/_32%)]; /* Darker secondary */
 }
 
 .video-responsive-play-button:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 24%);
+  @apply transform translate-y-0 shadow-[0_1px_2px_0_rgb(0_0_0_/_24%)];
 }
 
 .video-responsive-play-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  color: white;
+  @apply flex items-center justify-center w-5 h-5 text-white; /* 20px -> w-5, h-5 */
 }
 
 /* Video Responsive Caption */
 .video-responsive-caption {
-  font-family: var(--font-family-sans);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.429; /* style_BUDOBD */
-  text-align: center;
-  color: #1E2939; /* fill_DS1W3E */
-  width: 100%;
+  @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.429em] text-center text-[var(--color-netinera-dark)] w-full m-0; /* Removed margin from original as it was 0 */
 }
 
 /* ==========================
@@ -106,12 +55,7 @@
 
 /* Video XL (Desktop Fixed Size) */
 .video-xl {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  width: 768px; /* layout_J444SV */
-  margin: 0 auto;
+    @apply flex flex-col items-center gap-[14px] w-[768px] mx-auto;
 }
 
 .video-xl-container {

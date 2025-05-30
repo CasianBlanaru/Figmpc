@@ -5,97 +5,54 @@
 
   /* Main Downloads Item Container  */
   .downloads-teaser-inline-sm {
-    background: #FFF;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
-    align-items: stretch;
-    gap: 8px;
-    padding: 16px 24px;
-    width: 100%;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+    @apply bg-white rounded-xl flex flex-row justify-stretch items-stretch gap-2 py-4 px-6 w-full transition-all duration-300 ease-in-out shadow-[0_1px_3px_0_rgb(0_0_0_/_10%),_0_1px_2px_0_rgb(0_0_0_/_6%)];
   }
 
   .downloads-teaser-inline-sm:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px -4px rgb(0 0 0 / 10%), 0 4px 8px -2px rgb(0 0 0 / 5%);
+    @apply transform -translate-y-0.5 hover:shadow-[0_8px_16px_-4px_rgb(0_0_0_/_10%),_0_4px_8px_-2px_rgb(0_0_0_/_5%)];
   }
 
   /* Downloads Content Container  */
   .downloads-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    flex: 1;
+    @apply flex flex-row items-center gap-4 flex-1; /* 16px -> gap-4 */
   }
 
   /* Downloads Text Group  */
   .downloads-text-group {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    flex: 1;
+    @apply flex flex-col gap-0.5 flex-1; /* 2px -> gap-0.5 */
   }
 
   /* Downloads Title Typography  */
   .downloads-title {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5em;
-    color: #1E2939;
-    width: 100%;
+    @apply font-[var(--font-family-display)] font-normal text-base leading-normal text-[var(--color-netinera-dark)] w-full; /* 16px, 1.5em */
   }
 
   /* Downloads Meta Typography  */
   .downloads-meta {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.714em;
-    color: #1E2939;
-    width: 100%;
-    opacity: 0.7;
+    @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.714em] text-[var(--color-netinera-dark)] w-full opacity-70; /* 14px */
   }
 
   /* Downloads Button  */
   .downloads-button {
-    background: #DD052B;
-    border-radius: 12px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
-    flex-shrink: 0;
+    @apply bg-[var(--color-netinera-secondary)] rounded-xl w-10 h-10 flex items-center justify-center transition-all duration-300 ease-in-out cursor-pointer border-none flex-shrink-0;
   }
 
   .downloads-button:hover {
-    background: #C2041F;
-    transform: scale(1.05);
+    @apply hover:bg-[#C2041F] hover:scale-105;
   }
 
   .downloads-button:active {
-    background: #A10318;
-    transform: scale(0.98);
+    @apply active:bg-[#A10318] active:scale-[0.98];
   }
 
   /* Downloads Icon  */
   .downloads-icon {
-    color: white;
-    width: 20px;
-    height: 20px;
+    @apply text-white w-5 h-5;
   }
 
-  .download-icon-svg {
+  .download-icon-svg { /* These are direct SVG attributes or need to be applied to SVG via JS/HTML */
     fill: none;
-    stroke: white;
+    stroke: currentColor; /* Use currentColor to inherit from .downloads-icon text-white */
     stroke-width: 1.25px;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -107,18 +64,12 @@
 
   /* Downloads List Layout */
   .downloads-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
+    @apply flex flex-col gap-3 w-full; /* 12px -> gap-3 */
   }
 
   /* Downloads Grid Layout */
   .downloads-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 16px;
-    width: 100%;
+    @apply grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-4 w-full; /* 16px -> gap-4 */
   }
 
   /* ==========================
@@ -127,13 +78,11 @@
 
   /* Downloading State */
   .downloads-downloading {
-    background: #B8B8B8;
-    pointer-events: none;
-    cursor: not-allowed;
+    @apply bg-gray-300 pointer-events-none cursor-not-allowed; /* #B8B8B8 is approx gray-300 */
   }
 
   .downloads-downloading .downloads-icon {
-    animation: downloads-spin 1s linear infinite;
+    animation: downloads-spin 1s linear infinite; /* Keep custom animation */
   }
 
   @keyframes downloads-spin {
@@ -143,11 +92,11 @@
 
   /* Downloaded State */
   .downloads-downloaded {
-    background: #10B981;
+    @apply bg-green-500; /* #10B981 is approx green-500 */
   }
 
   .downloads-downloaded:hover {
-    background: #059669;
+    @apply hover:bg-green-600; /* #059669 is approx green-600 */
   }
 
   /* ==========================
@@ -156,10 +105,10 @@
 
   /* Fade In Animation */
   .downloads-section-fade-in {
-    animation: downloads-fade-in-up 0.6s ease-out;
+    animation: downloads-fade-in-up 0.6s ease-out; /* Keep custom animation */
   }
 
-  @keyframes downloads-fade-in-up {
+  @keyframes downloads-fade-in-up { /* Keep custom keyframes */
     from {
       opacity: 0;
       transform: translateY(30px);
@@ -173,10 +122,10 @@
 
   /* Card Slide In Animation */
   .downloads-card-animate {
-    animation: downloads-slide-in 0.8s ease-out forwards;
+    animation: downloads-slide-in 0.8s ease-out forwards; /* Keep custom animation */
   }
 
-  @keyframes downloads-slide-in {
+  @keyframes downloads-slide-in { /* Keep custom keyframes */
     from {
       opacity: 0;
       transform: translateX(-40px) scale(0.95);
@@ -190,23 +139,20 @@
 
   /* Interactive Card Enhancement */
   .downloads-card-interactive {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply transition-all duration-300 ease-in-out;
   }
 
   /* Focus States for Accessibility */
-  .downloads-button:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
+  .downloads-button:focus { /* Should be focus-visible for better UX */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
   }
 
   .downloads-card-interactive:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px -4px rgb(0 0 0 / 10%), 0 4px 8px -2px rgb(0 0 0 / 5%);
+    @apply transform -translate-y-0.5 shadow-[0_8px_16px_-4px_rgb(0_0_0_/_10%),_0_4px_8px_-2px_rgb(0_0_0_/_5%)];
   }
 
   .downloads-card-interactive:hover .downloads-button {
-    transform: scale(1.05);
-    background: #C2041F;
+    @apply transform scale-105 bg-[#C2041F]; /* Ensure hover styles cascade or are specific enough */
   }
 
   /* ==========================
@@ -214,61 +160,52 @@
    * ========================== */
 
   /* Mobile Optimization */
-  @media (width <= 767px) {
+  @media (width <= 767px) { /* max-netinera-mobile */
     .downloads-teaser-inline-sm {
-      padding: 12px 16px;
-      gap: 6px;
+      @apply py-3 px-4 gap-1.5; /* 12px, 16px, 6px */
     }
 
     .downloads-content {
-      gap: 12px;
+      @apply gap-3; /* 12px */
     }
 
     .downloads-button {
-      width: 36px;
-      height: 36px;
+      @apply w-9 h-9; /* 36px */
     }
 
     .downloads-icon {
-      width: 18px;
-      height: 18px;
+      @apply w-[18px] h-[18px];
     }
 
     .downloads-grid {
-      grid-template-columns: 1fr;
-      gap: 12px;
+      @apply grid-cols-1 gap-3; /* 12px */
     }
   }
 
   /* Small Mobile */
-  @media (width <= 479px) {
+  @media (width <= 479px) { /* max-xs */
     .downloads-teaser-inline-sm {
-      padding: 10px 12px;
-      gap: 4px;
+      @apply py-[10px] px-3 gap-1; /* 10px, 12px, 4px */
     }
 
     .downloads-content {
-      gap: 10px;
+      @apply gap-[10px];
     }
 
     .downloads-title {
-      font-size: 14px;
-      line-height: 1.4;
+      @apply text-sm leading-[1.4];
     }
 
     .downloads-meta {
-      font-size: 12px;
-      line-height: 1.5;
+      @apply text-xs leading-[1.5];
     }
 
     .downloads-button {
-      width: 32px;
-      height: 32px;
+      @apply w-8 h-8; /* 32px */
     }
 
     .downloads-icon {
-      width: 16px;
-      height: 16px;
+      @apply w-4 h-4; /* 16px */
     }
   }
 
@@ -277,23 +214,22 @@
    * ========================== */
 
   .downloads-teaser-inline-sm:focus-within {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
   }
 
   /* High Contrast Mode */
   @media (prefers-contrast: high) {
     .downloads-teaser-inline-sm {
-      border: 2px solid #1E2939;
+      @apply border-2 border-[var(--color-netinera-dark)];
     }
 
     .downloads-title,
     .downloads-meta {
-      font-weight: 600;
+      @apply font-semibold;
     }
 
     .downloads-button {
-      border: 2px solid #FFF;
+      @apply border-2 border-white; /* Assuming white is ButtonText equivalent here */
     }
   }
 
@@ -302,18 +238,16 @@
     .downloads-teaser-inline-sm,
     .downloads-button,
     .downloads-card-interactive {
-      transition: none;
-      transform: none !important;
+      @apply motion-reduce:transition-none motion-reduce:transform-none !important;
     }
 
     .downloads-section-fade-in,
     .downloads-card-animate {
-      animation: none;
-      opacity: 1;
+      @apply motion-reduce:animate-none motion-reduce:opacity-100;
     }
 
     .downloads-downloading .downloads-icon {
-      animation: none;
+      @apply motion-reduce:animate-none;
     }
   }
 
@@ -323,30 +257,27 @@
 
   @media print {
     .downloads-teaser-inline-sm {
-      background: white !important;
-      border: 1px solid #ddd;
-      border-radius: 0;
-      padding: 12px;
+      @apply print:bg-white !important print:border print:border-gray-300 print:rounded-none print:p-3 !important;
       break-inside: avoid;
-      margin-bottom: 8px;
+      margin-bottom: 8px; /* Keep custom mb for print */
     }
 
     .downloads-button {
-      display: none;
+      @apply print:hidden;
     }
 
     .downloads-title,
     .downloads-meta {
-      color: black !important;
+      @apply print:text-black !important;
     }
 
     .downloads-list,
     .downloads-grid {
-      display: block;
+      @apply print:block;
     }
 
     .downloads-grid .downloads-teaser-inline-sm {
-      margin-bottom: 12px;
+      margin-bottom: 12px; /* Keep custom mb for print */
     }
   }
 
@@ -355,23 +286,21 @@
    * ========================== */
 
   .downloads-loading {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: downloads-loading 1.5s infinite;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); /* Keep custom gradient */
+    @apply bg-cover;
+    animation: downloads-loading 1.5s infinite; /* Keep custom animation */
   }
 
-  @keyframes downloads-loading {
+  @keyframes downloads-loading { /* Keep custom keyframes */
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
   }
 
   .downloads-loading .downloads-title,
   .downloads-loading .downloads-meta {
-    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
-    background-size: 200% 100%;
-    animation: downloads-loading 1.5s infinite;
-    color: transparent;
-    border-radius: 4px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%); /* Keep custom gradient */
+    @apply bg-cover text-transparent rounded motion-safe:animate-pulse; /* Using pulse for text placeholders, or keep custom anim */
+    /* animation: downloads-loading 1.5s infinite; */ /* Keep if custom anim preferred over pulse */
   }
 
 }

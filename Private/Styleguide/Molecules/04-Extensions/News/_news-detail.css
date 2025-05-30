@@ -4,19 +4,19 @@
 
 /* Prose styling for article content */
 .news-detail-content .prose {
-  @apply text-base text-gray-800 leading-relaxed;
+  @apply text-base text-[var(--color-gray-800)] leading-relaxed;
 }
 
 .news-detail-content .prose h2 {
-  @apply  text-2xl text-gray-800 mt-8 mb-4 leading-tight;
+  @apply text-2xl text-[var(--color-gray-800)] mt-8 mb-4 leading-tight;
 }
 
 .news-detail-content .prose h3 {
-  @apply  text-xl text-gray-800 mt-6 mb-3 leading-tight;
+  @apply text-xl text-[var(--color-gray-800)] mt-6 mb-3 leading-tight;
 }
 
 .news-detail-content .prose h4 {
-  @apply  text-lg text-gray-800 mt-4 mb-2 leading-tight;
+  @apply text-lg text-[var(--color-gray-800)] mt-4 mb-2 leading-tight;
 }
 
 .news-detail-content .prose p {
@@ -33,15 +33,15 @@
 }
 
 .news-detail-content .prose blockquote {
-  @apply border-l-4 border-secondary-600 pl-4 italic text-gray-700 my-6 bg-gray-50 p-4 rounded-r-lg;
+  @apply border-l-4 border-[var(--color-secondary-600)] pl-4 italic text-[var(--color-gray-700)] my-6 bg-gray-50 p-4 rounded-r-lg;
 }
 
 .news-detail-content .prose a {
-  @apply text-primary-700 hover:text-primary-800 underline transition-colors;
+  @apply text-[var(--color-primary-700)] hover:text-[var(--color-primary-800)] underline transition-colors duration-200 ease-in-out; /* Added duration and ease */
 }
 
 .news-detail-content .prose strong {
-  @apply font-semibold text-gray-900;
+  @apply font-semibold text-[var(--color-gray-900)];
 }
 
 .news-detail-content .prose em {
@@ -66,7 +66,7 @@
 }
 
 /* Responsive adjustments for mobile */
-@media (width <= 768px) {
+@media (width <= 768px) { /* Corresponds to max-md or max-netinera-tablet */
   .news-detail-content .prose h2 {
     @apply text-xl mt-6 mb-3;
   }
@@ -87,9 +87,7 @@
 
 @layer components {
   .netinera-news-detail {
-    @apply max-w-4xl mx-auto;
-
-    font-family: Roboto, sans-serif;
+    @apply max-w-4xl mx-auto font-[var(--font-family-sans)];
   }
   
   .netinera-news-detail-header {
@@ -97,16 +95,11 @@
   }
   
   .netinera-news-detail-meta {
-    @apply flex flex-wrap gap-4 text-sm text-gray-600 mb-4;
-
-    font-family: Roboto, sans-serif;
+    @apply flex flex-wrap gap-4 text-sm text-gray-600 mb-4 font-[var(--font-family-sans)];
   }
   
   .netinera-news-detail-category {
-    @apply px-3 py-1 rounded-full text-white text-xs font-semibold uppercase tracking-wide;
-
-    background-color: #00685E; /* Netinera primary color */
-    font-family: 'Titillium Web', sans-serif;
+    @apply px-3 py-1 rounded-full text-white text-xs font-semibold uppercase tracking-wide bg-[var(--color-netinera-primary)] font-[var(--font-family-display)];
   }
   
   .netinera-news-detail-date {
@@ -114,17 +107,11 @@
   }
   
   .netinera-news-detail-title {
-    @apply text-4xl font-bold mb-6 leading-tight;
-
-    color: #1E2939; /* Netinera dark color */
-    font-family: 'Titillium Web', sans-serif;
+    @apply text-4xl font-bold mb-6 leading-tight text-[var(--color-netinera-dark)] font-[var(--font-family-display)];
   }
   
   .netinera-news-detail-teaser {
-    @apply text-xl text-gray-700 mb-8 leading-relaxed;
-
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
+    @apply text-xl text-gray-700 mb-8 leading-relaxed font-[var(--font-family-sans)] font-normal;
   }
   
   .netinera-news-detail-image {
@@ -133,38 +120,23 @@
   
   .netinera-news-detail-content {
     /* Custom content styles instead of prose classes */
-    @apply max-w-none;
-
-    font-size: 18px;
-    line-height: 1.7;
-    color: #374151;
+    @apply max-w-none text-lg leading-[1.7] text-gray-700; /* font-size 18px, color #374151 */
   }
   
   .netinera-news-detail-content h2 {
-    @apply text-2xl font-semibold mt-8 mb-4;
-
-    color: #1E2939; /* Netinera dark color */
-    font-family: 'Titillium Web', sans-serif;
+    @apply text-2xl font-semibold mt-8 mb-4 text-[var(--color-netinera-dark)] font-[var(--font-family-display)];
   }
   
   .netinera-news-detail-content h3 {
-    @apply text-xl font-semibold mt-6 mb-3;
-
-    color: #1E2939; /* Netinera dark color */
-    font-family: 'Titillium Web', sans-serif;
+    @apply text-xl font-semibold mt-6 mb-3 text-[var(--color-netinera-dark)] font-[var(--font-family-display)];
   }
   
   .netinera-news-detail-content h4 {
-    @apply text-lg font-semibold mt-4 mb-2;
-
-    color: #1E2939; /* Netinera dark color */
-    font-family: 'Titillium Web', sans-serif;
+    @apply text-lg font-semibold mt-4 mb-2 text-[var(--color-netinera-dark)] font-[var(--font-family-display)];
   }
   
   .netinera-news-detail-content p {
-    @apply mb-6 leading-relaxed;
-
-    font-family: Roboto, sans-serif;
+    @apply mb-6 leading-relaxed font-[var(--font-family-sans)];
   }
   
   .netinera-news-detail-content ul,
@@ -177,26 +149,19 @@
   }
   
   .netinera-news-detail-content blockquote {
-    @apply my-6 pl-4 border-l-4 italic;
-
-    border-color: #00685E; /* Netinera primary color */
-    background-color: #F5F5F4; /* Netinera light background */
+    @apply my-6 pl-4 border-l-4 italic border-[var(--color-netinera-primary)] bg-stone-100; /* #F5F5F4 is stone-100 */
   }
   
   .netinera-news-detail-content a {
-    color: #00685E; /* Netinera primary color */
-    text-decoration: underline;
-    transition: color 0.2s ease;
+    @apply text-[var(--color-netinera-primary)] underline transition-colors duration-200 ease-in-out;
   }
   
   .netinera-news-detail-content a:hover {
-    color: #DD052B; /* Netinera secondary color */
+    @apply text-[var(--color-netinera-secondary)];
   }
   
   .netinera-news-detail-content strong {
-    @apply font-semibold;
-
-    color: #1F2937;
+    @apply font-semibold text-gray-800; /* #1F2937 is gray-800 */
   }
   
   .netinera-news-detail-content em {
@@ -225,15 +190,11 @@
   }
   
   .netinera-news-detail-tag {
-    @apply px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm;
-
-    font-family: Roboto, sans-serif;
-    transition: all 0.2s ease;
+    @apply px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-[var(--font-family-sans)] transition-all duration-200 ease-in-out;
   }
   
   .netinera-news-detail-tag:hover {
-    background-color: #F5F5F4; /* Netinera light background */
-    color: #00685E; /* Netinera primary color */
+    @apply bg-stone-100 text-[var(--color-netinera-primary)]; /* #F5F5F4 is stone-100 */
   }
   
   .netinera-news-detail-author {
@@ -253,16 +214,11 @@
   }
   
   .netinera-news-detail-author-name {
-    @apply font-semibold;
-
-    color: #1E2939; /* Netinera dark color */
-    font-family: 'Titillium Web', sans-serif;
+    @apply font-semibold text-[var(--color-netinera-dark)] font-[var(--font-family-display)];
   }
   
   .netinera-news-detail-author-role {
-    @apply text-sm text-gray-600;
-
-    font-family: Roboto, sans-serif;
+    @apply text-sm text-gray-600 font-[var(--font-family-sans)];
   }
 
 }

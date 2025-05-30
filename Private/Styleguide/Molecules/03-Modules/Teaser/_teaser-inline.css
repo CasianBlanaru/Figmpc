@@ -7,160 +7,91 @@
   
   /* Main Responsive Teaser Container */
   .teaser-inline-responsive {
-    display: flex;
-    align-items: stretch;
-    background: #F5F5F4; /* stone-100 default background */
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
+    @apply flex items-stretch bg-stone-100 overflow-hidden transition-all duration-300 ease-in-out; /* #F5F5F4 */
     /* Mobile first: 328px vertical layout - Figma Node 1849:13490 */
-    flex-direction: column;
-    max-width: 328px;
-    width: 100%;
-    border-radius: 36px 0; /* Mobile radius */
+    @apply flex-col max-w-[328px] w-full rounded-tl-[36px] rounded-br-[36px]; /* Mobile radius */
   }
   
   .teaser-inline-responsive:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgb(30 41 57 / 10%), 0 4px 10px -2px rgb(30 41 57 / 5%);
+    @apply transform -translate-y-0.5 shadow-[0_10px_25px_-5px_rgb(30_41_57_/_10%),_0_4px_10px_-2px_rgb(30_41_57_/_5%)];
   }
   
   /* Responsive Image Container */
   .teaser-inline-responsive-image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-    
+    @apply bg-cover bg-center bg-no-repeat flex-shrink-0 transition-all duration-300 ease-in-out;
     /* Mobile: 328x185px - Figma Node 1849:13490 */
-    width: 100%;
-    height: 185px;
-    border-radius: 36px 0 0; /* Mobile top-left radius */
+    @apply w-full h-[185px] rounded-tl-[36px] rounded-tr-none rounded-br-none rounded-bl-none; /* Mobile top-left radius. Ensure other corners are not rounded if this is applied on top of a parent with different rounding. */
   }
   
   .teaser-inline-responsive:hover .teaser-inline-responsive-image {
-    transform: scale(1.05);
+    @apply transform scale-105;
   }
   
   /* Content Area */
   .teaser-inline-responsive-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    
-    /* Mobile: 24px padding, 20px gap - Figma Node 1849:13490 */
-    padding: 24px;
-    gap: 20px;
+    @apply flex flex-col flex-1 p-6 gap-5; /* Mobile: 24px padding -> p-6, 20px gap -> gap-5 */
   }
   
   /* Text Group Container */
   .teaser-inline-responsive-text-group {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 16px; /* Text group gap */
+    @apply flex flex-col flex-1 gap-4; /* Text group gap 16px -> gap-4 */
   }
   
   /* Main Text Area (Overline + Headline) */
   .teaser-inline-responsive-main-text {
-    display: flex;
-    flex-direction: column;
-    gap: 8px; /* Overline to headline gap */
+    @apply flex flex-col gap-2; /* Overline to headline gap 8px -> gap-2 */
   }
   
   /* Overline Text */
   .teaser-inline-responsive-overline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    text-transform: uppercase;
-    color: #6B7280; /* gray-500 */
-    margin: 0;
-    
+    @apply font-[var(--font-family-display)] font-semibold italic uppercase text-gray-500 m-0; /* #6B7280 */
     /* Mobile: 12px - Figma Node 1849:13490 */
-    font-size: 12px;
-    line-height: 1.167em;
-    letter-spacing: 13.33%;
+    @apply text-xs leading-[1.167em] tracking-[0.133em]; /* letter-spacing: 13.33% */
   }
   
   /* Headline Text */
   .teaser-inline-responsive-headline {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #1E2939; /* gray-800 */
-    margin: 0;
-    
+    @apply font-[var(--font-family-display)] font-normal uppercase text-[var(--color-netinera-dark)] m-0; /* #1E2939 */
     /* Mobile: H4 SM 20px - Figma Node 1849:13490 */
-    font-size: 20px;
-    line-height: 1.4em;
+    @apply text-[20px] leading-[1.4em];
   }
   
   /* Subtitle Text */
   .teaser-inline-responsive-subtitle {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    color: #4A5565; /* gray-600 */
-    margin: 0;
-    
+    @apply font-[var(--font-family-sans)] font-normal text-gray-600 m-0; /* #4A5565 */
     /* Mobile: Body SM 14px */
-    font-size: 14px;
-    line-height: 1.714em;
+    @apply text-sm leading-[1.714em];
   }
   
   /* Actions Container */
   .teaser-inline-responsive-actions {
-    display: flex;
-    align-items: center;
-    margin-top: auto; /* Push to bottom */
+    @apply flex items-center mt-auto; /* Push to bottom */
   }
   
   /* Action Link */
   .teaser-inline-responsive-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.429em;
-    text-transform: uppercase;
-    color: #1E2939;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    letter-spacing: 0.025em;
+    @apply inline-flex items-center gap-2 font-[var(--font-family-display)] font-semibold text-sm leading-[1.429em] uppercase text-[var(--color-netinera-dark)] no-underline transition-all duration-300 ease-in-out tracking-[0.025em];
   }
   
   .teaser-inline-responsive-link:hover {
-    color: #DD052B;
-    transform: translateX(4px);
+    @apply text-[var(--color-netinera-secondary)] transform translate-x-1;
   }
   
-  .teaser-inline-responsive-link:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
-    border-radius: 4px;
+  .teaser-inline-responsive-link:focus-visible { /* Changed to focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2 rounded-sm;
   }
   
   /* Link Icon */
   .teaser-inline-responsive-link-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    transition: all 0.3s ease;
+    @apply flex items-center justify-center w-4 h-4 transition-all duration-300 ease-in-out; /* 16px */
   }
   
   .teaser-inline-responsive-link-icon svg {
-    width: 100%;
-    height: 100%;
-    color: inherit;
+    @apply w-full h-full text-current; /* color: inherit -> text-current */
   }
   
   .teaser-inline-responsive-link:hover .teaser-inline-responsive-link-icon {
-    transform: scale(1.1);
+    @apply transform scale-110;
   }
   
   /* ==========================
@@ -169,12 +100,8 @@
   
   /* Responsive Grid Container */
   .teaser-inline-grid-responsive {
-    display: grid;
-    gap: 24px; /* Element gap */
-    width: 100%;
-    
-    /* Mobile: 1 column */
-    grid-template-columns: 1fr;
+    @apply grid gap-6 w-full grid-cols-1; /* Mobile first gap 24px */
+    /* Responsive columns handled in media queries */
   }
   
   /* ==========================
@@ -183,53 +110,51 @@
   
   /* White Variant */
   .teaser-inline-variant-white {
-    background: white;
+    @apply bg-white;
   }
   
   /* Primary Variant */
   .teaser-inline-variant-primary {
-    background: #00BFAA; /* primary-600 */
+    @apply bg-[#00BFAA]; /* This is a custom teal, not from theme color vars directly */
   }
   
   .teaser-inline-variant-primary .teaser-inline-responsive-headline,
   .teaser-inline-variant-primary .teaser-inline-responsive-link {
-    color: white;
+    @apply text-white;
   }
   
   .teaser-inline-variant-primary .teaser-inline-responsive-overline {
-    color: rgb(255 255 255 / 80%);
+    @apply text-white/80;
   }
   
   .teaser-inline-variant-primary .teaser-inline-responsive-subtitle {
-    color: rgb(255 255 255 / 90%);
+    @apply text-white/90;
   }
   
   .teaser-inline-variant-primary .teaser-inline-responsive-link:hover {
-    color: #FFF;
-    text-shadow: 0 0 8px rgb(255 255 255 / 50%);
+    @apply text-white shadow-[0_0_8px_rgb(255_255_255_/_50%)]; /* text-shadow replaced by box-shadow for link glow */
   }
   
   /* Secondary Variant */
   .teaser-inline-variant-secondary {
-    background: #DD052B; /* secondary-700 */
+    @apply bg-[var(--color-netinera-secondary)]; /* secondary-700 is #DD052B */
   }
   
   .teaser-inline-variant-secondary .teaser-inline-responsive-headline,
   .teaser-inline-variant-secondary .teaser-inline-responsive-link {
-    color: white;
+    @apply text-white;
   }
   
   .teaser-inline-variant-secondary .teaser-inline-responsive-overline {
-    color: rgb(255 255 255 / 80%);
+    @apply text-white/80;
   }
   
   .teaser-inline-variant-secondary .teaser-inline-responsive-subtitle {
-    color: rgb(255 255 255 / 90%);
+    @apply text-white/90;
   }
   
   .teaser-inline-variant-secondary .teaser-inline-responsive-link:hover {
-    color: #FFF;
-    text-shadow: 0 0 8px rgb(255 255 255 / 50%);
+    @apply text-white shadow-[0_0_8px_rgb(255_255_255_/_50%)];
   }
   
   /* ==========================
@@ -237,202 +162,167 @@
    * ========================== */
   
   /* Desktop breakpoint (1024px+) */
-  @media (width >= 1024px) {
+  @media (width >= 1024px) { /* netinera-desktop */
     .teaser-inline-responsive {
-      /* Desktop: 768px horizontal layout - Figma Node 1849:13490 */
-      flex-direction: row;
-      max-width: 768px;
-      border-radius: 64px 0; /* Desktop radius */
+      @apply flex-row max-w-[768px] rounded-tl-[64px] rounded-br-[64px];
     }
     
     .teaser-inline-responsive-image {
-      /* Desktop: 268x268px square - Figma Node 1849:13490 */
-      width: 268px;
-      height: 268px;
-      border-radius: 64px 0 0; /* Desktop top-left radius */
+      @apply w-[268px] h-[268px] rounded-tl-[64px] rounded-tr-none; /* Ensure only top-left */
     }
     
     .teaser-inline-responsive-content {
-      /* Desktop: 32px padding, 24px gap - Figma Node 1849:13490 */
-      padding: 32px;
-      gap: 24px;
+      @apply p-8 gap-6; /* 32px, 24px */
     }
     
     .teaser-inline-responsive-text-group {
-      gap: 20px; /* Desktop text group gap */
+      @apply gap-5; /* 20px */
     }
     
     .teaser-inline-responsive-main-text {
-      gap: 12px; /* Desktop overline to headline gap */
+      @apply gap-3; /* 12px */
     }
     
     .teaser-inline-responsive-overline {
-      /* Desktop: 14px overline */
-      font-size: 14px;
-      line-height: 1.143em;
-      letter-spacing: 10%;
+      @apply text-sm leading-[1.143em] tracking-[0.10em]; /* 14px, letter-spacing 10% (original was 11.43%) */
     }
     
     .teaser-inline-responsive-headline {
-      /* Desktop: H4 XL 24px - Figma Node 1849:13490 */
-      font-size: 24px;
-      line-height: 1.333em;
+      @apply text-[24px] leading-[1.333em];
     }
     
     .teaser-inline-responsive-subtitle {
-      /* Desktop: Body Base 16px */
-      font-size: 16px;
-      line-height: 1.625em;
+      @apply text-base leading-[1.625em]; /* 16px */
     }
     
     .teaser-inline-responsive-link {
-      font-size: 16px;
-      line-height: 1.5em;
+      @apply text-base leading-[1.5em]; /* 16px */
     }
     
     /* Desktop Grid Layout */
     .teaser-inline-grid-responsive {
-      gap: 32px; /* Desktop grid gap */
-
-      /* Tablet: 2 columns */
-      grid-template-columns: repeat(2, 1fr);
+      @apply gap-8; /* 32px */
+      @apply netinera-tablet:grid-cols-2; /* Apply 2 columns from tablet up */
     }
   }
   
   /* Large Desktop (1200px+) */
-  @media (width >= 1200px) {
+  @media (width >= 1200px) { /* netinera-wide */
     .teaser-inline-grid-responsive {
-      /* Large desktop: adaptive columns */
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      @apply grid-cols-[repeat(auto-fit,minmax(360px,1fr))]; /* adaptive columns */
     }
   }
   
   /* Tablet adaptation */
-  @media (width <= 1023px) and (width >= 768px) {
-    .teaser-inline-responsive {
-      max-width: 480px;
-      border-radius: 48px 0;
+  @media (width <= 1023px) and (width >= 768px) { /* netinera-tablet range, but desktop rule above is min-width */
+    .teaser-inline-responsive { /* Overrides for the base responsive on tablet if needed, some already covered by desktop */
+      @apply max-w-[480px] rounded-tl-[48px] rounded-br-[48px];
     }
     
     .teaser-inline-responsive-image {
-      height: 160px;
-      border-radius: 48px 0 0;
+      @apply h-[160px] rounded-tl-[48px] rounded-tr-none;
     }
     
     .teaser-inline-responsive-content {
-      padding: 28px;
-      gap: 22px;
+      @apply p-7 gap-[22px];
     }
     
     .teaser-inline-responsive-headline {
-      font-size: 22px;
-      line-height: 1.36em;
+      @apply text-[22px] leading-[1.36em];
     }
     
     .teaser-inline-responsive-subtitle {
-      font-size: 15px;
-      line-height: 1.6em;
+      @apply text-[15px] leading-[1.6em];
     }
     
-    .teaser-inline-grid-responsive {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+    .teaser-inline-grid-responsive { /* This is already handled by desktop, but if tablet specific needed */
+      @apply grid-cols-2 gap-7; /* 28px */
     }
   }
   
   /* Mobile optimization */
-  @media (width <= 767px) {
-    .teaser-inline-responsive {
-      max-width: 300px;
-      border-radius: 32px 0;
+  @media (width <= 767px) { /* max-netinera-mobile */
+    .teaser-inline-responsive { /* Base styles are mobile first, these are overrides if needed for this specific range */
+      @apply max-w-[300px] rounded-tl-[32px] rounded-br-[32px];
     }
     
     .teaser-inline-responsive-image {
-      height: 160px;
-      border-radius: 32px 0 0;
+      @apply h-[160px] rounded-tl-[32px] rounded-tr-none;
     }
     
     .teaser-inline-responsive-content {
-      padding: 20px;
-      gap: 18px;
+      @apply p-5 gap-[18px];
     }
     
     .teaser-inline-responsive-text-group {
-      gap: 14px;
+      @apply gap-[14px];
     }
     
     .teaser-inline-responsive-main-text {
-      gap: 6px;
+      @apply gap-1.5; /* 6px */
     }
     
     .teaser-inline-responsive-overline {
-      font-size: 11px;
+      @apply text-[11px];
     }
     
     .teaser-inline-responsive-headline {
-      font-size: 18px;
-      line-height: 1.33em;
+      @apply text-lg leading-[1.33em]; /* 18px */
     }
     
     .teaser-inline-responsive-subtitle {
-      font-size: 13px;
-      line-height: 1.54em;
+      @apply text-[13px] leading-[1.54em];
     }
     
     .teaser-inline-responsive-link {
-      font-size: 13px;
+      @apply text-[13px];
     }
     
     .teaser-inline-grid-responsive {
-      gap: 20px;
+      @apply gap-5; /* 20px */
     }
   }
   
   /* Small mobile optimization */
-  @media (width <= 479px) {
+  @media (width <= 479px) { /* max-xs */
     .teaser-inline-responsive {
-      max-width: 280px;
-      border-radius: 24px 0;
+      @apply max-w-[280px] rounded-tl-[24px] rounded-br-[24px];
     }
     
     .teaser-inline-responsive-image {
-      height: 140px;
-      border-radius: 24px 0 0;
+      @apply h-[140px] rounded-tl-[24px] rounded-tr-none;
     }
     
     .teaser-inline-responsive-content {
-      padding: 16px;
-      gap: 16px;
+      @apply p-4 gap-4; /* 16px */
     }
     
     .teaser-inline-responsive-text-group {
-      gap: 12px;
+      @apply gap-3; /* 12px */
     }
     
     .teaser-inline-responsive-main-text {
-      gap: 4px;
+      @apply gap-1; /* 4px */
     }
     
     .teaser-inline-responsive-overline {
-      font-size: 10px;
+      @apply text-[10px];
     }
     
     .teaser-inline-responsive-headline {
-      font-size: 16px;
-      line-height: 1.25em;
+      @apply text-base leading-[1.25em]; /* 16px */
     }
     
     .teaser-inline-responsive-subtitle {
-      font-size: 12px;
-      line-height: 1.5em;
+      @apply text-xs leading-[1.5em]; /* 12px */
     }
     
     .teaser-inline-responsive-link {
-      font-size: 12px;
+      @apply text-xs; /* 12px */
     }
     
     .teaser-inline-grid-responsive {
-      gap: 16px;
+      @apply gap-4; /* 16px */
     }
   }
   
@@ -441,50 +331,39 @@
    * ========================== */
   
   /* Focus States */
-  .teaser-inline-responsive:focus-within {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
-    border-radius: inherit;
+  .teaser-inline-responsive:focus-within { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
+    border-radius: inherit; /* Keep custom or use specific if all variants have same focus radius behavior */
   }
   
   /* Keyboard Navigation */
-  .teaser-inline-responsive:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
+  .teaser-inline-responsive:focus { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
   }
   
   /* Screen Reader Support */
   .teaser-inline-sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+    @apply sr-only;
   }
   
   /* High Contrast Mode */
   @media (prefers-contrast: high) {
     .teaser-inline-responsive {
-      border: 2px solid currentcolor;
+      @apply border-2 border-[currentcolor]; /* System color */
     }
     
     .teaser-inline-responsive-headline {
-      font-weight: 600;
-      text-shadow: 0 0 1px currentcolor;
+      @apply font-semibold;
+      text-shadow: 0 0 1px currentcolor; /* Keep custom */
     }
     
     .teaser-inline-responsive-link {
-      font-weight: 700;
-      text-decoration: underline;
+      @apply font-bold underline;
     }
     
     .teaser-inline-variant-primary,
     .teaser-inline-variant-secondary {
-      border: 2px solid white;
+      @apply border-white;
     }
   }
   
@@ -494,15 +373,14 @@
     .teaser-inline-responsive-image,
     .teaser-inline-responsive-link,
     .teaser-inline-responsive-link-icon {
-      transition: none;
-      animation: none;
+      @apply motion-reduce:transition-none motion-reduce:animation-none;
     }
     
     .teaser-inline-responsive:hover,
     .teaser-inline-responsive:hover .teaser-inline-responsive-image,
     .teaser-inline-responsive-link:hover,
     .teaser-inline-responsive-link:hover .teaser-inline-responsive-link-icon {
-      transform: none;
+      @apply motion-reduce:transform-none;
     }
   }
   
@@ -512,58 +390,43 @@
   
   @media print {
     .teaser-inline-responsive {
-      border: 1px solid #ddd;
-      border-radius: 0;
-      break-inside: avoid;
-      margin-bottom: 20px;
-      box-shadow: none !important;
-      background: white !important;
+      @apply print:border print:border-gray-300 print:rounded-none print:break-avoid print:mb-5 print:shadow-none !important print:bg-white !important;
     }
     
     .teaser-inline-responsive-image {
-      border: 1px solid #ddd;
-      border-radius: 0;
-      width: 100px !important;
-      height: 60px !important;
+      @apply print:border print:border-gray-300 print:rounded-none print:w-[100px] !important print:h-[60px] !important;
     }
     
     .teaser-inline-responsive-content {
-      padding: 15px !important;
-      gap: 10px !important;
+      @apply print:p-[15px] !important print:gap-2.5 !important; /* 10px */
     }
     
     .teaser-inline-responsive-headline {
-      color: black !important;
-      font-size: 16px !important;
-      line-height: 1.3 !important;
+      @apply print:text-black !important print:text-base !important print:leading-[1.3] !important;
     }
     
     .teaser-inline-responsive-overline {
-      color: #666 !important;
-      font-size: 10px !important;
+      @apply print:text-gray-500 !important print:text-[10px] !important;
     }
     
     .teaser-inline-responsive-subtitle {
-      color: #333 !important;
-      font-size: 12px !important;
+      @apply print:text-gray-700 !important print:text-xs !important;
     }
     
     .teaser-inline-responsive-link {
-      color: black !important;
-      text-decoration: underline !important;
-      font-size: 12px !important;
+      @apply print:text-black !important print:underline !important print:text-xs !important;
     }
     
     .teaser-inline-responsive-link-icon {
-      display: none !important;
+      @apply print:hidden !important;
     }
     
     .teaser-inline-grid-responsive {
-      display: block;
+      @apply print:block;
     }
     
     .teaser-inline-grid-responsive > * {
-      margin-bottom: 15px;
+      @apply print:mb-[15px];
     }
   }
   
@@ -572,33 +435,29 @@
    * ========================== */
   
   .teaser-inline-loading {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: teaser-inline-loading 1.5s infinite;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); /* Keep custom */
+    @apply bg-cover;
+    animation: teaser-inline-loading 1.5s infinite; /* Keep custom */
   }
   
-  @keyframes teaser-inline-loading {
+  @keyframes teaser-inline-loading { /* Keep custom */
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
   }
   
   .teaser-inline-loading .teaser-inline-responsive-image {
-    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
-    background-size: 200% 100%;
-    animation: teaser-inline-loading 1.5s infinite;
+    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%); /* Keep custom */
+    @apply bg-cover motion-safe:animate-pulse; /* Using pulse for base shimmer */
+    /* animation: teaser-inline-loading 1.5s infinite; */ /* Can remove if pulse is OK */
   }
   
   .teaser-inline-loading .teaser-inline-responsive-headline,
   .teaser-inline-loading .teaser-inline-responsive-overline,
   .teaser-inline-loading .teaser-inline-responsive-subtitle,
   .teaser-inline-loading .teaser-inline-responsive-link {
-    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
-    background-size: 200% 100%;
-    animation: teaser-inline-loading 1.5s infinite;
-    color: transparent;
-    border-radius: 4px;
-    height: 1em;
-    display: block;
+    background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%); /* Keep custom */
+    @apply bg-cover text-transparent rounded h-[1em] block motion-safe:animate-pulse; /* Tailwind pulse or keep custom anim */
+    /* animation: teaser-inline-loading 1.5s infinite; */ /* Keep if custom anim preferred */
   }
   
 } 

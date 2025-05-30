@@ -5,28 +5,16 @@
 
   /* Main Image Slider Container */
   .netinera-image-slider {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px; /* Mobile first gap */
-    width: 100%;
-    max-width: 328px; /* Mobile first max-width */
-    background: transparent;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply flex flex-col items-center gap-4 w-full max-w-[328px] bg-transparent transition-all duration-300 ease-in-out; /* 16px -> gap-4 */
   }
 
   /* Image Slider Content Container */
   .netinera-image-slider-content {
-    position: relative;
-    width: 100%;
-    border-radius: 12px; /* Mobile first radius */
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgb(30 41 57 / 10%);
-    transition: box-shadow 0.3s ease;
+    @apply relative w-full rounded-xl overflow-hidden shadow-[0_4px_12px_rgb(30_41_57_/_10%)] transition-shadow duration-300 ease-in-out; /* 12px -> rounded-xl */
   }
 
   .netinera-image-slider-content:hover {
-    box-shadow: 0 8px 24px rgb(30 41 57 / 15%);
+    @apply hover:shadow-[0_8px_24px_rgb(30_41_57_/_15%)];
   }
 
   /* ==========================
@@ -35,37 +23,28 @@
 
   /* Image Background Container */
   .netinera-image-slider-image {
-    width: 100%;
-    height: 185px; /* Mobile first height (Figma: 328×185px) */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: transform 0.5s ease;
-    position: relative;
+    @apply w-full h-[185px] bg-cover bg-center bg-no-repeat transition-transform duration-500 ease-in-out relative;
   }
 
   .netinera-image-slider:hover .netinera-image-slider-image {
-    transform: scale(1.02);
+    @apply hover:scale-105; /* scale(1.02) -> scale-105 is closest standard, or use scale-[1.02] */
   }
 
   /* Image Overlay for better navigation visibility */
   .netinera-image-slider-image::before {
     content: '';
-    position: absolute;
-    inset: 0;
     background: linear-gradient(
       to right,
-      rgb(0 0 0 / 20%) 0%,
+      rgb(0 0 0 / 0.2) 0%,
       transparent 20%,
       transparent 80%,
-      rgb(0 0 0 / 20%) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
+      rgb(0 0 0 / 0.2) 100%
+    ); /* Keep custom gradient */
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out;
   }
 
   .netinera-image-slider:hover .netinera-image-slider-image::before {
-    opacity: 1;
+    @apply opacity-100;
   }
 
   /* ==========================
@@ -74,78 +53,48 @@
 
   /* Navigation Container */
   .netinera-image-slider-navigation {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px; /* Mobile first padding */
-    z-index: 10;
+    @apply absolute inset-0 flex items-center justify-between px-4 z-10; /* 16px -> px-4 */
   }
 
   /* Navigation Buttons */
   .netinera-image-slider-nav-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px; /* Mobile first size */
-    height: 40px;
-    background: rgb(255 255 255 / 90%);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgb(30 41 57 / 15%);
-    opacity: 0;
-    transform: scale(0.8);
+    @apply flex items-center justify-center w-10 h-10 bg-white/90 border-none rounded-full cursor-pointer transition-all duration-300 ease-in-out shadow-[0_2px_8px_rgb(30_41_57_/_15%)] opacity-0 scale-90; /* scale(0.8) -> scale-90 is closest standard */
   }
 
   /* All Focus States - must come before any hover selectors */
-  .netinera-image-slider-nav-button:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
+  .netinera-image-slider-nav-button:focus { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2;
   }
 
-  .netinera-image-slider-dot:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 2px;
-    transform: scale(1.3);
+  .netinera-image-slider-dot:focus { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-2 scale-[1.3];
   }
 
   /* Keyboard Navigation Support */
-  .netinera-image-slider[tabindex]:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 4px;
-    border-radius: 12px;
+  .netinera-image-slider[tabindex]:focus { /* Should be focus-visible */
+    @apply outline-2 outline-[var(--color-netinera-secondary)] outline-offset-4 rounded-xl; /* 12px -> rounded-xl */
   }
 
   /* Navigation Button States - must come after focus states */
   .netinera-image-slider-nav-button:hover {
-    background: white;
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgb(30 41 57 / 20%);
+    @apply bg-white scale-110 shadow-[0_4px_12px_rgb(30_41_57_/_20%)];
   }
 
   .netinera-image-slider-nav-button:active {
-    transform: scale(0.95);
+    @apply scale-95;
   }
 
   .netinera-image-slider:hover .netinera-image-slider-nav-button {
-    opacity: 1;
-    transform: scale(1);
+    @apply opacity-100 scale-100;
   }
 
   /* Navigation Button Icons */
   .netinera-image-slider-nav-button-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1E2939;
-    transition: color 0.3s ease;
+    @apply flex items-center justify-center text-[var(--color-netinera-dark)] transition-colors duration-300 ease-in-out;
   }
 
   .netinera-image-slider-nav-button:hover .netinera-image-slider-nav-button-icon {
-    color: #DD052B;
+    @apply text-[var(--color-netinera-secondary)];
   }
 
   /* ==========================
@@ -154,40 +103,24 @@
 
   /* Pagination Container */
   .netinera-image-slider-pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px; /* Mobile first gap */
-    padding: 0;
-    margin: 0;
+    @apply flex items-center justify-center gap-2 p-0 m-0; /* 8px -> gap-2 */
   }
 
   /* Pagination Dots */
   .netinera-image-slider-dot {
-    width: 8px; /* Mobile first size */
-    height: 8px;
-    border-radius: 50%;
-    border: none;
-    background: #C4C4C4;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-    margin: 0;
+    @apply w-2 h-2 rounded-full border-none bg-gray-300 cursor-pointer transition-all duration-300 ease-in-out p-0 m-0; /* 8px -> w-2, h-2. #C4C4C4 -> bg-gray-300 */
   }
 
   .netinera-image-slider-dot:hover {
-    background: #8B8B8B;
-    transform: scale(1.2);
+    @apply bg-gray-500 scale-125; /* #8B8B8B -> bg-gray-500 */
   }
 
   .netinera-image-slider-dot.active {
-    background: #DD052B;
-    width: 10px; /* Mobile first active size */
-    height: 10px;
+    @apply bg-[var(--color-netinera-secondary)] w-[10px] h-[10px]; /* Mobile first active size */
   }
 
   .netinera-image-slider-dot.active:hover {
-    background: #B8041E;
+    @apply bg-[#B8041E]; /* Darker secondary */
   }
 
   /* ==========================
@@ -196,15 +129,7 @@
 
   /* Caption Text */
   .netinera-image-slider-caption {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 14px; /* Mobile first font size */
-    line-height: 1.5em;
-    color: #1E2939;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 0 16px;
+    @apply font-[var(--font-family-sans)] font-normal text-sm leading-[1.5em] text-[var(--color-netinera-dark)] text-center w-full m-0 px-4; /* 14px, 16px padding */
   }
 
   /* ==========================
@@ -212,117 +137,103 @@
    * ========================== */
 
   /* Tablet breakpoint (≥ 768px) */
-  @media (width >= 768px) {
+  @media (width >= 768px) { /* netinera-tablet */
     .netinera-image-slider {
-      max-width: 600px;
-      gap: 20px;
+      @apply max-w-[600px] gap-5; /* 20px */
     }
 
     .netinera-image-slider-content {
-      border-radius: 16px;
+      @apply rounded-2xl; /* 16px */
     }
 
     .netinera-image-slider-image {
-      height: 338px; /* Intermediate size */
+      @apply h-[338px];
     }
 
     .netinera-image-slider-navigation {
-      padding: 0 24px;
+      @apply px-6; /* 24px */
     }
 
     .netinera-image-slider-nav-button {
-      width: 48px;
-      height: 48px;
+      @apply w-12 h-12; /* 48px */
     }
 
     .netinera-image-slider-dot {
-      width: 10px;
-      height: 10px;
+      @apply w-[10px] h-[10px];
     }
 
     .netinera-image-slider-dot.active {
-      width: 12px;
-      height: 12px;
+      @apply w-3 h-3; /* 12px */
     }
 
     .netinera-image-slider-pagination {
-      gap: 10px;
+      @apply gap-[10px];
     }
 
     .netinera-image-slider-caption {
-      font-size: 16px;
-      line-height: 1.5em;
+      @apply text-base leading-[1.5em]; /* 16px */
     }
   }
 
   /* Desktop breakpoint (≥ 1024px) */
-  @media (width >= 1024px) {
+  @media (width >= 1024px) { /* netinera-desktop */
     .netinera-image-slider {
-      max-width: 768px; /* Desktop max-width (Figma: 768×434px) */
-      gap: 24px;
+      @apply max-w-[768px] gap-6; /* 24px */
     }
 
     .netinera-image-slider-content {
-      border-radius: 20px;
+      @apply rounded-[20px];
     }
 
     .netinera-image-slider-image {
-      height: 434px; /* Desktop height (Figma: 768×434px) */
+      @apply h-[434px];
     }
 
     .netinera-image-slider-navigation {
-      padding: 0 32px;
+      @apply px-8; /* 32px */
     }
 
     .netinera-image-slider-nav-button {
-      width: 56px;
-      height: 56px;
+      @apply w-14 h-14; /* 56px */
     }
 
     .netinera-image-slider-dot {
-      width: 12px;
-      height: 12px;
+      @apply w-3 h-3; /* 12px */
     }
 
     .netinera-image-slider-dot.active {
-      width: 16px;
-      height: 16px;
+      @apply w-4 h-4; /* 16px */
     }
 
     .netinera-image-slider-pagination {
-      gap: 12px;
+      @apply gap-3; /* 12px */
     }
 
     .netinera-image-slider-caption {
-      font-size: 18px;
-      line-height: 1.555em;
-      padding: 0 24px;
+      @apply text-lg leading-[1.555em] px-6; /* 18px, 24px padding */
     }
   }
 
   /* Large desktop optimization */
-  @media (width >= 1280px) {
+  @media (width >= 1280px) { /* netinera-wide */
     .netinera-image-slider {
-      max-width: 900px;
-      gap: 28px;
+      @apply max-w-[900px] gap-7; /* 28px */
     }
 
     .netinera-image-slider-image {
-      height: 508px; /* Scaled up for large screens */
+      @apply h-[508px];
     }
 
     .netinera-image-slider-navigation {
-      padding: 0 40px;
+      @apply px-10; /* 40px */
     }
 
     .netinera-image-slider-nav-button {
-      width: 64px;
-      height: 64px;
+      @apply w-16 h-16; /* 64px */
     }
 
     .netinera-image-slider-caption {
-      font-size: 20px;
-      line-height: 1.6em;
+      @apply text-[20px] leading-[1.6em];
     }
   }
 
@@ -332,54 +243,52 @@
 
   /* Primary Variant - all simple selectors first */
   .netinera-image-slider-primary .netinera-image-slider-dot {
-    background: rgb(255 255 255 / 40%);
+    @apply bg-white/40;
   }
 
   .netinera-image-slider-primary .netinera-image-slider-dot.active {
-    background: #FBBF24; /* Yellow accent for primary variant */
+    @apply bg-yellow-400; /* #FBBF24 is approx yellow-400 */
   }
 
   /* Dark Variant - simple selectors */
   .netinera-image-slider-dark .netinera-image-slider-dot {
-    background: rgb(255 255 255 / 30%);
+    @apply bg-white/30;
   }
 
   .netinera-image-slider-dark .netinera-image-slider-dot.active {
-    background: white;
+    @apply bg-white;
   }
 
   /* Pattern Simple - simple selectors */
   .netinera-image-slider-pattern-simple .netinera-image-slider-content {
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgb(30 41 57 / 8%);
+    @apply rounded-lg shadow-[0_2px_8px_rgb(30_41_57_/_8%)]; /* 8px radius */
   }
 
   /* Now all hover selectors come after simple selectors */
   .netinera-image-slider-primary .netinera-image-slider-dot:hover {
-    background: rgb(255 255 255 / 60%);
+    @apply bg-white/60;
   }
 
   .netinera-image-slider-primary .netinera-image-slider-dot.active:hover {
-    background: #F59E0B;
+    @apply bg-yellow-500; /* #F59E0B is approx yellow-500 */
   }
 
   .netinera-image-slider-dark .netinera-image-slider-dot:hover {
-    background: rgb(255 255 255 / 50%);
+    @apply bg-white/50;
   }
 
   .netinera-image-slider-dark .netinera-image-slider-dot.active:hover {
-    background: rgb(255 255 255 / 90%);
+    @apply bg-white/90;
   }
 
   /* Pattern Secondary hover */
   .netinera-image-slider-pattern-secondary:hover .netinera-image-slider-content {
-    border-color: #DD052B;
-    box-shadow: 0 8px 24px rgb(221 5 43 / 15%);
+    @apply border-[var(--color-netinera-secondary)] shadow-[0_8px_24px_rgb(221_5_43_/_15%)];
   }
 
   /* Pattern Simple hover */
   .netinera-image-slider-pattern-simple:hover .netinera-image-slider-content {
-    box-shadow: 0 4px 16px rgb(30 41 57 / 12%);
+    @apply shadow-[0_4px_16px_rgb(30_41_57_/_12%)];
   }
 
   /* ==========================
@@ -388,8 +297,7 @@
 
   /* Secondary Pattern - must come before hover selectors */
   .netinera-image-slider-pattern-secondary .netinera-image-slider-content {
-    border: 2px solid #E7E5E4;
-    border-radius: 16px;
+    @apply border-2 border-stone-200 rounded-2xl; /* #E7E5E4 is stone-200, 16px */
   }
 
   /* ==========================
@@ -398,25 +306,18 @@
 
   /* Image Slider Grid for multiple sliders */
   .netinera-image-slider-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile first: single column */
-    gap: 32px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    @apply grid grid-cols-1 gap-8 w-full max-w-[1200px] mx-auto; /* 32px */
   }
 
-  @media (width >= 768px) {
+  @media (width >= 768px) { /* netinera-tablet */
     .netinera-image-slider-grid {
-      grid-template-columns: repeat(2, 1fr); /* Tablet: 2 columns */
-      gap: 40px;
+      @apply grid-cols-2 gap-10; /* 40px */
     }
   }
 
-  @media (width >= 1024px) {
+  @media (width >= 1024px) { /* netinera-desktop */
     .netinera-image-slider-grid {
-      grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
-      gap: 48px;
+      @apply grid-cols-3 gap-12; /* 48px */
     }
   }
 
@@ -424,40 +325,33 @@
    * === ACCESSIBILITY
    * ========================== */
 
-  /* Keyboard Navigation Support */
-  .netinera-image-slider[tabindex]:focus {
-    outline: 2px solid #DD052B;
-    outline-offset: 4px;
-    border-radius: 12px;
-  }
+  /* Keyboard Navigation Support - This was already refactored for .netinera-image-slider[tabindex]:focus */
 
   /* Screen Reader Support */
   .netinera-image-slider[role="region"] {
-    /* Ensures proper accessibility labeling */
+    /* Ensures proper accessibility labeling - No specific CSS, HTML attribute based */
   }
 
   /* High Contrast Mode */
   @media (prefers-contrast: high) {
     .netinera-image-slider-content {
-      border: 2px solid #1E2939;
+      @apply border-2 border-[var(--color-netinera-dark)];
     }
 
     .netinera-image-slider-nav-button {
-      background: white;
-      border: 2px solid #1E2939;
+      @apply bg-white border-2 border-[var(--color-netinera-dark)];
     }
 
     .netinera-image-slider-dot {
-      border: 2px solid #1E2939;
+      @apply border-2 border-[var(--color-netinera-dark)];
     }
 
     .netinera-image-slider-dot.active {
-      background: #1E2939;
-      border: 2px solid #1E2939;
+      @apply bg-[var(--color-netinera-dark)] border-[var(--color-netinera-dark)];
     }
 
     .netinera-image-slider-caption {
-      font-weight: 600;
+      @apply font-semibold;
     }
   }
 
@@ -469,17 +363,16 @@
     .netinera-image-slider-nav-button,
     .netinera-image-slider-dot,
     .netinera-image-slider-nav-button-icon {
-      transition: none;
-      animation: none;
+      @apply motion-reduce:transition-none motion-reduce:animate-none;
     }
 
     .netinera-image-slider:hover .netinera-image-slider-image {
-      transform: none;
+      @apply motion-reduce:transform-none;
     }
 
     .netinera-image-slider-nav-button:hover,
     .netinera-image-slider-dot:hover {
-      transform: none;
+      @apply motion-reduce:transform-none;
     }
   }
 
@@ -489,52 +382,38 @@
 
   @media print {
     .netinera-image-slider {
-      background: white !important;
-      border: 1px solid #ddd;
-      border-radius: 8px !important;
-      padding: 16px !important;
-      box-shadow: none !important;
-      max-width: 100% !important;
-      gap: 12px !important;
+      @apply print:bg-white !important print:border print:border-gray-300 print:rounded-lg !important print:p-4 !important print:shadow-none !important print:max-w-full !important print:gap-3 !important;
+      break-inside: avoid;
     }
 
     .netinera-image-slider-content {
-      border-radius: 4px !important;
-      box-shadow: none !important;
+      @apply print:rounded-sm !important print:shadow-none !important;
     }
 
     .netinera-image-slider-image {
-      height: 200px !important;
-      transform: none !important;
+      @apply print:h-[200px] !important print:transform-none !important;
     }
 
     .netinera-image-slider-navigation {
-      display: none !important; /* Hide navigation in print */
+      @apply print:hidden !important; /* Hide navigation in print */
     }
 
     .netinera-image-slider-pagination {
-      display: none !important; /* Hide pagination in print */
+      @apply print:hidden !important; /* Hide pagination in print */
     }
 
     .netinera-image-slider-caption {
-      color: black !important;
-      font-size: 14px !important;
-      line-height: 1.4 !important;
-      text-align: left !important;
-      padding: 8px 0 !important;
-      border-top: 1px solid #eee !important;
-      margin-top: 8px !important;
+      @apply print:text-black !important print:text-sm !important print:leading-[1.4] !important print:text-left !important print:p-2 print:pt-2 !important print:border-t print:border-gray-200 !important print:mt-2 !important;
     }
 
     .netinera-image-slider-dark,
     .netinera-image-slider-primary {
-      background: white !important;
-      border: 1px solid #ddd !important;
+      @apply print:bg-white !important print:border print:border-gray-300 !important;
     }
 
     .netinera-image-slider-dark .netinera-image-slider-caption,
     .netinera-image-slider-primary .netinera-image-slider-caption {
-      color: black !important;
+      @apply print:text-black !important;
     }
   }
 

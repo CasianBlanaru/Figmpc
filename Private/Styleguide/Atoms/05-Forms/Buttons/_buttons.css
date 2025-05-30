@@ -14,7 +14,7 @@
 
     /* Figma exact dimensions (Node 1870:21501) */
     @apply h-7 px-6 rounded-[var(--radius-netinera-sm)] border-2 border-transparent; /* height: 28px, padding: 0 24px */
-    
+
     /* Transitions */
     @apply transition-all duration-200 ease-in-out cursor-pointer; /* Assuming 'ease' means 'ease-in-out' */
 

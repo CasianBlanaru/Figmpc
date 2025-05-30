@@ -67,7 +67,7 @@ details {
 
 .accordion-item {
   /* Assuming a default border is intended here, otherwise this only sets color */
-  @apply border border-gray-800; 
+  @apply border border-gray-800;
 }
 
 .accordion-item:first-child {
